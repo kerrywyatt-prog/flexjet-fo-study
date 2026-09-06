@@ -1,5 +1,5 @@
-/* FO Study — service worker stub (cache shell for offline / Add to Home Screen) */
-const CACHE = 'fo-study-v2';
+/* FO Study — network-first for CSS/JS so layout updates aren't stuck */
+const CACHE = 'fo-study-v3';
 const ASSETS = [
   './',
   './index.html',
@@ -26,6 +26,23 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
+  const url = new URL(event.request.url);
+  const isShellAsset = /\.(css|js)(\?|$)/.test(url.pathname + url.search) || url.pathname.endsWith('/') || url.pathname.endsWith('index.html');
+
+  if (isShellAsset) {
+    // Network first so iPad/PC layout updates land immediately
+    event.respondWith(
+      fetch(event.request)
+        .then((res) => {
+          const copy = res.clone();
+          caches.open(CACHE).then((cache) => cache.put(event.request, copy)).catch(() => {});
+          return res;
+        })
+        .catch(() => caches.match(event.request))
+    );
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request).then((cached) => {
       const fetched = fetch(event.request)

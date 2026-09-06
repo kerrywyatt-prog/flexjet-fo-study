@@ -60,16 +60,15 @@ body {
   margin-right: auto;
 }
 
-/* iPad: full-bleed shell, two-column home tiles */
-@media (min-width: 768px) {
+/* Tablet / iPad: use the full screen, two-column home tiles */
+@media (min-width: 600px) {
   .topbar {
     padding-left: 28px;
     padding-right: 28px;
   }
   .content {
-    padding: 24px 28px 40px;
-    max-width: 920px;
-    margin: 0 auto;
+    padding: 24px 32px 40px;
+    max-width: none;
     width: 100%;
   }
   .tiles {
@@ -82,16 +81,20 @@ body {
   .shell {
     padding-bottom: calc(48px + var(--safe-bot));
   }
+  .home-fab {
+    max-width: 420px;
+  }
 }
 
-/* PC / large tablet landscape: wider canvas, three-column tiles */
-@media (min-width: 1100px) {
+/* PC: wide canvas, three-column tiles */
+@media (min-width: 1024px) {
   .topbar {
     padding-left: 40px;
     padding-right: 40px;
   }
   .content {
-    max-width: 1120px;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 28px 40px 48px;
   }
   .tiles {
@@ -618,15 +621,9 @@ button, input, textarea { font: inherit; color: inherit; }
   left: 50%;
   transform: translateX(-50%);
   z-index: 30;
-  max-width: calc(480px - 32px);
+  max-width: 420px;
   width: calc(100% - 32px);
   display: none;
 }
 
-@media (min-width: 481px) {
-  #app {
-    border-left: 1px solid var(--border);
-    border-right: 1px solid var(--border);
-    box-shadow: 0 0 80px rgba(0,0,0,0.4);
-  }
-}
+/* phone-frame chrome removed */
