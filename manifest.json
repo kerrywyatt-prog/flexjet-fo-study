@@ -1,11 +1,11 @@
 {
-  "name": "FO Study — Kerry Wyatt",
+  "name": "FO Study \u2014 Kerry Wyatt",
   "short_name": "FO Study",
-  "description": "Flexjet FO study framework — orientation, indoc, Phenom & Praetor shelves",
-  "start_url": "./index.html",
+  "description": "Flexjet FO study framework \u2014 orientation, indoc, Phenom & Praetor shelves",
+  "start_url": "./index.html?layout=wide",
   "scope": "./",
   "display": "standalone",
-  "orientation": "portrait-primary",
+  "orientation": "any",
   "background_color": "#070d14",
   "theme_color": "#0a1219",
   "icons": [
