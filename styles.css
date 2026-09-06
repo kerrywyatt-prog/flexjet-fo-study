@@ -330,7 +330,9 @@ button, input, textarea { font: inherit; color: inherit; }
   min-height: 76px;
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  background: var(--bg-card);
+  background: rgba(18, 30, 42, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   cursor: pointer;
   transition: background 0.15s, border-color 0.15s, transform 0.12s;
 }
@@ -386,7 +388,9 @@ button, input, textarea { font: inherit; color: inherit; }
 
 /* ——— Cards / prose ——— */
 .card {
-  background: var(--bg-card);
+  background: rgba(18, 30, 42, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 18px;
@@ -641,7 +645,7 @@ button, input, textarea { font: inherit; color: inherit; }
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: 0.28;
+  opacity: 0.55;
   pointer-events: none;
 }
 .shell::after {
@@ -649,21 +653,21 @@ button, input, textarea { font: inherit; color: inherit; }
   position: fixed;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(180deg, rgba(7,13,20,0.72) 0%, rgba(7,13,20,0.88) 45%, rgba(7,13,20,0.94) 100%);
+  background: linear-gradient(180deg, rgba(7,13,20,0.45) 0%, rgba(7,13,20,0.72) 55%, rgba(7,13,20,0.88) 100%);
   pointer-events: none;
 }
 .shell-home::before,
 .shell-aspire::before {
   background-image: url('images/bg-g700.jpg');
-  opacity: 0.32;
+  opacity: 0.62;
 }
 .shell-phenom::before {
   background-image: url('images/bg-phenom300.jpg');
-  opacity: 0.34;
+  opacity: 0.65;
 }
 .shell-praetor::before {
   background-image: url('images/bg-praetor.jpg');
-  opacity: 0.34;
+  opacity: 0.65;
 }
 
 .gate-hero {
@@ -672,7 +676,7 @@ button, input, textarea { font: inherit; color: inherit; }
   max-width: none !important;
   width: 100%;
   background-image:
-    linear-gradient(180deg, rgba(7,13,20,0.78), rgba(7,13,20,0.92)),
+    linear-gradient(180deg, rgba(7,13,20,0.55), rgba(7,13,20,0.82)),
     url('images/bg-g700.jpg');
   background-size: cover;
   background-position: center;
@@ -709,7 +713,7 @@ button, input, textarea { font: inherit; color: inherit; }
   inset: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.35;
+  opacity: 0.55;
   z-index: 0;
 }
 .tile-phenom::before { background-image: url('images/bg-phenom300.jpg'); }
