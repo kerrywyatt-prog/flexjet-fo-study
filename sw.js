@@ -1,5 +1,5 @@
 /* FO Study — service worker stub (cache shell for offline / Add to Home Screen) */
-const CACHE = 'fo-study-v1';
+const CACHE = 'fo-study-v2';
 const ASSETS = [
   './',
   './index.html',
