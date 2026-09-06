@@ -71,7 +71,18 @@
       </header>`;
   }
 
-  function esc(s) {
+  
+  function shellClass() {
+    const { parts } = parseHash();
+    const root = parts[0] || '';
+    if (!root) return 'shell shell-home';
+    if (root === 'phenom') return 'shell shell-phenom';
+    if (root === 'praetor') return 'shell shell-praetor';
+    if (root === 'orientation' || root === 'indoc' || root === 'ritual' || root === 'admin') return 'shell shell-aspire';
+    return 'shell shell-home';
+  }
+
+function esc(s) {
     return String(s)
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
@@ -82,8 +93,8 @@
   /* ——— Views ——— */
   function viewGate() {
     app.innerHTML = `
-      <div class="gate">
-        <div class="gate-mark" aria-hidden="true">${svg('plane')}</div>
+      <div class="gate gate-hero">
+        <div class="gate-mark" aria-hidden="true"><img src="icons/icon-192.png" alt="" width="72" height="72" /></div>
         <h1>FO Study</h1>
         <p class="sub">Private study framework for Kerry Wyatt<br/>Flexjet · First Officer track</p>
         <form id="gate-form" autocomplete="off">
@@ -113,8 +124,8 @@
     const tiles = [
       { path: '/orientation', icon: '🧭', title: 'New hire / Orientation', desc: 'Mindset, what to bring, note-taking', cls: '' },
       { path: '/indoc', icon: '📚', title: 'Indoc', desc: 'Ground school capture & encode loop', cls: '' },
-      { path: '/phenom', icon: '✈️', title: 'Embraer Phenom 300', desc: 'Systems shelves · memory · flows', cls: 'gold' },
-      { path: '/praetor', icon: '🛫', title: 'Embraer Praetor', desc: 'Separate track · empty shelves', cls: 'gold' },
+      { path: '/phenom', icon: '✈️', title: 'Embraer Phenom 300', desc: 'Systems shelves · memory · flows', cls: 'gold', bg: 'phenom' },
+      { path: '/praetor', icon: '🛫', title: 'Embraer Praetor', desc: 'Separate track · empty shelves', cls: 'gold', bg: 'praetor' },
       { path: '/ritual', icon: '⏱️', title: 'Study ritual', desc: '20–30 min daily framework', cls: '' },
       { path: '/admin', icon: '✅', title: 'Admin / open items', desc: 'Checklist with local persistence', cls: '' },
       { path: null, icon: '🃏', title: 'Flashcards', desc: 'Spaced recall deck', stub: 'Coming next' },
@@ -122,7 +133,7 @@
     ];
 
     app.innerHTML = `
-      <div class="shell">
+      <div class="${shellClass()}">
         ${topbar('FO Study', 'Kerry Wyatt')}
         <main class="content">
           <div class="hero">
@@ -132,7 +143,7 @@
           </div>
           <div class="tiles">
             ${tiles.map(t => t.path ? `
-              <button type="button" class="tile" data-nav="${t.path}">
+              <button type="button" class="tile ${t.bg ? 'tile-photo tile-' + t.bg : ''}" data-nav="${t.path}">
                 <div class="tile-icon ${t.cls || ''}">${t.icon}</div>
                 <div class="tile-body">
                   <h3>${esc(t.title)}</h3>
@@ -156,7 +167,7 @@
 
   function viewOrientation() {
     app.innerHTML = `
-      <div class="shell">
+      <div class="${shellClass()}">
         ${topbar('New hire / Orientation', 'Home', '/')}
         <main class="content">
           <div class="card">
@@ -199,7 +210,7 @@
 
   function viewIndoc() {
     app.innerHTML = `
-      <div class="shell">
+      <div class="${shellClass()}">
         ${topbar('Indoc', 'Home', '/')}
         <main class="content">
           <div class="card">
@@ -259,7 +270,7 @@
       { path: `${base}/notes`, title: 'Personal notes', meta: 'localStorage' },
     ];
     app.innerHTML = `
-      <div class="shell">
+      <div class="${shellClass()}">
         ${topbar(ac.short, 'Aircraft', '/')}
         <main class="content">
           <div class="hero" style="margin-bottom:12px">
@@ -285,7 +296,7 @@
     if (!ac) return viewHome();
     const base = '/' + acKey;
     app.innerHTML = `
-      <div class="shell">
+      <div class="${shellClass()}">
         ${topbar('Systems', ac.short, base)}
         <main class="content">
           <div class="shelf-list">
@@ -304,7 +315,7 @@
   function viewEmptyShelf(acKey, title, backPath, crumb) {
     const ac = ACFT[acKey];
     app.innerHTML = `
-      <div class="shell">
+      <div class="${shellClass()}">
         ${topbar(title, crumb || ac.short, backPath)}
         <main class="content">
           <div class="empty-shelf">
@@ -323,7 +334,7 @@
     let saved = '';
     try { saved = localStorage.getItem(key) || ''; } catch {}
     app.innerHTML = `
-      <div class="shell">
+      <div class="${shellClass()}">
         ${topbar('Personal notes', ac.short, '/' + acKey)}
         <main class="content">
           <div class="card notes-area">
@@ -362,7 +373,7 @@
 
   function viewRitual() {
     app.innerHTML = `
-      <div class="shell">
+      <div class="${shellClass()}">
         ${topbar('Study ritual', 'Home', '/')}
         <main class="content">
           <div class="card">
@@ -422,7 +433,7 @@
     let items = loadAdmin();
     function paint() {
       app.innerHTML = `
-        <div class="shell">
+        <div class="${shellClass()}">
           ${topbar('Admin / open items', 'Home', '/')}
           <main class="content">
             <div class="card" style="margin-bottom:14px">
