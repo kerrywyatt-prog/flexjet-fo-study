@@ -23,10 +23,13 @@
   };
 
   const DEFAULT_ADMIN = [
-    { id: 'nata', text: 'NATA / security awareness (as assigned)', done: false },
-    { id: 'fingerprint', text: 'Fingerprint / badge logistics', done: false },
-    { id: 'travel', text: 'Travel / lodging for training dates', done: false },
-    { id: 'materials', text: 'Gather study materials & binders', done: false },
+    { id: 'dinner', text: 'Thu Welcome Dinner 5:15p — Hyde Park Beachwood (on calendar)', done: true },
+    { id: 'tolltag', text: 'DFW: TollTag/BlueDiamond + email CathyC@Flexjet.com before OE', done: false },
+    { id: 'parking-spot', text: 'Parking Spot app + code BOMB1525', done: false },
+    { id: 'ukg', text: 'Watch company email for UKG benefits enrollment', done: false },
+    { id: 'uniform', text: 'A Cut Above order after fitting; update shipping; bomber jacket email', done: false },
+    { id: 'concur', text: 'Wait for Concur email; finish MFA (Authenticator path)', done: false },
+    { id: 'rental', text: 'Photo rental-car corporate codes; keep DL + preferred current', done: false },
   ];
 
   const $ = (sel, el = document) => el.querySelector(sel);
@@ -122,7 +125,7 @@ function esc(s) {
 
   function viewHome() {
     const tiles = [
-      { path: '/orientation', icon: '🧭', title: 'New hire / Orientation', desc: 'Mindset, what to bring, note-taking', cls: '' },
+      { path: '/orientation', icon: '🧭', title: 'New hire / Orientation', desc: 'CLE Day 1–3 · dinner · parking · benefits', cls: '' },
       { path: '/indoc', icon: '📚', title: 'Indoc', desc: 'Ground school capture & encode loop', cls: '' },
       { path: '/phenom', icon: '✈️', title: 'Embraer Phenom 300', desc: 'Systems shelves · memory · flows', cls: 'gold', bg: 'phenom' },
       { path: '/praetor', icon: '🛫', title: 'Embraer Praetor', desc: 'Separate track · empty shelves', cls: 'gold', bg: 'praetor' },
@@ -171,29 +174,60 @@ function esc(s) {
         ${topbar('New hire / Orientation', 'Home', '/')}
         <main class="content">
           <div class="card">
-            <h3><span class="dot"></span>What orientation is for</h3>
-            <p>Orientation gets you operationally oriented — people, culture, how training days run, and how to show up prepared. Treat it as reconnaissance: map the system before you memorize every detail.</p>
-          </div>
-          <div class="card">
-            <h3><span class="dot"></span>What to bring</h3>
+            <h3><span class="dot"></span>CLE Week — Sep 16–18</h3>
             <ul>
-              <li>Photo ID, required onboarding docs, and any pre-assigned forms</li>
-              <li>Notebook + pen (paper still wins for first-pass capture)</li>
-              <li>Charged phone / tablet for schedules and logistics</li>
-              <li>Comfortable professional attire per company guidance</li>
-              <li>Water, snacks, and a quiet place to review at night</li>
+              <li><strong>Day 1 (Wed):</strong> Tour · paperwork · lunch · IT / uniform fit / photo / fingerprints · Flight welcome</li>
+              <li><strong>Day 2 (Thu):</strong> Company / culture · drug &amp; alcohol · HR welcome · salary · benefits · payroll · social · <strong>Welcome dinner 5:15p</strong></li>
+              <li><strong>Day 3 (Fri):</strong> Flight admin · ops · Tailwind/expense · fleet overview · maintenance · logistics</li>
+            </ul>
+            <div class="note">Process / people / logistics only — no proprietary manuals.</div>
+          </div>
+
+          <div class="card">
+            <h3><span class="dot"></span>Must lock — Day 1</h3>
+            <ul>
+              <li><strong>Dinner:</strong> Thu 5:15p · Hyde Park Prime, 26300 Chagrin Blvd, Beachwood OH · Flexjet / Emily Chinchar / Bri Izzo · <em>already on calendar</em></li>
+              <li><strong>DFW parking:</strong> Never Flexjet FBO (tow). Planet Lincoln garage levels 6–7 free. TollTag (ntta.org) and/or BlueDiamond. Email Cathy Cunningham CathyC@Flexjet.com before OE: name, TollTag #, plate, color/make/model</li>
+              <li><strong>Parking Spot:</strong> code BOMB1525 (≥20% · OK personal/family)</li>
+              <li><strong>Benefits:</strong> email from no-reply@probenefitsadmin.ukg.com → UKG Myself → Benefits → Manage My Benefits → Get Started (Voya included). Deeper dive Day 2</li>
+              <li><strong>Safety Hotline:</strong> 216.797.8170 · InfoLink QR</li>
+              <li><strong>Uniform:</strong> A Cut Above · uniforms@flexjet.com · alanna@acutaboveuniforms.com · acutaboveuniforms.com — forgot password w/ company email; update shipping; ~$640/yr (portal buffer ≠ extra cash). Bomber jacket emailed separately</li>
+              <li><strong>Concur:</strong> wait for setup email; Comp Portal → Authenticator + SAP Concur; use “Unable to enter authentication code” path if stuck</li>
             </ul>
           </div>
+
           <div class="card">
-            <h3><span class="dot"></span>FO mindset — Part 135 vs airline (high level)</h3>
+            <h3><span class="dot"></span>People to know</h3>
             <ul>
-              <li><strong>Flexibility:</strong> schedules and destinations can shift more than mainline ops.</li>
-              <li><strong>Customer proximity:</strong> you often interact closer to passengers and owners.</li>
-              <li><strong>Crew resource:</strong> small crews — crisp CRM and mutual support matter every leg.</li>
-              <li><strong>Self-management:</strong> more personal ownership of currency, rest, and prep.</li>
+              <li>Joe Salata — Sr. VP Flight Ops</li>
+              <li>Dennis Florian — VP Flight Admin</li>
+              <li>Tim Montie — Director, Operations</li>
+              <li>Joe Scott — Chief Pilot</li>
+              <li>John Christensen — VP Flight Ops, ILC</li>
+              <li>Bri Izzo — Director, HR · Mike Cirino — HR BP</li>
+              <li>Josh Cherok — Training Admin · Sandy Carroll — Pilot Recruitment</li>
+              <li>Cathy Cunningham — DFW parking / building</li>
+              <li>Alex Howard — Crew Services (bids / PTO / schedule)</li>
+              <li>Alanna (?) — A Cut Above account manager</li>
             </ul>
-            <div class="note">Generic framework only — follow your company ops specs and training materials for actual procedures.</div>
           </div>
+
+          <div class="card">
+            <h3><span class="dot"></span>How Flexjet works (Day 1 audio)</h3>
+            <ul>
+              <li><strong>FO seat:</strong> fly left seat; you are not PIC</li>
+              <li><strong>PTO:</strong> request via Crew Services — not UKG/HR portal</li>
+              <li><strong>Bids:</strong> 13 × 28-day periods; prefer tour length; blank vacation dates are protected</li>
+              <li><strong>Vacation bids:</strong> 2×/year via crew portal (more Fri); ~40 hrs PTO to bid a block</li>
+              <li><strong>Call-in well:</strong> by 14:00 Cleveland time; need &gt;1 day left on tour</li>
+              <li><strong>Life events:</strong> ~30 days notice to scheduling</li>
+              <li><strong>Ops advocate:</strong> pilot manager on duty in Ops Control</li>
+              <li><strong>Parking $:</strong> full charge on company card; daily stipend; payroll claws overage; tips reimburse to linked bank in ~2–3 days</li>
+              <li><strong>Rentals:</strong> photo corporate codes; keep preferred + DL current; personal use of discount OK</li>
+              <li><strong>Passwords:</strong> memorize employee ID; don’t casually change issued system passwords</li>
+            </ul>
+          </div>
+
           <div class="card">
             <h3><span class="dot"></span>Note-taking that sticks</h3>
             <ol>
