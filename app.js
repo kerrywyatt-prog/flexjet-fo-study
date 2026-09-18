@@ -125,7 +125,7 @@ function esc(s) {
 
   function viewHome() {
     const tiles = [
-      { path: '/orientation', icon: '🧭', title: 'New hire / Orientation', desc: 'CLE Days 1–2 · payroll · 401k · logistics', cls: '' },
+      { path: '/orientation', icon: '🧭', title: 'New hire / Orientation', desc: 'CLE Days 1–3 · payroll · ops · logistics · expense', cls: '' },
       { path: '/indoc', icon: '📚', title: 'Indoc', desc: 'Ground school capture & encode loop', cls: '' },
       { path: '/phenom', icon: '✈️', title: 'Embraer Phenom 300', desc: 'Systems shelves · memory · flows', cls: 'gold', bg: 'phenom' },
       { path: '/praetor', icon: '🛫', title: 'Embraer Praetor', desc: 'Separate track · empty shelves', cls: 'gold', bg: 'praetor' },
@@ -180,7 +180,7 @@ function esc(s) {
               <li><strong>Day 2 (Thu):</strong> Company / culture · D&amp;A · HR · salary enhancement · benefits · <strong>payroll</strong> · social · <strong>Welcome dinner 5:15p</strong></li>
               <li><strong>Day 3 (Fri):</strong> Flight admin · ops · Tailwind/expense · fleet · maintenance · logistics</li>
             </ul>
-            <div class="note">Classmate-safe process notes — no personal sizes/addresses. Day 2 video clips (history/D&amp;A/social) not in audio; use handouts.</div>
+            <div class="note">Classmate-safe process notes — no personal sizes/addresses. Day 2/3 video clips not in usable audio; Day 3 MX not on tape — use handouts.</div>
           </div>
 
           <div class="card">
@@ -219,6 +219,21 @@ function esc(s) {
           </div>
 
           <div class="card">
+            <h3><span class="dot"></span>Must lock — Day 3 ops / logistics / expense</h3>
+            <ul>
+              <li><strong>Tailwind:</strong> primary crew↔ops channel (trip, logistics, pax, catering). Prefer in-app trip thread. Silence notifications when off duty</li>
+              <li><strong>Nick Riglin:</strong> Director Scheduling &amp; GCC (near-term trip/crew scheduling). Crew Services = bids / tour lines</li>
+              <li><strong>Logistics:</strong> logistics@flexjet.com · always 4-letter ID + tail · not 24/7 — after-hours via ops</li>
+              <li><strong>Airlines:</strong> scheduling picks flights; logistics tickets. No “standby ticket.” Do not jump earlier flights. Stay reachable on connections while on duty</li>
+              <li><strong>Hotels:</strong> ≈ Holiday Inn–standard+; ≤30 min from FBO; training hotels different program. Chase missing briefing ~30 min before landing</li>
+              <li><strong>Expense:</strong> per diem $42/day stated in class (confirm handout). Meals on company card — no alcohol; be reasonable. Uber direct-bill hotel↔FBO↔restaurant only</li>
+              <li><strong>Show times:</strong> 60 min wheels-up from FBO; 90 min from hotel. Captains confirm final fuel. ~600 min / 10h flight-time gate</li>
+              <li><strong>Upgrades:</strong> classes ~every 2–3 months; ~2-week portal window. ILC / dedicated-tail = application + interview</li>
+              <li><strong>After CLE:</strong> Monday assignment email locks Dallas vs Orlando / go-home week — don’t invent travel. Maintenance Friday block not on Plaud</li>
+            </ul>
+          </div>
+
+          <div class="card">
             <h3><span class="dot"></span>People to know</h3>
             <ul>
               <li>Joe Salata — Sr. VP Flight Ops</li>
@@ -229,6 +244,8 @@ function esc(s) {
               <li>Josh Cherok (?) — Training Admin / Day 2 deferred-comp presenter</li>
               <li>Cathy Cunningham — DFW parking / building</li>
               <li>Alex Howard — Crew Services (bids / PTO / schedule)</li>
+              <li>Nick Riglin — Director Scheduling &amp; GCC · Christina (?) — Flight Admin / expense</li>
+
               <li>Alanna (?) — A Cut Above · Voya — 401(k)</li>
             </ul>
           </div>
@@ -246,6 +263,8 @@ function esc(s) {
               <li><strong>Parking $:</strong> full charge on company card; daily stipend; payroll claws overage; tips ~2–3 days to bank</li>
               <li><strong>Rentals:</strong> photo corporate codes; keep preferred + DL current; personal use of discount OK</li>
               <li><strong>Passwords:</strong> memorize employee ID; don’t casually change issued system passwords</li>
+              <li><strong>Tailwind:</strong> silence at night when off duty; use trip-thread to ops</li>
+              <li><strong>Identify:</strong> 4-letter ID + tail on every ops/logistics contact</li>
             </ul>
           </div>
 
