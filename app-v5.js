@@ -125,7 +125,7 @@ function esc(s) {
 
   function viewHome() {
     const tiles = [
-      { path: '/orientation', icon: '🧭', title: 'New hire / Orientation', desc: 'CLE Day 1–3 · dinner · parking · benefits', cls: '' },
+      { path: '/orientation', icon: '🧭', title: 'New hire / Orientation', desc: 'CLE Days 1–2 · payroll · 401k · logistics', cls: '' },
       { path: '/indoc', icon: '📚', title: 'Indoc', desc: 'Ground school capture & encode loop', cls: '' },
       { path: '/phenom', icon: '✈️', title: 'Embraer Phenom 300', desc: 'Systems shelves · memory · flows', cls: 'gold', bg: 'phenom' },
       { path: '/praetor', icon: '🛫', title: 'Embraer Praetor', desc: 'Separate track · empty shelves', cls: 'gold', bg: 'praetor' },
@@ -174,25 +174,47 @@ function esc(s) {
         ${topbar('New hire / Orientation', 'Home', '/')}
         <main class="content">
           <div class="card">
-            <h3><span class="dot"></span>CLE Week — Sep 16–18</h3>
+            <h3><span class="dot"></span>CLE Week — Sep 16–18 · shareable</h3>
             <ul>
               <li><strong>Day 1 (Wed):</strong> Tour · paperwork · lunch · IT / uniform fit / photo / fingerprints · Flight welcome</li>
-              <li><strong>Day 2 (Thu):</strong> Company / culture · drug &amp; alcohol · HR welcome · salary · benefits · payroll · social · <strong>Welcome dinner 5:15p</strong></li>
-              <li><strong>Day 3 (Fri):</strong> Flight admin · ops · Tailwind/expense · fleet overview · maintenance · logistics</li>
+              <li><strong>Day 2 (Thu):</strong> Company / culture · D&amp;A · HR · salary enhancement · benefits · <strong>payroll</strong> · social · <strong>Welcome dinner 5:15p</strong></li>
+              <li><strong>Day 3 (Fri):</strong> Flight admin · ops · Tailwind/expense · fleet · maintenance · logistics</li>
             </ul>
-            <div class="note">Process / people / logistics only — no proprietary manuals.</div>
+            <div class="note">Classmate-safe process notes — no personal sizes/addresses. Day 2 video clips (history/D&amp;A/social) not in audio; use handouts.</div>
           </div>
 
           <div class="card">
-            <h3><span class="dot"></span>Must lock — Day 1</h3>
+            <h3><span class="dot"></span>Must lock — logistics</h3>
             <ul>
-              <li><strong>Dinner:</strong> Thu 5:15p · Hyde Park Prime, 26300 Chagrin Blvd, Beachwood OH · Flexjet / Emily Chinchar / Bri Izzo · <em>already on calendar</em></li>
+              <li><strong>Dinner:</strong> Thu 5:15p · Hyde Park Prime, 26300 Chagrin Blvd, Beachwood OH · Flexjet / Emily Chinchar / Bri Izzo</li>
               <li><strong>DFW parking:</strong> Never Flexjet FBO (tow). Planet Lincoln garage levels 6–7 free. TollTag (ntta.org) and/or BlueDiamond. Email Cathy Cunningham CathyC@Flexjet.com before OE: name, TollTag #, plate, color/make/model</li>
               <li><strong>Parking Spot:</strong> code BOMB1525 (≥20% · OK personal/family)</li>
-              <li><strong>Benefits:</strong> email from no-reply@probenefitsadmin.ukg.com → UKG Myself → Benefits → Manage My Benefits → Get Started (Voya included). Deeper dive Day 2</li>
               <li><strong>Safety Hotline:</strong> 216.797.8170 · InfoLink QR</li>
-              <li><strong>Uniform:</strong> A Cut Above · uniforms@flexjet.com · alanna@acutaboveuniforms.com · acutaboveuniforms.com — forgot password w/ company email; update shipping; ~$640/yr (portal buffer ≠ extra cash). Bomber jacket emailed separately</li>
-              <li><strong>Concur:</strong> wait for setup email; Comp Portal → Authenticator + SAP Concur; use “Unable to enter authentication code” path if stuck</li>
+              <li><strong>Uniform:</strong> A Cut Above · uniforms@flexjet.com · alanna@acutaboveuniforms.com · acutaboveuniforms.com — company email forgot-password; update shipping; ~$640/yr. Bomber jacket emailed separately</li>
+              <li><strong>Concur:</strong> wait for setup email; Comp Portal → Authenticator + SAP Concur; “Unable to enter authentication code” path if stuck</li>
+              <li><strong>Benefits:</strong> no-reply@probenefitsadmin.ukg.com → UKG Myself → Benefits → Manage My Benefits → Get Started (Voya)</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3><span class="dot"></span>Must lock — payroll (Day 2)</h3>
+            <ul>
+              <li><strong>Cadence:</strong> 15th + last day (24/yr); weekend → prior Friday</li>
+              <li><strong>Training:</strong> salary. <strong>Line:</strong> daily rate × days; reconcile prior month on first check of next month</li>
+              <li><strong>Per diem:</strong> tax-exempt (confirm $ on handout); often estimate then reconcile</li>
+              <li><strong>OT:</strong> 12–14h OT past 12; past 14h = triple; early start if duty-on before 07:00; extended day (can’t domicile before midnight) = 1.5× daily. Ops reports it — you don’t track. Pays first check next month</li>
+              <li><strong>Stub:</strong> UKG “hours” often = days; rate is daily. Prefer UKG web. Verify DD + tax elections. HR payroll email on handout</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3><span class="dot"></span>Must lock — 401(k) / enhanced retirement (Day 2)</h3>
+            <ul>
+              <li><strong>401(k) Voya:</strong> Traditional + Roth; company <strong>6% match</strong> on qualified/base earnings</li>
+              <li><strong>IRS 2026 (class):</strong> $24,500 employee deferral; ≈ limit÷24 per paycheck to max. Catch-up 50+ ≠ “maxed” for tax gross-up</li>
+              <li><strong>Deferred comp:</strong> up to $30k/yr (current; raised July) → $7,500/quarter; ~3-year deferral from hire; after 6 years’ service pays quarter-after accrual. Sep start pro-rates Q1. ~45 days worked/quarter for full amount; PTO does not count</li>
+              <li><strong>Gross-up:</strong> if on pace to max 401(k) in the year you receive the payment → net the quarterly $. Else taxed. Set max elections by January of payout year</li>
+              <li><strong>Docs:</strong> portal Documents → Enhanced Retirement FAQ. Ask Dennis Florian clarifying Qs</li>
             </ul>
           </div>
 
@@ -200,29 +222,28 @@ function esc(s) {
             <h3><span class="dot"></span>People to know</h3>
             <ul>
               <li>Joe Salata — Sr. VP Flight Ops</li>
-              <li>Dennis Florian — VP Flight Admin</li>
-              <li>Tim Montie — Director, Operations</li>
-              <li>Joe Scott — Chief Pilot</li>
+              <li>Dennis Florian — VP Flight Admin · deferred-comp champion</li>
+              <li>Tim Montie — Director, Operations · Joe Scott — Chief Pilot</li>
               <li>John Christensen — VP Flight Ops, ILC</li>
               <li>Bri Izzo — Director, HR · Mike Cirino — HR BP</li>
-              <li>Josh Cherok — Training Admin · Sandy Carroll — Pilot Recruitment</li>
+              <li>Josh Cherok (?) — Training Admin / Day 2 deferred-comp presenter</li>
               <li>Cathy Cunningham — DFW parking / building</li>
               <li>Alex Howard — Crew Services (bids / PTO / schedule)</li>
-              <li>Alanna (?) — A Cut Above account manager</li>
+              <li>Alanna (?) — A Cut Above · Voya — 401(k)</li>
             </ul>
           </div>
 
           <div class="card">
-            <h3><span class="dot"></span>How Flexjet works (Day 1 audio)</h3>
+            <h3><span class="dot"></span>How Flexjet works</h3>
             <ul>
               <li><strong>FO seat:</strong> fly left seat; you are not PIC</li>
               <li><strong>PTO:</strong> request via Crew Services — not UKG/HR portal</li>
               <li><strong>Bids:</strong> 13 × 28-day periods; prefer tour length; blank vacation dates are protected</li>
-              <li><strong>Vacation bids:</strong> 2×/year via crew portal (more Fri); ~40 hrs PTO to bid a block</li>
+              <li><strong>Vacation bids:</strong> 2×/year via crew portal; ~40 hrs PTO to bid a block</li>
               <li><strong>Call-in well:</strong> by 14:00 Cleveland time; need &gt;1 day left on tour</li>
               <li><strong>Life events:</strong> ~30 days notice to scheduling</li>
               <li><strong>Ops advocate:</strong> pilot manager on duty in Ops Control</li>
-              <li><strong>Parking $:</strong> full charge on company card; daily stipend; payroll claws overage; tips reimburse to linked bank in ~2–3 days</li>
+              <li><strong>Parking $:</strong> full charge on company card; daily stipend; payroll claws overage; tips ~2–3 days to bank</li>
               <li><strong>Rentals:</strong> photo corporate codes; keep preferred + DL current; personal use of discount OK</li>
               <li><strong>Passwords:</strong> memorize employee ID; don’t casually change issued system passwords</li>
             </ul>
