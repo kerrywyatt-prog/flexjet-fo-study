@@ -237,7 +237,7 @@ function esc(s) {
           <div class="card">
             <h3><span class="dot"></span>Must lock — Day 3 maintenance (Kevin COO)</h3>
             <ul>
-              <li><strong>Kevin Dilling</strong> — COO, Maintenance / Global Services (intro ASR said “CEO”; he runs MX ops)</li>
+              <li><strong>Kevin Dillon/Dilling (?)</strong> — COO, Maintenance / Global Services (intro: COO; he runs MX ops)</li>
               <li><strong>In-house MX:</strong> ~13 bases · ~1600 mechanics — Flexjet techs do Flexjet aircraft work</li>
               <li><strong>MX controllers:</strong> share GCC floor; ~15 yr avg; <strong>24/7/365</strong>. Road discrepancy → MX controllers via ops/GCC. Always 4-letter ID + tail</li>
               <li><strong>AOG:</strong> ~130 senior techs; dispatch ≤24h; most within ~5h; goal on-location ≤~10h. TEB/HPN, Naples, Dallas, Rockies, FL, Europe</li>
@@ -259,7 +259,7 @@ function esc(s) {
               <li>Alex Howard — Crew Services (bids / PTO / schedule)</li>
               <li>Nick Riglin — Director Scheduling &amp; GCC · Christina (?) — Flight Admin / expense</li>
               <li>Andrew (?) — FOATM / Flight Ops supervisor · Praetor program · Tailwind/Concur</li>
-              <li>Kevin Dilling — COO, Maintenance / Global Services</li>
+              <li>Kevin Dillon/Dilling (?) — COO, Maintenance / Global Services</li>
 
               <li>Alanna (?) — A Cut Above · Voya — 401(k)</li>
             </ul>
