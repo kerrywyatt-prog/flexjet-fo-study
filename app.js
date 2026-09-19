@@ -26,8 +26,8 @@
     { id: 'dinner', text: 'Thu Welcome Dinner 5:15p — Hyde Park Beachwood (on calendar)', done: true },
     { id: 'tolltag', text: 'DFW: TollTag/BlueDiamond + email CathyC@Flexjet.com before OE', done: false },
     { id: 'parking-spot', text: 'Parking Spot app + code BOMB1525', done: false },
-    { id: 'ukg', text: 'Watch company email for UKG benefits enrollment', done: false },
-    { id: 'uniform', text: 'A Cut Above order after fitting; update shipping; bomber jacket email', done: false },
+    { id: 'ukg', text: 'Benefits enrollment — UKG Myself when company email arrives', done: false },
+    { id: 'uniform', text: 'Submit uniform order — A Cut Above after fitting; update shipping; bomber email if needed', done: false },
     { id: 'concur', text: 'Wait for Concur email; finish MFA (Authenticator path)', done: false },
     { id: 'rental', text: 'Photo rental-car corporate codes; keep DL + preferred current', done: false },
   ];
@@ -180,7 +180,7 @@ function esc(s) {
               <li><strong>Day 2 (Thu):</strong> Company / culture · D&amp;A · HR · salary enhancement · benefits · <strong>payroll</strong> · social · <strong>Welcome dinner 5:15p</strong></li>
               <li><strong>Day 3 (Fri):</strong> Flight admin · ops · Tailwind/expense · fleet · maintenance · logistics</li>
             </ul>
-            <div class="note">Classmate-safe process notes — no personal sizes/addresses. Day 2/3 video clips still empty. Full large-v3 compare 2026-09-19 folded (Phenom 8–9 mo · Josh Rock · deferred or-6% · seat locks · class pay figures).</div>
+            <div class="note">Classmate-safe process notes — no personal sizes/addresses. Day 2/3 video clips still empty. Full large-v3 compare 2026-09-19 folded (Phenom 8–9 mo · Josh Rock · deferred in-addition-to-6% match · seat locks · class pay figures).</div>
           </div>
 
           <div class="card">
@@ -212,7 +212,7 @@ function esc(s) {
             <ul>
               <li><strong>401(k) Voya:</strong> Traditional + Roth; company <strong>6% match</strong> on qualified/base earnings</li>
               <li><strong>IRS 2026 (class):</strong> $24,500 employee deferral; ≈ limit÷24 per paycheck to max. Catch-up 50+ ≠ “maxed” for tax gross-up</li>
-              <li><strong>Deferred comp:</strong> greater of $30k/yr ($7,500/qtr) <em>or</em> 6% for high earners (raised July); ~3-year deferral from hire; after 6 years’ service pays quarter-after accrual. Sep start pro-rates Q1. ~45 days worked/quarter for full amount; PTO does not count</li>
+              <li><strong>Deferred comp:</strong> <strong>$30k/yr ($7,500/qtr) in addition to</strong> the 401(k) <strong>6% match</strong> (not “greater of / or 6%”); ~3-year deferral from hire; after 6 years’ service pays quarter-after accrual. Sep start pro-rates Q1. ~45 days worked/quarter for full amount; PTO does not count</li>
               <li><strong>Gross-up:</strong> if on pace to max 401(k) in the year you receive the payment → net the quarterly $. Else taxed. Set max elections by January of payout year</li>
               <li><strong>Docs:</strong> portal Documents → Enhanced Retirement FAQ. Ask Dennis Florian clarifying Qs</li>
             </ul>
