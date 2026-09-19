@@ -180,7 +180,7 @@ function esc(s) {
               <li><strong>Day 2 (Thu):</strong> Company / culture · D&amp;A · HR · salary enhancement · benefits · <strong>payroll</strong> · social · <strong>Welcome dinner 5:15p</strong></li>
               <li><strong>Day 3 (Fri):</strong> Flight admin · ops · Tailwind/expense · fleet · maintenance · logistics</li>
             </ul>
-            <div class="note">Classmate-safe process notes — no personal sizes/addresses. Day 2/3 video clips not in usable audio; Day 3 MX (Kevin COO) on tape and folded in. Plaud 10:03 ~56m still missing.</div>
+            <div class="note">Classmate-safe process notes — no personal sizes/addresses. Day 2/3 video clips not in usable audio. Day 3 MX (Kevin) + FOATM Tailwind/Concur (Andrew, clip 09) folded in; large-v3 refresh on ops clips.</div>
           </div>
 
           <div class="card">
@@ -221,15 +221,16 @@ function esc(s) {
           <div class="card">
             <h3><span class="dot"></span>Must lock — Day 3 ops / logistics / expense / fleet</h3>
             <ul>
-              <li><strong>Tailwind:</strong> primary crew↔ops channel (trip, logistics, pax, catering). Prefer in-app trip thread. Silence notifications when off duty</li>
+              <li><strong>Tailwind:</strong> primary crew↔ops “bible” (trip, logistics, pax, catering, timeline). Prefer in-app trip thread. Silence notifications when off duty. FlexBid needs live network</li>
               <li><strong>Nick Riglin:</strong> Director Scheduling &amp; GCC (near-term trip/crew scheduling). Crew Services = bids / tour lines</li>
+              <li><strong>FOATM:</strong> Flight Ops supervisor on duty — road POC for questions / concerns / safety (Andrew — Praetor program)</li>
               <li><strong>Logistics:</strong> logistics@flexjet.com · always 4-letter ID + tail · not 24/7 — after-hours via ops</li>
               <li><strong>Airlines:</strong> scheduling picks flights; logistics tickets. No “standby ticket.” Do not jump earlier flights. Stay reachable on connections while on duty</li>
               <li><strong>Hotels:</strong> ≈ Holiday Inn–standard+; ≤30 min from FBO; training hotels different program. Chase missing briefing ~30 min before landing</li>
-              <li><strong>Expense:</strong> per diem $42/day stated in class (confirm handout). Meals on company card — no alcohol; be reasonable. Uber direct-bill hotel↔FBO↔restaurant only</li>
-              <li><strong>Show times:</strong> 60 min wheels-up from FBO; 90 min from hotel. Captains confirm final fuel. ~600 min / 10h flight-time gate</li>
+              <li><strong>Expense / Concur:</strong> per diem $42/day (confirm handout). No alcohol. Uber direct-bill hotel↔FBO↔restaurant. Report name = 4-letter + dates + domicile; itemized receipts; company pays card; overage → paycheck</li>
+              <li><strong>Show times:</strong> 60 min FBO · 90 min hotel · 100 min residence (?). ~10 recovery jets/day (≤1 day). Captains confirm final fuel (Everest release ?). ~600 min / 10h gate</li>
               <li><strong>Upgrades:</strong> classes ~every 2–3 months; ~2-week portal window. ILC / dedicated-tail = application + interview</li>
-              <li><strong>After CLE:</strong> Monday assignment email locks Dallas vs Orlando / go-home week — don’t invent travel</li>
+              <li><strong>After CLE:</strong> typically Dallas 135 INDOC → off → type → POE/IOE. Monday email locks path — don’t invent travel</li>
             </ul>
           </div>
 
@@ -257,6 +258,7 @@ function esc(s) {
               <li>Cathy Cunningham — DFW parking / building</li>
               <li>Alex Howard — Crew Services (bids / PTO / schedule)</li>
               <li>Nick Riglin — Director Scheduling &amp; GCC · Christina (?) — Flight Admin / expense</li>
+              <li>Andrew (?) — FOATM / Flight Ops supervisor · Praetor program · Tailwind/Concur</li>
               <li>Kevin Dilling — COO, Maintenance / Global Services</li>
 
               <li>Alanna (?) — A Cut Above · Voya — 401(k)</li>
