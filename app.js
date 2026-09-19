@@ -180,7 +180,7 @@ function esc(s) {
               <li><strong>Day 2 (Thu):</strong> Company / culture · D&amp;A · HR · salary enhancement · benefits · <strong>payroll</strong> · social · <strong>Welcome dinner 5:15p</strong></li>
               <li><strong>Day 3 (Fri):</strong> Flight admin · ops · Tailwind/expense · fleet · maintenance · logistics</li>
             </ul>
-            <div class="note">Classmate-safe process notes — no personal sizes/addresses. Day 2/3 video clips not in usable audio. Day 3 MX (Kevin) + FOATM Tailwind/Concur (Andrew, clip 09) folded in; large-v3 refresh on ops clips.</div>
+            <div class="note">Classmate-safe process notes — no personal sizes/addresses. Day 2/3 video clips still empty. Full large-v3 compare 2026-09-19 folded (Phenom 8–9 mo · Josh Rock · deferred or-6% · seat locks · class pay figures).</div>
           </div>
 
           <div class="card">
@@ -200,8 +200,8 @@ function esc(s) {
             <h3><span class="dot"></span>Must lock — payroll (Day 2)</h3>
             <ul>
               <li><strong>Cadence:</strong> 15th + last day (24/yr); weekend → prior Friday</li>
-              <li><strong>Training:</strong> salary. <strong>Line:</strong> daily rate × days; reconcile prior month on first check of next month</li>
-              <li><strong>Per diem:</strong> tax-exempt (confirm $ on handout); often estimate then reconcile</li>
+              <li><strong>Training:</strong> salary — class ~$146,445/yr (confirm handout). <strong>Line:</strong> PBS ~$751/day × days (confirm handout); reconcile prior month on first check of next month</li>
+              <li><strong>Per diem:</strong> tax-exempt $42/work day (confirm handout); often estimate then reconcile</li>
               <li><strong>OT:</strong> 12–14h OT past 12; past 14h = triple; early start if duty-on before 07:00; extended day (can’t domicile before midnight) = 1.5× daily. Ops reports it — you don’t track. Pays first check next month</li>
               <li><strong>Stub:</strong> UKG “hours” often = days; rate is daily. Prefer UKG web. Verify DD + tax elections. HR payroll email on handout</li>
             </ul>
@@ -212,7 +212,7 @@ function esc(s) {
             <ul>
               <li><strong>401(k) Voya:</strong> Traditional + Roth; company <strong>6% match</strong> on qualified/base earnings</li>
               <li><strong>IRS 2026 (class):</strong> $24,500 employee deferral; ≈ limit÷24 per paycheck to max. Catch-up 50+ ≠ “maxed” for tax gross-up</li>
-              <li><strong>Deferred comp:</strong> up to $30k/yr (current; raised July) → $7,500/quarter; ~3-year deferral from hire; after 6 years’ service pays quarter-after accrual. Sep start pro-rates Q1. ~45 days worked/quarter for full amount; PTO does not count</li>
+              <li><strong>Deferred comp:</strong> greater of $30k/yr ($7,500/qtr) <em>or</em> 6% for high earners (raised July); ~3-year deferral from hire; after 6 years’ service pays quarter-after accrual. Sep start pro-rates Q1. ~45 days worked/quarter for full amount; PTO does not count</li>
               <li><strong>Gross-up:</strong> if on pace to max 401(k) in the year you receive the payment → net the quarterly $. Else taxed. Set max elections by January of payout year</li>
               <li><strong>Docs:</strong> portal Documents → Enhanced Retirement FAQ. Ask Dennis Florian clarifying Qs</li>
             </ul>
@@ -224,12 +224,12 @@ function esc(s) {
               <li><strong>Tailwind:</strong> primary crew↔ops “bible” (trip, logistics, pax, catering, timeline). Prefer in-app trip thread. Silence notifications when off duty. FlexBid needs live network</li>
               <li><strong>Nick Riglin:</strong> Director Scheduling &amp; GCC (near-term trip/crew scheduling). Crew Services = bids / tour lines</li>
               <li><strong>FOATM:</strong> Flight Ops supervisor on duty — road POC for questions / concerns / safety (Andrew — Praetor program)</li>
-              <li><strong>Logistics:</strong> logistics@flexjet.com · always 4-letter ID + tail · not 24/7 — after-hours via ops</li>
+              <li><strong>Logistics:</strong> logistics@flexjet.com · always 4-letter ID + tail · desk 0700–midnight (hotels) / 0700–2200 (airlines); after-hours via ops</li>
               <li><strong>Airlines:</strong> scheduling picks flights; logistics tickets. No “standby ticket.” Do not jump earlier flights. Stay reachable on connections while on duty</li>
               <li><strong>Hotels:</strong> ≈ Holiday Inn–standard+; ≤30 min from FBO; training hotels different program. Chase missing briefing ~30 min before landing</li>
               <li><strong>Expense / Concur:</strong> per diem $42/day (confirm handout). No alcohol. Uber direct-bill hotel↔FBO↔restaurant. Report name = 4-letter + dates + domicile; itemized receipts; company pays card; overage → paycheck</li>
               <li><strong>Show times:</strong> 60 min FBO · 90 min hotel · 100 min residence (?). ~10 recovery jets/day (≤1 day). Captains confirm final fuel (Everest release ?). ~600 min / 10h gate</li>
-              <li><strong>Upgrades:</strong> classes ~every 2–3 months; ~2-week portal window. ILC / dedicated-tail = application + interview</li>
+              <li><strong>Upgrades:</strong> classes ~every 2–3 months; ~2-week portal window. Seat locks: SIC none · Phenom CAPT ~24 mo · Praetor/Challenger DRL ~36 mo (confirm). ILC / dedicated-tail = application + interview</li>
               <li><strong>After CLE:</strong> typically Dallas 135 INDOC → off → type → POE/IOE. Monday email locks path — don’t invent travel</li>
             </ul>
           </div>
@@ -254,7 +254,7 @@ function esc(s) {
               <li>Tim Montie — Director, Operations · Joe Scott — Chief Pilot</li>
               <li>John Christensen — VP Flight Ops, ILC</li>
               <li>Bri Izzo — Director, HR · Mike Cirino — HR BP</li>
-              <li>Josh Cherok (?) — Training Admin / Day 2 deferred-comp presenter</li>
+              <li>Josh Rock — Director, Flight Administration · Day 2 deferred-comp presenter</li>
               <li>Cathy Cunningham — DFW parking / building</li>
               <li>Alex Howard — Crew Services (bids / PTO / schedule)</li>
               <li>Nick Riglin — Director Scheduling &amp; GCC · Christina (?) — Flight Admin / expense</li>
@@ -268,7 +268,7 @@ function esc(s) {
           <div class="card">
             <h3><span class="dot"></span>How Flexjet works</h3>
             <ul>
-              <li><strong>FO seat:</strong> fly left seat; you are not PIC</li>
+              <li><strong>FO seat:</strong> fly left seat; not PIC (299 to act); can log PIC but not act. Phenom PIC window ~8–9 mo from CLE if you take it; Challenger/Praetor hold-out ~24–27 mo</li>
               <li><strong>PTO:</strong> request via Crew Services — not UKG/HR portal</li>
               <li><strong>Bids:</strong> 13 × 28-day periods; prefer tour length; blank vacation dates are protected</li>
               <li><strong>Vacation bids:</strong> 2×/year via crew portal; ~40 hrs PTO to bid a block</li>
