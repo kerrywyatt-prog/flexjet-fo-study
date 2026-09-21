@@ -35,10 +35,10 @@
   const app = $('#app');
 
   function isUnlocked() {
-    try { return sessionStorage.getItem(UNLOCK_KEY) === '1'; } catch { return false; }
+    try { return localStorage.getItem(UNLOCK_KEY) === '1'; } catch { return false; }
   }
   function setUnlocked() {
-    try { sessionStorage.setItem(UNLOCK_KEY, '1'); } catch {}
+    try { localStorage.setItem(UNLOCK_KEY, '1'); } catch {}
   }
 
   function parseHash() {
@@ -104,7 +104,7 @@ function esc(s) {
           <div class="error" id="gate-err"></div>
           <button class="btn btn-primary btn-block" type="submit">Unlock</button>
         </form>
-        <p class="gate-foot">Session unlock · stored in this tab only</p>
+        <p class="gate-foot">One-time unlock · remembered on this device</p>
       </div>`;
     $('#gate-form').addEventListener('submit', (e) => {
       e.preventDefault();

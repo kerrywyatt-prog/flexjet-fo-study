@@ -8,7 +8,7 @@ Password-gated mobile-first study framework for Kerry Wyatt (Flexjet FO).
 ## Password
 `flexjet!`
 
-Unlock persists in `sessionStorage` for the browser tab session.
+Unlock persists in `localStorage` for this browser/device.
 
 ## Structure
 - `index.html` — SPA shell
