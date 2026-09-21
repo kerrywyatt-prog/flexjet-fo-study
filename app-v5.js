@@ -3,6 +3,46 @@
   const UNLOCK_KEY = 'flexjet_fo_unlocked';
   const NOTES_PREFIX = 'flexjet_fo_notes_';
   const ADMIN_KEY = 'flexjet_fo_admin_items';
+  const MEMORY_JSON_URL = 'data/memory-items.json';
+  /** Exact IAI deck fallback (same as data/memory-items.json) for file:// */
+  const MEMORY_ITEMS_EMBED = {"aircraft":"Embraer Praetor 500/600 (EMB-545/550)","source":"CREW TRAINING HANDBOOK EMB-545/550 Rev 2.5 pp14-15 · Flexjet Immediate Action Items","rule":"word-for-word — never paraphrase","cards":[{"id":"smoke-evac","section":"SMOKE","title":"SMOKE EVACUATION","banner":"black","steps":["Crew Oxygen Masks ··· DON, EMGCY","Smoke Goggles ··· DON","Communication ··· ESTABLISH","OXYGEN Selector ··· CREW ONLY","DUMP Button ··· PUSH IN"],"notes":["EMGCY may be selected for 2 minutes maximum then set to 100%"]},{"id":"smoke-fire-fumes","section":"SMOKE","title":"SMOKE/FIRE/FUMES","banner":"black","steps":["Crew Oxygen Masks ··· DON, EMGCY","Smoke Goggles ··· DON","Communication ··· ESTABLISH"],"notes":["EMGCY may be selected for 2 minutes maximum then set to 100%"]},{"id":"cargo-smoke","section":"SMOKE","title":"CARGO SMOKE","banner":"red","steps":["Fire Protection CARGO Button ··· PUSH IN"]},{"id":"dual-eng-fail","section":"NON-ANNUNCIATED","title":"DUAL ENGINE FAILURE","banner":"black","steps":["EICAS Indication: >ENG 1 FAIL and >ENG 2 FAIL","EICAS Indication: FAIL icon inside both N1 Indicators","Crew Oxygen Masks ··· DON, N (Normal)","Airspeed ··· MIN 250 KIAS","RAT Manual Deploy Lever ··· PULL","Communication ··· ESTABLISH"]},{"id":"emerg-descent","section":"NON-ANNUNCIATED","title":"EMERGENCY DESCENT","banner":"black","steps":["Crew Oxygen Masks ··· DON, 100%","THRUST Levers ··· IDLE","SPEED BRAKE Lever ··· FULL","Airspeed ··· MAX APPROPRIATE","Altitude ··· 10,000 ft OR MEA, WHICHEVER IS HIGHER"]},{"id":"eng-abn-start","section":"NON-ANNUNCIATED","title":"ENGINE ABNORMAL START","banner":"black","steps":["ENG START/STOP Selector (affected engine) ··· STOP","Engine ITT Parameter (affected engine) ··· MONITOR"]},{"id":"eng-severe","section":"NON-ANNUNCIATED","title":"ENGINE SEVERE DAMAGE OR SEPARATION","banner":"black","steps":["Autothrottle ··· DISENGAGE","Thrust Lever (affected engine) ··· IDLE","ENG Start/Stop Selector (affected engine) ··· STOP","Engine Fire SHUTOFF Button (affected engine) ··· PUSH IN"]},{"id":"fltctrl-misbeh","section":"NON-ANNUNCIATED","title":"FLTCTRL N-MODE MISBEHAVIOR","banner":"black","steps":["NORMAL MODE Button ··· PRESS AND RELEASE","PITCH Switch ··· ACTUATE MANUALLY"],"condition":"A flight control normal mode misbehavior is any airplane behavior that flight crew realize airplane is behaving unexpectedly, not responding adequately to flight crew commands or is presenting lack of response."},{"id":"jammed-ss","section":"NON-ANNUNCIATED","title":"JAMMED SIDESTICK","banner":"black","steps":["Cross Side AP/PTY Button ··· PRESS AND HOLD FOR MORE THAN 20 SECONDS"]},{"id":"gear-lever-up","section":"NON-ANNUNCIATED","title":"GEAR LEVER CAN NOT BE MOVED UP","banner":"black","steps":["DN LCK REL Button ··· PRESS","LDG GEAR Lever ··· UP"],"condition":"If climb performance is required to clear obstacles:"},{"id":"cabin-alt-hi","section":"AMS","title":"CABIN ALTITUDE HI","banner":"red","steps":["Crew Oxygen Masks ··· DON, 100%","THRUST Levers ··· IDLE","SPEED BRAKE Lever ··· FULL","Airspeed ··· MAX APPROPRIATE","Altitude ··· 10000 ft OR MEA, WHICHEVER IS HIGHER"]},{"id":"batt-disch","section":"ELECTRICAL","title":"BATT DISCHARGING","banner":"red","steps":["ELEC EMER Button ··· PUSH IN","RAT Manual Deploy Lever ··· PULL"]},{"id":"elec-emerg","section":"ELECTRICAL","title":"> ELEC EMERGENCY","banner":"red","steps":["PITCH Switch ··· ACTUATE MANUALLY"]},{"id":"apu-fire","section":"FIRE PROTECTION","title":"APU FIRE","banner":"red","steps":["APU SHUTOFF Button ··· PUSH IN"]},{"id":"eng1-fire","section":"FIRE PROTECTION","title":"ENG 1 FIRE","banner":"red","steps":["Autothrottle ··· DISENGAGE","Engine 1 THRUST Lever ··· IDLE","ENG 1 START/STOP Selector ··· STOP","Engine Fire SHUTOFF 1 Button ··· PUSH IN"]},{"id":"eng2-fire","section":"FIRE PROTECTION","title":"ENG 2 FIRE","banner":"red","steps":["Autothrottle ··· DISENGAGE","Engine 2 THRUST Lever ··· IDLE","ENG 2 START/STOP Selector ··· STOP","Engine Fire SHUTOFF 2 Button ··· PUSH IN"]},{"id":"fltctrl-nmode-fail","section":"FLIGHT CONTROLS","title":"> FLTCTRL N-MODE FAIL","banner":"red","steps":["PITCH Switch ··· ACTUATE MANUALLY"]},{"id":"sidestick-fail","section":"FLIGHT CONTROLS","title":"SIDE STICK LH (RH) FAIL","banner":"red","steps":["Cross-Side Sidestick ··· USE"]},{"id":"lg-wow","section":"LANDING GEAR AND BRAKES","title":"LG WOW MISCOMPARE","banner":"red","steps":["NORMAL MODE Button ··· PRESS AND RELEASE","PITCH SWITCH ··· ACTUATE MANUALLY"]},{"id":"ai-wingstab","section":"ICE & RAIN / GEAR","title":"A-I WINGSTAB LEAK","banner":"red","steps":["Ice Prot WINGSTAB Button ··· PUSH OUT"]},{"id":"windshear","section":"SOPM","title":"WINDSHEAR WITH FD ESCAPE MANEUVER (Airplanes equipped with Windshear Detection System)","banner":"black","steps":["Thrust Levers ··· MAX"]},{"id":"rto","section":"SOPM","title":"REJECTED TAKEOFF (At or below V1)","banner":"black","steps":["Thrust Levers ··· IDLE","Thrust Reversers ··· AS REQUIRED","Brake Pedals ··· MAX APPLY (If Autobrake is not armed)"]}]};
+
+  let memoryDeckCache = null;
+  let flashState = { order: null, index: 0, flipped: false, shuffled: false };
+
+  async function loadMemoryDeck() {
+    if (memoryDeckCache) return memoryDeckCache;
+    try {
+      const res = await fetch(MEMORY_JSON_URL, { cache: 'no-cache' });
+      if (res.ok) {
+        const data = await res.json();
+        if (data && Array.isArray(data.cards) && data.cards.length) {
+          memoryDeckCache = data;
+          return memoryDeckCache;
+        }
+      }
+    } catch (_) { /* file:// or offline */ }
+    memoryDeckCache = MEMORY_ITEMS_EMBED;
+    return memoryDeckCache;
+  }
+
+  function shuffleInPlace(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
+  function ensureFlashOrder(cards) {
+    if (!flashState.order || flashState.order.length !== cards.length) {
+      flashState.order = cards.map((_, i) => i);
+      flashState.index = 0;
+      flashState.flipped = false;
+      flashState.shuffled = false;
+    }
+  }
+
 
   const SYSTEMS = [
     'Electrical',
@@ -78,7 +118,7 @@
     const { parts } = parseHash();
     const root = parts[0] || '';
     if (!root) return 'shell shell-home';
-    if (root === 'praetor') return 'shell shell-praetor';
+    if (root === 'praetor' || root === 'flashcards') return 'shell shell-praetor';
     if (root === 'orientation' || root === 'indoc' || root === 'ritual' || root === 'admin') return 'shell shell-aspire';
     return 'shell shell-home';
   }
@@ -128,7 +168,7 @@ function esc(s) {
       { path: '/praetor', icon: '🛫', title: 'Embraer Praetor 500/600', desc: 'Systems shelves · memory · flows', cls: 'gold', bg: 'praetor' },
       { path: '/ritual', icon: '⏱️', title: 'Study ritual', desc: '20–30 min daily framework', cls: '' },
       { path: '/admin', icon: '✅', title: 'Admin / open items', desc: 'Checklist with local persistence', cls: '' },
-      { path: null, icon: '🃏', title: 'Flashcards', desc: 'Spaced recall deck', stub: 'Coming next' },
+      { path: '/flashcards', icon: '🃏', title: 'Flashcards', desc: 'IAI memory items · Praetor · word-for-word', cls: 'gold' },
       { path: null, icon: '🔔', title: 'Notifications', desc: 'Study reminders', stub: 'Later' },
     ];
 
@@ -350,7 +390,7 @@ function esc(s) {
     const base = '/' + acKey;
     const shelves = [
       { path: `${base}/systems`, title: 'Systems', meta: `${SYSTEMS.length} shelves` },
-      { path: `${base}/memory`, title: 'Memory items', meta: 'Empty' },
+      { path: `${base}/memory`, title: 'Memory items', meta: '22 IAI cards' },
       { path: `${base}/limitations`, title: 'Limitations', meta: 'Empty' },
       { path: `${base}/flows`, title: 'Flows / procedures', meta: 'Empty' },
       { path: `${base}/notes`, title: 'Personal notes', meta: 'localStorage' },
@@ -497,7 +537,7 @@ function esc(s) {
             </div>
           </div>
           <div class="card">
-            <div class="note">Flashcards module coming next — until then, paper cards or a simple Q/A list works.</div>
+            <div class="note">Use <strong>Flashcards</strong> on the home screen for Praetor Immediate Action Items (word-for-word).</div>
           </div>
         </main>
       </div>`;
@@ -570,6 +610,152 @@ function esc(s) {
     paint();
   }
 
+
+  function viewMemoryItems(acKey) {
+    const ac = ACFT[acKey];
+    if (!ac) return viewHome();
+    const base = '/' + acKey;
+    app.innerHTML = `
+      <div class="${shellClass()}">
+        ${topbar('Memory items', ac.short, base)}
+        <main class="content">
+          <div class="card">
+            <h3><span class="dot"></span>Immediate Action Items</h3>
+            <p>Praetor 500/600 · CTH EMB-545/550 Rev 2.5 pp14–15 · Flexjet IAI</p>
+            <p style="margin-top:8px">Word-for-word — never paraphrase. Training purposes only; AFM/AOM/QRH govern.</p>
+            <div style="margin-top:14px">
+              <button type="button" class="btn btn-primary btn-block" data-nav="/flashcards">Open flashcards</button>
+            </div>
+          </div>
+          <div id="memory-list"><p class="section-label">Loading…</p></div>
+          <div class="card" style="margin-top:14px">
+            <div class="note">Training purposes only — not all-inclusive. Current AFM / AOM / QRH govern.</div>
+          </div>
+        </main>
+      </div>`;
+    bindNav();
+    loadMemoryDeck().then((deck) => {
+      const host = $('#memory-list');
+      if (!host) return;
+      const bySection = {};
+      deck.cards.forEach((c) => {
+        const sec = c.section || 'OTHER';
+        (bySection[sec] || (bySection[sec] = [])).push(c);
+      });
+      const sections = Object.keys(bySection);
+      host.innerHTML = sections.map((sec) => `
+        <p class="section-label">${esc(sec)}</p>
+        <div class="shelf-list" style="margin-bottom:14px">
+          ${bySection[sec].map((c) => `
+            <button type="button" class="shelf-item memory-row" data-card-id="${esc(c.id)}">
+              <span class="banner-dot banner-${esc(c.banner || 'black')}" title="${c.banner === 'red' ? 'Red banner (EICAS warning)' : 'Black banner (non-EICAS)'}"></span>
+              <span class="name">${esc(c.title)}</span>
+              <span class="meta">${c.steps.length} step${c.steps.length === 1 ? '' : 's'}</span>
+              ${svg('chev')}
+            </button>`).join('')}
+        </div>`).join('');
+      host.querySelectorAll('[data-card-id]').forEach((el) => {
+        el.addEventListener('click', () => {
+          const id = el.getAttribute('data-card-id');
+          const idx = deck.cards.findIndex((c) => c.id === id);
+          flashState.order = deck.cards.map((_, i) => i);
+          flashState.index = idx >= 0 ? idx : 0;
+          flashState.flipped = false;
+          flashState.shuffled = false;
+          go('/flashcards');
+        });
+      });
+    });
+  }
+
+  function viewFlashcards() {
+    app.innerHTML = `
+      <div class="${shellClass()}">
+        ${topbar('Flashcards', 'IAI · Praetor', '/')}
+        <main class="content" id="fc-root">
+          <p class="section-label">Loading memory items…</p>
+        </main>
+      </div>`;
+    bindNav();
+    loadMemoryDeck().then((deck) => {
+      const cards = deck.cards;
+      ensureFlashOrder(cards);
+      paintFlash();
+
+      function paintFlash() {
+        const root = $('#fc-root');
+        if (!root) return;
+        const total = cards.length;
+        if (!total) {
+          root.innerHTML = '<div class="empty-shelf"><h3>No cards</h3></div>';
+          return;
+        }
+        if (flashState.index < 0) flashState.index = 0;
+        if (flashState.index >= total) flashState.index = total - 1;
+        const card = cards[flashState.order[flashState.index]];
+        const n = flashState.index + 1;
+        const bannerCls = card.banner === 'red' ? 'fc-banner-red' : 'fc-banner-black';
+        const bannerLabel = card.banner === 'red' ? 'RED · EICAS warning' : 'BLACK · non-EICAS';
+        const stepsHtml = (card.steps || []).map((s) => `<li>${esc(s)}</li>`).join('');
+        const notesHtml = (card.notes || []).map((n) => `<li class="fc-note-item">${esc(n)}</li>`).join('');
+        const condHtml = card.condition ? `<p class="fc-condition">${esc(card.condition)}</p>` : '';
+        root.innerHTML = `
+          <div class="fc-toolbar">
+            <span class="fc-progress">${n} / ${total}</span>
+            <button type="button" class="btn btn-ghost fc-shuffle" id="fc-shuffle">${flashState.shuffled ? 'Unshuffle' : 'Shuffle'}</button>
+          </div>
+          <div class="fc-card ${bannerCls} ${flashState.flipped ? 'is-flipped' : ''}" id="fc-card" role="button" tabindex="0" aria-label="Flip card">
+            <div class="fc-face fc-front">
+              <div class="fc-banner-tag">${esc(bannerLabel)}</div>
+              <div class="fc-section">${esc(card.section || '')}</div>
+              <h2 class="fc-title">${esc(card.title)}</h2>
+              <p class="fc-hint">Tap to reveal steps</p>
+            </div>
+            <div class="fc-face fc-back">
+              <div class="fc-banner-tag">${esc(bannerLabel)}</div>
+              <div class="fc-section">${esc(card.section || '')}</div>
+              <h3 class="fc-back-title">${esc(card.title)}</h3>
+              ${condHtml}
+              <ol class="fc-steps">${stepsHtml}</ol>
+              ${notesHtml ? `<ul class="fc-notes">${notesHtml}</ul>` : ''}
+            </div>
+          </div>
+          <div class="fc-nav">
+            <button type="button" class="btn btn-ghost" id="fc-prev" ${flashState.index === 0 ? 'disabled' : ''}>Prev</button>
+            <button type="button" class="btn btn-primary" id="fc-flip">${flashState.flipped ? 'Hide' : 'Reveal'}</button>
+            <button type="button" class="btn btn-ghost" id="fc-next" ${flashState.index >= total - 1 ? 'disabled' : ''}>Next</button>
+          </div>
+          <p class="fc-footer">Training purposes only — not all-inclusive. Current AFM / AOM / QRH govern. Do not invent procedures.</p>
+          <p class="fc-source">${esc(deck.source || '')}</p>
+        `;
+        const flip = () => { flashState.flipped = !flashState.flipped; paintFlash(); };
+        $('#fc-flip')?.addEventListener('click', flip);
+        $('#fc-card')?.addEventListener('click', flip);
+        $('#fc-card')?.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); }
+        });
+        $('#fc-prev')?.addEventListener('click', () => {
+          if (flashState.index > 0) { flashState.index--; flashState.flipped = false; paintFlash(); }
+        });
+        $('#fc-next')?.addEventListener('click', () => {
+          if (flashState.index < total - 1) { flashState.index++; flashState.flipped = false; paintFlash(); }
+        });
+        $('#fc-shuffle')?.addEventListener('click', () => {
+          if (flashState.shuffled) {
+            flashState.order = cards.map((_, i) => i);
+            flashState.shuffled = false;
+          } else {
+            flashState.order = shuffleInPlace(cards.map((_, i) => i));
+            flashState.shuffled = true;
+          }
+          flashState.index = 0;
+          flashState.flipped = false;
+          paintFlash();
+        });
+      }
+    });
+  }
+
   function bindNav() {
     app.querySelectorAll('[data-nav]').forEach(el => {
       el.addEventListener('click', () => go(el.getAttribute('data-nav')));
@@ -589,6 +775,7 @@ function esc(s) {
     if (root === 'indoc') return viewIndoc();
     if (root === 'ritual') return viewRitual();
     if (root === 'admin') return viewAdmin();
+    if (root === 'flashcards') return viewFlashcards();
 
     if (root === 'phenom') {
       const rest = parts.slice(1).join('/');
@@ -609,7 +796,7 @@ function esc(s) {
         }
         return viewSystemsList(acKey);
       }
-      if (section === 'memory') return viewEmptyShelf(acKey, 'Memory items', `/${acKey}`);
+      if (section === 'memory') return viewMemoryItems(acKey);
       if (section === 'limitations') return viewEmptyShelf(acKey, 'Limitations', `/${acKey}`);
       if (section === 'flows') return viewEmptyShelf(acKey, 'Flows / procedures', `/${acKey}`);
       if (section === 'notes') return viewNotes(acKey);

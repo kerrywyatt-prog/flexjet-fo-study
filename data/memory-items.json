@@ -1,0 +1,248 @@
+{
+  "aircraft": "Embraer Praetor 500/600 (EMB-545/550)",
+  "source": "CREW TRAINING HANDBOOK EMB-545/550 Rev 2.5 pp14-15 \u00b7 Flexjet Immediate Action Items",
+  "rule": "word-for-word \u2014 never paraphrase",
+  "cards": [
+    {
+      "id": "smoke-evac",
+      "section": "SMOKE",
+      "title": "SMOKE EVACUATION",
+      "banner": "black",
+      "steps": [
+        "Crew Oxygen Masks \u00b7\u00b7\u00b7 DON, EMGCY",
+        "Smoke Goggles \u00b7\u00b7\u00b7 DON",
+        "Communication \u00b7\u00b7\u00b7 ESTABLISH",
+        "OXYGEN Selector \u00b7\u00b7\u00b7 CREW ONLY",
+        "DUMP Button \u00b7\u00b7\u00b7 PUSH IN"
+      ],
+      "notes": [
+        "EMGCY may be selected for 2 minutes maximum then set to 100%"
+      ]
+    },
+    {
+      "id": "smoke-fire-fumes",
+      "section": "SMOKE",
+      "title": "SMOKE/FIRE/FUMES",
+      "banner": "black",
+      "steps": [
+        "Crew Oxygen Masks \u00b7\u00b7\u00b7 DON, EMGCY",
+        "Smoke Goggles \u00b7\u00b7\u00b7 DON",
+        "Communication \u00b7\u00b7\u00b7 ESTABLISH"
+      ],
+      "notes": [
+        "EMGCY may be selected for 2 minutes maximum then set to 100%"
+      ]
+    },
+    {
+      "id": "cargo-smoke",
+      "section": "SMOKE",
+      "title": "CARGO SMOKE",
+      "banner": "red",
+      "steps": [
+        "Fire Protection CARGO Button \u00b7\u00b7\u00b7 PUSH IN"
+      ]
+    },
+    {
+      "id": "dual-eng-fail",
+      "section": "NON-ANNUNCIATED",
+      "title": "DUAL ENGINE FAILURE",
+      "banner": "black",
+      "steps": [
+        "EICAS Indication: >ENG 1 FAIL and >ENG 2 FAIL",
+        "EICAS Indication: FAIL icon inside both N1 Indicators",
+        "Crew Oxygen Masks \u00b7\u00b7\u00b7 DON, N (Normal)",
+        "Airspeed \u00b7\u00b7\u00b7 MIN 250 KIAS",
+        "RAT Manual Deploy Lever \u00b7\u00b7\u00b7 PULL",
+        "Communication \u00b7\u00b7\u00b7 ESTABLISH"
+      ]
+    },
+    {
+      "id": "emerg-descent",
+      "section": "NON-ANNUNCIATED",
+      "title": "EMERGENCY DESCENT",
+      "banner": "black",
+      "steps": [
+        "Crew Oxygen Masks \u00b7\u00b7\u00b7 DON, 100%",
+        "THRUST Levers \u00b7\u00b7\u00b7 IDLE",
+        "SPEED BRAKE Lever \u00b7\u00b7\u00b7 FULL",
+        "Airspeed \u00b7\u00b7\u00b7 MAX APPROPRIATE",
+        "Altitude \u00b7\u00b7\u00b7 10,000 ft OR MEA, WHICHEVER IS HIGHER"
+      ]
+    },
+    {
+      "id": "eng-abn-start",
+      "section": "NON-ANNUNCIATED",
+      "title": "ENGINE ABNORMAL START",
+      "banner": "black",
+      "steps": [
+        "ENG START/STOP Selector (affected engine) \u00b7\u00b7\u00b7 STOP",
+        "Engine ITT Parameter (affected engine) \u00b7\u00b7\u00b7 MONITOR"
+      ]
+    },
+    {
+      "id": "eng-severe",
+      "section": "NON-ANNUNCIATED",
+      "title": "ENGINE SEVERE DAMAGE OR SEPARATION",
+      "banner": "black",
+      "steps": [
+        "Autothrottle \u00b7\u00b7\u00b7 DISENGAGE",
+        "Thrust Lever (affected engine) \u00b7\u00b7\u00b7 IDLE",
+        "ENG Start/Stop Selector (affected engine) \u00b7\u00b7\u00b7 STOP",
+        "Engine Fire SHUTOFF Button (affected engine) \u00b7\u00b7\u00b7 PUSH IN"
+      ]
+    },
+    {
+      "id": "fltctrl-misbeh",
+      "section": "NON-ANNUNCIATED",
+      "title": "FLTCTRL N-MODE MISBEHAVIOR",
+      "banner": "black",
+      "steps": [
+        "NORMAL MODE Button \u00b7\u00b7\u00b7 PRESS AND RELEASE",
+        "PITCH Switch \u00b7\u00b7\u00b7 ACTUATE MANUALLY"
+      ],
+      "condition": "A flight control normal mode misbehavior is any airplane behavior that flight crew realize airplane is behaving unexpectedly, not responding adequately to flight crew commands or is presenting lack of response."
+    },
+    {
+      "id": "jammed-ss",
+      "section": "NON-ANNUNCIATED",
+      "title": "JAMMED SIDESTICK",
+      "banner": "black",
+      "steps": [
+        "Cross Side AP/PTY Button \u00b7\u00b7\u00b7 PRESS AND HOLD FOR MORE THAN 20 SECONDS"
+      ]
+    },
+    {
+      "id": "gear-lever-up",
+      "section": "NON-ANNUNCIATED",
+      "title": "GEAR LEVER CAN NOT BE MOVED UP",
+      "banner": "black",
+      "steps": [
+        "DN LCK REL Button \u00b7\u00b7\u00b7 PRESS",
+        "LDG GEAR Lever \u00b7\u00b7\u00b7 UP"
+      ],
+      "condition": "If climb performance is required to clear obstacles:"
+    },
+    {
+      "id": "cabin-alt-hi",
+      "section": "AMS",
+      "title": "CABIN ALTITUDE HI",
+      "banner": "red",
+      "steps": [
+        "Crew Oxygen Masks \u00b7\u00b7\u00b7 DON, 100%",
+        "THRUST Levers \u00b7\u00b7\u00b7 IDLE",
+        "SPEED BRAKE Lever \u00b7\u00b7\u00b7 FULL",
+        "Airspeed \u00b7\u00b7\u00b7 MAX APPROPRIATE",
+        "Altitude \u00b7\u00b7\u00b7 10000 ft OR MEA, WHICHEVER IS HIGHER"
+      ]
+    },
+    {
+      "id": "batt-disch",
+      "section": "ELECTRICAL",
+      "title": "BATT DISCHARGING",
+      "banner": "red",
+      "steps": [
+        "ELEC EMER Button \u00b7\u00b7\u00b7 PUSH IN",
+        "RAT Manual Deploy Lever \u00b7\u00b7\u00b7 PULL"
+      ]
+    },
+    {
+      "id": "elec-emerg",
+      "section": "ELECTRICAL",
+      "title": "> ELEC EMERGENCY",
+      "banner": "red",
+      "steps": [
+        "PITCH Switch \u00b7\u00b7\u00b7 ACTUATE MANUALLY"
+      ]
+    },
+    {
+      "id": "apu-fire",
+      "section": "FIRE PROTECTION",
+      "title": "APU FIRE",
+      "banner": "red",
+      "steps": [
+        "APU SHUTOFF Button \u00b7\u00b7\u00b7 PUSH IN"
+      ]
+    },
+    {
+      "id": "eng1-fire",
+      "section": "FIRE PROTECTION",
+      "title": "ENG 1 FIRE",
+      "banner": "red",
+      "steps": [
+        "Autothrottle \u00b7\u00b7\u00b7 DISENGAGE",
+        "Engine 1 THRUST Lever \u00b7\u00b7\u00b7 IDLE",
+        "ENG 1 START/STOP Selector \u00b7\u00b7\u00b7 STOP",
+        "Engine Fire SHUTOFF 1 Button \u00b7\u00b7\u00b7 PUSH IN"
+      ]
+    },
+    {
+      "id": "eng2-fire",
+      "section": "FIRE PROTECTION",
+      "title": "ENG 2 FIRE",
+      "banner": "red",
+      "steps": [
+        "Autothrottle \u00b7\u00b7\u00b7 DISENGAGE",
+        "Engine 2 THRUST Lever \u00b7\u00b7\u00b7 IDLE",
+        "ENG 2 START/STOP Selector \u00b7\u00b7\u00b7 STOP",
+        "Engine Fire SHUTOFF 2 Button \u00b7\u00b7\u00b7 PUSH IN"
+      ]
+    },
+    {
+      "id": "fltctrl-nmode-fail",
+      "section": "FLIGHT CONTROLS",
+      "title": "> FLTCTRL N-MODE FAIL",
+      "banner": "red",
+      "steps": [
+        "PITCH Switch \u00b7\u00b7\u00b7 ACTUATE MANUALLY"
+      ]
+    },
+    {
+      "id": "sidestick-fail",
+      "section": "FLIGHT CONTROLS",
+      "title": "SIDE STICK LH (RH) FAIL",
+      "banner": "red",
+      "steps": [
+        "Cross-Side Sidestick \u00b7\u00b7\u00b7 USE"
+      ]
+    },
+    {
+      "id": "lg-wow",
+      "section": "LANDING GEAR AND BRAKES",
+      "title": "LG WOW MISCOMPARE",
+      "banner": "red",
+      "steps": [
+        "NORMAL MODE Button \u00b7\u00b7\u00b7 PRESS AND RELEASE",
+        "PITCH SWITCH \u00b7\u00b7\u00b7 ACTUATE MANUALLY"
+      ]
+    },
+    {
+      "id": "ai-wingstab",
+      "section": "ICE & RAIN / GEAR",
+      "title": "A-I WINGSTAB LEAK",
+      "banner": "red",
+      "steps": [
+        "Ice Prot WINGSTAB Button \u00b7\u00b7\u00b7 PUSH OUT"
+      ]
+    },
+    {
+      "id": "windshear",
+      "section": "SOPM",
+      "title": "WINDSHEAR WITH FD ESCAPE MANEUVER (Airplanes equipped with Windshear Detection System)",
+      "banner": "black",
+      "steps": [
+        "Thrust Levers \u00b7\u00b7\u00b7 MAX"
+      ]
+    },
+    {
+      "id": "rto",
+      "section": "SOPM",
+      "title": "REJECTED TAKEOFF (At or below V1)",
+      "banner": "black",
+      "steps": [
+        "Thrust Levers \u00b7\u00b7\u00b7 IDLE",
+        "Thrust Reversers \u00b7\u00b7\u00b7 AS REQUIRED",
+        "Brake Pedals \u00b7\u00b7\u00b7 MAX APPLY (If Autobrake is not armed)"
+      ]
+    }
+  ]
+}
