@@ -1,7 +1,7 @@
 {
   "name": "FO Study \u2014 Kerry Wyatt",
   "short_name": "FO Study",
-  "description": "Flexjet FO study framework \u2014 orientation, indoc, Phenom & Praetor shelves",
+  "description": "Flexjet FO study framework \u2014 orientation, indoc, Praetor 500/600 shelves",
   "start_url": "./index.html?layout=wide",
   "scope": "./",
   "display": "standalone",

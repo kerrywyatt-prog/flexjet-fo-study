@@ -18,8 +18,7 @@
   ];
 
   const ACFT = {
-    phenom: { id: 'phenom', name: 'Embraer Phenom 300', short: 'Phenom 300' },
-    praetor: { id: 'praetor', name: 'Embraer Praetor', short: 'Praetor' },
+    praetor: { id: 'praetor', name: 'Embraer Praetor 500/600', short: 'Praetor 500/600' },
   };
 
   const DEFAULT_ADMIN = [
@@ -79,7 +78,6 @@
     const { parts } = parseHash();
     const root = parts[0] || '';
     if (!root) return 'shell shell-home';
-    if (root === 'phenom') return 'shell shell-phenom';
     if (root === 'praetor') return 'shell shell-praetor';
     if (root === 'orientation' || root === 'indoc' || root === 'ritual' || root === 'admin') return 'shell shell-aspire';
     return 'shell shell-home';
@@ -127,8 +125,7 @@ function esc(s) {
     const tiles = [
       { path: '/orientation', icon: '🧭', title: 'New hire / Orientation', desc: 'CLE Days 1–3 · payroll · ops · logistics · expense · MX', cls: '' },
       { path: '/indoc', icon: '📚', title: 'Indoc', desc: 'Ground school capture & encode loop', cls: '' },
-      { path: '/phenom', icon: '✈️', title: 'Embraer Phenom 300', desc: 'Systems shelves · memory · flows', cls: 'gold', bg: 'phenom' },
-      { path: '/praetor', icon: '🛫', title: 'Embraer Praetor', desc: 'Separate track · empty shelves', cls: 'gold', bg: 'praetor' },
+      { path: '/praetor', icon: '🛫', title: 'Embraer Praetor 500/600', desc: 'Systems shelves · memory · flows', cls: 'gold', bg: 'praetor' },
       { path: '/ritual', icon: '⏱️', title: 'Study ritual', desc: '20–30 min daily framework', cls: '' },
       { path: '/admin', icon: '✅', title: 'Admin / open items', desc: 'Checklist with local persistence', cls: '' },
       { path: null, icon: '🃏', title: 'Flashcards', desc: 'Spaced recall deck', stub: 'Coming next' },
@@ -289,7 +286,7 @@ function esc(s) {
               <li><strong>Capture raw</strong> during the day — don’t filter yet.</li>
               <li><strong>Encode nightly</strong> — rewrite into your own words + questions.</li>
               <li><strong>Tag open items</strong> — anything unclear goes to Admin checklist.</li>
-              <li><strong>Link to shelves</strong> — drop systems facts into Phenom / Praetor later.</li>
+              <li><strong>Link to shelves</strong> — drop systems facts into Praetor 500/600 later.</li>
             </ol>
           </div>
         </main>
@@ -593,8 +590,14 @@ function esc(s) {
     if (root === 'ritual') return viewRitual();
     if (root === 'admin') return viewAdmin();
 
-    if (root === 'phenom' || root === 'praetor') {
-      const acKey = root;
+    if (root === 'phenom') {
+      const rest = parts.slice(1).join('/');
+      location.replace('#' + (rest ? '/praetor/' + rest : '/praetor'));
+      return;
+    }
+
+    if (root === 'praetor') {
+      const acKey = 'praetor';
       const section = parts[1];
       if (!section) return viewAircraftHub(acKey);
       if (section === 'systems') {

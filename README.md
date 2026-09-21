@@ -20,11 +20,12 @@ Unlock persists in `sessionStorage` for the browser tab session.
 ## Screens (after unlock)
 1. **New hire / Orientation** — mindset, what to bring, note-taking
 2. **Indoc** — capture / encode / open items + schedule placeholders
-3. **Embraer Phenom 300** — systems shelves, memory, limitations, flows, notes
-4. **Embraer Praetor** — same empty shelf structure (separate track)
-5. **Study ritual** — 20–30 min daily framework
-6. **Admin / open items** — checklist (localStorage; pre-seeded)
-7. Stubs: Flashcards — coming next · Notifications — later
+3. **Embraer Praetor 500/600** — sole aircraft study track (systems shelves, memory, limitations, flows, notes)
+4. **Study ritual** — 20–30 min daily framework
+5. **Admin / open items** — checklist (localStorage; pre-seeded)
+6. Stubs: Flashcards — coming next · Notifications — later
+
+Fleet assignment: Embraer Praetor 500/600 only. Legacy `/phenom` routes redirect to `/praetor`.
 
 ## Rebuild / local serve
 ```bash
