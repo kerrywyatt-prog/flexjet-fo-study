@@ -461,6 +461,9 @@
     { id: 'academy', text: 'Indoc: finish Heather Bey Academy modules (~11) by Sunday for 135 credit', done: false },
     { id: 'sunday50', text: 'Indoc: work ~201Q study guide; Sunday 50Q open-book on Academy iPad', done: false },
     { id: 'flyembraer', text: 'Indoc: download Fly Embraer tech pubs + verify ForeFlight CTH Praetor', done: false },
+    { id: 'everest', text: 'Indoc: Everest Fuel process — sign ticket · gallons in Tailwind (clip 04 captured)', done: true },
+    { id: 'lowertakeoff', text: 'Indoc: verify lower-than-standard takeoff RVR/equipment tables in live OpSpec', done: false },
+    { id: 'foodda', text: 'Indoc: food-safety leftovers rule + D&A 8-hr / random / refusal basics', done: false },
     { id: 'spare-glasses', text: 'If medical requires lenses — carry spare glasses (ramp check)', done: false },
   ];
 
@@ -557,7 +560,7 @@ function esc(s) {
   function viewHome() {
     const tiles = [
       { path: '/orientation', icon: '🧭', title: 'New hire / Orientation', desc: 'CLE Days 1–3 · payroll · ops · logistics · expense · MX', cls: '' },
-      { path: '/indoc', icon: '📚', title: 'Indoc', desc: 'DFW Day 1 · Ops Specs A–E · Academy · Praetor study path', cls: '' },
+      { path: '/indoc', icon: '📚', title: 'Indoc', desc: 'DFW Day 1 (01–06) · Ops Specs A–E · Everest Fuel · Academy · Praetor path', cls: '' },
       { path: '/praetor', icon: '🛫', title: 'Embraer Praetor 500/600', desc: 'Systems shelves · memory · flows', cls: 'gold', bg: 'praetor' },
       { path: '/ritual', icon: '⏱️', title: 'Study ritual', desc: '20–30 min daily framework', cls: '' },
       { path: '/admin', icon: '✅', title: 'Admin / open items', desc: 'Checklist with local persistence', cls: '' },
@@ -730,16 +733,19 @@ function esc(s) {
   const INDOC_AE = {
     a: {
       title: 'A · General',
-      blurb: 'Issuance, aircraft, management, op control, EFB, eligible on-demand, contamination/icing lookups.',
+      blurb: 'Issuance, aircraft, management, op control, EFB, eligible on-demand, contamination/icing, D&A/food-safety hooks.',
       bullets: [
         'Bucket: definitions · authorized aircraft/configs · exemptions · management personnel · operational control · contract training · eligible on-demand · EFBs.',
-        'Op control: only the company initiates/conducts/terminates flights. PIC may delay/cancel/divert/refuse unsafe — not self-dispatch.',
+        'Op control (A006): only the company initiates/conducts/terminates flights. PIC may delay/cancel/divert/refuse unsafe — not self-dispatch. Class list: Jim Dunn · Doug Leitkamp (?) · Tim Monti · Joe Scott (+ delegates).',
+        'Legal stack: legal crew (employee/agent, current 293/297/299/annual) · legal aircraft (CAMP, MEL/CDL, Form 501, exclusive possession) · legal pax (TSA/APIS; 135 photo ID) · legal flight (A006 initiator + specific aircraft/PIC/SIC in Tailwind).',
+        'Driver story: Platinum Jet / Darby (Teterboro) freelancers on another certificate — why these rules exist.',
         'EFB: Type A (general docs) vs Type B (ForeFlight charts/taxi). Databases current; EFB care in FOM. Ramp-check ready.',
         'High-mins: do not pair A+B. High-mins ≈100 hrs type; B pairing floor ≈75 hrs captain — speak up if wrong.',
         'Always fly/duty as 135 even if release says 91 repo. Flexjet/POI killed 91 duty loopholes.',
         'Alcohol (135): served by company employee. Hold stowage/safety lines; write continuity notes.',
         'Contamination / ground icing: open-book opspec lookup (A041 family named in class). Must be covered on 8410 oral.',
-        'Records + load manifest tools live in ForeFlight / Tailwind / company systems.',
+        'Flight locating: Global Ops tracks IFR/VFR via ATC feed; VFR intent notify; C077 family (~50 NM theme — verify).',
+        'D&A + food safety + MedAire programs briefed Day 1 — durable process (see Must lock).',
       ],
     },
     b: {
@@ -755,7 +761,7 @@ function esc(s) {
     },
     c: {
       title: 'C · Terminal',
-      blurb: 'DAAP, approach/takeoff/alternate mins, foreign procedures, specials, visual/VFR.',
+      blurb: 'DAAP, approach/takeoff/alternate mins, foreign procedures, specials, visual/VFR, lower-than-standard takeoff.',
       bullets: [
         'C49 DAAP — required when landing RVR below 4000 or vis below 3/4 SM, contaminated runway, braking less than good, xwind over 15 kt, wind shear, or PIC deems necessary.',
         'C51 foreign terminal instrument procedures / RVR conversion / lighting.',
@@ -763,30 +769,33 @@ function esc(s) {
         'C54 approach/landing limits + high-mins PIC; PIC must be qualified for <¾ SM / RVR 4000 approaches.',
         'C55 alternate mins — use the table; chart NA = cannot use as alternate.',
         'C57 IFR takeoff mins — standard 1 SM / RVR 5000; lower when authorized + TDZ RVR available.',
+        'NEW: lower-than-standard takeoff path ~500 RVR (135) / ~600 (91K) with required lights/equipment; two-pilot + trained; SIC 100-in-type to manipulate — verify live OpSpec.',
         'Also touched: C63 RNP AR · C64 Class B no tower (missed + approved wx + advisories) · C73 VDAP/CDFA · C75 CAT I · C77 visual/cancel IFR.',
         'Dispatchers are opspec-fluent — use them.',
       ],
     },
     d: {
       title: 'D · Maint',
-      blurb: 'Outline label locked Day 1. Durable MX procedures = later Indoc / CLE MX notes — do not invent MEL/CDL here.',
+      blurb: 'CAMP/Form 501/ferry/FCF hooks from Day 1. MEL/CDL deep dive still later — do not invent.',
       bullets: [
-        'Board bucket D = Maintenance opspecs. Day 1 audio mostly navigated the PDF — few durable MX procedures locked.',
-        'Airworthiness/status docs ride with the certificate package in ForeFlight.',
+        'Board bucket D = Maintenance opspecs. Day 1 now has usable hooks (not empty label-only).',
+        'Airworthiness/status via CAMP; discrepancies via Form 501.',
+        'Special flight / ferry permits + functional check flights after MX (Indoc qualifies; some need test pilot). Ferry permit in ForeFlight; not for AD-grounded aircraft.',
         'Line discrepancies still: MX controllers via ops/GCC (CLE Day 3) — 4-letter ID + tail.',
         'Aircraft weigh program ties to W&B (every 36 months — verify paragraph).',
-        'Shelf status: from Day 1 lecture = label only · TBD for MEL/CDL/AOG Indoc deep dive.',
+        'Shelf status: partially filled Day 1 · MEL/CDL deep dive TBD later days.',
       ],
     },
     e: {
       title: 'E · W&B',
-      blurb: 'Electronic W&B, average weights, Tailwind push/save, captain final fuel.',
+      blurb: 'Electronic W&B, average weights, Tailwind push/save, captain final fuel, Everest Fuel process.',
       bullets: [
         'Aircraft weighed every 36 months (program/opspec — verify live docs).',
         'Electronic W&B in ForeFlight; small-cabin standard average passenger weights; longhand backup exists in program.',
         'Load manifest: pax count, total weight, MTOW check, CG limits — ForeFlight + Tailwind.',
         'Flight plans + W&B built/pushed to crew. Recent rule: once saved, partner device sees it — no separate send (confirm current SOP).',
-        'Captain confirms final fuel. Everest Fuel brief was Day 1 @ 13:00 — content not on Plaud 01/02 (open item).',
+        'Captain confirms final fuel. Everest Fuel (Day 1 clip 04): contract FBOs — sign ticket · gallons in Tailwind; non-contract — card on field release; Multi-Service card on aircraft backup (~1%).',
+        'Preferred FBO airport-specific (Signature common, not universal). Tankering software currently glitched — captain mission judgment. Report bad fueling / contamination.',
       ],
     },
   };
@@ -798,7 +807,7 @@ function esc(s) {
         <main class="content">
           <div class="card">
             <h3><span class="dot"></span>Mon Sep 21, 2026 · CAE Dallas West</h3>
-            <p>Dense capture from Plaud + whiteboard. Ops Specs spine = <strong>A General · B Enroute · C Term · D Maint · E W&B</strong> (mnemonic: Get More Whiskey And Beer). Know <em>where</em> to find answers. Memory items + limitations = closed-book.</p>
+            <p>Dense capture from Plaud 01–06 (~208 min) + whiteboard. Ops Specs spine = <strong>A General · B Enroute · C Term · D Maint · E W&B</strong> (mnemonic: Get More Whiskey And Beer). Know <em>where</em> to find answers. Memory items + limitations = closed-book.</p>
             <div class="note">Praetor 500/600 track only. Phenom/Challenger appear as fleet types in Indoc overview — no Phenom shelves.</div>
           </div>
 
@@ -806,16 +815,22 @@ function esc(s) {
             <h3><span class="dot"></span>Must lock — Day 1</h3>
             <ul>
               <li><strong>CTH first:</strong> ForeFlight Praetor 500/600 Crew Training Handbook (~80 pp) ≈ 99% of type prep (memory · limitations · systems Qs). <strong>CFM</strong> for flows/profiles/checklist usage. AFM later via Fly Embraer — don’t AFM-cram early.</li>
+              <li><strong>Aircrew Training Manual:</strong> Flexjet Docs → Training &amp; Checking → Instructor/Check Airman → ATM → type appendix (curriculum map).</li>
               <li><strong>Sunday 50Q:</strong> open-book on Flexjet Academy (iPad). Prep from ~201Q study guide. Gerald (135 mgr) writes wording gotchas.</li>
               <li><strong>Academy ~11 modules:</strong> Heather Bey assign · required for 135 credit · done by Sunday. academy.flexjet.com · Flexjet email · pw <code>Flexjet1</code> (change first login). Issues → heather.bey@flexjet.com</li>
               <li><strong>Security/TSA test</strong> later in week (~15Q) — separate from Sunday exam.</li>
               <li><strong>Duty always 135:</strong> 14 duty / 10 fly / 10 rest (two-pilot). Tailwind tracks; speak up if reality breaks plan. Non-local deadhead ≠ rest.</li>
+              <li><strong>Op control:</strong> company only initiates/conducts/terminates. Legal crew+aircraft+pax+flight. A006 names from class (verify spelling). Platinum Jet/Darby lesson.</li>
+              <li><strong>Everest Fuel:</strong> contract FBO — sign ticket · gallons in Tailwind. Non-contract — release card; Multi-Service backup on aircraft. Report bad fueling. Tankering SW glitched — captain judgment.</li>
+              <li><strong>Lower T/O mins:</strong> ~500 RVR (135) / ~600 (91K) class numbers — verify OpSpec. SIC 100-in-type to manipulate.</li>
+              <li><strong>Ferry / FCF:</strong> OpSpec D permits in ForeFlight; not AD-grounded; Indoc qualifies many FCFs — call MX if unsure.</li>
+              <li><strong>Pax ID / brief:</strong> 135 photo ID ≥18; prefer face-to-face over PA; seatbelt culture; Real ID / enhanced DL states named in class.</li>
+              <li><strong>Food safety:</strong> keep cold; danger zone ~41–140°F; leftovers = give away/trash; never reheat twice.</li>
+              <li><strong>D&amp;A:</strong> 8-hr bottle-to-throttle; random via Safety; leave site = refusal; ≥0.04 path + FAA; meds via AME/company.</li>
               <li><strong>High-mins:</strong> no A+B pair; ~100 hrs high-mins; ~75 hrs B floor.</li>
-              <li><strong>Priorities:</strong> Safety → Compliance → Customer service. Op control = company initiates.</li>
+              <li><strong>Priorities:</strong> Safety → Compliance → Customer service.</li>
               <li><strong>ASAP:</strong> both pilots file → company + FAA/POI. Not obligated to call ATC deviation phone if ASAP filed. No shield for intentional/careless/D&amp;A.</li>
-              <li><strong>Medical:</strong> first-class only; by 25th of expiration month. Spare glasses if required on medical.</li>
-              <li><strong>Temp type cert:</strong> 120 days — chase plastic early. Jim Dunn / training if stuck.</li>
-              <li><strong>Confidentiality</strong> of clients; PIC↔SIC ID check; badge left; iPad case on.</li>
+              <li><strong>Medical:</strong> first-class only; by 25th of expiration month. Spare glasses if required on medical. Temp type cert 120 days — chase plastic early.</li>
               <li><strong>FO:</strong> left seat; log SIC until designated captain; 100 hrs in type to manipulate controls (opspec — verify FOM).</li>
             </ul>
           </div>
@@ -827,7 +842,7 @@ function esc(s) {
               <li><strong>Heather Bey</strong> — heather.bey@flexjet.com</li>
               <li><strong>Tech Pubs</strong> — technicalpublications@flexjet.com</li>
               <li><strong>CAE Wi‑Fi</strong> — <code>A1rbr8ke</code></li>
-              <li>Also named: Gerald (135 mgr) · Jim Dunn (DOT) · Joe Scott (CP) · Tim Montie (DO) · Doug Lightcap (?) · POI Jeff Carlson/Piles (?)</li>
+              <li>Also named: Gerald (135 mgr) · Jim Dunn (DOT) · Joe Scott (CP) · Tim Monti (DO) · Doug Leitkamp (?) · Everest Fuel presenter · Brandon (Everest audits) · Scott (watching Day 2+) · POI Jeff Carlson/Piles (?)</li>
             </ul>
           </div>
 
@@ -867,8 +882,8 @@ function esc(s) {
             <ul>
               <li>Academy modules + Sunday 50Q prep</li>
               <li>Fly Embraer download/login · verify CTH in ForeFlight</li>
-              <li>Everest Fuel 13:00 brief missing from Plaud 01/02 — capture if clip appears</li>
-              <li>Confirm W&amp;B save-vs-send SOP · POI spelling · official type-travel email</li>
+              <li><s>Everest Fuel 13:00 brief</s> — captured clip 04</li>
+              <li>Confirm W&amp;B save-vs-send SOP · POI spelling · lower-T/O tables in live OpSpec · official type-travel email</li>
             </ul>
           </div>
 
