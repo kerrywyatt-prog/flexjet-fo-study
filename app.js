@@ -69,6 +69,10 @@
     { id: 'uniform', text: 'Submit uniform order — A Cut Above after fitting; update shipping; bomber email if needed', done: false },
     { id: 'concur', text: 'Wait for Concur email; finish MFA (Authenticator path)', done: false },
     { id: 'rental', text: 'Photo rental-car corporate codes; keep DL + preferred current', done: false },
+    { id: 'academy', text: 'Indoc: finish Heather Bey Academy modules (~11) by Sunday for 135 credit', done: false },
+    { id: 'sunday50', text: 'Indoc: work ~201Q study guide; Sunday 50Q open-book on Academy iPad', done: false },
+    { id: 'flyembraer', text: 'Indoc: download Fly Embraer tech pubs + verify ForeFlight CTH Praetor', done: false },
+    { id: 'spare-glasses', text: 'If medical requires lenses — carry spare glasses (ramp check)', done: false },
   ];
 
   const $ = (sel, el = document) => el.querySelector(sel);
@@ -164,7 +168,7 @@ function esc(s) {
   function viewHome() {
     const tiles = [
       { path: '/orientation', icon: '🧭', title: 'New hire / Orientation', desc: 'CLE Days 1–3 · payroll · ops · logistics · expense · MX', cls: '' },
-      { path: '/indoc', icon: '📚', title: 'Indoc', desc: 'Ground school capture & encode loop', cls: '' },
+      { path: '/indoc', icon: '📚', title: 'Indoc', desc: 'DFW Day 1 · Ops Specs A–E · Academy · Praetor study path', cls: '' },
       { path: '/praetor', icon: '🛫', title: 'Embraer Praetor 500/600', desc: 'Systems shelves · memory · flows', cls: 'gold', bg: 'praetor' },
       { path: '/ritual', icon: '⏱️', title: 'Study ritual', desc: '20–30 min daily framework', cls: '' },
       { path: '/admin', icon: '✅', title: 'Admin / open items', desc: 'Checklist with local persistence', cls: '' },
@@ -334,50 +338,171 @@ function esc(s) {
     bindNav();
   }
 
+  const INDOC_AE = {
+    a: {
+      title: 'A · General',
+      blurb: 'Issuance, aircraft, management, op control, EFB, eligible on-demand, contamination/icing lookups.',
+      bullets: [
+        'Bucket: definitions · authorized aircraft/configs · exemptions · management personnel · operational control · contract training · eligible on-demand · EFBs.',
+        'Op control: only the company initiates/conducts/terminates flights. PIC may delay/cancel/divert/refuse unsafe — not self-dispatch.',
+        'EFB: Type A (general docs) vs Type B (ForeFlight charts/taxi). Databases current; EFB care in FOM. Ramp-check ready.',
+        'High-mins: do not pair A+B. High-mins ≈100 hrs type; B pairing floor ≈75 hrs captain — speak up if wrong.',
+        'Always fly/duty as 135 even if release says 91 repo. Flexjet/POI killed 91 duty loopholes.',
+        'Alcohol (135): served by company employee. Hold stowage/safety lines; write continuity notes.',
+        'Contamination / ground icing: open-book opspec lookup (A041 family named in class). Must be covered on 8410 oral.',
+        'Records + load manifest tools live in ForeFlight / Tailwind / company systems.',
+      ],
+    },
+    b: {
+      title: 'B · Enroute',
+      blurb: 'Airspace, RNAV/RNP, LRNS, oceanic, RVSM, overwater — know the bucket, search the paragraph.',
+      bullets: [
+        'Bucket: areas of enroute ops · equipment authorizations · RNAV/RNP · Class A LRN · oceanic · RVSM · overwater LRNS.',
+        'Lecture map (verify live docs): B31 areas; B33 IFR enroute; B34 RNAV/RNP; B35 Class A LRN; B36 Oceania/LRN tables; B46 RVSM.',
+        'Not approved into northern “keyhole” domestic airspace (Yellowknife-area example). Dispatch knows — don’t freestyle.',
+        'Proving runs largely complete; weird airports still go through dispatch/opspecs.',
+        'Oceanic / LRNS detail flagged for later Indoc block — shelf stays light until then.',
+      ],
+    },
+    c: {
+      title: 'C · Terminal',
+      blurb: 'DAAP, approach/takeoff/alternate mins, foreign procedures, specials, visual/VFR.',
+      bullets: [
+        'C49 DAAP — required when landing RVR below 4000 or vis below 3/4 SM, contaminated runway, braking less than good, xwind over 15 kt, wind shear, or PIC deems necessary.',
+        'C51 foreign terminal instrument procedures / RVR conversion / lighting.',
+        'C52 CAT I lighting/RVR: TDZ controlling; mid+rollout advisory; still need two RVR sources when required. Verify chart numbers — don’t memorize ASR figures.',
+        'C54 approach/landing limits + high-mins PIC; PIC must be qualified for <¾ SM / RVR 4000 approaches.',
+        'C55 alternate mins — use the table; chart NA = cannot use as alternate.',
+        'C57 IFR takeoff mins — standard 1 SM / RVR 5000; lower when authorized + TDZ RVR available.',
+        'Also touched: C63 RNP AR · C64 Class B no tower (missed + approved wx + advisories) · C73 VDAP/CDFA · C75 CAT I · C77 visual/cancel IFR.',
+        'Dispatchers are opspec-fluent — use them.',
+      ],
+    },
+    d: {
+      title: 'D · Maint',
+      blurb: 'Outline label locked Day 1. Durable MX procedures = later Indoc / CLE MX notes — do not invent MEL/CDL here.',
+      bullets: [
+        'Board bucket D = Maintenance opspecs. Day 1 audio mostly navigated the PDF — few durable MX procedures locked.',
+        'Airworthiness/status docs ride with the certificate package in ForeFlight.',
+        'Line discrepancies still: MX controllers via ops/GCC (CLE Day 3) — 4-letter ID + tail.',
+        'Aircraft weigh program ties to W&B (every 36 months — verify paragraph).',
+        'Shelf status: from Day 1 lecture = label only · TBD for MEL/CDL/AOG Indoc deep dive.',
+      ],
+    },
+    e: {
+      title: 'E · W&B',
+      blurb: 'Electronic W&B, average weights, Tailwind push/save, captain final fuel.',
+      bullets: [
+        'Aircraft weighed every 36 months (program/opspec — verify live docs).',
+        'Electronic W&B in ForeFlight; small-cabin standard average passenger weights; longhand backup exists in program.',
+        'Load manifest: pax count, total weight, MTOW check, CG limits — ForeFlight + Tailwind.',
+        'Flight plans + W&B built/pushed to crew. Recent rule: once saved, partner device sees it — no separate send (confirm current SOP).',
+        'Captain confirms final fuel. Everest Fuel brief was Day 1 @ 13:00 — content not on Plaud 01/02 (open item).',
+      ],
+    },
+  };
+
   function viewIndoc() {
     app.innerHTML = `
       <div class="${shellClass()}">
-        ${topbar('Indoc', 'Home', '/')}
+        ${topbar('Indoc · DFW Day 1', 'Home', '/')}
         <main class="content">
           <div class="card">
-            <h3><span class="dot"></span>Ground school framework</h3>
-            <p>Indoc / ground school is where you build the mental model. Use a daily loop: capture → encode → quiz yourself → park open items.</p>
+            <h3><span class="dot"></span>Mon Sep 21, 2026 · CAE Dallas West</h3>
+            <p>Dense capture from Plaud + whiteboard. Ops Specs spine = <strong>A General · B Enroute · C Term · D Maint · E W&B</strong> (mnemonic: Get More Whiskey And Beer). Know <em>where</em> to find answers. Memory items + limitations = closed-book.</p>
+            <div class="note">Praetor 500/600 track only. Phenom/Challenger appear as fleet types in Indoc overview — no Phenom shelves.</div>
           </div>
-          <p class="section-label">Daily loop</p>
-          <div class="steps">
-            <div class="step">
-              <div class="step-num">1</div>
-              <div>
-                <h4>Capture</h4>
-                <p>During class: keywords, diagrams, “why it matters,” instructor emphasis.</p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-num">2</div>
-              <div>
-                <h4>Encode</h4>
-                <p>Same night: rewrite in your words. One page max per major topic.</p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-num">3</div>
-              <div>
-                <h4>Open items</h4>
-                <p>Anything fuzzy → Admin checklist or Personal notes on the jet shelf.</p>
-              </div>
-            </div>
-          </div>
-          <p class="section-label">Schedule placeholders</p>
+
           <div class="card">
-            <h3><span class="dot"></span>Generic week skeleton</h3>
+            <h3><span class="dot"></span>Must lock — Day 1</h3>
             <ul>
-              <li><strong>Day 1–2:</strong> Company / ops overview · admin · expectations</li>
-              <li><strong>Day 3–5:</strong> Aircraft systems block (placeholder)</li>
-              <li><strong>Midweek:</strong> Procedures / flows orientation (placeholder)</li>
-              <li><strong>Late week:</strong> Performance / limitations review (placeholder)</li>
-              <li><strong>Ongoing:</strong> Nightly encode + 20–30 min Study ritual</li>
+              <li><strong>CTH first:</strong> ForeFlight Praetor 500/600 Crew Training Handbook (~80 pp) ≈ 99% of type prep (memory · limitations · systems Qs). <strong>CFM</strong> for flows/profiles/checklist usage. AFM later via Fly Embraer — don’t AFM-cram early.</li>
+              <li><strong>Sunday 50Q:</strong> open-book on Flexjet Academy (iPad). Prep from ~201Q study guide. Gerald (135 mgr) writes wording gotchas.</li>
+              <li><strong>Academy ~11 modules:</strong> Heather Bey assign · required for 135 credit · done by Sunday. academy.flexjet.com · Flexjet email · pw <code>Flexjet1</code> (change first login). Issues → heather.bey@flexjet.com</li>
+              <li><strong>Security/TSA test</strong> later in week (~15Q) — separate from Sunday exam.</li>
+              <li><strong>Duty always 135:</strong> 14 duty / 10 fly / 10 rest (two-pilot). Tailwind tracks; speak up if reality breaks plan. Non-local deadhead ≠ rest.</li>
+              <li><strong>High-mins:</strong> no A+B pair; ~100 hrs high-mins; ~75 hrs B floor.</li>
+              <li><strong>Priorities:</strong> Safety → Compliance → Customer service. Op control = company initiates.</li>
+              <li><strong>ASAP:</strong> both pilots file → company + FAA/POI. Not obligated to call ATC deviation phone if ASAP filed. No shield for intentional/careless/D&amp;A.</li>
+              <li><strong>Medical:</strong> first-class only; by 25th of expiration month. Spare glasses if required on medical.</li>
+              <li><strong>Temp type cert:</strong> 120 days — chase plastic early. Jim Dunn / training if stuck.</li>
+              <li><strong>Confidentiality</strong> of clients; PIC↔SIC ID check; badge left; iPad case on.</li>
+              <li><strong>FO:</strong> left seat; log SIC until designated captain; 100 hrs in type to manipulate controls (opspec — verify FOM).</li>
             </ul>
-            <div class="note">Replace placeholders with your actual training calendar — no proprietary schedule content here.</div>
+          </div>
+
+          <div class="card">
+            <h3><span class="dot"></span>People / logistics</h3>
+            <ul>
+              <li><strong>Mike Sliva</strong> — mike.sliva@flexjet.com · m 469-578-3665</li>
+              <li><strong>Heather Bey</strong> — heather.bey@flexjet.com</li>
+              <li><strong>Tech Pubs</strong> — technicalpublications@flexjet.com</li>
+              <li><strong>CAE Wi‑Fi</strong> — <code>A1rbr8ke</code></li>
+              <li>Also named: Gerald (135 mgr) · Jim Dunn (DOT) · Joe Scott (CP) · Tim Montie (DO) · Doug Lightcap (?) · POI Jeff Carlson/Piles (?)</li>
+            </ul>
+          </div>
+
+          <p class="section-label">Ops Specs A–E · tap for dense shelf</p>
+          <div class="shelf-list">
+            ${Object.entries(INDOC_AE).map(([k, v]) => `
+              <button type="button" class="shelf-item" data-nav="/indoc/${k}">
+                <span class="name">${esc(v.title)}</span>
+                <span class="meta">${esc(v.blurb.slice(0, 48))}…</span>
+                ${svg('chev')}
+              </button>`).join('')}
+          </div>
+
+          <div class="card">
+            <h3><span class="dot"></span>Praetor study path (from Day 1)</h3>
+            <ul>
+              <li><strong>Now:</strong> CTH memory items + limitations + callouts + normal takeoff/ILS flows from expanded CFM.</li>
+              <li><strong>IPT / Systems Integration:</strong> free-play after hours if CAE customers aren’t using; paper-tiger poster in hotel.</li>
+              <li><strong>Sims:</strong> ~6 + check · ~4h sessions · ~5h check. Scenario orals with cockpit poster — show switchology.</li>
+              <li><strong>500 vs 600:</strong> study as identical systems; match the SIM you are assigned.</li>
+              <li>Link facts into <strong>Praetor shelves</strong> as ground school fills them — empty systems OK until lecture says so.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3><span class="dot"></span>Open items</h3>
+            <ul>
+              <li>Academy modules + Sunday 50Q prep</li>
+              <li>Fly Embraer download/login · verify CTH in ForeFlight</li>
+              <li>Everest Fuel 13:00 brief missing from Plaud 01/02 — capture if clip appears</li>
+              <li>Confirm W&amp;B save-vs-send SOP · POI spelling · official type-travel email</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3><span class="dot"></span>Daily encode loop</h3>
+            <ol>
+              <li>Capture raw in class.</li>
+              <li>Encode same night into A–E shelves + Praetor notes.</li>
+              <li>Park fuzzy items on Admin checklist.</li>
+              <li>Quiz: “Which opspec bucket?” before memorizing paragraph numbers.</li>
+            </ol>
+          </div>
+        </main>
+      </div>`;
+    bindNav();
+  }
+
+  function viewIndocShelf(key) {
+    const shelf = INDOC_AE[key];
+    if (!shelf) return viewIndoc();
+    app.innerHTML = `
+      <div class="${shellClass()}">
+        ${topbar(shelf.title, 'Indoc', '/indoc')}
+        <main class="content">
+          <div class="card">
+            <h3><span class="dot"></span>${esc(shelf.title)}</h3>
+            <p>${esc(shelf.blurb)}</p>
+            <div class="note">From Indoc Day 1 lecture + board. Verify live Ops Specs / FOM before checkride. Empty detail = TBD later day.</div>
+          </div>
+          <div class="card">
+            <ul>
+              ${shelf.bullets.map(b => `<li>${esc(b)}</li>`).join('')}
+            </ul>
           </div>
         </main>
       </div>`;
@@ -400,11 +525,26 @@ function esc(s) {
         ${topbar(ac.short, 'Aircraft', '/')}
         <main class="content">
           <div class="hero" style="margin-bottom:12px">
-            <div class="eyebrow">Empty shelves</div>
+            <div class="eyebrow">Praetor track · Indoc Day 1 seeded</div>
             <h2 style="font-size:1.35rem">${esc(ac.name)}</h2>
-            <p>Add your own study content later. Nothing proprietary preloaded.</p>
+            <p>Study path from Day 1: CTH (memory/limitations/systems Qs) → CFM flows → IPT → sims. Systems shelves stay empty until lecture fills them — no invented AFM facts.</p>
+          </div>
+          <div class="card" style="margin-bottom:12px">
+            <h3><span class="dot"></span>Day 1 study path</h3>
+            <ul>
+              <li><strong>CTH ~80 pp</strong> in ForeFlight = primary closed-book prep</li>
+              <li><strong>CFM</strong> expanded flows / callouts / normal takeoff &amp; ILS</li>
+              <li><strong>Ops Specs A–E</strong> open-book navigation → Indoc shelves</li>
+              <li><strong>Fly Embraer</strong> tech pubs for AFM depth after ground school starts</li>
+              <li>500/600 systems treated identical for study; match assigned SIM</li>
+            </ul>
           </div>
           <div class="shelf-list">
+            <button type="button" class="shelf-item" data-nav="/indoc">
+              <span class="name">Indoc Ops Specs A–E</span>
+              <span class="meta">Day 1 dense</span>
+              ${svg('chev')}
+            </button>
             ${shelves.map(s => `
               <button type="button" class="shelf-item" data-nav="${s.path}">
                 <span class="name">${esc(s.title)}</span>
@@ -446,8 +586,9 @@ function esc(s) {
         <main class="content">
           <div class="empty-shelf">
             <div class="icon">📭</div>
-            <h3>Add content later</h3>
-            <p>This shelf is intentionally empty. Drop in your own summaries, diagrams, and cues from official training materials when you are ready.</p>
+            <h3>Encode after lecture</h3>
+            <p>Day 1 direction: closed-book items from Praetor <strong>CTH</strong>; flows from <strong>CFM</strong>. Systems facts only after ground school says so — no invented AFM numbers.</p>
+            <p style="margin-top:10px;color:var(--text-mute);font-size:0.9rem">IAI flashcards = home · Flashcards. Ops Specs A–E = Indoc.</p>
           </div>
         </main>
       </div>`;
@@ -772,7 +913,10 @@ function esc(s) {
 
     if (!root) return viewHome();
     if (root === 'orientation') return viewOrientation();
-    if (root === 'indoc') return viewIndoc();
+    if (root === 'indoc') {
+      if (parts[1] && INDOC_AE[parts[1]]) return viewIndocShelf(parts[1]);
+      return viewIndoc();
+    }
     if (root === 'ritual') return viewRitual();
     if (root === 'admin') return viewAdmin();
     if (root === 'flashcards') return viewFlashcards();
