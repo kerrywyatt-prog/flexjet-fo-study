@@ -1,0 +1,41 @@
+name: Fleet last-known poll
+
+on:
+  schedule:
+    # Every 20 minutes — respects ADSB.lol by sequential type queries + sleep in script
+    - cron: "*/20 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fleet-last-known
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Poll ADSB.lol and merge last-known
+        run: python3 scripts/update-fleet-last-known.py
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- data/fleet-last-known.json; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git config user.name "flexjet-fleet-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/fleet-last-known.json
+          git commit -m "chore(fleet): update last-known Praetor positions from ADSB.lol"
+          git push
