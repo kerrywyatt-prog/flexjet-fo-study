@@ -498,6 +498,27 @@
     return icons[name] || '';
   }
 
+  async function hardReload() {
+    const button = $('[data-reload]');
+    if (button) {
+      button.disabled = true;
+      button.textContent = 'Reloading…';
+    }
+    try {
+      if ('serviceWorker' in navigator) {
+        const registrations = await navigator.serviceWorker.getRegistrations();
+        await Promise.all(registrations.map(registration => registration.unregister()));
+      }
+    } catch {}
+    try {
+      if ('caches' in window && typeof window.caches.keys === 'function') {
+        const keys = await window.caches.keys();
+        await Promise.all(keys.map(key => window.caches.delete(key)));
+      }
+    } catch {}
+    location.reload();
+  }
+
   function topbar(title, crumb, backTo) {
     return `
       <header class="topbar">
@@ -506,6 +527,7 @@
           ${crumb ? `<div class="crumb">${esc(crumb)}</div>` : ''}
           <h1>${esc(title)}</h1>
         </div>
+        <button class="btn btn-ghost reload" type="button" data-reload aria-label="Reload app">Reload</button>
       </header>`;
   }
 
@@ -645,8 +667,15 @@ function esc(s) {
     const button = $('#fleet-refresh');
     if (!button) return;
     const remaining = Math.max(0, Math.ceil((fleetLastRequestAt + FLEET_REFRESH_MS - Date.now()) / 1000));
-    button.disabled = fleetLoading || remaining > 0;
-    button.textContent = fleetLoading ? 'Refreshing…' : remaining > 0 ? `Refresh (${remaining}s)` : 'Refresh';
+    button.disabled = fleetLoading;
+    button.textContent = fleetLoading ? 'Refreshing…' : 'Refresh';
+    button.setAttribute('aria-busy', fleetLoading ? 'true' : 'false');
+    const hint = $('#fleet-refresh-hint');
+    if (hint) hint.textContent = fleetLoading
+      ? 'Fetching latest public ADS-B…'
+      : remaining > 0
+        ? `Auto-refresh in ${remaining}s · manual refresh available`
+        : 'Manual refresh available';
   }
 
   function setFleetState(message, kind = '') {
@@ -774,11 +803,6 @@ function esc(s) {
 
   async function loadFleetMapData() {
     if (!isFleetRoute() || fleetLoading) return;
-    const elapsed = Date.now() - fleetLastRequestAt;
-    if (fleetLastRequestAt && elapsed < FLEET_REFRESH_MS) {
-      updateFleetRefreshButton();
-      return;
-    }
     fleetLoading = true;
     fleetLastRequestAt = Date.now();
     updateFleetRefreshButton();
@@ -914,6 +938,7 @@ function esc(s) {
             <span class="fleet-status-badge loading" id="fleet-status-badge">Loading</span>
             <span id="fleet-updated">Last updated: —</span>
             <span>Auto-refresh: 90 sec</span>
+            <span class="fleet-refresh-hint" id="fleet-refresh-hint">Manual refresh available</span>
           </div>
           <div class="fleet-fallback" id="fleet-fallback" role="alert" hidden></div>
           <div class="fleet-state loading" id="fleet-state" role="status">Loading public ADS-B positions…</div>
@@ -1655,6 +1680,9 @@ function esc(s) {
   function bindNav() {
     app.querySelectorAll('[data-nav]').forEach(el => {
       el.addEventListener('click', () => go(el.getAttribute('data-nav')));
+    });
+    app.querySelectorAll('[data-reload]').forEach(el => {
+      el.addEventListener('click', hardReload);
     });
   }
 
