@@ -1,0 +1,91 @@
+{
+  "updated_at": "2026-09-22T01:35:45Z",
+  "source": "ADSB.lol public type queries (cumulative last-known)",
+  "notes": [
+    "Keyed by Mode-S hex when available, else registration.",
+    "Live polls update last_seen/position; aircraft not visible keep prior last-known.",
+    "Seeded initially from fleet-map-snapshot.json; GitHub Action grows this file over time."
+  ],
+  "last_poll": {
+    "at": "2026-09-22T01:35:45Z",
+    "live_count": 2,
+    "stored_count": 4,
+    "errors": [
+      "E550: HTTP Error 429: Too Many Requests"
+    ]
+  },
+  "aircraft": {
+    "a4eafd": {
+      "hex": "a4eafd",
+      "registration": "N416FX",
+      "type": "E545",
+      "model": "Praetor 500",
+      "callsign": "LXJ416",
+      "lat": 39.579306,
+      "lon": -104.848999,
+      "alt_baro": "ground",
+      "alt_geom": null,
+      "gs": 0.0,
+      "track": null,
+      "true_heading": 270.0,
+      "mag_heading": null,
+      "last_seen": "2026-09-22T01:17:55.439753Z",
+      "status": "last_known",
+      "source": "seeded from fleet-map-snapshot.json"
+    },
+    "a568e8": {
+      "hex": "a568e8",
+      "registration": "N448FX",
+      "type": "E545",
+      "model": "Praetor 500",
+      "callsign": "LXJ448",
+      "lat": 42.139801,
+      "lon": -81.257879,
+      "alt_baro": 45000,
+      "alt_geom": 46475,
+      "gs": 499.5,
+      "track": 87.48,
+      "true_heading": null,
+      "mag_heading": null,
+      "last_seen": "2026-09-22T01:35:45Z",
+      "status": "live",
+      "source": "ADSB.lol type query"
+    },
+    "a3a8f5": {
+      "hex": "a3a8f5",
+      "registration": "N335FX",
+      "type": "E545",
+      "model": "Praetor 500",
+      "callsign": "LXJ335",
+      "lat": 32.48606,
+      "lon": -78.198049,
+      "alt_baro": 43000,
+      "alt_geom": 45000,
+      "gs": 422.5,
+      "track": 200.79,
+      "true_heading": null,
+      "mag_heading": null,
+      "last_seen": "2026-09-22T01:35:45Z",
+      "status": "live",
+      "source": "ADSB.lol type query"
+    },
+    "a7c7d2": {
+      "hex": "a7c7d2",
+      "registration": "N600FX",
+      "type": "E550",
+      "model": "Praetor 600",
+      "callsign": "LXJ600",
+      "lat": 40.638428,
+      "lon": -103.46156,
+      "alt_baro": 24550,
+      "alt_geom": 25700,
+      "gs": 396.9,
+      "track": 266.24,
+      "true_heading": null,
+      "mag_heading": null,
+      "last_seen": "2026-09-22T01:17:55.439753Z",
+      "status": "last_known",
+      "source": "seeded from fleet-map-snapshot.json"
+    }
+  }
+}

@@ -1,0 +1,1049 @@
+{
+  "title": "Flexjet US Praetor / EMB-545 + EMB-550 roster (public sources only)",
+  "built_at": "2026-09-22T01:33:46Z",
+  "notes": [
+    "Honest incomplete roster \u2014 registrations cited from public FAA mirrors and ADS-B databases only; no invented tails.",
+    "FAA model EMB-545/EMB-550 covers Legacy and Praetor families; live map filter still requires LXJ callsign + E545/E550.",
+    "Mode-S hex included only when observed in ADSB.lol or listed on flightdb.net \u2014 never fabricated.",
+    "Source page aircraftdata.org/reg-name/flexjet-llc/ mirrors FAA Aircraft Registry and may lag official Flexjet dispatch/Tailwind lists.",
+    "Full official fleet reconciliation may take a second pass."
+  ],
+  "counts": {
+    "total": 66,
+    "E545": 53,
+    "E550": 13,
+    "with_hex": 13
+  },
+  "aircraft": [
+    {
+      "registration": "N265FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N267FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N274FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N275FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N279FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N281FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N316FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N318FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N319FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N325FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N335FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a3a8f5",
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "ADSB.lol snapshot",
+          "url": "https://api.adsb.lol",
+          "note": "Observed LXJ335 as E545 in fleet-map-snapshot.json @ 2026-09-22T01:17:55.439753Z"
+        }
+      ]
+    },
+    {
+      "registration": "N338FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N343FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N345FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N405FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N406FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N407FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N408FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N409FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N410FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N414FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N415FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N416FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a4eafd",
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "ADSB.lol snapshot",
+          "url": "https://api.adsb.lol",
+          "note": "Observed LXJ416 as E545 in fleet-map-snapshot.json @ 2026-09-22T01:17:55.439753Z"
+        }
+      ]
+    },
+    {
+      "registration": "N417FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N418FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N419FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N420FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N421FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N422FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N423FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N424FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N426FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N427FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N428FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N429FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N430FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N431FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N432FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N433FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N434FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N435FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N436FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N437FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N438FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N440FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N441FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N443FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N444FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N445FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N446FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N447FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N448FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a568e8",
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "ADSB.lol snapshot",
+          "url": "https://api.adsb.lol",
+          "note": "Observed LXJ448 as E545 in fleet-map-snapshot.json @ 2026-09-22T01:17:55.439753Z"
+        }
+      ]
+    },
+    {
+      "registration": "N449FX",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N600FX",
+      "icao_type": "E550",
+      "faa_model": "EMB-550",
+      "label": "Praetor 600",
+      "year": null,
+      "hex": "a7c7d2",
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer Sa Emb-550. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "ADSB.lol snapshot",
+          "url": "https://api.adsb.lol",
+          "note": "Observed LXJ600 as E550 in fleet-map-snapshot.json @ 2026-09-22T01:17:55.439753Z"
+        }
+      ]
+    },
+    {
+      "registration": "N601FX",
+      "icao_type": "E550",
+      "faa_model": "EMB-550",
+      "label": "Praetor 600",
+      "year": null,
+      "hex": "a7cb89",
+      "sources": [
+        {
+          "name": "flightdb.net type E550",
+          "url": "https://www.flightdb.net/type.php?type=E550",
+          "note": "Mode-S hex listed for Embraer Praetor 600 / Flexjet"
+        }
+      ]
+    },
+    {
+      "registration": "N602FX",
+      "icao_type": "E550",
+      "faa_model": "EMB-550",
+      "label": "Praetor 600",
+      "year": null,
+      "hex": "a7cf40",
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer Sa Emb-550. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "flightdb.net type E550",
+          "url": "https://www.flightdb.net/type.php?type=E550",
+          "note": "Mode-S hex listed for Embraer Praetor 600 / Flexjet"
+        }
+      ]
+    },
+    {
+      "registration": "N603FX",
+      "icao_type": "E550",
+      "faa_model": "EMB-550",
+      "label": "Praetor 600",
+      "year": null,
+      "hex": "a7d2f7",
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer Sa Emb-550. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "flightdb.net type E550",
+          "url": "https://www.flightdb.net/type.php?type=E550",
+          "note": "Mode-S hex listed for Embraer Praetor 600 / Flexjet"
+        }
+      ]
+    },
+    {
+      "registration": "N604FX",
+      "icao_type": "E550",
+      "faa_model": "EMB-550",
+      "label": "Praetor 600",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer Sa Emb-550. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N605FX",
+      "icao_type": "E550",
+      "faa_model": "EMB-550",
+      "label": "Praetor 600",
+      "year": null,
+      "hex": "a7da65",
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer Sa Emb-550. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "flightdb.net type E550",
+          "url": "https://www.flightdb.net/type.php?type=E550",
+          "note": "Mode-S hex listed for Embraer Praetor 600 / Flexjet"
+        }
+      ]
+    },
+    {
+      "registration": "N607FX",
+      "icao_type": "E550",
+      "faa_model": "EMB-550",
+      "label": "Praetor 600",
+      "year": null,
+      "hex": "a7e1d3",
+      "sources": [
+        {
+          "name": "flightdb.net type E550",
+          "url": "https://www.flightdb.net/type.php?type=E550",
+          "note": "Mode-S hex listed for Embraer Praetor 600 / Flexjet"
+        }
+      ]
+    },
+    {
+      "registration": "N608FX",
+      "icao_type": "E550",
+      "faa_model": "EMB-550",
+      "label": "Praetor 600",
+      "year": null,
+      "hex": "a7e58a",
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer Sa Emb-550. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "flightdb.net type E550",
+          "url": "https://www.flightdb.net/type.php?type=E550",
+          "note": "Mode-S hex listed for Embraer Praetor 600 / Flexjet"
+        }
+      ]
+    },
+    {
+      "registration": "N609FX",
+      "icao_type": "E550",
+      "faa_model": "EMB-550",
+      "label": "Praetor 600",
+      "year": null,
+      "hex": "a7e941",
+      "sources": [
+        {
+          "name": "flightdb.net type E550",
+          "url": "https://www.flightdb.net/type.php?type=E550",
+          "note": "Mode-S hex listed for Embraer Praetor 600 / Flexjet"
+        }
+      ]
+    },
+    {
+      "registration": "N611FX",
+      "icao_type": "E550",
+      "faa_model": "EMB-550",
+      "label": "Praetor 600",
+      "year": null,
+      "hex": "a7f308",
+      "sources": [
+        {
+          "name": "flightdb.net type E550",
+          "url": "https://www.flightdb.net/type.php?type=E550",
+          "note": "Mode-S hex listed for Embraer Praetor 600 / Flexjet"
+        }
+      ]
+    },
+    {
+      "registration": "N613FX",
+      "icao_type": "E550",
+      "faa_model": "EMB-550",
+      "label": "Praetor 600",
+      "year": null,
+      "hex": "a7fa76",
+      "sources": [
+        {
+          "name": "flightdb.net type E550",
+          "url": "https://www.flightdb.net/type.php?type=E550",
+          "note": "Mode-S hex listed for Embraer Praetor 600 / Flexjet"
+        }
+      ]
+    },
+    {
+      "registration": "N617FX",
+      "icao_type": "E550",
+      "faa_model": "EMB-550",
+      "label": "Praetor 600",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer Sa Emb-550. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    },
+    {
+      "registration": "N619FX",
+      "icao_type": "E550",
+      "faa_model": "EMB-550",
+      "label": "Praetor 600",
+      "year": null,
+      "hex": null,
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer Sa Emb-550. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        }
+      ]
+    }
+  ]
+}
