@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-22T01:52:32Z",
+  "updated_at": "2026-09-22T02:09:09Z",
   "source": "ADSB.lol public type queries (cumulative last-known)",
   "notes": [
     "Keyed by Mode-S hex when available, else registration.",
@@ -7,10 +7,12 @@
     "Seeded initially from fleet-map-snapshot.json; GitHub Action grows this file over time."
   ],
   "last_poll": {
-    "at": "2026-09-22T01:52:32Z",
-    "live_count": 4,
+    "at": "2026-09-22T02:09:09Z",
+    "live_count": 0,
     "stored_count": 5,
-    "errors": []
+    "errors": [
+      "E545: HTTP Error 429: Too Many Requests"
+    ]
   },
   "aircraft": {
     "a4eafd": {
@@ -46,7 +48,7 @@
       "true_heading": 116.76,
       "mag_heading": 127.27,
       "last_seen": "2026-09-22T01:52:32Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a3a8f5": {
@@ -64,7 +66,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-22T01:52:32Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a7c7d2": {
@@ -82,7 +84,7 @@
       "true_heading": 306.56,
       "mag_heading": null,
       "last_seen": "2026-09-22T01:52:32Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a29d48": {
@@ -100,7 +102,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-22T01:52:32Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     }
   }
