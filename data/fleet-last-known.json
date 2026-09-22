@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-22T01:35:45Z",
+  "updated_at": "2026-09-22T01:37:15Z",
   "source": "ADSB.lol public type queries (cumulative last-known)",
   "notes": [
     "Keyed by Mode-S hex when available, else registration.",
@@ -7,11 +7,11 @@
     "Seeded initially from fleet-map-snapshot.json; GitHub Action grows this file over time."
   ],
   "last_poll": {
-    "at": "2026-09-22T01:35:45Z",
-    "live_count": 2,
+    "at": "2026-09-22T01:37:15Z",
+    "live_count": 1,
     "stored_count": 4,
     "errors": [
-      "E550: HTTP Error 429: Too Many Requests"
+      "E545: HTTP Error 429: Too Many Requests"
     ]
   },
   "aircraft": {
@@ -48,7 +48,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-22T01:35:45Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a3a8f5": {
@@ -66,7 +66,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-22T01:35:45Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a7c7d2": {
@@ -75,17 +75,17 @@
       "type": "E550",
       "model": "Praetor 600",
       "callsign": "LXJ600",
-      "lat": 40.638428,
-      "lon": -103.46156,
-      "alt_baro": 24550,
-      "alt_geom": 25700,
-      "gs": 396.9,
-      "track": 266.24,
+      "lat": 40.044282,
+      "lon": -105.162381,
+      "alt_baro": 7575,
+      "alt_geom": 7925,
+      "gs": 210.8,
+      "track": 226.92,
       "true_heading": null,
       "mag_heading": null,
-      "last_seen": "2026-09-22T01:17:55.439753Z",
-      "status": "last_known",
-      "source": "seeded from fleet-map-snapshot.json"
+      "last_seen": "2026-09-22T01:37:15Z",
+      "status": "live",
+      "source": "ADSB.lol type query"
     }
   }
 }
