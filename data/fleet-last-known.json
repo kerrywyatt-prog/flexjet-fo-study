@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-22T02:53:20Z",
+  "updated_at": "2026-09-22T10:07:27Z",
   "source": "ADSB.lol public type queries (cumulative last-known)",
   "notes": [
     "Keyed by Mode-S hex when available, else registration.",
@@ -7,9 +7,9 @@
     "Seeded initially from fleet-map-snapshot.json; GitHub Action grows this file over time."
   ],
   "last_poll": {
-    "at": "2026-09-22T02:53:20Z",
-    "live_count": 1,
-    "stored_count": 5,
+    "at": "2026-09-22T10:07:27Z",
+    "live_count": 3,
+    "stored_count": 8,
     "errors": []
   },
   "aircraft": {
@@ -100,6 +100,60 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-22T02:53:20Z",
+      "status": "last_known",
+      "source": "ADSB.lol type query"
+    },
+    "a4e746": {
+      "hex": "a4e746",
+      "registration": "N415FX",
+      "type": "E545",
+      "model": "Praetor 500",
+      "callsign": "LXJ415",
+      "lat": 44.748962,
+      "lon": -85.520129,
+      "alt_baro": 21950,
+      "alt_geom": 22700,
+      "gs": 412.6,
+      "track": 194.74,
+      "true_heading": null,
+      "mag_heading": null,
+      "last_seen": "2026-09-22T10:07:27Z",
+      "status": "live",
+      "source": "ADSB.lol type query"
+    },
+    "a80952": {
+      "hex": "a80952",
+      "registration": "N617FX",
+      "type": "E550",
+      "model": "Praetor 600",
+      "callsign": "LXJ617",
+      "lat": 40.85535,
+      "lon": -74.054718,
+      "alt_baro": "ground",
+      "alt_geom": null,
+      "gs": 0.0,
+      "track": null,
+      "true_heading": 135.0,
+      "mag_heading": null,
+      "last_seen": "2026-09-22T10:07:27Z",
+      "status": "live",
+      "source": "ADSB.lol type query"
+    },
+    "a8059b": {
+      "hex": "a8059b",
+      "registration": "N616FX",
+      "type": "E550",
+      "model": "Praetor 600",
+      "callsign": "LXJ616",
+      "lat": 52.616691,
+      "lon": 8.290754,
+      "alt_baro": 43000,
+      "alt_geom": 44525,
+      "gs": 432.3,
+      "track": 222.84,
+      "true_heading": 228.2,
+      "mag_heading": 224.47,
+      "last_seen": "2026-09-22T10:07:27Z",
       "status": "live",
       "source": "ADSB.lol type query"
     }
