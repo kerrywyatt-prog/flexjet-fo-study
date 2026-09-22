@@ -34,6 +34,7 @@ Notes:
 
 ## Automation — last-known poll
 - Workflow: `.github/workflows/fleet-last-known.yml` (`Fleet last-known poll`)
+  - Template committed as `docs/fleet-last-known.yml.example` (OAuth push lacks `workflow` scope). Copy to `.github/workflows/fleet-last-known.yml` on GitHub if the Action is not yet present.
 - Schedule: every **20 minutes** (`*/20 * * * *`) + `workflow_dispatch`
 - Script: `scripts/update-fleet-last-known.py`
   - Sequential E545 then E550 queries with **8s sleep** between types (rate-limit friendly)
