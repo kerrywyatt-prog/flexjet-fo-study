@@ -1,0 +1,88 @@
+{
+  "source": "ADSB.lol public API",
+  "source_url": "https://api.adsb.lol",
+  "snapshot_at": "2026-09-22T01:17:55.439753Z",
+  "coverage": "Last-known snapshot created from global ICAO type queries; not a continuous feed.",
+  "filter": {
+    "types": [
+      "E545",
+      "E550"
+    ],
+    "callsign_prefix": "LXJ",
+    "requires_position": true
+  },
+  "raw_counts": {
+    "E545": 6,
+    "E550": 4
+  },
+  "aircraft": [
+    {
+      "hex": "a4eafd",
+      "registration": "N416FX",
+      "type": "E545",
+      "model": "Embraer Praetor 500",
+      "callsign": "LXJ416",
+      "lat": 39.579306,
+      "lon": -104.848999,
+      "alt_baro": "ground",
+      "alt_geom": null,
+      "gs": 0.0,
+      "track": null,
+      "true_heading": 270.0,
+      "mag_heading": null,
+      "seen": 0.6,
+      "seen_pos": 0.55
+    },
+    {
+      "hex": "a568e8",
+      "registration": "N448FX",
+      "type": "E545",
+      "model": "Embraer Praetor 500",
+      "callsign": "LXJ448",
+      "lat": 41.954878,
+      "lon": -84.497957,
+      "alt_baro": 45000,
+      "alt_geom": 46450,
+      "gs": 484.9,
+      "track": 82.77,
+      "true_heading": null,
+      "mag_heading": null,
+      "seen": 0.0,
+      "seen_pos": 0.31
+    },
+    {
+      "hex": "a3a8f5",
+      "registration": "N335FX",
+      "type": "E545",
+      "model": "Embraer Praetor 500",
+      "callsign": "LXJ335",
+      "lat": 34.42133,
+      "lon": -77.312279,
+      "alt_baro": 43000,
+      "alt_geom": 45000,
+      "gs": 410.6,
+      "track": 201.13,
+      "true_heading": null,
+      "mag_heading": null,
+      "seen": 0.0,
+      "seen_pos": 0.64
+    },
+    {
+      "hex": "a7c7d2",
+      "registration": "N600FX",
+      "type": "E550",
+      "model": "Embraer Praetor 600",
+      "callsign": "LXJ600",
+      "lat": 40.638428,
+      "lon": -103.46156,
+      "alt_baro": 24550,
+      "alt_geom": 25700,
+      "gs": 396.9,
+      "track": 266.24,
+      "true_heading": null,
+      "mag_heading": null,
+      "seen": 0.4,
+      "seen_pos": 0.543
+    }
+  ]
+}

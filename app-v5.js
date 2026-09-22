@@ -527,6 +527,299 @@ function esc(s) {
       .replace(/"/g, '&quot;');
   }
 
+
+  /* ——— Fleet Map ——— */
+  const FLEET_API_URLS = [
+    'https://api.adsb.lol/v2/type/E545',
+    'https://api.adsb.lol/v2/type/E550',
+  ];
+  const FLEET_SNAPSHOT_URL = 'data/fleet-map-snapshot.json';
+  const FLEET_REFRESH_MS = 90 * 1000;
+  let fleetMap = null;
+  let fleetMarkers = [];
+  let fleetAircraft = [];
+  let fleetRefreshTimer = null;
+  let fleetCooldownTimer = null;
+  let fleetAbortController = null;
+  let fleetLastRequestAt = 0;
+  let fleetLoading = false;
+
+  function fleetType(raw) {
+    return String(raw && (raw.t ?? raw.type) || '').trim().toUpperCase();
+  }
+
+  function fleetCallsign(raw) {
+    return String(raw && (raw.flight ?? raw.callsign) || '').trim().toUpperCase();
+  }
+
+  function normalizeFleetAircraft(raw) {
+    const type = fleetType(raw);
+    const lat = Number(raw.lat);
+    const lon = Number(raw.lon);
+    return {
+      hex: String(raw.hex || '').trim().toLowerCase(),
+      registration: String(raw.r ?? raw.registration ?? 'Unknown').trim().toUpperCase(),
+      type,
+      model: type === 'E545' ? 'Praetor 500' : 'Praetor 600',
+      callsign: fleetCallsign(raw),
+      lat,
+      lon,
+      altBaro: raw.alt_baro ?? null,
+      altGeom: raw.alt_geom ?? null,
+      speed: Number.isFinite(Number(raw.gs)) ? Number(raw.gs) : null,
+      track: Number.isFinite(Number(raw.track)) ? Number(raw.track) : null,
+      trueHeading: Number.isFinite(Number(raw.true_heading)) ? Number(raw.true_heading) : null,
+      magHeading: Number.isFinite(Number(raw.mag_heading)) ? Number(raw.mag_heading) : null,
+      seen: Number.isFinite(Number(raw.seen)) ? Number(raw.seen) : null,
+      seenPos: Number.isFinite(Number(raw.seen_pos)) ? Number(raw.seen_pos) : null,
+    };
+  }
+
+  function filterFleetAircraft(records) {
+    return (Array.isArray(records) ? records : [])
+      .filter(raw => {
+        const type = fleetType(raw);
+        const callsign = fleetCallsign(raw);
+        return (type === 'E545' || type === 'E550')
+          && callsign.startsWith('LXJ')
+          && Number.isFinite(Number(raw.lat))
+          && Number.isFinite(Number(raw.lon));
+      })
+      .map(normalizeFleetAircraft);
+  }
+
+  function fleetAge(seconds) {
+    if (!Number.isFinite(seconds) || seconds < 0) return 'Unknown';
+    if (seconds < 60) return `${Math.round(seconds)} sec ago`;
+    if (seconds < 3600) return `${Math.round(seconds / 60)} min ago`;
+    if (seconds < 86400) return `${Math.round(seconds / 3600)} hr ago`;
+    return `${Math.round(seconds / 86400)} days ago`;
+  }
+
+  function fleetDate(value) {
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return 'Unknown';
+    return date.toLocaleString([], { dateStyle: 'medium', timeStyle: 'short' });
+  }
+
+  function fleetNumber(value, digits = 0) {
+    return Number.isFinite(value) ? value.toFixed(digits) : 'Unavailable';
+  }
+
+  function fleetAltitude(ac) {
+    if (String(ac.altBaro).toLowerCase() === 'ground') return 'Ground';
+    if (Number.isFinite(Number(ac.altBaro))) return `${Math.round(Number(ac.altBaro)).toLocaleString()} ft baro`;
+    if (Number.isFinite(Number(ac.altGeom))) return `${Math.round(Number(ac.altGeom)).toLocaleString()} ft geometric`;
+    return 'Unavailable';
+  }
+
+  function fleetHeading(ac) {
+    if (Number.isFinite(ac.trueHeading)) return `${Math.round(ac.trueHeading)}° true heading`;
+    if (Number.isFinite(ac.magHeading)) return `${Math.round(ac.magHeading)}° magnetic heading`;
+    if (Number.isFinite(ac.track)) return `${Math.round(ac.track)}° track`;
+    return 'Unavailable';
+  }
+
+  function cleanupFleetMap() {
+    if (fleetRefreshTimer) clearInterval(fleetRefreshTimer);
+    if (fleetCooldownTimer) clearInterval(fleetCooldownTimer);
+    fleetRefreshTimer = null;
+    fleetCooldownTimer = null;
+    if (fleetAbortController) fleetAbortController.abort();
+    fleetAbortController = null;
+    if (fleetMap) {
+      try { fleetMap.remove(); } catch {}
+    }
+    fleetMap = null;
+    fleetMarkers = [];
+    fleetAircraft = [];
+    fleetLastRequestAt = 0;
+    fleetLoading = false;
+  }
+
+  function isFleetRoute() {
+    return parseHash().parts[0] === 'fleet-map';
+  }
+
+  function updateFleetRefreshButton() {
+    const button = $('#fleet-refresh');
+    if (!button) return;
+    const remaining = Math.max(0, Math.ceil((fleetLastRequestAt + FLEET_REFRESH_MS - Date.now()) / 1000));
+    button.disabled = fleetLoading || remaining > 0;
+    button.textContent = fleetLoading ? 'Refreshing…' : remaining > 0 ? `Refresh (${remaining}s)` : 'Refresh';
+  }
+
+  function setFleetState(message, kind = '') {
+    const state = $('#fleet-state');
+    if (!state) return;
+    state.className = `fleet-state ${kind}`.trim();
+    state.textContent = message;
+    state.hidden = !message;
+  }
+
+  function renderFleetMapMarkers(aircraft) {
+    const mapEl = $('#fleet-map-canvas');
+    const unavailable = $('#fleet-map-unavailable');
+    if (!mapEl) return;
+    if (!window.L) {
+      mapEl.hidden = true;
+      if (unavailable) {
+        unavailable.hidden = false;
+        unavailable.textContent = 'Map library unavailable. Aircraft and details remain available below.';
+      }
+      return;
+    }
+    if (!fleetMap) {
+      fleetMap = L.map(mapEl, { zoomControl: true, worldCopyJump: true }).setView([38.5, -96], 4);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors',
+      }).addTo(fleetMap);
+    }
+    fleetMarkers.forEach(marker => marker.remove());
+    fleetMarkers = [];
+    const points = [];
+    aircraft.forEach((ac, index) => {
+      const icon = L.divIcon({
+        className: 'fleet-marker-shell',
+        html: `<span class="fleet-marker" aria-hidden="true">✈</span>`,
+        iconSize: [34, 34],
+        iconAnchor: [17, 17],
+      });
+      const marker = L.marker([ac.lat, ac.lon], { icon, title: `${ac.registration} ${ac.callsign}` }).addTo(fleetMap);
+      marker.bindTooltip(`${esc(ac.registration)} · ${esc(ac.callsign)}`, { direction: 'top', offset: [0, -14] });
+      marker.on('click', () => selectFleetAircraft(index, false));
+      fleetMarkers.push(marker);
+      points.push([ac.lat, ac.lon]);
+    });
+    if (points.length) fleetMap.fitBounds(points, { padding: [34, 34], maxZoom: 7 });
+    window.setTimeout(() => fleetMap && fleetMap.invalidateSize(), 0);
+  }
+
+  function selectFleetAircraft(index, pan = true) {
+    const ac = fleetAircraft[index];
+    const panel = $('#fleet-details');
+    if (!ac || !panel) return;
+    app.querySelectorAll('.fleet-aircraft-button').forEach((el, i) => el.classList.toggle('selected', i === index));
+    const positionAge = ac.mode === 'snapshot'
+      ? fleetAge(Math.max(0, (Date.now() - new Date(ac.snapshotAt).getTime()) / 1000) + (ac.seenPos || 0))
+      : fleetAge(ac.seenPos ?? ac.seen);
+    const trackerUrl = `https://adsb.lol/?icao=${encodeURIComponent(ac.hex)}`;
+    panel.innerHTML = `
+      <div class="fleet-detail-head">
+        <div>
+          <div class="fleet-detail-kicker">${esc(ac.model)}</div>
+          <h2>${esc(ac.registration)}</h2>
+        </div>
+        <span class="fleet-source-chip ${ac.mode}">${ac.mode === 'live' ? 'Live source' : 'Snapshot'}</span>
+      </div>
+      <dl class="fleet-detail-grid">
+        <div><dt>Callsign</dt><dd>${esc(ac.callsign)}</dd></div>
+        <div><dt>ICAO type</dt><dd>${esc(ac.type)}</dd></div>
+        <div><dt>Altitude</dt><dd>${esc(fleetAltitude(ac))}</dd></div>
+        <div><dt>Ground speed</dt><dd>${ac.speed == null ? 'Unavailable' : `${fleetNumber(ac.speed, 1)} kt`}</dd></div>
+        <div><dt>Heading / track</dt><dd>${esc(fleetHeading(ac))}</dd></div>
+        <div><dt>Position age</dt><dd>${esc(positionAge)}</dd></div>
+        <div class="wide"><dt>Coordinates</dt><dd>${fleetNumber(ac.lat, 5)}, ${fleetNumber(ac.lon, 5)}</dd></div>
+        <div class="wide"><dt>Source</dt><dd>ADSB.lol public ADS-B${ac.mode === 'snapshot' ? ' · last-known snapshot' : ''}</dd></div>
+        <div class="wide"><dt>Next publicly filed</dt><dd>No public next-filed flight available.</dd></div>
+      </dl>
+      <a class="btn btn-primary fleet-tracker-link" href="${trackerUrl}" target="_blank" rel="noopener noreferrer">Open ADSB.lol tracker</a>`;
+    if (fleetMap && fleetMarkers[index]) {
+      if (pan) fleetMap.panTo([ac.lat, ac.lon]);
+      fleetMarkers[index].openTooltip();
+    }
+  }
+
+  function renderFleetAircraft(aircraft, meta) {
+    if (!isFleetRoute()) return;
+    fleetAircraft = aircraft.map(ac => ({ ...ac, mode: meta.mode, snapshotAt: meta.snapshotAt || null }));
+    const badge = $('#fleet-status-badge');
+    const updated = $('#fleet-updated');
+    const fallback = $('#fleet-fallback');
+    if (badge) {
+      badge.className = `fleet-status-badge ${meta.mode}`;
+      badge.textContent = meta.mode === 'live' ? 'Live public ADS-B' : 'Snapshot fallback';
+    }
+    if (updated) updated.textContent = `Last updated: ${fleetDate(meta.updatedAt)}`;
+    if (fallback) {
+      if (meta.mode === 'snapshot') {
+        const ageSeconds = Math.max(0, (Date.now() - new Date(meta.snapshotAt).getTime()) / 1000);
+        fallback.hidden = false;
+        fallback.innerHTML = `<strong>Snapshot fallback</strong> — live requests were blocked or unavailable. Showing last-known positions from ${esc(fleetDate(meta.snapshotAt))} (${esc(fleetAge(ageSeconds))}). This is not live.`;
+      } else {
+        fallback.hidden = true;
+        fallback.textContent = '';
+      }
+    }
+    const list = $('#fleet-aircraft-list');
+    const details = $('#fleet-details');
+    if (!aircraft.length) {
+      setFleetState('No publicly visible Flexjet Praetors right now.', 'empty');
+      if (list) list.innerHTML = '';
+      if (details) details.innerHTML = '<div class="fleet-details-empty">Select an aircraft marker or list item to view public ADS-B details.</div>';
+    } else {
+      setFleetState('', '');
+      if (list) list.innerHTML = fleetAircraft.map((ac, index) => `
+        <button type="button" class="fleet-aircraft-button" data-fleet-index="${index}">
+          <strong>${esc(ac.registration)}</strong><span>${esc(ac.callsign)} · ${esc(ac.model)}</span>
+        </button>`).join('');
+      app.querySelectorAll('[data-fleet-index]').forEach(el => {
+        el.addEventListener('click', () => selectFleetAircraft(Number(el.getAttribute('data-fleet-index'))));
+      });
+      if (details) details.innerHTML = '<div class="fleet-details-empty">Select an aircraft marker or list item to view public ADS-B details.</div>';
+    }
+    renderFleetMapMarkers(fleetAircraft);
+  }
+
+  async function loadFleetMapData() {
+    if (!isFleetRoute() || fleetLoading) return;
+    const elapsed = Date.now() - fleetLastRequestAt;
+    if (fleetLastRequestAt && elapsed < FLEET_REFRESH_MS) {
+      updateFleetRefreshButton();
+      return;
+    }
+    fleetLoading = true;
+    fleetLastRequestAt = Date.now();
+    updateFleetRefreshButton();
+    setFleetState(fleetAircraft.length ? 'Refreshing public ADS-B…' : 'Loading public ADS-B positions…', 'loading');
+    fleetAbortController = new AbortController();
+    try {
+      const responses = await Promise.all(FLEET_API_URLS.map(url => fetch(url, {
+        method: 'GET',
+        mode: 'cors',
+        cache: 'no-store',
+        signal: fleetAbortController.signal,
+        headers: { Accept: 'application/json' },
+      })));
+      if (responses.some(response => !response.ok)) throw new Error('Live ADS-B request failed');
+      const payloads = await Promise.all(responses.map(response => response.json()));
+      const raw = payloads.flatMap(payload => Array.isArray(payload.ac) ? payload.ac : []);
+      renderFleetAircraft(filterFleetAircraft(raw), { mode: 'live', updatedAt: new Date().toISOString() });
+    } catch (liveError) {
+      if (liveError && liveError.name === 'AbortError') return;
+      try {
+        const response = await fetch(FLEET_SNAPSHOT_URL, { cache: 'no-store', signal: fleetAbortController.signal });
+        if (!response.ok) throw new Error('Snapshot request failed');
+        const snapshot = await response.json();
+        renderFleetAircraft(filterFleetAircraft(snapshot.aircraft), {
+          mode: 'snapshot',
+          snapshotAt: snapshot.snapshot_at,
+          updatedAt: snapshot.snapshot_at,
+        });
+      } catch (snapshotError) {
+        if (snapshotError && snapshotError.name === 'AbortError') return;
+        setFleetState('Fleet positions are unavailable. Live ADS-B and the last-known snapshot could not be loaded.', 'error');
+        const badge = $('#fleet-status-badge');
+        if (badge) { badge.className = 'fleet-status-badge error'; badge.textContent = 'Unavailable'; }
+      }
+    } finally {
+      fleetLoading = false;
+      fleetAbortController = null;
+      updateFleetRefreshButton();
+    }
+  }
+
   /* ——— Views ——— */
   function viewGate() {
     app.innerHTML = `
@@ -562,6 +855,7 @@ function esc(s) {
       { path: '/orientation', icon: '🧭', title: 'New hire / Orientation', desc: 'CLE Days 1–3 · payroll · ops · logistics · expense · MX', cls: '' },
       { path: '/indoc', icon: '📚', title: 'Indoc', desc: 'DFW Day 1 (01–06) · Ops Specs A–E · Everest Fuel · Academy · Praetor path', cls: '' },
       { path: '/praetor', icon: '🛫', title: 'Embraer Praetor 500/600', desc: 'Systems shelves · memory · flows', cls: 'gold', bg: 'praetor' },
+      { path: '/fleet-map', icon: '🗺️', title: 'Fleet Map', desc: 'Public ADS-B · visible Flexjet Praetor 500/600 aircraft', cls: 'gold' },
       { path: '/ritual', icon: '⏱️', title: 'Study ritual', desc: '20–30 min daily framework', cls: '' },
       { path: '/admin', icon: '✅', title: 'Admin / open items', desc: 'Checklist with local persistence', cls: '' },
       { path: '/flashcards', icon: '🃏', title: 'Flashcards', desc: 'IAI memory items · Praetor · word-for-word', cls: 'gold' },
@@ -599,6 +893,53 @@ function esc(s) {
         </main>
       </div>`;
     bindNav();
+  }
+
+
+  function viewFleetMap() {
+    cleanupFleetMap();
+    app.innerHTML = `
+      <div class="${shellClass()} shell-fleet-map">
+        ${topbar('Fleet Map', 'Home', '/')}
+        <main class="content fleet-map-content">
+          <section class="fleet-map-intro" aria-labelledby="fleet-map-title">
+            <div>
+              <div class="eyebrow">Praetor 500/600 · public tracking</div>
+              <h2 id="fleet-map-title">Visible Flexjet Praetors</h2>
+              <p>Public ADS-B positions filtered to LXJ-operated E545/E550 aircraft.</p>
+            </div>
+            <button type="button" class="btn btn-primary" id="fleet-refresh">Refresh</button>
+          </section>
+          <div class="fleet-meta" aria-live="polite">
+            <span class="fleet-status-badge loading" id="fleet-status-badge">Loading</span>
+            <span id="fleet-updated">Last updated: —</span>
+            <span>Auto-refresh: 90 sec</span>
+          </div>
+          <div class="fleet-fallback" id="fleet-fallback" role="alert" hidden></div>
+          <div class="fleet-state loading" id="fleet-state" role="status">Loading public ADS-B positions…</div>
+          <div class="fleet-map-layout">
+            <section class="fleet-map-panel" aria-label="Aircraft map">
+              <div id="fleet-map-canvas"></div>
+              <div class="fleet-map-unavailable" id="fleet-map-unavailable" hidden></div>
+            </section>
+            <aside class="fleet-details" id="fleet-details" aria-live="polite">
+              <div class="fleet-details-empty">Select an aircraft marker or list item to view public ADS-B details.</div>
+            </aside>
+          </div>
+          <div class="fleet-aircraft-list" id="fleet-aircraft-list" aria-label="Visible aircraft"></div>
+          <section class="fleet-disclaimer">
+            <strong>Coverage limitation</strong>
+            <p>Public ADS-B coverage can be incomplete, delayed, filtered, or blocked by a browser/network. Positions are informational only and are not Flexjet dispatch or Tailwind data.</p>
+          </section>
+        </main>
+      </div>`;
+    bindNav();
+    $('#fleet-refresh')?.addEventListener('click', loadFleetMapData);
+    fleetCooldownTimer = window.setInterval(updateFleetRefreshButton, 1000);
+    fleetRefreshTimer = window.setInterval(() => {
+      if (isFleetRoute()) loadFleetMapData();
+    }, FLEET_REFRESH_MS);
+    loadFleetMapData();
   }
 
   function viewOrientation() {
@@ -1319,13 +1660,16 @@ function esc(s) {
 
   function render() {
     if (!isUnlocked()) {
+      cleanupFleetMap();
       viewGate();
       return;
     }
     const { parts } = parseHash();
     const root = parts[0] || '';
+    if (root !== 'fleet-map') cleanupFleetMap();
 
     if (!root) return viewHome();
+    if (root === 'fleet-map') return viewFleetMap();
     if (root === 'orientation') return viewOrientation();
     if (root === 'indoc') {
       if (parts[1] === '135') {
