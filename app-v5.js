@@ -464,6 +464,8 @@
     { id: 'everest', text: 'Indoc: Everest Fuel process — sign ticket · gallons in Tailwind (clip 04 captured)', done: true },
     { id: 'lowertakeoff', text: 'Indoc: verify lower-than-standard takeoff RVR/equipment tables in live OpSpec', done: false },
     { id: 'foodda', text: 'Indoc: food-safety leftovers rule + D&A 8-hr / random / refusal basics', done: false },
+    { id: 'rda', text: 'Indoc Day 2: confirm RDA access on training email', done: false },
+    { id: 'techpub', text: 'Indoc Day 2: download Embraer TechPub app + check EFB currency guide', done: false },
     { id: 'spare-glasses', text: 'If medical requires lenses — carry spare glasses (ramp check)', done: false },
   ];
 
@@ -1043,7 +1045,7 @@ function esc(s) {
   function viewHome() {
     const tiles = [
       { path: '/orientation', icon: '🧭', title: 'New hire / Orientation', desc: 'CLE Days 1–3 · payroll · ops · logistics · expense · MX', cls: '' },
-      { path: '/indoc', icon: '📚', title: 'Indoc', desc: 'DFW Day 1 (01–06) · Ops Specs A–E · Everest Fuel · Academy · Praetor path', cls: '' },
+      { path: '/indoc', icon: '📚', title: 'Indoc', desc: 'DFW Days 1–2 · Ops Specs A–E · video day · EFB/Praetor path', cls: '' },
       { path: '/praetor', icon: '🛫', title: 'Embraer Praetor 500/600', desc: 'Systems shelves · memory · flows', cls: 'gold', bg: 'praetor' },
       { path: '/fleet-map', icon: '🗺️', title: 'Fleet Map', desc: 'Public ADS-B · visible Flexjet Praetor 500/600 aircraft', cls: 'gold' },
       { path: '/ritual', icon: '⏱️', title: 'Study ritual', desc: '20–30 min daily framework', cls: '' },
@@ -1349,7 +1351,7 @@ function esc(s) {
   function viewIndoc() {
     app.innerHTML = `
       <div class="${shellClass()}">
-        ${topbar('Indoc · DFW Day 1', 'Home', '/')}
+        ${topbar('Indoc · DFW Days 1–2', 'Home', '/')}
         <main class="content">
           <div class="card">
             <h3><span class="dot"></span>Mon Sep 21, 2026 · CAE Dallas West</h3>
@@ -1427,9 +1429,29 @@ function esc(s) {
             <h3><span class="dot"></span>Open items</h3>
             <ul>
               <li>Academy modules + Sunday 50Q prep</li>
-              <li>Fly Embraer download/login · verify CTH in ForeFlight</li>
-              <li><s>Everest Fuel 13:00 brief</s> — captured clip 04</li>
+              <li>Fly Embraer / <strong>Embraer TechPub</strong> download · verify CTH in ForeFlight</li>
+              <li>Confirm <strong>RDA</strong> on training email (Day 2)</li>
+              <li><s>Everest Fuel 13:00 brief</s> — captured Day 1 clip 04</li>
               <li>Confirm W&amp;B save-vs-send SOP · POI spelling · lower-T/O tables in live OpSpec · official type-travel email</li>
+            </ul>
+          </div>
+
+
+          <div class="card">
+            <h3><span class="dot"></span>Tue Sep 22, 2026 · Day 2 — video day</h3>
+            <p><strong>Lots of videos Day 2</strong> — CFIT, runway incursions, wake turbulence, upset/stall, PRM/breakout-type. Skim/archive the videos. Do <em>not</em> dense-study video narration. Durable process below only.</p>
+            <div class="note">Plaud 01–06 · ~229 min · LIGHT notes only. Praetor 500/600 track.</div>
+          </div>
+
+          <div class="card">
+            <h3><span class="dot"></span>Must lock — Day 2</h3>
+            <ul>
+              <li><strong>Military / PPR:</strong> civil landing permit on file · Flight Control obtains permission/PPR · permit copy to crew · originals with pilot manager / safety &amp; security (verify FOM). Read Tailwind airport notes.</li>
+              <li><strong>Praetor path:</strong> separate systems-integration week → <strong>~6 sims + checkride + walk</strong> (ASR first said eight, then clarified). Challenger/Phenom combine ground + SI.</li>
+              <li><strong>EFB:</strong> <strong>ForeFlight</strong> primary (plans/WX/NOTAMs/plates/charts/company docs). Download <strong>Embraer TechPub</strong>. MyFreeFlight still for W&amp;B/runway-analysis exposure. iPad for all work assignments. EFB currency guide under Documents → resources.</li>
+              <li><strong>RDA:</strong> access coming via training email (classmates got it Day 2) — confirm yours.</li>
+              <li><strong>People:</strong> Jim Dunn (Director of Training) · David Cooper (managers / lead check airmen context).</li>
+              <li><strong>Study:</strong> keep question-bank / study-guide lookups going (know sources for Sunday open-book).</li>
             </ul>
           </div>
 
