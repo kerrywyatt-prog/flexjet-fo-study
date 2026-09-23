@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-23T10:34:25Z",
+  "updated_at": "2026-09-23T10:48:30Z",
   "source": "ADSB.lol public type queries (cumulative last-known)",
   "notes": [
     "Keyed by Mode-S hex when available, else registration.",
@@ -7,12 +7,10 @@
     "Seeded initially from fleet-map-snapshot.json; GitHub Action grows this file over time."
   ],
   "last_poll": {
-    "at": "2026-09-23T10:34:25Z",
-    "live_count": 1,
+    "at": "2026-09-23T10:48:30Z",
+    "live_count": 2,
     "stored_count": 68,
-    "errors": [
-      "E545: HTTP Error 429: Too Many Requests"
-    ]
+    "errors": []
   },
   "aircraft": {
     "a4eafd": {
@@ -273,16 +271,16 @@
       "type": "E545",
       "model": "Praetor 500",
       "callsign": "LXJ436",
-      "lat": 29.995609,
-      "lon": -90.263727,
+      "lat": 29.997139,
+      "lon": -90.264978,
       "alt_baro": "ground",
-      "alt_geom": -75,
-      "gs": 14.2,
+      "alt_geom": null,
+      "gs": 0.1,
       "track": null,
       "true_heading": 16.88,
       "mag_heading": null,
-      "last_seen": "2026-09-22T20:58:17Z",
-      "status": "last_known",
+      "last_seen": "2026-09-23T10:48:30Z",
+      "status": "live",
       "source": "ADSB.lol type query"
     },
     "a7d2f7": {
@@ -957,16 +955,16 @@
       "type": "E545",
       "model": "Praetor 500",
       "callsign": "LXJ440",
-      "lat": 41.991394,
-      "lon": -77.90012,
-      "alt_baro": 20000,
-      "alt_geom": 20800,
-      "gs": 379.7,
-      "track": 349.22,
+      "lat": 41.409193,
+      "lon": -73.85821,
+      "alt_baro": 4700,
+      "alt_geom": 5075,
+      "gs": 262.4,
+      "track": 145.4,
       "true_heading": null,
       "mag_heading": null,
-      "last_seen": "2026-09-22T19:13:39Z",
-      "status": "last_known",
+      "last_seen": "2026-09-23T10:48:30Z",
+      "status": "live",
       "source": "ADSB.lol type query"
     },
     "a54169": {
@@ -1236,7 +1234,7 @@
       "true_heading": 85.22,
       "mag_heading": 80.16,
       "last_seen": "2026-09-23T10:34:25Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     }
   }
