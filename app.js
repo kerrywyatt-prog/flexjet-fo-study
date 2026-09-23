@@ -466,6 +466,9 @@
     { id: 'foodda', text: 'Indoc: food-safety leftovers rule + D&A 8-hr / random / refusal basics', done: false },
     { id: 'rda', text: 'Indoc Day 2: confirm RDA access on training email', done: false },
     { id: 'techpub', text: 'Indoc Day 2: download Embraer TechPub app + check EFB currency guide', done: false },
+    { id: 'day3mins', text: 'Indoc Day 3: verify OpSpec takeoff mins / dual-RVR / alternate tables', done: false },
+    { id: 'day3ice', text: 'Indoc Day 3: confirm FOM 7.3.11 icing HOT/tactile rules', done: false },
+    { id: 'day3fuel', text: 'Indoc Day 3: confirm Praetor land-with fuel target in FOM', done: false },
     { id: 'spare-glasses', text: 'If medical requires lenses — carry spare glasses (ramp check)', done: false },
   ];
 
@@ -1045,7 +1048,7 @@ function esc(s) {
   function viewHome() {
     const tiles = [
       { path: '/orientation', icon: '🧭', title: 'New hire / Orientation', desc: 'CLE Days 1–3 · payroll · ops · logistics · expense · MX', cls: '' },
-      { path: '/indoc', icon: '📚', title: 'Indoc', desc: 'DFW Days 1–2 · Ops Specs A–E · video day · EFB/Praetor path', cls: '' },
+      { path: '/indoc', icon: '📚', title: 'Indoc', desc: 'DFW Days 1–3 · Ops Specs · icing/duty/mins · MX forms', cls: '' },
       { path: '/praetor', icon: '🛫', title: 'Embraer Praetor 500/600', desc: 'Systems shelves · memory · flows', cls: 'gold', bg: 'praetor' },
       { path: '/fleet-map', icon: '🗺️', title: 'Fleet Map', desc: 'Public ADS-B · visible Flexjet Praetor 500/600 aircraft', cls: 'gold' },
       { path: '/ritual', icon: '⏱️', title: 'Study ritual', desc: '20–30 min daily framework', cls: '' },
@@ -1331,7 +1334,7 @@ function esc(s) {
         'Special flight / ferry permits + functional check flights after MX (Indoc qualifies; some need test pilot). Ferry permit in ForeFlight; not for AD-grounded aircraft.',
         'Line discrepancies still: MX controllers via ops/GCC (CLE Day 3) — 4-letter ID + tail.',
         'Aircraft weigh program ties to W&B (every 36 months — verify paragraph).',
-        'Shelf status: partially filled Day 1 · MEL/CDL deep dive TBD later days.',
+        'Shelf status: Day 1 hooks + Day 3 Form 501/CDL/ferry/MVF/status-book deep dive. Verify live MEL/FOM.',
       ],
     },
     e: {
@@ -1351,7 +1354,7 @@ function esc(s) {
   function viewIndoc() {
     app.innerHTML = `
       <div class="${shellClass()}">
-        ${topbar('Indoc · DFW Days 1–2', 'Home', '/')}
+        ${topbar('Indoc · DFW Days 1–3', 'Home', '/')}
         <main class="content">
           <div class="card">
             <h3><span class="dot"></span>Mon Sep 21, 2026 · CAE Dallas West</h3>
@@ -1432,7 +1435,8 @@ function esc(s) {
               <li>Fly Embraer / <strong>Embraer TechPub</strong> download · verify CTH in ForeFlight</li>
               <li>Confirm <strong>RDA</strong> on training email (Day 2)</li>
               <li><s>Everest Fuel 13:00 brief</s> — captured Day 1 clip 04</li>
-              <li>Confirm W&amp;B save-vs-send SOP · POI spelling · lower-T/O tables in live OpSpec · official type-travel email</li>
+              <li>Day 3 verify: OpSpec takeoff/alternate mins · FOM 7.3.11 icing · Praetor land-with fuel · “MPL” label</li>
+              <li>Confirm W&amp;B save-vs-send SOP · POI spelling · official type-travel email</li>
             </ul>
           </div>
 
@@ -1452,6 +1456,43 @@ function esc(s) {
               <li><strong>RDA:</strong> access coming via training email (classmates got it Day 2) — confirm yours.</li>
               <li><strong>People:</strong> Jim Dunn (Director of Training) · David Cooper (managers / lead check airmen context).</li>
               <li><strong>Study:</strong> keep question-bank / study-guide lookups going (know sources for Sunday open-book).</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3><span class="dot"></span>Wed Sep 23, 2026 · Day 3 — classroom dense</h3>
+            <p>MX forms · CDL/ferry/MVF · ForeFlight W&amp;B/performance · icing HOT/tactile · duty/rest/FOTM · status book/501 · takeoff/alternate mins · taxi CRM. Plaud <strong>01–07</strong> (~224.5 min; clips <strong>02–03 non-speech</strong>).</p>
+            <div class="note">Praetor 500/600 track. Classmate-safe process only — no personal PII. Verify live OpSpec/FOM numbers before checkride.</div>
+          </div>
+
+          <div class="card">
+            <h3><span class="dot"></span>Must lock — Day 3</h3>
+            <ul>
+              <li><strong>Form 501:</strong> never erase — line through · initial+date · rewrite. Error 501 → “generated in error / no MX.” Pink copy stays; no next flight until corrected/deferred.</li>
+              <li><strong>Remote MX:</strong> approved video link · controller Form 500 + CAMP · fail → PIC writes 501.</li>
+              <li><strong>CDL:</strong> back of MEL · performance penalties · stack with other deviations.</li>
+              <li><strong>Ferry / MVF:</strong> MX inspect before ferry · FO-03 on board · no revenue · no post-accident ferry until NTSB/FAA release. Cat 1 MVF no MX sign-off; speak up on structural/flight-control ferries; no pax on required MVF/FCF unless needed.</li>
+              <li><strong>Circuit breakers:</strong> no in-flight reset unless needed for safe flight; QRH-only pulls; ground OK.</li>
+              <li><strong>Weigh:</strong> empty weight/CG every 36 months.</li>
+              <li><strong>Icing:</strong> HOT advisory; contamination check still required. Inside HOT + visible → visual (~5 min prior). Exceed HOT → tactile required. Freezing drizzle/light freezing rain / can’t determine → tactile (FOM 7.3.11 — verify).</li>
+              <li><strong>Contaminated landing:</strong> ~1.15 factor class · braking-action fair/nil advisories · stabilized Vref.</li>
+              <li><strong>Performance:</strong> Part 135 baseline · ForeFlight primary · fail → AFM. Landing planning 60% rule; DAAP/80% path — verify live use.</li>
+              <li><strong>W&amp;B / fuel:</strong> Save to flight files. Bag ~30 lb class. Land-with targets class: ~2000 lb large-cabin / ~800 lb Phenom-Praetor class — verify Praetor FOM. Don’t abuse tankering.</li>
+              <li><strong>Duty/rest:</strong> 14/10 baseline. &gt;10 flight in 24h → table rest. FOTM may extend duty to max 15h two-pilot if beyond company control + realistically planned. Circadian low ~0130 local where duty begins (test item — confirm card). Hotel 90/120 standby.</li>
+              <li><strong>Status book (FOM §5):</strong> PIC airworthiness every flight — tires, consumables, docs, open discrepancies. Aim ~90+ min early on day-one tight turns.</li>
+              <li><strong>Takeoff/alternate mins:</strong> OpSpec tables. Dual operable RVR when vis &lt;¼ SM / ~1600 RVR class + lighting. Takeoff alternate ≤1 hour still air if can’t return. Alternate weather from OpSpec approach table.</li>
+              <li><strong>Taxi CRM:</strong> chart + brief before taxi · heads-up · verify crossings · <em>stop</em> for FMS programming · runway/departure change checklist after push.</li>
+              <li><strong>Oral tip:</strong> limitations + memory items ≈ ~85% of oral (class).</li>
+              <li><strong>Class B under shelf:</strong> 200 kt — controller cannot authorize faster.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3><span class="dot"></span>People — Day 3</h3>
+            <ul>
+              <li><strong>Mike Sliva</strong> — Indoc instructor (continuing)</li>
+              <li><strong>Scott</strong> — co-instruct · icing/CRM/mins blocks</li>
+              <li><strong>FOTM</strong> — duty extensions (max 15h two-pilot)</li>
             </ul>
           </div>
 
