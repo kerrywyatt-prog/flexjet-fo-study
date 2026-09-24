@@ -1,24 +1,24 @@
 {
   "title": "Flexjet US Praetor 500 / 600 roster (EMB-545 / EMB-550)",
-  "built_at": "2026-09-24T22:17:54Z",
+  "built_at": "2026-09-24T22:24:36Z",
   "source": "Flexjet fleet list (Oct 30 2025)",
   "notes": [
     "Base roster: Flexjet fleet list (Oct 30 2025) \u2014 94 tails (76 Praetor 500 / EMB-545, 18 Praetor 600 / EMB-550) with serial numbers. Serials 5501xxxx = Praetor 500 (EMB-545); 5502xxxx = Praetor 600 (EMB-550).",
     "Every tail, serial and model cross-checked against the public FAA Aircraft Registry N-number inquiry; all matched.",
-    "6 additional tails from the earlier public-source roster are kept but flagged 'not on company fleet list dated Oct 30 2025' (serial/model from FAA registry).",
+    "8 additional tails are kept but flagged as not on the company fleet list dated Oct 30 2025: 6 from the earlier public-source roster plus N272FX and N273FX (FAA-registered c/o Flexjet LLC 2026). Serial/model from FAA registry.",
     "Mode-S hex: existing observed values kept (all match FAA); missing values filled from the FAA registry 'Mode S Code (Base 16 / Hex)'. Never fabricated.",
     "Live map filter still requires LXJ callsign + E545/E550, or a roster hex/registration match. Positions are public ADS-B only \u2014 not Flexjet dispatch/Tailwind data."
   ],
   "counts": {
-    "total": 100,
+    "total": 102,
     "company_fleet_list": 94,
     "company_fleet_list_E545": 76,
     "company_fleet_list_E550": 18,
-    "flagged_not_on_company_list": 6,
-    "E545": 81,
+    "flagged_not_on_company_list": 8,
+    "E545": 83,
     "E550": 19,
-    "with_hex": 100,
-    "with_serial": 100
+    "with_hex": 102,
+    "with_serial": 102
   },
   "aircraft": [
     {
@@ -2670,6 +2670,54 @@
           "name": "FAA Aircraft Registry N-number inquiry",
           "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N619FX",
           "note": "Checked 2026-09-24: serial 55020268, model EMB-550, Mode S hex A810C0."
+        }
+      ]
+    },
+    {
+      "registration": "N272FX",
+      "serial_number": "55010196",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a2ae7d",
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex); matches ADSB.lol observation",
+      "on_company_fleet_list": false,
+      "flag": "not on company fleet list dated Oct 30 2025; FAA-registered c/o Flexjet LLC 2026",
+      "serial_source": "FAA Aircraft Registry (not on company list)",
+      "sources": [
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N272FX",
+          "note": "Checked 2026-09-24: serial 55010196, model EMB-545, Mode S hex A2AE7D, certificate issued 04/23/2026."
+        },
+        {
+          "name": "ADSB.lol type query (LXJ callsign)",
+          "note": "Observed with callsign LXJ272, hex a2ae7d."
+        }
+      ]
+    },
+    {
+      "registration": "N273FX",
+      "serial_number": "55010197",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a2b234",
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex); matches ADSB.lol observation",
+      "on_company_fleet_list": false,
+      "flag": "not on company fleet list dated Oct 30 2025; FAA-registered c/o Flexjet LLC 2026",
+      "serial_source": "FAA Aircraft Registry (not on company list)",
+      "sources": [
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N273FX",
+          "note": "Checked 2026-09-24: serial 55010197, model EMB-545, Mode S hex A2B234, certificate issued 06/02/2026."
+        },
+        {
+          "name": "ADSB.lol type query (LXJ callsign)",
+          "note": "Observed with callsign LXJ273, hex a2b234."
         }
       ]
     }
