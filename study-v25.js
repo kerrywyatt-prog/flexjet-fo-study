@@ -535,6 +535,7 @@
     page('Search', 'All study content', '/', `<form class="home-search" data-search-form2><input type="search" id="s-q" value="${esc(q)}" placeholder="Search everything" aria-label="Search" autocomplete="off" /></form><div id="s-res"><p class="muted small">Indexing…</p></div>`);
     const E = await buildIndex();
     const input = F().app.querySelector('#s-q');
+    if (!input || !F().app.querySelector('[data-search-form2]')) return; // user navigated away while indexing
     const run = () => {
       const v = input.value.trim();
       history.replaceState(null, '', '#/search' + (v ? '/' + encodeURIComponent(v) : ''));
@@ -562,9 +563,11 @@
   }
 
   // ---------- router ----------
+  let navGen = 0;
   function route(parts) {
     const [a, b, c, d] = parts;
-    const run = (p) => { Promise.resolve(p).catch(err => { console.error(err); page('Error', 'Home', '/', `<div class="card"><p>Could not load this page. Try Reload.</p><p class="muted small">${esc(err && err.message)}</p></div>`); }); return true; };
+    const myGen = ++navGen;
+    const run = (p) => { Promise.resolve(p).catch(err => { console.error(err); if (myGen !== navGen) return; page('Error', 'Home', '/', `<div class="card"><p>Could not load this page. Try Reload.</p><p class="muted small">${esc(err && err.message)}</p></div>`); }); return true; };
     if (!a) return run(viewHome());
     if (a === 'search') return run(viewSearch(b ? decodeURIComponent(parts.slice(1).join('/')) : ''));
     if (a === 'indoc') {
