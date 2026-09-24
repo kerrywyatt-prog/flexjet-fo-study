@@ -303,10 +303,10 @@
         "d": "before takeoff with freezing drizzle or light freezing rain.",
         "e": "All the above."
       },
-      "answer": "c",
-      "answer_text": "before takeoff when the crew is unable to determine that aircraft surfaces are free from contamination using a visual check.",
-      "explanation": "A tactile (hands-on) check is done before takeoff when you can't confirm the surfaces are clean just by looking. (Kept per FOM; the official key marks e.)",
-      "source": "FOM 7",
+      "answer": "e",
+      "answer_text": "All the above.",
+      "explanation": "Instructor (Indoc Day 3) and the official key both say E. FOM 7.3.11 satisfies all of the above (preflight in ground icing, after de/anti-icing, freezing drizzle / light freezing rain, and when a visual check can't confirm clean surfaces).",
+      "source": "FOM 7.3.11",
       "group": "u22"
     },
     {
