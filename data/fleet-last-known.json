@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-24T01:11:57Z",
+  "updated_at": "2026-09-24T01:40:40Z",
   "source": "ADSB.lol public type queries (cumulative last-known)",
   "notes": [
     "Keyed by Mode-S hex when available, else registration.",
@@ -7,10 +7,12 @@
     "Seeded initially from fleet-map-snapshot.json; GitHub Action grows this file over time."
   ],
   "last_poll": {
-    "at": "2026-09-24T01:11:57Z",
-    "live_count": 15,
+    "at": "2026-09-24T01:40:40Z",
+    "live_count": 1,
     "stored_count": 76,
-    "errors": []
+    "errors": [
+      "E545: HTTP Error 429: Too Many Requests"
+    ]
   },
   "aircraft": {
     "a4eafd": {
@@ -28,7 +30,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-24T01:11:57Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a568e8": {
@@ -46,7 +48,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-24T01:11:57Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a3a8f5": {
@@ -82,7 +84,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-24T01:11:57Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a29d48": {
@@ -334,7 +336,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-24T01:11:57Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a35dae": {
@@ -442,7 +444,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-24T01:11:57Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a7ef51": {
@@ -451,15 +453,15 @@
       "type": "E550",
       "model": "Praetor 600",
       "callsign": "LXJ610",
-      "lat": 34.19545,
-      "lon": -116.134345,
-      "alt_baro": 43000,
-      "alt_geom": 44650,
-      "gs": 452.1,
-      "track": 285.79,
+      "lat": 35.605087,
+      "lon": -120.169945,
+      "alt_baro": 38000,
+      "alt_geom": 39575,
+      "gs": 438.2,
+      "track": 298.79,
       "true_heading": null,
       "mag_heading": null,
-      "last_seen": "2026-09-24T01:11:57Z",
+      "last_seen": "2026-09-24T01:40:40Z",
       "status": "live",
       "source": "ADSB.lol type query"
     },
@@ -586,7 +588,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-24T01:11:57Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a39dd0": {
@@ -748,7 +750,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-24T01:11:57Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a38176": {
@@ -910,7 +912,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-24T01:11:57Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a7e58a": {
@@ -1018,7 +1020,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-24T01:11:57Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a36ee3": {
@@ -1036,7 +1038,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-24T01:11:57Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a54520": {
@@ -1072,7 +1074,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-24T01:11:57Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a4e38f": {
@@ -1216,7 +1218,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-24T01:11:57Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a7da65": {
@@ -1270,7 +1272,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-24T01:11:57Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a286fe": {
@@ -1324,7 +1326,7 @@
       "true_heading": 222.19,
       "mag_heading": null,
       "last_seen": "2026-09-24T01:11:57Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a3c906": {
