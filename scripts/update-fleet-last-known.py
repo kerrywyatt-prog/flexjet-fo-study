@@ -7,12 +7,19 @@
    polled even when ADSB.lol lacks a type code or the crew files a non-LXJ callsign.
 Entries are annotated with roster serial number / type. Never fabricates positions.
 
+If the box live relay (scripts/fleet-live-daemon.py) has a fresh snapshot in
+$FLEET_LIVE_STATE/live.json (< 5 min old), its sightings are reused instead of
+re-polling ADSB.lol (avoids 429s). When run on the box, the script also makes sure
+the relay daemon is running (set FLEET_LIVE_ENSURE=0 to disable).
+
 Respects rate limits with sequential queries + sleep.
 Commits are handled by the GitHub Action (only if this script changes the file).
 """
 from __future__ import annotations
 
 import json
+import os
+import subprocess
 import sys
 import time
 import urllib.error
@@ -27,6 +34,44 @@ TYPES = ("E545", "E550")
 API = "https://api.adsb.lol/v2/type/{}"
 HEX_API = "https://api.adsb.lol/v2/hex/{}"
 HEX_BATCH = 40
+LIVE_STATE_DIR = Path(os.environ.get("FLEET_LIVE_STATE", "/workspace/flexjet-fleet-live-state"))
+LIVE_FRESH_SEC = 300
+
+
+def load_relay_snapshot():
+    """Return the relay's live.json if fresh, else None."""
+    p = LIVE_STATE_DIR / "live.json"
+    try:
+        data = json.loads(p.read_text(encoding="utf-8"))
+        gen = datetime.strptime(data["generated_at"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+    except Exception:  # noqa: BLE001
+        return None
+    if (datetime.now(timezone.utc) - gen).total_seconds() > LIVE_FRESH_SEC:
+        return None
+    return data
+
+
+def ensure_live_daemon() -> None:
+    if os.environ.get("FLEET_LIVE_ENSURE", "1") == "0" or os.environ.get("GITHUB_ACTIONS"):
+        return
+    if not LIVE_STATE_DIR.exists():
+        return
+    pidf = LIVE_STATE_DIR / "daemon.pid"
+    try:
+        pid = int(pidf.read_text().strip())
+        cmd = Path(f"/proc/{pid}/cmdline").read_bytes().decode(errors="ignore")
+        if "fleet-live-daemon" in cmd:
+            print(f"live relay running (pid {pid})", flush=True)
+            return
+    except Exception:  # noqa: BLE001
+        pass
+    logf = open(LIVE_STATE_DIR / "daemon.log", "a")
+    proc = subprocess.Popen(
+        [sys.executable, str(ROOT / "scripts" / "fleet-live-daemon.py")],
+        cwd=str(ROOT), stdout=logf, stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL,
+        start_new_session=True,
+    )
+    print(f"started live relay (pid {proc.pid})", flush=True)
 UA = "flexjet-fo-study-fleet-bot/1.0 (+https://github.com/kerrywyatt-prog/flexjet-fo-study)"
 SLEEP_BETWEEN_TYPES_SEC = 12
 
@@ -151,6 +196,9 @@ def normalize_live(raw: dict, seen_at: str) -> dict:
         "track": raw.get("track"),
         "true_heading": raw.get("true_heading"),
         "mag_heading": raw.get("mag_heading"),
+        "baro_rate": raw.get("baro_rate"),
+        "geom_rate": raw.get("geom_rate"),
+        "squawk": raw.get("squawk"),
         "last_seen": seen_at,
         "status": "live",
         "source": "ADSB.lol type query",
@@ -183,7 +231,26 @@ def main() -> int:
     live_keys = set()
     errors = []
 
-    for i, t in enumerate(TYPES):
+    relay = load_relay_snapshot()
+    if relay:
+        for ac in relay.get("aircraft") or []:
+            try:
+                pos_ts = datetime.strptime(ac["pos_time"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+            except Exception:  # noqa: BLE001
+                continue
+            if (datetime.now(timezone.utc) - pos_ts).total_seconds() > 180 or not ac.get("hex"):
+                continue
+            k = ac["hex"].lower()
+            raw = dict(ac)
+            raw["flight"] = ac.get("callsign") or ""
+            raw["t"] = ac.get("type") or ""
+            raw["r"] = ac.get("registration") or ""
+            entry = normalize_live(raw, ac["pos_time"])
+            entry["source"] = f"box live relay ({ac.get('source') or 'ADS-B'})"
+            store[k] = entry
+            live_keys.add(k)
+        print(f"relay snapshot {relay.get('generated_at')}: live={len(live_keys)} (skipping direct polls)", flush=True)
+    for i, t in enumerate(TYPES if not relay else ()):
         try:
             raw = fetch_type(t)
             lxj = filter_lxj(raw, t)
@@ -201,7 +268,7 @@ def main() -> int:
             time.sleep(SLEEP_BETWEEN_TYPES_SEC)
 
     # Roster sweep — poll roster tails by hex that the type queries did not return.
-    pending = sorted(h for h in roster["by_hex"] if h not in live_keys)
+    pending = [] if relay else sorted(h for h in roster["by_hex"] if h not in live_keys)
     roster_hits = 0
     for start in range(0, len(pending), HEX_BATCH):
         batch = pending[start : start + HEX_BATCH]
@@ -301,6 +368,8 @@ def main() -> int:
 
     if live_keys:
         changed = True  # always persist fresh live sightings
+
+    ensure_live_daemon()
 
     if not changed:
         print("No material change; skipping write", flush=True)

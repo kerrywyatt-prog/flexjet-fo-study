@@ -667,16 +667,23 @@ function esc(s) {
 
 
   /* ——— Fleet Map ——— */
-  const FLEET_API_URLS = [
-    'https://api.adsb.lol/v2/type/E545',
-    'https://api.adsb.lol/v2/type/E550',
-  ];
+  // Live feed: box relay (scripts/fleet-live-daemon.py) publishes to the `fleet-live`
+  // branch. raw.githubusercontent.com sends Access-Control-Allow-Origin: *, whereas
+  // ADSB.lol / adsb.fi / airplanes.live do not (browser fetches are CORS-blocked).
+  // raw caches each URL ~5 min (query strings ignored), so the relay writes per-minute
+  // files m/<floor(unix/60)>.json one minute ahead; we fetch the current minute's file.
+  const FLEET_LIVE_BASE = 'https://raw.githubusercontent.com/kerrywyatt-prog/flexjet-fo-study/fleet-live/';
+  const FLEET_LIVE_URL = FLEET_LIVE_BASE + 'live.json';
   const FLEET_SNAPSHOT_URL = 'data/fleet-map-snapshot.json';
   const FLEET_LAST_KNOWN_URL = 'data/fleet-last-known.json';
   const FLEET_ROSTER_URL = 'data/praetor-fleet-roster.json';
-  const FLEET_REFRESH_MS = 90 * 1000;
+  const FLEET_REFRESH_MS = 60 * 1000;   // aligned to minute boundaries (+4 s)
+  const FLEET_LIVE_WINDOW_S = 180;      // aircraft position newer than this = LIVE
+  const FLEET_FEED_STALE_S = 420;       // relay file older than this = feed not live
+  const FLEET_TZ = 'America/New_York';
   let fleetMap = null;
   let fleetMarkers = [];
+  let fleetTrailLayer = null;
   let fleetAircraft = [];
   let fleetAllAircraft = [];
   let fleetFilterMode = 'all'; // 'live' | 'all'
@@ -686,9 +693,12 @@ function esc(s) {
   let fleetLastRequestAt = 0;
   let fleetLoading = false;
   let fleetRoster = null;
-  let fleetLastKnownStore = null;
   let fleetRosterByHex = new Map();
   let fleetRosterByReg = new Map();
+  let fleetMeta = { mode: 'loading', generatedAt: null };
+  let fleetSelectedKey = null;
+  let fleetFitDone = false;
+  let fleetVisibilityBound = false;
 
   async function loadFleetRoster() {
     if (fleetRoster) return fleetRoster;
@@ -714,99 +724,128 @@ function esc(s) {
       || null;
   }
 
-  function withRoster(ac) {
-    const r = fleetRosterEntry(ac);
-    if (!r) return ac;
-    const type = ac.type || r.icao_type || '';
-    return {
-      ...ac,
-      registration: (!ac.registration || ac.registration === 'UNKNOWN') ? r.registration : ac.registration,
-      type,
-      model: r.label || ac.model,
-      serial: r.serial_number || ac.serial || null,
-      rosterFlag: r.flag || null,
-    };
+  function fleetNum(v) {
+    const n = Number(v);
+    return v === null || v === undefined || v === '' || !Number.isFinite(n) ? null : n;
   }
 
-  function fleetType(raw) {
-    return String(raw && (raw.t ?? raw.type) || '').trim().toUpperCase();
-  }
-
-  function fleetCallsign(raw) {
-    return String(raw && (raw.flight ?? raw.callsign) || '').trim().toUpperCase();
-  }
-
-  function normalizeFleetAircraft(raw) {
-    const type = fleetType(raw);
-    const lat = Number(raw.lat);
-    const lon = Number(raw.lon);
-    return {
-      hex: String(raw.hex || '').trim().toLowerCase(),
-      registration: String(raw.r ?? raw.registration ?? 'Unknown').trim().toUpperCase(),
-      type,
-      model: type === 'E545' ? 'Praetor 500' : 'Praetor 600',
-      callsign: fleetCallsign(raw),
-      lat,
-      lon,
-      altBaro: raw.alt_baro ?? null,
-      altGeom: raw.alt_geom ?? null,
-      speed: Number.isFinite(Number(raw.gs)) ? Number(raw.gs) : null,
-      track: Number.isFinite(Number(raw.track)) ? Number(raw.track) : null,
-      trueHeading: Number.isFinite(Number(raw.true_heading)) ? Number(raw.true_heading) : null,
-      magHeading: Number.isFinite(Number(raw.mag_heading)) ? Number(raw.mag_heading) : null,
-      seen: Number.isFinite(Number(raw.seen)) ? Number(raw.seen) : null,
-      seenPos: Number.isFinite(Number(raw.seen_pos)) ? Number(raw.seen_pos) : null,
-    };
-  }
-
-  function filterFleetAircraft(records) {
-    return (Array.isArray(records) ? records : [])
-      .filter(raw => {
-        const type = fleetType(raw);
-        const callsign = fleetCallsign(raw);
-        const hex = String(raw.hex || '').trim().toLowerCase();
-        return (((type === 'E545' || type === 'E550') && callsign.startsWith('LXJ'))
-            || (hex && fleetRosterByHex.has(hex)))
-          && Number.isFinite(Number(raw.lat))
-          && Number.isFinite(Number(raw.lon));
-      })
-      .map(normalizeFleetAircraft);
+  function fleetTimeET(value) {
+    const d = new Date(value);
+    if (Number.isNaN(d.getTime())) return 'Unknown';
+    const today = new Date().toLocaleDateString('en-US', { timeZone: FLEET_TZ });
+    const day = d.toLocaleDateString('en-US', { timeZone: FLEET_TZ });
+    const t = d.toLocaleTimeString('en-US', { timeZone: FLEET_TZ, hour: 'numeric', minute: '2-digit' });
+    return day === today ? `${t} ET` : `${d.toLocaleDateString('en-US', { timeZone: FLEET_TZ, month: 'short', day: 'numeric' })} ${t} ET`;
   }
 
   function fleetAge(seconds) {
     if (!Number.isFinite(seconds) || seconds < 0) return 'Unknown';
-    if (seconds < 60) return `${Math.round(seconds)} sec ago`;
+    if (seconds < 90) return `${Math.round(seconds)} s ago`;
     if (seconds < 3600) return `${Math.round(seconds / 60)} min ago`;
     if (seconds < 86400) return `${Math.round(seconds / 3600)} hr ago`;
     return `${Math.round(seconds / 86400)} days ago`;
   }
 
-  function fleetDate(value) {
-    const date = new Date(value);
-    if (Number.isNaN(date.getTime())) return 'Unknown';
-    return date.toLocaleString([], { dateStyle: 'medium', timeStyle: 'short' });
+  function fleetAgeSeconds(value) {
+    const t = new Date(value).getTime();
+    return Number.isFinite(t) ? Math.max(0, (Date.now() - t) / 1000) : NaN;
   }
 
-  function fleetNumber(value, digits = 0) {
-    return Number.isFinite(value) ? value.toFixed(digits) : 'Unavailable';
+  // Normalise any record (relay live.json, last-known store, snapshot) into one shape.
+  function fleetNormalize(e, key, origin) {
+    const lat = fleetNum(e.lat);
+    const lon = fleetNum(e.lon);
+    if (lat === null || lon === null) return null;
+    const hex = String(e.hex || (key && /^[0-9a-f]{6}$/i.test(key) ? key : '') || '').toLowerCase();
+    const r = fleetRosterEntry({ hex, registration: e.registration || e.r });
+    const type = String(e.type || e.t || (r && r.icao_type) || '').toUpperCase();
+    const altRaw = e.alt_baro ?? e.altBaro ?? null;
+    const gs = fleetNum(e.gs);
+    const onGround = e.on_ground === true || String(altRaw).toLowerCase() === 'ground';
+    return {
+      hex,
+      registration: String((r && r.registration) || e.registration || e.r || 'Unknown').trim().toUpperCase(),
+      type: type || 'E545',
+      model: (r && r.label) || e.model || (type === 'E550' ? 'Praetor 600' : 'Praetor 500'),
+      serial: (r && r.serial_number) || e.serial_number || null,
+      rosterFlag: (r && r.flag) || e.roster_flag || null,
+      callsign: String(e.callsign || e.flight || '').trim().toUpperCase(),
+      lat, lon,
+      altBaro: altRaw,
+      altGeom: e.alt_geom ?? null,
+      speed: gs,
+      track: fleetNum(e.track),
+      trueHeading: fleetNum(e.true_heading),
+      magHeading: fleetNum(e.mag_heading),
+      vertRate: fleetNum(e.baro_rate) ?? fleetNum(e.geom_rate),
+      squawk: e.squawk || null,
+      emergency: e.emergency && e.emergency !== 'none' ? e.emergency : null,
+      onGround,
+      posTime: e.pos_time || e.last_seen || e.lastSeen || null,
+      source: e.source || null,
+      origin,
+      departedEst: e.departed_est || null,
+      firstSeen: e.first_seen_this_flight || null,
+      onGroundAtEst: e.on_ground_at_est || null,
+      groundSince: e.ground_since || null,
+      lastLandedEst: e.last_landed_est || null,
+      route: e.route || null,
+      trail: Array.isArray(e.trail) ? e.trail : [],
+    };
+  }
+
+  function fleetIsLive(ac) {
+    if (fleetMeta.mode !== 'live') return false;
+    return fleetAgeSeconds(ac.posTime) <= FLEET_LIVE_WINDOW_S;
   }
 
   function fleetAltitude(ac) {
-    if (String(ac.altBaro).toLowerCase() === 'ground') return 'Ground';
-    if (Number.isFinite(Number(ac.altBaro))) return `${Math.round(Number(ac.altBaro)).toLocaleString()} ft baro`;
-    if (Number.isFinite(Number(ac.altGeom))) return `${Math.round(Number(ac.altGeom)).toLocaleString()} ft geometric`;
+    if (ac.onGround) return 'On ground';
+    const a = fleetNum(ac.altBaro);
+    if (a !== null) {
+      const ft = `${Math.round(a).toLocaleString()} ft baro`;
+      return a >= 18000 ? `FL${String(Math.round(a / 100)).padStart(3, '0')} · ${ft}` : ft;
+    }
+    const g = fleetNum(ac.altGeom);
+    if (g !== null) return `${Math.round(g).toLocaleString()} ft geometric`;
     return 'Unavailable';
+  }
+
+  function fleetAltShort(ac) {
+    if (ac.onGround) return 'On ground';
+    const a = fleetNum(ac.altBaro);
+    if (a === null) return 'Airborne';
+    return a >= 18000 ? `FL${String(Math.round(a / 100)).padStart(3, '0')}` : `${Math.round(a).toLocaleString()} ft`;
   }
 
   function fleetHeading(ac) {
-    if (Number.isFinite(ac.trueHeading)) return `${Math.round(ac.trueHeading)}° true heading`;
-    if (Number.isFinite(ac.magHeading)) return `${Math.round(ac.magHeading)}° magnetic heading`;
-    if (Number.isFinite(ac.track)) return `${Math.round(ac.track)}° track`;
-    return 'Unavailable';
+    const parts = [];
+    if (ac.track !== null) parts.push(`${Math.round(ac.track)}° track`);
+    if (ac.trueHeading !== null) parts.push(`${Math.round(ac.trueHeading)}° true hdg`);
+    else if (ac.magHeading !== null) parts.push(`${Math.round(ac.magHeading)}° mag hdg`);
+    return parts.length ? parts.join(' · ') : 'Unavailable';
+  }
+
+  function fleetVertRate(ac) {
+    if (ac.vertRate === null) return 'Unavailable';
+    const v = Math.round(ac.vertRate / 10) * 10;
+    if (Math.abs(v) < 100) return `Level (${v >= 0 ? '+' : ''}${v} fpm)`;
+    return `${v > 0 ? '↑ +' : '↓ '}${v.toLocaleString()} fpm`;
+  }
+
+  function fleetAirport(a) {
+    if (!a) return null;
+    const where = [a.city, a.region ? String(a.region).replace(/^US-/, '') : ''].filter(Boolean).join(', ');
+    return `${a.code || ''} ${a.name || ''}${where ? ` (${where})` : ''}`.trim();
+  }
+
+  function fleetStatusLabel(ac) {
+    if (!fleetIsLive(ac)) return `Last known · ${fleetTimeET(ac.posTime)}`;
+    return ac.onGround ? 'LIVE · On ground' : `LIVE · Airborne ${fleetAltShort(ac)}`;
   }
 
   function cleanupFleetMap() {
-    if (fleetRefreshTimer) clearInterval(fleetRefreshTimer);
+    if (fleetRefreshTimer) clearTimeout(fleetRefreshTimer);
     if (fleetCooldownTimer) clearInterval(fleetCooldownTimer);
     fleetRefreshTimer = null;
     fleetCooldownTimer = null;
@@ -817,18 +856,40 @@ function esc(s) {
     }
     fleetMap = null;
     fleetMarkers = [];
+    fleetTrailLayer = null;
     fleetAircraft = [];
     fleetAllAircraft = [];
     fleetLastRequestAt = 0;
     fleetLoading = false;
+    fleetSelectedKey = null;
+    fleetFitDone = false;
   }
 
   function isFleetRoute() {
     return parseHash().parts[0] === 'fleet-map';
   }
 
+  function updateFleetBadge() {
+    const badge = $('#fleet-status-badge');
+    if (!badge) return;
+    if (fleetMeta.mode === 'live') {
+      badge.className = 'fleet-status-badge live';
+      badge.textContent = `LIVE · updated ${fleetAge(fleetAgeSeconds(fleetMeta.generatedAt))}`;
+    } else if (fleetMeta.mode === 'last_known' || fleetMeta.mode === 'snapshot') {
+      badge.className = `fleet-status-badge ${fleetMeta.mode}`;
+      badge.textContent = `Last known · ${fleetMeta.generatedAt ? fleetTimeET(fleetMeta.generatedAt) : '—'}`;
+    } else if (fleetMeta.mode === 'error') {
+      badge.className = 'fleet-status-badge error';
+      badge.textContent = 'Unavailable';
+    } else {
+      badge.className = 'fleet-status-badge loading';
+      badge.textContent = 'Loading';
+    }
+  }
+
   function updateFleetRefreshButton() {
-    const remaining = Math.max(0, Math.ceil((fleetLastRequestAt + FLEET_REFRESH_MS - Date.now()) / 1000));
+    updateFleetBadge();
+    const remaining = Math.ceil(fleetNextRefreshWait() / 1000);
     const label = fleetLoading ? 'Refreshing…' : 'Refresh aircraft';
     ['#fleet-refresh', '#fleet-refresh-mobile'].forEach(sel => {
       const button = $(sel);
@@ -839,10 +900,10 @@ function esc(s) {
     });
     const hint = $('#fleet-refresh-hint');
     if (hint) hint.textContent = fleetLoading
-      ? 'Fetching latest public ADS-B…'
-      : remaining > 0
-        ? `Auto-refresh in ${remaining}s · manual refresh available`
-        : 'Manual refresh available';
+      ? 'Fetching latest positions…'
+      : document.visibilityState === 'hidden'
+        ? 'Paused while hidden'
+        : remaining > 0 ? `Next refresh in ${remaining}s` : 'Refresh available';
   }
 
   function setFleetState(message, kind = '') {
@@ -851,6 +912,15 @@ function esc(s) {
     state.className = `fleet-state ${kind}`.trim();
     state.textContent = message;
     state.hidden = !message;
+  }
+
+  function fleetMarkerHtml(ac) {
+    const live = fleetIsLive(ac);
+    if (ac.onGround) {
+      return `<span class="fleet-marker fleet-marker-ground${live ? '' : ' fleet-marker-ghost'}" aria-hidden="true">■</span>`;
+    }
+    const rot = ac.track ?? ac.trueHeading ?? ac.magHeading ?? 0;
+    return `<span class="fleet-marker fleet-marker-air${live ? '' : ' fleet-marker-ghost'}" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" style="transform:rotate(${Math.round(rot)}deg)"><path fill="currentColor" d="M12 2c.8 0 1.3.9 1.3 2v5.2l7.7 4.6v2l-7.7-2.3v4.6l2.2 1.7V21L12 20.1 8.5 21v-1.2l2.2-1.7v-4.6L3 15.8v-2l7.7-4.6V4c0-1.1.5-2 1.3-2z"/></svg></span>`;
   }
 
   function renderFleetMapMarkers(aircraft) {
@@ -876,84 +946,135 @@ function esc(s) {
     fleetMarkers = [];
     const points = [];
     aircraft.forEach((ac, index) => {
-      const ghost = ac.status === 'last_known' || ac.mode === 'snapshot';
+      const live = fleetIsLive(ac);
       const icon = L.divIcon({
         className: 'fleet-marker-shell',
-        html: `<span class="fleet-marker${ghost ? ' fleet-marker-ghost' : ''}" aria-hidden="true">✈</span>`,
-        iconSize: [34, 34],
-        iconAnchor: [17, 17],
+        html: fleetMarkerHtml(ac),
+        iconSize: [28, 28],
+        iconAnchor: [14, 14],
       });
-      const statusLabel = ac.status === 'live' ? 'Live' : 'Last known';
       const marker = L.marker([ac.lat, ac.lon], {
         icon,
-        title: `${ac.registration} ${ac.callsign || ''} (${statusLabel})`,
-        opacity: ghost ? 0.72 : 1,
+        title: `${ac.registration} ${ac.callsign || ''} (${fleetStatusLabel(ac)})`,
+        opacity: live ? 1 : 0.6,
+        zIndexOffset: live ? (ac.onGround ? 500 : 1000) : 0,
       }).addTo(fleetMap);
-      marker.bindTooltip(`${esc(ac.registration)} · ${esc(statusLabel)}`, { direction: 'top', offset: [0, -14] });
+      marker.bindTooltip(`${esc(ac.registration)} · ${esc(live ? (ac.onGround ? 'On ground' : fleetAltShort(ac)) : 'Last known')}`, { direction: 'top', offset: [0, -14] });
       marker.on('click', () => selectFleetAircraft(index, false));
       fleetMarkers.push(marker);
-      points.push([ac.lat, ac.lon]);
+      if (live || fleetMeta.mode !== 'live') points.push([ac.lat, ac.lon]);
     });
-    if (points.length) fleetMap.fitBounds(points, { padding: [34, 34], maxZoom: 7 });
+    if (!fleetFitDone && points.length) {
+      fleetMap.fitBounds(points, { padding: [34, 34], maxZoom: 7 });
+      fleetFitDone = true;
+    }
     window.setTimeout(() => fleetMap && fleetMap.invalidateSize(), 0);
   }
 
-  function selectFleetAircraft(index, pan = true) {
+  function drawFleetTrail(ac) {
+    if (!fleetMap || !window.L) return;
+    if (fleetTrailLayer) { fleetTrailLayer.remove(); fleetTrailLayer = null; }
+    const pts = (ac.trail || []).filter(p => Array.isArray(p) && Number.isFinite(p[0]) && Number.isFinite(p[1])).map(p => [p[0], p[1]]);
+    if (pts.length) pts.push([ac.lat, ac.lon]);
+    if (pts.length >= 2) {
+      fleetTrailLayer = L.polyline(pts, { color: '#39c6ff', weight: 3, opacity: 0.85, dashArray: fleetIsLive(ac) ? null : '6 6' }).addTo(fleetMap);
+    }
+  }
+
+  function selectFleetAircraft(index, pan = true, reveal = true) {
     const ac = fleetAircraft[index];
     const panel = $('#fleet-details');
     if (!ac || !panel) return;
+    fleetSelectedKey = ac.hex || ac.registration;
     app.querySelectorAll('.fleet-aircraft-button').forEach((el, i) => el.classList.toggle('selected', i === index));
-    const positionAge = ac.lastSeen
-      ? fleetAge(Math.max(0, (Date.now() - new Date(ac.lastSeen).getTime()) / 1000))
-      : ac.mode === 'snapshot'
-        ? fleetAge(Math.max(0, (Date.now() - new Date(ac.snapshotAt).getTime()) / 1000) + (ac.seenPos || 0))
-        : fleetAge(ac.seenPos ?? ac.seen);
-    const trackerUrl = `https://adsb.lol/?icao=${encodeURIComponent(ac.hex)}`;
+    const live = fleetIsLive(ac);
+    const ageS = fleetAgeSeconds(ac.posTime);
+    const trackerUrl = ac.hex ? `https://adsb.lol/?icao=${encodeURIComponent(ac.hex)}` : null;
+    let departed;
+    if (ac.onGround) {
+      departed = '—';
+    } else if (ac.departedEst && ac.departedEst.airport) {
+      departed = `${esc(fleetAirport(ac.departedEst.airport))}<span class="fleet-est">Estimate — ${esc(ac.departedEst.method || 'nearest airport')}${ac.departedEst.time ? `, ${esc(fleetTimeET(ac.departedEst.time))}` : ''}</span>`;
+    } else if (ac.firstSeen) {
+      departed = `Not determined<span class="fleet-est">First seen airborne ${esc(ac.firstSeen.alt_baro != null ? `at ${Number(ac.firstSeen.alt_baro).toLocaleString()} ft` : '')} ${esc(fleetTimeET(ac.firstSeen.time))} — no ground fix</span>`;
+    } else {
+      departed = 'Not determined';
+    }
+    let destination;
+    if (ac.route && ac.route.destination) {
+      destination = `${esc(ac.route.destination.code || '')} ${esc(ac.route.destination.name || '')}<span class="fleet-est">${esc(ac.route.source || 'route DB')} — unverified</span>`;
+    } else {
+      destination = 'Not published (fractional flight)';
+    }
+    const groundAt = ac.onGround
+      ? (ac.onGroundAtEst ? `${esc(fleetAirport(ac.onGroundAtEst))}<span class="fleet-est">Estimate — nearest airport to ground position${ac.groundSince ? `, on ground since ${esc(fleetTimeET(ac.groundSince))}` : ''}</span>` : 'Not near a known jet airport')
+      : null;
+    const landed = ac.lastLandedEst && ac.lastLandedEst.airport
+      ? `${esc(fleetAirport(ac.lastLandedEst.airport))}<span class="fleet-est">Estimate — ${esc(fleetTimeET(ac.lastLandedEst.time))}</span>`
+      : null;
+    const trailPts = (ac.trail || []).length;
+    const sourceText = ac.origin === 'relay'
+      ? `Public ADS-B (${esc(ac.source || 'ADSB.lol')}) via box relay`
+      : ac.origin === 'snapshot' ? 'ADSB.lol snapshot (not live)' : `ADSB.lol last-known store (hourly)`;
     panel.innerHTML = `
       <div class="fleet-detail-head">
         <div>
-          <div class="fleet-detail-kicker">${esc(ac.model)}</div>
+          <div class="fleet-detail-kicker">${esc(ac.model)} · ${esc(ac.type)}</div>
           <h2>${esc(ac.registration)}</h2>
         </div>
-        <span class="fleet-source-chip ${ac.status === 'live' ? 'live' : (ac.mode === 'snapshot' ? 'snapshot' : 'last-known')}">${
-          ac.status === 'live' ? 'Live' : (ac.mode === 'snapshot' ? 'Snapshot' : 'Last known')
+        <span class="fleet-source-chip ${live ? (ac.onGround ? 'ground' : 'live') : 'last-known'}">${
+          live ? (ac.onGround ? 'LIVE · Ground' : 'LIVE · Airborne') : 'Last known'
         }</span>
       </div>
+      ${ac.emergency ? `<div class="fleet-emergency">Emergency status: ${esc(ac.emergency)}</div>` : ''}
       <dl class="fleet-detail-grid">
-        <div><dt>Status</dt><dd>${ac.status === 'live' ? 'Live' : 'Last known'} · ${esc(positionAge)}</dd></div>
+        <div><dt>S/N</dt><dd>${esc(ac.serial || '—')}</dd></div>
         <div><dt>Callsign</dt><dd>${esc(ac.callsign || '—')}</dd></div>
-        <div><dt>Serial number</dt><dd>${esc(ac.serial || '—')}</dd></div>
-        <div><dt>ICAO type</dt><dd>${esc(ac.type)}</dd></div>
         <div><dt>Altitude</dt><dd>${esc(fleetAltitude(ac))}</dd></div>
-        <div><dt>Ground speed</dt><dd>${ac.speed == null ? 'Unavailable' : `${fleetNumber(ac.speed, 1)} kt`}</dd></div>
-        <div><dt>Heading / track</dt><dd>${esc(fleetHeading(ac))}</dd></div>
-        <div><dt>Position age</dt><dd>${esc(positionAge)}</dd></div>
+        <div><dt>Ground speed</dt><dd>${ac.speed === null ? 'Unavailable' : `${Math.round(ac.speed)} kt`}</dd></div>
+        <div><dt>Track / heading</dt><dd>${esc(fleetHeading(ac))}</dd></div>
+        <div><dt>Vertical rate</dt><dd>${esc(fleetVertRate(ac))}</dd></div>
+        <div><dt>Squawk</dt><dd>${esc(ac.squawk || '—')}</dd></div>
+        <div><dt>On ground</dt><dd>${ac.onGround ? 'Yes' : 'No'}</dd></div>
+        <div><dt>Position age</dt><dd>${esc(fleetAge(ageS))}<br><small>${esc(fleetTimeET(ac.posTime))}</small></dd></div>
+        <div><dt>Status</dt><dd>${live ? 'Live' : 'Last known'}</dd></div>
+        ${ac.onGround
+          ? `<div class="wide"><dt>On ground at (est.)</dt><dd>${groundAt}</dd></div>`
+          : `<div class="wide"><dt>Departed (est.)</dt><dd>${departed}</dd></div>
+             <div class="wide"><dt>Destination</dt><dd>${destination}</dd></div>`}
+        ${landed ? `<div class="wide"><dt>Last landed (est.)</dt><dd>${landed}</dd></div>` : ''}
+        <div class="wide"><dt>Track line</dt><dd>${trailPts >= 2 ? `${trailPts} recent positions drawn on map` : 'No recent history yet'}</dd></div>
         ${ac.rosterFlag ? `<div class="wide"><dt>Roster note</dt><dd>${esc(ac.rosterFlag)}</dd></div>` : ''}
-        <div class="wide"><dt>Coordinates</dt><dd>${fleetNumber(ac.lat, 5)}, ${fleetNumber(ac.lon, 5)}</dd></div>
-        <div class="wide"><dt>Source</dt><dd>ADSB.lol public ADS-B${ac.status !== 'live' ? ' · last-known / snapshot' : ''}</dd></div>
-        <div class="wide"><dt>Next publicly filed</dt><dd>No public next-filed flight available.</dd></div>
+        <div class="wide"><dt>Coordinates</dt><dd>${ac.lat.toFixed(4)}, ${ac.lon.toFixed(4)}</dd></div>
+        <div class="wide"><dt>Data source</dt><dd>${sourceText}</dd></div>
       </dl>
-      <a class="btn btn-primary fleet-tracker-link" href="${trackerUrl}" target="_blank" rel="noopener noreferrer">Open ADSB.lol tracker</a>`;
+      ${trackerUrl ? `<a class="btn btn-primary fleet-tracker-link" href="${trackerUrl}" target="_blank" rel="noopener noreferrer">Open ADSB.lol tracker</a>` : ''}`;
+    drawFleetTrail(ac);
     if (fleetMap && fleetMarkers[index]) {
       if (pan) fleetMap.panTo([ac.lat, ac.lon]);
       fleetMarkers[index].openTooltip();
+    }
+    if (reveal && window.innerWidth < 900) {
+      const sticky = document.querySelector('.fleet-map-intro');
+      const topbarEl = document.querySelector('.topbar');
+      const stickyBottom = Math.max(
+        sticky && getComputedStyle(sticky).position === 'sticky' ? sticky.getBoundingClientRect().bottom : 0,
+        topbarEl ? topbarEl.getBoundingClientRect().bottom : 0
+      );
+      window.scrollTo({ top: panel.getBoundingClientRect().top + window.scrollY - stickyBottom - 8, behavior: 'smooth' });
     }
   }
 
   function applyFleetFilter() {
     const source = fleetAllAircraft.slice();
-    fleetAircraft = fleetFilterMode === 'live'
-      ? source.filter(ac => ac.status === 'live')
-      : source;
-    // Prefer live first, then last_known by registration
-    fleetAircraft.sort((a, b) => {
-      if (a.status !== b.status) return a.status === 'live' ? -1 : 1;
-      return String(a.registration).localeCompare(String(b.registration));
-    });
+    fleetAircraft = fleetFilterMode === 'live' ? source.filter(fleetIsLive) : source;
+    const rank = ac => (fleetIsLive(ac) ? (ac.onGround ? 1 : 0) : 2);
+    fleetAircraft.sort((a, b) => rank(a) - rank(b) || String(a.registration).localeCompare(String(b.registration)));
     const list = $('#fleet-aircraft-list');
     const details = $('#fleet-details');
-    const liveCount = fleetAllAircraft.filter(ac => ac.status === 'live').length;
-    const knownCount = fleetAllAircraft.length;
+    const liveList = fleetAllAircraft.filter(fleetIsLive);
+    const airborne = liveList.filter(ac => !ac.onGround).length;
+    const emptyDetails = '<div class="fleet-details-empty">Tap an aircraft marker or list item for details.</div>';
     if (!fleetAircraft.length) {
       setFleetState(
         fleetFilterMode === 'live'
@@ -962,27 +1083,34 @@ function esc(s) {
         'empty'
       );
       if (list) list.innerHTML = '';
-      if (details) details.innerHTML = '<div class="fleet-details-empty">Select an aircraft marker or list item to view public ADS-B details.</div>';
+      if (details) details.innerHTML = emptyDetails;
     } else {
       setFleetState('', '');
-      if (list) list.innerHTML = fleetAircraft.map((ac, index) => `
-        <button type="button" class="fleet-aircraft-button ${ac.status === 'live' ? 'is-live' : 'is-last-known'}" data-fleet-index="${index}">
-          <strong>${esc(ac.registration)}</strong>
-          <span>${esc(ac.callsign || '—')} · ${esc(ac.model)}${ac.serial ? ` · S/N ${esc(ac.serial)}` : ''} · ${ac.status === 'live' ? 'Live' : 'Last known'}</span>
-        </button>`).join('');
+      if (list) list.innerHTML = fleetAircraft.map((ac, index) => {
+        const live = fleetIsLive(ac);
+        return `
+        <button type="button" class="fleet-aircraft-button ${live ? (ac.onGround ? 'is-ground' : 'is-live') : 'is-last-known'}" data-fleet-index="${index}">
+          <strong>${esc(ac.registration)} <em class="fleet-list-status">${esc(live ? (ac.onGround ? 'On ground' : fleetAltShort(ac)) : 'Last known')}</em></strong>
+          <span>${esc(ac.callsign || '—')} · ${esc(ac.model)}${ac.serial ? ` · S/N ${esc(ac.serial)}` : ''}${live && !ac.onGround && ac.speed !== null ? ` · ${Math.round(ac.speed)} kt` : ''}${!live ? ` · ${esc(fleetTimeET(ac.posTime))}` : ''}</span>
+        </button>`;
+      }).join('');
       app.querySelectorAll('[data-fleet-index]').forEach(el => {
         el.addEventListener('click', () => selectFleetAircraft(Number(el.getAttribute('data-fleet-index'))));
       });
-      if (details) details.innerHTML = '<div class="fleet-details-empty">Select an aircraft marker or list item to view public ADS-B details.</div>';
+      if (details) details.innerHTML = emptyDetails;
     }
     const counts = $('#fleet-filter-counts');
-    if (counts) counts.textContent = `${liveCount} live · ${knownCount} with position`;
+    if (counts) counts.textContent = `${liveList.length} live (${airborne} airborne) · ${fleetAllAircraft.length} with position`;
     app.querySelectorAll('[data-fleet-filter]').forEach(el => {
       el.classList.toggle('active', el.getAttribute('data-fleet-filter') === fleetFilterMode);
       el.setAttribute('aria-pressed', el.getAttribute('data-fleet-filter') === fleetFilterMode ? 'true' : 'false');
     });
-    renderFleetMapMarkers(fleetAircraft.filter(ac => Number.isFinite(ac.lat) && Number.isFinite(ac.lon)));
+    renderFleetMapMarkers(fleetAircraft);
     renderFleetRosterTable();
+    if (fleetSelectedKey) {
+      const idx = fleetAircraft.findIndex(ac => (ac.hex || ac.registration) === fleetSelectedKey);
+      if (idx >= 0) selectFleetAircraft(idx, false, false);
+    }
   }
 
   function renderFleetRosterTable() {
@@ -992,6 +1120,7 @@ function esc(s) {
       wrap.innerHTML = '<p class="fleet-roster-note">Roster unavailable.</p>';
       return;
     }
+    const wasOpen = !!wrap.querySelector('details[open]');
     const seen = new Map();
     fleetAllAircraft.forEach(ac => {
       const r = fleetRosterEntry(ac);
@@ -1004,7 +1133,7 @@ function esc(s) {
       return String(a.registration).localeCompare(String(b.registration));
     });
     wrap.innerHTML = `
-      <details class="fleet-roster-details">
+      <details class="fleet-roster-details"${wasOpen ? ' open' : ''}>
         <summary>Fleet roster — ${esc(c.company_fleet_list ?? '—')} tails (${esc(c.company_fleet_list_E545 ?? '—')} Praetor 500 · ${esc(c.company_fleet_list_E550 ?? '—')} Praetor 600)${c.flagged_not_on_company_list ? ` + ${esc(c.flagged_not_on_company_list)} flagged` : ''}</summary>
         <p class="fleet-roster-note">Source: ${esc(fleetRoster.source || 'Flexjet fleet list (Oct 30 2025)')}. Tail / serial / model cross-checked against the public FAA Aircraft Registry. Flagged tails are not on the company fleet list dated Oct 30 2025.</p>
         <div class="fleet-roster-scroll">
@@ -1012,7 +1141,7 @@ function esc(s) {
             <thead><tr><th>Tail</th><th>Type</th><th>Serial</th><th>Position</th><th>Note</th></tr></thead>
             <tbody>${rows.map(r => {
               const ac = seen.get(r.registration);
-              const pos = ac ? (ac.status === 'live' ? 'Live' : 'Last known') : '—';
+              const pos = ac ? (fleetIsLive(ac) ? (ac.onGround ? 'Live · ground' : `Live · ${fleetAltShort(ac)}`) : 'Last known') : '—';
               return `<tr class="${r.flag ? 'is-flagged' : ''}"><td><strong>${esc(r.registration)}</strong></td><td>${esc(r.label || r.icao_type)}</td><td>${esc(r.serial_number || '—')}</td><td>${esc(pos)}</td><td>${r.flag ? esc(r.flag) : ''}</td></tr>`;
             }).join('')}</tbody>
           </table>
@@ -1022,31 +1151,14 @@ function esc(s) {
 
   function renderFleetAircraft(aircraft, meta) {
     if (!isFleetRoute()) return;
-    fleetAllAircraft = aircraft.map(withRoster).map(ac => ({
-      ...ac,
-      mode: meta.mode,
-      snapshotAt: meta.snapshotAt || null,
-      status: ac.status || (meta.mode === 'live' ? 'live' : 'last_known'),
-      lastSeen: ac.lastSeen || meta.updatedAt || meta.snapshotAt || null,
-    }));
-    const badge = $('#fleet-status-badge');
+    fleetMeta = meta;
+    fleetAllAircraft = aircraft;
+    updateFleetBadge();
     const updated = $('#fleet-updated');
     const fallback = $('#fleet-fallback');
-    if (badge) {
-      badge.className = `fleet-status-badge ${meta.mode}`;
-      badge.textContent = meta.mode === 'live'
-        ? 'Live + last-known'
-        : meta.mode === 'last_known'
-          ? 'Last-known store'
-          : 'Snapshot fallback';
-    }
-    if (updated) updated.textContent = `Last updated: ${fleetDate(meta.updatedAt)}`;
+    if (updated) updated.textContent = meta.generatedAt ? `Feed time: ${fleetTimeET(meta.generatedAt)}` : 'Feed time: —';
     if (fallback) {
-      if (meta.mode === 'snapshot') {
-        const ageSeconds = Math.max(0, (Date.now() - new Date(meta.snapshotAt).getTime()) / 1000);
-        fallback.hidden = false;
-        fallback.innerHTML = `<strong>Snapshot fallback</strong> — live requests were blocked or unavailable. Showing last-known positions from ${esc(fleetDate(meta.snapshotAt))} (${esc(fleetAge(ageSeconds))}). This is not live.`;
-      } else if (meta.note) {
+      if (meta.note) {
         fallback.hidden = false;
         fallback.innerHTML = esc(meta.note);
       } else {
@@ -1057,68 +1169,35 @@ function esc(s) {
     applyFleetFilter();
   }
 
-  function fleetKey(ac) {
-    if (ac.hex) return String(ac.hex).toLowerCase();
-    return String(ac.registration || '').toUpperCase();
+  async function fetchJson(url, signal) {
+    const response = await fetch(url, { cache: 'no-store', signal });
+    if (!response.ok) throw new Error(`${url} → HTTP ${response.status}`);
+    return response.json();
   }
 
-  function normalizeLastKnownEntry(entry, key) {
-    const type = String(entry.type || entry.icao_type || '').toUpperCase();
-    const lat = Number(entry.lat);
-    const lon = Number(entry.lon);
-    if (!Number.isFinite(lat) || !Number.isFinite(lon)) return null;
-    return {
-      hex: String(entry.hex || (key && /^[0-9a-f]+$/i.test(key) ? key : '') || '').toLowerCase(),
-      registration: String(entry.registration || 'Unknown').trim().toUpperCase(),
-      type: type || 'E545',
-      model: entry.model || (type === 'E550' ? 'Praetor 600' : 'Praetor 500'),
-      callsign: String(entry.callsign || '').trim().toUpperCase(),
-      lat,
-      lon,
-      altBaro: entry.alt_baro ?? entry.altBaro ?? null,
-      altGeom: entry.alt_geom ?? entry.altGeom ?? null,
-      speed: Number.isFinite(Number(entry.gs ?? entry.speed)) ? Number(entry.gs ?? entry.speed) : null,
-      track: Number.isFinite(Number(entry.track)) ? Number(entry.track) : null,
-      trueHeading: Number.isFinite(Number(entry.true_heading ?? entry.trueHeading)) ? Number(entry.true_heading ?? entry.trueHeading) : null,
-      magHeading: Number.isFinite(Number(entry.mag_heading ?? entry.magHeading)) ? Number(entry.mag_heading ?? entry.magHeading) : null,
-      seen: null,
-      seenPos: null,
-      status: 'last_known',
-      lastSeen: entry.last_seen || entry.lastSeen || null,
-      serial: entry.serial_number || null,
-    };
+  async function fetchFleetRelay(signal) {
+    const bucket = Math.floor(Date.now() / 60000);
+    const urls = [`${FLEET_LIVE_BASE}m/${bucket}.json`, `${FLEET_LIVE_BASE}m/${bucket - 1}.json`, FLEET_LIVE_URL];
+    for (const url of urls) {
+      try {
+        return await fetchJson(url, signal);
+      } catch (err) {
+        if (err && err.name === 'AbortError') throw err;
+        console.warn('Fleet relay miss:', url, String(err && err.message || err));
+      }
+    }
+    return null;
   }
 
-  function mergeFleetLiveAndLastKnown(liveList, lastKnownPayload) {
+  function mergeFleet(primary, secondary) {
     const byKey = new Map();
-    const store = (lastKnownPayload && lastKnownPayload.aircraft) || {};
-    Object.entries(store).forEach(([key, entry]) => {
-      const ac = normalizeLastKnownEntry(entry, key);
-      if (!ac) return;
-      byKey.set(fleetKey(ac) || key, ac);
-    });
-    liveList.forEach(ac => {
-      const merged = {
-        ...ac,
-        status: 'live',
-        lastSeen: new Date().toISOString(),
-      };
-      byKey.set(fleetKey(merged), merged);
+    const key = ac => ac.hex || ac.registration;
+    secondary.forEach(ac => byKey.set(key(ac), ac));
+    primary.forEach(ac => {
+      const prev = byKey.get(key(ac));
+      if (!prev || new Date(ac.posTime) >= new Date(prev.posTime)) byKey.set(key(ac), ac);
     });
     return Array.from(byKey.values());
-  }
-
-  async function loadFleetLastKnown(signal) {
-    try {
-      const response = await fetch(FLEET_LAST_KNOWN_URL, { cache: 'no-store', signal });
-      if (!response.ok) throw new Error('last-known fetch failed');
-      fleetLastKnownStore = await response.json();
-      return fleetLastKnownStore;
-    } catch (err) {
-      if (err && err.name === 'AbortError') throw err;
-      fleetLastKnownStore = null;
-      return null;
-    }
   }
 
   async function loadFleetMapData() {
@@ -1126,64 +1205,74 @@ function esc(s) {
     fleetLoading = true;
     fleetLastRequestAt = Date.now();
     updateFleetRefreshButton();
-    setFleetState(fleetAllAircraft.length ? 'Refreshing public ADS-B…' : 'Loading public ADS-B positions…', 'loading');
+    if (!fleetAllAircraft.length) setFleetState('Loading positions…', 'loading');
     fleetAbortController = new AbortController();
     const signal = fleetAbortController.signal;
-    await loadFleetRoster();
-    const lastKnownPromise = loadFleetLastKnown(signal);
     try {
-      const responses = await Promise.all(FLEET_API_URLS.map(url => fetch(url, {
-        method: 'GET',
-        mode: 'cors',
-        cache: 'no-store',
-        signal,
-        headers: { Accept: 'application/json' },
-      })));
-      if (responses.some(response => !response.ok)) throw new Error('Live ADS-B request failed');
-      const payloads = await Promise.all(responses.map(response => response.json()));
-      const raw = payloads.flatMap(payload => Array.isArray(payload.ac) ? payload.ac : []);
-      const live = filterFleetAircraft(raw);
-      const lastKnown = await lastKnownPromise;
-      const merged = mergeFleetLiveAndLastKnown(live, lastKnown);
-      renderFleetAircraft(merged, {
-        mode: 'live',
-        updatedAt: new Date().toISOString(),
-        note: lastKnown
-          ? `Showing live LXJ Praetors plus cumulative last-known store (${Object.keys(lastKnown.aircraft || {}).length} keys). Dim markers are last-known, not live.`
-          : null,
-      });
-    } catch (liveError) {
-      if (liveError && liveError.name === 'AbortError') return;
-      try {
-        const lastKnown = fleetLastKnownStore || await loadFleetLastKnown(signal);
-        if (lastKnown && lastKnown.aircraft && Object.keys(lastKnown.aircraft).length) {
-          const merged = mergeFleetLiveAndLastKnown([], lastKnown);
-          renderFleetAircraft(merged, {
-            mode: 'last_known',
-            updatedAt: lastKnown.updated_at || new Date().toISOString(),
-            note: 'Live ADS-B unavailable — showing cumulative last-known store only. Positions are not live.',
-          });
-          return;
-        }
-        const response = await fetch(FLEET_SNAPSHOT_URL, { cache: 'no-store', signal });
-        if (!response.ok) throw new Error('Snapshot request failed');
-        const snapshot = await response.json();
-        renderFleetAircraft(filterFleetAircraft(snapshot.aircraft).map(ac => ({ ...ac, status: 'last_known', lastSeen: snapshot.snapshot_at })), {
-          mode: 'snapshot',
-          snapshotAt: snapshot.snapshot_at,
-          updatedAt: snapshot.snapshot_at,
+      await loadFleetRoster();
+      const [relay, lastKnown] = await Promise.all([
+        fetchFleetRelay(signal),
+        fetchJson(FLEET_LAST_KNOWN_URL, signal).catch(err => { if (err && err.name === 'AbortError') throw err; return null; }),
+      ]);
+      const lkList = lastKnown && lastKnown.aircraft
+        ? Object.entries(lastKnown.aircraft).map(([k, e]) => fleetNormalize(e, k, 'last_known')).filter(Boolean)
+        : [];
+      if (relay && Array.isArray(relay.aircraft)) {
+        const relayList = relay.aircraft.map(e => fleetNormalize(e, e.hex, 'relay')).filter(Boolean);
+        const fresh = fleetAgeSeconds(relay.generated_at) <= FLEET_FEED_STALE_S;
+        renderFleetAircraft(mergeFleet(relayList, lkList), {
+          mode: fresh ? 'live' : 'last_known',
+          generatedAt: relay.generated_at,
+          note: fresh ? null : `Live relay last updated ${fleetTimeET(relay.generated_at)} — positions are not live right now.`,
         });
-      } catch (snapshotError) {
-        if (snapshotError && snapshotError.name === 'AbortError') return;
-        setFleetState('Fleet positions are unavailable. Live ADS-B and the last-known store could not be loaded.', 'error');
-        const badge = $('#fleet-status-badge');
-        if (badge) { badge.className = 'fleet-status-badge error'; badge.textContent = 'Unavailable'; }
+        return;
       }
+      if (lkList.length) {
+        renderFleetAircraft(lkList, {
+          mode: 'last_known',
+          generatedAt: lastKnown.updated_at || null,
+          note: 'Live relay unreachable — showing the hourly last-known store. Positions are not live.',
+        });
+        return;
+      }
+      const snapshot = await fetchJson(FLEET_SNAPSHOT_URL, signal);
+      renderFleetAircraft((snapshot.aircraft || []).map(e => fleetNormalize({ ...e, last_seen: snapshot.snapshot_at }, e.hex, 'snapshot')).filter(Boolean), {
+        mode: 'snapshot',
+        generatedAt: snapshot.snapshot_at,
+        note: 'Snapshot fallback — not live.',
+      });
+    } catch (err) {
+      if (err && err.name === 'AbortError') return;
+      console.warn('Fleet data unavailable:', err);
+      fleetMeta = { mode: 'error', generatedAt: null };
+      updateFleetBadge();
+      setFleetState('Fleet positions are unavailable right now. Tap Refresh aircraft to retry.', 'error');
     } finally {
       fleetLoading = false;
       fleetAbortController = null;
       updateFleetRefreshButton();
     }
+  }
+
+  function fleetNextRefreshWait() {
+    const ms = Date.now() % FLEET_REFRESH_MS;
+    return ms < 4000 ? 4000 - ms : FLEET_REFRESH_MS + 4000 - ms;
+  }
+
+  function scheduleFleetRefresh() {
+    if (fleetRefreshTimer) clearTimeout(fleetRefreshTimer);
+    const wait = fleetNextRefreshWait();
+    fleetRefreshTimer = window.setTimeout(() => {
+      if (!isFleetRoute()) return;
+      if (document.visibilityState === 'visible') loadFleetMapData();
+      scheduleFleetRefresh();
+    }, wait);
+  }
+
+  function onFleetVisibility() {
+    if (!isFleetRoute()) return;
+    if (document.visibilityState === 'visible' && Date.now() - fleetLastRequestAt > 15000) loadFleetMapData();
+    updateFleetRefreshButton();
   }
 
   /* ——— Views ——— */
@@ -1273,7 +1362,7 @@ function esc(s) {
             <div>
               <div class="eyebrow">Praetor 500/600 · public tracking</div>
               <h2 id="fleet-map-title">Flexjet Praetor fleet</h2>
-              <p>Live LXJ E545/E550 plus cumulative last-known positions from automated ADSB.lol polls.</p>
+              <p>Live public ADS-B for the roster (relayed by the box about every 60 s) plus last-known positions. Tap a plane for details.</p>
             </div>
             <button type="button" class="btn btn-primary" id="fleet-refresh">Refresh aircraft</button>
           </section>
@@ -1284,8 +1373,8 @@ function esc(s) {
           </div>
           <div class="fleet-meta" aria-live="polite">
             <span class="fleet-status-badge loading" id="fleet-status-badge">Loading</span>
-            <span id="fleet-updated">Last updated: —</span>
-            <span>Auto-refresh: 90 sec</span>
+            <span id="fleet-updated">Feed time: —</span>
+            <span>Auto-refresh: every minute while open</span>
             <span class="fleet-refresh-hint" id="fleet-refresh-hint">Manual refresh available</span>
           </div>
           <div class="fleet-fallback" id="fleet-fallback" role="alert" hidden></div>
@@ -1296,14 +1385,14 @@ function esc(s) {
               <div class="fleet-map-unavailable" id="fleet-map-unavailable" hidden></div>
             </section>
             <aside class="fleet-details" id="fleet-details" aria-live="polite">
-              <div class="fleet-details-empty">Select an aircraft marker or list item to view public ADS-B details.</div>
+              <div class="fleet-details-empty">Tap an aircraft marker or list item for details.</div>
             </aside>
           </div>
           <div class="fleet-aircraft-list" id="fleet-aircraft-list" aria-label="Fleet aircraft"></div>
           <section class="fleet-roster" id="fleet-roster" aria-label="Fleet roster"></section>
           <section class="fleet-disclaimer">
             <strong>Coverage limitation</strong>
-            <p>Public ADS-B coverage can be incomplete, delayed, filtered, or blocked by a browser/network. Last-known markers are historical sightings, not live. Positions are informational only and are not Flexjet dispatch or Tailwind data.</p>
+            <p>Public ADS-B coverage can be incomplete, delayed, or filtered. LIVE = position less than ~2.5 min old from the box relay; dimmed markers are last-known sightings, not live. ✈ = airborne (pointing along track), ■ = on ground. "Departed (est.)" / "On ground at (est.)" are estimates from the nearest airport to ADS-B fixes; fractional flights publish no destination. Informational only — not Flexjet dispatch or Tailwind data.</p>
           </section>
         </main>
         ${mobileReloadBar({ fleetRefresh: true })}
@@ -1318,9 +1407,12 @@ function esc(s) {
       });
     });
     fleetCooldownTimer = window.setInterval(updateFleetRefreshButton, 1000);
-    fleetRefreshTimer = window.setInterval(() => {
-      if (isFleetRoute()) loadFleetMapData();
-    }, FLEET_REFRESH_MS);
+    scheduleFleetRefresh();
+    if (!fleetVisibilityBound) {
+      document.addEventListener('visibilitychange', onFleetVisibility);
+      window.addEventListener('pageshow', onFleetVisibility);
+      fleetVisibilityBound = true;
+    }
     loadFleetMapData();
   }
 

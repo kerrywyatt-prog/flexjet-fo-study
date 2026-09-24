@@ -2,21 +2,45 @@
 
 Route: `#/fleet-map` (Home tile **Fleet Map**).
 
-## Data source
-- Live primary: ADSB.lol public type queries
-  - `https://api.adsb.lol/v2/type/E545`
-  - `https://api.adsb.lol/v2/type/E550`
-- Client uses CORS `fetch` first. Live LXJ hits are merged with the cumulative store `flexjet-study-app/data/fleet-last-known.json`.
-- If live fails: prefer `fleet-last-known.json`, then `/data/fleet-map-snapshot.json`. Snapshot / last-known modes are never presented as live.
-- Tracker deep link for a selected aircraft: `https://adsb.lol/?icao=<hex>`.
+## Why live never showed (root cause, 2026-09-24)
+The client fetched `https://api.adsb.lol/v2/type/E545|E550` directly from the browser. ADSB.lol returns
+**no `Access-Control-Allow-Origin` header**, so every browser (iPhone Safari included) blocks the response
+(`corsError: MissingAllowOriginHeader`) and the page always fell back to the hourly last-known store.
+Tested from `https://kerrywyatt-prog.github.io` (headless Chrome, 390×844, iOS Safari UA):
 
-## Exact client filter (live)
-Only aircraft that pass all of these enter as **Live**:
-1. Normalized ICAO type `t` / `type` is exactly `E545` or `E550`.
-2. Callsign (`flight` or `callsign`) trims/uppercases and `startsWith('LXJ')`.
-3. `lat` and `lon` are finite numbers.
+| Provider / endpoint | Browser CORS |
+| --- | --- |
+| api.adsb.lol `/v2/type`, `/v2/hex`, `/v2/icao`, `/v2/callsign`, `/api/0/routeset` | ✗ no ACAO header |
+| api.airplanes.live `/v2/type`, `/v2/hex` | ✗ no ACAO (and 403 "contact us" for scripted use) |
+| opendata.adsb.fi `/api/v2/hex`, `/icao`, `/callsign` | ✗ no ACAO (`/v2/type` = 400) |
+| opensky-network.org `/api/states/all` | ✗ connection closed from box (unverified) |
+| api.adsbdb.com `/v0/callsign`, `/v0/aircraft` | ✓ `ACAO: *` — but no positions; LXJ callsigns = "unknown callsign" |
+| raw.githubusercontent.com | ✓ `ACAO: *` (CDN caches each URL ~5 min, ignores query strings) |
 
-Last-known entries keep prior positions when an airframe is not in the current live poll.
+## Live data path (box relay)
+- `scripts/fleet-live-daemon.py` runs on the box (Grok Bot machine) and polls every **60 s** while anything is
+  airborne (5 min when nothing is), cycles aligned to UTC minute boundaries:
+  - ADSB.lol `/v2/type/E545` + `/v2/type/E550`, kept if hex is in the roster or callsign `LXJ*`
+  - every 3rd cycle ADSB.lol `/v2/hex/<roster hexes not seen>` (batches of 40)
+  - if ADSB.lol fails (e.g. 429): adsb.fi `/api/v2/hex/<roster hexes>` fallback
+- Publishes to branch **`fleet-live`** (not `main` → no Pages builds, no conflicts with site releases):
+  - `m/<floor(unix/60)>.json` written for the next 1–2 minutes (up to 6 when idle) each cycle. The client at
+    minute B fetches `m/<B>.json` — a URL first written a minute earlier and never changed afterwards, so the
+    raw CDN never serves a stale copy. Buckets older than 10 min are deleted.
+  - `live.json` (latest; fallback, may be ≤5 min stale on the CDN).
+- State (flight segmentation, trails) lives in `/workspace/flexjet-fleet-live-state/` on the box.
+- `scripts/update-fleet-last-known.py` (the hourly routine) reuses the relay snapshot when fresh (<5 min) instead
+  of re-polling, and starts the relay if it is not running (`FLEET_LIVE_ENSURE=0` disables).
+- Tradeoff: one small commit per minute on `fleet-live` while aircraft are airborne.
+
+## Client
+- Fetch order: `m/<current minute>.json` → `m/<previous minute>.json` → `fleet-live/live.json` →
+  Pages `data/fleet-last-known.json` → `data/fleet-map-snapshot.json`. Merged with last-known for aircraft not in the relay.
+- Refresh once a minute (at :04) **only while the tab is visible**; immediate refresh on return to the tab.
+- Badge: **LIVE · updated Xs ago** when the relay file is < 7 min old, else **Last known · h:mm ET**.
+- An aircraft is **LIVE** when its position is < 3 min old. ✈ green (rotated to track) = airborne;
+  ■ amber = on ground; dimmed = last known.
+- No direct ADS-B API calls from the browser (they are CORS-blocked).
 
 ## Roster
 `flexjet-study-app/data/praetor-fleet-roster.json` — base roster from the **Flexjet fleet list (Oct 30 2025)**:
@@ -27,44 +51,21 @@ Last-known entries keep prior positions when an airframe is not in the current l
 - Mode-S hex: earlier observed values (ADSB.lol / flightdb.net) kept — all match FAA; the rest filled from the FAA registry "Mode S Code (Base 16 / Hex)". Never fabricated.
 - 8 flagged tails (not on the company list), for **102 tails total** (83 E545 / 19 E550):
   - 6 from the earlier public-source roster (N274FX N275FX N279FX N281FX N434FX N619FX), kept with `flag: "not on company fleet list dated Oct 30 2025"`.
-  - N272FX and N273FX, FAA-registered c/o Flexjet LLC (2026), same flag.
+  - N272FX and N273FX, flagged "not on company fleet list dated Oct 30 2025; FAA-registered c/o Flexjet LLC 2026".
 - UI: serial number on the click card and aircraft list; collapsible roster table (tail / type / serial / position / note) under the map.
 - No serial ↔ checklist-effectivity mapping is made (unconfirmed).
 
-## Automation — last-known poll
-- Workflow: `.github/workflows/fleet-last-known.yml` (`Fleet last-known poll`)
-  - Template committed as `docs/fleet-last-known.yml.example` (OAuth push lacks `workflow` scope). Copy to `.github/workflows/fleet-last-known.yml` on GitHub if the Action is not yet present.
-- Schedule: every **20 minutes** (`*/20 * * * *`) + `workflow_dispatch`
-- Script: `scripts/update-fleet-last-known.py`
-  - Reads `data/praetor-fleet-roster.json`
-  - Sequential E545 then E550 queries with sleep between calls (rate-limit friendly), filter LXJ + type + position
-  - Roster sweep: roster hexes not returned by the type queries are queried via `https://api.adsb.lol/v2/hex/<hex,hex,...>` (batches of 40) so every roster tail is polled
-  - Annotates stored entries with roster `serial_number` / `on_company_fleet_list`
-  - Merge into `data/fleet-last-known.json` keyed by hex (else registration)
-  - Updates `last_seen`, lat/lon, alt, gs, track, callsign when live; preserves prior last-known when not visible; `status`: `live` \| `last_known`
-  - Bot commit **only if changed** (`flexjet-fleet-bot`); no force push
+## Tap card fields
+| Field | Source | Real / estimate |
+| --- | --- | --- |
+| Tail, type, S/N, roster note | roster (Flexjet fleet list Oct 30 2025 + FAA registry) | real |
+| Callsign, altitude (baro ft, FL at/above 18,000), ground speed, track / heading, vertical rate, squawk, emergency, on-ground flag, coordinates, position age | public ADS-B (ADSB.lol / adsb.fi) | real (as reported) |
+| Departed (est.) | nearest jet-capable airport (OurAirports, paved ≥3,500 ft; `scripts/airports-jet.csv`) to the last on-ground ADS-B fix before takeoff, or to the first fix of a flight if climbing through < 5,000 ft; otherwise "Not determined" | **estimate**, labelled |
+| On ground at (est.) / Last landed (est.) | nearest airport (≤5 nm) to on-ground fixes | **estimate**, labelled |
+| Destination | only if a callsign-route DB (adsbdb.com) returns one — shown as "unverified"; otherwise **"Not published (fractional flight)"** | never invented |
+| Track line | relay's recorded positions for the current/latest flight (≈1/min, up to 4 h) | real |
 
-## UI
-- **All fleet** (default) / **Live only** toggle
-- Live markers: bright cyan; last-known: dimmer / ghost markers
-- Detail card: Live vs Last known + age
-- Manual **Refresh aircraft**; auto-refresh every **90 seconds** on `#/fleet-map`
-- Topbar **Reload** (primary) + mobile sticky **Reload app** (and **Refresh aircraft** on Fleet Map)
-
-## Refresh / cache bust
-- Hard Reload clears SW/caches then navigates to `pathname + '?v=' + Date.now() + hash` so Home Screen PWAs pick new assets (`?v=18` on CSS/JS).
-
-## Details card fields
-Tail/registration, Praetor 500 vs 600, callsign, altitude, ground speed, heading/track, coordinates, Live/Last known + age, source, ADSB.lol tracker link.
-
-Origin/destination/current route are shown only if a verified public source actually supplies them. This build does not invent route fields.
-
-## Next publicly filed
-UI always shows:
-
-> Next publicly filed: No public next-filed flight available.
-
-unless a genuinely future publicly filed leg is returned by a verified source (unlikely). Never imply Flexjet internal dispatch or Tailwind access.
+No next-filed / schedule data is shown. Never implies Flexjet dispatch or Tailwind access.
 
 ## Coverage limitations
 Public ADS-B is incomplete, delayed, filtered, or blocked. Last-known positions age out of usefulness and are informational only — not Flexjet dispatch/Tailwind data. GitHub Actions runners share public IP space; ADSB.lol may rate-limit or fail intermittently — the cumulative store still grows over successful polls.
