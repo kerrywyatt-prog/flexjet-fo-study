@@ -24,9 +24,9 @@ Tested from `https://kerrywyatt-prog.github.io` (headless Chrome, 390×844, iOS 
   - every 3rd cycle ADSB.lol `/v2/hex/<roster hexes not seen>` (batches of 40)
   - if ADSB.lol fails (e.g. 429): adsb.fi `/api/v2/hex/<roster hexes>` fallback
 - Publishes to branch **`fleet-live`** (not `main` → no Pages builds, no conflicts with site releases):
-  - `m/<floor(unix/60)>.json` written for the next 1–2 minutes (up to 6 when idle) each cycle. The client at
-    minute B fetches `m/<B>.json` — a URL first written a minute earlier and never changed afterwards, so the
-    raw CDN never serves a stale copy. Buckets older than 10 min are deleted.
+  - `m/<floor(unix/60)>.json` written for the current and next 1–2 minutes (up to 6 when idle) each cycle. The client at
+    minute B fetches `m/<B>.json` at ~B:25 — a URL that always exists and holds data ≤1–2 min old (usually ~25 s), so the
+    raw CDN can never serve anything staler. Buckets older than 10 min are deleted.
   - `live.json` (latest; fallback, may be ≤5 min stale on the CDN).
 - State (flight segmentation, trails) lives in `/workspace/flexjet-fleet-live-state/` on the box.
 - `scripts/update-fleet-last-known.py` (the hourly routine) reuses the relay snapshot when fresh (<5 min) instead
@@ -36,7 +36,7 @@ Tested from `https://kerrywyatt-prog.github.io` (headless Chrome, 390×844, iOS 
 ## Client
 - Fetch order: `m/<current minute>.json` → `m/<previous minute>.json` → `fleet-live/live.json` →
   Pages `data/fleet-last-known.json` → `data/fleet-map-snapshot.json`. Merged with last-known for aircraft not in the relay.
-- Refresh once a minute (at :04) **only while the tab is visible**; immediate refresh on return to the tab.
+- Refresh once a minute (at :25) **only while the tab is visible**; immediate refresh on return to the tab.
 - Badge: **LIVE · updated Xs ago** when the relay file is < 7 min old, else **Last known · h:mm ET**.
 - An aircraft is **LIVE** when its position is < 3 min old. ✈ green (rotated to track) = airborne;
   ■ amber = on ground; dimmed = last known.

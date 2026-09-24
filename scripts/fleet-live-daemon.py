@@ -9,10 +9,11 @@ to the `fleet-live` branch; the client reads it from raw.githubusercontent.com
 
 raw.githubusercontent.com caches every URL for ~5 min and ignores query strings, so a
 single fixed file would be up to 5 min stale. Instead each cycle (aligned to the start
-of a UTC minute M) writes the same payload to `m/<M+1>.json` … `m/<M+k>.json`
-(bucket = floor(unix_seconds / 60)). A client at minute B requests `m/<B>.json`, a URL
-that was first written one minute earlier and is never changed afterwards, so the CDN
-never has a stale copy of it. `live.json` is also written (fallback / hourly script).
+of a UTC minute M, published ~10-20 s later) writes the same payload to
+`m/<M>.json` … `m/<M+k>.json` (bucket = floor(unix_seconds / 60)). A client at minute B
+requests `m/<B>.json` (at ~B:25); that URL always exists (pre-written by the previous
+cycle) and holds data at most ~1-2 min old, usually ~25 s, so a CDN copy can never be
+more stale than that. `live.json` is also written (fallback / hourly script).
 Buckets older than 10 min are deleted from the branch tip.
 
 Per cycle (~60 s while anything is airborne, ~5 min otherwise):
@@ -403,7 +404,7 @@ def publish(payload, cycle_start):
     mdir.mkdir(exist_ok=True)
     minute = int(cycle_start // 60)
     ahead = max(2, math.ceil(payload["cycle_seconds"] / 60) + 1)
-    for b in range(minute + 1, minute + ahead + 1):
+    for b in range(minute, minute + ahead + 1):
         (mdir / f"{b}.json").write_text(body, encoding="utf-8")
     for old in mdir.glob("*.json"):
         try:

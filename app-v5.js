@@ -671,13 +671,15 @@ function esc(s) {
   // branch. raw.githubusercontent.com sends Access-Control-Allow-Origin: *, whereas
   // ADSB.lol / adsb.fi / airplanes.live do not (browser fetches are CORS-blocked).
   // raw caches each URL ~5 min (query strings ignored), so the relay writes per-minute
-  // files m/<floor(unix/60)>.json one minute ahead; we fetch the current minute's file.
+  // files m/<floor(unix/60)>.json (current + next minutes); we fetch the current minute's
+  // file at ~:25 past the minute, after the relay's cycle for that minute has published.
   const FLEET_LIVE_BASE = 'https://raw.githubusercontent.com/kerrywyatt-prog/flexjet-fo-study/fleet-live/';
   const FLEET_LIVE_URL = FLEET_LIVE_BASE + 'live.json';
   const FLEET_SNAPSHOT_URL = 'data/fleet-map-snapshot.json';
   const FLEET_LAST_KNOWN_URL = 'data/fleet-last-known.json';
   const FLEET_ROSTER_URL = 'data/praetor-fleet-roster.json';
-  const FLEET_REFRESH_MS = 60 * 1000;   // aligned to minute boundaries (+4 s)
+  const FLEET_REFRESH_MS = 60 * 1000;   // aligned to minute boundaries (+25 s)
+  const FLEET_REFRESH_OFFSET_MS = 25 * 1000;
   const FLEET_LIVE_WINDOW_S = 180;      // aircraft position newer than this = LIVE
   const FLEET_FEED_STALE_S = 420;       // relay file older than this = feed not live
   const FLEET_TZ = 'America/New_York';
@@ -1256,7 +1258,7 @@ function esc(s) {
 
   function fleetNextRefreshWait() {
     const ms = Date.now() % FLEET_REFRESH_MS;
-    return ms < 4000 ? 4000 - ms : FLEET_REFRESH_MS + 4000 - ms;
+    return ms < FLEET_REFRESH_OFFSET_MS ? FLEET_REFRESH_OFFSET_MS - ms : FLEET_REFRESH_MS + FLEET_REFRESH_OFFSET_MS - ms;
   }
 
   function scheduleFleetRefresh() {
