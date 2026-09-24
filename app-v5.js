@@ -469,6 +469,8 @@
     { id: 'day3mins', text: 'Indoc Day 3: verify OpSpec takeoff mins / dual-RVR / alternate tables', done: false },
     { id: 'day3ice', text: 'Indoc Day 3: confirm FOM 7.3.11 icing HOT/tactile rules', done: false },
     { id: 'day3fuel', text: 'Indoc Day 3: confirm Praetor land-with fuel target in FOM', done: false },
+    { id: 'day4haz', text: 'Indoc Day 4: verify hazmat exception numbers on the written card (dry ice / alcohol / spray / lithium Wh)', done: false },
+    { id: 'day4desc', text: 'Indoc Day 4: Praetor emergency-descent memory items from QRH (not generic slide)', done: false },
     { id: 'spare-glasses', text: 'If medical requires lenses — carry spare glasses (ramp check)', done: false },
   ];
 
@@ -1048,7 +1050,7 @@ function esc(s) {
   function viewHome() {
     const tiles = [
       { path: '/orientation', icon: '🧭', title: 'New hire / Orientation', desc: 'CLE Days 1–3 · payroll · ops · logistics · expense · MX', cls: '' },
-      { path: '/indoc', icon: '📚', title: 'Indoc', desc: 'DFW Days 1–3 · Ops Specs · icing/duty/mins · MX forms', cls: '' },
+      { path: '/indoc', icon: '📚', title: 'Indoc', desc: 'DFW Days 1–4 · Ops Specs · icing/duty/mins · hazmat/evac/physiology', cls: '' },
       { path: '/praetor', icon: '🛫', title: 'Embraer Praetor 500/600', desc: 'Systems shelves · memory · flows', cls: 'gold', bg: 'praetor' },
       { path: '/fleet-map', icon: '🗺️', title: 'Fleet Map', desc: 'Public ADS-B · visible Flexjet Praetor 500/600 aircraft', cls: 'gold' },
       { path: '/ritual', icon: '⏱️', title: 'Study ritual', desc: '20–30 min daily framework', cls: '' },
@@ -1354,7 +1356,7 @@ function esc(s) {
   function viewIndoc() {
     app.innerHTML = `
       <div class="${shellClass()}">
-        ${topbar('Indoc · DFW Days 1–3', 'Home', '/')}
+        ${topbar('Indoc · DFW Days 1–4', 'Home', '/')}
         <main class="content">
           <div class="card">
             <h3><span class="dot"></span>Mon Sep 21, 2026 · CAE Dallas West</h3>
@@ -1436,6 +1438,7 @@ function esc(s) {
               <li>Confirm <strong>RDA</strong> on training email (Day 2)</li>
               <li><s>Everest Fuel 13:00 brief</s> — captured Day 1 clip 04</li>
               <li>Day 3 verify: OpSpec takeoff/alternate mins · FOM 7.3.11 icing · Praetor land-with fuel · “MPL” label</li>
+              <li>Day 4 verify: hazmat exception numbers on the card · COAST/PREP letters · Praetor emergency-descent items (QRH)</li>
               <li>Confirm W&amp;B save-vs-send SOP · POI spelling · official type-travel email</li>
             </ul>
           </div>
@@ -1493,6 +1496,40 @@ function esc(s) {
               <li><strong>Mike Sliva</strong> — Indoc instructor (continuing)</li>
               <li><strong>Scott</strong> — co-instruct · icing/CRM/mins blocks</li>
               <li><strong>FOTM</strong> — duty extensions (max 15h two-pilot)</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3><span class="dot"></span>Thu Sep 24, 2026 · Day 4 — hazmat · evac · physiology</h3>
+            <p>Hazmat (will-not-carry) · raft/ditching video · emergency evacuation · disabled passengers · service culture · altitude physiology. Plaud <strong>01–05</strong> (~145.6 min; clip <strong>05 non-speech</strong>).</p>
+            <p><strong>Security (TSA 12-5) test today. Taken as a class, easy, no jeopardy.</strong></p>
+            <div class="note">Praetor 500/600 track. Classmate-safe, generic takeaways only. Verify numbers against the written hazmat card / QRH before a checkride.</div>
+          </div>
+
+          <div class="card">
+            <h3><span class="dot"></span>Must lock — Day 4</h3>
+            <ul>
+              <li><strong>Hazmat:</strong> Flexjet is a <em>will-not-carry</em> operator. No hazmat authorization; only items that qualify as exceptions (company materials too). Training per 14 CFR 135.505, recurrent every 24 months.</li>
+              <li><strong>Dry ice (test item):</strong> 5.5 lb per person (class). <strong>Alcohol:</strong> ≤1.3 gal, ≤70%. <strong>Self-defense spray:</strong> ≤4 oz with safety clip.</li>
+              <li><strong>Lithium:</strong> spare batteries and vapes carry-on only. Mobility-aid Li battery ≤300 Wh; one spare, or two at ≤160 Wh. Terminals protected. PIC told where it is.</li>
+              <li><strong>Hidden hazmat:</strong> ask what’s in the bag. Bleach, drain cleaner, pool chemicals, spray starch, fireworks, magnets = no. Fuel-engine gear only if fully purged. If it looks or smells wrong, don’t load it.</li>
+              <li><strong>In-flight spill/fumes:</strong> consider emergency descent + landing · mask + smoke goggles · tell ATC.</li>
+              <li><strong>Evac:</strong> PIC runs it (SIC if PIC can’t) · tell ATC early · look outside before opening any exit · sweep cabin · don’t re-enter · account for everyone. On the ramp, main cabin door is best.</li>
+              <li><strong>TEST pax brief:</strong> Type of emergency · Exit to use · Signals (brace call) · Time to touchdown.</li>
+              <li><strong>Raft:</strong> preflight inspection card + handles out + painter line clear (snag = inflation inside the cabin). From aircraft: tie painter line, throw away from aircraft, pull line. In water: quick-deploy ring. Never drink seawater. Whistle is the best voice you have.</li>
+              <li><strong>Disabled pax:</strong> ask how to help · enlist able pax · don’t injure yourself · slow down, call EMS to help board.</li>
+              <li><strong>PIC owns parking:</strong> don’t accept a ramp spot that’s unsafe for passengers (ice).</li>
+              <li><strong>Service:</strong> call ahead so the car is planeside at shutdown · door to door · smile at the stairs · last thing they see is you closing the door.</li>
+              <li><strong>Physiology:</strong> 61.31(g) high-altitude endorsement · hypoxia types: hypoxic / hypemic / stagnant / histotoxic · mask 100% early · DCS can appear hours later · use the Praetor QRH for emergency-descent memory items.</li>
+              <li><strong>Devices:</strong> keep company and personal phone/email separate; use personal email for government/benefit accounts.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3><span class="dot"></span>People — Day 4</h3>
+            <ul>
+              <li><strong>Mike Sliva</strong> — Indoc instructor (continuing)</li>
+              <li><strong>Scott</strong> — co-instruct · disabled-pax / service culture</li>
             </ul>
           </div>
 
