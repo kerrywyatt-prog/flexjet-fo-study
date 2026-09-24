@@ -1,7 +1,13 @@
 #!/usr/bin/env python3
-"""Poll ADSB.lol for LXJ E545/E550 and merge into data/fleet-last-known.json.
+"""Poll ADSB.lol for Flexjet Praetors and merge into data/fleet-last-known.json.
 
-Respects rate limits with sequential type queries + sleep.
+1. Type queries (E545, E550) filtered to LXJ callsigns.
+2. Roster sweep: every tail in data/praetor-fleet-roster.json with a Mode-S hex that
+   was not already seen in step 1 is queried by hex (batched), so roster tails are
+   polled even when ADSB.lol lacks a type code or the crew files a non-LXJ callsign.
+Entries are annotated with roster serial number / type. Never fabricates positions.
+
+Respects rate limits with sequential queries + sleep.
 Commits are handled by the GitHub Action (only if this script changes the file).
 """
 from __future__ import annotations
@@ -16,14 +22,71 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "fleet-last-known.json"
+ROSTER = ROOT / "data" / "praetor-fleet-roster.json"
 TYPES = ("E545", "E550")
 API = "https://api.adsb.lol/v2/type/{}"
+HEX_API = "https://api.adsb.lol/v2/hex/{}"
+HEX_BATCH = 40
 UA = "flexjet-fo-study-fleet-bot/1.0 (+https://github.com/kerrywyatt-prog/flexjet-fo-study)"
 SLEEP_BETWEEN_TYPES_SEC = 12
 
 
 def utc_now() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def load_roster() -> dict:
+    """Return {hex_lower: roster_entry} plus registration index under key '_by_reg'."""
+    by_hex, by_reg = {}, {}
+    try:
+        data = json.loads(ROSTER.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        print(f"WARN roster unreadable: {exc}", file=sys.stderr, flush=True)
+        return {"by_hex": by_hex, "by_reg": by_reg}
+    for ac in data.get("aircraft") or []:
+        reg = str(ac.get("registration") or "").strip().upper()
+        hx = str(ac.get("hex") or "").strip().lower()
+        if reg:
+            by_reg[reg] = ac
+        if hx:
+            by_hex[hx] = ac
+    return {"by_hex": by_hex, "by_reg": by_reg}
+
+
+def fetch_json(url: str) -> dict:
+    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/json"})
+    with urllib.request.urlopen(req, timeout=45) as resp:
+        return json.loads(resp.read().decode("utf-8"))
+
+
+def fetch_hexes(hexes: list) -> list:
+    return fetch_json(HEX_API.format(",".join(hexes))).get("ac") or []
+
+
+def has_position(raw: dict) -> bool:
+    try:
+        lat_f = float(raw.get("lat"))
+        lon_f = float(raw.get("lon"))
+    except (TypeError, ValueError):
+        return False
+    return abs(lat_f) <= 90 and abs(lon_f) <= 180
+
+
+def annotate(entry: dict, roster: dict) -> dict:
+    ra = roster["by_hex"].get(str(entry.get("hex") or "").lower()) or roster["by_reg"].get(
+        str(entry.get("registration") or "").upper()
+    )
+    if ra:
+        if entry.get("registration") in (None, "", "UNKNOWN"):
+            entry["registration"] = ra.get("registration")
+        if not entry.get("type") and ra.get("icao_type"):
+            entry["type"] = ra["icao_type"]
+            entry["model"] = ra.get("label") or entry.get("model")
+        entry["serial_number"] = ra.get("serial_number")
+        entry["on_company_fleet_list"] = ra.get("on_company_fleet_list")
+        if ra.get("flag"):
+            entry["roster_flag"] = ra["flag"]
+    return entry
 
 
 def fetch_type(icao_type: str) -> list:
@@ -109,6 +172,8 @@ def load_existing() -> dict:
 
 
 def main() -> int:
+    roster = load_roster()
+    print(f"roster: {len(roster['by_reg'])} tails, {len(roster['by_hex'])} with hex", flush=True)
     existing = load_existing()
     store = existing.get("aircraft") or {}
     if not isinstance(store, dict):
@@ -134,6 +199,38 @@ def main() -> int:
             print(f"ERROR {t}: {exc}", file=sys.stderr, flush=True)
         if i < len(TYPES) - 1:
             time.sleep(SLEEP_BETWEEN_TYPES_SEC)
+
+    # Roster sweep — poll roster tails by hex that the type queries did not return.
+    pending = sorted(h for h in roster["by_hex"] if h not in live_keys)
+    roster_hits = 0
+    for start in range(0, len(pending), HEX_BATCH):
+        batch = pending[start : start + HEX_BATCH]
+        time.sleep(SLEEP_BETWEEN_TYPES_SEC)
+        try:
+            for raw in fetch_hexes(batch):
+                hx = str(raw.get("hex") or "").strip().lower()
+                if hx not in roster["by_hex"] or not has_position(raw):
+                    continue
+                ra = roster["by_hex"][hx]
+                entry = normalize_live(raw, seen_at)
+                if not entry["type"]:
+                    entry["type"] = ra.get("icao_type") or ""
+                entry["model"] = ra.get("label") or entry["model"]
+                if entry["registration"] in ("", "UNKNOWN"):
+                    entry["registration"] = ra.get("registration")
+                entry["source"] = "ADSB.lol hex query (roster)"
+                store[hx] = entry
+                live_keys.add(hx)
+                roster_hits += 1
+        except Exception as exc:  # noqa: BLE001
+            errors.append(f"hex batch {start // HEX_BATCH + 1}: {exc}")
+            print(f"ERROR hex batch: {exc}", file=sys.stderr, flush=True)
+    print(f"roster sweep: queried={len(pending)} extra_live={roster_hits}", flush=True)
+
+    # Annotate every stored entry with roster serial/type (no positions touched).
+    for k, entry in list(store.items()):
+        if isinstance(entry, dict):
+            store[k] = annotate(entry, roster)
 
     # Mark not-visible prior entries as last_known (preserve positions)
     for k, entry in list(store.items()):

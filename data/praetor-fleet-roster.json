@@ -1,178 +1,624 @@
 {
-  "title": "Flexjet US Praetor / EMB-545 + EMB-550 roster (public sources only)",
-  "built_at": "2026-09-22T01:33:46Z",
+  "title": "Flexjet US Praetor 500 / 600 roster (EMB-545 / EMB-550)",
+  "built_at": "2026-09-24T22:17:54Z",
+  "source": "Flexjet fleet list (Oct 30 2025)",
   "notes": [
-    "Honest incomplete roster \u2014 registrations cited from public FAA mirrors and ADS-B databases only; no invented tails.",
-    "FAA model EMB-545/EMB-550 covers Legacy and Praetor families; live map filter still requires LXJ callsign + E545/E550.",
-    "Mode-S hex included only when observed in ADSB.lol or listed on flightdb.net \u2014 never fabricated.",
-    "Source page aircraftdata.org/reg-name/flexjet-llc/ mirrors FAA Aircraft Registry and may lag official Flexjet dispatch/Tailwind lists.",
-    "Full official fleet reconciliation may take a second pass."
+    "Base roster: Flexjet fleet list (Oct 30 2025) \u2014 94 tails (76 Praetor 500 / EMB-545, 18 Praetor 600 / EMB-550) with serial numbers. Serials 5501xxxx = Praetor 500 (EMB-545); 5502xxxx = Praetor 600 (EMB-550).",
+    "Every tail, serial and model cross-checked against the public FAA Aircraft Registry N-number inquiry; all matched.",
+    "6 additional tails from the earlier public-source roster are kept but flagged 'not on company fleet list dated Oct 30 2025' (serial/model from FAA registry).",
+    "Mode-S hex: existing observed values kept (all match FAA); missing values filled from the FAA registry 'Mode S Code (Base 16 / Hex)'. Never fabricated.",
+    "Live map filter still requires LXJ callsign + E545/E550, or a roster hex/registration match. Positions are public ADS-B only \u2014 not Flexjet dispatch/Tailwind data."
   ],
   "counts": {
-    "total": 66,
-    "E545": 53,
-    "E550": 13,
-    "with_hex": 13
+    "total": 100,
+    "company_fleet_list": 94,
+    "company_fleet_list_E545": 76,
+    "company_fleet_list_E550": 18,
+    "flagged_not_on_company_list": 6,
+    "E545": 81,
+    "E550": 19,
+    "with_hex": 100,
+    "with_serial": 100
   },
   "aircraft": [
     {
-      "registration": "N265FX",
+      "registration": "N261FX",
+      "serial_number": "55010166",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a28347",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N261FX",
+          "note": "Checked 2026-09-24: serial 55010166, model EMB-545, Mode S hex A28347."
+        }
+      ]
+    },
+    {
+      "registration": "N262FX",
+      "serial_number": "55010171",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a286fe",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N262FX",
+          "note": "Checked 2026-09-24: serial 55010171, model EMB-545, Mode S hex A286FE."
+        }
+      ]
+    },
+    {
+      "registration": "N263FX",
+      "serial_number": "55010175",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a28ab5",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N263FX",
+          "note": "Checked 2026-09-24: serial 55010175, model EMB-545, Mode S hex A28AB5."
+        }
+      ]
+    },
+    {
+      "registration": "N264FX",
+      "serial_number": "55010172",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a28e6c",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N264FX",
+          "note": "Checked 2026-09-24: serial 55010172, model EMB-545, Mode S hex A28E6C."
+        }
+      ]
+    },
+    {
+      "registration": "N265FX",
+      "serial_number": "55010178",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a29223",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N265FX",
+          "note": "Checked 2026-09-24: serial 55010178, model EMB-545, Mode S hex A29223."
         }
       ]
     },
     {
       "registration": "N267FX",
+      "serial_number": "55010185",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a29991",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N267FX",
+          "note": "Checked 2026-09-24: serial 55010185, model EMB-545, Mode S hex A29991."
         }
       ]
     },
     {
-      "registration": "N274FX",
+      "registration": "N268FX",
+      "serial_number": "55010189",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a29d48",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
         {
-          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
-          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
-          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N268FX",
+          "note": "Checked 2026-09-24: serial 55010189, model EMB-545, Mode S hex A29D48."
         }
       ]
     },
     {
-      "registration": "N275FX",
+      "registration": "N269FX",
+      "serial_number": "55010183",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a2a0ff",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
         {
-          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
-          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
-          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
-        }
-      ]
-    },
-    {
-      "registration": "N279FX",
-      "icao_type": "E545",
-      "faa_model": "EMB-545",
-      "label": "Praetor 500",
-      "year": null,
-      "hex": null,
-      "sources": [
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
-          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
-          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
-          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
-        }
-      ]
-    },
-    {
-      "registration": "N281FX",
-      "icao_type": "E545",
-      "faa_model": "EMB-545",
-      "label": "Praetor 500",
-      "year": null,
-      "hex": null,
-      "sources": [
-        {
-          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
-          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
-          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N269FX",
+          "note": "Checked 2026-09-24: serial 55010183, model EMB-545, Mode S hex A2A0FF."
         }
       ]
     },
     {
       "registration": "N316FX",
+      "serial_number": "55010154",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a35dae",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N316FX",
+          "note": "Checked 2026-09-24: serial 55010154, model EMB-545, Mode S hex A35DAE."
+        }
+      ]
+    },
+    {
+      "registration": "N317FX",
+      "serial_number": "55010153",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a36165",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N317FX",
+          "note": "Checked 2026-09-24: serial 55010153, model EMB-545, Mode S hex A36165."
         }
       ]
     },
     {
       "registration": "N318FX",
+      "serial_number": "55010151",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a3651c",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N318FX",
+          "note": "Checked 2026-09-24: serial 55010151, model EMB-545, Mode S hex A3651C."
         }
       ]
     },
     {
       "registration": "N319FX",
+      "serial_number": "55010150",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a368d3",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N319FX",
+          "note": "Checked 2026-09-24: serial 55010150, model EMB-545, Mode S hex A368D3."
+        }
+      ]
+    },
+    {
+      "registration": "N320FX",
+      "serial_number": "55010149",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a36ee3",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N320FX",
+          "note": "Checked 2026-09-24: serial 55010149, model EMB-545, Mode S hex A36EE3."
+        }
+      ]
+    },
+    {
+      "registration": "N321FX",
+      "serial_number": "55010148",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a3729a",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N321FX",
+          "note": "Checked 2026-09-24: serial 55010148, model EMB-545, Mode S hex A3729A."
+        }
+      ]
+    },
+    {
+      "registration": "N322FX",
+      "serial_number": "55010147",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a37651",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N322FX",
+          "note": "Checked 2026-09-24: serial 55010147, model EMB-545, Mode S hex A37651."
+        }
+      ]
+    },
+    {
+      "registration": "N323FX",
+      "serial_number": "55010146",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a37a08",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N323FX",
+          "note": "Checked 2026-09-24: serial 55010146, model EMB-545, Mode S hex A37A08."
+        }
+      ]
+    },
+    {
+      "registration": "N324FX",
+      "serial_number": "55010145",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a37dbf",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N324FX",
+          "note": "Checked 2026-09-24: serial 55010145, model EMB-545, Mode S hex A37DBF."
         }
       ]
     },
     {
       "registration": "N325FX",
+      "serial_number": "55010137",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a38176",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N325FX",
+          "note": "Checked 2026-09-24: serial 55010137, model EMB-545, Mode S hex A38176."
+        }
+      ]
+    },
+    {
+      "registration": "N326FX",
+      "serial_number": "55010143",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a3852d",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N326FX",
+          "note": "Checked 2026-09-24: serial 55010143, model EMB-545, Mode S hex A3852D."
+        }
+      ]
+    },
+    {
+      "registration": "N327FX",
+      "serial_number": "55010139",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a388e4",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N327FX",
+          "note": "Checked 2026-09-24: serial 55010139, model EMB-545, Mode S hex A388E4."
+        }
+      ]
+    },
+    {
+      "registration": "N328FX",
+      "serial_number": "55010128",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a38c9b",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N328FX",
+          "note": "Checked 2026-09-24: serial 55010128, model EMB-545, Mode S hex A38C9B."
+        }
+      ]
+    },
+    {
+      "registration": "N329FX",
+      "serial_number": "55010124",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a39052",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N329FX",
+          "note": "Checked 2026-09-24: serial 55010124, model EMB-545, Mode S hex A39052."
+        }
+      ]
+    },
+    {
+      "registration": "N330FX",
+      "serial_number": "55010157",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a39662",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N330FX",
+          "note": "Checked 2026-09-24: serial 55010157, model EMB-545, Mode S hex A39662."
+        }
+      ]
+    },
+    {
+      "registration": "N332FX",
+      "serial_number": "55010120",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a39dd0",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N332FX",
+          "note": "Checked 2026-09-24: serial 55010120, model EMB-545, Mode S hex A39DD0."
         }
       ]
     },
     {
       "registration": "N335FX",
+      "serial_number": "55010119",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
       "hex": "a3a8f5",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "existing (ADSB.lol / flightdb.net observation), matches FAA registry",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
@@ -182,182 +628,522 @@
           "name": "ADSB.lol snapshot",
           "url": "https://api.adsb.lol",
           "note": "Observed LXJ335 as E545 in fleet-map-snapshot.json @ 2026-09-22T01:17:55.439753Z"
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N335FX",
+          "note": "Checked 2026-09-24: serial 55010119, model EMB-545, Mode S hex A3A8F5."
+        }
+      ]
+    },
+    {
+      "registration": "N336FX",
+      "serial_number": "55010118",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a3acac",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N336FX",
+          "note": "Checked 2026-09-24: serial 55010118, model EMB-545, Mode S hex A3ACAC."
+        }
+      ]
+    },
+    {
+      "registration": "N337FX",
+      "serial_number": "55010116",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a3b063",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N337FX",
+          "note": "Checked 2026-09-24: serial 55010116, model EMB-545, Mode S hex A3B063."
         }
       ]
     },
     {
       "registration": "N338FX",
+      "serial_number": "55010114",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a3b41a",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N338FX",
+          "note": "Checked 2026-09-24: serial 55010114, model EMB-545, Mode S hex A3B41A."
+        }
+      ]
+    },
+    {
+      "registration": "N339FX",
+      "serial_number": "55010112",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a3b7d1",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N339FX",
+          "note": "Checked 2026-09-24: serial 55010112, model EMB-545, Mode S hex A3B7D1."
+        }
+      ]
+    },
+    {
+      "registration": "N340FX",
+      "serial_number": "55010111",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a3bde1",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N340FX",
+          "note": "Checked 2026-09-24: serial 55010111, model EMB-545, Mode S hex A3BDE1."
+        }
+      ]
+    },
+    {
+      "registration": "N342FX",
+      "serial_number": "55010110",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a3c54f",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N342FX",
+          "note": "Checked 2026-09-24: serial 55010110, model EMB-545, Mode S hex A3C54F."
         }
       ]
     },
     {
       "registration": "N343FX",
+      "serial_number": "55010107",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a3c906",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N343FX",
+          "note": "Checked 2026-09-24: serial 55010107, model EMB-545, Mode S hex A3C906."
         }
       ]
     },
     {
       "registration": "N345FX",
+      "serial_number": "55010105",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a3d074",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N345FX",
+          "note": "Checked 2026-09-24: serial 55010105, model EMB-545, Mode S hex A3D074."
+        }
+      ]
+    },
+    {
+      "registration": "N403FX",
+      "serial_number": "55010099",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a4b859",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N403FX",
+          "note": "Checked 2026-09-24: serial 55010099, model EMB-545, Mode S hex A4B859."
         }
       ]
     },
     {
       "registration": "N405FX",
+      "serial_number": "55010009",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a4bfc7",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N405FX",
+          "note": "Checked 2026-09-24: serial 55010009, model EMB-545, Mode S hex A4BFC7."
         }
       ]
     },
     {
       "registration": "N406FX",
+      "serial_number": "55010011",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a4c37e",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N406FX",
+          "note": "Checked 2026-09-24: serial 55010011, model EMB-545, Mode S hex A4C37E."
         }
       ]
     },
     {
       "registration": "N407FX",
+      "serial_number": "55010017",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a4c735",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N407FX",
+          "note": "Checked 2026-09-24: serial 55010017, model EMB-545, Mode S hex A4C735."
         }
       ]
     },
     {
       "registration": "N408FX",
+      "serial_number": "55010018",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a4caec",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N408FX",
+          "note": "Checked 2026-09-24: serial 55010018, model EMB-545, Mode S hex A4CAEC."
         }
       ]
     },
     {
       "registration": "N409FX",
+      "serial_number": "55010021",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a4cea3",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N409FX",
+          "note": "Checked 2026-09-24: serial 55010021, model EMB-545, Mode S hex A4CEA3."
         }
       ]
     },
     {
       "registration": "N410FX",
+      "serial_number": "55010025",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a4d4b3",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N410FX",
+          "note": "Checked 2026-09-24: serial 55010025, model EMB-545, Mode S hex A4D4B3."
+        }
+      ]
+    },
+    {
+      "registration": "N411FX",
+      "serial_number": "55010028",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a4d86a",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N411FX",
+          "note": "Checked 2026-09-24: serial 55010028, model EMB-545, Mode S hex A4D86A."
+        }
+      ]
+    },
+    {
+      "registration": "N413FX",
+      "serial_number": "55010030",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a4dfd8",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N413FX",
+          "note": "Checked 2026-09-24: serial 55010030, model EMB-545, Mode S hex A4DFD8."
         }
       ]
     },
     {
       "registration": "N414FX",
+      "serial_number": "55010031",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a4e38f",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N414FX",
+          "note": "Checked 2026-09-24: serial 55010031, model EMB-545, Mode S hex A4E38F."
         }
       ]
     },
     {
       "registration": "N415FX",
+      "serial_number": "55010032",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a4e746",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N415FX",
+          "note": "Checked 2026-09-24: serial 55010032, model EMB-545, Mode S hex A4E746."
         }
       ]
     },
     {
       "registration": "N416FX",
+      "serial_number": "55010033",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
       "hex": "a4eafd",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "existing (ADSB.lol / flightdb.net observation), matches FAA registry",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
@@ -367,437 +1153,809 @@
           "name": "ADSB.lol snapshot",
           "url": "https://api.adsb.lol",
           "note": "Observed LXJ416 as E545 in fleet-map-snapshot.json @ 2026-09-22T01:17:55.439753Z"
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N416FX",
+          "note": "Checked 2026-09-24: serial 55010033, model EMB-545, Mode S hex A4EAFD."
         }
       ]
     },
     {
       "registration": "N417FX",
+      "serial_number": "55010036",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a4eeb4",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N417FX",
+          "note": "Checked 2026-09-24: serial 55010036, model EMB-545, Mode S hex A4EEB4."
         }
       ]
     },
     {
       "registration": "N418FX",
+      "serial_number": "55010037",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a4f26b",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N418FX",
+          "note": "Checked 2026-09-24: serial 55010037, model EMB-545, Mode S hex A4F26B."
         }
       ]
     },
     {
       "registration": "N419FX",
+      "serial_number": "55010038",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a4f622",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N419FX",
+          "note": "Checked 2026-09-24: serial 55010038, model EMB-545, Mode S hex A4F622."
         }
       ]
     },
     {
       "registration": "N420FX",
+      "serial_number": "55010040",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a4fc32",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N420FX",
+          "note": "Checked 2026-09-24: serial 55010040, model EMB-545, Mode S hex A4FC32."
         }
       ]
     },
     {
       "registration": "N421FX",
+      "serial_number": "55010041",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a4ffe9",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N421FX",
+          "note": "Checked 2026-09-24: serial 55010041, model EMB-545, Mode S hex A4FFE9."
         }
       ]
     },
     {
       "registration": "N422FX",
+      "serial_number": "55010045",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a503a0",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N422FX",
+          "note": "Checked 2026-09-24: serial 55010045, model EMB-545, Mode S hex A503A0."
         }
       ]
     },
     {
       "registration": "N423FX",
+      "serial_number": "55010055",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a50757",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N423FX",
+          "note": "Checked 2026-09-24: serial 55010055, model EMB-545, Mode S hex A50757."
         }
       ]
     },
     {
       "registration": "N424FX",
+      "serial_number": "55010061",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a50b0e",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N424FX",
+          "note": "Checked 2026-09-24: serial 55010061, model EMB-545, Mode S hex A50B0E."
         }
       ]
     },
     {
       "registration": "N426FX",
+      "serial_number": "55010064",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a5127c",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N426FX",
+          "note": "Checked 2026-09-24: serial 55010064, model EMB-545, Mode S hex A5127C."
         }
       ]
     },
     {
       "registration": "N427FX",
+      "serial_number": "55010065",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a51633",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N427FX",
+          "note": "Checked 2026-09-24: serial 55010065, model EMB-545, Mode S hex A51633."
         }
       ]
     },
     {
       "registration": "N428FX",
+      "serial_number": "55010101",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a519ea",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N428FX",
+          "note": "Checked 2026-09-24: serial 55010101, model EMB-545, Mode S hex A519EA."
         }
       ]
     },
     {
       "registration": "N429FX",
+      "serial_number": "55010066",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a51da1",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N429FX",
+          "note": "Checked 2026-09-24: serial 55010066, model EMB-545, Mode S hex A51DA1."
         }
       ]
     },
     {
       "registration": "N430FX",
+      "serial_number": "55010067",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a523b1",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N430FX",
+          "note": "Checked 2026-09-24: serial 55010067, model EMB-545, Mode S hex A523B1."
         }
       ]
     },
     {
       "registration": "N431FX",
+      "serial_number": "55010070",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a52768",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N431FX",
+          "note": "Checked 2026-09-24: serial 55010070, model EMB-545, Mode S hex A52768."
         }
       ]
     },
     {
       "registration": "N432FX",
+      "serial_number": "55010071",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a52b1f",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N432FX",
+          "note": "Checked 2026-09-24: serial 55010071, model EMB-545, Mode S hex A52B1F."
         }
       ]
     },
     {
       "registration": "N433FX",
+      "serial_number": "55010072",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a52ed6",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
-        }
-      ]
-    },
-    {
-      "registration": "N434FX",
-      "icao_type": "E545",
-      "faa_model": "EMB-545",
-      "label": "Praetor 500",
-      "year": null,
-      "hex": null,
-      "sources": [
+        },
         {
-          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
-          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
-          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N433FX",
+          "note": "Checked 2026-09-24: serial 55010072, model EMB-545, Mode S hex A52ED6."
         }
       ]
     },
     {
       "registration": "N435FX",
+      "serial_number": "55010074",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a53644",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N435FX",
+          "note": "Checked 2026-09-24: serial 55010074, model EMB-545, Mode S hex A53644."
         }
       ]
     },
     {
       "registration": "N436FX",
+      "serial_number": "55010080",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a539fb",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N436FX",
+          "note": "Checked 2026-09-24: serial 55010080, model EMB-545, Mode S hex A539FB."
         }
       ]
     },
     {
       "registration": "N437FX",
+      "serial_number": "55010081",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a53db2",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N437FX",
+          "note": "Checked 2026-09-24: serial 55010081, model EMB-545, Mode S hex A53DB2."
         }
       ]
     },
     {
       "registration": "N438FX",
+      "serial_number": "55010082",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a54169",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N438FX",
+          "note": "Checked 2026-09-24: serial 55010082, model EMB-545, Mode S hex A54169."
+        }
+      ]
+    },
+    {
+      "registration": "N439FX",
+      "serial_number": "55010083",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a54520",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N439FX",
+          "note": "Checked 2026-09-24: serial 55010083, model EMB-545, Mode S hex A54520."
         }
       ]
     },
     {
       "registration": "N440FX",
+      "serial_number": "55010084",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a54b30",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N440FX",
+          "note": "Checked 2026-09-24: serial 55010084, model EMB-545, Mode S hex A54B30."
         }
       ]
     },
     {
       "registration": "N441FX",
+      "serial_number": "55010091",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a54ee7",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N441FX",
+          "note": "Checked 2026-09-24: serial 55010091, model EMB-545, Mode S hex A54EE7."
         }
       ]
     },
     {
       "registration": "N443FX",
+      "serial_number": "55010093",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a55655",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N443FX",
+          "note": "Checked 2026-09-24: serial 55010093, model EMB-545, Mode S hex A55655."
         }
       ]
     },
     {
       "registration": "N444FX",
+      "serial_number": "55010094",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a55a0c",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N444FX",
+          "note": "Checked 2026-09-24: serial 55010094, model EMB-545, Mode S hex A55A0C."
         }
       ]
     },
     {
       "registration": "N445FX",
+      "serial_number": "55010095",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a55dc3",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N445FX",
+          "note": "Checked 2026-09-24: serial 55010095, model EMB-545, Mode S hex A55DC3."
         }
       ]
     },
     {
       "registration": "N446FX",
+      "serial_number": "55010096",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a5617a",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N446FX",
+          "note": "Checked 2026-09-24: serial 55010096, model EMB-545, Mode S hex A5617A."
         }
       ]
     },
     {
       "registration": "N447FX",
+      "serial_number": "55010097",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a56531",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N447FX",
+          "note": "Checked 2026-09-24: serial 55010097, model EMB-545, Mode S hex A56531."
         }
       ]
     },
     {
       "registration": "N448FX",
+      "serial_number": "55010098",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
       "hex": "a568e8",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "existing (ADSB.lol / flightdb.net observation), matches FAA registry",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
@@ -807,32 +1965,81 @@
           "name": "ADSB.lol snapshot",
           "url": "https://api.adsb.lol",
           "note": "Observed LXJ448 as E545 in fleet-map-snapshot.json @ 2026-09-22T01:17:55.439753Z"
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N448FX",
+          "note": "Checked 2026-09-24: serial 55010098, model EMB-545, Mode S hex A568E8."
         }
       ]
     },
     {
       "registration": "N449FX",
+      "serial_number": "55010100",
       "icao_type": "E545",
       "faa_model": "EMB-545",
       "label": "Praetor 500",
       "year": null,
-      "hex": null,
+      "hex": "a56c9f",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N449FX",
+          "note": "Checked 2026-09-24: serial 55010100, model EMB-545, Mode S hex A56C9F."
+        }
+      ]
+    },
+    {
+      "registration": "N476FX",
+      "serial_number": "55010103",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a5d7f7",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N476FX",
+          "note": "Checked 2026-09-24: serial 55010103, model EMB-545, Mode S hex A5D7F7."
         }
       ]
     },
     {
       "registration": "N600FX",
+      "serial_number": "55020159",
       "icao_type": "E550",
       "faa_model": "EMB-550",
       "label": "Praetor 600",
       "year": null,
       "hex": "a7c7d2",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "existing (ADSB.lol / flightdb.net observation), matches FAA registry",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
@@ -842,32 +2049,58 @@
           "name": "ADSB.lol snapshot",
           "url": "https://api.adsb.lol",
           "note": "Observed LXJ600 as E550 in fleet-map-snapshot.json @ 2026-09-22T01:17:55.439753Z"
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N600FX",
+          "note": "Checked 2026-09-24: serial 55020159, model EMB-550, Mode S hex A7C7D2."
         }
       ]
     },
     {
       "registration": "N601FX",
+      "serial_number": "55020164",
       "icao_type": "E550",
       "faa_model": "EMB-550",
       "label": "Praetor 600",
       "year": null,
       "hex": "a7cb89",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "existing (ADSB.lol / flightdb.net observation), matches FAA registry",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "flightdb.net type E550",
           "url": "https://www.flightdb.net/type.php?type=E550",
           "note": "Mode-S hex listed for Embraer Praetor 600 / Flexjet"
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N601FX",
+          "note": "Checked 2026-09-24: serial 55020164, model EMB-550, Mode S hex A7CB89."
         }
       ]
     },
     {
       "registration": "N602FX",
+      "serial_number": "55020171",
       "icao_type": "E550",
       "faa_model": "EMB-550",
       "label": "Praetor 600",
       "year": null,
       "hex": "a7cf40",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "existing (ADSB.lol / flightdb.net observation), matches FAA registry",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
@@ -877,17 +2110,30 @@
           "name": "flightdb.net type E550",
           "url": "https://www.flightdb.net/type.php?type=E550",
           "note": "Mode-S hex listed for Embraer Praetor 600 / Flexjet"
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N602FX",
+          "note": "Checked 2026-09-24: serial 55020171, model EMB-550, Mode S hex A7CF40."
         }
       ]
     },
     {
       "registration": "N603FX",
+      "serial_number": "55020185",
       "icao_type": "E550",
       "faa_model": "EMB-550",
       "label": "Praetor 600",
       "year": null,
       "hex": "a7d2f7",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "existing (ADSB.lol / flightdb.net observation), matches FAA registry",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
@@ -897,32 +2143,58 @@
           "name": "flightdb.net type E550",
           "url": "https://www.flightdb.net/type.php?type=E550",
           "note": "Mode-S hex listed for Embraer Praetor 600 / Flexjet"
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N603FX",
+          "note": "Checked 2026-09-24: serial 55020185, model EMB-550, Mode S hex A7D2F7."
         }
       ]
     },
     {
       "registration": "N604FX",
+      "serial_number": "55020186",
       "icao_type": "E550",
       "faa_model": "EMB-550",
       "label": "Praetor 600",
       "year": null,
-      "hex": null,
+      "hex": "a7d6ae",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer Sa Emb-550. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N604FX",
+          "note": "Checked 2026-09-24: serial 55020186, model EMB-550, Mode S hex A7D6AE."
         }
       ]
     },
     {
       "registration": "N605FX",
+      "serial_number": "55020192",
       "icao_type": "E550",
       "faa_model": "EMB-550",
       "label": "Praetor 600",
       "year": null,
       "hex": "a7da65",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "existing (ADSB.lol / flightdb.net observation), matches FAA registry",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
@@ -932,32 +2204,81 @@
           "name": "flightdb.net type E550",
           "url": "https://www.flightdb.net/type.php?type=E550",
           "note": "Mode-S hex listed for Embraer Praetor 600 / Flexjet"
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N605FX",
+          "note": "Checked 2026-09-24: serial 55020192, model EMB-550, Mode S hex A7DA65."
+        }
+      ]
+    },
+    {
+      "registration": "N606FX",
+      "serial_number": "55020205",
+      "icao_type": "E550",
+      "faa_model": "EMB-550",
+      "label": "Praetor 600",
+      "year": null,
+      "hex": "a7de1c",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N606FX",
+          "note": "Checked 2026-09-24: serial 55020205, model EMB-550, Mode S hex A7DE1C."
         }
       ]
     },
     {
       "registration": "N607FX",
+      "serial_number": "55020207",
       "icao_type": "E550",
       "faa_model": "EMB-550",
       "label": "Praetor 600",
       "year": null,
       "hex": "a7e1d3",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "existing (ADSB.lol / flightdb.net observation), matches FAA registry",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "flightdb.net type E550",
           "url": "https://www.flightdb.net/type.php?type=E550",
           "note": "Mode-S hex listed for Embraer Praetor 600 / Flexjet"
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N607FX",
+          "note": "Checked 2026-09-24: serial 55020207, model EMB-550, Mode S hex A7E1D3."
         }
       ]
     },
     {
       "registration": "N608FX",
+      "serial_number": "55020209",
       "icao_type": "E550",
       "faa_model": "EMB-550",
       "label": "Praetor 600",
       "year": null,
       "hex": "a7e58a",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "existing (ADSB.lol / flightdb.net observation), matches FAA registry",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
@@ -967,81 +2288,388 @@
           "name": "flightdb.net type E550",
           "url": "https://www.flightdb.net/type.php?type=E550",
           "note": "Mode-S hex listed for Embraer Praetor 600 / Flexjet"
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N608FX",
+          "note": "Checked 2026-09-24: serial 55020209, model EMB-550, Mode S hex A7E58A."
         }
       ]
     },
     {
       "registration": "N609FX",
+      "serial_number": "55020210",
       "icao_type": "E550",
       "faa_model": "EMB-550",
       "label": "Praetor 600",
       "year": null,
       "hex": "a7e941",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "existing (ADSB.lol / flightdb.net observation), matches FAA registry",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "flightdb.net type E550",
           "url": "https://www.flightdb.net/type.php?type=E550",
           "note": "Mode-S hex listed for Embraer Praetor 600 / Flexjet"
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N609FX",
+          "note": "Checked 2026-09-24: serial 55020210, model EMB-550, Mode S hex A7E941."
+        }
+      ]
+    },
+    {
+      "registration": "N610FX",
+      "serial_number": "55020217",
+      "icao_type": "E550",
+      "faa_model": "EMB-550",
+      "label": "Praetor 600",
+      "year": null,
+      "hex": "a7ef51",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N610FX",
+          "note": "Checked 2026-09-24: serial 55020217, model EMB-550, Mode S hex A7EF51."
         }
       ]
     },
     {
       "registration": "N611FX",
+      "serial_number": "55020218",
       "icao_type": "E550",
       "faa_model": "EMB-550",
       "label": "Praetor 600",
       "year": null,
       "hex": "a7f308",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "existing (ADSB.lol / flightdb.net observation), matches FAA registry",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "flightdb.net type E550",
           "url": "https://www.flightdb.net/type.php?type=E550",
           "note": "Mode-S hex listed for Embraer Praetor 600 / Flexjet"
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N611FX",
+          "note": "Checked 2026-09-24: serial 55020218, model EMB-550, Mode S hex A7F308."
+        }
+      ]
+    },
+    {
+      "registration": "N612FX",
+      "serial_number": "55020235",
+      "icao_type": "E550",
+      "faa_model": "EMB-550",
+      "label": "Praetor 600",
+      "year": null,
+      "hex": "a7f6bf",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N612FX",
+          "note": "Checked 2026-09-24: serial 55020235, model EMB-550, Mode S hex A7F6BF."
         }
       ]
     },
     {
       "registration": "N613FX",
+      "serial_number": "55020233",
       "icao_type": "E550",
       "faa_model": "EMB-550",
       "label": "Praetor 600",
       "year": null,
       "hex": "a7fa76",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "existing (ADSB.lol / flightdb.net observation), matches FAA registry",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "flightdb.net type E550",
           "url": "https://www.flightdb.net/type.php?type=E550",
           "note": "Mode-S hex listed for Embraer Praetor 600 / Flexjet"
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N613FX",
+          "note": "Checked 2026-09-24: serial 55020233, model EMB-550, Mode S hex A7FA76."
+        }
+      ]
+    },
+    {
+      "registration": "N614FX",
+      "serial_number": "55020248",
+      "icao_type": "E550",
+      "faa_model": "EMB-550",
+      "label": "Praetor 600",
+      "year": null,
+      "hex": "a7fe2d",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N614FX",
+          "note": "Checked 2026-09-24: serial 55020248, model EMB-550, Mode S hex A7FE2D."
+        }
+      ]
+    },
+    {
+      "registration": "N616FX",
+      "serial_number": "55020251",
+      "icao_type": "E550",
+      "faa_model": "EMB-550",
+      "label": "Praetor 600",
+      "year": null,
+      "hex": "a8059b",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N616FX",
+          "note": "Checked 2026-09-24: serial 55020251, model EMB-550, Mode S hex A8059B."
         }
       ]
     },
     {
       "registration": "N617FX",
+      "serial_number": "55020244",
       "icao_type": "E550",
       "faa_model": "EMB-550",
       "label": "Praetor 600",
       "year": null,
-      "hex": null,
+      "hex": "a80952",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
       "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer Sa Emb-550. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N617FX",
+          "note": "Checked 2026-09-24: serial 55020244, model EMB-550, Mode S hex A80952."
+        }
+      ]
+    },
+    {
+      "registration": "N618FX",
+      "serial_number": "55020247",
+      "icao_type": "E550",
+      "faa_model": "EMB-550",
+      "label": "Praetor 600",
+      "year": null,
+      "hex": "a80d09",
+      "on_company_fleet_list": true,
+      "flag": null,
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "sources": [
+        {
+          "name": "Flexjet fleet list (Oct 30 2025)",
+          "note": "Tail, serial number and type per company fleet list dated Oct 30 2025; serial and model cross-checked against FAA Aircraft Registry."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N618FX",
+          "note": "Checked 2026-09-24: serial 55020247, model EMB-550, Mode S hex A80D09."
+        }
+      ]
+    },
+    {
+      "registration": "N274FX",
+      "serial_number": "55010208",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a2b5eb",
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "on_company_fleet_list": false,
+      "flag": "not on company fleet list dated Oct 30 2025",
+      "serial_source": "FAA Aircraft Registry (not on company list)",
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N274FX",
+          "note": "Checked 2026-09-24: serial 55010208, model EMB-545, Mode S hex A2B5EB."
+        }
+      ]
+    },
+    {
+      "registration": "N275FX",
+      "serial_number": "55010210",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a2b9a2",
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "on_company_fleet_list": false,
+      "flag": "not on company fleet list dated Oct 30 2025",
+      "serial_source": "FAA Aircraft Registry (not on company list)",
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N275FX",
+          "note": "Checked 2026-09-24: serial 55010210, model EMB-545, Mode S hex A2B9A2."
+        }
+      ]
+    },
+    {
+      "registration": "N279FX",
+      "serial_number": "55010213",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a2c87e",
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "on_company_fleet_list": false,
+      "flag": "not on company fleet list dated Oct 30 2025",
+      "serial_source": "FAA Aircraft Registry (not on company list)",
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N279FX",
+          "note": "Checked 2026-09-24: serial 55010213, model EMB-545, Mode S hex A2C87E."
+        }
+      ]
+    },
+    {
+      "registration": "N281FX",
+      "serial_number": "55010214",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a2d245",
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "on_company_fleet_list": false,
+      "flag": "not on company fleet list dated Oct 30 2025",
+      "serial_source": "FAA Aircraft Registry (not on company list)",
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N281FX",
+          "note": "Checked 2026-09-24: serial 55010214, model EMB-545, Mode S hex A2D245."
+        }
+      ]
+    },
+    {
+      "registration": "N434FX",
+      "serial_number": "55010073",
+      "icao_type": "E545",
+      "faa_model": "EMB-545",
+      "label": "Praetor 500",
+      "year": null,
+      "hex": "a5328d",
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "on_company_fleet_list": false,
+      "flag": "not on company fleet list dated Oct 30 2025",
+      "serial_source": "FAA Aircraft Registry (not on company list)",
+      "sources": [
+        {
+          "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
+          "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
+          "note": "Public registration listed as Embraer S A Emb-545. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N434FX",
+          "note": "Checked 2026-09-24: serial 55010073, model EMB-545, Mode S hex A5328D."
         }
       ]
     },
     {
       "registration": "N619FX",
+      "serial_number": "55020268",
       "icao_type": "E550",
       "faa_model": "EMB-550",
       "label": "Praetor 600",
       "year": null,
-      "hex": null,
+      "hex": "a810c0",
+      "hex_source": "FAA Aircraft Registry (Mode S Code, hex)",
+      "on_company_fleet_list": false,
+      "flag": "not on company fleet list dated Oct 30 2025",
+      "serial_source": "FAA Aircraft Registry (not on company list)",
       "sources": [
         {
           "name": "aircraftdata.org Flexjet LLC (FAA Aircraft Registry mirror)",
           "url": "https://aircraftdata.org/reg-name/flexjet-llc/",
           "note": "Public registration listed as Embraer Sa Emb-550. EMB-545/550 family includes Legacy and Praetor airframes; ICAO types E545/E550."
+        },
+        {
+          "name": "FAA Aircraft Registry N-number inquiry",
+          "url": "https://registry.faa.gov/AircraftInquiry/Search/NNumberResult?nNumberTxt=N619FX",
+          "note": "Checked 2026-09-24: serial 55020268, model EMB-550, Mode S hex A810C0."
         }
       ]
     }

@@ -687,6 +687,46 @@ function esc(s) {
   let fleetLoading = false;
   let fleetRoster = null;
   let fleetLastKnownStore = null;
+  let fleetRosterByHex = new Map();
+  let fleetRosterByReg = new Map();
+
+  async function loadFleetRoster() {
+    if (fleetRoster) return fleetRoster;
+    try {
+      const response = await fetch(FLEET_ROSTER_URL, { cache: 'no-store' });
+      if (!response.ok) throw new Error('roster fetch failed');
+      fleetRoster = await response.json();
+      fleetRosterByHex = new Map();
+      fleetRosterByReg = new Map();
+      (fleetRoster.aircraft || []).forEach(ac => {
+        if (ac.hex) fleetRosterByHex.set(String(ac.hex).toLowerCase(), ac);
+        if (ac.registration) fleetRosterByReg.set(String(ac.registration).toUpperCase(), ac);
+      });
+    } catch {
+      fleetRoster = null;
+    }
+    return fleetRoster;
+  }
+
+  function fleetRosterEntry(ac) {
+    return (ac.hex && fleetRosterByHex.get(String(ac.hex).toLowerCase()))
+      || fleetRosterByReg.get(String(ac.registration || '').toUpperCase())
+      || null;
+  }
+
+  function withRoster(ac) {
+    const r = fleetRosterEntry(ac);
+    if (!r) return ac;
+    const type = ac.type || r.icao_type || '';
+    return {
+      ...ac,
+      registration: (!ac.registration || ac.registration === 'UNKNOWN') ? r.registration : ac.registration,
+      type,
+      model: r.label || ac.model,
+      serial: r.serial_number || ac.serial || null,
+      rosterFlag: r.flag || null,
+    };
+  }
 
   function fleetType(raw) {
     return String(raw && (raw.t ?? raw.type) || '').trim().toUpperCase();
@@ -724,8 +764,9 @@ function esc(s) {
       .filter(raw => {
         const type = fleetType(raw);
         const callsign = fleetCallsign(raw);
-        return (type === 'E545' || type === 'E550')
-          && callsign.startsWith('LXJ')
+        const hex = String(raw.hex || '').trim().toLowerCase();
+        return (((type === 'E545' || type === 'E550') && callsign.startsWith('LXJ'))
+            || (hex && fleetRosterByHex.has(hex)))
           && Number.isFinite(Number(raw.lat))
           && Number.isFinite(Number(raw.lon));
       })
@@ -881,11 +922,13 @@ function esc(s) {
       <dl class="fleet-detail-grid">
         <div><dt>Status</dt><dd>${ac.status === 'live' ? 'Live' : 'Last known'} · ${esc(positionAge)}</dd></div>
         <div><dt>Callsign</dt><dd>${esc(ac.callsign || '—')}</dd></div>
+        <div><dt>Serial number</dt><dd>${esc(ac.serial || '—')}</dd></div>
         <div><dt>ICAO type</dt><dd>${esc(ac.type)}</dd></div>
         <div><dt>Altitude</dt><dd>${esc(fleetAltitude(ac))}</dd></div>
         <div><dt>Ground speed</dt><dd>${ac.speed == null ? 'Unavailable' : `${fleetNumber(ac.speed, 1)} kt`}</dd></div>
         <div><dt>Heading / track</dt><dd>${esc(fleetHeading(ac))}</dd></div>
         <div><dt>Position age</dt><dd>${esc(positionAge)}</dd></div>
+        ${ac.rosterFlag ? `<div class="wide"><dt>Roster note</dt><dd>${esc(ac.rosterFlag)}</dd></div>` : ''}
         <div class="wide"><dt>Coordinates</dt><dd>${fleetNumber(ac.lat, 5)}, ${fleetNumber(ac.lon, 5)}</dd></div>
         <div class="wide"><dt>Source</dt><dd>ADSB.lol public ADS-B${ac.status !== 'live' ? ' · last-known / snapshot' : ''}</dd></div>
         <div class="wide"><dt>Next publicly filed</dt><dd>No public next-filed flight available.</dd></div>
@@ -925,7 +968,7 @@ function esc(s) {
       if (list) list.innerHTML = fleetAircraft.map((ac, index) => `
         <button type="button" class="fleet-aircraft-button ${ac.status === 'live' ? 'is-live' : 'is-last-known'}" data-fleet-index="${index}">
           <strong>${esc(ac.registration)}</strong>
-          <span>${esc(ac.callsign || '—')} · ${esc(ac.model)} · ${ac.status === 'live' ? 'Live' : 'Last known'}</span>
+          <span>${esc(ac.callsign || '—')} · ${esc(ac.model)}${ac.serial ? ` · S/N ${esc(ac.serial)}` : ''} · ${ac.status === 'live' ? 'Live' : 'Last known'}</span>
         </button>`).join('');
       app.querySelectorAll('[data-fleet-index]').forEach(el => {
         el.addEventListener('click', () => selectFleetAircraft(Number(el.getAttribute('data-fleet-index'))));
@@ -939,11 +982,47 @@ function esc(s) {
       el.setAttribute('aria-pressed', el.getAttribute('data-fleet-filter') === fleetFilterMode ? 'true' : 'false');
     });
     renderFleetMapMarkers(fleetAircraft.filter(ac => Number.isFinite(ac.lat) && Number.isFinite(ac.lon)));
+    renderFleetRosterTable();
+  }
+
+  function renderFleetRosterTable() {
+    const wrap = $('#fleet-roster');
+    if (!wrap) return;
+    if (!fleetRoster || !Array.isArray(fleetRoster.aircraft)) {
+      wrap.innerHTML = '<p class="fleet-roster-note">Roster unavailable.</p>';
+      return;
+    }
+    const seen = new Map();
+    fleetAllAircraft.forEach(ac => {
+      const r = fleetRosterEntry(ac);
+      if (r) seen.set(r.registration, ac);
+    });
+    const c = fleetRoster.counts || {};
+    const rows = fleetRoster.aircraft.slice().sort((a, b) => {
+      if (!!a.flag !== !!b.flag) return a.flag ? 1 : -1;
+      if (a.icao_type !== b.icao_type) return a.icao_type === 'E545' ? -1 : 1;
+      return String(a.registration).localeCompare(String(b.registration));
+    });
+    wrap.innerHTML = `
+      <details class="fleet-roster-details">
+        <summary>Fleet roster — ${esc(c.company_fleet_list ?? '—')} tails (${esc(c.company_fleet_list_E545 ?? '—')} Praetor 500 · ${esc(c.company_fleet_list_E550 ?? '—')} Praetor 600)${c.flagged_not_on_company_list ? ` + ${esc(c.flagged_not_on_company_list)} flagged` : ''}</summary>
+        <p class="fleet-roster-note">Source: ${esc(fleetRoster.source || 'Flexjet fleet list (Oct 30 2025)')}. Tail / serial / model cross-checked against the public FAA Aircraft Registry. Flagged tails are not on the company fleet list dated Oct 30 2025.</p>
+        <div class="fleet-roster-scroll">
+          <table class="fleet-roster-table">
+            <thead><tr><th>Tail</th><th>Type</th><th>Serial</th><th>Position</th><th>Note</th></tr></thead>
+            <tbody>${rows.map(r => {
+              const ac = seen.get(r.registration);
+              const pos = ac ? (ac.status === 'live' ? 'Live' : 'Last known') : '—';
+              return `<tr class="${r.flag ? 'is-flagged' : ''}"><td><strong>${esc(r.registration)}</strong></td><td>${esc(r.label || r.icao_type)}</td><td>${esc(r.serial_number || '—')}</td><td>${esc(pos)}</td><td>${r.flag ? esc(r.flag) : ''}</td></tr>`;
+            }).join('')}</tbody>
+          </table>
+        </div>
+      </details>`;
   }
 
   function renderFleetAircraft(aircraft, meta) {
     if (!isFleetRoute()) return;
-    fleetAllAircraft = aircraft.map(ac => ({
+    fleetAllAircraft = aircraft.map(withRoster).map(ac => ({
       ...ac,
       mode: meta.mode,
       snapshotAt: meta.snapshotAt || null,
@@ -1006,6 +1085,7 @@ function esc(s) {
       seenPos: null,
       status: 'last_known',
       lastSeen: entry.last_seen || entry.lastSeen || null,
+      serial: entry.serial_number || null,
     };
   }
 
@@ -1049,6 +1129,7 @@ function esc(s) {
     setFleetState(fleetAllAircraft.length ? 'Refreshing public ADS-B…' : 'Loading public ADS-B positions…', 'loading');
     fleetAbortController = new AbortController();
     const signal = fleetAbortController.signal;
+    await loadFleetRoster();
     const lastKnownPromise = loadFleetLastKnown(signal);
     try {
       const responses = await Promise.all(FLEET_API_URLS.map(url => fetch(url, {
@@ -1219,6 +1300,7 @@ function esc(s) {
             </aside>
           </div>
           <div class="fleet-aircraft-list" id="fleet-aircraft-list" aria-label="Fleet aircraft"></div>
+          <section class="fleet-roster" id="fleet-roster" aria-label="Fleet roster"></section>
           <section class="fleet-disclaimer">
             <strong>Coverage limitation</strong>
             <p>Public ADS-B coverage can be incomplete, delayed, filtered, or blocked by a browser/network. Last-known markers are historical sightings, not live. Positions are informational only and are not Flexjet dispatch or Tailwind data.</p>

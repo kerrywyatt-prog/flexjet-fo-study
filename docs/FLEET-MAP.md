@@ -18,27 +18,26 @@ Only aircraft that pass all of these enter as **Live**:
 
 Last-known entries keep prior positions when an airframe is not in the current live poll.
 
-## Public roster (not invented)
-`flexjet-study-app/data/praetor-fleet-roster.json` — honest incomplete US Flexjet EMB-545 / EMB-550 list:
+## Roster
+`flexjet-study-app/data/praetor-fleet-roster.json` — base roster from the **Flexjet fleet list (Oct 30 2025)**:
+94 tails (76 Praetor 500 / EMB-545, 18 Praetor 600 / EMB-550), each with serial number
+(5501xxxx = Praetor 500, 5502xxxx = Praetor 600). Only tail / serial / type are published.
 
-| Source | What we took |
-| --- | --- |
-| [aircraftdata.org Flexjet LLC](https://aircraftdata.org/reg-name/flexjet-llc/) (FAA Aircraft Registry mirror) | Registration + FAA model `EMB-545` / `EMB-550` |
-| [flightdb.net type E550](https://www.flightdb.net/type.php?type=E550) | Mode-S hex for Flexjet **Praetor 600** rows only |
-| ADSB.lol live / `fleet-map-snapshot.json` | Hex + registration when observed with LXJ callsign |
-
-Notes:
-- FAA `EMB-545` / `EMB-550` covers Legacy and Praetor families; ICAO types are still E545/E550.
-- Hex codes are included **only** when observed or listed publicly — never fabricated.
-- Full official Flexjet / Tailwind roster may differ; a second pass can reconcile further.
+- Every tail, serial and model cross-checked against the public FAA Aircraft Registry N-number inquiry.
+- Mode-S hex: earlier observed values (ADSB.lol / flightdb.net) kept — all match FAA; the rest filled from the FAA registry "Mode S Code (Base 16 / Hex)". Never fabricated.
+- 6 tails from the earlier public-source roster (N274FX N275FX N279FX N281FX N434FX N619FX) are kept with `flag: "not on company fleet list dated Oct 30 2025"`.
+- UI: serial number on the click card and aircraft list; collapsible roster table (tail / type / serial / position / note) under the map.
+- No serial ↔ checklist-effectivity mapping is made (unconfirmed).
 
 ## Automation — last-known poll
 - Workflow: `.github/workflows/fleet-last-known.yml` (`Fleet last-known poll`)
   - Template committed as `docs/fleet-last-known.yml.example` (OAuth push lacks `workflow` scope). Copy to `.github/workflows/fleet-last-known.yml` on GitHub if the Action is not yet present.
 - Schedule: every **20 minutes** (`*/20 * * * *`) + `workflow_dispatch`
 - Script: `scripts/update-fleet-last-known.py`
-  - Sequential E545 then E550 queries with **8s sleep** between types (rate-limit friendly)
-  - Filter LXJ + type + position
+  - Reads `data/praetor-fleet-roster.json`
+  - Sequential E545 then E550 queries with sleep between calls (rate-limit friendly), filter LXJ + type + position
+  - Roster sweep: roster hexes not returned by the type queries are queried via `https://api.adsb.lol/v2/hex/<hex,hex,...>` (batches of 40) so every roster tail is polled
+  - Annotates stored entries with roster `serial_number` / `on_company_fleet_list`
   - Merge into `data/fleet-last-known.json` keyed by hex (else registration)
   - Updates `last_seen`, lat/lon, alt, gs, track, callsign when live; preserves prior last-known when not visible; `status`: `live` \| `last_known`
   - Bot commit **only if changed** (`flexjet-fleet-bot`); no force push
