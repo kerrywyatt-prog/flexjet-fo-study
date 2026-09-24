@@ -25,7 +25,9 @@ Last-known entries keep prior positions when an airframe is not in the current l
 
 - Every tail, serial and model cross-checked against the public FAA Aircraft Registry N-number inquiry.
 - Mode-S hex: earlier observed values (ADSB.lol / flightdb.net) kept — all match FAA; the rest filled from the FAA registry "Mode S Code (Base 16 / Hex)". Never fabricated.
-- 6 tails from the earlier public-source roster (N274FX N275FX N279FX N281FX N434FX N619FX) are kept with `flag: "not on company fleet list dated Oct 30 2025"`.
+- 8 flagged tails (not on the company list), for **102 tails total** (83 E545 / 19 E550):
+  - 6 from the earlier public-source roster (N274FX N275FX N279FX N281FX N434FX N619FX), kept with `flag: "not on company fleet list dated Oct 30 2025"`.
+  - N272FX and N273FX, FAA-registered c/o Flexjet LLC (2026), same flag.
 - UI: serial number on the click card and aircraft list; collapsible roster table (tail / type / serial / position / note) under the map.
 - No serial ↔ checklist-effectivity mapping is made (unconfirmed).
 

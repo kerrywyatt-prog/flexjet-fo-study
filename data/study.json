@@ -1,0 +1,4542 @@
+{
+"version": 25,
+"built": "2026-09-24",
+"sources": {
+"html": "<div class=\"tbl\"><table>\n<thead>\n<tr>\n<th>Key</th>\n<th>Document</th>\n<th>Rev / date</th>\n<th>How pages are cited</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>CTH</strong></td>\n<td>Flexjet Crew Training Handbook EMB-545/550</td>\n<td>Rev 2.5, eff 03/04/2026</td>\n<td>printed page (= PDF page)</td>\n</tr>\n<tr>\n<td><strong>CFM</strong></td>\n<td>Flexjet Crew Flight Manual EMB-545/EMB-550/Praetor</td>\n<td>Rev 3.3, eff 08/25/2026</td>\n<td><strong>printed</strong> page (PDF page − 2). Profiles pp.110–130 are FAA-approved (07-01-2026)</td>\n</tr>\n<tr>\n<td><strong>FLOWS</strong></td>\n<td>300 dpi PDF of the nine named CFM flows</td>\n<td>same as CFM 3.3</td>\n<td>CFM printed page</td>\n</tr>\n<tr>\n<td><strong>MEM</strong></td>\n<td>MEMORY-ITEMS, a word-for-word capture of CTH §4 pp.14–15</td>\n<td>CTH Rev 2.5</td>\n<td>used verbatim by the IAI cards</td>\n</tr>\n<tr>\n<td><strong>ACS</strong></td>\n<td>FAA-S-ACS-11A, <em>ATP and Type Rating for Airplane Category ACS</em></td>\n<td>Nov 2023, effective May 31, 2024</td>\n<td>element code (e.g. AA.IV.A.S6) or Appendix page</td>\n</tr>\n<tr>\n<td><strong>MEL</strong></td>\n<td>Flexjet MEL, EMB-545/550 (Praetor 500/600)</td>\n<td>Rev 14, 02-17-26 (FAA approved)</td>\n<td>printed page (front matter = PDF page; chapter pages like 22-9)</td>\n</tr>\n<tr>\n<td><strong>NEF</strong></td>\n<td>Flexjet NEF lists (Legacy 450/500 &amp; Praetor 500 page; Universal list)</td>\n<td>updated 12/01/2025 and 08/26/2026</td>\n<td>NEF PDF page</td>\n</tr>\n<tr>\n<td><strong>FMSG</strong></td>\n<td>Collins Pro Line Fusion FMS Operator's Guide, Legacy 450/500 &amp; Praetor 500/600 (CPN 523-0818863-003117)</td>\n<td>3rd Ed, 2 APR 2019</td>\n<td>printed page (e.g. 13-47). The vendor guide is <strong>older than the CFM</strong>; the CFM governs SOP</td>\n</tr>\n<tr>\n<td><strong>IND</strong></td>\n<td>Indoc DFW class transcripts (large-v3), Sep 2026</td>\n<td>—</td>\n<td>Day·clip, line (L) for D1–D2, mm:ss for D3–D4</td>\n</tr>\n<tr>\n<td><strong>NOTES</strong></td>\n<td>Kerry's Indoc notes (DAY-01…04, open items)</td>\n<td>—</td>\n<td>line</td>\n</tr>\n<tr>\n<td><strong>FLAGS</strong></td>\n<td>Instructor test flags vs 135 bank (Sep 24)</td>\n<td>—</td>\n<td>item #</td>\n</tr>\n</tbody>\n</table></div>",
+"legend": "<p><strong>Legend:</strong> ✅ sourced and cited · <span class=\"vtag\">verify vs AFM/AOM when available</span> = sourced from the CTH/CFM/MEL; confirm when the AFM/AOM arrive · <span class=\"warn\">⚠</span> sources conflict: ask the instructor · <span class=\"pend\">⏳</span> <strong>PENDING: no source on file</strong> (QRH text, TOLD/performance, FOM, HOT tables, W&amp;B). Nothing in a <span class=\"pend\">⏳</span> slot was filled in from general knowledge.</p>",
+"disclaimer": "<p>Study aid only. The current AFM, AOM, QRH and FOM govern: the CTH calls its own IAI and limitation lists \"training purposes ONLY… NOT all-inclusive\" <span class=\"cite\">[CTH 2.5 §4 p.15; §5 p.16]</span>. The CFM says the FOM controls when documents conflict <span class=\"cite\">[CFM 3.3 Preface p.11]</span>.</p>"
+},
+"structure": [
+{
+"id": "a1",
+"title": "A1. Where the check sits in the course (CTH)",
+"html": "<ul>\n<li><strong>Initial type-rating event:</strong> Indoc 7.5 days → aircraft systems ground, 6 days (48 hrs) → systems integration (GFS), 5 days (14 hrs) → <strong>6 crew sim sessions</strong> (each 1.0 hr brief, 4 hrs sim, 0.5 hr debrief) → <strong>Simulator Check: 2 hrs oral, 4 hrs crew sim check, 1 hr debrief</strong> → Simulator LOFT (1 hr brief, 4 hrs sim, 1 hr debrief) <span class=\"cite\">[CTH §2.3 p.9]</span>.</li>\n<li><strong>Gate before the sims:</strong> \"By the end of GFS 5, if you are unable to have the aircraft powered up and ready to taxi in 15 minutes you will not move forward with training\" <span class=\"cite\">[CTH §16.1 p.69]</span>.</li>\n<li><strong>Who runs the check:</strong> \"Upon completion of the initial sims and a recommendation for the type check, a Flight Safety Designated Examiner administers the Exam… the check consists of an oral test and a practical test. Satisfactory completion is outlined in the FAA Airman Certification Standards (ACS)\" <span class=\"cite\">[CTH §16.1 p.69]</span>. <span class=\"warn\">⚠</span> The paragraph is written for both the SimCom and FSI courses and names FlightSafety. <strong>Confirm with SimCom who the examiner will be at Lake Nona.</strong></li>\n<li><strong>LOFT comes after the type check</strong>, flown by a qualified instructor as a typical line segment <span class=\"cite\">[CTH §16.1 p.69; §16.3.8 p.80]</span>.</li>\n<li>SimCom trains in a <strong>Praetor 600</strong>. The CTH says the P500/P600 differences \"will not impact flying the simulators.\" A P500/P600 differences course is the last training requirement <span class=\"cite\">[CTH §16.1 p.69]</span>.</li>\n<li><strong>Sim 6 is the practice checkride:</strong> practice oral; two precision approaches (Direct Mode only); right-seat cockpit preflight, RTO, gear free-fall, manual RAT deployment; engine start abnormalities; APG special departures; steep turns, stalls, UA; single-engine work; go-arounds / balked landing; system failures; avionics fail-downs; precision, non-precision and raw-data approaches; right-seat takeoff and landing; TCAS and TAWS <span class=\"cite\">[CTH §16.3.6 p.79]</span>. The expectation: \"Flows, Checklists, Callouts should be satisfactorily accomplished without aids\" <span class=\"cite\">[CTH p.79]</span>.</li>\n</ul>"
+},
+{
+"id": "a2",
+"title": "A2. Checking standard",
+"html": "<ul>\n<li>Checking is conducted to the <strong>ACS and FAA Order 8900</strong> guidance. ATP, type rating, 135.293 and 135.297 standards are the same with one key exception: <strong>\"Retraining for an unsatisfactory task is not allowed during an ATP/TYPE rating certification check\"</strong> (135.293/.297 does allow retraining and a recheck) <span class=\"cite\">[CTH §2.4 p.10]</span>.</li>\n<li>ACS: the evaluator may have you repeat a task that is incomplete or uncertain, but \"this provision does not mean that instruction, practice, or the repetition of an unsatisfactory Task is permitted\" <span class=\"cite\">[ACS App.1 p.62]</span>.</li>\n<li><strong>ACS typical grounds for disqualification</strong> <span class=\"cite\">[ACS App.1 p.62]</span>:<ul>\n<li>any action or inaction that requires the evaluator to intervene to maintain safe flight</li>\n<li>failing to clear the area</li>\n<li>consistently exceeding tolerances</li>\n<li>failing to take prompt corrective action when tolerances are exceeded</li>\n<li>failing to exercise risk management</li>\n</ul>\n</li>\n<li>In a multi-pilot airplane you are expected to demonstrate <strong>CRM</strong> <span class=\"cite\">[ACS App.1 p.62]</span>.</li>\n<li>Satisfactory performance results in a <strong>temporary certificate</strong> <span class=\"cite\">[ACS App.1 p.62]</span>. The Indoc notes record 120 days for the temporary certificate <span class=\"cite\">[NOTES DAY-01.md L46]</span>.</li>\n<li><strong>Tasks required for a multiengine-land type rating</strong> <span class=\"cite\">[ACS App.1 p.64]</span>:<ul>\n<li>I: A, B</li>\n<li>II: A, B, C, E</li>\n<li>III: A, B, I, J</li>\n<li>IV: all</li>\n<li>V: all</li>\n<li>VI: all</li>\n<li>VII: A, B, D, E, F, G</li>\n<li>VIII: A</li>\n</ul>\n</li>\n<li>Tasks I.C–G (weather, high-altitude aero, air-carrier ops, human factors, CFR) are <strong>not required for a type-rating-only applicant</strong> <span class=\"cite\">[ACS App.3 pp.70–71]</span>.</li>\n<li>Areas IV–VII are performed in actual or simulated instrument conditions, except elements that require visual maneuvering <span class=\"cite\">[ACS App.3 p.70]</span>.</li>\n<li>The whole test may be done in a Part 60 FFS within an FAA-approved training program <span class=\"cite\">[ACS App.3 p.69]</span>.</li>\n</ul>"
+},
+{
+"id": "a3",
+"title": "A3. The oral (CTH §2.4.1 + ACS Area I)",
+"html": "<p>CTH oral elements <span class=\"cite\">[CTH §2.4.1 p.10]</span>:</p>\n<ol>\n<li>Flexjet Immediate Action Items from memory</li>\n<li>Aircraft limitations knowledge</li>\n<li>Aircraft systems knowledge</li>\n<li>Operations: preflight planning · company procedures · OpSpecs · cold weather / anti-icing / de-icing · MEL, CDL · airport ground operations</li>\n</ol>\n<p>ACS Area I tasks that apply to a type rating:</p>\n<ul>\n<li><strong>I.A Operation of Systems</strong> (K1–K17):<ul>\n<li>gear and brakes; powerplant; fuel; oil; hydraulics; electrical</li>\n<li>pneumatic / environmental / O₂ / pressurization; avionics / AP / FMS / EFB / GNSS / SBAS</li>\n<li>ice protection; crew and pax equipment and evacuation; flight controls; pitot-static</li>\n<li>fire and smoke; envelope protection (AOA / speed); AFM contents; MEL / CDL</li>\n<li>Skills include <strong>\"Recall immediate action items or memory items\"</strong> (AA.I.A.S2) and \"Identify system or component limitations listed in the POH/AFM\" (AA.I.A.S3) <span class=\"cite\">[ACS pp.2–3]</span>.</li>\n</ul>\n</li>\n<li><strong>I.B Performance and Limitations:</strong><ul>\n<li>accelerate-stop / go, climb, cruise, descent, landing and OEI performance; W&amp;B</li>\n<li>icing effects; clean-wing concept, deice / anti-ice, holdover tables, pre-takeoff contamination checks (AA.I.B.K7)</li>\n<li>compute W&amp;B and CG (AA.I.B.S5–S6) <span class=\"cite\">[ACS pp.3–4]</span></li>\n</ul>\n</li>\n<li>ACS App.3: the applicant explains the airplane's systems in the oral, and the evaluator may assess some skill elements in the oral <span class=\"cite\">[ACS App.3 p.70]</span>.</li>\n</ul>\n<p><strong>What the instructors said about the oral:</strong></p>\n<ul>\n<li>\"Knowing your limitations on memory items. That's going to be about at least probably <strong>85% of your oral</strong> and then of course add systems on top of that\" <span class=\"cite\">[IND D3·03-07 37:10–37:20; FLAGS #25]</span>. <span class=\"warn\">⚠</span> In the transcript, <em>limitations + memory items</em> are ~85% and <strong>systems come on top</strong>.</li>\n<li>For the systems questions, \"only what you put down on the systems questions is what I'm going to have\" (meaning the CTH §7 systems questions) <span class=\"cite\">[IND D1·01-01 L785–795]</span>.</li>\n<li>The CTH is \"99%\" of type prep; use the CFM for flows, profiles and checklist usage <span class=\"cite\">[IND D1·01-01 L40–48]</span>.</li>\n<li>Orals are scenario-based around the cockpit poster, a move away from \"stump-the-chump\"; expect \"show me\" <span class=\"cite\">[IND D1·01-01 L118–139, L160–169; NOTES DAY-01.md L157–167]</span>.</li>\n<li>The P500 and P600 are treated as identical <span class=\"cite\">[NOTES DAY-01.md L157–167]</span>.</li>\n<li><strong>Ground icing</strong> is a mandatory block on the 8410 form: \"I can't pass you [if] I don't check that box\" <span class=\"cite\">[IND D1·01-01 L776–782; FLAGS #10]</span>.</li>\n<li>Checkride length is roughly 5 hours <span class=\"cite\">[IND D1·01-01 L171–181]</span>.</li>\n</ul>"
+},
+{
+"id": "a4",
+"title": "A4. The practical (CTH §2.4.2)",
+"html": "<p>Expected items (the CTH says \"not in any specific order nor a complete listing\") <span class=\"cite\">[CTH §2.4.2 pp.10–11]</span>:</p>\n<ul>\n<li>preflight walkaround knowledge · pre-takeoff checks · engine start · ground ops / taxi</li>\n<li>normal and crosswind takeoffs · instrument takeoff · departure / arrival</li>\n<li>rejected takeoff · takeoff continued with engine failure above V1 · in-flight engine failure and restart</li>\n<li>airwork per the CFM training profiles: steep turns; stall recognition and recovery (clean, departure, landing); unusual attitudes</li>\n<li><strong>2 precision approaches</strong> (ILS, or LPV with DA &lt; 300 ft): 1 hand-flown, 1 single-engine</li>\n<li><strong>2 non-precision approaches</strong> (LOC, LOC-BC, VOR, LPV with DA &gt; 300 ft, LNAV/VNAV, LNAV, NDB, etc.): 1 hand-flown, 1 from a procedure turn, 1 to a circle</li>\n<li>two-engine rejected landing (balked landing / go-around) · single-engine go-around · holding · missed approach</li>\n<li><strong>Landings:</strong> single-engine; with 1800 RVR; from a circling approach; from a no-flap condition</li>\n<li>non-normal and emergency procedures · after landing, shutdown and securing</li>\n<li><strong>Continuously evaluated:</strong> ADM, CRM, company policy / SOP conformity, PM duties</li>\n</ul>\n<p>ACS minimums that frame the CTH list <span class=\"cite\">[ACS App.3 pp.71–76]</span>:</p>\n<ul>\n<li>at least 3 landings, 1 to a full stop</li>\n<li>a briefing before every takeoff and landing</li>\n<li>2 different NPAs (one with a course reversal, one from an IAF without AP or vectors, one on backup / partial panel)</li>\n<li>2 precision approaches (one without AP, hand-flown from no later than the FAF; one on backup / partial panel)</li>\n<li>2 missed approaches (one from a precision approach, one full published missed; in a multiengine airplane, one OEI)</li>\n<li>a circling approach with at least 90° of total heading change</li>\n<li>a no-flap / nonstandard-flap landing (required unless the FSBR says otherwise)</li>\n</ul>"
+}
+],
+"maneuversIntro": "<p>How to read each card:</p>\n<ul>\n<li><strong>ACS</strong> = the task code and the exact tolerance text (FAA-S-ACS-11A).</li>\n<li><strong>CFM</strong> = the Flexjet profile callouts. PF calls are orange on the profile, PM calls are green <span class=\"cite\">[CFM pp.110–130]</span>.</li>\n<li><strong><span class=\"pend\">⏳</span></strong> = numbers that need the AFM/AOM/QRH or the TOLD for the day.</li>\n</ul>\n<p><span class=\"warn\">⚠</span> The profile callouts were transcribed from the CFM profile images (pp.111–130). Spot-check them against the printed CFM before the checkride.</p>\n<p><strong>29 maneuver/event cards.</strong> The first 27 follow the CTH §2.4.2 order. Card 28 (windshear) is a Sim 5 training item and card 29 is postflight.</p>",
+"maneuvers": [
+{
+"n": 1,
+"title": "Preflight walkaround / cockpit preflight",
+"acs": [
+"AA.II.A"
+],
+"html": "<ul>\n<li><strong>ACS AA.II.A:</strong> inspect per checklist; document discrepancies and apply MEL/CDL limits; confirm airworthiness; comply with OpSpecs; make sure surfaces are free of ice, snow and frost, and if icing conditions exist, show deicing knowledge (S1–S7) <span class=\"cite\">[ACS p.12]</span>. A Part 142 curriculum may use a pictorial preflight <span class=\"cite\">[ACS App.3 p.71]</span>.</li>\n<li><strong>CTH:</strong> 5 gear/door pins (nose, R main, L main, emergency door, RAT); 21 vortex generators per wing; 17 static wicks <span class=\"cite\">[CTH §7.21 p.47]</span>.</li>\n<li>Power-up emphasis <span class=\"cite\">[CTH §3 pp.12–13]</span>:<ul>\n<li>HYD pump #1 AUTO, #3 OFF</li>\n<li>let the electrical PBIT finish</li>\n<li>if you use the electric pump for brakes (#1 only), let the HYD PBIT finish</li>\n<li>minimize the time between HYD 3 pump ON and engine start</li>\n</ul>\n</li>\n<li>Walkaround checklist items: see <strong>Checklists → Walkaround</strong> (Aircraft Prep / Walkaround Inspection Rev 3.2).</li>\n</ul>",
+"pending": true,
+"conflict": false
+},
+{
+"n": 2,
+"title": "Engine start (normal and abnormal)",
+"acs": [
+"AA.II.B"
+],
+"html": "<ul>\n<li><strong>ACS AA.II.B:</strong> ground safety; checklists before and after start; <strong>\"Respond appropriately to an abnormal start or malfunction\"</strong> (S4) <span class=\"cite\">[ACS p.13]</span>. The evaluator may test start malfunctions by scenario in the oral <span class=\"cite\">[ACS App.3 p.71]</span>.</li>\n<li><strong>CFM normal start <span class=\"cite\">[CFM pp.79–80]</span>:</strong><ul>\n<li>right engine first, started by the left-seat pilot</li>\n<li>selector to START for 2 s, then RUN</li>\n<li>ignition at 1% N2; fuel flow at 10–15% N2</li>\n<li>stop the clock at 50% N2; call <strong>\"NORMAL START\"</strong></li>\n</ul>\n</li>\n<li><strong>CFM manual-abort criteria</strong> include: no ITT rise within 30 s; light-off to idle &gt; 50 s; no oil pressure by 30% N2; no N1 by 30% N2 <span class=\"cite\">[CFM p.79]</span>.</li>\n<li><strong>CTH:</strong> let the FADEC abort a hung start or IGN fail, then run ENGINE ABNORMAL START (QRH NAP1-6) <span class=\"cite\">[CTH §8 p.50]</span>.</li>\n<li><strong>Memory:</strong> ENGINE ABNORMAL START (the IAI cards).</li>\n<li><strong>Flows:</strong> Before Start (PF) p.40 → After Start (PF p.44 / PM p.45).</li>\n<li><span class=\"pend\">⏳</span> Full QRH NAP1-6 text.</li>\n</ul>",
+"pending": true,
+"conflict": false
+},
+{
+"n": 3,
+"title": "Taxi / airport ground operations",
+"acs": [
+"AA.II.C"
+],
+"html": "<ul>\n<li><strong>ACS AA.II.C</strong> (taxi) <span class=\"cite\">[ACS p.14]</span>.</li>\n<li><strong>CFM:</strong> no single-engine taxi (passenger limitations page) <span class=\"cite\">[CFM p.82]</span>; taxi in on arrival with two engines <span class=\"cite\">[CFM p.96]</span>; pre-taxi briefing is threat-forward <span class=\"cite\">[CFM p.78]</span>.</li>\n<li><strong>CTH:</strong> pre-taxi briefing per FOM 4.11.1.2 / 4.11.1.3; crosswind ≥ 15 kt → reposition the aircraft into the wind <span class=\"cite\">[CTH §3 pp.12–13]</span>.</li>\n<li>Nosewheel steering: ±62° up to 10 kt, ±8° at 25 kt, ±3° at 68 kt; free-castor ±170° <span class=\"cite\">[CTH §7.15 p.37]</span>.</li>\n</ul>",
+"pending": false,
+"conflict": false
+},
+{
+"n": 4,
+"title": "Before-takeoff checks and briefing",
+"acs": [
+"AA.II.E"
+],
+"html": "<ul>\n<li><strong>ACS AA.II.E:</strong><ul>\n<li>determine takeoff performance</li>\n<li>set speeds and instruments, FD/AP, nav/com</li>\n<li><strong>brief emergency/abnormal actions (engine failure, windshear) and planned actions</strong> (S5)</li>\n<li>interpret the clearance <span class=\"cite\">[ACS p.16]</span></li>\n</ul>\n</li>\n<li>A brief is required before each takeoff; after a satisfactory first brief the evaluator may allow changes-only briefs <span class=\"cite\">[ACS App.3 p.71]</span>.</li>\n<li><strong>CFM pre-departure brief, in order</strong> <span class=\"cite\">[CFM p.77]</span>:<ol>\n<li>type of takeoff</li>\n<li>configuration</li>\n<li>V-speeds</li>\n<li>abort criteria</li>\n<li>initial heading / altitude / fix / SID</li>\n<li>emergency plan: EOP and level-off altitude</li>\n<li>return plan / takeoff alternate</li>\n<li>questions</li>\n</ol>\n</li>\n<li>The AWARE brief is done ≥ 30 min before departure; the PIC initiates and the PF leads <span class=\"cite\">[CFM pp.76–78]</span>.</li>\n<li><strong>Flow:</strong> Before Takeoff (PM) p.52 → Before Takeoff checklist above/below the line pp.53–54, ending with Line-Up Confirmation \"RWY__ / CONFIRMED\" (PF/PM).</li>\n<li>CTH initials emphasis: runway heading check at lineup <span class=\"cite\">[CTH §3 p.13]</span>.</li>\n</ul>",
+"pending": false,
+"conflict": false
+},
+{
+"n": 5,
+"title": "Normal and crosswind takeoff",
+"acs": [
+"AA.III.A"
+],
+"html": "<ul>\n<li><strong>ACS AA.III.A:</strong> climb speed <strong>±5 kt</strong> for each segment (S13); heading <strong>±5°</strong> (S14) <span class=\"cite\">[ACS pp.18–19]</span>. FFS crosswind is normally 10–15 kt, and the evaluator may go higher up to the AOM/AFM maximum demonstrated <span class=\"cite\">[ACS App.3 p.72]</span>.</li>\n<li><strong>CFM takeoff callouts <span class=\"cite\">[CFM p.111]</span>:</strong></li>\n</ul>\n<div class=\"tbl\"><table>\n<thead>\n<tr>\n<th>Event</th>\n<th>PF</th>\n<th>PM</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Runway clearance</td>\n<td>\"Below the Line\"</td>\n<td>—</td>\n</tr>\n<tr>\n<td>Set TO/GA thrust</td>\n<td>\"Check Thrust\"</td>\n<td>\"Thrust Set\"</td>\n</tr>\n<tr>\n<td>Airspeed indicating</td>\n<td>—</td>\n<td>\"Airspeeds Alive\"</td>\n</tr>\n<tr>\n<td>80 kt</td>\n<td>\"Checked\"</td>\n<td>\"80 knots\" (PM verifies the airspeeds match)</td>\n</tr>\n<tr>\n<td>V1 − 5 KIAS</td>\n<td>—</td>\n<td>\"V1\"</td>\n</tr>\n<tr>\n<td>VR</td>\n<td>—</td>\n<td>\"Rotate\"</td>\n</tr>\n<tr>\n<td>Climb</td>\n<td>\"Gear Up\"</td>\n<td>\"Positive Rate\"</td>\n</tr>\n<tr>\n<td>400 ft AGL min</td>\n<td>\"Climb Sequence\", \"Autopilot\" (optional)</td>\n<td>\"400 feet\"; selects FMS speeds, VS, flaps up, AP if commanded</td>\n</tr>\n</tbody>\n</table></div>\n<ul>\n<li><strong>CFM notes <span class=\"cite\">[CFM p.111]</span>:</strong><ul>\n<li>if \"HOLD\" doesn't annunciate, disconnect the A/T and set thrust manually</li>\n<li>with no FD: rotate to 12° (flaps 1) / 11° (flaps 2)</li>\n</ul>\n</li>\n<li><strong>CFM p.85/86:</strong> no FD mode changes below 400 ft AGL; TOGA until at least 400 ft AGL.</li>\n<li><strong>CFM p.83:</strong> After Takeoff checklist not before 3,000 ft AGL or acceleration height; ≤ 1,000 fpm for the last 1,000 ft of a climb.</li>\n<li><strong>CFM crosswind <span class=\"cite\">[CFM p.83]</span>:</strong> dry takeoff 35 kt, landing 25 kt demonstrated; takeoff crosswind &gt; 25 kt needs PIC and FODM agreement.</li>\n<li><strong>Flow:</strong> After Takeoff (PM) p.55.</li>\n<li><span class=\"pend\">⏳</span> V1/VR/V2/VFS for the day: TOLD / AFM performance.</li>\n<li><span class=\"pend\">⏳</span> Noise abatement variant: CFM p.112 (V2+15 to 400 ft or boundary; 1,500 ft AFL \"1500 ft, VFS\" / \"Flaps Up\"; normal climb at 3,000 ft AFL).</li>\n</ul>",
+"pending": true,
+"conflict": false
+},
+{
+"n": 6,
+"title": "Instrument takeoff",
+"acs": [
+"AA.VI.A"
+],
+"html": "<ul>\n<li><strong>ACS AA.VI.A:</strong><ul>\n<li>IMC at or before 100 ft AGL; FFS visibility no greater than ¼ mile (S7)</li>\n<li>make takeoff callouts per operator procedures (S9)</li>\n<li><strong>heading ±5°, airspeed ±5 kt</strong> (S12) <span class=\"cite\">[ACS p.37; App.3 p.74]</span></li>\n</ul>\n</li>\n<li><strong>CFM:</strong> same callouts as card 5 <span class=\"cite\">[CFM p.111]</span>.</li>\n</ul>",
+"pending": false,
+"conflict": false
+},
+{
+"n": 7,
+"title": "Departure and arrival procedures",
+"acs": [
+"AA.VI.B",
+"AA.VI.C"
+],
+"html": "<ul>\n<li><strong>ACS AA.VI.B (departure):</strong> <strong>airspeed ±10 kt, heading ±10°, altitude ±100 ft</strong>, accurately track (S8) <span class=\"cite\">[ACS p.38]</span>.</li>\n<li><strong>ACS AA.VI.C (arrival):</strong> <strong>airspeed ±10 kt but not below VREF, heading ±10°, altitude ±100 ft</strong> (S10) <span class=\"cite\">[ACS p.39]</span>.</li>\n<li><strong>CFM p.85:</strong><ul>\n<li>AP on: the PF makes all selections except altitude (the PM sets altitude)</li>\n<li>hand-flying: the PM makes the selections</li>\n<li>the PM enters FMS changes in flight and the PF verifies</li>\n</ul>\n</li>\n<li><strong>Flows:</strong> Transition Altitude p.57 / In-Range p.60.</li>\n<li><strong>CFM speeds p.94:</strong><ul>\n<li>climb Schedule 2 (P600 250/M0.74; P500 250/M0.72)</li>\n<li>descent M0.76 → 300 KIAS; max 250 KIAS below 10,000 ft</li>\n<li>recommended ≤ 200 KIAS at or below 2,500 ft AGL</li>\n</ul>\n</li>\n</ul>",
+"pending": false,
+"conflict": false
+},
+{
+"n": 8,
+"title": "Rejected takeoff",
+"acs": [
+"AA.III.I"
+],
+"html": "<ul>\n<li><strong>ACS AA.III.I:</strong> reject when a failure occurs where the airplane can be stopped on the remaining runway (S2); promptly reduce power, use drag and braking (S3); complete procedures, checklists and radio calls (S4) <span class=\"cite\">[ACS p.27]</span>.</li>\n<li><strong>CFM RTO profile <span class=\"cite\">[CFM p.125]</span>:</strong><ol>\n<li><strong>\"ABORT, ABORT\"</strong> (PF or PM)</li>\n<li>before V1: thrust idle, reversers as required, max braking; PM advises ATC</li>\n<li>after the stop: parking brake SET or taxi clear; advise ATC; evacuation memory items if needed, otherwise PA \"remain seated\"</li>\n<li>check the brake cooling charts</li>\n</ol>\n</li>\n<li><strong>CTH sequence <span class=\"cite\">[CTH §8 p.50; §3 p.13]</span>:</strong> PF does the IAIs → PM calls ATC → PF calls for the checklist; then MX / FODM, a new release, revised W&amp;B, and an incident report within 24 hr. \"The P600 shows high brake temps.\"</li>\n<li><strong>Memory:</strong> REJECTED TAKEOFF (At or below V1) (the IAI cards).</li>\n<li><span class=\"pend\">⏳</span> QRH Rejected Takeoff checklist; AFM brake energy / cooling charts.</li>\n</ul>",
+"pending": true,
+"conflict": false
+},
+{
+"n": 9,
+"title": "Engine failure above V1 (V1 cut)",
+"acs": [
+"AA.VII.B"
+],
+"html": "<ul>\n<li><strong>ACS AA.VII.B:</strong><ul>\n<li>continue the takeoff when able (S3)</li>\n<li><strong>after the climb is established, airspeed ±5 kt</strong> (S4)</li>\n<li><strong>heading ±5° when the failure occurs</strong> (S5)</li>\n<li>checklists and ATC (S6–S7) <span class=\"cite\">[ACS p.50]</span></li>\n</ul>\n</li>\n<li>The failure is given after V1 and before V2, or as close as possible after V1 when V1 = VR <span class=\"cite\">[ACS App.3 p.76]</span>.</li>\n<li>The instructor on V1-cut heading: \"plus or minus five degrees\" <span class=\"cite\">[IND D1·01-01 L160–169]</span>.</li>\n<li><strong>CFM Part 1 <span class=\"cite\">[CFM p.126]</span>:</strong><ul>\n<li>standard takeoff calls; PM \"Engine Failure/Fire\"; \"V1\", \"Rotate\", \"Positive Rate\" / \"Gear Up\"; hold <strong>V2 minimum</strong></li>\n<li>at 400 ft AGL: PM \"400 FEET\" → PF \"FLCH\", \"HDG (or LNAV)\", \"1/2 Bank\", \"Autopilot\" (optional)</li>\n<li>PM \"(State Malfunction)\" → PF \"Call Acceleration Altitude\"</li>\n</ul>\n</li>\n<li><strong>CFM Part 2 <span class=\"cite\">[CFM p.127]</span>:</strong><ul>\n<li>at 1,500 ft AFL or acceleration altitude if higher: PM \"Acceleration Altitude\"; set VFS</li>\n<li>at VFS: PM \"VFS\" → PF \"Flaps Up\", \"1/2 Bank OFF\"</li>\n<li>at MEA/MSA: dial VENR (200 kt)</li>\n<li>PF \"Confirm L/R Engine Failure\" → PM \"(L/R) Engine (Failure/Fire)\"</li>\n<li>PF \"Engine (Failure/Fire) Memory Items\" (memory items for fire only) → PM \"Memory Items Complete\"</li>\n<li>PF \"Engine (Failure/Fire) Checklist\" → PM \"…Checklist Complete\"</li>\n<li>PF \"After Takeoff Checklist\"</li>\n<li>OEI T/O thrust 10 min (normal 5 min)</li>\n</ul>\n</li>\n<li><strong>CTH sim tips <span class=\"cite\">[CTH §8 pp.50–51]</span>:</strong><ul>\n<li>rudder; don't over-rotate</li>\n<li>the FD TO mode targets ~V2</li>\n<li>at 400 ft: HDG/LNAV, FLCH, bug V2, ½ bank</li>\n<li>acceleration altitude is the minimum safe altitude for checklists</li>\n<li>don't reduce power in critical situations, even with a fire</li>\n<li>verify before engine-affecting actions; guard the run switch; no restart after a fire</li>\n</ul>\n</li>\n<li><span class=\"pend\">⏳</span> QRH checklists: Engine 1(2) Fail <strong>EAP6-3</strong>, Engine Fire <strong>EAP7-2</strong>, Engine Shutdown <strong>NAP1-27</strong> (names/tabs per <span class=\"cite\">[CTH pp.67–68]</span>); single-engine and engine-fire checklists are Sim 6 review items <span class=\"cite\">[CTH p.79]</span>.</li>\n</ul>",
+"pending": true,
+"conflict": false
+},
+{
+"n": 10,
+"title": "In-flight engine failure and restart",
+"acs": [
+"AA.VII.D"
+],
+"html": "<ul>\n<li><strong>ACS AA.VII.D:</strong><ul>\n<li>identify the failure and do the memory items (S1)</li>\n<li>decide whether a restart is viable (S4)</li>\n<li>keep the operating engine within limits (S5)</li>\n<li><strong>airspeed ±10 kt, altitude ±100 ft, heading ±10°</strong> (S6)</li>\n<li>restart per procedures (S7) <span class=\"cite\">[ACS p.52]</span></li>\n</ul>\n</li>\n<li>In a type-rated airplane the failure may be simulated, but a restart must be considered and a simulated restart performed if applicable <span class=\"cite\">[ACS App.3 p.76]</span>.</li>\n<li><strong>CTH:</strong> no restart after an engine fire <span class=\"cite\">[CTH §8 p.51]</span>. APU in-flight assisted engine start is limited to 23,000 ft <span class=\"cite\">[CTH §5 p.17]</span>.</li>\n<li><span class=\"pend\">⏳</span> QRH engine relight / in-flight start procedure and AFM start envelope. The CTH §5 p.18 in-flight start ITT figures are listed in (e) as a training reference only.</li>\n</ul>",
+"pending": true,
+"conflict": false
+},
+{
+"n": 11,
+"title": "Steep turns",
+"acs": [
+"AA.IV.A"
+],
+"html": "<ul>\n<li><strong>ACS AA.IV.A:</strong><ul>\n<li>complete no lower than 3,000 ft AGL (S1)</li>\n<li>manufacturer's airspeed or ≤ VA (S2)</li>\n<li><strong>≥ 45° bank, ≥ 180°</strong> by instruments (S3); opposite direction (S4)</li>\n<li><strong>altitude ±100 ft, airspeed ±10 kt, bank ±5°, rollout ±10°</strong> (S6)</li>\n<li>no impending stall or limit exceedance (S7) <span class=\"cite\">[ACS p.30]</span></li>\n<li>hand-flown with no PM intervention <span class=\"cite\">[ACS App.3 p.73]</span></li>\n</ul>\n</li>\n<li><strong>CFM <span class=\"cite\">[CFM p.119]</span>:</strong><ul>\n<li>AP, A/T and FD OFF; clear the FMA</li>\n<li>clean, trimmed at <strong>200 kt</strong> level</li>\n<li><strong>45° bank (±5), 200 kt (±10), altitude ±100</strong></li>\n<li>add about 2–3% thrust and +2° pitch</li>\n<li>roll out on the assigned heading</li>\n<li>the PM makes no power or control inputs</li>\n<li>the instructor may authorize 180° turns</li>\n</ul>\n</li>\n<li>CTH: VA ≈ 205–255 KIAS, depending on pressure altitude <span class=\"cite\">[CTH §5 p.16]</span>.</li>\n</ul>",
+"pending": false,
+"conflict": false
+},
+{
+"n": 12,
+"title": "Stall: departure / partial-flap configuration",
+"acs": [
+"AA.V.A"
+],
+"html": "<ul>\n<li><strong>ACS AA.V.A:</strong><ul>\n<li>recovery no lower than 5,000 ft AGL for transport-category airplanes (S1)</li>\n<li>partial-flap configuration (S3)</li>\n<li>bank <strong>15–30°</strong> manually or with AP (S4)</li>\n<li>recover at the <strong>first indication</strong> (S5), per the AFM (S6)</li>\n<li>retract flaps and gear on a positive rate (S7) <span class=\"cite\">[ACS p.33]</span></li>\n</ul>\n</li>\n<li>In an FSTD the entry should be operationally representative, with no minimum entry altitude <span class=\"cite\">[ACS App.3 p.73]</span>.</li>\n<li>One stall must be in a 15–30° turn, and one should be commanded through the autopilot <span class=\"cite\">[ACS App.3 p.73]</span>.</li>\n<li><strong>Low-airspeed warnings don't count as a stall warning.</strong> There's no mandated altitude-loss value and no requirement to hold altitude <span class=\"cite\">[ACS App.3 p.73]</span>.</li>\n<li><strong>CFM departure stall <span class=\"cite\">[CFM p.120]</span>:</strong><ul>\n<li>gear up, flaps 1, up to 20° bank; AP, A/T and FD off</li>\n<li>at the first indication PF: <strong>\"Stall\"</strong>; lower the pitch / reduce AOA, thrust MAX, confirm speed brakes retracted, level the wings</li>\n<li>PM \"Thrust Set\"; PM <strong>\"TOP OF THE LSA\"</strong>; PF pitches for minimum altitude loss and resumes the climb</li>\n<li>PM \"F Bug\" → PF \"Flap Zero\" → PM \"Flap Zero\"; \"After Takeoff Checklist\"</li>\n</ul>\n</li>\n</ul>",
+"pending": false,
+"conflict": false
+},
+{
+"n": 13,
+"title": "Stall: clean configuration",
+"acs": [
+"AA.V.B"
+],
+"html": "<ul>\n<li><strong>ACS AA.V.B:</strong> cruise configuration, 15–30° bank, recover at the first indication, return to the flight path (S1–S7) <span class=\"cite\">[ACS p.34]</span>.</li>\n<li><strong>CFM clean stall <span class=\"cite\">[CFM p.121]</span>:</strong><ul>\n<li>flaps 0, gear up, <strong>AP ON</strong>, A/T off; entry 180 KIAS, thrust idle</li>\n<li>PF \"STALL\"; \"LOW SPEED\" cue → max power, lower the nose, level the wings, recover</li>\n<li>return to the entry altitude and speed</li>\n</ul>\n</li>\n<li><span class=\"warn\">⚠</span> <strong>Ask the instructor:</strong> the ACS says a low-airspeed warning \"cannot be used as an indication of an impending stall\" <span class=\"cite\">[ACS App.3 p.73]</span>. Confirm which Praetor cue the examiner treats as the stall warning. The CTH says the DM LSA band Vsa marks \"the airspeed at which the stall aural alert is triggered\" and the AOA limiter isn't operational in DM <span class=\"cite\">[CTH §7.12 p.33]</span>. <span class=\"vtag\">verify vs AFM/AOM when available</span> (LSA / AOA limiter, stall warning logic in NM).</li>\n</ul>",
+"pending": true,
+"conflict": true
+},
+{
+"n": 14,
+"title": "Stall: landing configuration",
+"acs": [
+"AA.V.C"
+],
+"html": "<ul>\n<li><strong>ACS AA.V.C:</strong> landing configuration, 15–30° bank, first-indication recovery, retract flaps and gear on a positive rate (S1–S7) <span class=\"cite\">[ACS p.35]</span>.</li>\n<li><strong>CFM approach-to-landing stall <span class=\"cite\">[CFM p.122]</span>:</strong><ul>\n<li>AP, A/T and FD off; gear down, flaps FULL; entry 150 KIAS at idle</li>\n<li>PF \"STALL\"; recover</li>\n<li>PM \"TOP OF LSA\" → PF \"FLAP 2\"</li>\n<li>PM \"POSITIVE RATE\" → PF \"GEAR UP\" → PM \"GEAR UP\"</li>\n<li>PM \"F BUG\" → PF \"FLAP ZERO\" → PM \"FLAP ZERO\"</li>\n<li>return to entry</li>\n</ul>\n</li>\n</ul>",
+"pending": false,
+"conflict": false
+},
+{
+"n": 15,
+"title": "Unusual attitudes",
+"acs": [
+"AA.IV.B"
+],
+"html": "<ul>\n<li><strong>ACS AA.IV.B:</strong> identify nose-high and nose-low attitudes; apply control, power and configuration in the correct sequence to return to stabilized level flight (S1) <span class=\"cite\">[ACS p.31]</span>.</li>\n<li><strong>CFM <span class=\"cite\">[CFM p.123]</span>:</strong> AP, A/T and FD off.<ul>\n<li><strong>Nose high:</strong> increase thrust; roll toward the nearest horizon (up to 60°); nose through the horizon; level; adjust.</li>\n<li><strong>Nose low:</strong> idle; wings level; speed brakes as required; pitch to level; adjust.</li>\n<li>Don't exceed 60° bank; avoid rolling pull-outs.</li>\n</ul>\n</li>\n</ul>",
+"pending": false,
+"conflict": false
+},
+{
+"n": 16,
+"title": "Holding",
+"acs": [
+"AA.VI.J"
+],
+"html": "<ul>\n<li><strong>ACS AA.VI.J:</strong><ul>\n<li>proper entry (S2)</li>\n<li>cross the fix at or below max holding speed (S3)</li>\n<li>comply with leg length (S4) and reporting (S5)</li>\n<li><strong>airspeed ±10 kt, altitude ±100 ft, heading ±10°</strong> (S7)</li>\n<li>use the automation (S8); update fuel reserve for the EFC (S9) <span class=\"cite\">[ACS p.47]</span></li>\n</ul>\n</li>\n<li><strong>CTH tip:</strong> in the FMS, <strong>HOLD TO = course reversal; HOLD AT = hold</strong> <span class=\"cite\">[CTH §8 p.52]</span>.</li>\n<li><strong>CFM icing:</strong> hold at 200 KIAS with gear and flaps up in icing <span class=\"cite\">[CFM pp.97–108]</span>.</li>\n<li><strong>FMSG 13-20/13-22:</strong> the FMS sizes each circuit for wind and TAS and picks the entry method automatically; the hold fix flashes ~5 s before crossing.</li>\n</ul>",
+"pending": false,
+"conflict": false
+},
+{
+"n": 17,
+"title": "Precision approach, hand-flown (ILS / LPV)",
+"acs": [
+"AA.VI.E",
+"AA.VI.F"
+],
+"html": "<ul>\n<li><strong>ACS AA.VI.E:</strong><ul>\n<li>before the FAF: <strong>altitude ±100 ft, heading ±5°, airspeed ±10 kt</strong> (S9)</li>\n<li>adjust DA and visibility (S10)</li>\n<li><strong>FAF → DA: ≤ ¼-scale vertical/lateral, airspeed ±5 kt</strong> (S12)</li>\n<li>go around at DA without the required references (S13) <span class=\"cite\">[ACS pp.41–42]</span></li>\n<li>the manually flown segment begins no later than the FAF <span class=\"cite\">[ACS App.3 p.75]</span></li>\n</ul>\n</li>\n<li><strong>ACS AA.VI.F (landing from precision):</strong> ±5 kt and ¼ scale from DA to visual; touchdown <strong>−250/+500 ft</strong> of the aiming point (S1, S4) <span class=\"cite\">[ACS p.43]</span>.</li>\n<li><strong>CFM precision profile <span class=\"cite\">[CFM p.113]</span>:</strong></li>\n</ul>\n<div class=\"tbl\"><table>\n<thead>\n<tr>\n<th>Point</th>\n<th>PM</th>\n<th>PF</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Course alive</td>\n<td>\"Course Alive\"</td>\n<td>\"Flaps 1\" (160 KIAS)</td>\n</tr>\n<tr>\n<td>Glideslope alive</td>\n<td>\"Glideslope Alive\", \"Missed Approach Altitude Set\"</td>\n<td>\"Gear Down\", \"Flaps 2\" (140 KIAS, within ~10 NM)</td>\n</tr>\n<tr>\n<td>1 dot from GS intercept</td>\n<td>—</td>\n<td>\"Flaps Full\", \"Before Landing Checklist\" (Vapp or Vref + gust; flaps 3 or FULL)</td>\n</tr>\n<tr>\n<td>Before every flap move</td>\n<td>\"Speed checks, Flaps selected ___\"</td>\n<td>—</td>\n</tr>\n<tr>\n<td>500 ft above DA</td>\n<td>\"500 to Minimums, Stabilized, __ headwind/tailwind\"</td>\n<td>\"Stabilized\" or \"Go Around\"</td>\n</tr>\n<tr>\n<td>100 ft above DA</td>\n<td>\"100 to Minimums\"</td>\n<td>—</td>\n</tr>\n<tr>\n<td>Runway seen early</td>\n<td>\"Runway (or visual reference) __ o'clock\"</td>\n<td>\"Visual\" or \"Continue\"</td>\n</tr>\n<tr>\n<td>DA</td>\n<td>\"Minimums\", \"Approach Lights (or Runway) in sight\" or \"Go Around\"</td>\n<td>\"Visual\" / \"Continue\" / \"Go Around\"</td>\n</tr>\n</tbody>\n</table></div>\n<ul>\n<li><strong>CFM notes <span class=\"cite\">[CFM p.113]</span>:</strong><ul>\n<li>the PM calls deviations; every \"below glidepath\" below 1,000 ft AFL gets called</li>\n<li>the PF must call \"Visual\" before descending below DA</li>\n<li>the PM commands a go-around if there's no visual reference</li>\n<li>flap and speed brake handles are verbally verified</li>\n</ul>\n</li>\n<li><strong>CTH tips <span class=\"cite\">[CTH §8 p.52]</span>:</strong><ul>\n<li>approach lights only → down to 100 ft above TDZE</li>\n<li>the PM doesn't call the runway in sight until the threshold lights are in view</li>\n</ul>\n</li>\n<li><strong>FD mode guide <span class=\"cite\">[CTH §8.3 p.53]</span>:</strong> ILS on FMS source = APPR (LNAV→LOC→GS); on V/L source = APPR (LOC→GS); GA ALT set after GS capture. RNP/LPV/LNAV-VNAV = LNAV → VNAV → APPR, GA ALT after GP capture.</li>\n<li><strong>CFM:</strong> don't arm APPR until cleared for the approach <span class=\"cite\">[CFM p.85]</span>. ILS APPR only with heading deviation &lt; 90° and within 30 NM <span class=\"cite\">[CTH §5 p.19]</span>. LPV requires dual GPS <span class=\"cite\">[CTH §5 p.19]</span>.</li>\n<li><span class=\"warn\">⚠</span> <strong>Indoc conflict:</strong> one Indoc instructor said \"we don't do a hundred foot call out\" <span class=\"cite\">[IND D2·02-03 L276–278]</span>. The <strong>CFM profile includes \"100 to Minimums\"</strong> <span class=\"cite\">[CFM p.113]</span> and governs.</li>\n<li><strong>Flows:</strong> In-Range p.60 → In-Range checklist (incl. <strong>LDTA</strong>) pp.61–62 → Before Landing pp.63–64.</li>\n</ul>",
+"pending": false,
+"conflict": true
+},
+{
+"n": 18,
+"title": "Precision approach, single-engine, manually flown",
+"acs": [
+"AA.VII.F"
+],
+"html": "<ul>\n<li><strong>ACS AA.VII.F:</strong><ul>\n<li>before the FAF: <strong>altitude ±100 ft, airspeed ±10 kt, heading ±5°</strong> (S9)</li>\n<li>FAF → DA: <strong>≤ ¼ scale, airspeed ±5 kt</strong> (S12–S13)</li>\n<li>go around at DA if not visual (S15) <span class=\"cite\">[ACS p.54]</span></li>\n<li>begin hand-flying before the final segment; the failure occurs before the final segment <span class=\"cite\">[ACS App.3 pp.76–77]</span></li>\n</ul>\n</li>\n<li><strong>CFM:</strong> the precision profile applies OEI as well <span class=\"cite\">[CFM p.113]</span>. OEI missed approach: see card 22 <span class=\"cite\">[CFM p.128]</span>.</li>\n<li><strong>CTH:</strong> the go-around FD is a fixed ~8° pitch and doesn't adjust for OEI; pitch ~10–12° for VAC <span class=\"cite\">[CTH §8 p.51]</span>. FMS speeds are not approved OEI <span class=\"cite\">[CTH §5 p.19]</span>.</li>\n<li><span class=\"pend\">⏳</span> QRH single-engine approach and landing checklist; AFM OEI VAC and landing flap.</li>\n</ul>",
+"pending": true,
+"conflict": false
+},
+{
+"n": 19,
+"title": "Non-precision approaches (LOC / VOR / LNAV / NDB; one from a procedure turn; one hand-flown; partial panel)",
+"acs": [
+"AA.VI.D"
+],
+"html": "<ul>\n<li><strong>ACS AA.VI.D:</strong><ul>\n<li>before the final segment: <strong>altitude ±100 ft, heading ±5°, airspeed ±10 kt</strong> (S9)</li>\n<li>adjust MDA/DDA (S10)</li>\n<li><strong>final segment: ≤ ¼-scale CDI, airspeed ±5 kt, MDA +50/−0 ft</strong> to VDP/MAP (S12)</li>\n<li>missed approach if not visual (S13) <span class=\"cite\">[ACS p.40]</span></li>\n</ul>\n</li>\n<li>The course reversal, IAF-without-AP/vectors and partial-panel requirements are in (a) A4 <span class=\"cite\">[ACS App.3 pp.74–75]</span>.</li>\n<li><strong>CFM non-precision profile <span class=\"cite\">[CFM p.114]</span>:</strong><ul>\n<li>IAF outbound 180 KIAS</li>\n<li>\"Course Alive\" / \"Flaps 1\" (160)</li>\n<li>PM \"Out of __ for __\" at every step-down</li>\n<li>IAF inbound, or 5 NM before the FAF straight-in: \"Gear Down\", \"Flaps 2\" (140)</li>\n<li>established inbound, or 2 NM before the FAF: \"Flaps Full\", \"Before Landing Checklist\" (Vapp)</li>\n<li>FAF: \"Out of __\", \"TIME\"</li>\n<li>\"500 / 100 to Minimums\"</li>\n<li>MDA: PM \"Minimums, (time or distance) to go\" or \"Runway __ o'clock\"; PF \"Continue\" / \"Visual\"; PM \"Missed Approach Altitude Set\"</li>\n<li>MAP: PM \"Runway in sight\" or \"Missed Approach Point (Go Around)\"</li>\n<li>the PF must call <strong>\"Visual\"</strong> before circling or descending below MDA</li>\n</ul>\n</li>\n<li><strong>CFM approach configuration <span class=\"cite\">[CFM pp.90–93]</span>:</strong><ul>\n<li>LP not authorized (Collins limitation)</li>\n<li>LNAV is flown LNAV + VNAV <strong>without pressing APPR</strong> (AFM 2-64 p.7)</li>\n<li>for VOR/NDB the ground navaid is the final authority</li>\n</ul>\n</li>\n<li><strong>CTH FD guide p.53 / tips p.52:</strong><ul>\n<li>LOC = select LOC (not ILS) → LNAV (LOC) + FPA; set GA ALT if using the MDA as a DDA, otherwise set the MDA</li>\n<li>VOR/NDB on FMS source = LNAV + FPA</li>\n<li>LNAV-only minima use NAV mode</li>\n<li>VOR/NDB need the RMI needle (bearing source)</li>\n<li>SBAS can be deselected via IDX ARR DATA</li>\n</ul>\n</li>\n<li><span class=\"vtag\">verify vs AFM/AOM when available</span> (approach/navigation limitations) full text.</li>\n</ul>",
+"pending": true,
+"conflict": false
+},
+{
+"n": 20,
+"title": "Circling approach and landing",
+"acs": [
+"AA.VI.G",
+"AA.VI.H"
+],
+"html": "<ul>\n<li><strong>ACS AA.VI.G:</strong> <strong>airspeed ±5 kt, heading/track ±5°, altitude +100/−0 ft</strong> until descending below MDA (S5) <span class=\"cite\">[ACS p.44]</span>.</li>\n<li><strong>ACS AA.VI.H:</strong> <strong>bank ≤ 30°</strong> (S4); ±5 kt, +100/−0 ft (S5); touchdown <strong>−250/+500 ft</strong> (S8) <span class=\"cite\">[ACS p.45]</span>.</li>\n<li>The runway may be &lt; 90° offset if you make at least 90° of total heading change <span class=\"cite\">[ACS App.3 p.75]</span>.</li>\n<li><strong>CFM circling <span class=\"cite\">[CFM p.117]</span>:</strong><ul>\n<li>flown like the NPA; max 30° bank; Vapp or Vref + gust minimum</li>\n<li>PF \"Leaving Minimums\"</li>\n<li>PM calls headwind/tailwind at or below 500 ft AGL once aligned</li>\n<li>at MDA the PM sets the missed approach altitude</li>\n</ul>\n</li>\n<li><strong>Circling category:</strong> all Flexjet aircraft circle as <strong>CAT C</strong> (P500 CAT B / P600 CAT C) <span class=\"cite\">[CTH §5 p.19; CFM pp.90–93]</span>.</li>\n<li><strong>FD guide:</strong> use HDG after reaching the MDA; set the MDA for circling, and GA ALT after reaching the MDA <span class=\"cite\">[CTH §8.3 p.53]</span>.</li>\n</ul>",
+"pending": false,
+"conflict": false
+},
+{
+"n": 21,
+"title": "Missed approach (two engines)",
+"acs": [
+"AA.VI.I"
+],
+"html": "<ul>\n<li><strong>ACS AA.VI.I:</strong><ul>\n<li>prompt initiation and a report to ATC (S1)</li>\n<li>flaps/gear in sequence; <strong>airspeed ±5 kt</strong> (S3)</li>\n<li><strong>heading/course ±5°, altitude ±100 ft</strong> (S7)</li>\n<li>re-engage the AP when appropriate (S10) <span class=\"cite\">[ACS p.46]</span></li>\n<li>a momentary dip below DA while initiating at DA is not unsatisfactory if it doesn't continue <span class=\"cite\">[ACS App.3 pp.75–76]</span></li>\n</ul>\n</li>\n<li><strong>CFM missed approach <span class=\"cite\">[CFM p.116]</span>:</strong><ul>\n<li>\"Go Around\" (either pilot) at DA/MAP</li>\n<li>PF: TO/GA, thrust to the T/O detent, pitch for VAC</li>\n<li>PM: verifies T/O power, selects flaps 2 (flaps 1 if landing flaps were 3), calls \"Flaps 2\"</li>\n<li>\"Positive Rate\" / \"Gear Up\"</li>\n<li>PM \"400 FEET\" → PF \"Select Manual Speed to MAX\", \"Autopilot\" (optional), \"FMS SPEEDS\"</li>\n<li>After Takeoff checklist at 3,000 ft AFL minimum or the initial level-off</li>\n<li>notes: a flaps-0 approach stays flaps 0; no FD → 12°/11°</li>\n</ul>\n</li>\n<li><strong>CFM p.85 / CTH p.52:</strong> press <strong>TOGA</strong> to sequence the missed approach.</li>\n<li><strong>FMSG 13-47:</strong> the approach is disabled by TOGA, by selecting AUTO when the TO waypoint is the MAP, or by deleting the FAF.</li>\n</ul>",
+"pending": false,
+"conflict": false
+},
+{
+"n": 22,
+"title": "Single-engine missed approach / go-around",
+"acs": [
+"AA.VI.I",
+"AA.III.J"
+],
+"html": "<ul>\n<li><strong>ACS AA.VI.I:</strong> one missed approach must be OEI <span class=\"cite\">[ACS App.3 p.75]</span>. <strong>AA.III.J:</strong> positive climb, <strong>airspeed ±5 kt</strong> (S3) <span class=\"cite\">[ACS p.28]</span>.</li>\n<li><strong>CFM OEI missed approach <span class=\"cite\">[CFM p.128]</span>:</strong><ul>\n<li>as card 21, but at 400 ft: \"FLCH\", \"HDG (or LNAV)\", \"½ Bank\", \"Autopilot\"</li>\n<li>acceleration altitude → \"VFS\" / \"Flaps Up\", \"½ Bank OFF\"</li>\n<li>VENR 200 at MEA/MSA</li>\n<li>After Takeoff checklist at 3,000 ft AFL minimum or level-off</li>\n</ul>\n</li>\n<li><span class=\"pend\">⏳</span> QRH OEI go-around flap setting / AFM OEI climb limits.</li>\n</ul>",
+"pending": true,
+"conflict": false
+},
+{
+"n": 23,
+"title": "Two-engine rejected landing (balked landing)",
+"acs": [
+"AA.III.J"
+],
+"html": "<ul>\n<li><strong>ACS AA.III.J:</strong><ul>\n<li>timely decision (S1); power and pitch (S2)</li>\n<li><strong>airspeed ±5 kt</strong> (S3); configure (S4)</li>\n<li>track (S6); checklists (S7) <span class=\"cite\">[ACS p.28]</span></li>\n<li>initiated about <strong>50 ft above the runway, approximately over the threshold</strong>; may count as one of the 3 landings <span class=\"cite\">[ACS App.3 p.72]</span></li>\n</ul>\n</li>\n<li><strong>CFM:</strong> as the missed approach profile <span class=\"cite\">[CFM p.116]</span>.</li>\n</ul>",
+"pending": false,
+"conflict": false
+},
+{
+"n": 24,
+"title": "Normal landing / landing with 1800 RVR / visual approach",
+"acs": [
+"AA.III.B"
+],
+"html": "<ul>\n<li><strong>ACS AA.III.B:</strong><ul>\n<li>configuration and <strong>airspeed ±5 kt</strong> (S7)</li>\n<li>touchdown on centerline at <strong>−250/+500 ft</strong> of the aiming point (S10)</li>\n<li>taxi speed (≤ 20 kt dry / ≤ 10 kt contaminated) within the calculated landing distance <strong>+ 25%</strong> (S12)</li>\n<li>go around if not within tolerance (S14) <span class=\"cite\">[ACS p.19]</span></li>\n</ul>\n</li>\n<li><strong>ACS stabilized approach:</strong> stable speed, descent rate and path; configured by the minimum stabilized height, e.g. 1,000 ft AAE at ≤ 1,000 fpm <span class=\"cite\">[ACS App.3 p.74]</span>. CTH/FOM: ≤ 1,000 fpm in the last 1,000 ft (FOM 4.13.8) <span class=\"cite\">[CTH §12 p.59]</span>.</li>\n<li><strong>CFM landing <span class=\"cite\">[CFM p.95 and profile p.115]</span>:</strong><ul>\n<li>50 ft at adjusted VREF on a 3° path, gear down, flaps 3 or FULL</li>\n<li>the ATS currently retards at 30 ft, so <strong>VAPP = VREF + 5</strong></li>\n<li>reversers DEPLOYED at nosewheel touchdown</li>\n<li>PM calls <strong>\"40\"</strong> (40 KIAS)</li>\n<li>profile p.115: at 500 ft AGL (or 500 ft above minimums IFR) the PM confirms the wind is within limits; TRs stowed by 40 KIAS</li>\n</ul>\n</li>\n<li><strong>CFM gust factor:</strong> added to VREF <span class=\"cite\">[CFM p.96]</span>.</li>\n<li><strong>CFM autobrake <span class=\"cite\">[CFM p.96]</span>:</strong> PIC discretion; disengage at 80 kt; OFF for emergency/abnormal procedures.</li>\n<li><strong>CFM visual <span class=\"cite\">[CFM p.118]</span>:</strong><ul>\n<li>downwind flaps 1 = 160</li>\n<li>abeam 140, \"Gear Down Flaps 2\"</li>\n<li>base: minimum Vapp, \"Flaps FULL, Before Landing Checklist\"</li>\n<li>final turn complete by 500 ft AFL; \"500, Stabilized, wind\"</li>\n</ul>\n</li>\n<li><strong>CTH:</strong> visual default is 5 mi / 3° <span class=\"cite\">[CTH §8 p.52]</span>.</li>\n<li><strong>Flows:</strong> After Landing (PM) p.65, done after clearing the runway. No switches until clear of the runway <span class=\"cite\">[CFM p.96]</span>.</li>\n</ul>",
+"pending": false,
+"conflict": false
+},
+{
+"n": 25,
+"title": "Single-engine approach and landing",
+"acs": [
+"AA.VII.E"
+],
+"html": "<ul>\n<li><strong>ACS AA.VII.E:</strong><ul>\n<li>before the FAF: <strong>altitude ±100 ft, airspeed ±10 kt, heading ±5°</strong> (S6)</li>\n<li>approach <strong>±5 kt</strong> (S7)</li>\n<li>touchdown <strong>−250/+500 ft</strong> (S10); after-landing checklists (S13) <span class=\"cite\">[ACS p.53]</span></li>\n<li>\"follow the manufacturer's recommended procedures\" <span class=\"cite\">[ACS App.3 p.77]</span></li>\n</ul>\n</li>\n<li><span class=\"pend\">⏳</span> QRH One Engine Inoperative Approach and Landing Checklist <strong>NAP1-39</strong> <span class=\"cite\">[CTH pp.67–68]</span>: text, flap setting and VREF adds.</li>\n</ul>",
+"pending": true,
+"conflict": false
+},
+{
+"n": 26,
+"title": "No-flap / partial-flap landing",
+"acs": [
+"AA.VII.G"
+],
+"html": "<ul>\n<li><strong>ACS AA.VII.G:</strong> calculate speeds (S4); stabilized approach (S5); touchdown at the agreed point <strong>−250/+500 ft</strong> (S8); stop (S10) <span class=\"cite\">[ACS p.55]</span>.</li>\n<li><strong>CFM no-flap / partial-flap profile <span class=\"cite\">[CFM p.129]</span>:</strong><ul>\n<li>2.5–3° path; control speed with thrust</li>\n<li>speed brakes down to 160 kt; fly it onto the runway</li>\n<li><strong>182 kt max tire speed</strong>; firm touchdown; max reverse</li>\n<li>pattern 200 KIAS (see the flap-fail checklist for airspeed)</li>\n<li>PF \"Gear Down, Before Landing Checklist\"; 500 ft \"Stabilized\" call</li>\n</ul>\n</li>\n<li><span class=\"pend\">⏳</span> QRH Flaps Fail <strong>EAP8-4</strong> <span class=\"cite\">[CTH pp.67–68; Sim 6 list p.79]</span>: VREF adds and landing-distance factors.</li>\n</ul>",
+"pending": true,
+"conflict": false
+},
+{
+"n": 27,
+"title": "Emergency procedures (incl. emergency descent, fire/smoke, decompression, evacuation, icing)",
+"acs": [
+"AA.VII.A"
+],
+"html": "<ul>\n<li><strong>ACS AA.VII.A:</strong><ul>\n<li>explain and perform emergency procedures including <strong>emergency descent, in-flight fire and smoke, decompression, emergency evacuation, airframe icing</strong>, and others from the AFM (S1–S2f)</li>\n<li>fly on standby instruments (S3)</li>\n<li>checklists (S4); ATC (S5) <span class=\"cite\">[ACS p.49]</span></li>\n</ul>\n</li>\n<li><strong>CFM emergency descent <span class=\"cite\">[CFM p.124]</span>:</strong><ul>\n<li>PF \"CABIN ALTITUDE HI Warning Checklist\" → IAIs (same as memory) → PF \"Emergency Descent\"</li>\n<li>the PM runs the Emergency Descent checklist</li>\n<li>leveling at 10,000 ft or MEA: retract speed brakes, set thrust, masks off at 10,000 ft if not required, advise pax</li>\n<li>if structural damage is suspected, limit speed and loads</li>\n</ul>\n</li>\n<li><strong>CFM checklist order <span class=\"cite\">[CFM p.16]</span>:</strong> memory items → emergency → abnormal → normal.</li>\n<li><strong>CFM p.17:</strong> the PF calls the IAIs and the PM performs them in coordination; use the Flexjet laminated normal checklist when the QRH says go to normal.</li>\n<li><strong>CFM p.15:</strong> only the Emergency/Abnormal ECL is approved; if the ECL revision doesn't match TechPubs, use the QRH.</li>\n<li><strong>Memory items:</strong> SMOKE EVACUATION, SMOKE/FIRE/FUMES, CABIN ALTITUDE HI, EMERGENCY DESCENT, ENG 1/2 FIRE, APU FIRE, CARGO SMOKE, etc. (the IAI cards).</li>\n<li><span class=\"pend\">⏳</span> QRH checklists: Emergency Descent, Smoke/Fire/Fumes, Smoke Evacuation, Cabin Altitude Hi, Evacuation, PFD Failure, Hydraulic Pressure Low, FLTCTRL Direct Mode, Electrical Emergency (QRH refs the CTH names: Engine Abnormal Start NAP1-6, Engine 1(2) Fail EAP6-3, Engine Shutdown NAP1-27, OEI Approach &amp; Landing NAP1-39, Engine Fire EAP7-2, Flaps Fail EAP8-4 <span class=\"cite\">[CTH pp.67–68]</span>). <span class=\"pend\">⏳</span> Max cabin altitude / emergency-descent specifics (open item <span class=\"cite\">[NOTES open-items.md]</span>).</li>\n</ul>",
+"pending": true,
+"conflict": false
+},
+{
+"n": 28,
+"title": "Windshear (training item, Sim 5)",
+"acs": [
+"AA.II.E"
+],
+"html": "<ul>\n<li><strong>ACS:</strong> the takeoff briefing must cover windshear (AA.II.E.S5) <span class=\"cite\">[ACS p.16]</span>.</li>\n<li><strong>CFM windshear recovery <span class=\"cite\">[CFM p.130]</span>:</strong><ul>\n<li>PF \"Windshear Recovery\": thrust MAX, AP DISENGAGE, pitch 15° initially, then toward minimum airspeed while respecting the LSA/PLI; configuration MAINTAIN</li>\n<li>PM \"MAX Power set\"</li>\n<li>target ~10 kt above the low-speed cue</li>\n<li>PM calls airspeed, pitch, vertical speed and altitude; notify ATC when able</li>\n<li>no flap or gear change until clear; then \"Gear Up\", \"Flaps Up\", \"After takeoff checklist\"</li>\n</ul>\n</li>\n<li><span class=\"warn\">⚠</span> <strong>CTH: windshear detection SB 550-34-0003 is NOT INSTALLED</strong> <span class=\"cite\">[CTH §6 p.21]</span>. The IAI \"WINDSHEAR WITH FD ESCAPE MANEUVER\" is titled \"(Airplanes equipped with Windshear Detection System)\" <span class=\"cite\">[MEM]</span>. Ask how the sim will present windshear and which procedure applies.</li>\n</ul>",
+"pending": false,
+"conflict": true
+},
+{
+"n": 29,
+"title": "After landing, parking, securing",
+"acs": [
+"AA.VIII.A"
+],
+"html": "<ul>\n<li><strong>ACS AA.VIII.A:</strong> runway incursion avoidance; checklists after clearing the runway; park; postflight; secure (S1–S6) <span class=\"cite\">[ACS p.57]</span>.</li>\n<li><strong>CFM:</strong><ul>\n<li>After Landing flow p.65; After Landing silent checklist p.66</li>\n<li><strong>Shutdown flow p.67:</strong> the left seat observes a <strong>minimum 3 minutes</strong> before the run switches go OFF</li>\n<li>Shutdown checklist p.68; Securing pp.69–70</li>\n<li>BITE: power down 15 min <span class=\"cite\">[CFM p.75]</span></li>\n</ul>\n</li>\n</ul>",
+"pending": false,
+"conflict": false
+}
+],
+"flowRules": {
+"title": "C1. Rules of the road [CFM pp.12–17]",
+"html": "<ul>\n<li><strong>Flows</strong> are memorized, and a flow is <strong>not</strong> challenge-response <span class=\"cite\">[CFM p.12]</span>.</li>\n<li><strong>Checklist replies:</strong><ul>\n<li><strong>\"AS REQUIRED\" is never an acceptable checklist response.</strong> State the actual position or condition, e.g. \"Anti-ice is ON\" <span class=\"cite\">[CFM p.13]</span></li>\n<li>completion call: <strong>\"<checklist name> COMPLETE\"</strong>, e.g. \"TAXI CHECKLIST COMPLETE\" <span class=\"cite\">[CFM p.14]</span></li>\n<li>after the flows, the PF calls for the checklist <span class=\"cite\">[CFM p.12]</span></li>\n</ul>\n</li>\n<li><strong>Interrupted checklist:</strong> \"Hold the checklist at …\" / \"Continue the checklist\" <span class=\"cite\">[CFM p.14]</span>.</li>\n<li><strong>◆</strong> marks a first-flight-of-day item <span class=\"cite\">[CFM p.15]</span>.</li>\n<li>Only the Emergency/Abnormal <strong>ECL</strong> is approved. If the ECL revision doesn't match TechPubs, use the QRH <span class=\"cite\">[CFM p.15]</span>.</li>\n<li><strong>No skipping items.</strong> The After Takeoff checklist is done at 3,000 ft AGL minimum <span class=\"cite\">[CFM p.16]</span>.</li>\n<li><strong>Priority:</strong> memory items → emergency → abnormal → normal <span class=\"cite\">[CFM p.16]</span>.</li>\n<li>The PF calls the IAIs and the PM performs them in coordination. When the QRH says go to the normal checklist, use the Flexjet laminated normal checklist <span class=\"cite\">[CFM p.17]</span>.</li>\n<li><strong>Automation <span class=\"cite\">[CFM p.85]</span>:</strong><ul>\n<li>AP ON: the PF makes selections except altitude (the PM sets altitude)</li>\n<li>hand-flying: the PM makes selections</li>\n<li>no FD mode changes below 400 ft AGL</li>\n<li>don't arm APPR until cleared</li>\n<li>TOGA sequences the missed approach</li>\n</ul>\n</li>\n<li><strong>½ bank <span class=\"cite\">[CFM p.85]</span>:</strong> automatic above 25,000 ft; not used in terminal areas except for an engine failure.</li>\n<li>Instructor goal for startup: \"should be 20 min\" (a crew took an hour) <span class=\"cite\">[IND D1·01-01 L171–181]</span>. GFS 5 gate: powered up and ready to taxi in 15 min <span class=\"cite\">[CTH p.69]</span>.</li>\n</ul>"
+},
+"flows": [
+{
+"n": 1,
+"name": "Before Start",
+"who": "PF",
+"whoHtml": "(PF)",
+"items": [
+"Parking Brake SET",
+"Thrust Levers IDLE",
+"Lower DU Status Page VERIFY (All Doors Closed)",
+"Red BCN ON",
+"Hydraulic 3 Electric Pump ON"
+],
+"page": "40"
+},
+{
+"n": 2,
+"name": "After Start – PF",
+"who": "verify HYD PBIT complete before starting",
+"whoHtml": "(verify HYD PBIT complete before starting)",
+"items": [
+"ELEC EMER Button CHECK",
+"<h1>2 FUEL PUMP AUTO</h1>",
+"APU OFF",
+"ANTI-ICE AS REQUIRED",
+"FLIGHT INSTRUMENTS CHECKED",
+"FLT CONTROL SYNOPTIC GREEN",
+"FLAPS SET",
+"TOGA SET",
+"FLIGHT CONTROLS CHECK",
+"STEERING ON",
+"EICAS CHECK"
+],
+"page": "44"
+},
+{
+"n": 3,
+"name": "After Start – PM",
+"who": "",
+"whoHtml": "",
+"items": [
+"Lower DU Electrical Synoptic",
+"Flight Instruments SET",
+"Lower DU Flight Control Synoptic",
+"Flight Controls CHECK (after PF)"
+],
+"page": "45"
+},
+{
+"n": 4,
+"name": "Before Takeoff",
+"who": "PM, on takeoff or LUAW clearance",
+"whoHtml": "(PM, on takeoff or LUAW clearance)",
+"items": [
+"Brake Temp CHECK",
+"Fuel X-Feed OFF",
+"Lights ON (Taxi &amp; Strobe; Landing when cleared for takeoff)",
+"EICAS CHECK"
+],
+"page": "52"
+},
+{
+"n": 5,
+"name": "After Takeoff",
+"who": "PM, not before acceleration altitude",
+"whoHtml": "(PM, not before acceleration altitude)",
+"items": [
+"Anti-Ice AUTO",
+"Lights AS REQ"
+],
+"page": "55"
+},
+{
+"n": 6,
+"name": "Transition Altitude",
+"who": "approaching FL180",
+"whoHtml": "(approaching FL180)",
+"items": [
+"PF: Onside Altimeter STANDARD, SFIS STANDARD",
+"PM: Onside Altimeter STANDARD, Lights AS REQ"
+],
+"page": "57"
+},
+{
+"n": 7,
+"name": "In-Range",
+"who": "descending through FL180",
+"whoHtml": "(descending through FL180)",
+"items": [
+"PF: Onside Altimeter __SET, SFIS __SET",
+"PM: Onside Altimeter __SET, Taxi Lights ON"
+],
+"page": "60"
+},
+{
+"n": 8,
+"name": "After Landing",
+"who": "PM, after exiting the runway",
+"whoHtml": "(PM, after exiting the runway)",
+"items": [
+"Clock START TIME",
+"Flaps SET 0",
+"Lights AS REQ",
+"APU AS REQ",
+"Anti-Ice AS REQ"
+],
+"page": "65"
+},
+{
+"n": 9,
+"name": "Shutdown",
+"who": "PF; the left seat observes a **3 min minimum** before run switches OFF",
+"whoHtml": "(PF; the left seat observes a <strong>3 min minimum</strong> before run switches OFF)",
+"items": [
+"Anti-Ice AUTO",
+"Clock 3 Minutes",
+"Parking Brake SET",
+"Engine 1(2) Start/Stop STOP",
+"Lights AS REQ",
+"Cabin Signs OFF",
+"Hydraulic Panel: Steering OFF, HYD 3 Elec Pump OFF"
+],
+"page": "67"
+}
+],
+"flowsAfter": "<p>Where a flow or checklist line reads \"AS REQ\", say the <strong>actual</strong> setting out loud; \"AS REQUIRED\" is never an acceptable response <span class=\"cite\">[CFM p.13]</span>.</p>\n<p><strong>Checklists that follow each flow</strong> (challenge/response):</p>\n<ul>\n<li>Before Start pp.41–43; After Start pp.46–48; Departure/Runway Change pp.49–51</li>\n<li><strong>Before Takeoff pp.53–54</strong>, above/below the line:<ul>\n<li><strong>above the line:</strong> Brakes/Steering; TAKEOFF CONFIG (TO CONFIG button); FUEL X-FEED OFF; Brake Temp; Departure Briefing</li>\n<li><strong>below the line</strong>, after runway clearance, on PF \"continue below the line\": Auto-Throttle (ARMED or OFF); Lights; EICAS; HDG/LNAV; Line-Up Confirmation \"RWY__ / CONFIRMED\"</li>\n</ul>\n</li>\n<li>After Takeoff (silent) p.56; Transition/Cruise p.58; Descent p.59</li>\n<li><strong>In-Range pp.61–62:</strong> includes <strong>LDTA COMPLETED/CHECKED</strong>, TOLD card, approach briefing</li>\n<li><strong>Before Landing pp.63–64:</strong> includes Landing Gear \"DOWN, 3 GREEN\" (PM &amp; PF); Flaps <strong><em>SET/</em></strong>INDICATED</li>\n<li>After Landing (silent) p.66; Shutdown p.68; Securing pp.69–70; Traffic Pattern pp.71–73</li>\n</ul>",
+"callouts": [
+{
+"trigger": "Thrust set on the roll",
+"call": "PF \"Check Thrust\" → PM \"Thrust Set\"",
+"page": "111"
+},
+{
+"trigger": "IAS indicating",
+"call": "PM \"Airspeeds Alive\"",
+"page": "111"
+},
+{
+"trigger": "80 kt",
+"call": "PM \"80 knots\" → PF \"Checked\"",
+"page": "111"
+},
+{
+"trigger": "V1 − 5 kt",
+"call": "PM \"V1\"",
+"page": "111"
+},
+{
+"trigger": "VR",
+"call": "PM \"Rotate\"",
+"page": "111"
+},
+{
+"trigger": "Climb confirmed",
+"call": "PM \"Positive Rate\" → PF \"Gear Up\"",
+"page": "111"
+},
+{
+"trigger": "400 ft AGL",
+"call": "PM \"400 feet\" → PF \"Climb Sequence\"",
+"page": "111"
+},
+{
+"trigger": "Engine failure after V1",
+"call": "PM \"Engine Failure/Fire\" … PF \"Call Acceleration Altitude\"",
+"page": "126"
+},
+{
+"trigger": "Acceleration altitude",
+"call": "PM \"Acceleration Altitude\" … \"VFS\" → PF \"Flaps Up\", \"1/2 Bank OFF\"",
+"page": "127"
+},
+{
+"trigger": "Abort",
+"call": "\"ABORT, ABORT\" (either pilot)",
+"page": "125"
+},
+{
+"trigger": "Localizer / course alive",
+"call": "PM \"Course Alive\" → PF \"Flaps 1\"",
+"page": "113–114"
+},
+{
+"trigger": "GS alive",
+"call": "PM \"Glideslope Alive\", \"Missed Approach Altitude Set\" → PF \"Gear Down\", \"Flaps 2\"",
+"page": "113"
+},
+{
+"trigger": "1 dot to GS intercept",
+"call": "PF \"Flaps Full\", \"Before Landing Checklist\"",
+"page": "113"
+},
+{
+"trigger": "Every flap move",
+"call": "PM \"Speed checks, Flaps selected ___\"",
+"page": "113"
+},
+{
+"trigger": "Step-down fixes",
+"call": "PM \"Out of __ for __\"",
+"page": "114"
+},
+{
+"trigger": "FAF (NPA)",
+"call": "\"Out of __\", \"TIME\"",
+"page": "114"
+},
+{
+"trigger": "500 above minimums",
+"call": "PM \"500 to Minimums, Stabilized, __ headwind/tailwind\" → PF \"Stabilized\" / \"Go Around\"",
+"page": "113–114"
+},
+{
+"trigger": "100 above minimums",
+"call": "PM \"100 to Minimums\"",
+"page": "113–114"
+},
+{
+"trigger": "DA / MDA",
+"call": "PM \"Minimums\" + \"Approach Lights/Runway in sight\" or \"Go Around\" → PF \"Visual\" / \"Continue\" / \"Go Around\"",
+"page": "113–114"
+},
+{
+"trigger": "Leaving MDA to circle",
+"call": "PF \"Leaving Minimums\"",
+"page": "117"
+},
+{
+"trigger": "Go-around",
+"call": "\"Go Around\" → PM \"Flaps 2\" (or 1) → \"Positive Rate\" / \"Gear Up\" → \"400 FEET\" → PF \"Select Manual Speed to MAX\", \"FMS SPEEDS\"",
+"page": "116"
+},
+{
+"trigger": "Rollout",
+"call": "PM \"40\" at 40 KIAS",
+"page": "95, 115"
+},
+{
+"trigger": "Stall cue",
+"call": "PF \"Stall\" … PM \"Thrust Set\", \"Top of the LSA\", \"F Bug\"",
+"page": "120–122"
+},
+{
+"trigger": "Windshear",
+"call": "PF \"Windshear Recovery\" → PM \"MAX Power set\"",
+"page": "130"
+},
+{
+"trigger": "Cabin altitude",
+"call": "PF \"CABIN ALTITUDE HI Warning Checklist\" … \"Emergency Descent\"",
+"page": "124"
+}
+],
+"memoryDrill": "<p><strong>Master copy:</strong> MEMORY-ITEMS (word-for-word from CTH Rev 2.5 §4 pp.14–15). The IAI cards on this site use that exact wording (machine-checked, not retyped). Never paraphrase an IAI <span class=\"cite\">[MEM header]</span>.</p>\n<ul>\n<li>The CTH says IAIs \"may be evaluated during any training or checking event\" <span class=\"cite\">[CTH §4 p.15]</span>. They're the first CTH oral element <span class=\"cite\">[CTH §2.4.1 p.10]</span> and an ACS skill (AA.I.A.S2).</li>\n<li><strong>Titles to recite on demand (22 items, verbatim titles):</strong><ul>\n<li><strong>SMOKE:</strong> SMOKE EVACUATION · SMOKE/FIRE/FUMES · CARGO SMOKE</li>\n<li><strong>NON-ANNUNCIATED:</strong> DUAL ENGINE FAILURE · EMERGENCY DESCENT · ENGINE ABNORMAL START · ENGINE SEVERE DAMAGE OR SEPARATION · FLTCTRL N-MODE MISBEHAVIOR · JAMMED SIDESTICK · GEAR LEVER CAN NOT BE MOVED UP</li>\n<li><strong>(2) AMS:</strong> CABIN ALTITUDE HI</li>\n<li><strong>(5) ELECTRICAL:</strong> BATT DISCHARGING · &gt; ELEC EMERGENCY</li>\n<li><strong>(7) FIRE PROTECTION:</strong> APU FIRE · ENG 1 FIRE · ENG 2 FIRE</li>\n<li><strong>(8) FLIGHT CONTROLS:</strong> &gt; FLTCTRL N-MODE FAIL · SIDE STICK LH (RH) FAIL</li>\n<li><strong>(12)/(13):</strong> LG WOW MISCOMPARE · A-I WINGSTAB LEAK</li>\n<li><strong>SOPM:</strong> WINDSHEAR WITH FD ESCAPE MANEUVER · REJECTED TAKEOFF</li>\n</ul>\n</li>\n<li><strong>Rev 2.5 change:</strong> \"Added immediate action item LG WOW MISCOMPARE\" (Highlights of Revision) <span class=\"cite\">[CTH p.8]</span>.</li>\n<li><strong>Drill method:</strong><ol>\n<li>Write each one out blind.</li>\n<li>Diff it against the IAI cards.</li>\n<li>Say it with the switch-touch (\"show me\") the instructors expect <span class=\"cite\">[IND D1·01-01 L160–169]</span>.</li>\n<li>Pair each with its trigger (the EICAS message, or the black-banner non-EICAS condition) <span class=\"cite\">[MEM legend]</span>.</li>\n</ol>\n</li>\n<li><strong>Look-alike pairs to drill</strong> (wording copied from MEM):<ul>\n<li>CABIN ALTITUDE HI and EMERGENCY DESCENT have the same five lines. The only print difference is \"10000 ft\" vs \"10,000 ft\".</li>\n<li>ENG 1 FIRE / ENG 2 FIRE vs ENGINE SEVERE DAMAGE OR SEPARATION: the same four actions, with \"(affected engine)\" wording in the latter.</li>\n<li>SMOKE EVACUATION = SMOKE/FIRE/FUMES + \"OXYGEN Selector ··· CREW ONLY\" + \"DUMP Button ··· PUSH IN\".</li>\n<li>Three items end in \"PITCH Switch ··· ACTUATE MANUALLY\": FLTCTRL N-MODE MISBEHAVIOR, &gt; ELEC EMERGENCY, &gt; FLTCTRL N-MODE FAIL. LG WOW MISCOMPARE ends in \"PITCH SWITCH ··· ACTUATE MANUALLY\".</li>\n</ul>\n</li>\n<li><span class=\"warn\">⚠</span> The OCR stored \"MAEUVER\" as MANEUVER; confirm against the printed CTH if challenged <span class=\"cite\">[MEM note]</span>.</li>\n<li><span class=\"pend\">⏳</span> The follow-on QRH checklist text after each IAI: <strong>QRH</strong>.</li>\n</ul>",
+"orFlagCards": [
+{
+"id": "G1",
+"topic": "<strong>Limitations + memory items ≈ 85% of the oral; systems on top</strong>",
+"said": "\"about at least probably 85% of your oral and then of course add systems on top of that\" <span class=\"cite\">[IND D3·03-07 37:10–37:20; FLAGS #25]</span>. Also \"limitations, max takeoff weight for a [Praetor] 600… memory items… systems questions\" <span class=\"cite\">[IND D1·01-01 L783–793]</span>",
+"prep": "(d), the IAI cards, (e)"
+},
+{
+"id": "G2",
+"topic": "<strong>Systems questions come from the CTH</strong>",
+"said": "\"only what you put down on the systems questions is what I'm going to have\" <span class=\"cite\">[IND D1·01-01 L785–795]</span>; the CTH is \"99%\" of type prep [L40–48]",
+"prep": "(f), Q&amp;A SYS tags"
+},
+{
+"id": "G3",
+"topic": "<strong>Ground icing is a mandatory 8410 block</strong>",
+"said": "\"I can't pass you [if] I don't check that box\" <span class=\"cite\">[IND D1·01-01 L776–782; FLAGS #10]</span>",
+"prep": "CFM icing pp.97–108; ACS AA.I.B.K7/S3; CTH §3: A041 pre-takeoff contamination check, HOT tables in ForeFlight, 100% vs 76% charts, Table 53 snowfall intensity <span class=\"cite\">[CTH pp.12–13]</span>; <span class=\"pend\">⏳</span> FOM §7, HOT tables"
+},
+{
+"id": "G4",
+"topic": "<strong>LDTA (Landing Distance at Time of Arrival)</strong>",
+"said": "\"make sure you know that\" <span class=\"cite\">[IND D2·02-04 L476–480; FLAGS #8]</span>",
+"prep": "In-Range checklist item \"LDTA COMPLETED/CHECKED\" <span class=\"cite\">[CFM pp.61–62]</span>; landing assessment FOM 4.14.6/4.14.7 <span class=\"cite\">[CTH §3 p.12]</span>; <span class=\"pend\">⏳</span> FOM text"
+},
+{
+"id": "G5",
+"topic": "<strong>HAA</strong> as a \"good oral question\"",
+"said": "HAA = height of the MDA above airport elevation (the highest point on the airport), per the instructor <span class=\"cite\">[IND D3·03-07 15:03–15:29; FLAGS #24]</span>",
+"prep": "approach-chart review"
+},
+{
+"id": "G6",
+"topic": "<strong>C079 lower-than-standard takeoff minimums</strong>",
+"said": "135: 500 RVR; 91K: 600 RVR; know the required equipment <span class=\"cite\">[IND D1·01-05 L52–75; FLAGS #16]</span>. CTH: 500 RVR with 3 RVR systems, HIRL and CL lighting/markings (OpSpec C079) <span class=\"cite\">[CTH §12 p.59]</span>",
+"prep": "<span class=\"pend\">⏳</span> OpSpec C079 text"
+},
+{
+"id": "G7",
+"topic": "<strong>Pre-takeoff contamination check</strong>",
+"said": "within 5 min of takeoff (FOM 7.3.7.2) <span class=\"cite\">[CTH §12 p.60]</span>. Tactile check = \"E, all of the above\" per FOM 7.3.11 <span class=\"cite\">[IND D3·03-04 17:45–19:41; FLAGS #21]</span>",
+"prep": "<span class=\"pend\">⏳</span> FOM 7.3"
+},
+{
+"id": "G8",
+"topic": "<strong>Flows, memory items, callouts</strong>",
+"said": "\"Memory items, limitations, flows, callouts\" <span class=\"cite\">[IND D1·01-01 L109–111]</span>; \"Flows, memory items, and call outs\" <span class=\"cite\">[IND D1·01-03 L33–35]</span>; work flows, profiles, callouts, normal checklist C&amp;R, memory items, limitations <span class=\"cite\">[IND D2·02-05 L39–41]</span>. Have the flows down after SI; one crew took an hour to start and it should take about 20 min <span class=\"cite\">[IND D1·01-01 L171–181]</span>",
+"prep": "(c)"
+},
+{
+"id": "G9",
+"topic": "<strong>\"Show me\" oral style; ACS in ForeFlight</strong>",
+"said": "\"How many degrees … at a V1 cut? Plus or minus five degrees\" <span class=\"cite\">[IND D1·01-01 L160–169]</span>",
+"prep": "(b) card 9"
+},
+{
+"id": "G10",
+"topic": "<strong>Scenario-based orals using the cockpit poster</strong>",
+"said": "move away from \"stump-the-chump\" <span class=\"cite\">[IND D1·01-01 L118–139; NOTES DAY-01.md L157–167]</span>",
+"prep": "practice with the poster"
+},
+{
+"id": "G11",
+"topic": "<span class=\"warn\">⚠</span> <strong>100-ft callout</strong>",
+"said": "an instructor said \"we don't do a hundred foot call out\" <span class=\"cite\">[IND D2·02-03 L276–278]</span>; the CFM profile has \"100 to Minimums\" <span class=\"cite\">[CFM pp.113–114]</span>",
+"prep": "follow the CFM; ask SimCom"
+},
+{
+"id": "G12",
+"topic": "<strong>Company ops Q's in the CTH</strong>",
+"said": "stabilized approach VSI ≤ 1,000 fpm in the last 1,000 ft (FOM 4.13.8); no LAHSO (FOM 4.13.15); RTO / air return → call the company (FODM or MX), incident report within 24 hr of the end of the duty day (FOM 8.4.1.1) <span class=\"cite\">[CTH §12 p.59]</span>; NIL or RCAM 0 prohibited (FOM 7.6.1); thunderstorms 10 NM, severe 20 NM (FOM 7.4.2); no takeoff with frost adhering to wings/stabilizers/control surfaces (FOM 7.3.3, 7.3.6.6) <span class=\"cite\">[CTH §12 p.60]</span>",
+"prep": "<span class=\"pend\">⏳</span> FOM"
+}
+],
+"orFlagsCTH": "<p><strong>CTH §3 check-airman emphasis items</strong> (from the CTH, not the instructors) <span class=\"cite\">[CTH §3 pp.12–13]</span>:</p>\n<ul>\n<li>COB 2024-01</li>\n<li>threat-forward briefings (FOM 4.6.6): the PF asks the PM for threats; required for all taxi, takeoff and approach briefings</li>\n<li>crosswind ≥ 15 kt → reposition into the wind</li>\n<li>power-up sequence</li>\n<li>CAG pp.1–3 (seating / O₂ locations)</li>\n<li>landing assessment / landing distance (FOM 4.14.6/4.14.7)</li>\n<li>tailwind (FOM 4.11.8, 4.11.9, 4.14.10)</li>\n<li>risk levels (FOM 4.9.6.1)</li>\n<li>land as soon as <em>practical</em> vs as soon as <em>possible</em></li>\n<li>cold weather (A041, HOT tables, 100% vs 76% charts, Table 53)</li>\n<li>RTO follow-up</li>\n<li>pre-taxi briefing (FOM 4.11.1.2/4.11.1.3)</li>\n<li>Document Currency Guide</li>\n<li>declaring emergencies</li>\n<li>initials only: checklist philosophy, AWARE, flight-instrument check (After Start flow), Before Takeoff brief, runway heading check at lineup, turnaround / traffic-pattern checklists, dry motor</li>\n</ul>",
+"qaIntro": "<p>Self-authored from the sources above only; every answer is cited. Tags: <code>PROGRAM</code> <code>ACS</code> <code>MEM</code> <code>FLOWS</code> <code>CALLOUTS</code> <code>SOP</code> <code>LIMITS</code> <code>SYS-…</code> <code>OPS</code>. Items tagged LIMITS or SYS that rely on the CTH are <strong>training reference, verify vs AFM/AOM</strong> <span class=\"vtag\">verify vs AFM/AOM when available</span>.</p>",
+"qa": [
+{
+"n": 1,
+"tags": [
+"PROGRAM"
+],
+"q": "What are the pieces and durations of the initial Simulator Check?",
+"a": "2 hr oral, 4 hr crew sim check, 1 hr debrief. LOFT follows the type check. <span class=\"cite\">[CTH §2.3 p.9; §16.1 p.69]</span>"
+},
+{
+"n": 2,
+"tags": [
+"PROGRAM"
+],
+"q": "You fail a task on the type ride. Can the examiner retrain you and recheck it on the spot?",
+"a": "No. Retraining an unsatisfactory task isn't allowed on an ATP/TYPE certification check; 135.293/.297 does allow it. <span class=\"cite\">[CTH §2.4 p.10; ACS App.1 p.62]</span>"
+},
+{
+"n": 3,
+"tags": [
+"PROGRAM"
+],
+"q": "List the CTH oral exam elements.",
+"a": "Flexjet IAIs from memory; aircraft limitations; aircraft systems; operations (preflight planning, company procedures, OpSpecs, cold weather / anti-ice / de-ice, MEL/CDL, airport ground ops). <span class=\"cite\">[CTH §2.4.1 p.10]</span>"
+},
+{
+"n": 4,
+"tags": [
+"PROGRAM"
+],
+"q": "What must you be able to do by the end of GFS 5 to move on?",
+"a": "Have the aircraft powered up and ready to taxi in 15 minutes. <span class=\"cite\">[CTH §16.1 p.69]</span>"
+},
+{
+"n": 5,
+"tags": [
+"PROGRAM"
+],
+"q": "What precision approaches does the CTH expect on the check?",
+"a": "Two, ILS or LPV (DA &lt; 300 ft): one hand-flown and one single-engine. <span class=\"cite\">[CTH §2.4.2 p.11]</span>"
+},
+{
+"n": 6,
+"tags": [
+"PROGRAM"
+],
+"q": "What non-precision approach events does the CTH list?",
+"a": "Two NPAs: one hand-flown, one from a procedure turn, one to a circle. <span class=\"cite\">[CTH §2.4.2 p.11]</span>"
+},
+{
+"n": 7,
+"tags": [
+"PROGRAM"
+],
+"q": "Which landings are listed?",
+"a": "Single-engine; with 1800 RVR; from a circling approach; from a no-flap condition. <span class=\"cite\">[CTH §2.4.2 p.11]</span>"
+},
+{
+"n": 8,
+"tags": [
+"PROGRAM"
+],
+"q": "What four things are evaluated continuously throughout the check?",
+"a": "ADM, CRM, company policy/SOP conformity, pilot-monitoring duties. <span class=\"cite\">[CTH §2.4.2 p.11]</span>"
+},
+{
+"n": 9,
+"tags": [
+"ACS"
+],
+"q": "Steep turn standard?",
+"a": "At least 45° bank for at least 180°; altitude ±100 ft, airspeed ±10 kt, bank ±5°, rollout ±10°. <span class=\"cite\">[ACS AA.IV.A.S3, S6]</span> The CFM flies it at 200 kt clean with AP/A/T/FD off. <span class=\"cite\">[CFM p.119]</span>"
+},
+{
+"n": 10,
+"tags": [
+"ACS"
+],
+"q": "Non-precision final-segment tolerances?",
+"a": "≤ ¼-scale CDI, airspeed ±5 kt, MDA +50/−0 ft to the VDP or MAP. <span class=\"cite\">[ACS AA.VI.D.S12]</span>"
+},
+{
+"n": 11,
+"tags": [
+"ACS"
+],
+"q": "Precision approach tolerances, FAF to DA?",
+"a": "≤ ¼-scale deflection of vertical or lateral guidance and airspeed ±5 kt. Before the FAF: altitude ±100, heading ±5°, airspeed ±10. <span class=\"cite\">[ACS AA.VI.E.S9, S12]</span>"
+},
+{
+"n": 12,
+"tags": [
+"ACS"
+],
+"q": "Engine failure after V1: heading and airspeed tolerances?",
+"a": "Heading ±5° when the failure occurs; airspeed ±5 kt once the climb is established. <span class=\"cite\">[ACS AA.VII.B.S4–S5; IND D1·01-01 L160–169]</span>"
+},
+{
+"n": 13,
+"tags": [
+"ACS"
+],
+"q": "Circling approach tolerances and bank limit?",
+"a": "Airspeed ±5 kt, heading/track ±5°, altitude +100/−0 ft until descending below MDA; bank no more than 30°. <span class=\"cite\">[ACS AA.VI.G.S5; AA.VI.H.S4]</span> The CFM also gives 30° max. <span class=\"cite\">[CFM p.117]</span>"
+},
+{
+"n": 14,
+"tags": [
+"ACS"
+],
+"q": "Touchdown point tolerance on landings?",
+"a": "Within −250/+500 ft of the aiming-point markings (750–1,500 ft from the threshold if there are no markings). <span class=\"cite\">[ACS AA.III.B.S10; AA.VI.F.S4]</span>"
+},
+{
+"n": 15,
+"tags": [
+"ACS"
+],
+"q": "Holding tolerances?",
+"a": "Airspeed ±10 kt, altitude ±100 ft, heading ±10°; cross the fix at or below max holding speed; update fuel reserves for the EFC. <span class=\"cite\">[ACS AA.VI.J.S3, S7, S9]</span>"
+},
+{
+"n": 16,
+"tags": [
+"ACS"
+],
+"q": "Where is the go-around / rejected landing normally initiated?",
+"a": "About 50 ft above the runway, approximately over the threshold. Instrument conditions need not be simulated below 100 ft. <span class=\"cite\">[ACS App.3 p.72]</span>"
+},
+{
+"n": 17,
+"tags": [
+"ACS"
+],
+"q": "In the stall tasks, can a low-airspeed alert count as the stall cue? Must you hold altitude?",
+"a": "No: a low-airspeed warning isn't a stall warning. There's no predetermined altitude-loss value and no requirement to maintain altitude. <span class=\"cite\">[ACS App.3 p.73]</span>"
+},
+{
+"n": 18,
+"tags": [
+"ACS"
+],
+"q": "Stall task setup requirements?",
+"a": "One stall in a 15–30° turn, and one should be induced through autopilot commands. Transport-category recovery no lower than 5,000 ft AGL (in the airplane); in an FSTD, an operationally representative entry. <span class=\"cite\">[ACS AA.V.A.S1, S4; App.3 p.73]</span>"
+},
+{
+"n": 19,
+"tags": [
+"ACS"
+],
+"q": "Instrument takeoff requirements?",
+"a": "IMC at or before 100 ft AGL, FFS visibility ≤ ¼ mile; heading ±5°, airspeed ±5 kt. <span class=\"cite\">[ACS AA.VI.A.S7, S12]</span>"
+},
+{
+"n": 20,
+"tags": [
+"ACS"
+],
+"q": "How many missed approaches, and of what type?",
+"a": "Two: at least one from a precision approach, and one full published missed. In a multiengine airplane, one must be OEI. <span class=\"cite\">[ACS App.3 p.75]</span>"
+},
+{
+"n": 21,
+"tags": [
+"ACS"
+],
+"q": "You start the go-around at DA and the airplane sinks a little below DA. Unsatisfactory?",
+"a": "No, as long as the descent below DA/DH doesn't continue. <span class=\"cite\">[ACS App.3 pp.75–76]</span>"
+},
+{
+"n": 22,
+"tags": [
+"ACS"
+],
+"q": "What does the ACS define as a stabilized approach?",
+"a": "Stable speed, descent rate and vertical path; configured and on speed/power/path before the minimum stabilized height (e.g., 1,000 ft above airport elevation, ≤ 1,000 fpm unless briefed). <span class=\"cite\">[ACS App.3 p.74]</span>"
+},
+{
+"n": 23,
+"tags": [
+"MEM"
+],
+"q": "Which two IAIs have the same five action lines?",
+"a": "CABIN ALTITUDE HI and EMERGENCY DESCENT. Recite both from the IAI cards. <span class=\"cite\">[MEM]</span>"
+},
+{
+"n": 24,
+"tags": [
+"MEM"
+],
+"q": "Which IAI was added in CTH Rev 2.5?",
+"a": "LG WOW MISCOMPARE. <span class=\"cite\">[CTH Highlights of Revision p.8]</span>"
+},
+{
+"n": 25,
+"tags": [
+"MEM"
+],
+"q": "Name the IAIs in the SMOKE group.",
+"a": "SMOKE EVACUATION, SMOKE/FIRE/FUMES, CARGO SMOKE. <span class=\"cite\">[MEM]</span>"
+},
+{
+"n": 26,
+"tags": [
+"MEM"
+],
+"q": "How does SMOKE EVACUATION differ from SMOKE/FIRE/FUMES?",
+"a": "It adds \"OXYGEN Selector ··· CREW ONLY\" and \"DUMP Button ··· PUSH IN\". <span class=\"cite\">[MEM]</span>"
+},
+{
+"n": 27,
+"tags": [
+"MEM"
+],
+"q": "Which IAIs end with the PITCH switch actuated manually?",
+"a": "FLTCTRL N-MODE MISBEHAVIOR, &gt; ELEC EMERGENCY, &gt; FLTCTRL N-MODE FAIL, and LG WOW MISCOMPARE. <span class=\"cite\">[MEM]</span>"
+},
+{
+"n": 28,
+"tags": [
+"MEM",
+"SYS-FLTCTL"
+],
+"q": "Jammed sidestick: what's the IAI, and what does the long press do?",
+"a": "Cross-side AP/PTY button, press and hold for more than 20 seconds <span class=\"cite\">[MEM]</span>. Holding AP/PTY for more than 20 s latches priority. <span class=\"cite\">[CTH §7.12 p.32]</span>"
+},
+{
+"n": 29,
+"tags": [
+"FLOWS"
+],
+"q": "Recite the Before Start flow.",
+"a": "Parking Brake SET · Thrust Levers IDLE · Lower DU Status Page VERIFY (All Doors Closed) · Red BCN ON · Hydraulic 3 Electric Pump ON. <span class=\"cite\">[CFM p.40]</span>"
+},
+{
+"n": 30,
+"tags": [
+"FLOWS"
+],
+"q": "When does the PM do the Before Takeoff flow, and what's in it?",
+"a": "On takeoff or LUAW clearance: Brake Temp CHECK · Fuel X-Feed OFF · Lights ON (taxi and strobe; landing when cleared for takeoff) · EICAS CHECK. <span class=\"cite\">[CFM p.52]</span>"
+},
+{
+"n": 31,
+"tags": [
+"FLOWS"
+],
+"q": "What must be verified before starting the After Start flow, and who does which part?",
+"a": "HYD PBIT complete. The PF does ELEC EMER check through EICAS check; the PM does the electrical synoptic, sets flight instruments, checks the flight-control synoptic, and checks flight controls after the PF. <span class=\"cite\">[CFM pp.44–45]</span>"
+},
+{
+"n": 32,
+"tags": [
+"FLOWS"
+],
+"q": "Shutdown: how long must the left seat observe before the run switches go OFF?",
+"a": "A minimum of 3 minutes (Clock 3 Minutes in the flow). <span class=\"cite\">[CFM p.67]</span>"
+},
+{
+"n": 33,
+"tags": [
+"SOP"
+],
+"q": "Is \"AS REQUIRED\" an acceptable checklist response?",
+"a": "Never. State the actual position or condition (e.g., \"Anti-ice is ON\"). <span class=\"cite\">[CFM p.13]</span>"
+},
+{
+"n": 34,
+"tags": [
+"SOP"
+],
+"q": "How do you pause and resume a checklist?",
+"a": "PF: \"Hold the checklist at <item>\"; then \"Continue the checklist\". The PM resumes by repeating the last completed item. <span class=\"cite\">[CFM p.14]</span>"
+},
+{
+"n": 35,
+"tags": [
+"SOP"
+],
+"q": "Emergency checklist priority order?",
+"a": "Memory items → emergency → abnormal → normal. <span class=\"cite\">[CFM p.16]</span>"
+},
+{
+"n": 36,
+"tags": [
+"SOP"
+],
+"q": "Which electronic checklist is approved, and what if its revision doesn't match TechPubs?",
+"a": "Only the Emergency/Abnormal ECL; if the revision doesn't match, use the QRH. <span class=\"cite\">[CFM p.15]</span>"
+},
+{
+"n": 37,
+"tags": [
+"SOP"
+],
+"q": "With the autopilot on, who makes the FCP selections and who sets altitude?",
+"a": "The PF makes all selections except altitude, which the PM sets. When hand-flying, the PM makes the selections. <span class=\"cite\">[CFM p.85]</span>"
+},
+{
+"n": 38,
+"tags": [
+"SOP"
+],
+"q": "Lowest height for FD mode changes after takeoff, and how do you sequence the missed approach?",
+"a": "No FD mode changes below 400 ft AGL; press TOGA to sequence the missed approach. <span class=\"cite\">[CFM p.85; CTH §8 p.52]</span>"
+},
+{
+"n": 39,
+"tags": [
+"CALLOUTS"
+],
+"q": "When does the PM call \"V1\"?",
+"a": "At V1 − 5 KIAS. <span class=\"cite\">[CFM p.111]</span>"
+},
+{
+"n": 40,
+"tags": [
+"CALLOUTS"
+],
+"q": "What happens at 80 knots on the takeoff roll?",
+"a": "The PM calls \"80 knots\" and confirms the airspeeds match; the PF responds \"Checked\". <span class=\"cite\">[CFM p.111]</span>"
+},
+{
+"n": 41,
+"tags": [
+"CALLOUTS"
+],
+"q": "What's the 500-ft call on a precision approach, and what are the PF's options?",
+"a": "PM: \"500 to Minimums, Stabilized, __ headwind/tailwind.\" PF: \"Stabilized\" or \"Go Around\". <span class=\"cite\">[CFM p.113]</span>"
+},
+{
+"n": 42,
+"tags": [
+"CALLOUTS"
+],
+"q": "What must the PF announce before descending below DA or MDA (or circling)?",
+"a": "\"Visual\". <span class=\"cite\">[CFM pp.113–114]</span>"
+},
+{
+"n": 43,
+"tags": [
+"CALLOUTS"
+],
+"q": "Engine failure after V1: what are the PF's calls at 400 ft?",
+"a": "\"FLCH\", \"HDG (or LNAV)\", \"1/2 Bank\", \"Autopilot\" (optional), after the PM's \"400 FEET\". <span class=\"cite\">[CFM p.126]</span>"
+},
+{
+"n": 44,
+"tags": [
+"CALLOUTS"
+],
+"q": "At acceleration altitude and then VFS on a V1 cut?",
+"a": "PM \"Acceleration Altitude\" (set VFS); at VFS, PM \"VFS\" → PF \"Flaps Up\", \"1/2 Bank OFF\". Venr 200 kt at MEA/MSA. <span class=\"cite\">[CFM p.127]</span>"
+},
+{
+"n": 45,
+"tags": [
+"CALLOUTS"
+],
+"q": "On the go-around, what flap setting does the PM select?",
+"a": "Flaps 2, or flaps 1 if the landing flap was 3. A flaps-0 approach stays at 0. <span class=\"cite\">[CFM p.116]</span>"
+},
+{
+"n": 46,
+"tags": [
+"CALLOUTS"
+],
+"q": "RTO: who can call it, and what's the call?",
+"a": "Either pilot: \"ABORT, ABORT\". <span class=\"cite\">[CFM p.125]</span>"
+},
+{
+"n": 47,
+"tags": [
+"SOP"
+],
+"q": "After an RTO, what follow-up is required?",
+"a": "Call MX / the company (FODM), get a new release, revise W&amp;B, and file an incident report within 24 hr. <span class=\"cite\">[CTH §3 p.13; §8 p.50; §12 p.59]</span>"
+},
+{
+"n": 48,
+"tags": [
+"SOP"
+],
+"q": "VAPP vs VREF on a normal landing: why the +5?",
+"a": "The ATS currently retards at 30 ft instead of 50 ft, so 5 kt is added to VREF and that becomes VAPP. <span class=\"cite\">[CFM p.95]</span>"
+},
+{
+"n": 49,
+"tags": [
+"SOP"
+],
+"q": "Autobrake: when must it be OFF, and when do you disengage it on landing?",
+"a": "OFF for emergency and abnormal procedures; disengage at 80 kt with the pedals. <span class=\"cite\">[CFM p.96; CTH §5 p.18]</span>"
+},
+{
+"n": 50,
+"tags": [
+"SOP"
+],
+"q": "Crosswind limits: demonstrated takeoff and landing, and the company contaminated limit?",
+"a": "Takeoff 35 kt, landing 25 kt demonstrated; above 25 kt on takeoff needs PIC + FODM agreement; company contaminated limit 15 kt (use the most restrictive). <span class=\"cite\">[CFM pp.83, 96]</span>"
+},
+{
+"n": 51,
+"tags": [
+"LIMITS"
+],
+"q": "Flexjet VFE?",
+"a": "F1 200, F2 175, F3 175, FULL 160 KIAS; max altitude for flap extension 20,000 ft. <span class=\"cite\">[CFM p.95; CTH §5 p.16]</span> <span class=\"vtag\">verify vs AFM/AOM when available</span>"
+},
+{
+"n": 52,
+"tags": [
+"LIMITS"
+],
+"q": "VMO/MMO?",
+"a": "300 KIAS to 10,000 ft; 320 KIAS 10,000–29,475 ft; 0.83 M above. <span class=\"cite\">[CTH §5 p.16]</span> <span class=\"vtag\">verify vs AFM/AOM when available</span>"
+},
+{
+"n": 53,
+"tags": [
+"LIMITS"
+],
+"q": "P600 MTOW and MLW?",
+"a": "42,858 lb / 37,479 lb (P500: 37,567 / 34,172). <span class=\"cite\">[CTH §5 p.16]</span> <span class=\"vtag\">verify vs AFM/AOM when available</span>"
+},
+{
+"n": 54,
+"tags": [
+"LIMITS"
+],
+"q": "Max tailwind, runway slope, takeoff/landing altitude?",
+"a": "10 kt; ±2%; −1,000 to 9,600 ft (HALTO not installed). <span class=\"cite\">[CTH §5 p.16; §6 p.21]</span> <span class=\"vtag\">verify vs AFM/AOM when available</span>"
+},
+{
+"n": 55,
+"tags": [
+"LIMITS"
+],
+"q": "OEI ITT limits?",
+"a": "955 °C steady (10 min), 970 °C transient (2 min); max continuous 950 °C. <span class=\"cite\">[CTH §5 p.18]</span> <span class=\"vtag\">verify vs AFM/AOM when available</span>"
+},
+{
+"n": 56,
+"tags": [
+"LIMITS"
+],
+"q": "Autopilot minimums?",
+"a": "Engage 400 ft; use 80 ft with a vertical path reference, 180 ft without (AOM 2-56). <span class=\"cite\">[CTH §5 p.18; §7.13 p.36]</span> <span class=\"vtag\">verify vs AFM/AOM when available</span>"
+},
+{
+"n": 57,
+"tags": [
+"SYS-ELEC"
+],
+"q": "What powers the aircraft in an electrical emergency, and what's left for displays?",
+"a": "An electrical emergency is loss of both main gens and the APU gen in flight. The RAT deploys and powers EMER BUS 1/2/3 and charges the batteries; the CTR DU and ADS 3 remain. <span class=\"cite\">[CTH §7.6 pp.25–26; §7.1 p.22; §7.19 p.45]</span>"
+},
+{
+"n": 58,
+"tags": [
+"SYS-FIRE"
+],
+"q": "What does pushing the engine fire SHUTOFF button do, and which bottle do you use first?",
+"a": "Closes the fuel, hydraulic and bleed SOVs and arms Bottle A and B (both illuminate red). Use Bottle A first to save B, which also covers the APU. <span class=\"cite\">[CTH §6 p.20; §7.8 p.28]</span>"
+},
+{
+"n": 59,
+"tags": [
+"SYS-HYD"
+],
+"q": "Why can HYD system 3 work on battery or RAT, and what does the PTU do?",
+"a": "Sys 3 is a DC motor pump powered from EMER BUS 3. The PTU transfers power between Sys 1 and 2, automatically on an engine or EDP failure (or manually). <span class=\"cite\">[CTH §6 p.20; §7.11 p.31]</span>"
+},
+{
+"n": 60,
+"tags": [
+"SYS-FLTCTL"
+],
+"q": "When is manual reversion to Direct Mode inhibited, and is the AP available in DM?",
+"a": "Inhibited while low-speed, AOA-limiter or high-speed protection is engaged. The AP isn't available in DM. <span class=\"cite\">[CTH §7.12 pp.31–34]</span> <span class=\"vtag\">verify vs AFM/AOM when available</span>"
+},
+{
+"n": 61,
+"tags": [
+"SYS-AFCS"
+],
+"q": "What is EDM, and when is it enabled and activated?",
+"a": "An automatic descent to a safe altitude for depressurization plus pilot incapacitation. Enabled with the AP engaged above 25,000 ft; activates on a red CABIN ALTITUDE CAS. <span class=\"cite\">[CTH §7.13 p.35]</span>"
+},
+{
+"n": 62,
+"tags": [
+"SYS-PWR"
+],
+"q": "What triggers ATTCS?",
+"a": "If armed, on takeoff or go-around: OEI detected (N2 difference &gt; 15%), loss of engine cross-communication, windshear detected, or a thrust lever to MAX. <span class=\"cite\">[CTH §7.10 p.30]</span>"
+},
+{
+"n": 63,
+"tags": [
+"SYS-ICE"
+],
+"q": "Definition of icing conditions, and when does AUTO ice protection activate after takeoff?",
+"a": "OAT (ground) or TAT (flight) ≤ 10 °C with visible moisture. AUTO activates above 1,700 ft AGL or after 2 minutes airborne, whichever comes first. <span class=\"cite\">[CTH §7.17 pp.40–41]</span>"
+},
+{
+"n": 64,
+"tags": [
+"OPS"
+],
+"q": "When must the pre-takeoff contamination check be done, and under which OpSpec is it authorized?",
+"a": "Within 5 minutes before takeoff (FOM 7.3.7.2), under OpSpec A041. <span class=\"cite\">[CTH §12 p.60; §3 p.13; FLAGS #9]</span> <span class=\"pend\">⏳</span> FOM"
+},
+{
+"n": 65,
+"tags": [
+"OPS",
+"MEL"
+],
+"q": "What are the MEL repair category intervals?",
+"a": "A = as stated in Remarks; B = 3 consecutive calendar-days; C = 10; D = 120, each excluding the day of discovery. A single extension is allowed only for B and C (OpSpec D095). <span class=\"cite\">[MEL Rev 14 pp.23, 25–26]</span>"
+},
+{
+"n": 66,
+"tags": [
+"OPS",
+"MEL"
+],
+"q": "What must the crew determine before doing an (O) procedure?",
+"a": "The item is deferrable per the MEL; the discrepancy won't affect flight safety; the required alternate equipment is operative; and the PIC briefs the SIC. <span class=\"cite\">[MEL Rev 14 p.29]</span>"
+},
+{
+"n": 67,
+"tags": [
+"OPS",
+"MEL"
+],
+"q": "When may a flight crew perform an (M) procedure?",
+"a": "When the item's Flight Crew Deferral Item column says YES, after coordinating with Maintenance Control. <span class=\"cite\">[MEL Rev 14 p.30; CTH §12 p.59]</span>"
+},
+{
+"n": 68,
+"tags": [
+"OPS",
+"MEL"
+],
+"q": "When can the NEF list be used, and what are NEF items?",
+"a": "Only if MEL/CDL relief isn't available. NEF items have no effect on safe operation, aren't required by certification or operating rules, and aren't already in the MEL/CDL. <span class=\"cite\">[NEF banner pp.1–6; MEL p.25; MEL 25-2]</span>"
+}
+],
+"melIntro": "<p>Sources:</p>\n<ul>\n<li><strong>MEL</strong> = Flexjet MEL, Legacy 450/Praetor 500 (EMB-545) · Legacy 500/Praetor 600 (EMB-550), <strong>Rev 14, 02-17-26</strong>, 306 pp. Front-matter printed page = PDF page; chapter pages cited as printed \"chapter-page\".</li>\n<li><strong>NEF</strong> = Flexjet NEF lists: \"Legacy 450/500 and Praetor 500\" page updated 12/01/2025, Universal list updated 08/26/2026.</li>\n</ul>\n<p>Why it matters: MEL/CDL is a CTH oral element <span class=\"cite\">[CTH §2.4.1 p.10]</span> and an ACS skill: \"Demonstrate or describe… the process for deferring inoperative equipment (e.g., MEL) and using a CDL\" (AA.I.A.S4; K17) <span class=\"cite\">[ACS p.2–3]</span>.</p>",
+"mel": [
+{
+"id": "i1",
+"title": "I1. How the MEL is built",
+"html": "<ul>\n<li><strong>Two sections</strong> <span class=\"cite\">[MEL TOC; pp.1–2]</span>:<ul>\n<li>Section One: equipment items by ATA chapter</li>\n<li>Section Two: <strong>CAS Message Relief</strong></li>\n<li>then the <strong>CDL</strong></li>\n</ul>\n</li>\n<li>The MEL is \"no less restrictive than\" MMEL Rev 6 (12/20/2022) <span class=\"cite\">[MEL front matter / TOC summary]</span>.</li>\n<li><strong>The MEL must not deviate from AFM limitations, emergency procedures or ADs.</strong> All airworthiness/operating-rule equipment <strong>not listed must be operative</strong> <span class=\"cite\">[MEL Preamble p.31]</span>.</li>\n<li>MEL conditions don't relieve the operator of determining the aircraft is safe. An airworthiness release / logbook entry is required before operating with inoperative equipment <span class=\"cite\">[MEL Preamble p.31]</span>.</li>\n<li>With multiple inoperative items, consider how they interact and the effect on crew workload <span class=\"cite\">[MEL Preamble p.32]</span>.</li>\n<li><strong>System page columns</strong> <span class=\"cite\">[MEL Definitions p.26]</span>:<ul>\n<li>item number, item, repair category, number installed, number required for dispatch, remarks or exceptions</li>\n<li>Section Two adds the CAS message and dispatch consideration</li>\n</ul>\n</li>\n<li><strong>Proviso</strong> = conditions that must be met. <strong>NOTE</strong> = information, not part of the proviso <span class=\"cite\">[MEL p.26]</span>.</li>\n</ul>"
+},
+{
+"id": "i2",
+"title": "I2. (M) and (O) procedures",
+"html": "<ul>\n<li><strong>(M):</strong> a specific maintenance procedure accomplished <em>before</em> operation with the item inoperative, normally by maintenance <span class=\"cite\">[MEL Definitions p.27]</span>.</li>\n<li><strong>(O):</strong> a specific operations procedure for planning or operating with the item inoperative, normally by the flight crew <span class=\"cite\">[MEL p.27]</span>.</li>\n<li><strong>Before any (O) procedure, the crew determines</strong> <span class=\"cite\">[MEL Procedures p.29]</span>:<ol>\n<li>the item is deferrable per the MEL</li>\n<li>the discrepancy won't affect the safety of the flight</li>\n<li>the required alternate equipment is operative</li>\n<li>with a two-pilot crew, the <strong>PIC briefs the SIC</strong> on the procedure</li>\n</ol>\n</li>\n<li><strong>Flight Crew Deferral Item column</strong> <span class=\"cite\">[MEL p.30]</span>:<ul>\n<li>\"YES\" → crews are qualified/authorized for all procedures of that item, and may perform (M) procedures <strong>after coordinating with Maintenance Control</strong></li>\n<li>\"NO\" → Maintenance must defer it</li>\n<li>the crew may always ask Maintenance to defer</li>\n<li>crews are authorized for all Section Two CAS-relief procedures</li>\n</ul>\n</li>\n<li>Company Q&amp;A: a crew may only perform an MEL procedure if it says \"Flight Crew Deferral Item = Yes\" <span class=\"cite\">[CTH §12 p.59]</span>.</li>\n<li><strong>Placards</strong> go on or adjacent to the inoperative control/indicator. Write the item up at the end of that flight; defer (if permitted) and placard unless corrected <span class=\"cite\">[MEL Procedures p.29; Definitions p.25]</span>.</li>\n</ul>"
+},
+{
+"id": "i3",
+"title": "I3. Repair categories [MEL Definitions pp.25–26]",
+"html": "<div class=\"tbl\"><table>\n<thead>\n<tr>\n<th>Cat</th>\n<th>Interval</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>A</strong></td>\n<td>as specified in Remarks/Exceptions (calendar/flight-day intervals exclude the day of discovery; other intervals start at deferral)</td>\n</tr>\n<tr>\n<td><strong>B</strong></td>\n<td>3 consecutive calendar-days (72 hr), excluding the day of discovery</td>\n</tr>\n<tr>\n<td><strong>C</strong></td>\n<td>10 consecutive calendar-days (240 hr), excluding the day of discovery</td>\n</tr>\n<tr>\n<td><strong>D</strong></td>\n<td>120 consecutive calendar-days (2,880 hr), excluding the day of discovery</td>\n</tr>\n</tbody>\n</table></div>\n<ul>\n<li><strong>Continuing Authorization – Single Extension</strong> (OpSpec D095): a one-time extension for <strong>B or C only</strong>, not A or D <span class=\"cite\">[MEL p.23]</span>.</li>\n<li><strong>Flight-day</strong> = a midnight-to-midnight 24 hr period in <strong>Eastern time</strong> with at least one flight initiated <span class=\"cite\">[MEL p.24]</span>.</li>\n</ul>"
+},
+{
+"id": "i4",
+"title": "I4. Key definitions to know [MEL pp.23–27]",
+"html": "<ul>\n<li><strong>Inoperative</strong> = doesn't accomplish its intended purpose or isn't consistently within limits/tolerances. <strong>Considered inoperative</strong> = treat it as inoperative for dispatch/taxi/flight; don't use it; placard it; comply with the (M)/(O) procedures and the repair category.</li>\n<li><strong>Operative</strong> (no need to verify) vs <strong>Verified operative</strong> (must check at the stated interval, or at deferral if no interval is given).</li>\n<li><strong>EICAS and dispatch</strong> <span class=\"cite\">[MEL p.24]</span>:<ul>\n<li>any <strong>WARNING or CAUTION</strong> affects dispatch (use the AFM + MEL)</li>\n<li>ADVISORY <em>status</em> messages that indicate a failure (e.g., FMS 1 fail) also require the AFM + MEL</li>\n<li>ADVISORY <em>information</em> and <em>maintenance</em> (\"Maintenance Required\") messages don't affect dispatch</li>\n</ul>\n</li>\n<li><strong>Contaminated runway</strong> (MEL definition) = &gt; 25% of the surface covered by frost, ice, any depth of snow, slush or water <span class=\"cite\">[MEL p.23]</span>.</li>\n<li><strong>Icing conditions / visible moisture</strong> definitions <span class=\"cite\">[MEL pp.24, 27]</span>. Compare the CTH icing definition in (f).</li>\n</ul>"
+},
+{
+"id": "i5",
+"title": "I5. Two worked examples (checkride-relevant)",
+"html": "<ul>\n<li><strong>22-30-00 Autothrottle</strong> <span class=\"cite\">[MEL 22-9]</span>:<ul>\n<li>Takeoff Hold Mode (Cat C) may be inop if the A/T isn't engaged for takeoff: (O) set the TO/GA detent manually.</li>\n<li>Retard Mode (Cat C) may be inop if the A/T is disengaged at or above 100 ft before landing: (O) \"Disengage auto throttle at or above 100 ft (ONE HUNDRED call out)\", retard manually to IDLE at 50 ft.</li>\n<li>Flight Crew Deferral: YES.</li>\n<li>(Note: this MEL text also refers to a \"ONE HUNDRED\" callout; see the (g) G11 conflict.)</li>\n</ul>\n</li>\n<li><strong>30-81-00 Ice Detection</strong> <span class=\"cite\">[MEL 30-9]</span>:<ul>\n<li>one of two may be inop if the wing/stab and engine anti-ice are operated manually; (O) ENG at OAT 5–10 °C with visible moisture, ALL below 5 °C; in flight ALL when TAT &lt; 10 °C with visible moisture</li>\n<li>both may be inop only if the airplane is not operated into known or forecast icing</li>\n<li>Cat C; Flight Crew Deferral: YES</li>\n</ul>\n</li>\n</ul>"
+},
+{
+"id": "i6",
+"title": "I6. NEF concept",
+"html": "<ul>\n<li><strong>Definition:</strong> equipment and furnishings with no effect on safe operation and not required by certification or operating rules. <strong>Not</strong> items already in the MEL/CDL <span class=\"cite\">[MEL Definitions p.25]</span>.</li>\n<li><strong>MEL 25-00-00-01, Nonessential Equipment and Furnishings:</strong> \"May be inoperative, damaged, or missing provided that the item(s) is deferred in accordance with the operator's NEF deferral program\" (the FLEXJET NEF Program). (M)/(O) procedures, if required, must be available to the flight crew. Flight Crew Deferral: YES <span class=\"cite\">[MEL 25-2]</span>.</li>\n<li><strong>Every NEF page carries the banner: \"ONLY TO BE USED IF MEL/CDL RELIEF IS NOT AVAILABLE\"</strong> <span class=\"cite\">[NEF pp.1–6]</span>.</li>\n<li><strong>Columns:</strong> item #, description, ATA, deferral interval (days), PAX convenience item, procedures, restrictions <span class=\"cite\">[NEF p.1]</span>.</li>\n<li><strong>Examples:</strong><ul>\n<li><strong>LG008</strong> FMS Navigation Database Expired: 10 days; crew refers to the FOM for procedures <span class=\"cite\">[NEF p.1]</span></li>\n<li><strong>LG010</strong> Lavatory Door: 30 days; door secured open on aircraft with the emergency exit in the lav <span class=\"cite\">[NEF p.1]</span></li>\n<li><strong>LG005</strong> RAT Safety Pin/Cover Missing or Damaged: 10 days <span class=\"cite\">[NEF p.1]</span></li>\n</ul>\n</li>\n<li><span class=\"pend\">⏳</span> FLEXJET NEF Program document (procedures/authority) and FOM MEL policy sections: not on file.</li>\n</ul>"
+}
+],
+"fms": "<p><span class=\"warn\">⚠</span> This is a 2019 vendor guide, so it may lag the installed software. <strong>The Flexjet CFM governs SOP</strong>, and the AFM governs limitations. The CTH lists the operator's guide P/N 523-0818863 as required to be immediately available whenever navigation relies on the FMS <span class=\"cite\">[CTH §5 p.18]</span>.</p>\n<ul>\n<li><strong>Approach guidance sources:</strong> FMS lateral guidance always uses GNSS position (even without SBAS) unless the GNSS fails or is deselected. Vertical guidance is always Baro-VNAV, <strong>except SBAS VNAV for LPV</strong> <span class=\"cite\">[FMSG 13-33]</span>.</li>\n<li><strong>\"The FMS must not be used for navigation below the MDA or DA.\"</strong> The MDA shown on the ROUTE (LEGS) format is the highest value in the database for that approach; the pilot must determine the correct altitude and set the MDA alerters <span class=\"cite\">[FMSG 13-33]</span>.</li>\n<li><strong>Missed approach:</strong> the approach can be disabled before the MAP by <strong>pushing TOGA</strong>, selecting AUTO when the TO waypoint is the MAP, or deleting the FAF. The vertical deviation is removed when the MAP sequences <span class=\"cite\">[FMSG 13-47]</span>. Consistent with \"TOGA required to sequence the missed approach\" <span class=\"cite\">[CTH §8 p.52; CFM p.85]</span>.</li>\n<li><strong>Holding:</strong> the FMS sizes each circuit from wind and the lower of TAS or MAX HOLD speed, picks the entry method automatically, and extends the parallel-entry outbound leg to stay within protected airspace <span class=\"cite\">[FMSG 13-20]</span>. The fix flashes ~5 s before each crossing, and FAA/ICAO max holding speeds are programmed <span class=\"cite\">[FMSG 13-22]</span>. Flexjet usage: HOLD TO = course reversal; HOLD AT = hold <span class=\"cite\">[CTH §8 p.52]</span>.</li>\n<li><strong>Related Flexjet limits</strong> (verify vs AFM): LP not authorized (Collins limitation) <span class=\"cite\">[CFM pp.90–93]</span>; GPS-only approaches need predictive RAIM; no baro-VNAV with a remote altimeter setting; LPV requires dual GPS; FMS speeds not approved OEI <span class=\"cite\">[CTH §5 p.19]</span>.</li>\n<li><span class=\"pend\">⏳</span> Not yet extracted from the FMSG: TEMP COMP dialog (8-129), SBAS services / deselect (8-158), TOLD / Vspeeds chapter 11, DU reversion (12-29). Add these in a second pass if wanted.</li>\n</ul>",
+"pending": [
+{
+"n": 3,
+"item": "Oxygen minimum dispatch pressure chart",
+"fills": "<strong>AFM / AOM 2 / AOM 9-14</strong>"
+},
+{
+"n": 7,
+"item": "V-speeds, OEI VAC, landing flap / VREF adds for OEI and flap-fail, brake energy / cooling charts, landing-distance factors",
+"fills": "<strong>AFM performance / AOM Ch. 5–6</strong> / TOLD"
+},
+{
+"n": 8,
+"item": "Full checklist text: Engine Abnormal Start NAP1-6, Engine 1(2) Fail EAP6-3, Engine Shutdown NAP1-27, OEI Approach &amp; Landing NAP1-39, Engine Fire EAP7-2, Flaps Fail EAP8-4, Rejected Takeoff, Emergency Descent, Cabin Altitude Hi, Smoke/Fire/Fumes, Smoke Evacuation, Evacuation, PFD Failure, Hydraulic Pressure Low, FLTCTRL Direct Mode, Electrical Emergency, windshear",
+"fills": "<strong>QRH</strong> (and the ECL)"
+},
+{
+"n": 9,
+"item": "Emergency-descent specifics / max cabin altitude (open item)",
+"fills": "<strong>QRH / AFM</strong>"
+},
+{
+"n": 10,
+"item": "Weight &amp; balance procedure and CG computation (ACS AA.I.B.S5–S6)",
+"fills": "<strong>AOM Ch. 7</strong> / Flexjet W&amp;B tool"
+},
+{
+"n": 11,
+"item": "FOM references cited by the CTH: 4.6.6, 4.9.6.1, 4.11.1.2/.3, 4.11.8/.9, 4.13.8, 4.13.15, 4.14.6/.7/.10, 7.3.x, 7.4.2, 7.6.1, 8.4.1.1; COB 2024-01; COB 18-00-04",
+"fills": "<strong>FOM</strong> (not on file)"
+},
+{
+"n": 12,
+"item": "OpSpecs A041, C079 (and others)",
+"fills": "<strong>OpSpecs</strong> (not on file)"
+},
+{
+"n": 13,
+"item": "HOT tables, 100%/76% charts, Table 53",
+"fills": "<strong>ForeFlight HOT tables / FOM §7</strong>"
+},
+{
+"n": 14,
+"item": "CAG pp.1–3 (seating, O₂ locations)",
+"fills": "<strong>CAG</strong>"
+},
+{
+"n": 15,
+"item": "NEF Program procedures; FOM MEL policy",
+"fills": "<strong>FLEXJET NEF Program doc / FOM</strong>"
+}
+],
+"gaps": "<ul>\n<li><strong>No AFM, AOM, QRH, FOM, OpSpecs, CAG or HOT tables on file.</strong> Everything Praetor-specific rests on the CTH (a training reference) and the CFM.</li>\n<li><strong>CFM profiles are images.</strong> Callouts were transcribed from the rotated page renders (pp.111–130); spot-check them against the printed CFM. Section numbers (5.1–5.18, 3.18/3.25/3.27) exist only in the image headers.</li>\n<li><strong>CTH p.53 FD mode guide is an image table.</strong> Read visually and summarized in (b) cards 17/19/20.</li>\n<li><span class=\"warn\">⚠</span> <strong>Internal conflicts:</strong><ul>\n<li>CFM pp.64 and 73 (Before Landing and Traffic Pattern checklists: \"When landing with a crosswind above 10 knots, flaps 3 will be used\") vs CFM p.96 (\"Landing with reduced flap settings (flaps 3) is not recommended\")</li>\n<li>Indoc \"no hundred-foot callout\" vs CFM \"100 to Minimums\" and MEL 22-30-00-03 \"(ONE HUNDRED call out)\"</li>\n<li>CTH dimension/fuel/Δp/oxygen discrepancies listed in (e)</li>\n</ul>\n</li>\n<li><span class=\"warn\">⚠</span> <strong>Windshear:</strong> a CFM profile and IAI exist, but the CTH says windshear detection SB 550-34-0003 is NOT INSTALLED, and the IAI title is limited to equipped airplanes.</li>\n<li><span class=\"warn\">⚠</span> <strong>Examiner identity:</strong> the CTH says \"Flight Safety Designated Examiner\" in a paragraph covering both SimCom and FSI. Confirm for SimCom Lake Nona.</li>\n<li><strong>FMSG is 2019 (3rd Ed).</strong> It may differ from the installed software; the CFM governs.</li>\n<li>The <strong>85% quote:</strong> the transcript says limitations + memory items ≈ 85% with systems <em>on top</em>, not \"limits, memory items and systems = 85%\" <span class=\"cite\">[IND D3·03-07 37:10]</span>.</li>\n</ul>",
+"checklists": {
+"normal": {
+"10069": {
+"title": "Normal Procedures Checklist · S/N 10069 & below",
+"rev": "Rev 3.2",
+"sections": [
+{
+"title": "TURNAROUND",
+"group": null,
+"items": [
+{
+"item": "Overhead Panel",
+"who": "",
+"resp": "SET"
+},
+{
+"item": "ATIS/Clearance",
+"who": "",
+"resp": "RECORDED"
+},
+{
+"item": "Altimeters",
+"who": "",
+"resp": "SET"
+},
+{
+"item": "EFBs",
+"who": "",
+"resp": "PROGRAMMED"
+},
+{
+"item": "Autobrake",
+"who": "",
+"resp": "RTO"
+},
+{
+"item": "Speed Knob",
+"who": "",
+"resp": "MANUAL"
+},
+{
+"item": "FMS / Avionics",
+"who": "",
+"resp": "PROGRAMMED / VERIFIED"
+},
+{
+"item": "Transponder/Flight ID",
+"who": "",
+"resp": "SET / VERIFIED"
+},
+{
+"item": "Radios/Acceleration Altitude",
+"who": "",
+"resp": "SET"
+},
+{
+"item": "Trims",
+"who": "",
+"resp": "SET"
+},
+{
+"item": "Parking Brake",
+"who": "",
+"resp": "SET"
+},
+{
+"item": "Fuel Quantity",
+"who": "",
+"resp": "___#REQ/___#IND"
+},
+{
+"item": "TOLD Card Data",
+"who": "",
+"resp": "COMPLETED"
+},
+{
+"item": "Flight Instruments",
+"who": "",
+"resp": "CHECKED/SET"
+},
+{
+"item": "Cabin Signs",
+"who": "",
+"resp": "ON"
+},
+{
+"item": "Status Book",
+"who": "",
+"resp": "ONBOARD"
+},
+{
+"item": "AWARE Briefing",
+"who": "",
+"resp": "COMPLETED"
+}
+],
+"notes": [],
+"complete": "Turnaround Checklist Complete",
+"id": "turnaround"
+},
+{
+"title": "BEFORE START",
+"group": null,
+"items": [
+{
+"item": "Dry Motor",
+"who": "PF or PM",
+"resp": "AS REQ"
+},
+{
+"item": "AWARE Briefing",
+"who": "PF",
+"resp": "COMPLETED"
+},
+{
+"item": "Load Manifest",
+"who": "PF/PM",
+"resp": "SENT/RECEIVED"
+},
+{
+"item": "Preflight/Final Walkaround",
+"who": "PF or PM",
+"resp": "COMPLETED"
+},
+{
+"item": "Cockpit/Turnaround",
+"who": "PF or PM",
+"resp": "COMPLETED"
+},
+{
+"item": "Parking Brake/Chocks",
+"who": "PF",
+"resp": "SET/REMOVED"
+},
+{
+"item": "Pins & Covers",
+"who": "PF",
+"resp": "REMOVED"
+},
+{
+"item": "Passenger Briefing",
+"who": "PF",
+"resp": "COMPLETED"
+},
+{
+"item": "Doors",
+"who": "PF",
+"resp": "CLOSED"
+},
+{
+"item": "Seat Belts/Harnesses",
+"who": "PF/PM",
+"resp": "FASTENED"
+},
+{
+"item": "Fuel Quantity",
+"who": "PF",
+"resp": "___#REQ/___#IND"
+},
+{
+"item": "Red Beacon",
+"who": "PF",
+"resp": "ON"
+},
+{
+"item": "HYD 3 Electric Pump",
+"who": "PF",
+"resp": "ON"
+},
+{
+"item": "Thrust Levers",
+"who": "PF",
+"resp": "IDLE"
+}
+],
+"notes": [],
+"complete": "Before Start Checklist Complete",
+"id": "before-start"
+},
+{
+"title": "AFTER START",
+"group": null,
+"items": [
+{
+"item": "LAV DOOR",
+"who": "PF",
+"resp": "OPEN"
+},
+{
+"item": "HYD PBIT Test",
+"who": "PF",
+"resp": "CHECKED"
+},
+{
+"item": "ELEC EMER Button",
+"who": "PF",
+"resp": "CHECKED"
+},
+{
+"item": "Fuel Pump 2",
+"who": "PF",
+"resp": "AUTO"
+},
+{
+"item": "APU",
+"who": "PF",
+"resp": "OFF"
+},
+{
+"item": "Anti-Ice",
+"who": "PF",
+"resp": "AS REQ"
+},
+{
+"item": "Flight Instruments",
+"who": "PF/PM",
+"resp": "CHECKED"
+},
+{
+"item": "Flight Control Synoptic",
+"who": "PF",
+"resp": "GREEN"
+},
+{
+"item": "Flaps",
+"who": "PF/PM",
+"resp": "___SET/___IND"
+},
+{
+"item": "TOGA",
+"who": "PF",
+"resp": "SET"
+},
+{
+"item": "Flight Controls",
+"who": "PF/PM",
+"resp": "CHECKED"
+},
+{
+"item": "Steering",
+"who": "PF",
+"resp": "ON"
+},
+{
+"item": "EICAS",
+"who": "PF",
+"resp": "CHECKED"
+},
+{
+"item": "Engine Instruments",
+"who": "PF",
+"resp": "CHECKED"
+},
+{
+"item": "FMS/Avionics",
+"who": "PM/PF",
+"resp": "PROGRAMMED/VERIFIED"
+},
+{
+"item": "Time",
+"who": "PM",
+"resp": "RECORDED"
+}
+],
+"notes": [],
+"complete": "After Start Checklist Complete",
+"id": "after-start"
+},
+{
+"title": "DEPARTURE / RUNWAY CHANGE",
+"group": null,
+"items": [
+{
+"item": "FMS/Avionics",
+"who": "PM/PF",
+"resp": "PROGRAMMED/VERIFIED"
+},
+{
+"item": "Radios/Accel Alt",
+"who": "PM/PF",
+"resp": "SET"
+},
+{
+"item": "Performance",
+"who": "PM/PF",
+"resp": "PROGRAMMED/VERIFIED"
+},
+{
+"item": "TOLD Card Data",
+"who": "PM",
+"resp": "COMPLETED"
+},
+{
+"item": "EFBs",
+"who": "PM/PF",
+"resp": "PROGRAMMED"
+},
+{
+"item": "Departure Change Briefing",
+"who": "PF",
+"resp": "COMPLETED"
+}
+],
+"notes": [
+"***AIRCRAFT MUST COME TO A COMPLETE STOP***",
+"PROCEED TO “BEFORE TAKEOFF CHECKLIST”"
+],
+"complete": "Departure Change Checklist Complete",
+"id": "departure-runway-change"
+},
+{
+"title": "BEFORE TAKEOFF",
+"group": null,
+"items": [
+{
+"item": "Brakes/Steering",
+"who": "PF/PM",
+"resp": "CHECKED"
+},
+{
+"item": "TAKEOFF CONFIG",
+"who": "PM",
+"resp": "CHECKED"
+},
+{
+"item": "FUEL X-FEED",
+"who": "PM",
+"resp": "OFF"
+},
+{
+"item": "Brake Temp",
+"who": "PM",
+"resp": "CHECKED"
+},
+{
+"item": "Departure Briefing",
+"who": "PF/PM",
+"resp": "COMPLETED"
+},
+{
+"item": "Auto-Throttle",
+"who": "PF",
+"resp": "AS REQ"
+},
+{
+"item": "Lights",
+"who": "PM",
+"resp": "ON"
+},
+{
+"item": "EICAS",
+"who": "PM",
+"resp": "CHECKED"
+},
+{
+"item": "HDG / LNAV",
+"who": "PF",
+"resp": "AS REQ"
+},
+{
+"item": "Line Up Confirmation",
+"who": "PF/PM",
+"resp": "RWY___/CONFIRMED"
+}
+],
+"notes": [],
+"complete": "Before Takeoff Checklist Complete",
+"id": "before-takeoff"
+},
+{
+"title": "AFTER TAKEOFF (Silent)",
+"group": null,
+"items": [
+{
+"item": "Landing Gear",
+"who": "",
+"resp": "UP"
+},
+{
+"item": "Flaps",
+"who": "",
+"resp": "0 SET/0 IND"
+},
+{
+"item": "Anti-Ice",
+"who": "",
+"resp": "AUTO"
+},
+{
+"item": "Lights",
+"who": "",
+"resp": "AS REQ"
+},
+{
+"item": "Pressurization",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "Thrust",
+"who": "",
+"resp": "CLB"
+}
+],
+"notes": [],
+"complete": "After Takeoff Checklist Complete",
+"id": "after-takeoff-silent"
+},
+{
+"title": "TRANSITION ALTITUDE",
+"group": null,
+"items": [
+{
+"item": "Altimeters",
+"who": "PM/PF",
+"resp": "STD"
+},
+{
+"item": "Taxi Lights",
+"who": "PM",
+"resp": "OFF"
+},
+{
+"item": "Cabin Signs",
+"who": "PF",
+"resp": "AS REQ"
+}
+],
+"notes": [],
+"complete": "Transition Altitude Checklist Complete",
+"id": "transition-altitude"
+},
+{
+"title": "CRUISE",
+"group": null,
+"items": [
+{
+"item": "Cruise Thrust",
+"who": "PF",
+"resp": "SET"
+},
+{
+"item": "VHF 121.50",
+"who": "PM/PF",
+"resp": "MONITORED"
+}
+],
+"notes": [],
+"complete": "Cruise Checklist Complete",
+"id": "cruise"
+},
+{
+"title": "DESCENT",
+"group": null,
+"items": [
+{
+"item": "Anti-Ice",
+"who": "PF",
+"resp": "AS REQ"
+},
+{
+"item": "Pressurization",
+"who": "PM",
+"resp": "CHECKED"
+},
+{
+"item": "Seat Belts/Harnesses",
+"who": "PM/PF",
+"resp": "FASTENED"
+}
+],
+"notes": [],
+"complete": "Descent Checklist Complete",
+"id": "descent"
+},
+{
+"title": "IN-RANGE",
+"group": null,
+"items": [
+{
+"item": "Altimeters",
+"who": "PM/PF",
+"resp": "___SET"
+},
+{
+"item": "Taxi Lights",
+"who": "PM",
+"resp": "ON"
+},
+{
+"item": "AUTOBRAKE",
+"who": "PM",
+"resp": "AS REQ"
+},
+{
+"item": "EFBs",
+"who": "PM/PF",
+"resp": "PROGRAMMED"
+},
+{
+"item": "FMS/Avionics",
+"who": "PM/PF",
+"resp": "PROGRAMMED/VERIFIED"
+},
+{
+"item": "LDTA",
+"who": "PM/PF",
+"resp": "COMPLETED/CHECKED"
+},
+{
+"item": "TOLD Card",
+"who": "PM",
+"resp": "COMPLETED"
+},
+{
+"item": "Approach Briefing",
+"who": "PF",
+"resp": "COMPLETED"
+},
+{
+"item": "Cabin Signs",
+"who": "PM",
+"resp": "ON"
+},
+{
+"item": "Cabin Check",
+"who": "PM",
+"resp": "COMPLETED"
+},
+{
+"item": "Radio Call",
+"who": "PM",
+"resp": "COMPLETED"
+}
+],
+"notes": [],
+"complete": "In-Range Checklist Complete",
+"id": "in-range"
+},
+{
+"title": "ARRIVAL / APPROACH CHANGE",
+"group": null,
+"items": [
+{
+"item": "EFBs",
+"who": "PM/PF",
+"resp": "PROGRAMMED"
+},
+{
+"item": "FMS/Avionics",
+"who": "PM/PF",
+"resp": "PROGRAMMED/VERIFIED"
+},
+{
+"item": "LDTA",
+"who": "PM/PF",
+"resp": "COMPLETED/CHECKED"
+},
+{
+"item": "TOLD Card",
+"who": "PM",
+"resp": "COMPLETED"
+},
+{
+"item": "Approach Change Briefing",
+"who": "PF",
+"resp": "COMPLETED"
+}
+],
+"notes": [
+"PROCEED TO “BEFORE LANDING CHECKLIST”"
+],
+"complete": "Arrival Change Checklist Complete",
+"id": "arrival-approach-change"
+},
+{
+"title": "BEFORE LANDING",
+"group": null,
+"items": [
+{
+"item": "LAV DOOR",
+"who": "PM",
+"resp": "OPEN"
+},
+{
+"item": "FUEL X-FEED",
+"who": "PM",
+"resp": "OFF/AUTO"
+},
+{
+"item": "DELTA-P",
+"who": "PM",
+"resp": "CHECKED"
+},
+{
+"item": "Landing Gear",
+"who": "PM & PF",
+"resp": "DOWN, 3 GREEN"
+},
+{
+"item": "Flaps",
+"who": "PM/PF",
+"resp": "___ SET/___ IND"
+},
+{
+"item": "Lights",
+"who": "PM",
+"resp": "ON"
+},
+{
+"item": "EICAS",
+"who": "PM",
+"resp": "CHECKED"
+}
+],
+"notes": [],
+"complete": "Before Landing Checklist Complete",
+"id": "before-landing"
+},
+{
+"title": "AFTER LANDING (SILENT)",
+"group": null,
+"items": [
+{
+"item": "Clock",
+"who": "",
+"resp": "START TIME"
+},
+{
+"item": "Flaps",
+"who": "",
+"resp": "0 SET / 0 INDICATED"
+},
+{
+"item": "Lights",
+"who": "",
+"resp": "AS REQ"
+},
+{
+"item": "APU",
+"who": "",
+"resp": "AS REQ"
+},
+{
+"item": "Anti-Ice",
+"who": "PF",
+"resp": "AS REQ"
+}
+],
+"notes": [],
+"complete": "After Landing Checklist Complete",
+"id": "after-landing-silent"
+},
+{
+"title": "SHUTDOWN",
+"group": null,
+"items": [
+{
+"item": "Anti-Ice",
+"who": "PF",
+"resp": "AUTO"
+},
+{
+"item": "Clock",
+"who": "PF",
+"resp": "3 MINUTES"
+},
+{
+"item": "Parking Brake/Chocks",
+"who": "PF",
+"resp": "SET/IN"
+},
+{
+"item": "ENG 1 & 2 START/STOP",
+"who": "PF",
+"resp": "STOP"
+},
+{
+"item": "Lights",
+"who": "",
+"resp": "AS REQ"
+},
+{
+"item": "Cabin Signs",
+"who": "",
+"resp": "OFF"
+},
+{
+"item": "LAV DOOR",
+"who": "",
+"resp": "CABIN CTRL"
+},
+{
+"item": "Steering",
+"who": "",
+"resp": "OFF"
+},
+{
+"item": "HYD 3 Elec Pump",
+"who": "",
+"resp": "OFF"
+},
+{
+"item": "Flight Data",
+"who": "",
+"resp": "RECORDED"
+},
+{
+"item": "Engine Oil Quantity",
+"who": "",
+"resp": "CHECKED"
+}
+],
+"notes": [],
+"complete": "Shutdown Checklist Complete",
+"id": "shutdown"
+},
+{
+"title": "SECURING",
+"group": null,
+"items": [
+{
+"item": "Chocks",
+"who": "",
+"resp": "INSTALLED"
+},
+{
+"item": "Parking Brake",
+"who": "",
+"resp": "RELEASED"
+},
+{
+"item": "Exterior Lights",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "Pins/Covers",
+"who": "",
+"resp": "INSTALLED"
+},
+{
+"item": "IFE Button",
+"who": "",
+"resp": "PUSHED OUT"
+},
+{
+"item": "EMER LTS",
+"who": "",
+"resp": "OFF"
+},
+{
+"item": "PAX CABIN Panel",
+"who": "",
+"resp": "SET"
+},
+{
+"item": "APU Control Panel",
+"who": "",
+"resp": "OFF"
+},
+{
+"item": "BATT 1",
+"who": "",
+"resp": "OFF"
+},
+{
+"item": "BATT 2",
+"who": "",
+"resp": "OFF"
+},
+{
+"item": "EFBs",
+"who": "",
+"resp": "REMOVED"
+},
+{
+"item": "Postflight Inspection",
+"who": "",
+"resp": "COMPLETED"
+}
+],
+"notes": [
+"**WAIT MINIMUM 40 SECONDS**"
+],
+"complete": "Securing Checklist Complete",
+"id": "securing"
+},
+{
+"title": "AFTER TAKEOFF (Silent) / IN-RANGE",
+"group": "TRAFFIC PATTERN",
+"items": [
+{
+"item": "Landing Gear",
+"who": "",
+"resp": "UP"
+},
+{
+"item": "Flaps",
+"who": "",
+"resp": "0 SET/0 IND"
+},
+{
+"item": "Anti-Ice",
+"who": "",
+"resp": "AS REQ"
+},
+{
+"item": "Lights",
+"who": "",
+"resp": "AS REQ"
+},
+{
+"item": "Pressurization",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "Thrust",
+"who": "",
+"resp": "CLB"
+},
+{
+"item": "Autobrake",
+"who": "PM",
+"resp": "AS REQ"
+},
+{
+"item": "EFBs",
+"who": "PM/PF",
+"resp": "PROGRAMMED"
+},
+{
+"item": "FMS/Avionics",
+"who": "PM/PF",
+"resp": "PROGRAMMED/VERIFIED"
+},
+{
+"item": "LDTA",
+"who": "PM/PF",
+"resp": "COMPLETED/CHECKED"
+},
+{
+"item": "TOLD Card",
+"who": "PM",
+"resp": "COMPLETED"
+},
+{
+"item": "Approach Briefing",
+"who": "PF",
+"resp": "COMPLETED"
+},
+{
+"item": "Altimeters",
+"who": "PM/PF",
+"resp": "___SET"
+},
+{
+"item": "Cabin Check",
+"who": "PM",
+"resp": "COMPLETED"
+},
+{
+"item": "Radio Call",
+"who": "PM",
+"resp": "COMPLETED"
+}
+],
+"notes": [],
+"complete": "After Takeoff / In-Range Checklist Complete",
+"id": "traffic-pattern-after-takeoff-silent-in-"
+},
+{
+"title": "BEFORE LANDING",
+"group": "TRAFFIC PATTERN",
+"items": [
+{
+"item": "Fuel X-feed",
+"who": "PM",
+"resp": "OFF"
+},
+{
+"item": "Delta-P",
+"who": "PM",
+"resp": "CHECKED"
+},
+{
+"item": "Landing Gear",
+"who": "PM & PF",
+"resp": "DOWN, 3 GREEN"
+},
+{
+"item": "Flaps",
+"who": "PM/PF",
+"resp": "___SET/___ IND"
+},
+{
+"item": "Lights",
+"who": "PM",
+"resp": "ON"
+},
+{
+"item": "EICAS",
+"who": "PM",
+"resp": "CHECKED"
+}
+],
+"notes": [],
+"complete": "Before Landing Checklist Complete",
+"id": "traffic-pattern-before-landing"
+},
+{
+"title": "DRY MOTORING PROCEDURE",
+"group": null,
+"items": [],
+"notes": [],
+"text": [
+"(REF: AOM DATA) Engine starts 15−180 min following engine shutdown.",
+"CAUTION: IF ENGINE RESTART IS DESIRED BETWEEN 15 AND 180 MINUTES AFTER AN ENGINE SHUTDOWN, IT IS RECOMMENDED DRY MOTORING THE ASSOCIATED ENGINE PRIOR TO START FOR 15 SECONDS OR UNTIL N2 REACHES 23%, WHICHEVER OCCURS FIRST. AFTER COMPLETION OF THIS PROCEDURE, A NORMAL ENGINE START SEQUENCE CAN BE INITIATED ANY TIME AFTER 3 MINUTES AND BEFORE 40 MINUTES HAVE ELAPSED.",
+"1. ENG IGNITION Knob (both engines) .................................. OFF",
+"2. IGN OFF Status Icon (both engines).............................. CHECK",
+"3. ENG 2 Start/Stop Knob ...... START (2 SECONDS), THEN RUN Perform the dry motoring for 15 seconds or until N2 reaches 23%, whichever occurs first.",
+"4. ENG 2 Start/Stop Knob ....................................................... OFF",
+"5. ENG 1 Start/Stop Knob ...... START (2 SECONDS), THEN RUN Perform the dry motoring for 15 seconds or until N2 reaches 23%, whichever occurs first.",
+"6. ENG 1 Start/Stop Knob ....................................................... OFF",
+"7. ENG IGNITION Knob (both engines) ............................... AUTO",
+"After 3 minutes and before 40 minutes have elapsed:",
+"8. ENGINE NORMAL START Procedure ................ACCOMPLISH",
+"NOTE: After dry motoring the engine for 15 seconds, engine normal start can be accomplished after 3 minutes and before 40 minutes have elapsed. If another start is desired after 40 minutes have elapsed, proceed with another engine dry motoring."
+],
+"id": "dry-motoring-procedure"
+}
+]
+},
+"10070": {
+"title": "Normal Procedures Checklist · S/N 10070 & above",
+"rev": "Rev 3.2",
+"sections": [
+{
+"title": "TURNAROUND",
+"group": null,
+"items": [
+{
+"item": "Overhead Panel",
+"who": "",
+"resp": "SET"
+},
+{
+"item": "ATIS/Clearance",
+"who": "",
+"resp": "RECORDED"
+},
+{
+"item": "Altimeters",
+"who": "",
+"resp": "SET"
+},
+{
+"item": "EFBs",
+"who": "",
+"resp": "PROGRAMMED"
+},
+{
+"item": "Autobrake",
+"who": "",
+"resp": "RTO"
+},
+{
+"item": "Speed Knob",
+"who": "",
+"resp": "MANUAL"
+},
+{
+"item": "FMS / Avionics",
+"who": "",
+"resp": "PROGRAMMED / VERIFIED"
+},
+{
+"item": "Transponder/Flight ID",
+"who": "",
+"resp": "SET / VERIFIED"
+},
+{
+"item": "Radios/Acceleration Altitude",
+"who": "",
+"resp": "SET"
+},
+{
+"item": "Trims",
+"who": "",
+"resp": "SET"
+},
+{
+"item": "Parking Brake",
+"who": "",
+"resp": "SET"
+},
+{
+"item": "Fuel Quantity",
+"who": "",
+"resp": "___#REQ/___#IND"
+},
+{
+"item": "TOLD Card Data",
+"who": "",
+"resp": "COMPLETED"
+},
+{
+"item": "Flight Instruments",
+"who": "",
+"resp": "CHECKED/SET"
+},
+{
+"item": "Cabin Signs",
+"who": "",
+"resp": "ON"
+},
+{
+"item": "Status Book",
+"who": "",
+"resp": "ONBOARD"
+},
+{
+"item": "AWARE Briefing",
+"who": "",
+"resp": "COMPLETED"
+}
+],
+"notes": [],
+"complete": "Turnaround Checklist Complete",
+"id": "turnaround"
+},
+{
+"title": "BEFORE START",
+"group": null,
+"items": [
+{
+"item": "Dry Motor",
+"who": "PF or PM",
+"resp": "AS REQ"
+},
+{
+"item": "AWARE Briefing",
+"who": "PF",
+"resp": "COMPLETED"
+},
+{
+"item": "Load Manifest",
+"who": "PF/PM",
+"resp": "SENT/RECEIVED"
+},
+{
+"item": "Preflight/Final Walkaround",
+"who": "PF or PM",
+"resp": "COMPLETED"
+},
+{
+"item": "Cockpit/Turnaround",
+"who": "PF or PM",
+"resp": "COMPLETED"
+},
+{
+"item": "Parking Brake/Chocks",
+"who": "PF",
+"resp": "SET/REMOVED"
+},
+{
+"item": "Pins & Covers",
+"who": "PF",
+"resp": "REMOVED"
+},
+{
+"item": "Passenger Briefing",
+"who": "PF",
+"resp": "COMPLETED"
+},
+{
+"item": "Doors",
+"who": "PF",
+"resp": "CLOSED"
+},
+{
+"item": "Seat Belts/Harnesses",
+"who": "PF/PM",
+"resp": "FASTENED"
+},
+{
+"item": "Fuel Quantity",
+"who": "PF",
+"resp": "___#REQ/___#IND"
+},
+{
+"item": "Red Beacon",
+"who": "PF",
+"resp": "ON"
+},
+{
+"item": "HYD 3 Electric Pump",
+"who": "PF",
+"resp": "ON"
+},
+{
+"item": "Thrust Levers",
+"who": "PF",
+"resp": "IDLE"
+}
+],
+"notes": [],
+"complete": "Before Start Checklist Complete",
+"id": "before-start"
+},
+{
+"title": "AFTER START",
+"group": null,
+"items": [
+{
+"item": "LAV DOOR",
+"who": "PF",
+"resp": "OPEN"
+},
+{
+"item": "HYD PBIT Test",
+"who": "PF",
+"resp": "CHECKED"
+},
+{
+"item": "ELEC EMER Button",
+"who": "PF",
+"resp": "CHECKED"
+},
+{
+"item": "Fuel Pump 2",
+"who": "PF",
+"resp": "AUTO"
+},
+{
+"item": "APU",
+"who": "PF",
+"resp": "OFF"
+},
+{
+"item": "Anti-Ice",
+"who": "PF",
+"resp": "AS REQ"
+},
+{
+"item": "Flight Instruments",
+"who": "PF/PM",
+"resp": "CHECKED"
+},
+{
+"item": "Flight Control Synoptic",
+"who": "PF",
+"resp": "GREEN"
+},
+{
+"item": "Flaps",
+"who": "PF/PM",
+"resp": "___SET/___IND"
+},
+{
+"item": "TOGA",
+"who": "PF",
+"resp": "SET"
+},
+{
+"item": "Flight Controls",
+"who": "PF/PM",
+"resp": "CHECKED"
+},
+{
+"item": "Steering",
+"who": "PF",
+"resp": "ON"
+},
+{
+"item": "EICAS",
+"who": "PF",
+"resp": "CHECKED"
+},
+{
+"item": "Engine Instruments",
+"who": "PF",
+"resp": "CHECKED"
+},
+{
+"item": "FMS/Avionics",
+"who": "PM/PF",
+"resp": "PROGRAMMED/VERIFIED"
+},
+{
+"item": "Time",
+"who": "PM",
+"resp": "RECORDED"
+}
+],
+"notes": [],
+"complete": "After Start Checklist Complete",
+"id": "after-start"
+},
+{
+"title": "DEPARTURE / RUNWAY CHANGE",
+"group": null,
+"items": [
+{
+"item": "FMS/Avionics",
+"who": "PM/PF",
+"resp": "PROGRAMMED/VERIFIED"
+},
+{
+"item": "Radios/Accel Alt",
+"who": "PM/PF",
+"resp": "SET"
+},
+{
+"item": "Performance",
+"who": "PM/PF",
+"resp": "PROGRAMMED/VERIFIED"
+},
+{
+"item": "TOLD Card Data",
+"who": "PM",
+"resp": "COMPLETED"
+},
+{
+"item": "EFBs",
+"who": "PM/PF",
+"resp": "PROGRAMMED"
+},
+{
+"item": "Departure Change Briefing",
+"who": "PF",
+"resp": "COMPLETED"
+}
+],
+"notes": [
+"***AIRCRAFT MUST COME TO A COMPLETE STOP***",
+"PROCEED TO “BEFORE TAKEOFF CHECKLIST”"
+],
+"complete": "Departure Change Checklist Complete",
+"id": "departure-runway-change"
+},
+{
+"title": "BEFORE TAKEOFF",
+"group": null,
+"items": [
+{
+"item": "Brakes/Steering",
+"who": "PF/PM",
+"resp": "CHECKED"
+},
+{
+"item": "TAKEOFF CONFIG",
+"who": "PM",
+"resp": "CHECKED"
+},
+{
+"item": "FUEL X-FEED",
+"who": "PM",
+"resp": "OFF"
+},
+{
+"item": "Brake Temp",
+"who": "PM",
+"resp": "CHECKED"
+},
+{
+"item": "Departure Briefing",
+"who": "PF/PM",
+"resp": "COMPLETED"
+},
+{
+"item": "Auto-Throttle",
+"who": "PF",
+"resp": "AS REQ"
+},
+{
+"item": "Lights",
+"who": "PM",
+"resp": "ON"
+},
+{
+"item": "EICAS",
+"who": "PM",
+"resp": "CHECKED"
+},
+{
+"item": "HDG / LNAV",
+"who": "PF",
+"resp": "AS REQ"
+},
+{
+"item": "Line Up Confirmation",
+"who": "PF/PM",
+"resp": "RWY___/CONFIRMED"
+}
+],
+"notes": [],
+"complete": "Before Takeoff Checklist Complete",
+"id": "before-takeoff"
+},
+{
+"title": "AFTER TAKEOFF (Silent)",
+"group": null,
+"items": [
+{
+"item": "Landing Gear",
+"who": "",
+"resp": "UP"
+},
+{
+"item": "Flaps",
+"who": "",
+"resp": "0 SET/0 IND"
+},
+{
+"item": "Anti-Ice",
+"who": "",
+"resp": "AUTO"
+},
+{
+"item": "Lights",
+"who": "",
+"resp": "AS REQ"
+},
+{
+"item": "Pressurization",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "Thrust",
+"who": "",
+"resp": "CLB"
+},
+{
+"item": "LAV DOOR",
+"who": "",
+"resp": "CABIN CTRL",
+"only": true
+}
+],
+"notes": [],
+"complete": "After Takeoff Checklist Complete",
+"id": "after-takeoff-silent"
+},
+{
+"title": "TRANSITION ALTITUDE",
+"group": null,
+"items": [
+{
+"item": "Altimeters",
+"who": "PM/PF",
+"resp": "STD"
+},
+{
+"item": "Taxi Lights",
+"who": "PM",
+"resp": "OFF"
+},
+{
+"item": "Cabin Signs",
+"who": "PF",
+"resp": "AS REQ"
+}
+],
+"notes": [],
+"complete": "Transition Altitude Checklist Complete",
+"id": "transition-altitude"
+},
+{
+"title": "CRUISE",
+"group": null,
+"items": [
+{
+"item": "Cruise Thrust",
+"who": "PF",
+"resp": "SET"
+},
+{
+"item": "VHF 121.50",
+"who": "PM/PF",
+"resp": "MONITORED"
+}
+],
+"notes": [],
+"complete": "Cruise Checklist Complete",
+"id": "cruise"
+},
+{
+"title": "DESCENT",
+"group": null,
+"items": [
+{
+"item": "Anti-Ice",
+"who": "PF",
+"resp": "AS REQ"
+},
+{
+"item": "Pressurization",
+"who": "PM",
+"resp": "CHECKED"
+},
+{
+"item": "Seat Belts/Harnesses",
+"who": "PM/PF",
+"resp": "FASTENED"
+}
+],
+"notes": [],
+"complete": "Descent Checklist Complete",
+"id": "descent"
+},
+{
+"title": "IN-RANGE",
+"group": null,
+"items": [
+{
+"item": "Altimeters",
+"who": "PM/PF",
+"resp": "___SET"
+},
+{
+"item": "Taxi Lights",
+"who": "PM",
+"resp": "ON"
+},
+{
+"item": "AUTOBRAKE",
+"who": "PM",
+"resp": "AS REQ"
+},
+{
+"item": "EFBs",
+"who": "PM/PF",
+"resp": "PROGRAMMED"
+},
+{
+"item": "FMS/Avionics",
+"who": "PM/PF",
+"resp": "PROGRAMMED/VERIFIED"
+},
+{
+"item": "LDTA",
+"who": "PM/PF",
+"resp": "COMPLETED/CHECKED"
+},
+{
+"item": "TOLD Card",
+"who": "PM",
+"resp": "COMPLETED"
+},
+{
+"item": "Approach Briefing",
+"who": "PF",
+"resp": "COMPLETED"
+},
+{
+"item": "Cabin Signs",
+"who": "PM",
+"resp": "ON"
+},
+{
+"item": "Cabin Check",
+"who": "PM",
+"resp": "COMPLETED"
+},
+{
+"item": "Radio Call",
+"who": "PM",
+"resp": "COMPLETED"
+}
+],
+"notes": [],
+"complete": "In-Range Checklist Complete",
+"id": "in-range"
+},
+{
+"title": "ARRIVAL / APPROACH CHANGE",
+"group": null,
+"items": [
+{
+"item": "EFBs",
+"who": "PM/PF",
+"resp": "PROGRAMMED"
+},
+{
+"item": "FMS/Avionics",
+"who": "PM/PF",
+"resp": "PROGRAMMED/VERIFIED"
+},
+{
+"item": "LDTA",
+"who": "PM/PF",
+"resp": "COMPLETED/CHECKED"
+},
+{
+"item": "TOLD Card",
+"who": "PM",
+"resp": "COMPLETED"
+},
+{
+"item": "Approach Change Briefing",
+"who": "PF",
+"resp": "COMPLETED"
+}
+],
+"notes": [
+"PROCEED TO “BEFORE LANDING CHECKLIST”"
+],
+"complete": "Arrival Change Checklist Complete",
+"id": "arrival-approach-change"
+},
+{
+"title": "BEFORE LANDING",
+"group": null,
+"items": [
+{
+"item": "LAV DOOR",
+"who": "PM",
+"resp": "OPEN"
+},
+{
+"item": "FUEL X-FEED",
+"who": "PM",
+"resp": "OFF/AUTO"
+},
+{
+"item": "DELTA-P",
+"who": "PM",
+"resp": "CHECKED"
+},
+{
+"item": "Landing Gear",
+"who": "PM & PF",
+"resp": "DOWN, 3 GREEN"
+},
+{
+"item": "Flaps",
+"who": "PM/PF",
+"resp": "___ SET/___ IND"
+},
+{
+"item": "Lights",
+"who": "PM",
+"resp": "ON"
+},
+{
+"item": "EICAS",
+"who": "PM",
+"resp": "CHECKED"
+}
+],
+"notes": [],
+"complete": "Before Landing Checklist Complete",
+"id": "before-landing"
+},
+{
+"title": "AFTER LANDING (SILENT)",
+"group": null,
+"items": [
+{
+"item": "Clock",
+"who": "",
+"resp": "START TIME"
+},
+{
+"item": "Flaps",
+"who": "",
+"resp": "0 SET / 0 INDICATED"
+},
+{
+"item": "Lights",
+"who": "",
+"resp": "AS REQ"
+},
+{
+"item": "APU",
+"who": "",
+"resp": "AS REQ"
+},
+{
+"item": "Anti-Ice",
+"who": "PF",
+"resp": "AS REQ"
+}
+],
+"notes": [],
+"complete": "After Landing Checklist Complete",
+"id": "after-landing-silent"
+},
+{
+"title": "SHUTDOWN",
+"group": null,
+"items": [
+{
+"item": "Anti-Ice",
+"who": "PF",
+"resp": "AUTO"
+},
+{
+"item": "Clock",
+"who": "PF",
+"resp": "3 MINUTES"
+},
+{
+"item": "Parking Brake/Chocks",
+"who": "PF",
+"resp": "SET/IN"
+},
+{
+"item": "ENG 1 & 2 START/STOP",
+"who": "PF",
+"resp": "STOP"
+},
+{
+"item": "Lights",
+"who": "",
+"resp": "AS REQ"
+},
+{
+"item": "Cabin Signs",
+"who": "",
+"resp": "OFF"
+},
+{
+"item": "LAV DOOR",
+"who": "",
+"resp": "CABIN CTRL"
+},
+{
+"item": "Steering",
+"who": "",
+"resp": "OFF"
+},
+{
+"item": "HYD 3 Elec Pump",
+"who": "",
+"resp": "OFF"
+},
+{
+"item": "Flight Data",
+"who": "",
+"resp": "RECORDED"
+},
+{
+"item": "Engine Oil Quantity",
+"who": "",
+"resp": "CHECKED"
+}
+],
+"notes": [],
+"complete": "Shutdown Checklist Complete",
+"id": "shutdown"
+},
+{
+"title": "SECURING",
+"group": null,
+"items": [
+{
+"item": "Chocks",
+"who": "",
+"resp": "INSTALLED"
+},
+{
+"item": "Parking Brake",
+"who": "",
+"resp": "RELEASED"
+},
+{
+"item": "Exterior Lights",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "Pins/Covers",
+"who": "",
+"resp": "INSTALLED"
+},
+{
+"item": "IFE Button",
+"who": "",
+"resp": "PUSHED OUT"
+},
+{
+"item": "EMER LTS",
+"who": "",
+"resp": "OFF"
+},
+{
+"item": "PAX CABIN Panel",
+"who": "",
+"resp": "SET"
+},
+{
+"item": "APU Control Panel",
+"who": "",
+"resp": "OFF"
+},
+{
+"item": "BATT 1",
+"who": "",
+"resp": "OFF"
+},
+{
+"item": "BATT 2",
+"who": "",
+"resp": "OFF"
+},
+{
+"item": "EFBs",
+"who": "",
+"resp": "REMOVED"
+},
+{
+"item": "Postflight Inspection",
+"who": "",
+"resp": "COMPLETED"
+}
+],
+"notes": [
+"**WAIT MINIMUM 40 SECONDS**"
+],
+"complete": "Securing Checklist Complete",
+"id": "securing"
+},
+{
+"title": "AFTER TAKEOFF (Silent) / IN-RANGE",
+"group": "TRAFFIC PATTERN",
+"items": [
+{
+"item": "Landing Gear",
+"who": "",
+"resp": "UP"
+},
+{
+"item": "Flaps",
+"who": "",
+"resp": "0 SET/0 IND"
+},
+{
+"item": "Anti-Ice",
+"who": "",
+"resp": "AS REQ"
+},
+{
+"item": "Lights",
+"who": "",
+"resp": "AS REQ"
+},
+{
+"item": "Pressurization",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "Thrust",
+"who": "",
+"resp": "CLB"
+},
+{
+"item": "Autobrake",
+"who": "PM",
+"resp": "AS REQ"
+},
+{
+"item": "EFBs",
+"who": "PM/PF",
+"resp": "PROGRAMMED"
+},
+{
+"item": "FMS/Avionics",
+"who": "PM/PF",
+"resp": "PROGRAMMED/VERIFIED"
+},
+{
+"item": "LDTA",
+"who": "PM/PF",
+"resp": "COMPLETED/CHECKED"
+},
+{
+"item": "TOLD Card",
+"who": "PM",
+"resp": "COMPLETED"
+},
+{
+"item": "Approach Briefing",
+"who": "PF",
+"resp": "COMPLETED"
+},
+{
+"item": "Altimeters",
+"who": "PM/PF",
+"resp": "___SET"
+},
+{
+"item": "Cabin Check",
+"who": "PM",
+"resp": "COMPLETED"
+},
+{
+"item": "Radio Call",
+"who": "PM",
+"resp": "COMPLETED"
+}
+],
+"notes": [],
+"complete": "After Takeoff / In-Range Checklist Complete",
+"id": "traffic-pattern-after-takeoff-silent-in-"
+},
+{
+"title": "BEFORE LANDING",
+"group": "TRAFFIC PATTERN",
+"items": [
+{
+"item": "Fuel X-feed",
+"who": "PM",
+"resp": "OFF"
+},
+{
+"item": "Delta-P",
+"who": "PM",
+"resp": "CHECKED"
+},
+{
+"item": "Landing Gear",
+"who": "PM & PF",
+"resp": "DOWN, 3 GREEN"
+},
+{
+"item": "Flaps",
+"who": "PM/PF",
+"resp": "___SET/___ IND"
+},
+{
+"item": "Lights",
+"who": "PM",
+"resp": "ON"
+},
+{
+"item": "EICAS",
+"who": "PM",
+"resp": "CHECKED"
+}
+],
+"notes": [],
+"complete": "Before Landing Checklist Complete",
+"id": "traffic-pattern-before-landing"
+},
+{
+"title": "DRY MOTORING PROCEDURE",
+"group": null,
+"items": [],
+"notes": [],
+"text": [
+"(REF: AOM DATA) Engine starts 15−180 min following engine shutdown.",
+"CAUTION: IF ENGINE RESTART IS DESIRED BETWEEN 15 AND 180 MINUTES AFTER AN ENGINE SHUTDOWN, IT IS RECOMMENDED DRY MOTORING THE ASSOCIATED ENGINE PRIOR TO START FOR 15 SECONDS OR UNTIL N2 REACHES 23%, WHICHEVER OCCURS FIRST. AFTER COMPLETION OF THIS PROCEDURE, A NORMAL ENGINE START SEQUENCE CAN BE INITIATED ANY TIME AFTER 3 MINUTES AND BEFORE 40 MINUTES HAVE ELAPSED.",
+"1. ENG IGNITION Knob (both engines) .................................. OFF",
+"2. IGN OFF Status Icon (both engines).............................. CHECK",
+"3. ENG 2 Start/Stop Knob ...... START (2 SECONDS), THEN RUN Perform the dry motoring for 15 seconds or until N2 reaches 23%, whichever occurs first.",
+"4. ENG 2 Start/Stop Knob ....................................................... OFF",
+"5. ENG 1 Start/Stop Knob ...... START (2 SECONDS), THEN RUN Perform the dry motoring for 15 seconds or until N2 reaches 23%, whichever occurs first.",
+"6. ENG 1 Start/Stop Knob ....................................................... OFF",
+"7. ENG IGNITION Knob (both engines) ............................... AUTO",
+"After 3 minutes and before 40 minutes have elapsed:",
+"8. ENGINE NORMAL START Procedure ................ACCOMPLISH",
+"NOTE: After dry motoring the engine for 15 seconds, engine normal start can be accomplished after 3 minutes and before 40 minutes have elapsed. If another start is desired after 40 minutes have elapsed, proceed with another engine dry motoring."
+],
+"id": "dry-motoring-procedure"
+}
+]
+}
+},
+"walkaround": {
+"title": "Aircraft Prep / Walkaround Inspection (EMB-545/550 Legacy/Praetor)",
+"rev": "Rev 3.2",
+"sections": [
+{
+"title": "EXTERIOR",
+"group": "AIRCRAFT PREPARATION",
+"items": [
+{
+"item": "Main Cabin Door",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "L Smart Probes / TAT Covers",
+"who": "",
+"resp": "REMOVED"
+},
+{
+"item": "R Smart Probes / TAT Covers",
+"who": "",
+"resp": "REMOVED"
+},
+{
+"item": "L/R Engine & Probe Covers",
+"who": "",
+"resp": "REMOVED & STOWED"
+},
+{
+"item": "APU Inlet",
+"who": "",
+"resp": "CONDITION"
+},
+{
+"item": "APU Drain",
+"who": "",
+"resp": "CONDITION"
+}
+],
+"notes": [],
+"id": "aircraft-preparation-exterior"
+},
+{
+"title": "COCKPIT",
+"group": "AIRCRAFT PREPARATION",
+"items": [
+{
+"item": "Emergency Exit Door Pin",
+"who": "",
+"resp": "REMOVED"
+},
+{
+"item": "Emergency Exit Door",
+"who": "",
+"resp": "SECURED"
+},
+{
+"item": "CKPT Emergency Equipment",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "Cabin Emergency Equipment",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "Status Book",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "Overhead Panel",
+"who": "",
+"resp": "SET"
+},
+{
+"item": "L Reversionary Panel",
+"who": "",
+"resp": "SET"
+},
+{
+"item": "AUTOBRAKE",
+"who": "",
+"resp": "OFF"
+},
+{
+"item": "LDG Gear Lever",
+"who": "",
+"resp": "DOWN"
+},
+{
+"item": "GND PROX TERR INHIB Button",
+"who": "",
+"resp": "PUSHED OUT"
+},
+{
+"item": "ELT",
+"who": "",
+"resp": "ARMED"
+},
+{
+"item": "R Reversionary Panel",
+"who": "",
+"resp": "SET"
+},
+{
+"item": "Ignition Panel",
+"who": "",
+"resp": "AUTO"
+},
+{
+"item": "Power Plant Panel",
+"who": "",
+"resp": "SET"
+},
+{
+"item": "Ground Proximity Panel",
+"who": "",
+"resp": "SET"
+},
+{
+"item": "Speed Brake Lever",
+"who": "",
+"resp": "STOWED"
+},
+{
+"item": "Engine Fire Panel",
+"who": "",
+"resp": "SET"
+},
+{
+"item": "Flap Lever",
+"who": "",
+"resp": "VERIFY POSITION"
+},
+{
+"item": "Circuit Breakers",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "LDG Gear Emergency Compartment",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "RAT Manual Deploy Lever",
+"who": "",
+"resp": "STOWED"
+},
+{
+"item": "L/R Audio Panel",
+"who": "",
+"resp": "SET"
+},
+{
+"item": "L/R Audio Backup Button",
+"who": "",
+"resp": "PUSHED OUT"
+},
+{
+"item": "L/R Aural Mute Button",
+"who": "",
+"resp": "PUSHED OUT"
+},
+{
+"item": "BATT 1",
+"who": "",
+"resp": "ON"
+},
+{
+"item": "BATT 2",
+"who": "",
+"resp": "AUTO"
+},
+{
+"item": "Battery Voltage",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "Fuel Quantity",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "Oxygen Quantity",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "Nav Lights",
+"who": "",
+"resp": "ON"
+},
+{
+"item": "EICAS",
+"who": "",
+"resp": "NO FIRE OR FAIL MESSAGE"
+},
+{
+"item": "Annunciator Test",
+"who": "",
+"resp": "COMPLETED"
+},
+{
+"item": "Fire Protection Test",
+"who": "",
+"resp": "COMPLETED"
+},
+{
+"item": "Fuel Pump 2",
+"who": "",
+"resp": "ON"
+},
+{
+"item": "APU ON/OFF Button",
+"who": "",
+"resp": "PUSHED IN"
+},
+{
+"item": "APU Start Button",
+"who": "",
+"resp": "PUSHED IN"
+},
+{
+"item": "IFE",
+"who": "",
+"resp": "PUSHED IN"
+},
+{
+"item": "SYS 1 HYD Pressure",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "Parking Brake Lever",
+"who": "",
+"resp": "SET"
+}
+],
+"notes": [],
+"id": "aircraft-preparation-cockpit"
+},
+{
+"title": "LEFT FORWARD FUSELAGE",
+"group": "WALKAROUND",
+"items": [
+{
+"item": "External Steering Panel",
+"who": "",
+"resp": "SECURED"
+},
+{
+"item": "Smart / TAT / Ice Detect Probes",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "Windshield",
+"who": "",
+"resp": "CHECKED"
+}
+],
+"notes": [],
+"id": "walkaround-left-forward-fuselage"
+},
+{
+"title": "NOSE SECTION",
+"group": "WALKAROUND",
+"items": [
+{
+"item": "Radome",
+"who": "",
+"resp": "CHECKED & LATCHED"
+},
+{
+"item": "FWD Elect Compartment",
+"who": "",
+"resp": "SECURED"
+},
+{
+"item": "Nose Gear",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "Wheels/Tires",
+"who": "",
+"resp": "CONDITION"
+},
+{
+"item": "Uplock Hook",
+"who": "",
+"resp": "UNLOCKED"
+},
+{
+"item": "Strut Wheel Well Doors",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "Gear Downlock Springs",
+"who": "",
+"resp": "CONDITION"
+},
+{
+"item": "Gear Pin",
+"who": "",
+"resp": "REMOVED"
+}
+],
+"notes": [],
+"id": "walkaround-nose-section"
+},
+{
+"title": "RIGHT FORWARD FUSELAGE",
+"group": "WALKAROUND",
+"items": [
+{
+"item": "RAT Safety Pin",
+"who": "",
+"resp": "REMOVED"
+},
+{
+"item": "Smart / TAT / Ice Detect Probes",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "Windshield",
+"who": "",
+"resp": "CHECKED"
+}
+],
+"notes": [],
+"id": "walkaround-right-forward-fuselage"
+},
+{
+"title": "RIGHT FUSELAGE AND INBOARD WING",
+"group": "WALKAROUND",
+"items": [
+{
+"item": "Upper and Lower Forward Antennas",
+"who": "",
+"resp": "CONDITION"
+},
+{
+"item": "Fluid Drains",
+"who": "",
+"resp": "CONDITION"
+},
+{
+"item": "Landing / Taxi Lights",
+"who": "",
+"resp": "CONDITION"
+},
+{
+"item": "Fuel Service Door",
+"who": "",
+"resp": "SECURED"
+},
+{
+"item": "Fuel Water Drains (4)",
+"who": "",
+"resp": "DRAIN AS REQ"
+}
+],
+"notes": [],
+"id": "walkaround-right-fuselage-and-inboard-wi"
+},
+{
+"title": "RIGHT WING LEADING EDGE",
+"group": "WALKAROUND",
+"items": [
+{
+"item": "Wing Leading Edge",
+"who": "",
+"resp": "CONDITION"
+},
+{
+"item": "Fuel Cap",
+"who": "",
+"resp": "SECURED"
+},
+{
+"item": "Access Panels",
+"who": "",
+"resp": "SECURED"
+},
+{
+"item": "Vortex Generators",
+"who": "",
+"resp": "QUANTITY & CONDITION"
+},
+{
+"item": "Fuel Tank Air Inlet",
+"who": "",
+"resp": "CONDITION"
+},
+{
+"item": "Nav/Strobe Lights",
+"who": "",
+"resp": "CONDITION"
+}
+],
+"notes": [],
+"id": "walkaround-right-wing-leading-edge"
+},
+{
+"title": "RIGHT WING TRAILING EDGE",
+"group": "WALKAROUND",
+"items": [
+{
+"item": "Winglet / Static Wicks",
+"who": "",
+"resp": "QUANTITY & CONDITION"
+},
+{
+"item": "Flight Control Surfaces & Fairings",
+"who": "",
+"resp": "CONDITION"
+}
+],
+"notes": [],
+"id": "walkaround-right-wing-trailing-edge"
+},
+{
+"title": "RIGHT MAIN GEAR",
+"group": "WALKAROUND",
+"items": [
+{
+"item": "Main Gear",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "Wheels / Tires",
+"who": "",
+"resp": "CONDITION"
+},
+{
+"item": "Uplock Hook",
+"who": "",
+"resp": "UNLOCKED"
+},
+{
+"item": "Strut / Wheel Well Doors",
+"who": "",
+"resp": "CONDITION"
+},
+{
+"item": "Gear Pin",
+"who": "",
+"resp": "REMOVED"
+},
+{
+"item": "Main Downlock Springs",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "Brake Wear Indicators",
+"who": "",
+"resp": "CHECKED"
+}
+],
+"notes": [],
+"id": "walkaround-right-main-gear"
+},
+{
+"title": "RIGHT AFT FUSELAGE",
+"group": "WALKAROUND",
+"items": [
+{
+"item": "Oxygen Disc Indicator",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "Access Doors & Panels",
+"who": "",
+"resp": "SECURED"
+},
+{
+"item": "Upper & Lower Aft Antennas",
+"who": "",
+"resp": "CONDITION"
+},
+{
+"item": "Vertical Stab Ram Air Inlet",
+"who": "",
+"resp": "CONDITION"
+},
+{
+"item": "Engine Inlet",
+"who": "",
+"resp": "CONDITION"
+},
+{
+"item": "Fan Blades",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "Fan Cowl Doors",
+"who": "",
+"resp": "SECURED"
+},
+{
+"item": "Thrust Reverser",
+"who": "",
+"resp": "STOWED"
+},
+{
+"item": "Turbine Exhaust",
+"who": "",
+"resp": "CONDITION"
+},
+{
+"item": "Oil Fill Access Door",
+"who": "",
+"resp": "SECURED"
+},
+{
+"item": "Engine Drain",
+"who": "",
+"resp": "CONDITION"
+}
+],
+"notes": [],
+"id": "walkaround-right-aft-fuselage"
+},
+{
+"title": "TAIL SECTION",
+"group": "WALKAROUND",
+"items": [
+{
+"item": "Flight Control Surfaces",
+"who": "",
+"resp": "CONDITION"
+},
+{
+"item": "Horiz/Vert Stab/Rudder",
+"who": "",
+"resp": "CONDITION"
+},
+{
+"item": "Static Wicks",
+"who": "",
+"resp": "QUANTITY & CONDITION"
+},
+{
+"item": "Baggage Door",
+"who": "",
+"resp": "SECURED"
+}
+],
+"notes": [],
+"id": "walkaround-tail-section"
+},
+{
+"title": "LEFT AFT FUSELAGE",
+"group": "WALKAROUND",
+"items": [
+{
+"item": "Engine Inlet",
+"who": "",
+"resp": "CONDITION"
+},
+{
+"item": "Fan Blades",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "Fan Cowl Doors",
+"who": "",
+"resp": "SECURED"
+},
+{
+"item": "Thrust Reverser",
+"who": "",
+"resp": "STOWED"
+},
+{
+"item": "Turbine Exhaust",
+"who": "",
+"resp": "CONDITION"
+},
+{
+"item": "Oil Fill Access Door",
+"who": "",
+"resp": "SECURED"
+},
+{
+"item": "Engine Drain",
+"who": "",
+"resp": "CONDITION"
+},
+{
+"item": "Access Doors & Panels",
+"who": "",
+"resp": "SECURED"
+}
+],
+"notes": [],
+"id": "walkaround-left-aft-fuselage"
+},
+{
+"title": "LEFT MAIN GEAR",
+"group": "WALKAROUND",
+"items": [
+{
+"item": "Main Gear",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "Wheels / Tires",
+"who": "",
+"resp": "CONDITION"
+},
+{
+"item": "Uplock Hook",
+"who": "",
+"resp": "UNLOCKED"
+},
+{
+"item": "Strut / Wheel Well Doors",
+"who": "",
+"resp": "CONDITION"
+},
+{
+"item": "Gear Pin",
+"who": "",
+"resp": "REMOVED"
+},
+{
+"item": "Main Downlock Springs",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "Brake Wear Indicators",
+"who": "",
+"resp": "CHECKED"
+}
+],
+"notes": [],
+"id": "walkaround-left-main-gear"
+},
+{
+"title": "LEFT WING TRAILING EDGE",
+"group": "WALKAROUND",
+"items": [
+{
+"item": "Winglet / Static Wicks",
+"who": "",
+"resp": "QUANTITY & CONDITION"
+},
+{
+"item": "Flight Control Surfaces & Fairings",
+"who": "",
+"resp": "CONDITION"
+}
+],
+"notes": [],
+"id": "walkaround-left-wing-trailing-edge"
+},
+{
+"title": "LEFT WING LEADING EDGE",
+"group": "WALKAROUND",
+"items": [
+{
+"item": "Nav/Strobe Lights",
+"who": "",
+"resp": "CONDITION"
+},
+{
+"item": "Fuel Tank Air Inlet",
+"who": "",
+"resp": "CONDITION"
+},
+{
+"item": "Wing Leading Edge",
+"who": "",
+"resp": "CONDITION"
+},
+{
+"item": "Fuel Cap",
+"who": "",
+"resp": "SECURED"
+},
+{
+"item": "Access Panels",
+"who": "",
+"resp": "SECURED"
+},
+{
+"item": "Vortex Generators",
+"who": "",
+"resp": "QUANTITY & CONDITION"
+}
+],
+"notes": [],
+"id": "walkaround-left-wing-leading-edge"
+},
+{
+"title": "LEFT FUSELAGE AND INBOARD WING",
+"group": "WALKAROUND",
+"items": [
+{
+"item": "Wing Inspection Landing/Taxi Lights",
+"who": "",
+"resp": "CONDITION"
+}
+],
+"notes": [],
+"id": "walkaround-left-fuselage-and-inboard-win"
+},
+{
+"title": "CABIN PREFLIGHT",
+"group": null,
+"items": [
+{
+"item": "Potable Water Tank",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "Lavatory",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "IFE",
+"who": "",
+"resp": "PUSHED IN & CHECKED"
+}
+],
+"notes": [],
+"id": "cabin-preflight"
+},
+{
+"title": "COCKPIT SETUP",
+"group": null,
+"items": [
+{
+"item": "Aircraft Inventory / DCG",
+"who": "",
+"resp": "AS REQ"
+},
+{
+"item": "Documents",
+"who": "",
+"resp": "ON BOARD"
+},
+{
+"item": "EFBs",
+"who": "",
+"resp": "PROGRAMED"
+},
+{
+"item": "STEERING",
+"who": "",
+"resp": "OFF"
+},
+{
+"item": "EMER LT",
+"who": "",
+"resp": "CHECKED & ARMED"
+},
+{
+"item": "FSTN BELTS",
+"who": "",
+"resp": "ON"
+},
+{
+"item": "NO SMOKING",
+"who": "",
+"resp": "ON"
+},
+{
+"item": "OUTLETS",
+"who": "",
+"resp": "ON"
+},
+{
+"item": "Galley Lights",
+"who": "",
+"resp": "AUTO"
+},
+{
+"item": "Cockpit Temp",
+"who": "",
+"resp": "AS REQ"
+},
+{
+"item": "Pax Cabin Temp",
+"who": "",
+"resp": "AS REQ"
+},
+{
+"item": "Crew Oxygen Masks",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "Smoke Goggles",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "Reversionary Panel",
+"who": "",
+"resp": "SET"
+},
+{
+"item": "Audio Panel",
+"who": "",
+"resp": "AS REQ"
+},
+{
+"item": "SFIS",
+"who": "",
+"resp": "SET"
+},
+{
+"item": "SPD Knob",
+"who": "",
+"resp": "MANUAL"
+},
+{
+"item": "Oxygen Level",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "Engine Oil Quantity",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "Brake Accumulator Pressure",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "Thrust Levers",
+"who": "",
+"resp": "IDLE"
+},
+{
+"item": "Flt Control Normal Mode",
+"who": "",
+"resp": "NORMAL"
+},
+{
+"item": "ATIS/Clearance",
+"who": "",
+"resp": "RECORDED"
+},
+{
+"item": "Altimeters",
+"who": "",
+"resp": "SET"
+},
+{
+"item": "AUTOBRAKE",
+"who": "",
+"resp": "RTO"
+},
+{
+"item": "FMS / Avionics",
+"who": "",
+"resp": "PROGRAMED & VERIFIED"
+},
+{
+"item": "Transponder / Flight ID",
+"who": "",
+"resp": "SET & VERIFIED"
+},
+{
+"item": "Trims",
+"who": "",
+"resp": "CHECKED & SET"
+},
+{
+"item": "TOLD Card Data",
+"who": "",
+"resp": "COMPLETED"
+},
+{
+"item": "Flight Instruments",
+"who": "",
+"resp": "CHECKED & SET"
+},
+{
+"item": "Fuel Quantity",
+"who": "",
+"resp": "#REQ & #IND"
+},
+{
+"item": "Exterior Lights",
+"who": "",
+"resp": "CHECKED"
+},
+{
+"item": "AWARE Briefing",
+"who": "",
+"resp": "CONDUCT"
+}
+],
+"notes": [],
+"id": "cockpit-setup"
+}
+]
+},
+"hpcart": {
+"title": "Legacy 450/Praetor 500 HP Cart Start Procedures",
+"rev": "no rev no.",
+"sections": [
+{
+"title": "HP CART START",
+"intro": "It is the PICs duty to ensure the area is clear behind the airplane before utilizing this checklist to start the engines. Bringing the engines to 80% N2 can cause damage to the airplanes, personnel, and buildings behind the immediate area of the engines.",
+"items": [
+{
+"item": "BATT 1&2 Knobs",
+"who": "",
+"resp": "ON & AUTO",
+"note": ""
+},
+{
+"item": "NAV LT Switch",
+"who": "",
+"resp": "ON",
+"note": ""
+},
+{
+"item": "GPU Button",
+"who": "",
+"resp": "PUSHED IN",
+"note": "Verify GPU AVAIL in WHITE is illuminated on the Electrical Panel prior to Pushing In the GPU Button. GPU Button should then illuminate IN USE in Green."
+},
+{
+"item": "COCKPIT/TURNAROUND Checklist",
+"who": "",
+"resp": "COMPLETED",
+"note": "Once ready for engine starts continue below."
+},
+{
+"item": "WINGSTAB Button",
+"who": "",
+"resp": "PUSH OUT",
+"note": ""
+},
+{
+"item": "PACK Button",
+"who": "",
+"resp": "PUSH OUT",
+"note": "NOTE: The PACK button lights will turn on, indicating that the pack inlet valve is closed"
+},
+{
+"item": "External Pneumatic Power Source",
+"who": "",
+"resp": "CONNECT/ON",
+"note": ""
+},
+{
+"item": "BLEED 1&2 Buttons",
+"who": "",
+"resp": "PUSH OUT",
+"note": "The BLEED buttons lights will turn on, indicating that the bleed valve is closed"
+},
+{
+"item": "BLEED Pressure Indication",
+"who": "",
+"resp": "Check",
+"note": "Check pressure indication between 32 PSI and 60 PSI on STATUS Synoptic Pages."
+},
+{
+"item": "ENGINE START Procedure",
+"who": "",
+"resp": "ACCOMPLISH",
+"note": "Perform an engine crossbleed start on the second engine. Next Page."
+}
+],
+"notes": [],
+"id": "hp-cart-start"
+},
+{
+"title": "ENGINE CROSSBLEED START",
+"intro": "CAUTION: Do not utilize this checklist without first completing the above Legacy 450/Praetor 500 HP Cart Start Procedure.",
+"items": [
+{
+"item": "Operating Engine Thrust Lever",
+"who": "",
+"resp": "MIN 80% N2",
+"note": "Wait a minimum of 3 minutes before advancing the throttle above ground idle. The minimum recommended engine N2 prior to start is 80%"
+},
+{
+"item": "Operating Engine Bleed",
+"who": "",
+"resp": "PUSH IN/NO LIGHTS",
+"note": ""
+},
+{
+"item": "Non-Operating Engine Bleed",
+"who": "",
+"resp": "PUSHED OUT",
+"note": "A white light should be illuminated on the button."
+},
+{
+"item": "XBLEED",
+"who": "",
+"resp": "PUSHED IN",
+"note": ""
+},
+{
+"item": "APU Bleed (if APU is ON)",
+"who": "",
+"resp": "PUSHED OUT",
+"note": "NOTE: If APU bleed is available, the pneumatic system logic prioritizes it."
+},
+{
+"item": "Engine Start",
+"who": "",
+"resp": "ACCOMPLISH",
+"note": "NOTE: An N2 drop at the operating engine is expected, but no thrust lever adjustment is necessary. CAUTION: PERFORM AFTER START CHECKLIST BELOW BEFORE CONTINUING TO NORMAL PROCEDURES CHECKLIST"
+}
+],
+"notes": [],
+"id": "engine-crossbleed-start"
+},
+{
+"title": "AFTER START CHECKLIST",
+"intro": "",
+"items": [
+{
+"item": "Thrust Lever",
+"who": "",
+"resp": "AS REQUIRED",
+"note": "Respect the warmup time operating the started engine at or near IDLE for at least 3 minutes."
+},
+{
+"item": "BLEEDS 1&2",
+"who": "",
+"resp": "PUSH IN/NO LIGHTS",
+"note": ""
+},
+{
+"item": "External Pneumatic Power Source",
+"who": "",
+"resp": "OFF/DISCONNECT",
+"note": ""
+},
+{
+"item": "PACK",
+"who": "",
+"resp": "PUSH IN/NO LIGHTS",
+"note": "The AIR CONDITIONING/PNEUMATIC Panel should be dark."
+},
+{
+"item": "GPU",
+"who": "",
+"resp": "OFF/DISCONNECT",
+"note": ""
+},
+{
+"item": "GPU Button",
+"who": "",
+"resp": "PUSH IN",
+"note": "Verify White AVAIL in not illuminated on the electrical panel."
+},
+{
+"item": "APU BLEED",
+"who": "",
+"resp": "PUSH IN/NO LIGHTS",
+"note": ""
+},
+{
+"item": "WINGSTAB",
+"who": "",
+"resp": "PUSH IN/ NO LIGHTS",
+"note": ""
+},
+{
+"item": "Normal Procedures After Start Checklist",
+"who": "",
+"resp": "PERFORM",
+"note": "Continue with Normal Procedures checklist from this point forward, until another HP cart engine start is required."
+}
+],
+"notes": [],
+"id": "after-start-checklist"
+}
+]
+}
+},
+"bulletins": [
+{
+"id": "hyd-lo-qty",
+"numbers": [
+"P550-001/23 (Praetor 500 and Praetor 600)",
+"550-001/23 (Legacy 450 and Legacy 500)"
+],
+"date": "May 29, 2023",
+"subject": "Hydraulic fluid low quantity associated with hydraulic low press and spoiler fault",
+"reason": "To inform operators about a procedure when the >HYD 1 (2) LO PRESS CAS Message is displayed together with HYD 1 (2) LO QTY CAS Message.",
+"background": "Embraer received a report of HYD 2 LO QTY followed by >HYD 2 LO PRESS and SPOILER FAULT. The right-wing midboard multi-function spoiler oscillated due to hydraulic pressure oscillations. The low quantity came from a hydraulic leak; the oscillation came from a malfunction in the multi-function spoiler system.",
+"action": "Whenever the >HYD 1 (2) LO PRESS CAS Message is displayed together with HYD 1 (2) LO QTY CAS Message, pilots must close the associated Hydraulic EDP by pressing EDP 1 SHUTOFF Button or EDP 2 SHUTOFF Button after completing the >HYD 1 (2) LO PRESS procedure. This step is necessary regardless of the SPOILER FAULT CAS Message being displayed to prevent the possible multi-function spoiler oscillatory movement.",
+"cite": "OB P550-001/23 pp.1–2 (identical text in OB 550-001/23 except effectivity)",
+"pending": "The >HYD 1 LO PRESS and >HYD 2 LO PRESS procedure pages (OB pp.3–4) are images and were not extracted. Use the OB pages or the QRH.",
+"drill": [
+[
+"Which two CAS messages together trigger the OB action?",
+">HYD 1 (2) LO PRESS together with HYD 1 (2) LO QTY."
+],
+[
+"What extra step does the OB add, and when?",
+"Close the associated EDP (EDP 1 or EDP 2 SHUTOFF button) after completing the >HYD 1 (2) LO PRESS procedure."
+],
+[
+"Do you wait for SPOILER FAULT before doing it?",
+"No. It is required regardless of the SPOILER FAULT message, to prevent possible multi-function spoiler oscillation."
+]
+]
+}
+],
+"indocFlags": {
+"summary": "25 items flagged · 14 COVERED · 8 PARTIAL · 3 NOT IN BANK · Q22 conflict RESOLVED (re-keyed to E) · table-smack pass: 1 confirmed (reinforces #22, C055), 13 possible, 0 new items.",
+"examContext": "<ul>\n<li>Sunday <strong>50-question</strong> end-of-course exam on Flexjet Academy (iPad). <strong>Open book, but the study guide itself can't be used.</strong> Not the same 50 as the 201-question guide, but \"a lot of similarities\". There are \"4 or 5 gotchas\" in wording, written by <strong>Gerald</strong> (135 manager). The skill being tested is <strong>finding</strong> the answer in FOM / Ops Specs. (D1 clip 01 L766–847; D1 clip 02 L75–84; D2 clip 03 L11–51)</li>\n</ul>",
+"items": [
+{
+"n": 1,
+"item": "What are the three Mach speed regimes?",
+"said": "\"three categories subsonic, transonic, and supersonic. <strong>These are on a test.</strong>\"",
+"where": "D2 · 02-01 · L60–62",
+"cue": "T · clear",
+"status": "NOT IN BANK",
+"bank": "No aerodynamics/Mach question in the bank"
+},
+{
+"n": 2,
+"item": "Which side of the jet stream has stronger clear air turbulence (CAT)?",
+"said": "\"<strong>This is a test question, I know.</strong> Which side of the jet stream do you encounter clear air turbulence? … Generally stronger on the <strong>polar side</strong> of the jet.\" (the class answer is garbled as \"Overside\")",
+"where": "D2 · 02-01 · L144–149",
+"cue": "T · moderate",
+"status": "PARTIAL",
+"bank": "<strong><a class=\"qlink\" data-nav=\"/indoc/135/study/183\">Q183</a></strong> \"CAT is a higher altitude (~20,000 to 50,000 ft) turbulence… associated with wind shear, particularly between the core of a jet stream and the surrounding air.\" → <strong>A True</strong>. Doesn't test polar vs equatorial side"
+},
+{
+"n": 3,
+"item": "PRM quiz 1: is the secondary PRM monitor frequency used to transmit?",
+"said": "\"A, always used by the pilot to transmit… B sometimes… C never used by the pilot. — <strong>C</strong>.\"",
+"where": "D2 · 02-02 · L125–134",
+"cue": "Q · clear",
+"status": "PARTIAL",
+"bank": "<a class=\"qlink\" data-nav=\"/indoc/135/study/152\">Q152</a> (LDA PRM / RNAV PRM not in the \"NOT authorized\" answer) and <strong><a class=\"qlink\" data-nav=\"/indoc/135/study/159\">Q159</a></strong> \"Crews are authorized to conduct RNAV (GPS) PRM approaches.\" → <strong>A True</strong>. Only authorization is tested, not procedure"
+},
+{
+"n": 4,
+"item": "PRM quiz 2: how is a PRM breakout flown?",
+"said": "\"B, breakout must be hand-flown… The breakout must be hand-[flown].\" Earlier on the slide: \"All breakouts are hand-flown.\"",
+"where": "D2 · 02-02 · L106, L136–142",
+"cue": "Q · clear",
+"status": "PARTIAL",
+"bank": "<a class=\"qlink\" data-nav=\"/indoc/135/study/159\">Q159</a> / <a class=\"qlink\" data-nav=\"/indoc/135/study/152\">Q152</a> (authorization only)"
+},
+{
+"n": 5,
+"item": "PRM quiz 3: PRM no longer being conducted, told to expect the ILS to the same runway. What do you do?",
+"said": "Options read aloud (A request delay vector… B request RNAV… C continue…). Answer garbled: \"Exit says delay vector\" (probably <strong>A</strong>)",
+"where": "D2 · 02-02 · L145–151",
+"cue": "Q · <strong>garbled</strong>",
+"status": "PARTIAL",
+"bank": "<a class=\"qlink\" data-nav=\"/indoc/135/study/159\">Q159</a> / <a class=\"qlink\" data-nav=\"/indoc/135/study/152\">Q152</a> (authorization only)"
+},
+{
+"n": 6,
+"item": "PRM quiz 4: during a breakout, follow a TCAS RA even if it's opposite the ATC climb/descent?",
+"said": "\"True or false? — <strong>True.</strong>\" Plus \"Do what it tells you to do. That should always be your number one priority.\"",
+"where": "D2 · 02-02 · L109–113, L152–153",
+"cue": "Q · clear",
+"status": "COVERED",
+"bank": "<strong><a class=\"qlink\" data-nav=\"/indoc/135/study/35\">Q35</a></strong> \"If ATC issues an instruction that is contrary to a TCAS RA, you must comply with ATC's instructions.\" → <strong>B False</strong> (same fact; bank and tape agree)"
+},
+{
+"n": 7,
+"item": "PRM quiz 5: PRM runway glideslope out of service. What can you do?",
+"said": "Options read (A ASR/other radar approach; B RNAV/LNAV/LDA…). <strong>No answer on tape</strong>",
+"where": "D2 · 02-02 · L155–158",
+"cue": "Q · <strong>garbled/no answer</strong>",
+"status": "PARTIAL",
+"bank": "<a class=\"qlink\" data-nav=\"/indoc/135/study/159\">Q159</a> / <a class=\"qlink\" data-nav=\"/indoc/135/study/152\">Q152</a> (authorization only)"
+},
+{
+"n": 8,
+"item": "Know Landing Distance at Time of Arrival (LDTA)",
+"said": "\"check airmen… some of the pilots were not 100% familiar with the landing distance [at] time of [arrival], LDTA. <strong>So make sure you know that.</strong>\"",
+"where": "D2 · 02-04 · L476–480",
+"cue": "O · clear",
+"status": "PARTIAL",
+"bank": "<strong><a class=\"qlink\" data-nav=\"/indoc/135/study/134\">Q134</a></strong> TOLD card: \"landing section… completed during the enroute phase… during the landing assessment check\" → <strong>A True</strong>. <a class=\"qlink\" data-nav=\"/indoc/135/study/6\">Q6</a> (contaminated runway data used) → A True. No LDTA question as such. <em>(The line just before the cue, \"updated weather briefing within 30 minutes prior to landing\", matches <a class=\"qlink\" data-nav=\"/indoc/135/study/10\">Q10</a> / <a class=\"qlink\" data-nav=\"/indoc/135/study/133\">Q133</a> = </em><em>30</em><em>.)</em>"
+},
+{
+"n": 9,
+"item": "Where is the takeoff (pre-takeoff) contamination check authorized? Does Flexjet have an approved deicing program?",
+"said": "\"You were looking up a question on an open book test… takeoff contamination check… that paragraph pops up and you can answer that question.\" \"Oh, it's <strong>AO-41</strong>.\" D2: \"does Flexjet have an approved deicing program? <strong>no</strong> — where we have… OpSpec <strong>A041</strong>\"",
+"where": "D1 · 01-01 · L523–535, L760–764 · D2 · 02-05 · L50–51",
+"cue": "T/S · clear",
+"status": "COVERED",
+"bank": "<strong><a class=\"qlink\" data-nav=\"/indoc/135/study/19\">Q19</a></strong> \"Which document(s) contain information regarding operations during ground icing conditions?\" → <strong>D All the above</strong> (FOM Sec 7, <strong>Op Spec A041</strong>, CFM). Related: <a class=\"qlink\" data-nav=\"/indoc/135/study/21\">Q21</a> → D; <a class=\"qlink\" data-nav=\"/indoc/135/study/147\">Q147</a> distractor \"Ground Deicing Program Manual\" (wrong). The bank doesn't directly ask \"approved deicing program? No\""
+},
+{
+"n": 10,
+"item": "Ground icing will be covered on every checkride oral (8410 block)",
+"said": "\"they definitely got to ask me about <strong>ground icing conditions</strong>… That's a block on an 8410… I can't pass you [if] I don't check that box.\"",
+"where": "D1 · 01-01 · L776–782",
+"cue": "O · clear",
+"status": "COVERED (topic)",
+"bank": "Ground-icing block <strong><a class=\"qlink\" data-nav=\"/indoc/135/study/19\">Q19</a>–<a class=\"qlink\" data-nav=\"/indoc/135/study/30\">Q30</a>, <a class=\"qlink\" data-nav=\"/indoc/135/study/125\">Q125</a>–<a class=\"qlink\" data-nav=\"/indoc/135/study/128\">Q128</a>, <a class=\"qlink\" data-nav=\"/indoc/135/study/185\">Q185</a>–<a class=\"qlink\" data-nav=\"/indoc/135/study/187\">Q187</a></strong> (e.g., <a class=\"qlink\" data-nav=\"/indoc/135/study/24\">Q24</a>/<a class=\"qlink\" data-nav=\"/indoc/135/study/126\">Q126</a> check within <strong>5 min</strong>; <a class=\"qlink\" data-nav=\"/indoc/135/study/26\">Q26</a> Type II &amp; IV; <a class=\"qlink\" data-nav=\"/indoc/135/study/29\">Q29</a> HOT starts when final application <strong>commences</strong>)"
+},
+{
+"n": 11,
+"item": "Ops Specs apply to which flights, and M Specs to which?",
+"said": "\"what's an op spec for? … part… <strong>135 and 91</strong>, good… M spec for… <strong>management</strong>\" (91K)",
+"where": "D2 · 02-05 · L44–46 (leads into the \"question on every one… Sunday\" line)",
+"cue": "S · moderate",
+"status": "COVERED",
+"bank": "<strong><a class=\"qlink\" data-nav=\"/indoc/135/study/156\">Q156</a></strong> \"Flexjet is authorized to conduct flights under ___ using… Operations Specifications.\" → <strong>B Part 135 and Part 91</strong>. <strong><a class=\"qlink\" data-nav=\"/indoc/135/study/155\">Q155</a></strong> \"Which flights do Management Specs apply to?\" → <strong>A Part 91K</strong>"
+},
+{
+"n": 12,
+"item": "How are Ops Specs organized?",
+"said": "\"<strong>63 ops specs… 52 M specs, five different categories… A B C D E</strong>: general… enroute… terminal… maintenance… weight &amp; balance — <strong>Get More Whiskey And Beer</strong>.\" DAY-01 note: \"memorize the labels\"",
+"where": "D2 · 02-05 · L43–48 · D1 · 01-01 (outline)",
+"cue": "S · clear (counts moderate ASR)",
+"status": "PARTIAL",
+"bank": "Bank tests specific paragraphs (<a class=\"qlink\" data-nav=\"/indoc/135/study/151\">Q151</a> <strong>B046</strong> RVSM, <a class=\"qlink\" data-nav=\"/indoc/135/study/147\">Q147</a> <strong>C055</strong>, <a class=\"qlink\" data-nav=\"/indoc/135/study/158\">Q158</a> <strong>C077</strong>, <a class=\"qlink\" data-nav=\"/indoc/135/study/150\">Q150</a> <strong>C079</strong>, <a class=\"qlink\" data-nav=\"/indoc/135/study/146\">Q146</a> <strong>A097</strong>) but never the A–E category names or the 63/52 counts"
+},
+{
+"n": 13,
+"item": "Is Flexjet an Eligible On-Demand Operator (A057)?",
+"said": "\"we are an <strong>EODO</strong>, right\" · D1: \"57, Authorization… as an eligible on-demand operator.\"",
+"where": "D2 · 02-05 · L51 · D1 · 01-01 · L538",
+"cue": "S · moderate",
+"status": "COVERED",
+"bank": "<strong><a class=\"qlink\" data-nav=\"/indoc/135/study/111\">Q111</a></strong> \"Flexjet LLC has been designated an 'Eligible On-Demand Operator.' This means…\" → <strong>D All are correct</strong> (no-WX-reporting destination with an alternate; 80% rule with approved DAAP; alternate at 80%)"
+},
+{
+"n": 14,
+"item": "Do we have a Destination Airport Analysis Program (C049 DAAP)?",
+"said": "\"what <strong>destination airport analysis program</strong> — there's a <strong>question on every one of those ten [op specs] Sunday</strong>\"",
+"where": "D2 · 02-05 · L51–53",
+"cue": "S · clear",
+"status": "COVERED",
+"bank": "<strong><a class=\"qlink\" data-nav=\"/indoc/135/study/40\">Q40</a></strong> (visual guidance / glideslope required) → A True · <strong><a class=\"qlink\" data-nav=\"/indoc/135/study/41\">Q41</a></strong> (precluded by anti-skid inop) → <strong>B</strong> · <strong><a class=\"qlink\" data-nav=\"/indoc/135/study/59\">Q59</a></strong> DAAP restrictions → <strong>E All</strong> · <strong><a class=\"qlink\" data-nav=\"/indoc/135/study/60\">Q60</a></strong> DAAP with contaminated runway → A True · <strong><a class=\"qlink\" data-nav=\"/indoc/135/study/112\">Q112</a></strong> FO &lt;100 h under DAAP → <strong>D All</strong> · <a class=\"qlink\" data-nav=\"/indoc/135/study/47\">Q47</a> → C"
+},
+{
+"n": 15,
+"item": "Can we depart VFR (C077)?",
+"said": "\"right down to <strong>C077, can we depart VFR</strong>… that's why [it's an] op spec.\" D1: \"I think you can go <strong>50 nautical miles</strong>… I think it's 50.\"",
+"where": "D2 · 02-05 · L53–54 · D1 · 01-03 · L162–165",
+"cue": "S · clear",
+"status": "COVERED",
+"bank": "<strong><a class=\"qlink\" data-nav=\"/indoc/135/study/148\">Q148</a></strong> \"Pilots are authorized to depart VFR and pick up an IFR clearance en route if…\" → <strong>D All are correct</strong> (VFR cloud clearance; IFR clearance <strong>within 50 nm</strong>; not otherwise possible). <strong><a class=\"qlink\" data-nav=\"/indoc/135/study/158\">Q158</a></strong> → <strong>A C077</strong>. The 50 nm figure matches"
+},
+{
+"n": 16,
+"item": "Lower-than-standard takeoff mins (C079): lowest RVR for 135 vs 91K, required equipment",
+"said": "\"Opspec 79… <strong>Lowest RVR for 135 is 500. 91K is 600.</strong> Touchdown zone RVR… required equipment… <strong>That's on the test question. You'll see it in your study.</strong>\" \"The key part is what equipment you gotta have.\" D2: \"C079 what's the lowest RVR… 135… 91K\"",
+"where": "D1 · 01-05 · L52–75 · D2 · 02-05 · L55–57",
+"cue": "T/S · clear",
+"status": "COVERED",
+"bank": "<strong><a class=\"qlink\" data-nav=\"/indoc/135/study/150\">Q150</a></strong> lowest T/O RVR (RVR available) → <strong>A 500 RVR</strong> · <strong><a class=\"qlink\" data-nav=\"/indoc/135/study/193\">Q193</a></strong> lowest T/O RVR Part 91K → <strong>B 600 RVR</strong> · <a class=\"qlink\" data-nav=\"/indoc/135/study/149\">Q149</a> vis when no RVR → <strong>C ¼ sm</strong> · <a class=\"qlink\" data-nav=\"/indoc/135/study/166\">Q166</a> single RVR 700 → <strong>D not takeoff (two RVR required)</strong> · <a class=\"qlink\" data-nav=\"/indoc/135/study/165\">Q165</a> (¼ sm, MIRL, no centerline) → B · <a class=\"qlink\" data-nav=\"/indoc/135/study/32\">Q32</a> high-mins PIC can't use C079 → A True. Bank and tape agree (500 / 600)"
+},
+{
+"n": 17,
+"item": "Electronic Flight Bag authorization (A061), Type A vs B apps",
+"said": "\"our use of the electronic flight bag is <strong>061</strong>\" · D1: \"Type A application does not require specific [authorization]… <strong>Type B</strong> does ForeFlight chart view…\"",
+"where": "D2 · 02-05 · L58 · D1 · 01-01 · L540–546",
+"cue": "S · moderate",
+"status": "PARTIAL",
+"bank": "EFB procedure questions: <strong><a class=\"qlink\" data-nav=\"/indoc/135/study/105\">Q105</a></strong> battery → <strong>C 30 / 30</strong>; <a class=\"qlink\" data-nav=\"/indoc/135/study/106\">Q106</a> / <a class=\"qlink\" data-nav=\"/indoc/135/study/107\">Q107</a> own-ship → True. Nothing on A061 or Type A/B"
+},
+{
+"n": 18,
+"item": "Passenger / baggage average-weight program",
+"said": "\"we have a <strong>passenger baggage weight program</strong>\" · D1: \"<strong>12 pounds</strong> for their lunch bag or iPad\" · D3 lab: \"<strong>Thirty pounds.</strong> Four bags.\" (ASR contradicts itself on \"carry-on program\": D1 L517 \"we have a carry-on baggage program\" vs D2 L60 \"we don't have carry-on program\")",
+"where": "D2 · 02-05 · L59–60 · D1 · 01-01 · L517–520 · D3 · 03-05 · 0:04",
+"cue": "S · moderate",
+"status": "COVERED",
+"bank": "<strong><a class=\"qlink\" data-nav=\"/indoc/135/study/146\">Q146</a></strong> \"Survey-Derived Average Baggage Weights… Personal Item <strong><em>, Checked Bags </em></strong>.\" → <strong>B 12, 30</strong> (Ops Specs A097). Numbers match. Related <a class=\"qlink\" data-nav=\"/indoc/135/study/132\">Q132</a> → D (average or actual), <a class=\"qlink\" data-nav=\"/indoc/135/study/65\">Q65</a> → D (FOM App. 3)"
+},
+{
+"n": 19,
+"item": "Operational control: who has it on 135 vs 91K; initiate / conduct / terminate",
+"said": "\"delegated by the owner… on <strong>91 Kilo</strong>. A crew member… employee or agent <strong>cannot initiate a flight, but they can conduct or terminate</strong>. So these two are, <strong>I think there's several questions on these two.</strong>\"",
+"where": "D1 · 01-03 · L47–49",
+"cue": "T · moderate (unclear on tape which \"two\")",
+"status": "COVERED",
+"bank": "<strong><a class=\"qlink\" data-nav=\"/indoc/135/study/162\">Q162</a></strong> \"During an operation conducted under FAR 135, who has operational control?\" → <strong>C The Company</strong> · <strong><a class=\"qlink\" data-nav=\"/indoc/135/study/69\">Q69</a></strong> \"Who has operational control on a Flexjet Part 91K flight?\" → <strong>D Both A and B</strong> (joint company + owner; tasks delegated by owner to the Company). The initiate/conduct/terminate wording itself isn't tested"
+},
+{
+"n": 20,
+"item": "Circadian low period: define the window",
+"said": "\"Scott, what's the time period that's <strong>on the test</strong>, circadian low period… defined by hours of <strong>0130</strong> … local time zone where a crew member's duty day begins\" (end time inaudible)",
+"where": "D3 · 03-06 · 07:50–08:13",
+"cue": "T · clear (end time garbled)",
+"status": "COVERED",
+"bank": "<strong><a class=\"qlink\" data-nav=\"/indoc/135/study/70\">Q70</a></strong> \"The circadian low period is defined by the hours of ___ to ___ based on the local time zone where a crewmember's duty day begins.\" → <strong>C 0130 to 0400</strong>. Start time and \"where duty begins\" match"
+},
+{
+"n": 21,
+"item": "<strong>Bank Q22:</strong> when is a <em>tactile</em> pre-takeoff contamination check conducted?",
+"said": "Instructor read Q22 aloud: \"during preflight when ground icing conditions exist… after de-icing and/or anti-icing… before takeoff with freezing drizzle or light freezing rain… unable to determine… <strong>It is E all day long.</strong> … <strong>7.3.11</strong> [p. 16–17] gives you everything you need to satisfy <strong>all of the above for question 22.</strong>\"",
+"where": "D3 · 03-04 · 17:45–19:41",
+"cue": "T · clear",
+"status": "COVERED — ✅ RESOLVED (was conflict)",
+"bank": "<strong><a class=\"qlink\" data-nav=\"/indoc/135/study/22\">Q22</a></strong> <em>(✅ Re-keyed to </em><em>E</em><em> per Kerry 2026-09-24 in local bank + study site v22, commit 303e6d8. Original entry follows.)</em> \"A tactile pre-takeoff contamination check will be conducted…\" → bank key <strong>C</strong> \"before takeoff when the crew is unable to determine that aircraft surfaces are free from contamination using a visual check.\" The bank's own note says \"<strong>(Kept per FOM; the official key marks e.)</strong>\" <strong>Instructor = E (All the above). Bank = C.</strong>"
+},
+{
+"n": 22,
+"item": "Where do you find alternate-airport IFR weather minimums, and how are approaches counted?",
+"said": "Table walk-through: 1 facility vs 2 facilities adders (\"200 and a half\"), \"That's on the OPSPEC… [C]055.\" \"Addison… one runway… two ILSs… it counts as two.\" ForeFlight crew resources flow chart for filing an alternate… \"<strong>And that's a test question.</strong>\"",
+"where": "D3 · 03-07 · 07:00–09:11",
+"cue": "T · moderate (cue follows the table + flow-chart talk)",
+"status": "COVERED",
+"bank": "<strong><a class=\"qlink\" data-nav=\"/indoc/135/study/147\">Q147</a></strong> \"In which document(s) will you find our requirements for Alternate Airport IFR weather minimums?\" → <strong>D Op Spec C055</strong> · <strong><a class=\"qlink\" data-nav=\"/indoc/135/study/154\">Q154</a></strong> \"…may apply the minimums published… FOR FILING AS AN ALTERNATE…\" → <strong>B False</strong>. The adders and the Addison counting rule aren't tested"
+},
+{
+"n": 23,
+"item": "Dry ice: max per person",
+"said": "\"You can carry <strong>5.5 pounds</strong> for a person… <strong>So, yeah, it's on the test.</strong>\" Later: \"Dry ice. <strong>Test question.</strong> How much can it carry for a person? <strong>Five pounds.</strong>\" (2nd mention likely clipped)",
+"where": "D4 · 04-01 · 10:12–11:42 and 19:14–20:00",
+"cue": "T · clear (1st) / garbled (2nd)",
+"status": "COVERED",
+"bank": "<strong><a class=\"qlink\" data-nav=\"/indoc/135/study/170\">Q170</a></strong> \"A maximum of ___ pounds of dry ice per person may be carried in the cabin area.\" → <strong>C 5.5</strong>. Matches the 1st mention. The 2nd ASR \"five pounds\" is not a real conflict, but pick <strong>5.5</strong>"
+},
+{
+"n": 24,
+"item": "What is Height Above Airport (HAA)?",
+"said": "\"it was always a <strong>good oral question</strong>… where's the height above the airport… height of the MDA above the airport elevation, the highest point on the airport\"",
+"where": "D3 · 03-07 · 15:03–15:29",
+"cue": "O · moderate",
+"status": "NOT IN BANK",
+"bank": "No HAA / HAT question (closest approach-chart items are <a class=\"qlink\" data-nav=\"/indoc/135/study/189\">Q189</a> VDP and <a class=\"qlink\" data-nav=\"/indoc/135/study/190\">Q190</a> negative-C, which test different facts)"
+},
+{
+"n": 25,
+"item": "Type oral content: Praetor limitations (e.g., max takeoff weight), memory items, CTH systems study-guide questions",
+"said": "\"I need to know limitations, max takeoff weight for a [Praetor] 600… those memory items, those limitations, the systems questions [in the CTH]\" · D3: \"limitations [and] memory items… <strong>about 85% of your oral</strong>, and then systems on top\"",
+"where": "D1 · 01-01 · L783–793 · D3 · 03-07 · 37:10–37:20",
+"cue": "O · clear",
+"status": "NOT IN BANK",
+"bank": "Expected. The 135 bank is company/regulatory only and has no Praetor type questions"
+}
+],
+"conflicts": "<ol>\n<li>✅ <strong>RESOLVED 2026-09-24 — <a class=\"qlink\" data-nav=\"/indoc/135/study/22\">Q22</a> re-keyed to E</strong> (local bank JSON/MD/answer key/recall index + FO study site v22, commit <code>303e6d8</code>). History: <strong><a class=\"qlink\" data-nav=\"/indoc/135/study/22\">Q22</a>, tactile pre-takeoff contamination check.</strong> The instructor said <strong>E, \"All the above… all day long\"</strong>, citing <strong>FOM 7.3.11 (p. 16–17)</strong> (D3 03-04, 17:45–19:41). The bank keys <strong>C</strong>, and its own note admits \"<strong>Kept per FOM; the official key marks e.</strong>\" So the instructor and the official key agree on <strong>E</strong>, and our study bank deliberately differs. <strong>For the Sunday Academy exam, expect E to be graded correct.</strong> Suggest re-keying <a class=\"qlink\" data-nav=\"/indoc/135/study/22\">Q22</a> to E in the study bank, or at least drilling it as \"E on the exam\". The bank wasn't edited here; it's locked.</li>\n<li><strong>Not a conflict, but pick the bank number:</strong> dry ice. The second ASR mention says \"five pounds\", the first says <strong>5.5</strong>, and the bank (<a class=\"qlink\" data-nav=\"/indoc/135/study/170\">Q170</a>) says <strong>5.5</strong>.</li>\n<li><strong>Not a test cue, but a wording mismatch worth knowing (<a class=\"qlink\" data-nav=\"/indoc/135/study/90\">Q90</a>, TEST acronym):</strong> D4 04-02 (23:03–23:36): \"type of emergency, <strong>exit to be used</strong>, signals… time to touchdown.\" Bank <strong><a class=\"qlink\" data-nav=\"/indoc/135/study/90\">Q90</a></strong> keys <strong>B \"Type of emergency, Evacuation plan, Signals, Time before touchdown.\"</strong> On the exam, pick the bank / FOM wording (\"Evacuation plan\"). Not counted in the 25.</li>\n</ol>",
+"notInBank": "<ol>\n<li><strong>Mach regimes: subsonic / transonic / supersonic.</strong> \"These are on a test.\" (D2 02-01 L62)</li>\n<li><strong>Height Above Airport (HAA)</strong> = height of the MDA above airport elevation (highest point on the airport). Flagged as a \"good oral question\". (D3 03-07 15:03)</li>\n<li><strong>Praetor type oral: limitations / memory items / CTH systems questions</strong> (~85% of the oral). Type content, outside the 135 bank's scope. (D1 01-01 L783–793; D3 03-07 37:10)</li>\n</ol>\n<p>PARTIAL items where the specific fact is still untested in the bank: CAT polar side (#2), PRM procedure quiz (#3, 4, 5, 7), LDTA (#8), Ops Specs A–E structure and counts (#12), EFB A061 / Type A vs B (#17).</p>",
+"notOnTest": "<ul>\n<li>14 CFR <strong>119.5(g)</strong> paragraph number: \"Not going to be a test on that number.\" (D1 01-01 L388–393)</li>\n<li>PRM definition / runway spacing: \"That's not a test question.\" (D2 02-02 L80–81)</li>\n<li>PRM course offset angle (2.5–3° / \"1.5 to 3 degrees\"): \"it's not on the test.\" (D2 02-02 L82–89)</li>\n<li><strong>Will-not-carry hazmat:</strong> \"I don't think that's a test question.\" (D4 04-01 15:50). <strong>Caution:</strong> the bank <em>does</em> test it. <strong><a class=\"qlink\" data-nav=\"/indoc/135/study/48\">Q48</a></strong> (hazmat not accepted, but exceptions) → <strong>A True</strong>, and <strong><a class=\"qlink\" data-nav=\"/indoc/135/study/200\">Q200</a></strong> (\"NOT a Company fundamental principle\") → <strong>D \"The Company is a Will-Not-Carry HAZMAT operator.\"</strong> Don't skip it.</li>\n</ul>",
+"smackConfirmed": "<div class=\"tbl\"><table>\n<thead>\n<tr>\n<th>Smack</th>\n<th>Context (ASR)</th>\n<th>Item</th>\n<th>Bank</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>D3 · 03-07 · <strong>09:12.1</strong></td>\n<td>\"…flowchart to assist you in filing or going to a new alternate… <strong>That's a test question.</strong>\" (1.5 s after the words)</td>\n<td>Existing <strong>#22</strong>, alternate IFR weather minimums (Op Spec <strong>C055</strong>). Now flagged by <strong>both</strong> speech and smack</td>\n<td><strong>COVERED</strong>: <a class=\"qlink\" data-nav=\"/indoc/135/study/147\">Q147</a> → <strong>D</strong> (Op Spec C055) · <a class=\"qlink\" data-nav=\"/indoc/135/study/154\">Q154</a> → <strong>B</strong> False</td>\n</tr>\n</tbody>\n</table></div>",
+"smackPossible": "<div class=\"tbl\"><table>\n<thead>\n<tr>\n<th>Smack</th>\n<th>Context (ASR, brief)</th>\n<th>Would relate to</th>\n<th>Bank</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>D2 · 02-02 · 11:06.0</td>\n<td>PRM in-class quiz: \"…Never used by the pilot. C. … breakout must be hand-flown… Great. Great.\"</td>\n<td>Existing #3/#4 (PRM quiz)</td>\n<td>PARTIAL (<a class=\"qlink\" data-nav=\"/indoc/135/study/152\">Q152</a>/<a class=\"qlink\" data-nav=\"/indoc/135/study/159\">Q159</a> authorization only)</td>\n</tr>\n<tr>\n<td>D1 · 01-01 · 49:59 / 50:47</td>\n<td>Op Specs A–E, \"Get more whiskey and beer… general, en route, terminal, maintenance, weight and balance\"</td>\n<td>Existing #12</td>\n<td>PARTIAL</td>\n</tr>\n<tr>\n<td>D1 · 01-01 · 52:28.8</td>\n<td>\"when I go into an oral for a checkride… will I be asked these questions, 135? … They definitely got [to ask]…\"</td>\n<td>Existing #10 (ground icing on the oral)</td>\n<td>COVERED topic</td>\n</tr>\n<tr>\n<td>D1 · 01-03 · 06:12.0</td>\n<td>\"Flexjet must be in charge of all decisions… initiating, conducting, and terminating flight operations\"</td>\n<td>Existing #19 (operational control)</td>\n<td>COVERED <a class=\"qlink\" data-nav=\"/indoc/135/study/162\">Q162</a> → C · <a class=\"qlink\" data-nav=\"/indoc/135/study/69\">Q69</a> → D</td>\n</tr>\n<tr>\n<td>D2 · 02-04 · 39:34.8–39:38.0 (3 hits)</td>\n<td>\"What's a high-minimums pilot in command? — Anybody with less than 100 hours…\"</td>\n<td>New lead: high-mins PIC</td>\n<td>PARTIAL: <a class=\"qlink\" data-nav=\"/indoc/135/study/32\">Q32</a> → A True (can't use C079); <a class=\"qlink\" data-nav=\"/indoc/135/study/112\">Q112</a> → D (FO &lt; 100 h, DAAP). Bank never asks for the 100 h definition</td>\n</tr>\n<tr>\n<td>D2 · 02-04 · 07:52.4</td>\n<td>Stabilized approach: \"500 above… no greater than 1,000 feet per minute… Vref plus five… one dot\"</td>\n<td>New lead: stabilized approach</td>\n<td>COVERED if real: <strong><a class=\"qlink\" data-nav=\"/indoc/135/study/124\">Q124</a> → B 1000</strong> · <a class=\"qlink\" data-nav=\"/indoc/135/study/88\">Q88</a> → B</td>\n</tr>\n<tr>\n<td>D3 · 03-01 · 09:11.5</td>\n<td>Ferry permit: \"If there's a structural or flight control issue, I'm not going to ferry it… Fix it where it's at.\"</td>\n<td>New lead</td>\n<td>NOT IN BANK</td>\n</tr>\n<tr>\n<td>D4 · 04-01 · 18:13.3</td>\n<td>Hazmat exceptions: \"Alcohol is allowed… can't be greater than 70%…\" (quantity garbled in ASR)</td>\n<td>New lead</td>\n<td>NOT IN BANK (<a class=\"qlink\" data-nav=\"/indoc/135/study/168\">Q168</a>–177 block has no alcohol item)</td>\n</tr>\n<tr>\n<td>D4 · 04-01 · 18:49.7</td>\n<td>\"Small arms ammunition may be carried… in the original box…\"</td>\n<td>New lead</td>\n<td>COVERED if real: <strong><a class=\"qlink\" data-nav=\"/indoc/135/study/173\">Q173</a> → A True</strong></td>\n</tr>\n</tbody>\n</table></div>\n<p>None of the possible rows was added to the site's flagged-only list. Adding them would count guesses as instructor flags.</p>",
+"smackBottom": "<p>1 smack confirmed (it reinforces existing item #22, alternate minimums in C055). 13 possible, not counted. 0 new test items established from smacks. The flagged-question list on the study site is <strong>unchanged at 27 Q</strong> (site v23, commit <code>8e1f8d3</code>).</p>"
+},
+"pendingNote": "<p>Only items with <b>no source on file</b> stay PENDING. Limitations and systems are built from the CTH/CFM/MEL and carry a small <span class=\"vtag\">verify vs AFM/AOM when available</span> tag instead. Source conflicts show as <span class=\"conf\">conflict — ask instructor</span>.</p>"
+}

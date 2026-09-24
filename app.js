@@ -1460,7 +1460,7 @@ function esc(s) {
       bullets: [
         'Bucket: definitions · authorized aircraft/configs · exemptions · management personnel · operational control · contract training · eligible on-demand · EFBs.',
         'Op control (A006): only the company initiates/conducts/terminates flights. PIC may delay/cancel/divert/refuse unsafe — not self-dispatch. Class list: Jim Dunn · Doug Leitkamp (?) · Tim Monti · Joe Scott (+ delegates).',
-        'Legal stack: legal crew (employee/agent, current 293/297/299/annual) · legal aircraft (CAMP, MEL/CDL, Form 501, exclusive possession) · legal pax (TSA/APIS; 135 photo ID) · legal flight (A006 initiator + specific aircraft/PIC/SIC in Tailwind).',
+        'Legal stack: legal crew (employee/agent, current 293/297/299/annual) · legal aircraft (CAMP, MEL/CDL, Form 501, exclusive possession) · legal pax (APIS; 135 photo ID) · legal flight (A006 initiator + specific aircraft/PIC/SIC in Tailwind).',
         'Driver story: Platinum Jet / Darby (Teterboro) freelancers on another certificate — why these rules exist.',
         'EFB: Type A (general docs) vs Type B (ForeFlight charts/taxi). Databases current; EFB care in FOM. Ramp-check ready.',
         'High-mins: do not pair A+B. High-mins ≈100 hrs type; B pairing floor ≈75 hrs captain — speak up if wrong.',
@@ -1541,7 +1541,6 @@ function esc(s) {
               <li><strong>Aircrew Training Manual:</strong> Flexjet Docs → Training &amp; Checking → Instructor/Check Airman → ATM → type appendix (curriculum map).</li>
               <li><strong>Sunday 50Q:</strong> open-book on Flexjet Academy (iPad). Prep from ~201Q study guide. Gerald (135 mgr) writes wording gotchas.</li>
               <li><strong>Academy ~11 modules:</strong> Heather Bey assign · required for 135 credit · done by Sunday. academy.flexjet.com · Flexjet email · pw <code>Flexjet1</code> (change first login). Issues → heather.bey@flexjet.com</li>
-              <li><strong>Security/TSA test</strong> later in week (~15Q) — separate from Sunday exam.</li>
               <li><strong>Duty always 135:</strong> 14 duty / 10 fly / 10 rest (two-pilot). Tailwind tracks; speak up if reality breaks plan. Non-local deadhead ≠ rest.</li>
               <li><strong>Op control:</strong> company only initiates/conducts/terminates. Legal crew+aircraft+pax+flight. A006 names from class (verify spelling). Platinum Jet/Darby lesson.</li>
               <li><strong>Everest Fuel:</strong> contract FBO — sign ticket · gallons in Tailwind. Non-contract — release card; Multi-Service backup on aircraft. Report bad fueling. Tankering SW glitched — captain judgment.</li>
@@ -1623,7 +1622,7 @@ function esc(s) {
           <div class="card">
             <h3><span class="dot"></span>Must lock — Day 2</h3>
             <ul>
-              <li><strong>Military / PPR:</strong> civil landing permit on file · Flight Control obtains permission/PPR · permit copy to crew · originals with pilot manager / safety &amp; security (verify FOM). Read Tailwind airport notes.</li>
+              <li><strong>Military / PPR:</strong> civil landing permit on file · Flight Control obtains permission/PPR · permit copy to crew · originals with the pilot manager (verify FOM). Read Tailwind airport notes.</li>
               <li><strong>Praetor path:</strong> separate systems-integration week → <strong>~6 sims + checkride + walk</strong> (ASR first said eight, then clarified). Challenger/Phenom combine ground + SI.</li>
               <li><strong>EFB:</strong> <strong>ForeFlight</strong> primary (plans/WX/NOTAMs/plates/charts/company docs). Download <strong>Embraer TechPub</strong>. MyFreeFlight still for W&amp;B/runway-analysis exposure. iPad for all work assignments. EFB currency guide under Documents → resources.</li>
               <li><strong>RDA:</strong> access coming via training email (classmates got it Day 2) — confirm yours.</li>
@@ -1672,7 +1671,6 @@ function esc(s) {
           <div class="card">
             <h3><span class="dot"></span>Thu Sep 24, 2026 · Day 4 — hazmat · evac · physiology</h3>
             <p>Hazmat (will-not-carry) · raft/ditching video · emergency evacuation · disabled passengers · service culture · altitude physiology. Plaud <strong>01–05</strong> (~145.6 min; clip <strong>05 non-speech</strong>).</p>
-            <p><strong>Security (TSA 12-5) test today. Taken as a class, easy, no jeopardy.</strong></p>
             <div class="note">Praetor 500/600 track. Classmate-safe, generic takeaways only. Verify numbers against the written hazmat card / QRH before a checkride.</div>
           </div>
 
@@ -2146,6 +2144,8 @@ function esc(s) {
     const root = parts[0] || '';
     if (root !== 'fleet-map') cleanupFleetMap();
 
+    // v25: study-v25.js (FOStudyExt) owns Home, Indoc hub, Checkride prep, Drill, Checklists, Search, Gaps.
+    if (window.FOStudyExt && window.FOStudyExt.route(parts)) return;
     if (!root) return viewHome();
     if (root === 'fleet-map') return viewFleetMap();
     if (root === 'orientation') return viewOrientation();
@@ -2190,6 +2190,13 @@ function esc(s) {
 
     viewHome();
   }
+
+  window.FOStudy = {
+    app, $, esc, svg, topbar, shellClass, bindNav, go, parseHash, hardReload,
+    loadMemoryDeck, loadRecurrentBank, shuffleInPlace, flashState, INDOC_AE, cleanupFleetMap,
+    views: { viewIndoc135Hub, viewIndoc135Study, viewIndoc135Quiz, viewIndocShelf, viewMemoryItems, viewNotes,
+             viewFlashcards, viewOrientation, viewRitual, viewAdmin, viewFleetMap, viewHome, viewIndoc },
+  };
 
   window.addEventListener('hashchange', render);
   render();
