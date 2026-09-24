@@ -1,0 +1,1849 @@
+{
+ "source_note": "Praetor 500/600 limitations for Kerry Wyatt's FO study (SIMCOM initial, Sep 29, 2026). Sources: Flexjet Crew Training Handbook EMB-545/550 Rev 2.5 (eff 03/04/2026) §5 'For Training Reference Only…see current AOM, QRH and AFM' plus §6, §7 and §10 answers; Flexjet Crew Flight Manual Rev 3.3; Praetor MEL Rev 14 (02-17-26); Embraer OB P550-001/23. No AFM/AOM/QRH was available, so every value is tagged verify_tag=true: check it against the AFM Section 2 / AOM Chapter 2 before relying on it. Page numbers are printed page numbers (CTH printed = PDF page; CFM printed = PDF page − 2). CTH §5 ITT/APU tables on pp.17–18 are images and were read by OCR of the page render. Where sources disagree, 'conflict' carries both values and the item says ask instructor; no value was chosen or invented.",
+ "categories": [
+  {
+   "id": "general",
+   "title": "Kinds of operation, crew, dimensions",
+   "items": [
+    {
+     "id": "general-01",
+     "label": "Kinds of operation",
+     "value": "VMC, IMC, Day, Night and Icing",
+     "cite": "CTH Rev 2.5 p.16",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "general-02",
+     "label": "En-route kinds of operation",
+     "value": "VFR, IFR, Icing Conditions, Extended Over water and Category 1",
+     "cite": "CTH Rev 2.5 p.16",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "general-03",
+     "label": "Minimum flight crew",
+     "value": "2 pilots",
+     "cite": "CTH Rev 2.5 p.16",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "general-04",
+     "label": "Length (P500)",
+     "value": "64'07\"",
+     "cite": "CTH Rev 2.5 p.16",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "general-05",
+     "label": "Length (P600)",
+     "value": "68'05\"",
+     "cite": "CTH Rev 2.5 p.16",
+     "conflict": {
+      "other_value": "68' 0.5\"",
+      "other_cite": "CTH Rev 2.5 p.22 (§7.1 answer) and CTH Rev 2.5 p.55 (differences summary)",
+      "note": "CTH p.16 prints 68'05\" but pp.22 and 55 print 68' 0.5\" for the Praetor 600. Sources disagree. Ask instructor."
+     },
+     "verify_tag": true
+    },
+    {
+     "id": "general-06",
+     "label": "Wingspan (P500)",
+     "value": "70'06\"",
+     "cite": "CTH Rev 2.5 p.16",
+     "conflict": {
+      "other_value": "70' 6.4\"",
+      "other_cite": "CTH Rev 2.5 p.22 (§7.1 answer) and CTH Rev 2.5 p.55",
+      "note": "CTH p.16 prints 70'06\" for the P500; pp.22 and 55 print 70' 6.4\" (same as the P600). Ask instructor."
+     },
+     "verify_tag": true
+    },
+    {
+     "id": "general-07",
+     "label": "Wingspan (P600)",
+     "value": "70'6.4\"",
+     "cite": "CTH Rev 2.5 p.16",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "general-08",
+     "label": "Height (P500)",
+     "value": "21'03\"",
+     "cite": "CTH Rev 2.5 p.16",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "general-09",
+     "label": "Height (P600)",
+     "value": "21'0.3\"",
+     "cite": "CTH Rev 2.5 p.16",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "general-10",
+     "label": "180° turn minimum pavement width (main gear)",
+     "value": "P500 52'05\" · P600 56'00\"",
+     "cite": "CTH Rev 2.5 p.16; CTH Rev 2.5 p.22 (citing AOM 9-13-70)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "general-11",
+     "label": "Wingtip wall-to-wall (180° turn)",
+     "value": "P500 102'03\" · P600 104'06\"",
+     "cite": "CTH Rev 2.5 p.16",
+     "conflict": null,
+     "verify_tag": true
+    }
+   ]
+  },
+  {
+   "id": "weights",
+   "title": "Weights and CG",
+   "items": [
+    {
+     "id": "weights-01",
+     "label": "Max ramp weight (P500)",
+     "value": "37,699 lb",
+     "cite": "CTH Rev 2.5 p.16; CTH Rev 2.5 p.47; CTH Rev 2.5 p.55",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "weights-02",
+     "label": "Max takeoff weight (P500)",
+     "value": "37,567 lb",
+     "cite": "CTH Rev 2.5 p.16; CTH Rev 2.5 p.47; CTH Rev 2.5 p.55",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "weights-03",
+     "label": "Max landing weight (P500)",
+     "value": "34,172 lb",
+     "cite": "CTH Rev 2.5 p.16; CTH Rev 2.5 p.47; CTH Rev 2.5 p.55",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "weights-04",
+     "label": "Max zero fuel weight (P500)",
+     "value": "25,959 lb",
+     "cite": "CTH Rev 2.5 p.16; CTH Rev 2.5 p.47; CTH Rev 2.5 p.55",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "weights-05",
+     "label": "Max ramp weight (P600)",
+     "value": "42,990 lb",
+     "cite": "CTH Rev 2.5 p.16; CTH Rev 2.5 p.47; CTH Rev 2.5 p.55",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "weights-06",
+     "label": "Max takeoff weight (P600)",
+     "value": "42,858 lb",
+     "cite": "CTH Rev 2.5 p.16; CTH Rev 2.5 p.47; CTH Rev 2.5 p.55",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "weights-07",
+     "label": "Max landing weight (P600)",
+     "value": "37,479 lb",
+     "cite": "CTH Rev 2.5 p.16; CTH Rev 2.5 p.47; CTH Rev 2.5 p.55",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "weights-08",
+     "label": "Max zero fuel weight (P600)",
+     "value": "28,660 lb",
+     "cite": "CTH Rev 2.5 p.16; CTH Rev 2.5 p.47; CTH Rev 2.5 p.55",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "weights-09",
+     "label": "Weight above MZFW",
+     "value": "All weights in excess of MZFW must consist of fuel",
+     "cite": "CTH Rev 2.5 p.16",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "weights-10",
+     "label": "CG limits (P500), %MAC",
+     "value": "MTOW 21.5%–31.5% · MLW 21.5%–34% · MZFW 28%–47.5% · MOW 40%–47.5%",
+     "cite": "CTH Rev 2.5 p.55",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "weights-11",
+     "label": "CG limits (P600), %MAC",
+     "value": "MTOW 19%–31% · MLW 19%–34% · MZFW 24.5%–47% · MOW 37%–45%",
+     "cite": "CTH Rev 2.5 p.55",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "weights-12",
+     "label": "Baggage max loading",
+     "value": "Forward cabinet 88 lb · Stowage compartment 330 lb · Cargo compartment 880 lb",
+     "cite": "CTH Rev 2.5 p.16",
+     "conflict": null,
+     "verify_tag": true
+    }
+   ]
+  },
+  {
+   "id": "speeds",
+   "title": "Airspeed limits",
+   "items": [
+    {
+     "id": "speeds-01",
+     "label": "VMO (up to 10,000 ft)",
+     "value": "300 KIAS",
+     "cite": "CTH Rev 2.5 p.16",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "speeds-02",
+     "label": "VMO (10,000 to 29,475 ft)",
+     "value": "320 KIAS",
+     "cite": "CTH Rev 2.5 p.16",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "speeds-03",
+     "label": "MMO (above 29,475 ft)",
+     "value": "0.83 M",
+     "cite": "CTH Rev 2.5 p.16",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "speeds-04",
+     "label": "VMO/MMO exceedance",
+     "value": "May not be deliberately exceeded in any regime of flight (climb, cruise, descent) unless specifically authorized for flight test or training",
+     "cite": "CTH Rev 2.5 p.16",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "speeds-05",
+     "label": "Minimum operating Mach by SAT",
+     "value": "−57 to −60 °C: 0.40 · −60 to −65 °C: 0.55 · −65 to −70 °C: 0.67",
+     "cite": "CTH Rev 2.5 p.16",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "speeds-06",
+     "label": "Maneuvering speed VA",
+     "value": "Predicated on pressure altitude; approx. 205 to 255 KIAS. Full/rapid alternating control inputs can cause structural failure at any speed, including below VA",
+     "cite": "CTH Rev 2.5 p.16",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "speeds-07",
+     "label": "Turbulent air penetration (at/below 10,000 ft)",
+     "value": "230 KIAS (recommended)",
+     "cite": "CTH Rev 2.5 p.16",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "speeds-08",
+     "label": "Turbulent air penetration (above 10,000 ft)",
+     "value": "265 KIAS / 0.77 M, whichever is lower (recommended)",
+     "cite": "CTH Rev 2.5 p.16",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "speeds-09",
+     "label": "VLO / VLE",
+     "value": "250 KIAS / 250 KIAS",
+     "cite": "CTH Rev 2.5 p.16; CTH Rev 2.5 p.38 (citing AOM 2-10)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "speeds-10",
+     "label": "VFE — Embraer limitation",
+     "value": "Flaps 1: 210 KIAS · Flaps 2 and 3: 185 KIAS · Flaps FULL: 170 KIAS",
+     "cite": "CTH Rev 2.5 p.16",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "speeds-11",
+     "label": "VFE — Flexjet operating limitation (use these)",
+     "value": "Flaps 1: 200 KIAS · Flaps 2: 175 KIAS · Flaps 3: 175 KIAS · Flaps FULL: 160 KIAS",
+     "cite": "CTH Rev 2.5 p.16; CFM Rev 3.3 p.95",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "speeds-12",
+     "label": "Flap extension technique",
+     "value": "Do not extend flaps unless IAS ≤ the flap speed limitation minus at least 10 kt; PM verifies speed before moving the flap handle",
+     "cite": "CFM Rev 3.3 p.94",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "speeds-13",
+     "label": "Max pressure altitude with flaps extended",
+     "value": "20,000 ft",
+     "cite": "CTH Rev 2.5 p.16; CFM Rev 3.3 p.95",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "speeds-14",
+     "label": "Max tire speed",
+     "value": "182 kt groundspeed",
+     "cite": "CTH Rev 2.5 p.16",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "speeds-15",
+     "label": "Vmax computation",
+     "value": "Lesser of VMO, MMO, VLE or VFE",
+     "cite": "CTH Rev 2.5 p.42 (citing AOM 9-09-30)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "speeds-16",
+     "label": "FBW high-speed protection limit",
+     "value": "Vmo + 22 kt",
+     "cite": "CTH Rev 2.5 p.34 (citing AOM 9-08-50)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "speeds-17",
+     "label": "Company speed guidance (not an AFM limit)",
+     "value": "≤ 250 KIAS below 10,000 ft; recommended ≤ 200 KIAS at or below 2,500 ft AGL; holding in icing 200 KIAS",
+     "cite": "CFM Rev 3.3 p.94; CFM Rev 3.3 p.97",
+     "conflict": null,
+     "verify_tag": true
+    }
+   ]
+  },
+  {
+   "id": "envelope",
+   "title": "Operational envelope (altitude, temperature, runway)",
+   "items": [
+    {
+     "id": "envelope-01",
+     "label": "Max operating pressure altitude",
+     "value": "45,000 ft",
+     "cite": "CTH Rev 2.5 p.16",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "envelope-02",
+     "label": "Min takeoff and landing altitude",
+     "value": "−1,000 ft",
+     "cite": "CTH Rev 2.5 p.16",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "envelope-03",
+     "label": "Max takeoff and landing altitude",
+     "value": "9,600 ft (13,800 ft only with HALTO SB-550-27-002, NOT installed on Flexjet aircraft)",
+     "cite": "CTH Rev 2.5 p.16; CTH Rev 2.5 p.19; CTH Rev 2.5 p.21",
+     "conflict": {
+      "other_value": "\"13,800 lbs. Takeoff / Landing altitude limit\" printed in the Praetor 500 column",
+      "other_cite": "CTH Rev 2.5 p.55",
+      "note": "The p.55 differences summary prints 13,800 (with 'lbs.') as a P500 takeoff/landing altitude limit, while pp.16, 19 and 21 say 13,800 ft requires HALTO, which is not installed. Likely a typo, but the sources disagree. Ask instructor."
+     },
+     "verify_tag": true
+    },
+    {
+     "id": "envelope-04",
+     "label": "Min takeoff and landing temperature",
+     "value": "−40 °C",
+     "cite": "CTH Rev 2.5 p.19",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "envelope-05",
+     "label": "Max temperature for takeoff",
+     "value": "52 °C",
+     "cite": "CTH Rev 2.5 p.19",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "envelope-06",
+     "label": "Max tailwind component",
+     "value": "10 kt",
+     "cite": "CTH Rev 2.5 p.16",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "envelope-07",
+     "label": "Runway surface",
+     "value": "Takeoffs and landings limited to paved runways",
+     "cite": "CTH Rev 2.5 p.16; CTH Rev 2.5 p.17",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "envelope-08",
+     "label": "Runway slope",
+     "value": "−2% to +2%",
+     "cite": "CTH Rev 2.5 p.16; CTH Rev 2.5 p.17",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "envelope-09",
+     "label": "Maneuvering load factors",
+     "value": "Flaps UP: +2.5 g / −1.0 g · Flaps DOWN: +2.0 g / 0.0 g",
+     "cite": "CTH Rev 2.5 p.17",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "envelope-10",
+     "label": "Magnetic variation cutouts",
+     "value": "Above set northern/southern latitude regions, magnetic-referenced data are set to NCD. Region table is an image on the page (not extracted); read the printed table",
+     "cite": "CTH Rev 2.5 p.18",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "envelope-11",
+     "label": "Stationary alignment max latitude",
+     "value": "78.25° North and South",
+     "cite": "CTH Rev 2.5 p.18",
+     "conflict": null,
+     "verify_tag": true
+    }
+   ]
+  },
+  {
+   "id": "wind",
+   "title": "Crosswind and wind",
+   "items": [
+    {
+     "id": "wind-01",
+     "label": "Max demonstrated crosswind, takeoff (dry)",
+     "value": "35 kt (a powerplant limitation)",
+     "cite": "CTH Rev 2.5 p.16; CFM Rev 3.3 p.83; CTH Rev 2.5 p.48 (citing AOM 5-20; AOM 5-35)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "wind-02",
+     "label": "Crosswind > 25 kt takeoff technique",
+     "value": "N1 limited to 80% max below 40 KIAS; do not stabilize N1 between 45% and 70%",
+     "cite": "CTH Rev 2.5 p.16",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "wind-03",
+     "label": "Crosswind > 25 kt takeoff, company",
+     "value": "PIC must contact the FODM on duty; PIC and FODM must mutually agree the takeoff is safe",
+     "cite": "CFM Rev 3.3 p.83",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "wind-04",
+     "label": "Demonstrated crosswind, landing (dry)",
+     "value": "25 kt (demonstrated only; measured at 10 m height)",
+     "cite": "CFM Rev 3.3 p.83; CFM Rev 3.3 p.96",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "wind-05",
+     "label": "Contaminated runway crosswind, manufacturer (takeoff and landing)",
+     "value": "Contaminated 20 kt · Compacted snow 20 kt · Wet ice 15 kt (see AOM 2-10)",
+     "cite": "CFM Rev 3.3 p.83; CFM Rev 3.3 p.96",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "wind-06",
+     "label": "Contaminated runway crosswind, company",
+     "value": "15 kt; crews use the most restrictive limit",
+     "cite": "CFM Rev 3.3 p.83; CFM Rev 3.3 p.96",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "wind-07",
+     "label": "Flap setting for crosswind landing",
+     "value": "Before Landing checklist: \"When landing with a crosswind above 10 knots, flaps 3 will be used\"",
+     "cite": "CFM Rev 3.3 p.64; CFM Rev 3.3 p.73",
+     "conflict": {
+      "other_value": "\"Landing with reduced flap settings (flaps 3) is not recommended\" (crosswind landings section)",
+      "other_cite": "CFM Rev 3.3 p.96",
+      "note": "CFM checklist amplification says to use flaps 3 above 10 kt crosswind, but the CFM crosswind-landing section (rev 3.3 change 4.20) says flaps 3 is not recommended for crosswind landings. Ask instructor."
+     },
+     "verify_tag": true
+    },
+    {
+     "id": "wind-08",
+     "label": "Max tailwind component",
+     "value": "10 kt",
+     "cite": "CTH Rev 2.5 p.16",
+     "conflict": null,
+     "verify_tag": true
+    }
+   ]
+  },
+  {
+   "id": "engine",
+   "title": "Engine (Honeywell AS907-3-1E)",
+   "items": [
+    {
+     "id": "engine-01",
+     "label": "ITT — ground start",
+     "value": "650 °C",
+     "cite": "CTH Rev 2.5 p.18",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "engine-02",
+     "label": "ITT — in-flight start (ITT < 250 °C and N2 < 18%)",
+     "value": "400 °C; stays 400 °C until N2 is above 18% during the start",
+     "cite": "CTH Rev 2.5 p.18",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "engine-03",
+     "label": "ITT — all other in-flight starts",
+     "value": "800 °C",
+     "cite": "CTH Rev 2.5 p.18",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "engine-04",
+     "label": "ITT — takeoff power, OEI",
+     "value": "955 °C steady (10 min) · 970 °C transient (2 min)",
+     "cite": "CTH Rev 2.5 p.18",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "engine-05",
+     "label": "ITT — takeoff power, AEO, WAI OFF",
+     "value": "955 °C steady (5 min) · 970 °C transient (2 min)",
+     "cite": "CTH Rev 2.5 p.18",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "engine-06",
+     "label": "ITT — takeoff power, AEO, WAI ON",
+     "value": "955 °C steady (5 min) · 970 °C transient (2 min)",
+     "cite": "CTH Rev 2.5 p.18",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "engine-07",
+     "label": "ITT — maximum continuous",
+     "value": "950 °C steady",
+     "cite": "CTH Rev 2.5 p.18",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "engine-08",
+     "label": "ITT — below 80 KIAS",
+     "value": "920 °C steady · 935 °C transient",
+     "cite": "CTH Rev 2.5 p.18",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "engine-09",
+     "label": "Oil temperature",
+     "value": "Min 15 °C · Max 138 °C. 5–15 °C allowed if no thrust lever excursion above max continuous thrust; −40 to 5 °C allowed at ground idle only",
+     "cite": "CTH Rev 2.5 p.18",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "engine-10",
+     "label": "Min oil temperature to advance thrust above ground idle",
+     "value": "5 °C",
+     "cite": "CFM Rev 3.3 p.103; CTH Rev 2.5 p.18",
+     "conflict": {
+      "other_value": "Engine acceleration above idle allowed only if oil temperature is above 15 °C (and fuel ≥ 3 °C / no ENG FUEL LO TEMP)",
+      "other_cite": "CFM Rev 3.3 p.104",
+      "note": "CFM p.103 (engine start) and CTH p.18 allow thrust above idle at 5 °C oil; CFM p.104 (engine warm-up) says acceleration above idle needs oil above 15 °C. Ask instructor."
+     },
+     "verify_tag": true
+    },
+    {
+     "id": "engine-11",
+     "label": "Min oil temperature before TLA to TO/GA vs tank fuel temp",
+     "value": "> 3 °C: 15 °C · 3 to −20 °C: 27 °C · −20 to −25 °C: 35 °C · −25 to −30 °C: 40 °C · −30 to −35 °C: 40 °C (printed as '40°C (113°F)') · −35 to −40 °C: 50 °C",
+     "cite": "CFM Rev 3.3 p.104",
+     "conflict": {
+      "other_value": "45 °C (113 °F converts to 45 °C, not 40 °C)",
+      "other_cite": "CFM Rev 3.3 p.104",
+      "note": "Same table row prints 40 °C and 113 °F, which don't match. Can't tell which is right. Ask instructor."
+     },
+     "verify_tag": true
+    },
+    {
+     "id": "engine-12",
+     "label": "Cold start",
+     "value": "Start/motoring at ambient as low as −40 °C permitted if engine oil warmed to −40 °C and fuel at least 3 °C above its freeze point; no start attempts without warming above −40 °C",
+     "cite": "CFM Rev 3.3 p.103",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "engine-13",
+     "label": "Starter — starting and motoring",
+     "value": "Max 5 min accumulated or 3 consecutive cycles (whichever first), then 15 min cool-down before further start/motoring",
+     "cite": "CTH Rev 2.5 p.18; CTH Rev 2.5 p.30 (citing AOM 2-40)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "engine-14",
+     "label": "Starter — starting duty cycle",
+     "value": "80 s maximum",
+     "cite": "CTH Rev 2.5 p.18; CTH Rev 2.5 p.30 (citing AOM 2-40)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "engine-15",
+     "label": "Start with ITT above 450 °C",
+     "value": "Dry motor the engine 30 s before start",
+     "cite": "CTH Rev 2.5 p.30 (citing AOM 3-11); CFM Rev 3.3 p.80",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "engine-16",
+     "label": "HP thermal bow (restart 15–180 min after shutdown)",
+     "value": "Dry motor until N2 19–23% or 15 s (whichever first); wait ≥ 3 min; start within the 40-min window; if 40 min elapsed (and < 180 min total) repeat. Do not exceed 23% N2 while motoring",
+     "cite": "CTH Rev 2.5 p.20; CTH Rev 2.5 p.30 (citing AOM 3-11); CFM Rev 3.3 p.80",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "engine-17",
+     "label": "Thrust reversers",
+     "value": "On-ground braking device for landing and RTO only; no backing with reverse; stow (idle) at 40 kt",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 2-40; AOM 9-06-60); CFM Rev 3.3 p.95",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "engine-18",
+     "label": "Thrust rating TO-1",
+     "value": "P500 6,563 lb · P600 7,570 lb",
+     "cite": "CTH Rev 2.5 p.55",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "engine-19",
+     "label": "Max oil consumption",
+     "value": "0.04 qt per hour (1 qt per 25 hr)",
+     "cite": "CTH Rev 2.5 p.30 (citing AOM 9-06-50)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "engine-20",
+     "label": "CON thrust usage (company)",
+     "value": "CLB thrust for all climbs; CON only for OEI",
+     "cite": "CFM Rev 3.3 p.94",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "engine-21",
+     "label": "Freezing fog ground run-up",
+     "value": "Run up each engine to 70% N1 (10 s): OAT above −2 °C every 30 min; −2 to −9 °C every 15 min (max exposure 60 min); below −9 °C every 10 min (max exposure 50 min). If exceeded, engine must be manually de-iced",
+     "cite": "CFM Rev 3.3 p.106",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "engine-22",
+     "label": "Fan ice in flight (moderate/severe icing)",
+     "value": "If vibration suspected, reduce one thrust lever at a time toward 70% N1 for 30 s",
+     "cite": "CFM Rev 3.3 p.108",
+     "conflict": null,
+     "verify_tag": true
+    }
+   ]
+  },
+  {
+   "id": "apu",
+   "title": "APU (Honeywell 36-150)",
+   "items": [
+    {
+     "id": "apu-01",
+     "label": "Max altitude — start",
+     "value": "31,000 ft (ground start altitude = airplane operational envelope)",
+     "cite": "CTH Rev 2.5 p.17; CTH Rev 2.5 p.29 (citing AOM 9-04-50; AOM 2-38)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "apu-02",
+     "label": "Min temperature — in-flight start",
+     "value": "−37 °C (ground start temperature = airplane operational envelope)",
+     "cite": "CTH Rev 2.5 p.17",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "apu-03",
+     "label": "Max altitude — electrical",
+     "value": "31,000 ft",
+     "cite": "CTH Rev 2.5 p.17; CTH Rev 2.5 p.29 (citing AOM 9-04-50; AOM 2-38)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "apu-04",
+     "label": "Max altitude — bleed for assisted engine start",
+     "value": "23,000 ft",
+     "cite": "CTH Rev 2.5 p.17; CTH Rev 2.5 p.29 (citing AOM 9-04-50; AOM 2-38)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "apu-05",
+     "label": "Max altitude — ECS",
+     "value": "20,000 ft",
+     "cite": "CTH Rev 2.5 p.17",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "apu-06",
+     "label": "Rotor speed",
+     "value": "106% max",
+     "cite": "CTH Rev 2.5 p.17",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "apu-07",
+     "label": "EGT",
+     "value": "Start 985 °C · Continuous 757 °C",
+     "cite": "CTH Rev 2.5 p.17",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "apu-08",
+     "label": "Unsuccessful start attempts",
+     "value": "Up to 3 consecutive, with 30 s between attempts",
+     "cite": "CTH Rev 2.5 p.17; CTH Rev 2.5 p.28 (citing AOM 2-38)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "apu-09",
+     "label": "APU during de-icing",
+     "value": "APU operation not permitted during fluid application on the vertical tail, pylon and tail cone aft of the engine inlet; company: shut down APU during de-icing/anti-icing",
+     "cite": "CFM Rev 3.3 p.100; CFM Rev 3.3 p.74",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "apu-10",
+     "label": "Fire TEST with APU running",
+     "value": "Two consecutive fire TESTs within 15 s may shut the APU down",
+     "cite": "CTH Rev 2.5 p.27 (citing AOM 9-07-30)",
+     "conflict": null,
+     "verify_tag": true
+    }
+   ]
+  },
+  {
+   "id": "fuel",
+   "title": "Fuel",
+   "items": [
+    {
+     "id": "fuel-01",
+     "label": "P500 total capacity",
+     "value": "1,962 gal / 13,140 lb (each tank 980 gal / 6,575 lb)",
+     "cite": "CTH Rev 2.5 p.17",
+     "conflict": {
+      "other_value": "13,146 lb (p.27); 13,150 lb (p.55)",
+      "other_cite": "CTH Rev 2.5 p.27 (§7.7 answer); CTH Rev 2.5 p.55",
+      "note": "CTH prints three different P500 total-fuel weights. Ask instructor."
+     },
+     "verify_tag": true
+    },
+    {
+     "id": "fuel-02",
+     "label": "P500 usable fuel",
+     "value": "1,948 gal / 13,050 lb (each tank 974 gal / 6,525 lb)",
+     "cite": "CTH Rev 2.5 p.17; CTH Rev 2.5 p.55",
+     "conflict": {
+      "other_value": "13,058 lb",
+      "other_cite": "CTH Rev 2.5 p.27 (§7.7 answer)",
+      "note": "p.17 and p.55 say 13,050 lb; p.27 says 13,058 lb. Ask instructor."
+     },
+     "verify_tag": true
+    },
+    {
+     "id": "fuel-03",
+     "label": "P600 total capacity",
+     "value": "2,428 gal / 16,258 lb (each wing 981 gal / 6,573 lb · FWD 214 gal / 1,439 lb · VTRL 252 gal / 1,682 lb)",
+     "cite": "CTH Rev 2.5 p.17",
+     "conflict": {
+      "other_value": "16,262 lb",
+      "other_cite": "CTH Rev 2.5 p.27 (§7.7 answer); CTH Rev 2.5 p.55",
+      "note": "p.17 says 16,258 lb; pp.27 and 55 say 16,262 lb. Ask instructor."
+     },
+     "verify_tag": true
+    },
+    {
+     "id": "fuel-04",
+     "label": "P600 usable fuel (pressure refuel)",
+     "value": "2,409 gal / 16,140 lb (each wing 974 gal / 6,525 lb · FWD 213 gal / 1,433 lb · VTRL 248 gal / 1,653 lb)",
+     "cite": "CTH Rev 2.5 p.17",
+     "conflict": {
+      "other_value": "16,138 lb total; wing tanks 974 gal / 6,526 lb each",
+      "other_cite": "CTH Rev 2.5 p.27 (§7.7 answer); CTH Rev 2.5 p.55",
+      "note": "p.17 says 16,140 lb usable and 6,525 lb per wing; pp.27/55 say 16,138 lb and p.55 says 6,526 lb per wing. Ask instructor."
+     },
+     "verify_tag": true
+    },
+    {
+     "id": "fuel-05",
+     "label": "Refuel quantity",
+     "value": "Both P500 and P600 hold more fuel than listed; do not use the INCR button to max",
+     "cite": "CTH Rev 2.5 p.17",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "fuel-06",
+     "label": "Max fuel tank temperature for takeoff",
+     "value": "52 °C (125.6 °F)",
+     "cite": "CTH Rev 2.5 p.17; CTH Rev 2.5 p.27 (citing AOM 2-36)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "fuel-07",
+     "label": "Crossfeed",
+     "value": "FUEL XFEED knob OFF during takeoff, go-around and landing",
+     "cite": "CTH Rev 2.5 p.17; CTH Rev 2.5 p.26 (citing AOM 9-10-30; AOM 2-36)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "fuel-08",
+     "label": "P600 aux tank transfer",
+     "value": "Not allowed during XFEED operation, takeoff, go-around and landing",
+     "cite": "CTH Rev 2.5 p.27 (citing AOM 9-10350 [sic])",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "fuel-09",
+     "label": "Approved fuels",
+     "value": "ASTM D1655 Jet A / Jet A-1; MIL-DTL-83133 (JP-8, NATO F-34/F-35, JP-8+100); Brazilian CNP08 QAV-1; Chinese No. 3 Jet (GB6537-94); DEF STAN 91-91 AVTUR; GOST 10227-86 (RT, TS-1). Additives per AMM",
+     "cite": "CTH Rev 2.5 p.17",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "fuel-10",
+     "label": "FUEL LEAK SUSPECTED threshold",
+     "value": "Current vs expected quantity differs by > 880 lb for 5 min",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-10-50)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "fuel-11",
+     "label": "FUEL WING IMBALANCE threshold",
+     "value": "Imbalance > 510 lb",
+     "cite": "CTH Rev 2.5 p.27 (citing AOM 9-10-500 [sic])",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "fuel-12",
+     "label": "Fuel additive with cold oil",
+     "value": "If oil < 27 °C, takeoff thrust may drop HMU fuel below 3 °C; fuel must then contain icing inhibitor",
+     "cite": "CFM Rev 3.3 p.103",
+     "conflict": null,
+     "verify_tag": true
+    }
+   ]
+  },
+  {
+   "id": "pressurization",
+   "title": "Pressurization and oxygen",
+   "items": [
+    {
+     "id": "pressurization-01",
+     "label": "Max differential pressure",
+     "value": "9.64 psid (6,000 ft cabin) · 9.73 psid (5,800 ft cabin)",
+     "cite": "CTH Rev 2.5 p.18; CTH Rev 2.5 p.39 (citing AOM 2-48)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "pressurization-02",
+     "label": "Max differential overpressure",
+     "value": "10.4 psid",
+     "cite": "CTH Rev 2.5 p.18; CTH Rev 2.5 p.39 (citing AOM 2-48)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "pressurization-03",
+     "label": "Max negative differential pressure",
+     "value": "−0.5 psid",
+     "cite": "CTH Rev 2.5 p.18; CTH Rev 2.5 p.39 (citing AOM 2-48)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "pressurization-04",
+     "label": "Max differential pressure for takeoff and landing",
+     "value": "0.2 psid",
+     "cite": "CTH Rev 2.5 p.18",
+     "conflict": {
+      "other_value": ".02 psid",
+      "other_cite": "CTH Rev 2.5 p.39 (citing AOM 2-48)",
+      "note": "p.18 prints 0.2 psid; the §7.16 answer on p.39 prints .02 psid. Ask instructor."
+     },
+     "verify_tag": true
+    },
+    {
+     "id": "pressurization-05",
+     "label": "Manual DUMP altitude limit",
+     "value": "Cabin altitude limit function stops manual dump at 14,800 ± 200 ft",
+     "cite": "CTH Rev 2.5 p.39 (citing AOM 9-02-70)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "pressurization-06",
+     "label": "Auto DUMP",
+     "value": "Depressurizes at 2,000 ft/min up to 12,000 ft and opens emergency ram air door",
+     "cite": "CTH Rev 2.5 p.39 (citing AOM 9-02-70)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "pressurization-07",
+     "label": "External pneumatic source (non-adjustable)",
+     "value": "32 to 60 psi",
+     "cite": "CTH Rev 2.5 p.39 (citing AOM 3-01-35)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "pressurization-08",
+     "label": "Passenger mask auto deploy",
+     "value": "Cabin altitude above 14,500 ft (± 300 ft) with OXYGEN knob in PAX AUTO",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 9-14-30)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "pressurization-09",
+     "label": "Oxygen cylinder toggle",
+     "value": "Do not set ON when ambient temperature is below −15 °C",
+     "cite": "CTH Rev 2.5 p.37 (citing AOM 3-41)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "pressurization-10",
+     "label": "Crew mask donning",
+     "value": "Designed to be donned within 5 s",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 9-14-40)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "pressurization-11",
+     "label": "Oxygen dispatch pressure",
+     "value": "White pressure indication = advisory range; use oxygen dispatch pressure charts (AOM 9-14-50) for minimum dispatch pressure (charts not in these sources)",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 9-14-30); CFM Rev 3.3 p.32",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "pressurization-12",
+     "label": "Oxygen cylinder capacity / pressure",
+     "value": "1 bottle, 115 cu ft = 1,509 L total; fully charged 1,850 psi on gauge",
+     "cite": "CTH Rev 2.5 p.20; CTH Rev 2.5 p.21",
+     "conflict": {
+      "other_value": "\"77 liters and 115 liters\" (p.36); \"77 ft3 / 1,595 psi\" and \"115 ft3 / 1,110 psi\" for both models (p.56)",
+      "other_cite": "CTH Rev 2.5 p.36 (citing AOM 9-14-30); CTH Rev 2.5 p.56",
+      "note": "The CTH gives three different sets of oxygen capacity figures and units (liters vs cu ft) and different pressures. Ask instructor."
+     },
+     "verify_tag": true
+    }
+   ]
+  },
+  {
+   "id": "electrical",
+   "title": "Electrical",
+   "items": [
+    {
+     "id": "electrical-01",
+     "label": "System",
+     "value": "28 V DC, split bus",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-05-01)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "electrical-02",
+     "label": "GPU AVAIL",
+     "value": "Voltage between 25 V DC and 30 V DC",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-05-30)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "electrical-03",
+     "label": "Batteries",
+     "value": "Two 24 V DC 40 Ah NiCad",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-05-40)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "electrical-04",
+     "label": "Shed buses in flight",
+     "value": "Require two generators operating",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-05-55)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "electrical-05",
+     "label": "Black-airplane (FCS) battery",
+     "value": "Designed to last at least 15 min",
+     "cite": "CTH Rev 2.5 p.33 (citing AOM 9-08-40)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "electrical-06",
+     "label": "MEL: one main DC generator inop",
+     "value": "APU gen used throughout flight; no contaminated runways; at or below 31,000 ft (plus other conditions)",
+     "cite": "MEL Rev 14 item 24-31-01 (p. 24-2)",
+     "conflict": null,
+     "verify_tag": true
+    }
+   ]
+  },
+  {
+   "id": "hydraulics",
+   "title": "Hydraulics",
+   "items": [
+    {
+     "id": "hydraulics-01",
+     "label": "Nominal pressure",
+     "value": "3,000 psi (3 systems)",
+     "cite": "CTH Rev 2.5 p.20; CTH Rev 2.5 p.31 (citing AOM 9-11-01)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "hydraulics-02",
+     "label": "Low-pressure tick mark",
+     "value": "Amber tick at 1,800 psi on synoptic",
+     "cite": "CTH Rev 2.5 p.31 (citing AOM 9-11-30)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "hydraulics-03",
+     "label": "Overheat protection",
+     "value": "Inhibited on the remaining system if any 2 of 3 systems overheat",
+     "cite": "CTH Rev 2.5 p.20; CTH Rev 2.5 p.31 (citing AOM 9-11-50)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "hydraulics-04",
+     "label": "HYD LO PRESS + LO QTY (OB)",
+     "value": "If >HYD 1 (2) LO PRESS shows together with HYD 1 (2) LO QTY, close the associated EDP (EDP 1/2 SHUTOFF) after completing the >HYD LO PRESS procedure, whether or not SPOILER FAULT is shown",
+     "cite": "Embraer OB P550-001/23 (29 May 2023) p.2",
+     "conflict": null,
+     "verify_tag": true
+    }
+   ]
+  },
+  {
+   "id": "ice",
+   "title": "Ice protection and cold weather",
+   "items": [
+    {
+     "id": "ice-01",
+     "label": "Icing conditions — ground/takeoff",
+     "value": "SAT (CTH: OAT) +10 °C or less with visible moisture (incl. fog vis ≤ 1 mi), or ramps/taxiways/runways with snow, ice, standing water or slush",
+     "cite": "CFM Rev 3.3 p.97; CTH Rev 2.5 p.40 (citing AOM 2-50)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "ice-02",
+     "label": "Icing conditions — in flight",
+     "value": "TAT +10 °C or less with visible moisture",
+     "cite": "CFM Rev 3.3 p.97; CTH Rev 2.5 p.40 (citing AOM 2-50)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "ice-03",
+     "label": "ICE PROT MODE for takeoff",
+     "value": "ENG if OAT 5–10 °C (with visible moisture possible up to 1,700 ft AGL or contaminated surfaces); ALL if OAT below 5 °C (same conditions); AUTO otherwise. ALL for landing with OAT below +10 °C and visible moisture",
+     "cite": "CFM Rev 3.3 p.97; CTH Rev 2.5 p.40 (citing AOM 9-12-50)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "ice-04",
+     "label": "After takeoff",
+     "value": "ICE PROT MODE to AUTO at 1,700 ft AGL",
+     "cite": "CFM Rev 3.3 p.108",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "ice-05",
+     "label": "AUTO mode activation",
+     "value": "Above 1,700 ft AGL or 2 min airborne, whichever first; wing/stab off 2 min after icing no longer detected",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 9-12-50); CTH Rev 2.5 p.41 (citing AOM 9-12-50)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "ice-06",
+     "label": "Max altitude, anti-ice single bleed",
+     "value": "20,000 ft",
+     "cite": "CTH Rev 2.5 p.18; CTH Rev 2.5 p.40 (citing AOM 2-50)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "ice-07",
+     "label": "ICE SPEED RESET",
+     "value": "Select only if crew is certain there is no ice accretion",
+     "cite": "CFM Rev 3.3 p.108; CTH Rev 2.5 p.40 (citing AOM 2-50)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "ice-08",
+     "label": "Holding in icing",
+     "value": "Gear and flaps UP; recommended 200 KIAS; avoid holding in icing with flaps extended",
+     "cite": "CFM Rev 3.3 p.97; CFM Rev 3.3 p.108",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "ice-09",
+     "label": "APU bleed for ice protection",
+     "value": "Not used (except ground tests)",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 9-12-50)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "ice-10",
+     "label": "Windshield heat on battery",
+     "value": "WHS does not operate on battery power",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 9-12-50)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "ice-11",
+     "label": "De-icing: bleeds",
+     "value": "If engines running during spraying, both engine bleeds OFF; wait ≥ 1 min after application before bleeds ON and ≥ 3 min before packs ON",
+     "cite": "CFM Rev 3.3 p.100; CFM Rev 3.3 p.102",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "ice-12",
+     "label": "Takeoff with frost/ice/snow",
+     "value": "All surfaces must be free of frost, ice and snow; pre-takeoff contamination check within holdover time",
+     "cite": "CFM Rev 3.3 p.98; CFM Rev 3.3 p.107",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "ice-13",
+     "label": "Anti-skid",
+     "value": "Not provided below 10 KIAS",
+     "cite": "CFM Rev 3.3 p.105",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "ice-14",
+     "label": "Approved fluids",
+     "value": "Type I (SAE AMS 1424); Type II, III, IV (SAE AMS 1428)",
+     "cite": "CFM Rev 3.3 p.101",
+     "conflict": null,
+     "verify_tag": true
+    }
+   ]
+  },
+  {
+   "id": "autoflight",
+   "title": "Autopilot, autothrottle, FD, avionics",
+   "items": [
+    {
+     "id": "autoflight-01",
+     "label": "AP minimum engagement height",
+     "value": "400 ft",
+     "cite": "CTH Rev 2.5 p.18; CTH Rev 2.5 p.36 (citing AOM 2-56)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "autoflight-02",
+     "label": "AP minimum use height",
+     "value": "80 ft with vertical path reference · 180 ft without",
+     "cite": "CTH Rev 2.5 p.18; CTH Rev 2.5 p.36 (citing AOM 2-56)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "autoflight-03",
+     "label": "Landing with autothrottle engaged",
+     "value": "Add 5 KIAS to VREF and multiply flaps unfactored landing distance by 1.1 (also multiplied by any operator factors); in abnormal procedures add 5 KIAS to the procedure VREF. OPERA with VREF OVERSPEED +5 already corrects",
+     "cite": "CTH Rev 2.5 p.18; CTH Rev 2.5 p.36 (citing AOM 2-56); CFM Rev 3.3 p.95",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "autoflight-04",
+     "label": "Autothrottle approval",
+     "value": "All phases incl. takeoff, landing and OEI; HOLD mode from 60 kt to 400 ft AGL",
+     "cite": "CTH Rev 2.5 p.35 (citing AOM 9-03-50); CTH Rev 2.5 p.36 (citing AOM 9-03-50)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "autoflight-05",
+     "label": "Autobrake",
+     "value": "Must be OFF for emergency and abnormal procedures",
+     "cite": "CTH Rev 2.5 p.18; CTH Rev 2.5 p.38 (citing AOM 2-49); CFM Rev 3.3 p.96",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "autoflight-06",
+     "label": "FMS speeds",
+     "value": "Not approved for OEI operations; FMS has no OEI speeds or drift-down",
+     "cite": "CTH Rev 2.5 p.19; CTH Rev 2.5 p.46 (citing AOM 2-56)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "autoflight-07",
+     "label": "SPD knob before takeoff",
+     "value": "MAN",
+     "cite": "CTH Rev 2.5 p.46 (citing AOM 2-56)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "autoflight-08",
+     "label": "Raw data navigation",
+     "value": "Speed mode source must be MANUAL (SPD knob to MAN)",
+     "cite": "CTH Rev 2.5 p.19",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "autoflight-09",
+     "label": "MFW charts/maps",
+     "value": "Situational awareness only; primary navigation use prohibited",
+     "cite": "CTH Rev 2.5 p.19",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "autoflight-10",
+     "label": "Embraer electronic manuals",
+     "value": "Use of Embraer electronic manuals (AFM, AOM, QRH, OBs, maintenance manuals) is prohibited",
+     "cite": "CTH Rev 2.5 p.19",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "autoflight-11",
+     "label": "SVS",
+     "value": "Situational awareness only; not primary; does not assure IFR ops below published minimums",
+     "cite": "CTH Rev 2.5 p.19; CTH Rev 2.5 p.46 (citing AOM 9-09-60)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "autoflight-12",
+     "label": "IFIS",
+     "value": "Single IFIS not approved for paperless cockpit; dual IFIS is not by itself approval",
+     "cite": "CTH Rev 2.5 p.19",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "autoflight-13",
+     "label": "XM weather",
+     "value": "Not a primary source of weather data; unavailable on P600",
+     "cite": "CTH Rev 2.5 p.17",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "autoflight-14",
+     "label": "TAWS",
+     "value": "Navigation must not be predicated on TAWS; inhibit when landing at an airport not in the database; manually inhibit during QFE ops if GPS unavailable",
+     "cite": "CTH Rev 2.5 p.17",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "autoflight-15",
+     "label": "TCAS II",
+     "value": "Deviate from ATC altitude only as needed to comply with an RA; no maneuvers based solely on a TA or traffic display",
+     "cite": "CTH Rev 2.5 p.17",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "autoflight-16",
+     "label": "ACARS",
+     "value": "Only messages that won't create an unsafe condition if improperly received (unless verified); P600 only",
+     "cite": "CTH Rev 2.5 p.18",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "autoflight-17",
+     "label": "ATN-CPDLC",
+     "value": "Supplementary means, non-time-critical messages; cruise above FL200, non-critical messaging; P600 only",
+     "cite": "CTH Rev 2.5 p.18; CTH Rev 2.5 p.42 (citing AOM 2-64)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "autoflight-18",
+     "label": "ADS-B OUT",
+     "value": "Must be available entire flight incl. ground; active transponder not in STDBY while taxiing",
+     "cite": "CTH Rev 2.5 p.18",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "autoflight-19",
+     "label": "Electronic checklist (ECL)",
+     "value": "Currently not approved on the Praetor fleet",
+     "cite": "CTH Rev 2.5 p.18",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "autoflight-20",
+     "label": "OMS",
+     "value": "Min altitude for in-flight use 10,000 ft; no troubleshooting in flight",
+     "cite": "CTH Rev 2.5 p.18",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "autoflight-21",
+     "label": "HF and ADF",
+     "value": "Don't rely on ADF indications on the PFD while transmitting HF",
+     "cite": "CTH Rev 2.5 p.19; CTH Rev 2.5 p.42 (citing AOM 2-64)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "autoflight-22",
+     "label": "Company FD/AP use",
+     "value": "No FD mode changes below 400 ft AGL; TOGA selected for takeoff until at least 400 ft AGL; half bank engages automatically at 25,000 ft",
+     "cite": "CFM Rev 3.3 p.85; CFM Rev 3.3 p.86; CTH Rev 2.5 p.35 (citing AOM 9-03-40)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "autoflight-23",
+     "label": "Normal landing configuration",
+     "value": "Stabilized 3° glidepath, gear down, flaps 3 or FULL, cross 50 ft at adjusted VREF; ATS currently retards at 30 ft so +5 kt is added (VAPP)",
+     "cite": "CFM Rev 3.3 p.95",
+     "conflict": null,
+     "verify_tag": true
+    }
+   ]
+  },
+  {
+   "id": "navigation",
+   "title": "Navigation (RVSM, Baro-VNAV, GPS/RAIM, RNP, approaches)",
+   "items": [
+    {
+     "id": "navigation-01",
+     "label": "FMS operator's guide",
+     "value": "Collins Pro Line Fusion FMS Operator's Guide P/N 523-0818863 must be immediately available when navigation is predicated on the FMS",
+     "cite": "CTH Rev 2.5 p.18",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "navigation-02",
+     "label": "Navigation database",
+     "value": "Verify cycle is valid; FMS use limited to regions in the database; compare retrieved procedures with charts, don't use if different",
+     "cite": "CTH Rev 2.5 p.19; CTH Rev 2.5 p.18",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "navigation-03",
+     "label": "GPS use",
+     "value": "Limited to airspace where GPS is approved; GNSS ALT/HT must not be used for altitude compliance",
+     "cite": "CTH Rev 2.5 p.19",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "navigation-04",
+     "label": "GPS-only approach",
+     "value": "Before dispatch confirm predictive RAIM at destination ETA within approach criteria",
+     "cite": "CTH Rev 2.5 p.19",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "navigation-05",
+     "label": "LPV",
+     "value": "Dual GPS required",
+     "cite": "CTH Rev 2.5 p.19",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "navigation-06",
+     "label": "LP approaches",
+     "value": "Cannot be performed (Collins Pro Line Fusion limitation)",
+     "cite": "CFM Rev 3.3 p.91",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "navigation-07",
+     "label": "Non-GPS approach using FMS guidance",
+     "value": "Procedure navaids and associated avionics (VOR, DME, ADF) must be operational",
+     "cite": "CTH Rev 2.5 p.19",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "navigation-08",
+     "label": "VOR/NDB approaches",
+     "value": "FMS not authorized as nav source (monitor only); ground navaid data is final authority",
+     "cite": "CFM Rev 3.3 p.92",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "navigation-09",
+     "label": "Baro-VNAV",
+     "value": "Prohibited below published minimums without visibility; prohibited with remote altimeter setting; prohibited outside chart temperature limits unless using VNAV temperature compensation",
+     "cite": "CTH Rev 2.5 p.19",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "navigation-10",
+     "label": "VNAV",
+     "value": "FD required for VNAV operations",
+     "cite": "CTH Rev 2.5 p.19",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "navigation-11",
+     "label": "LNAV-only approaches",
+     "value": "APPR button shall not be pressed (AFM 2-64); fly LNAV + VNAV per OpSpec C073",
+     "cite": "CFM Rev 3.3 p.91",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "navigation-12",
+     "label": "V-MDA approaches",
+     "value": "VNAV only to the FAF; FPA or VS after the FAF",
+     "cite": "CFM Rev 3.3 p.90; CFM Rev 3.3 p.92",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "navigation-13",
+     "label": "ILS APPR button",
+     "value": "Press only when heading deviation from ILS course < 90° and within 30 NM of destination",
+     "cite": "CTH Rev 2.5 p.19",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "navigation-14",
+     "label": "RNP lateral sensitivity",
+     "value": "FMS sets lateral deviation sensitivity from RNP value in the nav database",
+     "cite": "CTH Rev 2.5 p.46 (citing AOM 9-09-60)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "navigation-15",
+     "label": "RVSM compliant ADS",
+     "value": "ADS 1, 2 and 3 compliant; SFIS must not be used; ADS X SLIPCOMP FAIL = not compliant",
+     "cite": "CTH Rev 2.5 p.19",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "navigation-16",
+     "label": "RVSM minimum equipment",
+     "value": "2 RVSM-compliant air data systems, 1 AP with ALT hold, 1 altitude alerter, 1 transponder; failure before RVSM entry → request new clearance",
+     "cite": "CTH Rev 2.5 p.19",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "navigation-17",
+     "label": "Approach category",
+     "value": "Straight-in: P500 CAT B, P600 CAT C · All Flexjet aircraft circle as CAT C",
+     "cite": "CTH Rev 2.5 p.19; CFM Rev 3.3 p.93",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "navigation-18",
+     "label": "Steep approach",
+     "value": "4.5°–5.5° glidepath only on steep-approach-capable aircraft, but not authorized at Flexjet",
+     "cite": "CTH Rev 2.5 p.17",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "navigation-19",
+     "label": "Category II",
+     "value": "Prohibited",
+     "cite": "CTH Rev 2.5 p.17",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "navigation-20",
+     "label": "Dual FMS TOLD",
+     "value": "Approved (no AFM cross-check needed); no intermixing of AFM/OPERA/TOLD in a phase of flight; advisory only: AEO gradient, SID gradient, VAP, VFS",
+     "cite": "CTH Rev 2.5 p.19",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "navigation-21",
+     "label": "Magnetic heading accuracy / AHRS",
+     "value": "Heading accuracy vs latitude table (AHRS AHC-4000) on page; not extracted",
+     "cite": "CTH Rev 2.5 p.18",
+     "conflict": null,
+     "verify_tag": true
+    }
+   ]
+  },
+  {
+   "id": "prohibitions",
+   "title": "Prohibitions and miscellaneous",
+   "items": [
+    {
+     "id": "prohibitions-01",
+     "label": "Aerobatics and spins",
+     "value": "Prohibited",
+     "cite": "CTH Rev 2.5 p.17",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "prohibitions-02",
+     "label": "Ditching",
+     "value": "Not certified for ditching (procedure exists in AFM)",
+     "cite": "CTH Rev 2.5 p.19",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "prohibitions-03",
+     "label": "Cabin interior doors",
+     "value": "Secured open for taxi, takeoff and landing; galley/cabin door disabled OPEN (P600 AFM limitation)",
+     "cite": "CTH Rev 2.5 p.17",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "prohibitions-04",
+     "label": "Lavatory with emergency exit",
+     "value": "Lav door secured and locked open for taxi, takeoff and landing",
+     "cite": "CTH Rev 2.5 p.17",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "prohibitions-05",
+     "label": "Divan",
+     "value": "Not occupied for taxi/takeoff/landing by anyone under 15, with shoulder height below backrest, or holding an infant",
+     "cite": "CTH Rev 2.5 p.17; CFM Rev 3.3 p.42",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "prohibitions-06",
+     "label": "Pilot table",
+     "value": "Stowed for taxi, takeoff and landing",
+     "cite": "CTH Rev 2.5 p.17",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "prohibitions-07",
+     "label": "Towing",
+     "value": "Braking under tow may cause structural damage / nose gear collapse; if applied, inspect before next flight",
+     "cite": "CTH Rev 2.5 p.17",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "prohibitions-08",
+     "label": "Cargo fire bottle",
+     "value": "Metered bottle 78 or 110 min (placard in cargo compartment); Flexjet fleet: 110 min",
+     "cite": "CTH Rev 2.5 p.18; CTH Rev 2.5 p.21",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "prohibitions-09",
+     "label": "Single-engine taxi",
+     "value": "Not permitted for normal operations; taxi with both engines",
+     "cite": "CFM Rev 3.3 p.82; CFM Rev 3.3 p.96",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "prohibitions-10",
+     "label": "Souls on board",
+     "value": "13 souls total (11 pax, 2 crew)",
+     "cite": "CFM Rev 3.3 p.82",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "prohibitions-11",
+     "label": "Passenger oxygen masks",
+     "value": "P500 13 · P600 14",
+     "cite": "CFM Rev 3.3 p.82",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "prohibitions-12",
+     "label": "Passenger seats",
+     "value": "8 seats (9 on P600)",
+     "cite": "CFM Rev 3.3 p.82",
+     "conflict": {
+      "other_value": "P500 9 seats; P600 12 seats (8 to 12 passengers)",
+      "other_cite": "CTH Rev 2.5 p.56",
+      "note": "CFM p.82 and CTH p.56 list different seat counts. Ask instructor."
+     },
+     "verify_tag": true
+    },
+    {
+     "id": "prohibitions-13",
+     "label": "Lap children",
+     "value": "2 (per Crew Awareness Guide)",
+     "cite": "CFM Rev 3.3 p.82",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "prohibitions-14",
+     "label": "Life rafts",
+     "value": "P500: 1 · P600: 2 (9 souls each), in aft storage compartment",
+     "cite": "CFM Rev 3.3 p.82",
+     "conflict": {
+      "other_value": "P500: 1 raft in aft storage closet, 13-soul capacity · P600: 2 rafts in the forward storage closet, 9 souls each",
+      "other_cite": "CFM Rev 3.3 p.18",
+      "note": "The cockpit setup checklist (p.18) and passenger limitations (p.82) differ on P500 raft capacity and P600 raft location. Ask instructor."
+     },
+     "verify_tag": true
+    },
+    {
+     "id": "prohibitions-15",
+     "label": "Life vests",
+     "value": "1 at each seat; no additional life vests",
+     "cite": "CFM Rev 3.3 p.82",
+     "conflict": {
+      "other_value": "Nine: one at each seat plus one in the lavatory vanity top drawer",
+      "other_cite": "CFM Rev 3.3 p.18",
+      "note": "p.82 says no additional vests; p.18 lists an extra vest in the lavatory. Ask instructor."
+     },
+     "verify_tag": true
+    },
+    {
+     "id": "prohibitions-16",
+     "label": "Brake temperature",
+     "value": "Green range before takeoff",
+     "cite": "CTH Rev 2.5 p.37 (citing AOM 3-15)",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "prohibitions-17",
+     "label": "Last 1,000 ft of climb/descent",
+     "value": "≤ 1,000 fpm (company, TCAS)",
+     "cite": "CFM Rev 3.3 p.83; CFM Rev 3.3 p.89",
+     "conflict": null,
+     "verify_tag": true
+    }
+   ]
+  },
+  {
+   "id": "differences",
+   "title": "Praetor 500 vs 600 differences",
+   "items": [
+    {
+     "id": "differences-01",
+     "label": "Weights (MTOW)",
+     "value": "P500 37,567 lb · P600 42,858 lb",
+     "cite": "CTH Rev 2.5 p.16",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "differences-02",
+     "label": "Fuel tanks",
+     "value": "P500: 2 wing tanks · P600: wing tanks + FWD aux + ventral (VTRL) aux; aux tanks pressurized by engine/APU bleed, feed the wings only",
+     "cite": "CTH Rev 2.5 p.17; CTH Rev 2.5 p.56",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "differences-03",
+     "label": "Approach category (straight-in)",
+     "value": "P500 CAT B · P600 CAT C (all circle as CAT C)",
+     "cite": "CTH Rev 2.5 p.19",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "differences-04",
+     "label": "Thrust TO-1",
+     "value": "P500 6,563 lb · P600 7,570 lb",
+     "cite": "CTH Rev 2.5 p.55",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "differences-05",
+     "label": "Length",
+     "value": "P500 64'7\" · P600 68'0.5\" (p.16: 68'05\")",
+     "cite": "CTH Rev 2.5 p.55; CTH Rev 2.5 p.16",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "differences-06",
+     "label": "Normal climb speeds (Schedule 2)",
+     "value": "P500 250 KIAS / M0.72 · P600 250 KIAS / M0.74",
+     "cite": "CFM Rev 3.3 p.94",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "differences-07",
+     "label": "Life rafts / O2 masks",
+     "value": "P500 1 raft, 13 pax masks · P600 2 rafts, 14 pax masks",
+     "cite": "CFM Rev 3.3 p.82",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "differences-08",
+     "label": "P600-only datalink",
+     "value": "ACARS and CPDLC currently only on P600; XM weather unavailable on P600",
+     "cite": "CTH Rev 2.5 p.17; CTH Rev 2.5 p.18",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "differences-09",
+     "label": "Galley/cabin door",
+     "value": "Disabled OPEN is a P600 AFM limitation",
+     "cite": "CTH Rev 2.5 p.17",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "differences-10",
+     "label": "Lav door switch",
+     "value": "Electric lav door switch in cockpit on S/N 10070 and subsequent (lav emergency exit)",
+     "cite": "CTH Rev 2.5 p.56",
+     "conflict": null,
+     "verify_tag": true
+    },
+    {
+     "id": "differences-11",
+     "label": "CG envelopes",
+     "value": "Different per model (see weights category)",
+     "cite": "CTH Rev 2.5 p.55",
+     "conflict": null,
+     "verify_tag": true
+    }
+   ]
+  }
+ ]
+}

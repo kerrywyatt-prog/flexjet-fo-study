@@ -17,6 +17,7 @@
   const F = () => window.FOStudy;
   const esc = (s) => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   const strip = (h) => String(h || '').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/\s+/g, ' ').trim();
+  const nl = (s) => esc(s).replace(/\n/g, '<br>');
   const slug = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 48);
   const chev = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>';
 
@@ -264,7 +265,7 @@
     if (c) {
       page(c.title, 'Limitations', '/checkride/limits', `
         <div class="btnrow"><button class="btn btn-primary" data-nav="/drill/limits/${esc(c.id)}">Drill this category (${c.items.length})</button></div>
-        ${c.items.map(i => `<div class="card limcard" id="lim-${esc(i.id)}"><div class="lim-label">${esc(i.label)}</div><div class="lim-value">${esc(i.value)}</div>
+        ${c.items.map(i => `<div class="card limcard" id="lim-${esc(i.id)}"><div class="lim-label">${esc(i.label)}</div><div class="lim-value">${nl(i.value)}</div>
           <div class="lim-foot"><span class="cite">[${esc(i.cite)}]</span>${i.verify_tag ? VTAG : ''}</div>${conflictHtml(i.conflict)}</div>`).join('')}`);
       return focusTarget(target);
     }
@@ -272,7 +273,8 @@
     page('Limitations', 'Checkride Prep', '/checkride', `
       <div class="card"><p>${n} limitation cards from the CTH §5, CFM §4 and MEL, each with a page cite. ${VTAG} Conflicts show both values: <span class="conf">conflict — ask instructor</span>.</p>
       <div class="btnrow"><button class="btn btn-primary" data-nav="/drill/limits">Drill all ${n}</button>${nc ? `<button class="btn btn-ghost" data-nav="/drill/limits/conflicts">Conflicts (${nc})</button>` : ''}</div></div>
-      ${list(cats.map(c => row('/checkride/limits/' + c.id, esc(c.title), c.items.length + ' cards' + (c.items.some(i => i.conflict) ? ' · ⚠' : ''))))}`);
+      ${list(cats.map(c => row('/checkride/limits/' + c.id, esc(c.title), c.items.length + ' cards' + (c.items.some(i => i.conflict) ? ' · ⚠' : ''))))}
+      ${lim.source_note ? `<details class="qa"><summary>About these sources</summary><div class="rich"><p>${esc(lim.source_note)}</p></div></details>` : ''}`);
   }
   async function viewSystems(sub, target) {
     const sys = await systems();
@@ -283,19 +285,20 @@
     if (x) {
       const pts = (a) => (a || []).map(p => `<li>${esc(p.text)} <span class="cite">[${esc(p.cite)}]</span></li>`).join('');
       page(x.title, 'Systems · AOM ' + (x.aom_chapter || ''), '/checkride/systems', `
-        <div class="card"><p>${VTAG}</p><div class="btnrow"><button class="btn btn-primary" data-nav="/drill/systems/${esc(x.id)}">Drill ${(x.cards || []).length} cards</button></div></div>
+        <div class="card"><p class="muted small">${x.cth_section ? 'CTH §' + esc(x.cth_section) : ''}${x.cth_pages ? ' · pp.' + esc(Array.isArray(x.cth_pages) ? x.cth_pages.join(', ') : x.cth_pages) : ''}${(x.aom_sections_cited || []).length ? ' · cites AOM ' + esc(x.aom_sections_cited.join(', ')) : ''}</p><p>${VTAG}</p><div class="btnrow"><button class="btn btn-primary" data-nav="/drill/systems/${esc(x.id)}">Drill ${(x.cards || []).length} cards</button></div></div>
         ${(x.summary_points || []).length ? `<div class="card"><h3><span class="dot"></span>Key points</h3><ul>${pts(x.summary_points)}</ul></div>` : ''}
         ${(x.mel_notes || []).length ? `<div class="card"><h3><span class="dot"></span>MEL notes</h3><ul>${pts(x.mel_notes)}</ul></div>` : ''}
         ${(x.ob_notes || []).length ? `<div class="card"><h3><span class="dot"></span>Operational Bulletin notes</h3><ul>${pts(x.ob_notes)}</ul><button class="btn btn-ghost" data-nav="/bulletins">Bulletins</button></div>` : ''}
         ${label('Review questions (tap to reveal)')}
-        ${(x.cards || []).map(c => `<details class="qa" id="sys-${esc(c.id)}"><summary>${esc(c.q)}</summary><div class="rich"><p>${esc(c.a)}</p><p class="cite">(${esc(c.cite)})</p></div></details>`).join('')}`);
+        ${(x.cards || []).map(c => `<details class="qa" id="sys-${esc(c.id)}"><summary>${esc(c.q)}</summary><div class="rich"><p>${nl(c.a)}</p><p class="cite">${esc(c.cite)}</p></div></details>`).join('')}`);
       return focusTarget(target);
     }
     const n = sys.systems.reduce((a, c) => a + (c.cards || []).length, 0);
     page('Systems', 'Checkride Prep', '/checkride', `
-      <div class="card"><p>${n} systems cards from the CTH §7 review questions, grouped by AOM chapter. Cites read “(CTH, citing AOM 9-xx-xx)”. ${VTAG}</p>
+      <div class="card"><p>${n} systems cards from the CTH §7 review questions, grouped by AOM chapter. Each cite gives the CTH page and the AOM paragraph the CTH cites, e.g. “CTH Rev 2.5 p.30 (citing AOM 9-11-01)”. ${VTAG}</p>
       <div class="btnrow"><button class="btn btn-primary" data-nav="/drill/systems">Drill all ${n}</button></div></div>
-      ${list(sys.systems.map(x => row('/checkride/systems/' + x.id, esc(x.title), `AOM ${esc(x.aom_chapter || '—')} · ${(x.cards || []).length} cards`)))}`);
+      ${list(sys.systems.map(x => row('/checkride/systems/' + x.id, esc(x.title), `AOM ${esc(x.aom_chapter || '—')} · ${(x.cards || []).length} cards`)))}
+      ${sys.source_note ? `<details class="qa"><summary>About these sources</summary><div class="rich"><p>${esc(sys.source_note)}</p></div></details>` : ''}`);
   }
   async function viewMEL(target) {
     const s = await study();
@@ -394,13 +397,13 @@
       if (sub === 'conflicts') items = items.filter(x => x.i.conflict); else if (sub) items = items.filter(x => x.c.id === sub);
       const cat = sub && lim.categories.find(c => c.id === sub);
       return { title: 'Limitations' + (cat ? ' · ' + cat.title : sub === 'conflicts' ? ' · conflicts' : ''), back: '/checkride/limits' + (cat ? '/' + cat.id : ''),
-        cards: items.map(({ c, i }) => ({ id: i.id, front: `<div class="fc-section">${esc(c.title)}</div><h2 class="fc-q">${esc(i.label)}</h2>`, back: `<p class="fc-big">${esc(i.value)}</p><p class="cite">[${esc(i.cite)}]</p>${i.verify_tag ? VTAG : ''}${conflictHtml(i.conflict)}`, link: '/checkride/limits/' + i.id })) };
+        cards: items.map(({ c, i }) => ({ id: i.id, front: `<div class="fc-section">${esc(c.title)}</div><h2 class="fc-q">${esc(i.label)}</h2>`, back: `<p class="fc-big">${nl(i.value)}</p><p class="cite">[${esc(i.cite)}]</p>${i.verify_tag ? VTAG : ''}${conflictHtml(i.conflict)}`, link: '/checkride/limits/' + i.id })) };
     }
     if (deck === 'systems') {
       const sys = await systems(); if (!sys) return { missing: 'The systems set', back: '/checkride/systems' };
       const pick = sub ? sys.systems.filter(x => x.id === sub || x.aom_chapter === sub) : sys.systems;
       return { title: 'Systems' + (sub && pick[0] ? ' · ' + pick[0].title : ''), back: '/checkride/systems' + (sub && pick.length === 1 ? '/' + pick[0].id : ''),
-        cards: pick.flatMap(x => (x.cards || []).map(c => ({ id: c.id, front: `<div class="fc-section">${esc(x.title)} · AOM ${esc(x.aom_chapter || '')}</div><h2 class="fc-q">${esc(c.q)}</h2>`, back: `<p class="fc-big">${esc(c.a)}</p><p class="cite">(${esc(c.cite)})</p>${VTAG}`, link: '/checkride/systems/' + c.id }))) };
+        cards: pick.flatMap(x => (x.cards || []).map(c => ({ id: c.id, front: `<div class="fc-section">${esc(x.title)} · AOM ${esc(x.aom_chapter || '')}</div><h2 class="fc-q">${esc(c.q)}</h2>`, back: `<p class="fc-big">${nl(c.a)}</p><p class="cite">${esc(c.cite)}</p>${VTAG}`, link: '/checkride/systems/' + c.id }))) };
     }
     return null;
   }

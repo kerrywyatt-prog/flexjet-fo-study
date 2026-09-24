@@ -1,0 +1,4661 @@
+{
+ "source_note": "Praetor 500/600 systems study for Kerry Wyatt (FO, SIMCOM initial Sep 29, 2026). One entry per Flexjet Crew Training Handbook Rev 2.5 §7 'Systems Review Questions' section (24 sections), mapped to the AOM chapter its answers cite. cards = every §7 question with its CTH answer (formatting cleanup only; AOM references moved out of the answer into cite, typos like 'AOM 9-10350' kept as printed). Duplicate questions printed twice in the CTH (e.g. 7.5 q05/q20, 7.20 q58–61/q89–92) are kept. summary_points are distilled only from those answers (the one exception cites CTH §6 p.20) and cite the card ids. mel_notes from Praetor MEL Rev 14 (02-17-26); ob_notes from Embraer OB P550-001/23. No AOM was available: the AOM references are as cited by the CTH and haven't been checked against the AOM. CTH page numbers = printed pages. 7.24 tables were rebuilt by hand from a two-column layout.",
+ "systems": [
+  {
+   "id": "aircraft-general",
+   "aom_chapter": "9-01",
+   "title": "Aircraft General",
+   "cth_section": "7.1 AIRCRAFT GENERAL",
+   "cth_pages": "22–23",
+   "aom_sections_cited": [
+    "9-13",
+    "9-01"
+   ],
+   "summary_points": [
+    {
+     "text": "4 identical display units; window types PFD, MFD and EICAS; MFW sizes ¼, ½ and full.",
+     "cite": "CTH Rev 2.5 p.22 (citing AOM 9-01-35; AOM 9-01-5) [cards q10, q11, q12]"
+    },
+    {
+     "text": "In an electrical emergency only the CTR DU remains available.",
+     "cite": "CTH Rev 2.5 p.22 (citing AOM 9-01-35) [cards q13]"
+    },
+    {
+     "text": "Cockpit philosophy is dark and quiet; an illuminated white striped bar means a button is not in its normal position.",
+     "cite": "CTH Rev 2.5 p.22 (citing AOM 9-01-20) [cards q08, q09]"
+    },
+    {
+     "text": "Emergency exit: over the right wing forward of the lavatory, or in the lavatory.",
+     "cite": "CTH Rev 2.5 p.22 (citing AOM 9-01-60) [cards q15]"
+    },
+    {
+     "text": "STATUS synoptic shows 5 doors: main cabin, cargo compartment, emergency exit, fuel and electronic bay.",
+     "cite": "CTH Rev 2.5 p.22 (citing AOM 9-01-60) [cards q16]"
+    },
+    {
+     "text": "Emergency equipment: flashlights, life vests, life rafts, fire extinguishers, crash axe, smoke goggles, ELT, crew and pax O2, first aid kit.",
+     "cite": "CTH Rev 2.5 p.22 (citing AOM 9-01-70) [cards q17]"
+    },
+    {
+     "text": "Continuously flashing red LED on the ELT cockpit panel = ELT active.",
+     "cite": "CTH Rev 2.5 p.23 (citing AOM 9-01-70) [cards q18]"
+    },
+    {
+     "text": "Minimum pavement width for a 180° turn: P500 52'5\", P600 56'.",
+     "cite": "CTH Rev 2.5 p.22 (citing AOM 9-13-70) [cards q04]"
+    },
+    {
+     "text": "Internal storage compartment is accessed through a door in the lav.",
+     "cite": "CTH Rev 2.5 p.22 (citing AOM 9-01-15) [cards q06, q07]"
+    },
+    {
+     "text": "IFE can take 15 minutes to be fully operational after power-up.",
+     "cite": "CTH Rev 2.5 p.22 (citing AOM 9-01-15) [cards q14]"
+    }
+   ],
+   "cards": [
+    {
+     "id": "7.1-q01",
+     "q": "What is the length of the Praetor 500 and Praetor 600?",
+     "a": "Praetor 500 = 64' 7\" Praetor 600 68' 0.5\"",
+     "cite": "CTH Rev 2.5 p.22"
+    },
+    {
+     "id": "7.1-q02",
+     "q": "What is the height of Praetor 500? Praetor 600?",
+     "a": "Praetor 500 = 21\" 3\" Praetor 600 21' 0.3\"",
+     "cite": "CTH Rev 2.5 p.22"
+    },
+    {
+     "id": "7.1-q03",
+     "q": "What is the wingspan of the Praetor 500 and Praetor 600?",
+     "a": "Praetor 500 = 70' 6.4\" Praetor 600 70' 6.4\"",
+     "cite": "CTH Rev 2.5 p.22"
+    },
+    {
+     "id": "7.1-q04",
+     "q": "What is the minimum pavement width for a 180* turn?",
+     "a": "Praetor 500 – 52'5\" Praetor 600 - 56'",
+     "cite": "CTH Rev 2.5 p.22 (citing AOM 9-13-70)"
+    },
+    {
+     "id": "7.1-q05",
+     "q": "How should the cockpit seats be adjusted?",
+     "a": "Vertically and then/after using the black and white spheres.",
+     "cite": "CTH Rev 2.5 p.22 (citing AOM 9-01-15)"
+    },
+    {
+     "id": "7.1-q06",
+     "q": "Is there an internal storage compartment?",
+     "a": "Yes.",
+     "cite": "CTH Rev 2.5 p.22 (citing AOM 9-01-15)"
+    },
+    {
+     "id": "7.1-q07",
+     "q": "Where is the internal storage compartment accessed?",
+     "a": "Through a door in the lav.",
+     "cite": "CTH Rev 2.5 p.22 (citing AOM 9-01-15)"
+    },
+    {
+     "id": "7.1-q08",
+     "q": "What is the normal configuration for the cockpit?",
+     "a": "Dark and quiet.",
+     "cite": "CTH Rev 2.5 p.22 (citing AOM 9-01-20)"
+    },
+    {
+     "id": "7.1-q09",
+     "q": "What does an illuminated white striped bar on a button mean?",
+     "a": "That it is not in its normal position.",
+     "cite": "CTH Rev 2.5 p.22 (citing AOM 9-01-20)"
+    },
+    {
+     "id": "7.1-q10",
+     "q": "How many identical Display Units (DU) are there?",
+     "a": "4.",
+     "cite": "CTH Rev 2.5 p.22 (citing AOM 9-01-35)"
+    },
+    {
+     "id": "7.1-q11",
+     "q": "List the three different types of windows that can be displayed on the DU's?",
+     "a": "Primary Flight Displays (PFD), Multifunction Displays (MFD) and Crew Alerting System (EICAS)",
+     "cite": "CTH Rev 2.5 p.22 (citing AOM 9-01-5)"
+    },
+    {
+     "id": "7.1-q12",
+     "q": "What are the three pilot selectable format window sizes for the MFW's?",
+     "a": "¼ size, ½ size and full size.",
+     "cite": "CTH Rev 2.5 p.22 (citing AOM 9-01-35)"
+    },
+    {
+     "id": "7.1-q13",
+     "q": "Which Display Unit(s) DU will be available in the event of an electrical emergency?",
+     "a": "Only the CTR DU will be available.",
+     "cite": "CTH Rev 2.5 p.22 (citing AOM 9-01-35)"
+    },
+    {
+     "id": "7.1-q14",
+     "q": "How long can the In-Flight Entertainment (IFE) take to be fully operational after its power up?",
+     "a": "15 minutes.",
+     "cite": "CTH Rev 2.5 p.22 (citing AOM 9-01-15)"
+    },
+    {
+     "id": "7.1-q15",
+     "q": "Where is the emergency exit located?",
+     "a": "Over the right wing forward of the lavatory or in the lavatory.",
+     "cite": "CTH Rev 2.5 p.22 (citing AOM 9-01-60)"
+    },
+    {
+     "id": "7.1-q16",
+     "q": "What are the 5 doors that are depicted on the STATUS synoptic page?",
+     "a": "Main Cabin Door, Cargo Compartment Door, Emergency Exit Door, Fuel Door and the Electronic Bay Door.",
+     "cite": "CTH Rev 2.5 p.22 (citing AOM 9-01-60)"
+    },
+    {
+     "id": "7.1-q17",
+     "q": "What are the emergency equipment items onboard the aircraft?",
+     "a": "Flashlights, life vests, life rafts, fire extinguishers, a crash axe, smoke goggles, an ELT, crew and pax O2 and a first aid kit.",
+     "cite": "CTH Rev 2.5 p.22 (citing AOM 9-01-70)"
+    },
+    {
+     "id": "7.1-q18",
+     "q": "What does a continuously flashing red LED light on the ELT cockpit control panel indicate?",
+     "a": "The ELT is active.",
+     "cite": "CTH Rev 2.5 p.23 (citing AOM 9-01-70)"
+    }
+   ],
+   "mel_notes": [
+    {
+     "text": "Fixed ELT may be inoperative (deactivated) or missing ('ELT not Installed' placard in view of the pilot), with repairs within 90 consecutive calendar-days (Cat A).",
+     "cite": "MEL Rev 14 item 25-61-00 (p. 25-9)"
+    }
+   ],
+   "ob_notes": []
+  },
+  {
+   "id": "indicating-recording",
+   "aom_chapter": "9-09",
+   "title": "Aural/Visual Warnings (Indicating and Recording Systems)",
+   "cth_section": "7.2 AURAL/VISUAL WARNINGS (INDICATING AND RECORDING SYSTEMS)",
+   "cth_pages": "23",
+   "aom_sections_cited": [
+    "9-01",
+    "9-09"
+   ],
+   "summary_points": [
+    {
+     "text": "FDR records automatically, from engine start to engine stop, for the last 25 hours of operation.",
+     "cite": "CTH Rev 2.5 p.23 (citing AOM 9-01-40; AOM 9-09-40) [cards q01, q02]"
+    },
+    {
+     "text": "CVR operates automatically.",
+     "cite": "CTH Rev 2.5 p.23 (citing AOM 9-09-50) [cards q04]"
+    },
+    {
+     "text": "CVR records both cockpit audio and written communications exchanged via datalink.",
+     "cite": "CTH Rev 2.5 p.23 (citing AOM 9-09-50) [cards q03]"
+    }
+   ],
+   "cards": [
+    {
+     "id": "7.2-q01",
+     "q": "How is the FDR recording accomplished?",
+     "a": "Automatically.",
+     "cite": "CTH Rev 2.5 p.23 (citing AOM 9-01-40)"
+    },
+    {
+     "id": "7.2-q02",
+     "q": "What is the FDR recording and for how long?",
+     "a": "The FDR records airplane parameters automatically from engine start to engine stop during the last 25 hours of operation.",
+     "cite": "CTH Rev 2.5 p.23 (citing AOM 9-09-40)"
+    },
+    {
+     "id": "7.2-q03",
+     "q": "Does the CVR record both written communications exchanged via datalink and cockpit audio communication?",
+     "a": "Yes.",
+     "cite": "CTH Rev 2.5 p.23 (citing AOM 9-09-50)"
+    },
+    {
+     "id": "7.2-q04",
+     "q": "How are CVR operations accomplished?",
+     "a": "Automatically.",
+     "cite": "CTH Rev 2.5 p.23 (citing AOM 9-09-50)"
+    }
+   ],
+   "mel_notes": [
+    {
+     "text": "CVR may be inop if the FDR operates normally; repairs within 3 flight-days (Cat A).",
+     "cite": "MEL Rev 14 item 23-71-00 (p. 23-18)"
+    },
+    {
+     "text": "FDR may be inop if the CVR operates normally (with exceptions); repairs within 3 flight-days (Cat A).",
+     "cite": "MEL Rev 14 item 31-31-00 (p. 31-2)"
+    }
+   ],
+   "ob_notes": []
+  },
+  {
+   "id": "waste-water",
+   "aom_chapter": "9-01",
+   "title": "Waste and Water",
+   "cth_section": "7.3 WASTE AND WATER",
+   "cth_pages": "23",
+   "aom_sections_cited": [
+    "9-01",
+    "3-01"
+   ],
+   "summary_points": [
+    {
+     "text": "Each potable water system carries 3.96 gallons; filled manually with a funnel through a service panel.",
+     "cite": "CTH Rev 2.5 p.23 (citing AOM 9-01-65) [cards q01, q02]"
+    },
+    {
+     "text": "Fill with hot water not exceeding 35 °C / 95 °F.",
+     "cite": "CTH Rev 2.5 p.23 (citing AOM 3-01-85) [cards q03]"
+    },
+    {
+     "text": "Drain by pressing the water drain button on the overhead panel; full tanks take up to 10 minutes to drain.",
+     "cite": "CTH Rev 2.5 p.23 (citing AOM 9-01-65) [cards q04, q05]"
+    },
+    {
+     "text": "Cabin Management System calls for waste servicing when the tank is 85% full.",
+     "cite": "CTH Rev 2.5 p.23 (citing AOM 9-01-65) [cards q06]"
+    },
+    {
+     "text": "Rinse the waste tank for three minutes when servicing.",
+     "cite": "CTH Rev 2.5 p.23 (citing AOM 3-01-80) [cards q07]"
+    },
+    {
+     "text": "Drain waste and potable water systems when operating in cold weather below 0 °C for more than one hour.",
+     "cite": "CTH Rev 2.5 p.23 (citing AOM 9-01-65; AOM 3-01-80) [cards q08]"
+    }
+   ],
+   "cards": [
+    {
+     "id": "7.3-q01",
+     "q": "How much water is each potable water system capable of carrying?",
+     "a": "3.96 gallons.",
+     "cite": "CTH Rev 2.5 p.23 (citing AOM 9-01-65)"
+    },
+    {
+     "id": "7.3-q02",
+     "q": "How are the potable water tanks filled?",
+     "a": "Manually with a funnel through a service panel.",
+     "cite": "CTH Rev 2.5 p.23 (citing AOM 9-01-65)"
+    },
+    {
+     "id": "7.3-q03",
+     "q": "What temperature of water is recommended to fill the galley and lavatory potable water tanks?",
+     "a": "Hot water not exceeding 35*C\\95*F.",
+     "cite": "CTH Rev 2.5 p.23 (citing AOM 3-01-85)"
+    },
+    {
+     "id": "7.3-q04",
+     "q": "How can the potable water system be drained?",
+     "a": "By pressing the water drain button on the overhead panel.",
+     "cite": "CTH Rev 2.5 p.23 (citing AOM 9-01-65)"
+    },
+    {
+     "id": "7.3-q05",
+     "q": "How long can the potable water tanks take to drain if the tanks are full of water?",
+     "a": "Up to 10 minutes.",
+     "cite": "CTH Rev 2.5 p.23 (citing AOM 9-01-65)"
+    },
+    {
+     "id": "7.3-q06",
+     "q": "At what waste tank capacity does the Cabin Management System indicate the necessity of servicing?",
+     "a": "When the tank is 85% full.",
+     "cite": "CTH Rev 2.5 p.23 (citing AOM 9-01-65)"
+    },
+    {
+     "id": "7.3-q07",
+     "q": "When servicing the waste system, how long should rinse water be supplied through the servicing cart to clean the waste tank?",
+     "a": "For three minutes.",
+     "cite": "CTH Rev 2.5 p.23 (citing AOM 3-01-80)"
+    },
+    {
+     "id": "7.3-q08",
+     "q": "When should the waste and potable water system be drained to avoid damages to their components caused by water freezing??",
+     "a": "During operation in cold weather below 0*C more than one hour.",
+     "cite": "CTH Rev 2.5 p.23 (citing AOM 9-01-65; AOM 3-01-80)"
+    }
+   ],
+   "mel_notes": [
+    {
+     "text": "Galley potable water system may be inop if drained and placarded DO NOT SERVICE.",
+     "cite": "MEL Rev 14 item 38-11-00 (p. 38-2)"
+    }
+   ],
+   "ob_notes": []
+  },
+  {
+   "id": "lighting",
+   "aom_chapter": "9-01",
+   "title": "Lighting",
+   "cth_section": "7.4 LIGHTING",
+   "cth_pages": "23–24",
+   "aom_sections_cited": [
+    "9-01"
+   ],
+   "summary_points": [
+    {
+     "text": "Courtesy lights (entrance dome + stair lights) turn on with a momentary switch at the main door, stay on 5 minutes, powered by the HOT BUS.",
+     "cite": "CTH Rev 2.5 p.23 (citing AOM 9-01-40) [cards q01, q02, q03, q04]"
+    },
+    {
+     "text": "Red beacon = visual indication of engine operation.",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-01-40) [cards q05]"
+    },
+    {
+     "text": "Wing inspection light illuminates the left-hand wing leading edge.",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-01-40) [cards q06]"
+    },
+    {
+     "text": "Cargo lights: manual switch by the cargo door, on for five minutes.",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-01-40) [cards q07]"
+    },
+    {
+     "text": "Dome lights are the cockpit light available in an electrical emergency.",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-01-40) [cards q08]"
+    },
+    {
+     "text": "Emergency lights run on two exclusive NiCad batteries and auto-illuminate (EMER LT ARMED) if the main DC buses lose power or on impact.",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-01-40) [cards q09, q10]"
+    },
+    {
+     "text": "Emergency lights are controlled by the emergency lighting button on the overhead panel.",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-01-40) [cards q11]"
+    }
+   ],
+   "cards": [
+    {
+     "id": "7.4-q01",
+     "q": "What lights are included in the courtesy lights?",
+     "a": "The entrance dome light and lights installed in each step of the stairs.",
+     "cite": "CTH Rev 2.5 p.23 (citing AOM 9-01-40)"
+    },
+    {
+     "id": "7.4-q02",
+     "q": "How can the courtesy lights be turned on?",
+     "a": "The courtesy lights are turned on by pressing a momentary switch installed on the main door entrance sidewall and remain lighted for 5 minutes.",
+     "cite": "CTH Rev 2.5 p.23 (citing AOM 9-01-40)"
+    },
+    {
+     "id": "7.4-q03",
+     "q": "Once the main door switch is pressed, how long will the courtesy light remain illuminated?",
+     "a": "5 minutes.",
+     "cite": "CTH Rev 2.5 p.23 (citing AOM 9-01-40)"
+    },
+    {
+     "id": "7.4-q04",
+     "q": "What bus are the courtesy lights powered by?",
+     "a": "The HOT BUS.",
+     "cite": "CTH Rev 2.5 p.23 (citing AOM 9-01-40)"
+    },
+    {
+     "id": "7.4-q05",
+     "q": "Which light is used as a visual indication of engine operation?",
+     "a": "The red beacon light.",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-01-40)"
+    },
+    {
+     "id": "7.4-q06",
+     "q": "What part of the aircraft does the wing inspection light illuminate?",
+     "a": "The left hand leading edge of the wing.",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-01-40)"
+    },
+    {
+     "id": "7.4-q07",
+     "q": "How are the cargo compartment lights turned on and for how long?",
+     "a": "Through a manual switch by the cargo door for five minutes.",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-01-40)"
+    },
+    {
+     "id": "7.4-q08",
+     "q": "Which cockpit light is available during an electrical emergency condition?",
+     "a": "The dome lights.",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-01-40)"
+    },
+    {
+     "id": "7.4-q09",
+     "q": "What are the emergency lights powered by?",
+     "a": "Two exclusive NiCad batteries.",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-01-40)"
+    },
+    {
+     "id": "7.4-q10",
+     "q": "When will the emergency lights automatically turn on with the EMER LT knob in the ARMED position?",
+     "a": "If the main DC busses lose power due to electrical emergency condition or impact on the airplane.",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-01-40)"
+    },
+    {
+     "id": "7.4-q11",
+     "q": "How are the emergency lights controlled?",
+     "a": "Via the emergency lighting button on the overhead panel.",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-01-40)"
+    }
+   ],
+   "mel_notes": [
+    {
+     "text": "Overwing emergency lights may be inop provided operations are not conducted at night.",
+     "cite": "MEL Rev 14 item 33-51-07 (p. 33-10)"
+    }
+   ],
+   "ob_notes": []
+  },
+  {
+   "id": "master-warning",
+   "aom_chapter": "9-15",
+   "title": "Master Warning (CAS)",
+   "cth_section": "7.5 MASTER WARNING",
+   "cth_pages": "24–25",
+   "aom_sections_cited": [
+    "9-15"
+   ],
+   "summary_points": [
+    {
+     "text": "WARN buttons illuminate red, CAUT buttons amber; press either to acknowledge.",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-15-30; AOM 9-15-40) [cards q01, q02, q06]"
+    },
+    {
+     "text": "Four EICAS levels: WARNING red, CAUTION amber, ADVISORY cyan, STATUS white.",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-15-40) [cards q05]"
+    },
+    {
+     "text": "A box next to a CAS message = checklist available; a check mark = checklist completed.",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-15-40) [cards q03, q04]"
+    },
+    {
+     "text": "CAS messages cannot be cancelled while the activating condition exists; some are inhibited during takeoff and approach/landing.",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-15-40) [cards q07, q13]"
+    },
+    {
+     "text": "OFF = available but turned off; FAIL = unavailable, total loss; FAULT = degraded but still available.",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-15-40) [cards q08, q09, q10]"
+    },
+    {
+     "text": "A 'golden' CAS message generates more than one CAS message and is marked by a preceding chevron (>).",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-15-40) [cards q11, q12]"
+    },
+    {
+     "text": "Time-critical warnings are annunciated on PFD 1 and PFD 2.",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-15-40) [cards q14]"
+    },
+    {
+     "text": "TO CONFIG test voice: 'TAKEOFF OK'. Takeoff aural warning: flaps not in takeoff position, parking brake set, any spoiler deployed, pitch trim out of green.",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-15-30; AOM 9-15-50) [cards q16, q17]"
+    },
+    {
+     "text": "AURAL MUTE inhibits aural alerts on the respective side.",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-15-40) [cards q15]"
+    },
+    {
+     "text": "TAWS alert pops up a terrain overlay on the HSI; a TCAS RA shows a green 'fly to' box.",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-15-60; AOM 9-15-70) [cards q18, q19]"
+    }
+   ],
+   "cards": [
+    {
+     "id": "7.5-q01",
+     "q": "What buttons will illuminate red when a warning CAS message appears in the EICAS window?",
+     "a": "The WARN buttons.",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-15-30)"
+    },
+    {
+     "id": "7.5-q02",
+     "q": "What buttons will illuminate amber when a warning CAS message appears in the EICAS window?",
+     "a": "The CAUT buttons.",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-15-30)"
+    },
+    {
+     "id": "7.5-q03",
+     "q": "How is it indicated on the EICAS that there is a checklist to complete with an associated CAS message?",
+     "a": "A box is displayed next to the CAS message.",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-15-40)"
+    },
+    {
+     "id": "7.5-q04",
+     "q": "What symbol is displayed to indicate that an EICAS checklist has been completed?",
+     "a": "A check mark will be drawn in the box next to the CAS message.",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-15-40)"
+    },
+    {
+     "id": "7.5-q05",
+     "q": "List the four EICAS priority levels.",
+     "a": "WARNING (red), CAUTION (amber), ADVISORY (cyan) and STATUS (white).",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-15-40)"
+    },
+    {
+     "id": "7.5-q06",
+     "q": "How should all warning and caution CAS messages be acknowledged by the pilots?",
+     "a": "By pressing either the master warning (WARN) or master caution (CAUT) buttons.",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-15-40)"
+    },
+    {
+     "id": "7.5-q07",
+     "q": "Can CAS messages be cancelled so long as the activation condition still exists?",
+     "a": "No.",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-15-40)"
+    },
+    {
+     "id": "7.5-q08",
+     "q": "Give the standard definition for OFF that is used for all systems.",
+     "a": "The system is still available just turned off.",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-15-40)"
+    },
+    {
+     "id": "7.5-q09",
+     "q": "Give the standard definition for FAIL that is used for all systems.",
+     "a": "The system is unavailable and there is a total loss of system functionality.",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-15-40)"
+    },
+    {
+     "id": "7.5-q10",
+     "q": "Give the standard definition for FAULT that is used for all systems.",
+     "a": "The system performance is degraded but the system is still available.",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-15-40)"
+    },
+    {
+     "id": "7.5-q11",
+     "q": "What is an EICAS message that generates more than one CAS message called?",
+     "a": "A \"Golden\" CAS message.",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-15-40)"
+    },
+    {
+     "id": "7.5-q12",
+     "q": "How is a \"golden\" CAS message indicated?",
+     "a": "By a preceding chevron >.",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-15-40)"
+    },
+    {
+     "id": "7.5-q13",
+     "q": "Are some CAS messages inhibited on takeoff or approach and landing to prevent them from becoming a nuisance?",
+     "a": "Yes.",
+     "cite": "CTH Rev 2.5 p.24 (citing AOM 9-15-40)"
+    },
+    {
+     "id": "7.5-q14",
+     "q": "Where are time-critical warnings annunciated?",
+     "a": "On the PFD 1 and PFD 2.",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-15-40)"
+    },
+    {
+     "id": "7.5-q15",
+     "q": "Which button allows the aural alerts on the respective side to be inhibited?",
+     "a": "The AURAL MUTE button.",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-15-40)"
+    },
+    {
+     "id": "7.5-q16",
+     "q": "What voice message is generated when the airplane configuration is suitable for takeoff after the TO CONFIG button is pressed?",
+     "a": "TAKEOFF OK.",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-15-30; AOM 9-15-50)"
+    },
+    {
+     "id": "7.5-q17",
+     "q": "List the items that will activate the takeoff aural warning whenever the airplane is on the ground and thrust is applied.",
+     "a": "Flaps not in takeoff position, parking brake set, any spoiler panel is deployed or if the pitch trim is out of the green range.",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-15-50)"
+    },
+    {
+     "id": "7.5-q18",
+     "q": "Will a terrain overlay pop up on the HSI whenever a TAWS alert becomes active?",
+     "a": "Yes.",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-15-60)"
+    },
+    {
+     "id": "7.5-q19",
+     "q": "When TCAS issues an RA, what kind of an indication will the pilot have indicating a \"fly to\" zone?",
+     "a": "A green box.",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-15-70)"
+    },
+    {
+     "id": "7.5-q20",
+     "q": "List the four EICAS priority levels.",
+     "a": "WARNING (red), CAUTION (amber), ADVISORY (cyan) and STATUS (white).",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-15-40)"
+    }
+   ],
+   "mel_notes": [
+    {
+     "text": "Master WARNING/CAUTION lights and alarm-cancel functions: 2 installed, 1 required each.",
+     "cite": "MEL Rev 14 item 31-52-01 (p. 31-3)"
+    }
+   ],
+   "ob_notes": []
+  },
+  {
+   "id": "electrical",
+   "aom_chapter": "9-05",
+   "title": "Electrical",
+   "cth_section": "7.6 ELECTRICAL",
+   "cth_pages": "25–26",
+   "aom_sections_cited": [
+    "9-05"
+   ],
+   "summary_points": [
+    {
+     "text": "28 V DC generation and distribution; with both generators available they operate split bus.",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-05-01) [cards q01, q02]"
+    },
+    {
+     "text": "GPU white AVAIL = button out, GPU connected, 25–30 V DC; green IN USE when pushed in and powering the airplane.",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-05-30) [cards q03, q04]"
+    },
+    {
+     "text": "Two 24 V DC 40 Ah NiCad main batteries; BATT 2 feeds the APU START BUS.",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-05-40; AOM 9-05-55) [cards q14, q15, q21]"
+    },
+    {
+     "text": "APU generator: on the ground powers all loads including shed buses; in flight all loads except the shed buses. Two generators are needed for the shed buses in flight.",
+     "cite": "CTH Rev 2.5 pp.25, 26 (citing AOM 9-05-40; AOM 9-05-55) [cards q09, q10, q22]"
+    },
+    {
+     "text": "Electrical emergency (in flight) = both main generators and the APU generator unavailable; RAT deploys automatically.",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-05-40) [cards q12, q13]"
+    },
+    {
+     "text": "RAT powers EMER BUS 1, 2 and 3 and charges the batteries; right-seat pilot can pull the red manual deploy control.",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-05-30; AOM 9-05-40) [cards q08, q11]"
+    },
+    {
+     "text": "Batteries only in flight: EMER buses powered and red BATT DISCHARGING CAS.",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-05-40) [cards q16]"
+    },
+    {
+     "text": "EMER BUS 1/2/3 can be powered by BATT 1, BATT 2 or the RAT.",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-05-55) [cards q18]"
+    },
+    {
+     "text": "With no power source, only HOT BATT BUS 1 and 2 are energized.",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-05-55) [cards q19]"
+    },
+    {
+     "text": "Ground servicing with GPU button out and batteries OFF energizes SHED BUS 1.",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-05-55) [cards q20]"
+    },
+    {
+     "text": "Battery voltage shows amber when discharging; RAT only shown on synoptic when deployed and powering.",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-05-30) [cards q05, q07]"
+    }
+   ],
+   "cards": [
+    {
+     "id": "7.6-q01",
+     "q": "What type of an electrical system is the airplane equipped with?",
+     "a": "A 28 V DC electrical power generation and distribution system.",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-05-01)"
+    },
+    {
+     "id": "7.6-q02",
+     "q": "If both generators are available, do they operate in a split bus mode or parallel mode?",
+     "a": "Split bus mode.",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-05-01)"
+    },
+    {
+     "id": "7.6-q03",
+     "q": "What does the white AVAIL light indicate?",
+     "a": "That the GPU button is pushed out, a GPU is connected and the voltage is set between 25V DC and 30 V DC.",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-05-30)"
+    },
+    {
+     "id": "7.6-q04",
+     "q": "Which light will illuminate when the GPU button is pushed in and providing power to the airplane?",
+     "a": "If the GPU button is pushed in and providing power to the airplane the white AVAIL light will go off and the green IN USE light will illuminate.",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-05-30)"
+    },
+    {
+     "id": "7.6-q05",
+     "q": "What color does the battery voltage indication show if the battery is discharging?",
+     "a": "Amber.",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-05-30)"
+    },
+    {
+     "id": "7.6-q06",
+     "q": "What will the indication be on the electrical synoptic page if the GPU is connected but is not providing power to the airplane?",
+     "a": "A white GPU.",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-05-30)"
+    },
+    {
+     "id": "7.6-q07",
+     "q": "Will the Ram Air Turbine (RAT) be continuously displayed on the electrical synoptic page? If not, when will it be displayed?",
+     "a": "No, only when it is deployed and providing power to the airplane.",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-05-30)"
+    },
+    {
+     "id": "7.6-q08",
+     "q": "How can the pilot manually command the RAT to deploy?",
+     "a": "The right seat pilot can pull the red manual deploy control.",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-05-30)"
+    },
+    {
+     "id": "7.6-q09",
+     "q": "What buses is the APU capable of supplying power to on the ground if the APU is the only source of electrical power?",
+     "a": "All electrical loads including the shed buses and charging the batteries.",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-05-40)"
+    },
+    {
+     "id": "7.6-q10",
+     "q": "What buses are the APU capable of supplying power to inflight?",
+     "a": "All electrical loads (except for the shed buses) and charging the batteries.",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-05-40)"
+    },
+    {
+     "id": "7.6-q11",
+     "q": "What buses does the RAT generator power?",
+     "a": "EMER BUS 1, 2 and 3 and charging the batteries.",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-05-40)"
+    },
+    {
+     "id": "7.6-q12",
+     "q": "When will the RAT automatically deploy?",
+     "a": "During an electrical emergency.",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-05-40)"
+    },
+    {
+     "id": "7.6-q13",
+     "q": "In flight, when will an electrical emergency occur?",
+     "a": "When the two main generators and the APU generator are unavailable.",
+     "cite": "CTH Rev 2.5 p.25 (citing AOM 9-05-40)"
+    },
+    {
+     "id": "7.6-q14",
+     "q": "How many main batteries are there?",
+     "a": "Two.",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-05-40)"
+    },
+    {
+     "id": "7.6-q15",
+     "q": "What is the rating of the main batteries?",
+     "a": "24 V DC 40 Ah NiCad batteries.",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-05-40)"
+    },
+    {
+     "id": "7.6-q16",
+     "q": "If the batteries are the only source of electrical power inflight, what buses will be powered and what CAS message will be displayed?",
+     "a": "The EMER BUSES; the red BATT DISCHARGING CAS message.",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-05-40)"
+    },
+    {
+     "id": "7.6-q17",
+     "q": "In an electrical emergency, what buses are powered/isolated from the aircraft electrical system?",
+     "a": "EMER BUS 1, EMER BUS 2 and EMER BUS 3.",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-05-55)"
+    },
+    {
+     "id": "7.6-q18",
+     "q": "In an electrical emergency, what sources of power can provide electrical power to the EMER BUS 1, EMER BUS 2 and EMER BUS 3?",
+     "a": "BATT 1, BATT 2 or the RAT.",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-05-55)"
+    },
+    {
+     "id": "7.6-q19",
+     "q": "What buses will be energized when the airplane is de-energized and there is no electrical power source available?",
+     "a": "HOT BATT BUS 1 and HOT BATT BUS 2.",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-05-55)"
+    },
+    {
+     "id": "7.6-q20",
+     "q": "For ground servicing, when a GPU is connected and providing power to the airplane, with the GPU button pushed out and the BATT 1 and BATT 2 switches in the OFF position, which bus in energized by the GPU?",
+     "a": "SHED BUS 1.",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-05-55)"
+    },
+    {
+     "id": "7.6-q21",
+     "q": "Which battery is connected to the APU START BUS to assist with an APU start?",
+     "a": "BATT 2.",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-05-55)"
+    },
+    {
+     "id": "7.6-q22",
+     "q": "How many generators need to be operating in order for the SHED BUSES to be energized in flight?",
+     "a": "Two.",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-05-55)"
+    }
+   ],
+   "mel_notes": [
+    {
+     "text": "One main DC generator may be inop (Cat B): gen OFF, APU generator operative and used throughout the flight, pump 2A operative, no contaminated runways, at or below 31,000 ft. (Pre-mod SB 550-29-0002: only GEN 1 relief.)",
+     "cite": "MEL Rev 14 item 24-31-01 (p. 24-2)"
+    },
+    {
+     "text": "APU DC generator may be inop (Cat C) if selected OFF and both main DC generators are operative.",
+     "cite": "MEL Rev 14 item 24-34-01 (p. 24-3)"
+    },
+    {
+     "text": "GPU AVAIL/IN USE lights inop: verify capable GPU by white GPU pictorial and at least 27.5 V before pushing GPU in.",
+     "cite": "MEL Rev 14 item 24-41-00 (p. 24-4)"
+    }
+   ],
+   "ob_notes": []
+  },
+  {
+   "id": "fuel",
+   "aom_chapter": "9-10",
+   "title": "Fuel",
+   "cth_section": "7.7 FUEL",
+   "cth_pages": "26–27",
+   "aom_sections_cited": [
+    "9-10",
+    "2-36",
+    "9-10350"
+   ],
+   "summary_points": [
+    {
+     "text": "FUEL XFEED knob OFF for takeoff, landing and go-around.",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-10-30; AOM 2-36) [cards q01]"
+    },
+    {
+     "text": "No wing-to-wing transfer; crossfeed lets both engines and/or the APU feed from one tank.",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-10-50) [cards q05, q06]"
+    },
+    {
+     "text": "Each tank: two DC pumps (main A, backup B) and two scavenge pumps. A pump controlled by the engine ECU, B pump by the FCU.",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-10-50) [cards q08, q09, q10]"
+    },
+    {
+     "text": "B pump comes on automatically for engine start, APU start on the run, fuel low pressure, or A-pump failure.",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-10-50) [cards q11]"
+    },
+    {
+     "text": "FUEL LEAK SUSPECTED: > 880 lb difference for 5 min. FUEL WING IMBALANCE: > 510 lb.",
+     "cite": "CTH Rev 2.5 pp.26, 27 (citing AOM 9-10-50; AOM 9-10-500) [cards q07, q12]"
+    },
+    {
+     "text": "Total fuel quantity in red triggers aural 'FUEL' twice.",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-10-30) [cards q04]"
+    },
+    {
+     "text": "P600 FWD/VTRL aux tanks transfer automatically to both wings simultaneously, never to each other; not during XFEED, takeoff, go-around or landing. Manual: select FWD or VTRL on FUEL TRANSFER panel.",
+     "cite": "CTH Rev 2.5 p.27 (citing AOM 9-10-50; AOM 9-10-30; AOM 9-10350) [cards q21, q22, q23, q24]"
+    },
+    {
+     "text": "Refuel by gravity or pressure; defuel by suction and/or pressure. P600 aux tanks also gravity-refuelable.",
+     "cite": "CTH Rev 2.5 p.27 (citing AOM 9-10-50) [cards q18, q19, q20]"
+    },
+    {
+     "text": "Max fuel tank temperature for takeoff 52 °C.",
+     "cite": "CTH Rev 2.5 p.27 (citing AOM 2-36) [cards q27]"
+    },
+    {
+     "text": "Capacity per §7.7: P500 13,146 lb total / 13,058 usable; P600 16,262 / 16,138 (these differ from CTH p.17; see limitations conflicts).",
+     "cite": "CTH Rev 2.5 p.27 [cards q25, q26]"
+    }
+   ],
+   "cards": [
+    {
+     "id": "7.7-q01",
+     "q": "When must the FUEL XFEED knob be set to OFF?",
+     "a": "For takeoff, landing and go around.",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-10-30; AOM 2-36)"
+    },
+    {
+     "id": "7.7-q02",
+     "q": "Which MFD page provides a visual representation of the fuel system operation and parameters?",
+     "a": "The FUEL synaptic page.",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-10-30)"
+    },
+    {
+     "id": "7.7-q03",
+     "q": "What color does the total and individual tank quantities and fuel temperature indications indicate when in the normal operating range?",
+     "a": "Green.",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-10-30)"
+    },
+    {
+     "id": "7.7-q04",
+     "q": "When the total fuel quantity is displayed in red, which aural warning is played twice?",
+     "a": "FUEL.",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-10-30)"
+    },
+    {
+     "id": "7.7-q05",
+     "q": "Can fuel be transferred from one wing to the other?",
+     "a": "No.",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-10-50)"
+    },
+    {
+     "id": "7.7-q06",
+     "q": "How does the cross-feed valve allow corrections in the event of a fuel load imbalance?",
+     "a": "It allows both engines and/or the APU to be fed by one tank.",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-10-50)"
+    },
+    {
+     "id": "7.7-q07",
+     "q": "Which CAS message is displayed on the EICAS when the difference between the current and expected fuel quantities is higher than 880 lb. for 5 minutes?",
+     "a": "The amber FULE LEAK SUSPECTED CAS.",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-10-50)"
+    },
+    {
+     "id": "7.7-q08",
+     "q": "How many fuel pumps does each fuel tank have?",
+     "a": "Two DC fuel pumps {Main (A) and back up (B)} and two scavenge pumps.",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-10-50)"
+    },
+    {
+     "id": "7.7-q09",
+     "q": "What controls the main (A) pump when the fuel pump is in the AUTO position?",
+     "a": "The engine ECU.",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-10-50)"
+    },
+    {
+     "id": "7.7-q10",
+     "q": "What controls the backup (B) pump when the fuel pump is in the AUTO position?",
+     "a": "The FCU.",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-10-50)"
+    },
+    {
+     "id": "7.7-q11",
+     "q": "List the four times when the backup (B) pump will be automatically commanded on when the fuel pump is in the AUTO position.",
+     "a": "During engine start, APU start on the run, fuel low pressure detection and when the main (A) pump fails.",
+     "cite": "CTH Rev 2.5 p.26 (citing AOM 9-10-50)"
+    },
+    {
+     "id": "7.7-q12",
+     "q": "When will the amber FUEL WING IMBALANCE CAS message be displayed on the EICAS?",
+     "a": "When the fuel imbalance between the tanks is higher than 510 pounds.",
+     "cite": "CTH Rev 2.5 p.27 (citing AOM 9-10-500)"
+    },
+    {
+     "id": "7.7-q13",
+     "q": "Where is the pressure refueling point and REFUELING/DEFUELING control panel located at?",
+     "a": "Forward portion of the right wing fuselage.",
+     "cite": "CTH Rev 2.5 p.27 (citing AOM 9-10-50)"
+    },
+    {
+     "id": "7.7-q14",
+     "q": "How long does the system pre-check on the REFUELING/DEFUELING panel take to verify fuel system operation?",
+     "a": "Approximately 10 seconds.",
+     "cite": "CTH Rev 2.5 p.27 (citing AOM 9-10-50)"
+    },
+    {
+     "id": "7.7-q15",
+     "q": "Which switch located on the REFUELING/DEFUELING control panel enables pressurized refueling to be performed with the airplane energized by either the APU/GPU or battery power?",
+     "a": "The power selection switch.",
+     "cite": "CTH Rev 2.5 p.27 (citing AOM 9-10-50)"
+    },
+    {
+     "id": "7.7-q16",
+     "q": "What should happen if the STOP REFUEL is displayed on the REFUELING/DEFUELING control panel during the refueling process?",
+     "a": "The process shall be halted manually by the operator by moving the refueling switch to the OFF position.",
+     "cite": "CTH Rev 2.5 p.27 (citing AOM 9-10-50)"
+    },
+    {
+     "id": "7.7-q17",
+     "q": "Can the tanks be refueled using the gravity refuel port on the top of each wing?",
+     "a": "Yes.",
+     "cite": "CTH Rev 2.5 p.27 (citing AOM 9-10-50)"
+    },
+    {
+     "id": "7.7-q18",
+     "q": "What are the two different methods that the airplane can be refueled?",
+     "a": "By gravity or pressure.",
+     "cite": "CTH Rev 2.5 p.27 (citing AOM 9-10-50)"
+    },
+    {
+     "id": "7.7-q19",
+     "q": "What are the two different methods that the airplane can be defueled?",
+     "a": "By suction and/or pressure.",
+     "cite": "CTH Rev 2.5 p.27 (citing AOM 9-10-50)"
+    },
+    {
+     "id": "7.7-q20",
+     "q": "Can the FWD and VRTL tanks in the Praetor 600 be refueled via gravity?",
+     "a": "Yes, via refuel ports on the right hand side of each aux tank.",
+     "cite": "CTH Rev 2.5 p.27 (citing AOM 9-10-50)"
+    },
+    {
+     "id": "7.7-q21",
+     "q": "How is fuel transferred from the FWD or VTRL tanks and where?",
+     "a": "Automatically to both wings simultaneously.",
+     "cite": "CTH Rev 2.5 p.27 (citing AOM 9-10-50)"
+    },
+    {
+     "id": "7.7-q22",
+     "q": "Can fuel be transferred from the FWD/VTRL tanks to each other?",
+     "a": "No, only to the wings.",
+     "cite": "CTH Rev 2.5 p.27 (citing AOM 9-10-50)"
+    },
+    {
+     "id": "7.7-q23",
+     "q": "If the AUTO function of the fuel panel for the FWD/VTRL tanks fail, how do we access the remaining fuel?",
+     "a": "By selecting either FWD or VTRL on the FUEL TRANSFER panel.",
+     "cite": "CTH Rev 2.5 p.27 (citing AOM 9-10-30)"
+    },
+    {
+     "id": "7.7-q24",
+     "q": "When is TRANSFER operations from the FWD or VTRL tanks not allowed?",
+     "a": "During XFEED operation, takeoff, go-around and landing operations.",
+     "cite": "CTH Rev 2.5 p.27 (citing AOM 9-10350)"
+    },
+    {
+     "id": "7.7-q25",
+     "q": "What is the total fuel capacity of the Praetor 500 and the Praetor 600?",
+     "a": "Praetor 500 = 13,146 lbs. Praetor 600 = 16,262",
+     "cite": "CTH Rev 2.5 p.27"
+    },
+    {
+     "id": "7.7-q26",
+     "q": "What is the total usable fuel for the Praetor 500 and the Praetor 600?",
+     "a": "Praetor 500 = 13,058 lbs. Praetor 600 = 16,138",
+     "cite": "CTH Rev 2.5 p.27"
+    },
+    {
+     "id": "7.7-q27",
+     "q": "What is the maximum fuel tank temperature for takeoff?",
+     "a": "52*C.",
+     "cite": "CTH Rev 2.5 p.27 (citing AOM 2-36)"
+    }
+   ],
+   "mel_notes": [
+    {
+     "text": "Fuel pump 1B or 2A inop (Cat A): no GOST 10227-86 fuel, both PUMP knobs ON, no known/forecast icing, within 60 min of a suitable airport, limited to 19,000 ft, repairs within 3 calendar-days (P600 also aux tanks empty, motive SOVs secured closed; 2A relief also needs both engine generators).",
+     "cite": "MEL Rev 14 item 28-21-03 (p. 28-6)"
+    },
+    {
+     "text": "P600 aux fuel transfer system inop: aux tanks empty, wing tanks gravity refueled only, FUEL TRANSFER knob in AUTO (other conditions apply; main-mode relief is Cat A, 10 flight-days/60 flight-hours, within 60 min of a suitable airport).",
+     "cite": "MEL Rev 14 item 28-24-00 (p. 28-13)"
+    },
+    {
+     "text": "P600 aux fuel tank pressurization inop (Cat A): main transfer mode considered inop, within 60 min of a suitable airport, repair within 10 flight-days/60 flight-hours.",
+     "cite": "MEL Rev 14 item 36-17-00 (p. 36-9)"
+    }
+   ],
+   "ob_notes": []
+  },
+  {
+   "id": "fire-protection",
+   "aom_chapter": "9-07",
+   "title": "Fire Protection",
+   "cth_section": "7.8 FIRE PROTECTION",
+   "cth_pages": "27–28",
+   "aom_sections_cited": [
+    "9-07"
+   ],
+   "summary_points": [
+    {
+     "text": "Fire TEST button checks smoke detection cockpit indications only; two tests within 15 s with the APU running may shut the APU down.",
+     "cite": "CTH Rev 2.5 p.27 (citing AOM 9-07-30) [cards q01, q02]"
+    },
+    {
+     "text": "Two engine fire bottles: Bottle A for the engines, Bottle B for the engines and APU.",
+     "cite": "CTH Rev 2.5 pp.27, 28 (citing AOM 9-07-40) [cards q04, q05]"
+    },
+    {
+     "text": "Engine SHUTOFF 1 (2): closes fuel, hydraulic and bleed SOVs and arms (illuminates) bottles A and B.",
+     "cite": "CTH Rev 2.5 p.28 (citing AOM 9-07-30; AOM 9-07-40) [cards q06]"
+    },
+    {
+     "text": "APU SHUTOFF: closes APU fuel and bleed SOVs and arms bottle B.",
+     "cite": "CTH Rev 2.5 p.28 (citing AOM 9-07-30) [cards q07]"
+    },
+    {
+     "text": "APU shuts down automatically on the ground for fire or overheat.",
+     "cite": "CTH Rev 2.5 p.28 (citing AOM 9-07-50) [cards q08]"
+    },
+    {
+     "text": "CARGO button in flight: high-rate bottle fires immediately plus a 2-minute timer for the metered bottle. On the ground a second push is required for the metered bottle.",
+     "cite": "CTH Rev 2.5 p.28 (citing AOM 9-07-30; AOM 9-07-60) [cards q09, q10]"
+    },
+    {
+     "text": "Metered (low-rate) bottle is 78 or 110 minutes, identified by a placard in the cargo compartment.",
+     "cite": "CTH Rev 2.5 p.28 (citing AOM 9-07-60) [cards q11, q12]"
+    },
+    {
+     "text": "Internal stowage compartment has a smoke detector; engine fire detection is continuously monitored.",
+     "cite": "CTH Rev 2.5 pp.27, 28 (citing AOM 9-07-60; AOM 9-07-40) [cards q13, q03]"
+    },
+    {
+     "text": "Use Bottle A first regardless of engine to save Bottle B for the APU.",
+     "cite": "CTH Rev 2.5 p.20 (§6 Additional Systems Review Info)"
+    }
+   ],
+   "cards": [
+    {
+     "id": "7.8-q01",
+     "q": "What does the TEST button on the FIRE PROTECTION panel test?",
+     "a": "The smoke detection system and it checks only the cockpit visual and aural indications.",
+     "cite": "CTH Rev 2.5 p.27 (citing AOM 9-07-30)"
+    },
+    {
+     "id": "7.8-q02",
+     "q": "If the APU is running, two consecutive fire TESTS within what time period may cause the APU to shut down?",
+     "a": "15 seconds.",
+     "cite": "CTH Rev 2.5 p.27 (citing AOM 9-07-30)"
+    },
+    {
+     "id": "7.8-q03",
+     "q": "Is the engine fire detection system continuously monitored?",
+     "a": "Yes.",
+     "cite": "CTH Rev 2.5 p.27 (citing AOM 9-07-40)"
+    },
+    {
+     "id": "7.8-q04",
+     "q": "How many fire bottles does the engine fire extinguishing system have?",
+     "a": "Two.",
+     "cite": "CTH Rev 2.5 p.27 (citing AOM 9-07-40)"
+    },
+    {
+     "id": "7.8-q05",
+     "q": "Which systems are Bottle A and Bottle B used for?",
+     "a": "Bottle A is dedicated to the engines and Bottle B is dedicated to the engines and the APU.",
+     "cite": "CTH Rev 2.5 p.28 (citing AOM 9-07-40)"
+    },
+    {
+     "id": "7.8-q06",
+     "q": "List the 4 things that happen when the SHUTOFF 1 (2) button is pushed on the ENGINE FIRE panel.",
+     "a": "They close the associated fuel, hydraulic and bleed shut off valves plus the Bottle A and Bottle B buttons are illuminated to indicate that they are armed.",
+     "cite": "CTH Rev 2.5 p.28 (citing AOM 9-07-30; AOM 9-07-40)"
+    },
+    {
+     "id": "7.8-q07",
+     "q": "What happens when the APU SHUTOFF button is pushed in?",
+     "a": "It closes the APU fuel and bleed shut off valves plus it arms the fire bottle B.",
+     "cite": "CTH Rev 2.5 p.28 (citing AOM 9-07-30)"
+    },
+    {
+     "id": "7.8-q08",
+     "q": "Will the APU automatically shut down if a fire or overheat condition is detected on the ground?",
+     "a": "Yes.",
+     "cite": "CTH Rev 2.5 p.28 (citing AOM 9-07-50)"
+    },
+    {
+     "id": "7.8-q09",
+     "q": "What happens when the CARGO button on the FIRE PROTECTION panel is pressed in flight?",
+     "a": "In flight, pressing the CARGO button immediately discharges the high-rate fire extinguisher bottle into the cargo compartment and starts a two-minute timer to discharge the metered bottle.",
+     "cite": "CTH Rev 2.5 p.28 (citing AOM 9-07-30; AOM 9-07-60)"
+    },
+    {
+     "id": "7.8-q10",
+     "q": "What happens when the CARGO button on the FIRE PROTECTION panel is pressed on the ground?",
+     "a": "On the ground, pressing the CARGO button immediately discharges the high-rate fire extinguisher bottle into the cargo compartment. A second push of the CARGO button is required to discharge the metered bottle.",
+     "cite": "CTH Rev 2.5 p.28 (citing AOM 9-07-30; AOM 9-07-60)"
+    },
+    {
+     "id": "7.8-q11",
+     "q": "What are the two different sizes for the low rate (metered) extinguisher bottle?",
+     "a": "Either 78 minutes or 110 minutes.",
+     "cite": "CTH Rev 2.5 p.28 (citing AOM 9-07-60)"
+    },
+    {
+     "id": "7.8-q12",
+     "q": "How can a pilot identify which size of a low rate (metered) extinguisher bottle is on their aircraft?",
+     "a": "It is placarded in the cargo compartment.",
+     "cite": "CTH Rev 2.5 p.28 (citing AOM 9-07-60)"
+    },
+    {
+     "id": "7.8-q13",
+     "q": "Does the internal stowage compartment have fire detection/protection? If so, what?",
+     "a": "Yes, it is equipped with the smoke detector.",
+     "cite": "CTH Rev 2.5 p.28 (citing AOM 9-07-60)"
+    }
+   ],
+   "mel_notes": [
+    {
+     "text": "Aft cargo fire extinguisher inop: aft cargo empty or no combustible/flammable material (cargo heat not installed).",
+     "cite": "MEL Rev 14 item 26-23-00 (p. 26-4)"
+    },
+    {
+     "text": "Both aft cargo smoke detector channels inop: aft cargo compartment empty (fly-away kit may remain).",
+     "cite": "MEL Rev 14 item 26-13-01 (p. 26-2)"
+    },
+    {
+     "text": "Internal stowage smoke detector inop: compartment empty or no combustible/flammable material; Captain verifies.",
+     "cite": "MEL Rev 14 item 26-13-02 (p. 26-3)"
+    },
+    {
+     "text": "CAS STWG INT SMK DET FAIL: dispatch if stowage empty/non-combustible and no AVNX DMC A(B) FAIL or ELEC SDU FAIL messages.",
+     "cite": "MEL Rev 14 Section Two CAS relief item 2-19 (printed footer CAS-C-13)"
+    }
+   ],
+   "ob_notes": []
+  },
+  {
+   "id": "apu",
+   "aom_chapter": "9-04",
+   "title": "APU",
+   "cth_section": "7.9 APU",
+   "cth_pages": "28–29",
+   "aom_sections_cited": [
+    "9-04",
+    "2-38",
+    "9-04530",
+    "3-01"
+   ],
+   "summary_points": [
+    {
+     "text": "Provides 28 V DC generator power plus bleed air for engine start and the ECS pack; controlled by a dedicated FADEC.",
+     "cite": "CTH Rev 2.5 p.28 (citing AOM 9-04-01) [cards q01, q02]"
+    },
+    {
+     "text": "START button: flashing green during ECU BIT, steady green = ready to start, amber = start inhibited.",
+     "cite": "CTH Rev 2.5 p.28 (citing AOM 9-04-30) [cards q04, q05, q06]"
+    },
+    {
+     "text": "Up to three consecutive unsuccessful start attempts, 30 s between attempts.",
+     "cite": "CTH Rev 2.5 p.28 (citing AOM 2-38) [cards q07]"
+    },
+    {
+     "text": "Normally fed from the right tank; left tank via crossfeed. Starts on BATT 2.",
+     "cite": "CTH Rev 2.5 pp.28, 29 (citing AOM 9-04-50) [cards q09, q10, q16]"
+    },
+    {
+     "text": "Envelope: start, operation and electrical up to 31,000 ft; bleed for engine start up to 23,000 ft.",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 9-04-50; AOM 2-38) [cards q14, q15]"
+    },
+    {
+     "text": "As sole source: ground = all loads + charges batteries; flight = all loads except SHED BUSES.",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 9-04530; AOM 9-04-50) [cards q12, q13]"
+    },
+    {
+     "text": "Auto shutdown in flight or ground: overspeed, underspeed, ECU internal failure, APU bleed leak.",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 9-04-50) [cards q18]"
+    },
+    {
+     "text": "Auto shutdown on ground only: fire, EGT overtemp, high oil temp, low oil pressure, starter not engaged, fuel SOV failure.",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 9-04-50) [cards q19]"
+    },
+    {
+     "text": "APU oil quantity sufficient = green 'OK' on STATUS synoptic.",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 3-01-10) [cards q17]"
+    }
+   ],
+   "cards": [
+    {
+     "id": "7.9-q01",
+     "q": "What services does the APU provide and what are they used for?",
+     "a": "An electrical generator supplies 28 V DC to the electrical system. The pneumatic power is used for engine starting and to supply bleed air to the air-conditioning pack of the environmental system (ECS).",
+     "cite": "CTH Rev 2.5 p.28 (citing AOM 9-04-01)"
+    },
+    {
+     "id": "7.9-q02",
+     "q": "How is the APU controlled and monitored?",
+     "a": "Through a dedicated Full Authority Digital Electronic Control unit (FADEC).",
+     "cite": "CTH Rev 2.5 p.28 (citing AOM 9-04-01)"
+    },
+    {
+     "id": "7.9-q03",
+     "q": "What does pressing the APU ON/OFF button do?",
+     "a": "It starts the ECU power-up sequence and initiates the APU built-in test (BIT).",
+     "cite": "CTH Rev 2.5 p.28 (citing AOM 9-04-30)"
+    },
+    {
+     "id": "7.9-q04",
+     "q": "When does the START button on the APU CONTROL panel flash green?",
+     "a": "During the ECU bit test.",
+     "cite": "CTH Rev 2.5 p.28 (citing AOM 9-04-30)"
+    },
+    {
+     "id": "7.9-q05",
+     "q": "What does the START button on the APU control panel illuminating steady green indicate?",
+     "a": "The APU is ready to start.",
+     "cite": "CTH Rev 2.5 p.28 (citing AOM 9-04-30)"
+    },
+    {
+     "id": "7.9-q06",
+     "q": "If the START button on the APU control panel illuminates amber what does that indicate?",
+     "a": "The APU start in inhibited.",
+     "cite": "CTH Rev 2.5 p.28 (citing AOM 9-04-30)"
+    },
+    {
+     "id": "7.9-q07",
+     "q": "What are the APU starter limitations?",
+     "a": "Up to three consecutive unsuccessful start attempts are allowed with 30 second intervals between attempts.",
+     "cite": "CTH Rev 2.5 p.28 (citing AOM 2-38)"
+    },
+    {
+     "id": "7.9-q08",
+     "q": "What MFD page can APU information be seen on?",
+     "a": "The STATUS synoptic page.",
+     "cite": "CTH Rev 2.5 p.28 (citing AOM 9-04-30)"
+    },
+    {
+     "id": "7.9-q09",
+     "q": "Which tank normally supplies fuel to the APU?",
+     "a": "The right tank.",
+     "cite": "CTH Rev 2.5 p.28 (citing AOM 9-04-50)"
+    },
+    {
+     "id": "7.9-q10",
+     "q": "Is it possible to feed the APU from the left wing tank? If so, how?",
+     "a": "Yes, via the cross-feed system.",
+     "cite": "CTH Rev 2.5 p.28 (citing AOM 9-04-50)"
+    },
+    {
+     "id": "7.9-q11",
+     "q": "Can the APU supply bleed air on the ground or in flight?",
+     "a": "Yes.",
+     "cite": "CTH Rev 2.5 p.28 (citing AOM 9-04-50)"
+    },
+    {
+     "id": "7.9-q12",
+     "q": "If the APU is the only source of electrical power on the ground, what buses can the APU power?",
+     "a": "All of the airplane electrical loads and charge both batteries.",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 9-04530)"
+    },
+    {
+     "id": "7.9-q13",
+     "q": "If the APU is the only source of electrical power in flight, what buses can the APU power?",
+     "a": "All electrical loads (except for the SHED BUSES) and also charging both batteries.",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 9-04-50)"
+    },
+    {
+     "id": "7.9-q14",
+     "q": "What is the APU operating envelope for starting, operation and to supply electrical power?",
+     "a": "Up to 31,000 feet.",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 9-04-50; AOM 2-38)"
+    },
+    {
+     "id": "7.9-q15",
+     "q": "Up to what altitude is the APU able to supply bleed air for engine starting?",
+     "a": "Up to 23,000 feet.",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 9-04-50; AOM 2-38)"
+    },
+    {
+     "id": "7.9-q16",
+     "q": "Where does the APU get its power for starting?",
+     "a": "The number two battery.",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 9-04-50)"
+    },
+    {
+     "id": "7.9-q17",
+     "q": "What should be displayed on the STATUS synoptic page if the APU oil quantity is sufficient?",
+     "a": "A green \"OK\"",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 3-01-10)"
+    },
+    {
+     "id": "7.9-q18",
+     "q": "List the 4 conditions that will cause the APU to automatically shut down either in flight or on the ground.",
+     "a": "Overspeed, under speed, ECU internal failure or an APU bleed leak.",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 9-04-50)"
+    },
+    {
+     "id": "7.9-q19",
+     "q": "List the conditions that will cause the APU to automatically shut down on the ground only.",
+     "a": "APU fire, APU EGT over temperature, APU high oil temperature, APU low oil pressure, APU starter not engaged or an APU fuel shut off valve failure.",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 9-04-50)"
+    }
+   ],
+   "mel_notes": [
+    {
+     "text": "APU may be inop (Cat C) if not used and deactivated (post-mod SB550-78-0001).",
+     "cite": "MEL Rev 14 item 49-00-00 (p. 49-2)"
+    },
+    {
+     "text": "With a main DC generator inop, the APU must be started before engine start and kept running throughout the flight.",
+     "cite": "MEL Rev 14 item 24-31-01 (p. 24-2)"
+    }
+   ],
+   "ob_notes": []
+  },
+  {
+   "id": "powerplant",
+   "aom_chapter": "9-06",
+   "title": "Power Plant",
+   "cth_section": "7.10 POWER PLANT",
+   "cth_pages": "29–30",
+   "aom_sections_cited": [
+    "9-06",
+    "2-40",
+    "9-07",
+    "3-11"
+   ],
+   "summary_points": [
+    {
+     "text": "Each engine has two single-channel FADECs; indications/alerts on EICAS.",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 9-06-01) [cards q01, q02]"
+    },
+    {
+     "text": "IGN AUTO lets the FADEC control ignition; green IGN = commanded on; cyan IGN OFF = commanded off.",
+     "cite": "CTH Rev 2.5 pp.29, 30 (citing AOM 9-06-30) [cards q03, q15, q16]"
+    },
+    {
+     "text": "Thrust reversers: on-ground braking for landing and RTO only; need WOW + wheel speed; stow at 40 kt; no backing with reverse. Amber REV = in transition.",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 9-06-60; AOM 2-40; AOM 9-06-30) [cards q08, q09, q10, q11, q13]"
+    },
+    {
+     "text": "Oil level read in the sight glass or ROLS 5–30 min after shutdown; not visible running/in flight; max consumption 0.04 qt/hr.",
+     "cite": "CTH Rev 2.5 p.30 (citing AOM 9-06-30; AOM 9-06-50) [cards q17, q18, q19, q20]"
+    },
+    {
+     "text": "Air turbine starter sources: APU, opposite engine or ground air cart.",
+     "cite": "CTH Rev 2.5 p.30 (citing AOM 9-06-55) [cards q21]"
+    },
+    {
+     "text": "ATTCS (if armed, takeoff/go-around) adds thrust when: OEI detected (N2 split > 15%), loss of engine cross-communication, windshear detected, or thrust lever to MAX.",
+     "cite": "CTH Rev 2.5 p.30 (citing AOM 9-07-70) [cards q22]"
+    },
+    {
+     "text": "Takeoff ratings TO-1 (full) and TO-2 (derate); settings TO/GA, CON, CLB, CRZ, MAX REV.",
+     "cite": "CTH Rev 2.5 p.30 (citing AOM 9-06-70) [cards q24, q25]"
+    },
+    {
+     "text": "Starter: 5 min accumulated or 3 cycles, then 15 min cool-down; starting duty cycle max 80 s.",
+     "cite": "CTH Rev 2.5 p.30 (citing AOM 2-40) [cards q26, q27, q28]"
+    },
+    {
+     "text": "ITT above 450 °C before start: dry motor 30 s first.",
+     "cite": "CTH Rev 2.5 p.30 (citing AOM 3-11) [cards q29]"
+    },
+    {
+     "text": "HP thermal bow (start 15–180 min after shutdown): dry motor 15 s or to 23% N2, then start after 3 min and before 40 min.",
+     "cite": "CTH Rev 2.5 p.30 (citing AOM 3-11) [cards q30]"
+    },
+    {
+     "text": "MAX lever position = maximum rating; TO/GA = takeoff/go-around thrust and modes.",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 9-06-30) [cards q04, q05]"
+    }
+   ],
+   "cards": [
+    {
+     "id": "7.10-q01",
+     "q": "How many Full Authority Digital Electronic Controls (FADEC) does each engine have?",
+     "a": "Two single channel FADEC's.",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 9-06-01)"
+    },
+    {
+     "id": "7.10-q02",
+     "q": "Where are the engine indications and alerts displayed?",
+     "a": "On the engine indication and crew alerting system (EICAS).",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 9-06-01)"
+    },
+    {
+     "id": "7.10-q03",
+     "q": "Which position of the ignition selector knob allows the FADEC to control the ignition system depending on engine requirements.",
+     "a": "Auto.",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 9-06-30)"
+    },
+    {
+     "id": "7.10-q04",
+     "q": "Which thrust lever position provides the maximum thrust rating available for dual or single engine operation?",
+     "a": "MAX.",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 9-06-30)"
+    },
+    {
+     "id": "7.10-q05",
+     "q": "Which thrust lever position selects the takeoff and go-around thrust and mode settings?",
+     "a": "TO/GA.",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 9-06-30)"
+    },
+    {
+     "id": "7.10-q06",
+     "q": "What does pressing the EVENT MARKER button cause the ECU (FADEC) to do?",
+     "a": "Records a total of three minutes (two minutes before pressing the event button and one minute after the event marker button is pressed.",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 9-06-30)"
+    },
+    {
+     "id": "7.10-q07",
+     "q": "When is the OAT on the EICAS indication displayed?",
+     "a": "Up until the takeoff run.",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 9-06-30)"
+    },
+    {
+     "id": "7.10-q08",
+     "q": "What are the thrust reversers used for and during what phase of flight?",
+     "a": "An on-ground additional braking device used for the landing and RTO only.",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 9-06-60)"
+    },
+    {
+     "id": "7.10-q09",
+     "q": "Is backing up the airplane with reverse thrust allowed?",
+     "a": "No.",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 2-40)"
+    },
+    {
+     "id": "7.10-q10",
+     "q": "Upon landing when should the thrust reversers be stowed?",
+     "a": "At 40 kts.",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 2-40)"
+    },
+    {
+     "id": "7.10-q11",
+     "q": "When are the thrust reversers available?",
+     "a": "With WOW signal indicating that the airplane is on the ground and a wheel speed.",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 9-06-60)"
+    },
+    {
+     "id": "7.10-q12",
+     "q": "What icon on the EICAS indicates the current status of the thrust reverser?",
+     "a": "A REV icon.",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 9-06-30)"
+    },
+    {
+     "id": "7.10-q13",
+     "q": "What color icon indicates that the thrust reversers are commanded and in transition?",
+     "a": "An amber REV icon.",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 9-06-30)"
+    },
+    {
+     "id": "7.10-q14",
+     "q": "Where is the IGNITION status displayed?",
+     "a": "On the EICAS.",
+     "cite": "CTH Rev 2.5 p.29 (citing AOM 9-06-30)"
+    },
+    {
+     "id": "7.10-q15",
+     "q": "What does a green IGN indicate?",
+     "a": "The ignitions are commanded on.",
+     "cite": "CTH Rev 2.5 p.30 (citing AOM 9-06-30)"
+    },
+    {
+     "id": "7.10-q16",
+     "q": "What icon on the EICAS indicates that the igniters are commanded to OFF?",
+     "a": "A cyan IGN OFF.",
+     "cite": "CTH Rev 2.5 p.30 (citing AOM 9-06-30)"
+    },
+    {
+     "id": "7.10-q17",
+     "q": "Where can the oil level be accurately read?",
+     "a": "Either in the sight glass or measured via the Remote Oil Level Sensor (ROLS).",
+     "cite": "CTH Rev 2.5 p.30 (citing AOM 9-06-30)"
+    },
+    {
+     "id": "7.10-q18",
+     "q": "When can the oil level be accurately read?",
+     "a": "From 5 to 30 minutes after shutdown.",
+     "cite": "CTH Rev 2.5 p.30"
+    },
+    {
+     "id": "7.10-q19",
+     "q": "Is the engine oil quantity indication visible with an engine running or in flight?",
+     "a": "No it isn't.",
+     "cite": "CTH Rev 2.5 p.30 (citing AOM 9-06-30)"
+    },
+    {
+     "id": "7.10-q20",
+     "q": "What is the maximum oil consumption rate of the engine per hour?",
+     "a": "0.04 quarts per hour (or one quart per 25 hours).",
+     "cite": "CTH Rev 2.5 p.30 (citing AOM 9-06-50)"
+    },
+    {
+     "id": "7.10-q21",
+     "q": "List the three sources of air pressure that the Air Turbine Starter can use for an engine start.",
+     "a": "The APU, an opposite engine or a ground air supply (huffer cart).",
+     "cite": "CTH Rev 2.5 p.30 (citing AOM 9-06-55)"
+    },
+    {
+     "id": "7.10-q22",
+     "q": "What is the purpose of the Automatic Takeoff Thrust Control System (ATTCS)?",
+     "a": "To provide automatic thrust increase if the ATTCS is previously armed and any one of the following conditions is true on takeoff or go-around:\n• OEI condition is detected (N2 difference between engines is greater than 15%)\n• Loss of engine cross communication.\n• Wind shear is detected.\n• Thrust lever is moved to the MAX position.",
+     "cite": "CTH Rev 2.5 p.30 (citing AOM 9-07-70)"
+    },
+    {
+     "id": "7.10-q23",
+     "q": "When is the ATTCS function available?",
+     "a": "When WAI is ON \"ICE PROT\" mode knob is in \"ALL\"",
+     "cite": "CTH Rev 2.5 p.30 (citing AOM 9-06-70)"
+    },
+    {
+     "id": "7.10-q24",
+     "q": "Which takeoff ratings may be selected by the flight crew prior to takeoff?",
+     "a": "The full rated mode (T-O1) and the one de-rated mode (TO-2).",
+     "cite": "CTH Rev 2.5 p.30 (citing AOM 9-06-70)"
+    },
+    {
+     "id": "7.10-q25",
+     "q": "List the engine power settings that may be selected by the flight crew.",
+     "a": "Take off/Go-Around (TO/GA), maximum continuous (CON), climb (CLB), cruise (CRZ) and maximum reverse (for landing or a rejected takeoff).",
+     "cite": "CTH Rev 2.5 p.30 (citing AOM 9-06-70)"
+    },
+    {
+     "id": "7.10-q26",
+     "q": "What are the starting and motoring limitations?",
+     "a": "Max accumulated time – five minutes; Max consecutive cycles – three; after reaching five minutes of accumulated time or three cycles (whichever occurs first), combining consecutive engine starting in motoring, 15 minutes of cool down time is required prior to an additional engine start motoring.",
+     "cite": "CTH Rev 2.5 p.30"
+    },
+    {
+     "id": "7.10-q27",
+     "q": "What are the starting duty cycle limits?",
+     "a": "Maximum time of 80 seconds.",
+     "cite": "CTH Rev 2.5 p.30 (citing AOM 2-40)"
+    },
+    {
+     "id": "7.10-q28",
+     "q": "How many consecutive starts are allowed before a cooling time of 15 minutes is required prior to additional starts or motoring?",
+     "a": "Three.",
+     "cite": "CTH Rev 2.5 p.30 (citing AOM 2-40)"
+    },
+    {
+     "id": "7.10-q29",
+     "q": "Can the engine be started with an ITT above 450*C? If so, what must be accomplished prior to start?",
+     "a": "Yes, dry motor the associated engine for 30 seconds prior to start.",
+     "cite": "CTH Rev 2.5 p.30 (citing AOM 3-11)"
+    },
+    {
+     "id": "7.10-q30",
+     "q": "When can HP thermal bow occur? If an engine restart is desired within that period of time, what is the recommended procedure?",
+     "a": "When engine starts are initiated between 15 and 180 minutes after an engine shutdown. Dry motor the associated engine prior to start for 15 seconds or until N2 reaches 23% (whichever occurs first). After completion of this procedure, a normal engine start sequence can be initiated any time after 3 minutes and before 40 minutes have elapsed.",
+     "cite": "CTH Rev 2.5 p.30 (citing AOM 3-11)"
+    }
+   ],
+   "mel_notes": [
+    {
+     "text": "Thrust reverser(s) may be inop if locked in forward thrust and deactivated with performance penalties; OPERA surface NORMAL (grooved prohibited); reversers idle at 40 KIAS.",
+     "cite": "MEL Rev 14 item 78-30-00 (p. 78-2)"
+    },
+    {
+     "text": "FADEC system faults: dispatch with repairs within 125 flight-hours, no extensions (Cat A).",
+     "cite": "MEL Rev 14 item 73-21-00 (p. 73-2)"
+    },
+    {
+     "text": "Engine remote oil quantity indication inop: check oil via sight glasses before each flight.",
+     "cite": "MEL Rev 14 item 79-32-00 (p. 79-2)"
+    },
+    {
+     "text": "One engine vibration indication may be inop if not operating in known or forecast icing.",
+     "cite": "MEL Rev 14 item 77-31-00 (p. 77-2)"
+    },
+    {
+     "text": "CAS ENG 1(2) FADEC FAULT / SHORT DISPATCH: dispatch with repairs within 125 flight-hours; ENG REV INHIBIT: reverser considered inop.",
+     "cite": "MEL Rev 14 Section Two CAS relief item 2-9, 2-11, 2-12 (printed footer CAS-C-11)"
+    }
+   ],
+   "ob_notes": []
+  },
+  {
+   "id": "hydraulics",
+   "aom_chapter": "9-11",
+   "title": "Hydraulics",
+   "cth_section": "7.11 HYDRAULICS",
+   "cth_pages": "30–31",
+   "aom_sections_cited": [
+    "9-11"
+   ],
+   "summary_points": [
+    {
+     "text": "Three hydraulic systems at 3,000 psi nominal; amber tick at 1,800 psi on the synoptic.",
+     "cite": "CTH Rev 2.5 pp.30, 31 (citing AOM 9-11-01; AOM 9-11-30) [cards q01, q02, q04]"
+    },
+    {
+     "text": "Losing two systems does not cause complete loss of flight-critical functions.",
+     "cite": "CTH Rev 2.5 p.31 (citing AOM 9-11-50) [cards q06]"
+    },
+    {
+     "text": "System 1: reservoir, EDP 1, DC motor pump DCMP 1, SOV 1, accumulator. DCMP 1 runs automatically during takeoff and landing (AUTO).",
+     "cite": "CTH Rev 2.5 p.31 (citing AOM 9-11-50) [cards q07, q08]"
+    },
+    {
+     "text": "System 2: reservoir, EDP 2, SOV 2, accumulator.",
+     "cite": "CTH Rev 2.5 p.31 (citing AOM 9-11-50) [cards q09]"
+    },
+    {
+     "text": "System 3: reservoir, electric DC motor pump, accumulator; the pump (DCMP 3) is its only source, powered by EMER BUS 3, so it works with battery/RAT. (CTH q10 prints 'DCMP 2'; q12/q13 say DCMP 3.)",
+     "cite": "CTH Rev 2.5 p.31 (citing AOM 9-11-50) [cards q10, q11, q12, q13]"
+    },
+    {
+     "text": "If any 2 of 3 systems overheat, overheat protection on the remaining system is inhibited.",
+     "cite": "CTH Rev 2.5 p.31 (citing AOM 9-11-50) [cards q14]"
+    },
+    {
+     "text": "PTU backs up Systems 1 and 2, transferring power either way; in AUTO the LGHCUs activate it on an engine or EDP failure.",
+     "cite": "CTH Rev 2.5 p.31 (citing AOM 9-11-50) [cards q15, q16, q17]"
+    },
+    {
+     "text": "Green symbols = SOVs open, EDPs on, lines pressurized.",
+     "cite": "CTH Rev 2.5 p.31 (citing AOM 9-11-30) [cards q05]"
+    }
+   ],
+   "cards": [
+    {
+     "id": "7.11-q01",
+     "q": "How many hydraulic systems are there?",
+     "a": "Three.",
+     "cite": "CTH Rev 2.5 p.30 (citing AOM 9-11-01)"
+    },
+    {
+     "id": "7.11-q02",
+     "q": "What nominal pressure do all three hydraulic systems operate at?",
+     "a": "3000 psi.",
+     "cite": "CTH Rev 2.5 p.31 (citing AOM 9-11-01)"
+    },
+    {
+     "id": "7.11-q03",
+     "q": "What MFD page provides a visual representation of the hydraulic system operation and parameters?",
+     "a": "The hydraulic synoptic page.",
+     "cite": "CTH Rev 2.5 p.31 (citing AOM 9-11-30)"
+    },
+    {
+     "id": "7.11-q04",
+     "q": "What pressure is an amber tick mark placed at on the pressure indication for all three systems on the hydraulic synoptic page.",
+     "a": "1800 psi.",
+     "cite": "CTH Rev 2.5 p.31 (citing AOM 9-11-30)"
+    },
+    {
+     "id": "7.11-q05",
+     "q": "What color is the symbol for shutoff valves that are open, engine driven pumps that are on and hydraulic flow lines that are pressurized?",
+     "a": "Green.",
+     "cite": "CTH Rev 2.5 p.31 (citing AOM 9-11-30)"
+    },
+    {
+     "id": "7.11-q06",
+     "q": "Will a failure of two hydraulic systems result in a complete loss of flight-critical functions?",
+     "a": "No, due to system design.",
+     "cite": "CTH Rev 2.5 p.31 (citing AOM 9-11-50)"
+    },
+    {
+     "id": "7.11-q07",
+     "q": "What is hydraulic system 1 comprised of?",
+     "a": "One reservoir, one engine driven pump (EDP1), one electrical DC motor pump (DCMP1), one shutoff valve (SOV 1) and on accumulator.",
+     "cite": "CTH Rev 2.5 p.31 (citing AOM 9-11-50)"
+    },
+    {
+     "id": "7.11-q08",
+     "q": "When will the DCMP 1 be automatically commanded on with the HYD 1 ELEC PUMP knob in the AUTO position?",
+     "a": "During takeoff and landing phases.",
+     "cite": "CTH Rev 2.5 p.31 (citing AOM 9-11-50)"
+    },
+    {
+     "id": "7.11-q09",
+     "q": "What is hydraulic system 2 comprised of?",
+     "a": "One reservoir, one engine driven pump (EDP 2), one shut off valve (SOV 2) and one accumulator.",
+     "cite": "CTH Rev 2.5 p.31 (citing AOM 9-11-50)"
+    },
+    {
+     "id": "7.11-q10",
+     "q": "What is hydraulic system 3 comprised of?",
+     "a": "One reservoir, one electrical DC motor pump (DCMP 2) and one accumulator.",
+     "cite": "CTH Rev 2.5 p.31 (citing AOM 9-11-50)"
+    },
+    {
+     "id": "7.11-q11",
+     "q": "Hydraulic system 3 is designed to operate in conjunction with what electrical system (s)?",
+     "a": "The battery and the ram air turbine (RAT).",
+     "cite": "CTH Rev 2.5 p.31 (citing AOM 9-11-50)"
+    },
+    {
+     "id": "7.11-q12",
+     "q": "What is the only source of hydraulic power for hydraulic system 3?",
+     "a": "The electric DCMP 3.",
+     "cite": "CTH Rev 2.5 p.31 (citing AOM 9-11-50)"
+    },
+    {
+     "id": "7.11-q13",
+     "q": "What is the source of electrical power for the electric DCMP 3 (hydraulic system 3)?",
+     "a": "EMER BUS 3.",
+     "cite": "CTH Rev 2.5 p.31 (citing AOM 9-11-50)"
+    },
+    {
+     "id": "7.11-q14",
+     "q": "If the airplane loses any 2 of the 3 hydraulic systems due to overheat, will the overheat protection system still be functional on the remaining system?",
+     "a": "No, it will be inhibited.",
+     "cite": "CTH Rev 2.5 p.31 (citing AOM 9-11-50)"
+    },
+    {
+     "id": "7.11-q15",
+     "q": "What is the backup for hydraulic systems 1 and 2?",
+     "a": "The PTU.",
+     "cite": "CTH Rev 2.5 p.31 (citing AOM 9-11-50)"
+    },
+    {
+     "id": "7.11-q16",
+     "q": "What is the primary function of the PTU?",
+     "a": "To transfer power from hydraulic system 1 to system 2 or vice versa.",
+     "cite": "CTH Rev 2.5 p.31 (citing AOM 9-11-50)"
+    },
+    {
+     "id": "7.11-q17",
+     "q": "When the PTU knob is in the AUTO position, when will the LGHCU's automatically activate the PTU?",
+     "a": "In the event of an engine failure or EDP failure.",
+     "cite": "CTH Rev 2.5 p.31 (citing AOM 9-11-50)"
+    }
+   ],
+   "mel_notes": [
+    {
+     "text": "Sys 1/2/3 reservoir cockpit quantity indication may be inop if fluid level is checked on the reservoir gauge before each flight.",
+     "cite": "MEL Rev 14 item 29-11-08 / 29-12-08 / 29-13-08 (p. 29-2 to 29-4)"
+    },
+    {
+     "text": "CAS LG-HYD MAINT REQD (pre-mod SB 550-032-0008): PTU checked before each flight, takeoff limited to 2,000 ft PA and ISA+15 °C, repair within 1 flight-day; gear lever may be locked down, so review 'GEAR LEVER CAN NOT BE MOVED UP'. Post-mod: repair within 10 flight-days.",
+     "cite": "MEL Rev 14 Section Two CAS relief item 2-16 / 2-17 (printed footer CAS-C-12)"
+    }
+   ],
+   "ob_notes": [
+    {
+     "text": "Background: a HYD 2 LO QTY CAS was followed by >HYD 2 LO PRESS and SPOILER FAULT; the right-wing midboard multi-function spoiler oscillated with hydraulic pressure oscillations (leak plus spoiler-system malfunction).",
+     "cite": "Embraer OB P550-001/23 (29 May 2023, Praetor 500/600) p.1"
+    },
+    {
+     "text": "Operating info: whenever >HYD 1 (2) LO PRESS shows together with HYD 1 (2) LO QTY, close the associated EDP (EDP 1 SHUTOFF or EDP 2 SHUTOFF button) after completing the >HYD LO PRESS procedure, whether or not SPOILER FAULT shows, to prevent spoiler oscillation. (Procedure pages 3–4 are images, not extracted.)",
+     "cite": "Embraer OB P550-001/23 (29 May 2023, Praetor 500/600) p.2"
+    },
+    {
+     "text": "Legacy 450/500 bulletin OB 550-001/23 has identical content.",
+     "cite": "Embraer OB 550-001/23 (29 May 2023, Legacy 450/500) p.2"
+    }
+   ]
+  },
+  {
+   "id": "flight-controls",
+   "aom_chapter": "9-08",
+   "title": "Flight Controls (FBW)",
+   "cth_section": "7.12 FLIGHT CONTROLS",
+   "cth_pages": "31–34",
+   "aom_sections_cited": [
+    "9-08"
+   ],
+   "summary_points": [
+    {
+     "text": "Functionally distributed fly-by-wire with Normal Mode (NM) and Direct Mode (DM); reverts to DM automatically after multiple failures; DM flight should be avoided.",
+     "cite": "CTH Rev 2.5 pp.31, 32 (citing AOM 9-08-01; AOM 9-08-40) [cards q01, q02, q03, q04]"
+    },
+    {
+     "text": "AP/PTY: momentary = AP disconnect; > 1 s = priority; > 20 s = priority latched; either priority button removes the latch.",
+     "cite": "CTH Rev 2.5 p.32 (citing AOM 9-08-30) [cards q05, q06, q07, q08]"
+    },
+    {
+     "text": "Dual input without priority: tactile + aural + PFD flag, inputs summed. No priority logic in DM.",
+     "cite": "CTH Rev 2.5 p.32 (citing AOM 9-08-30) [cards q09, q10]"
+    },
+    {
+     "text": "Pitch trim switch works only on the ground or in DM. Manual reversion to DM is inhibited while low-speed, AOA limiter or high-speed protection is engaged.",
+     "cite": "CTH Rev 2.5 p.32 (citing AOM 9-08-30) [cards q15, q17]"
+    },
+    {
+     "text": "Normal envelope: 33° bank, Vmo high-speed, 1.13 Vs low-energy, pitch 30° up / 15° down. High-speed protection limits to Vmo + 22 kt.",
+     "cite": "CTH Rev 2.5 pp.33, 34 (citing AOM 9-08-50) [cards q42, q43, q44]"
+    },
+    {
+     "text": "LSA band is next to the speed tape, PLIs on the ADI. NM bands: Vss (white), Vaoa (amber), Vlim (red). DM bands: Vms (amber), Vsa (red, stall aural).",
+     "cite": "CTH Rev 2.5 pp.32, 33 (citing AOM 9-08-30) [cards q21, q22, q26]"
+    },
+    {
+     "text": "In DM: no AOA limiter, no PLIs, no autopilot; surfaces directly follow sidestick and pedals.",
+     "cite": "CTH Rev 2.5 pp.33, 34 (citing AOM 9-08-30; AOM 9-08-50) [cards q25, q27, q47, q48]"
+    },
+    {
+     "text": "One FCC is enough for Normal Mode.",
+     "cite": "CTH Rev 2.5 p.33 (citing AOM 9-08-30) [cards q29]"
+    },
+    {
+     "text": "Speed brakes auto-stow below 160 kt, TLA > 55°, flaps 3/FULL, or AOA limiter; cyan SPDBRK LEVER DISAG, reset by stowing the lever. Spoilers 0°–30°.",
+     "cite": "CTH Rev 2.5 pp.32, 33 (citing AOM 9-08-30; AOM 9-08-50) [cards q14, q37, q38]"
+    },
+    {
+     "text": "Black-airplane battery lasts at least 15 min; PBIT takes < 1 min, up to 3 attempts.",
+     "cite": "CTH Rev 2.5 p.33 (citing AOM 9-08-40) [cards q30, q31, q32]"
+    },
+    {
+     "text": "Neutral spiral stability holds level turns up to 33° bank; beyond that hold lateral input and pull aft.",
+     "cite": "CTH Rev 2.5 p.33 (citing AOM 9-08-50) [cards q35, q36]"
+    }
+   ],
+   "cards": [
+    {
+     "id": "7.12-q01",
+     "q": "What type of flight control system does the aircraft have?",
+     "a": "A functionally distributed Fly-by-Wire (FBW) control system.",
+     "cite": "CTH Rev 2.5 p.31 (citing AOM 9-08-01)"
+    },
+    {
+     "id": "7.12-q02",
+     "q": "What are the two basic modes of operation for the flight controls?",
+     "a": "Normal mode (NM) and direct mode (DM).",
+     "cite": "CTH Rev 2.5 p.31 (citing AOM 9-08-40)"
+    },
+    {
+     "id": "7.12-q03",
+     "q": "When will the flight control system revert automatically to Direct Mode (DM) operations?",
+     "a": "When it is not possible to keep the normal mode (NM) operation due to multiple system failures.",
+     "cite": "CTH Rev 2.5 p.31 (citing AOM 9-08-40)"
+    },
+    {
+     "id": "7.12-q04",
+     "q": "Is flight under Direct Mode (DM) recommended? Why or why not?",
+     "a": "No, it should be avoided as some airplane protection functions are only available in normal mode (NM)",
+     "cite": "CTH Rev 2.5 p.32 (citing AOM 9-08-40)"
+    },
+    {
+     "id": "7.12-q05",
+     "q": "What happens when the AP/PTY button is momentarily pressed?",
+     "a": "The auto pilot is automatically disengaged.",
+     "cite": "CTH Rev 2.5 p.32 (citing AOM 9-08-30)"
+    },
+    {
+     "id": "7.12-q06",
+     "q": "What happens when the AP/PTY button is pressed for more than 1 second?",
+     "a": "Exclusive control is given to the side stick while pressed in the priority annunciation is activated.",
+     "cite": "CTH Rev 2.5 p.32 (citing AOM 9-08-30)"
+    },
+    {
+     "id": "7.12-q07",
+     "q": "What happens when the AP/PTY button is pressed and held for more than 20 seconds?",
+     "a": "The perspective side stick will have exclusive control latched.",
+     "cite": "CTH Rev 2.5 p.32 (citing AOM 9-08-30)"
+    },
+    {
+     "id": "7.12-q08",
+     "q": "If one sidestick has been latched out, how can exclusive control be removed?",
+     "a": "By pressing either side's priority button.",
+     "cite": "CTH Rev 2.5 p.32 (citing AOM 9-08-30)"
+    },
+    {
+     "id": "7.12-q09",
+     "q": "What happens if dual sidestick input occurs and priority has not been requested by either pilot?",
+     "a": "A tactile warning and both sidesticks is activated and an oral warning and PFD flag are triggered. The sidestick inputs are algebraically summed.",
+     "cite": "CTH Rev 2.5 p.32 (citing AOM 9-08-30)"
+    },
+    {
+     "id": "7.12-q10",
+     "q": "Is sidestick controller priority logic available in Direct Mode?",
+     "a": "No, it's only available in normal mode (NM).",
+     "cite": "CTH Rev 2.5 p.32 (citing AOM 9-08-30)"
+    },
+    {
+     "id": "7.12-q11",
+     "q": "With the autopilot engaged, what does pressing the Touch Control Steering (TCS) button do?",
+     "a": "It allows the pilot to manually control the airplane while the autopilot is engaged.",
+     "cite": "CTH Rev 2.5 p.32 (citing AOM 9-08-030)"
+    },
+    {
+     "id": "7.12-q12",
+     "q": "During manual flight with flaps 3 or full, landing gear down and the AP disengaged, what does pressing the Touch Control Steering (TCS) button do?",
+     "a": "It resets the TCS trim speed bug.",
+     "cite": "CTH Rev 2.5 p.32 (citing AOM 9-08-30)"
+    },
+    {
+     "id": "7.12-q13",
+     "q": "How can the multifunction spoilers be deployed for use as speed brakes?",
+     "a": "By the speed brake lever.",
+     "cite": "CTH Rev 2.5 p.32 (citing AOM 9-08-30)"
+    },
+    {
+     "id": "7.12-q14",
+     "q": "What are the angles of multifunction spoilers that correspond with the speed brake positions?",
+     "a": "From 0* (STOW) to 30* (FULL).",
+     "cite": "CTH Rev 2.5 p.32 (citing AOM 9-08-30)"
+    },
+    {
+     "id": "7.12-q15",
+     "q": "When can the Pitch Trim Switch be manually commanded?",
+     "a": "Only on the ground or in direct mode (DM).",
+     "cite": "CTH Rev 2.5 p.32 (citing AOM 9-08-30)"
+    },
+    {
+     "id": "7.12-q16",
+     "q": "Which button is used to recover Normal Mode (NM) or to revert to Direct Mode (DM) in the case of a Normal Mode (NM) misbehavior?",
+     "a": "The FLTCTRL NORMAL MODE button.",
+     "cite": "CTH Rev 2.5 p.32 (citing AOM 9-08-30)"
+    },
+    {
+     "id": "7.12-q17",
+     "q": "When is a manual reversion to Direct Mode (DM) inhibited?",
+     "a": "When the following FCS protection envelopes are engaged: Low speed protection, Angle of Attack (AOA) limiter protection and high-speed protection.",
+     "cite": "CTH Rev 2.5 p.32 (citing AOM 9-08-30)"
+    },
+    {
+     "id": "7.12-q18",
+     "q": "On the FLIGHT CONTROL synoptic page, what color actuator status indicates that the respective flight control surface is in the normal mode and at least one actuator is engaged?",
+     "a": "Green.",
+     "cite": "CTH Rev 2.5 p.32 (citing AOM 9-08-30)"
+    },
+    {
+     "id": "7.12-q19",
+     "q": "On the FLIGHT CONTROL synoptic page, what does a yellow actuator status indicate?",
+     "a": "It indicates direct mode and at least one actuator is operational.",
+     "cite": "CTH Rev 2.5 p.32 (citing AOM 9-08-30)"
+    },
+    {
+     "id": "7.12-q20",
+     "q": "When is the side slip target presented by a blue side slip skid indicator?",
+     "a": "In one engine inoperative (OEI) condition during takeoff, climb or go-around flight phase.",
+     "cite": "CTH Rev 2.5 p.32 (citing AOM 9-08-30)"
+    },
+    {
+     "id": "7.12-q21",
+     "q": "Where is the Low Speed Awareness (LSA) band located? The Pitch Limit Indicators (PLI's)?",
+     "a": "Adjacent to the speed tape; on the ADI.",
+     "cite": "CTH Rev 2.5 p.32 (citing AOM 9-08-30)"
+    },
+    {
+     "id": "7.12-q22",
+     "q": "List the three LSA bands in NORMAL MODE (NM) and what they indicate.",
+     "a": "Vss – top of the white tape – low speed protection function.\nVaoa – Top of the amber tape – AOA limiter function activation.\nVlim – Top of the red tape – the speed associated with the maximum allowable AOA airspeed.",
+     "cite": "CTH Rev 2.5 p.32 (citing AOM 9-08-30)"
+    },
+    {
+     "id": "7.12-q23",
+     "q": "Do the Vss and Vaoa/Vlim indications behave the same in turns and other maneuvers? Why or why not?",
+     "a": "No, because the Vss is defined in terms of speed and Vaoa/Vlim are defined in terms of AOA.",
+     "cite": "CTH Rev 2.5 p.32 (citing AOM 9-08-30)"
+    },
+    {
+     "id": "7.12-q24",
+     "q": "Do Vaoa and Vlim increase with load factor?",
+     "a": "Yes.",
+     "cite": "CTH Rev 2.5 p.33 (citing AOM 9-08-30)"
+    },
+    {
+     "id": "7.12-q25",
+     "q": "Is the AOA limiter function operational in Direct Mode (DM)?",
+     "a": "No.",
+     "cite": "CTH Rev 2.5 p.33 (citing AOM 9-08-30)"
+    },
+    {
+     "id": "7.12-q26",
+     "q": "List the two LSA bands in Direct Mode (DM) and what they represent.",
+     "a": "Vms – top of the amber tape.\nVsa – Top of the red tape, indicates the airspeed at which the stall aural alert is triggered.",
+     "cite": "CTH Rev 2.5 p.33 (citing AOM 9-08-30)"
+    },
+    {
+     "id": "7.12-q27",
+     "q": "Are the Pitch Limit Indicators (PLI's) displayed in Direct Mode (DM)?",
+     "a": "No.",
+     "cite": "CTH Rev 2.5 p.33 (citing AOM 9-08-30)"
+    },
+    {
+     "id": "7.12-q28",
+     "q": "What color does the Pitch Limit Indicator become if the airspeed drops below Vaoa in Normal Mode (NM)? How about Vlim?",
+     "a": "Amber, Red.",
+     "cite": "CTH Rev 2.5 p.33 (citing AOM 9-08-30)"
+    },
+    {
+     "id": "7.12-q29",
+     "q": "How many Flight Control Computers (FCC's) are sufficient to provide Normal Mode (NM) functionality?",
+     "a": "One.",
+     "cite": "CTH Rev 2.5 p.33 (citing AOM 9-08-30)"
+    },
+    {
+     "id": "7.12-q30",
+     "q": "What is the purpose of the Black Airplane Battery?",
+     "a": "To withstand operation for a minimum of 15 minutes in order for the flight crew to recover the proper airplane to electrical system operation.",
+     "cite": "CTH Rev 2.5 p.33 (citing AOM 9-08-40)"
+    },
+    {
+     "id": "7.12-q31",
+     "q": "How long does each PBIT test of the FCS take?",
+     "a": "Less than one minute.",
+     "cite": "CTH Rev 2.5 p.33 (citing AOM 9-08-40)"
+    },
+    {
+     "id": "7.12-q32",
+     "q": "If the PBIT conditions are not satisfied, up to how many PBIT operation attempts can the FCS automatically perform?",
+     "a": "Up to three.",
+     "cite": "CTH Rev 2.5 p.33 (citing AOM 9-08-40)"
+    },
+    {
+     "id": "7.12-q33",
+     "q": "During PBIT operation, which CAS message is displayed?",
+     "a": "The FLITCTRL TEST IN PROGRESS CAS.",
+     "cite": "CTH Rev 2.5 p.33 (citing AOM 9-08-40)"
+    },
+    {
+     "id": "7.12-q34",
+     "q": "When is the de-rotation control law active?",
+     "a": "When the airplane touches down.",
+     "cite": "CTH Rev 2.5 p.33 (citing AOM 9-08-50)"
+    },
+    {
+     "id": "7.12-q35",
+     "q": "What does the neutral spiral stability control law provide?",
+     "a": "It automatically trims the elevator when the sidestick controller is set back to the neutral position to maintain flight level during turns up to 33* of bank angle.",
+     "cite": "CTH Rev 2.5 p.33 (citing AOM 9-08-50)"
+    },
+    {
+     "id": "7.12-q36",
+     "q": "If the pilot commands a turn with a bank angle of greater than 33*, what do they need to do in order to maintain level flight in that turn?",
+     "a": "Maintain the desired sidestick lateral deflection and move the sidestick controller aft.",
+     "cite": "CTH Rev 2.5 p.33 (citing AOM 9-08-50)"
+    },
+    {
+     "id": "7.12-q37",
+     "q": "List the 4 conditions that will cause the speed brakes to automatically stow.",
+     "a": "If the airspeed drops below 160 knots or the TLA position is greater than 55*, the flap level and position is set to 3 or full, or the AOA limiter is engaged.",
+     "cite": "CTH Rev 2.5 p.33 (citing AOM 9-08-50)"
+    },
+    {
+     "id": "7.12-q38",
+     "q": "If the speed brakes are automatically stowed, what indication will the pilots have and how can the speed brakes be reactivated?",
+     "a": "The cyan SPDBRK LEVER DISAG CAS message is displayed and the SPEED BRAKE LEVER must be set back to stow.",
+     "cite": "CTH Rev 2.5 p.33 (citing AOM 9-08-50)"
+    },
+    {
+     "id": "7.12-q39",
+     "q": "How is manual reversion to Direct Mode (DM) available if the flight crew detects a Flight Control Normal Mode (NM) misbehavior?",
+     "a": "By pressing the FLIGHT CONTROLS Normal Mode button.",
+     "cite": "CTH Rev 2.5 p.33 (citing AOM 9-08-50)"
+    },
+    {
+     "id": "7.12-q40",
+     "q": "What do the Flight Control Laws (CLAWS) provide?",
+     "a": "Flight envelope protections to prevent the airplane from exceeding the flight limit envelope limitations.",
+     "cite": "CTH Rev 2.5 p.33 (citing AOM 9-08-50)"
+    },
+    {
+     "id": "7.12-q41",
+     "q": "What are the two flight envelopes for the airplane?",
+     "a": "The normal flight envelope and the limit flight envelope.",
+     "cite": "CTH Rev 2.5 p.33 (citing AOM 9-08-50)"
+    },
+    {
+     "id": "7.12-q42",
+     "q": "What are the limits of the normal flight envelope?",
+     "a": "33* bank angle protection, high speed protection (Vmo), low-energy avoidance protection (1.13 Vs) and pitch attitude protection.",
+     "cite": "CTH Rev 2.5 p.33 (citing AOM 9-08-50)"
+    },
+    {
+     "id": "7.12-q43",
+     "q": "What are the limits of the high-speed protection envelope?",
+     "a": "The airspeed is limited to Vmo +22 kts.",
+     "cite": "CTH Rev 2.5 p.34 (citing AOM 9-08-50)"
+    },
+    {
+     "id": "7.12-q44",
+     "q": "When does the pitch attitude protection activate?",
+     "a": "At pitch angles of 30* pitch up and 15* pitch down.",
+     "cite": "CTH Rev 2.5 p.34 (citing AOM 9-08-50)"
+    },
+    {
+     "id": "7.12-q45",
+     "q": "What does the limit flight envelope require?",
+     "a": "More effort to maintain the airplane in this configuration.",
+     "cite": "CTH Rev 2.5 p.34 (citing AOM 9-08-50)"
+    },
+    {
+     "id": "7.12-q46",
+     "q": "What are the boundaries/hard limits of the limit flight envelope?",
+     "a": "The external boundaries of the limit flight envelope are reached at full control application. The hard limits of the limit flight envelope are the maximum AOA, airplane structural limits (load factor protection), maximum sideslip protection, and dive speed protection. There are no hard limits for pitch and bank angles.",
+     "cite": "CTH Rev 2.5 p.34 (citing AOM 9-08-50)"
+    },
+    {
+     "id": "7.12-q47",
+     "q": "Is the AP operational in Direct Mode (DM)?",
+     "a": "No.",
+     "cite": "CTH Rev 2.5 p.34 (citing AOM 9-08-50)"
+    },
+    {
+     "id": "7.12-q48",
+     "q": "In Direct Mode (DM), how does the airplane behave?",
+     "a": "Like a conventional airplane and the sidestick controller and pedal deflections are directly related to the surface position.",
+     "cite": "CTH Rev 2.5 p.34 (citing AOM 9-08-50)"
+    }
+   ],
+   "mel_notes": [
+    {
+     "text": "CAS FLTCTRL FAULT: dispatch if steep approach not required and no AVNX DMC A(B) FAIL cautions. (Radio altimeter inop generates FLTCTRL FAULT; this Section Two relief then doesn't apply, see 34-31-00.)",
+     "cite": "MEL Rev 14 Section Two CAS relief item 2-14 (printed footer CAS-C-11); MEL Rev 14 item 34-31-00 (p. 34-5)"
+    }
+   ],
+   "ob_notes": [
+    {
+     "text": "SPOILER FAULT with HYD LO PRESS + LO QTY: close the associated EDP to stop multi-function spoiler oscillation (see Hydraulics).",
+     "cite": "Embraer OB P550-001/23 (29 May 2023, Praetor 500/600) p.2"
+    }
+   ]
+  },
+  {
+   "id": "autoflight",
+   "aom_chapter": "9-03",
+   "title": "Auto Flight (AP / FD / AT)",
+   "cth_section": "7.13 AUTO FLIGHT",
+   "cth_pages": "34–36",
+   "aom_sections_cited": [
+    "9-03",
+    "2-56"
+   ],
+   "summary_points": [
+    {
+     "text": "AFCS = flight director, autopilot and autothrottle, controlled from the AFCS panel.",
+     "cite": "CTH Rev 2.5 p.34 (citing AOM 9-03-01; AOM 9-03-30) [cards q01, q02]"
+    },
+    {
+     "text": "BANK toggles ±15° / ±30°; half bank automatic above 25,000 ft in climb. FPA range ±9.9°.",
+     "cite": "CTH Rev 2.5 pp.34, 35 (citing AOM 9-03-30; AOM 9-03-40) [cards q07, q08, q23]"
+    },
+    {
+     "text": "FMA colors: magenta FMS active, green non-FMS active, white armed, amber alert, red abnormal.",
+     "cite": "CTH Rev 2.5 p.35 (citing AOM 9-03-30) [cards q18]"
+    },
+    {
+     "text": "Takeoff crossbar requires flaps 1 or 2, weight set, and takeoff speeds sent in the FMS. T/O speed reference V2 + 15 AEO; V2 if OEI below V2.",
+     "cite": "CTH Rev 2.5 p.35 (citing AOM 9-03-40) [cards q24, q25]"
+    },
+    {
+     "text": "ILS checkpoints at 1,500 ft RA and 800 ft RA.",
+     "cite": "CTH Rev 2.5 p.35 (citing AOM 9-03-40) [cards q26]"
+    },
+    {
+     "text": "EDM enabled with AP engaged above 25,000 ft; activates on depressurization (red CABIN ALTITUDE CAS).",
+     "cite": "CTH Rev 2.5 p.35 (citing AOM 9-03-40) [cards q27, q28, q29]"
+    },
+    {
+     "text": "With the AP on, AT auto-engages below the top of the LSA white bar. AP disengages when the AOA limiter activates or with force on the sidestick.",
+     "cite": "CTH Rev 2.5 pp.34, 35 (citing AOM 9-03-40; AOM 9-03-30) [cards q30, q31, q14]"
+    },
+    {
+     "text": "AT approved all phases including OEI; HOLD mode from 60 kt until 400 ft AGL.",
+     "cite": "CTH Rev 2.5 pp.35, 36 (citing AOM 9-03-50) [cards q32, q33, q34]"
+    },
+    {
+     "text": "AP minimum engage height 400 ft; minimum use 80 ft with vertical path reference, 180 ft without.",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 2-56) [cards q35, q36, q37]"
+    },
+    {
+     "text": "Landing with AT engaged: VREF + 5 KIAS and unfactored landing distance × 1.1.",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 2-56) [cards q38]"
+    },
+    {
+     "text": "Amber LIM on FMA = AT in speed mode but target not achievable due to N1 limit.",
+     "cite": "CTH Rev 2.5 p.35 (citing AOM 9-03-30) [cards q19]"
+    }
+   ],
+   "cards": [
+    {
+     "id": "7.13-q01",
+     "q": "What systems make up the Automatic Flight Control System (AFCS)?",
+     "a": "The flight director (FD), autopilot (AP) and the auto throttles (AT).",
+     "cite": "CTH Rev 2.5 p.34 (citing AOM 9-03-01)"
+    },
+    {
+     "id": "7.13-q02",
+     "q": "Which panel hosts the controls for the AP, AT and FD, plus lateral and vertical reference /mode selection and course selection?",
+     "a": "The Automatic Flight Control System (AFCS) panel.",
+     "cite": "CTH Rev 2.5 p.34 (citing AOM 9-03-30)"
+    },
+    {
+     "id": "7.13-q03",
+     "q": "What does pushing the FD button on the AFCS panel do?",
+     "a": "Engages and disengages the flight director on those PFD's.",
+     "cite": "CTH Rev 2.5 p.34 (citing AOM 9-03-30)"
+    },
+    {
+     "id": "7.13-q04",
+     "q": "What does pushing the AT button on the AFCS panel do?",
+     "a": "Engages and disengages the auto throttle.",
+     "cite": "CTH Rev 2.5 p.34 (citing AOM 9-03-30)"
+    },
+    {
+     "id": "7.13-q05",
+     "q": "What does the outer ring of the SPD knob do?",
+     "a": "Select the source of the speed reference between MAN and FMS.",
+     "cite": "CTH Rev 2.5 p.34 (citing AOM 9-03-30)"
+    },
+    {
+     "id": "7.13-q06",
+     "q": "What does pushing the HDG button on the AFCS panel do?",
+     "a": "Select heading mode when pushed once and alternates with roll mode is pushed again.",
+     "cite": "CTH Rev 2.5 p.34 (citing AOM 9-03-30)"
+    },
+    {
+     "id": "7.13-q07",
+     "q": "Pushing the BANK button on the AFCS will toggle between what bank angles?",
+     "a": "+/- 15* and +/- 30*",
+     "cite": "CTH Rev 2.5 p.34 (citing AOM 9-03-30)"
+    },
+    {
+     "id": "7.13-q08",
+     "q": "What is the up and down range of the FPA mode?",
+     "a": "9.9* up and down.",
+     "cite": "CTH Rev 2.5 p.34 (citing AOM 9-03-30)"
+    },
+    {
+     "id": "7.13-q09",
+     "q": "How can the flight path angle/reference line be selected?",
+     "a": "By rotating the FPA knob.",
+     "cite": "CTH Rev 2.5 p.34 (citing AOM 9-03-30)"
+    },
+    {
+     "id": "7.13-q10",
+     "q": "What does the outer knob of the ALT knob select? The inner knob?",
+     "a": "Selects the altitude increasing/decreasing 1000 feet. Select the altitude increasing/decreasing 100 feet.",
+     "cite": "CTH Rev 2.5 p.34"
+    },
+    {
+     "id": "7.13-q11",
+     "q": "What does pushing the SRC button do?",
+     "a": "Alternates between PFD 1 and PFD 2 FMA modes as the source for the auto pilot.",
+     "cite": "CTH Rev 2.5 p.34 (citing AOM 9-03-30)"
+    },
+    {
+     "id": "7.13-q12",
+     "q": "When the autopilot is engaged, what does pushing the TCS button on the sidestick do?",
+     "a": "It activates the TCS (AP override) as long as neither the takeoff nor go-around mode is active.",
+     "cite": "CTH Rev 2.5 p.34 (citing AOM 9-03-30)"
+    },
+    {
+     "id": "7.13-q13",
+     "q": "Where are the AT/DISC buttons located? The TO/GA buttons?",
+     "a": "On the thrust levers.",
+     "cite": "CTH Rev 2.5 p.34 (citing AOM 9-03-30)"
+    },
+    {
+     "id": "7.13-q14",
+     "q": "With the AP engaged, will the AP disengage if the force is applied on the sidestick, either in the pitch or roll direction?",
+     "a": "Yes.",
+     "cite": "CTH Rev 2.5 p.34 (citing AOM 9-03-30)"
+    },
+    {
+     "id": "7.13-q15",
+     "q": "What are the two FD cues presented?",
+     "a": "The flight director cue (a magenta circle) and the takeoff cross bar.",
+     "cite": "CTH Rev 2.5 p.35 (citing AOM 9-03-30)"
+    },
+    {
+     "id": "7.13-q16",
+     "q": "What does the green Flight Path Vector cue indicate?",
+     "a": "The current flight path in reference to the horizon line.",
+     "cite": "CTH Rev 2.5 p.35 (citing AOM 9-03-30)"
+    },
+    {
+     "id": "7.13-q17",
+     "q": "Where is the Flight Mode Annunciator (FMA) located and what does it display?",
+     "a": "On the upper part of both PFD's; annunciation for auto throttle, autopilot, approach status, lateral and vertical modes.",
+     "cite": "CTH Rev 2.5 p.35 (citing AOM 9-03-30)"
+    },
+    {
+     "id": "7.13-q18",
+     "q": "List the FMA color codes for normal operation.",
+     "a": "Magenta – For FMS active/engaged modes.\nGreen – Non-FMS active/engaged modes.\nWhite – Armed modes;\nAmber – Alert condition\nRed – Abnormal condition.",
+     "cite": "CTH Rev 2.5 p.35 (citing AOM 9-03-30)"
+    },
+    {
+     "id": "7.13-q19",
+     "q": "What does an amber LIM on the FMA indicate?",
+     "a": "The auto throttle is in speed mode and the selected speed target cannot be achieved because the auto throttle has limited N1 rating.",
+     "cite": "CTH Rev 2.5 p.35 (citing AOM 9-03-30)"
+    },
+    {
+     "id": "7.13-q20",
+     "q": "What are the two precision approach capabilities of the airplane?",
+     "a": "Either APPR 1 or APPR 2.",
+     "cite": "CTH Rev 2.5 p.35 (citing AOM 9-03-30)"
+    },
+    {
+     "id": "7.13-q21",
+     "q": "When is the autopilot aural alert triggered?",
+     "a": "When the auto pilot is disengaged by the pilot or due to a system failure.",
+     "cite": "CTH Rev 2.5 p.35 (citing AOM 9-03-30)"
+    },
+    {
+     "id": "7.13-q22",
+     "q": "How can the autopilot aural alert be cancelled?",
+     "a": "By pressing AP/PTY buttons on either side stick.",
+     "cite": "CTH Rev 2.5 p.35 (citing AOM 9-03-30)"
+    },
+    {
+     "id": "7.13-q23",
+     "q": "When will the airplane automatically transition to the half bank mode?",
+     "a": "When the aircraft altitude is greater than 25,000 feet during a climb.",
+     "cite": "CTH Rev 2.5 p.35 (citing AOM 9-03-40)"
+    },
+    {
+     "id": "7.13-q24",
+     "q": "Prior to selecting the TO/GA button, what must be set in order to display the takeoff crossbar on the PFD?",
+     "a": "The flaps set to 1 or 2, the aircraft weight must be set and the takeoff speeds must be sent in the FMS.",
+     "cite": "CTH Rev 2.5 p.35 (citing AOM 9-03-40)"
+    },
+    {
+     "id": "7.13-q25",
+     "q": "What computed takeoff speed reference is set in T/O mode?",
+     "a": "V2 + 15 kts (AEO); in the case of OEI below V2 the speed reference will be set to V2.",
+     "cite": "CTH Rev 2.5 p.35 (citing AOM 9-03-40)"
+    },
+    {
+     "id": "7.13-q26",
+     "q": "What altitudes are associated with the ILS approach check points to try to engage the highest system capability available?",
+     "a": "1500 ft RA and 800 ft RA.",
+     "cite": "CTH Rev 2.5 p.35 (citing AOM 9-03-40)"
+    },
+    {
+     "id": "7.13-q27",
+     "q": "What is Emergency Descent Mode (EDM)?",
+     "a": "A function than can automatically bring the airplane to a safe altitude in the ultimate scenario of cabin depressurization and pilot incapacitation.",
+     "cite": "CTH Rev 2.5 p.35 (citing AOM 9-03-40)"
+    },
+    {
+     "id": "7.13-q28",
+     "q": "When is EDM enabled?",
+     "a": "When the autopilot is engaged and the aircraft is above 25,000 ft.",
+     "cite": "CTH Rev 2.5 p.35 (citing AOM 9-03-40)"
+    },
+    {
+     "id": "7.13-q29",
+     "q": "When is EDM activated?",
+     "a": "When EDM is enabled and a depressurization event occurs (a red CABIN ALTITUDE CAS message is displayed)",
+     "cite": "CTH Rev 2.5 p.35 (citing AOM 9-03-40)"
+    },
+    {
+     "id": "7.13-q30",
+     "q": "If the autopilot (AP) is engaged, what happens to the auto throttle (AT) when the airspeed is below the top of the LSA white bar?",
+     "a": "The auto throttle will automatically be engaged.",
+     "cite": "CTH Rev 2.5 p.35 (citing AOM 9-03-40)"
+    },
+    {
+     "id": "7.13-q31",
+     "q": "What happens to the Autopilot (AP) when the AOA limit function is activated?",
+     "a": "It is disengaged.",
+     "cite": "CTH Rev 2.5 p.35 (citing AOM 9-03-40)"
+    },
+    {
+     "id": "7.13-q32",
+     "q": "What phases of flight is the auto throttle system approved to operate in?",
+     "a": "All phases of flight; takeoff, climb, cruise, descent, approach, landing and during OEI operations.",
+     "cite": "CTH Rev 2.5 p.35 (citing AOM 9-03-50)"
+    },
+    {
+     "id": "7.13-q33",
+     "q": "What is the purpose of the HOLD mode of the auto throttle?",
+     "a": "To ensure that no undesirable thrust reductions are experienced during the takeoff.",
+     "cite": "CTH Rev 2.5 p.35 (citing AOM 9-03-50)"
+    },
+    {
+     "id": "7.13-q34",
+     "q": "When will the auto throttle (AT) HOLD mode be activated?",
+     "a": "From the time the airplane exceeds 60 kts during the takeoff until 400 ft AGL.",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 9-03-50)"
+    },
+    {
+     "id": "7.13-q35",
+     "q": "What is the minimum autopilot engagement height?",
+     "a": "400 ft.",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 2-56)"
+    },
+    {
+     "id": "7.13-q36",
+     "q": "What is the minimum autopilot use height with Vertical Path Reference?",
+     "a": "80 ft.",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 2-56)"
+    },
+    {
+     "id": "7.13-q37",
+     "q": "What is the minimum autopilot use height without Vertical Path Reference?",
+     "a": "180 ft.",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 2-56)"
+    },
+    {
+     "id": "7.13-q38",
+     "q": "When planning to land with the auto throttle engaged, what is the Vref additive and how much is unfactored landing distance multiplied by?",
+     "a": "5 kias; 1.1.",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 2-56)"
+    }
+   ],
+   "mel_notes": [
+    {
+     "text": "Autopilot may be inop (Cat B) if not required; RVSM not authorized; re-file ICAO equipment codes.",
+     "cite": "MEL Rev 14 item 22-10-00 (p. 22-2)"
+    },
+    {
+     "text": "One FD may be inop; both FDs inop requires AP considered inop, RVSM not authorized.",
+     "cite": "MEL Rev 14 item 22-11-00 (p. 22-3)"
+    },
+    {
+     "text": "AT takeoff HOLD mode inop: don't engage AT for takeoff. Retard mode inop: disengage AT at or above 100 ft and retard manually at 50 ft.",
+     "cite": "MEL Rev 14 item 22-30-00 (p. 22-9)"
+    }
+   ],
+   "ob_notes": []
+  },
+  {
+   "id": "oxygen",
+   "aom_chapter": "9-14",
+   "title": "Oxygen",
+   "cth_section": "7.14 OXYGEN",
+   "cth_pages": "36–37",
+   "aom_sections_cited": [
+    "9-14",
+    "3-41"
+   ],
+   "summary_points": [
+    {
+     "text": "One cylinder supplies crew and passengers.",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 9-14-01) [cards q01]"
+    },
+    {
+     "text": "Passenger masks deploy automatically (PAX AUTO) above 14,500 ft ± 300 ft cabin altitude.",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 9-14-30) [cards q02]"
+    },
+    {
+     "text": "CTH §7.14 says the two bottle capacities are '77 liters and 115 liters' (other CTH pages differ; see limitations conflict).",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 9-14-30) [cards q03]"
+    },
+    {
+     "text": "Mask modes N, 100% and EMGCY; must be at 100% to stow.",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 9-14-30) [cards q05, q06]"
+    },
+    {
+     "text": "Oxygen saver button only works in N mode and must be closed in fire or smoke.",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 9-14-30) [cards q08, q14]"
+    },
+    {
+     "text": "Pressure green = normal; white = advisory, so check oxygen dispatch pressure charts.",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 9-14-30) [cards q09, q10]"
+    },
+    {
+     "text": "Mask designed to be donned within 5 seconds; tested in the stowage box.",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 9-14-40) [cards q13, q15]"
+    },
+    {
+     "text": "One smoke goggle per crew member, purged via vent valve.",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 9-14-40) [cards q11, q12]"
+    },
+    {
+     "text": "Don't set the oxygen cylinder toggle ON below −15 °C ambient.",
+     "cite": "CTH Rev 2.5 p.37 (citing AOM 3-41) [cards q17]"
+    }
+   ],
+   "cards": [
+    {
+     "id": "7.14-q01",
+     "q": "How many oxygen cylinders supply oxygen to both crew and passengers?",
+     "a": "One.",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 9-14-01)"
+    },
+    {
+     "id": "7.14-q02",
+     "q": "When will the passenger oxygen masks automatically deploy with the OXYGEN knob in PAX AUTO?",
+     "a": "If the cabin altitude exceeds 14,500 ft (+/- 300 ft.)",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 9-14-30)"
+    },
+    {
+     "id": "7.14-q03",
+     "q": "What are the two capacities of oxygen bottles available?",
+     "a": "77 liters and 115 liters.",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 9-14-30)"
+    },
+    {
+     "id": "7.14-q04",
+     "q": "Where are the oxygen system parameters and indications displayed?",
+     "a": "On the STATUS synoptic page.",
+     "cite": "CTH Rev 2.5 p.36"
+    },
+    {
+     "id": "7.14-q05",
+     "q": "What are the selections that can be toggled between on the MODE SELECTOR on the oxygen mask?",
+     "a": "N (normal mode), 100% and EMGCY.",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 9-14-30)"
+    },
+    {
+     "id": "7.14-q06",
+     "q": "What position must the MODE SELECTOR be set to in order to stow the oxygen mask?",
+     "a": "100%.",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 9-14-30)"
+    },
+    {
+     "id": "7.14-q07",
+     "q": "What is the purpose of the OXYGEN SAVER PUSH-PULL BUTTON on the oxygen mask?",
+     "a": "To allow the crew to breath cabin air when the oxygen supply is not required.",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 9-14-30)"
+    },
+    {
+     "id": "7.14-q08",
+     "q": "Which mode can the OXYGEN SAVER PUSH-PULL BUTTON be pushed in?",
+     "a": "Only in the N (normal) mode.",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 9-14-30)"
+    },
+    {
+     "id": "7.14-q09",
+     "q": "What does the oxygen pressure in green indicate?",
+     "a": "It is in the normal range of operation.",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 9-14-30)"
+    },
+    {
+     "id": "7.14-q10",
+     "q": "What does the oxygen pressure in white indicate?",
+     "a": "It is an advisory operating range and the oxygen dispatch pressure charts must be referenced for the minimum pressure to dispatch.",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 9-14-30)"
+    },
+    {
+     "id": "7.14-q11",
+     "q": "How many smoke goggles are provided?",
+     "a": "One for each flight crewmember.",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 9-14-40)"
+    },
+    {
+     "id": "7.14-q12",
+     "q": "Can smoke or toxic fumes be purged from the smoke goggles? How?",
+     "a": "Yes, by the vent valve.",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 9-14-40)"
+    },
+    {
+     "id": "7.14-q13",
+     "q": "The oxygen mask is designed to be donned within how many seconds?",
+     "a": "Five Seconds.",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 9-14-40)"
+    },
+    {
+     "id": "7.14-q14",
+     "q": "When must the OXYGEN SAVER PUSH-PULL BUTTON be manually closed?",
+     "a": "In case of fire or smoke.",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 9-14-30)"
+    },
+    {
+     "id": "7.14-q15",
+     "q": "Does the oxygen mask need to be removed from the stowage box to be tested?",
+     "a": "No.",
+     "cite": "CTH Rev 2.5 p.36 (citing AOM 9-14-40)"
+    },
+    {
+     "id": "7.14-q16",
+     "q": "How is the oxygen mask tested?",
+     "a": "Turn on the Comm Panel Speaker select, then press both the PRESS TO TEST AND RESET button on the LH door and the PRESS TO TEST button on the regulator simultaneously for 1 second (ensure the FLOW INDICATOR goes out during the test which leak-tests the inflation hose and airflow can be heard into the mask) and the mic can be heard through the speakers.",
+     "cite": "CTH Rev 2.5 p.36"
+    },
+    {
+     "id": "7.14-q17",
+     "q": "When must the Oxygen Cylinder Toggle switch not be set to ON?",
+     "a": "When the ambient temperature is below -15 *C.",
+     "cite": "CTH Rev 2.5 p.37 (citing AOM 3-41)"
+    }
+   ],
+   "mel_notes": [
+    {
+     "text": "Passenger oxygen system inop: no passengers, or unpressurized at or below 9,500 ft. Auto-deploy inop: at or below FL300 with manual deploy verified.",
+     "cite": "MEL Rev 14 item 35-20-00 (p. 35-6)"
+    }
+   ],
+   "ob_notes": []
+  },
+  {
+   "id": "landing-gear-brakes",
+   "aom_chapter": "9-13",
+   "title": "Landing Gear and Brakes",
+   "cth_section": "7.15 LANDING GEAR AND BRAKES",
+   "cth_pages": "37–38",
+   "aom_sections_cited": [
+    "9-13",
+    "3-01",
+    "3-15",
+    "2-10",
+    "2-49"
+   ],
+   "summary_points": [
+    {
+     "text": "Free-fall lever relieves gear hydraulic pressure and mechanically releases all uplocks.",
+     "cite": "CTH Rev 2.5 p.37 (citing AOM 9-13-30) [cards q01]"
+    },
+    {
+     "text": "Red gear icons = more than 20 s of lever/position disagreement.",
+     "cite": "CTH Rev 2.5 p.37 (citing AOM 9-13-30) [cards q02]"
+    },
+    {
+     "text": "Parking brake not released: white PARKING BRAKE ON or cyan CHECK PARKING BRAKE on ground; amber PARK BRAKE NOT REL in flight.",
+     "cite": "CTH Rev 2.5 p.37 (citing AOM 9-13-30) [cards q03, q04]"
+    },
+    {
+     "text": "Brake-by-wire; BCU provides locked-wheel, anti-skid, gear retract braking, touchdown protection, gear extension test, brake temp monitoring, autobrake.",
+     "cite": "CTH Rev 2.5 p.37 (citing AOM 9-13-60) [cards q11, q12]"
+    },
+    {
+     "text": "Brake temperature must be in the green before takeoff.",
+     "cite": "CTH Rev 2.5 p.37 (citing AOM 3-15) [cards q14]"
+    },
+    {
+     "text": "Autobrake LO/MED/HI and RTO (RTO = max manual braking pressure); landing application starts 1 s after WOW and idle. Autobrake OFF for emergency/abnormal procedures.",
+     "cite": "CTH Rev 2.5 pp.37, 38 (citing AOM 9-13-60; AOM 2-49) [cards q15, q16, q17, q28]"
+    },
+    {
+     "text": "No anti-skid on the emergency/parking brake; accumulators give 6 full applications or 16 hours parking.",
+     "cite": "CTH Rev 2.5 pp.37, 38 (citing AOM 9-13-60) [cards q18, q22]"
+    },
+    {
+     "text": "DN LCK REL only for gear lever failure or obstacle clearance.",
+     "cite": "CTH Rev 2.5 p.37 (citing AOM 9-13-50) [cards q10]"
+    },
+    {
+     "text": "NWS: ±62° up to 10 kt, ±8° at 25 kt, ±3° at 68 kt; free-wheel ±170°; auto-disengaged airborne.",
+     "cite": "CTH Rev 2.5 p.38 (citing AOM 9-13-70) [cards q23, q24, q25]"
+    },
+    {
+     "text": "VLO and VLE 250 kt.",
+     "cite": "CTH Rev 2.5 p.38 (citing AOM 2-10) [cards q26, q27]"
+    },
+    {
+     "text": "Tow straight for 10 ft before turning; external STEERING DISENGAGE switch has priority.",
+     "cite": "CTH Rev 2.5 p.37 (citing AOM 9-13-30; AOM 3-01-75) [cards q07, q09]"
+    }
+   ],
+   "cards": [
+    {
+     "id": "7.15-q01",
+     "q": "What does pulling the LANDING GEAR FREE FALL LEVER do?",
+     "a": "Relieves the hydraulic pressure in the landing gear lines and mechanically releases the uplock hooks for all the landing gear.",
+     "cite": "CTH Rev 2.5 p.37 (citing AOM 9-13-30)"
+    },
+    {
+     "id": "7.15-q02",
+     "q": "What does it mean when the LANDING GEAR POSITION INDICATIONS turn to red icons?",
+     "a": "That more than 20 seconds has passed since a discrepancy has been detected between the landing gear lever position and the actual landing gear position.",
+     "cite": "CTH Rev 2.5 p.37 (citing AOM 9-13-30)"
+    },
+    {
+     "id": "7.15-q03",
+     "q": "If the parking brake is not fully released on the ground, what CAS message will be displayed?",
+     "a": "Either a white PARKING BRAKE ON CAS or a cyan CHECK PARKING BRAKE CAS message.",
+     "cite": "CTH Rev 2.5 p.37 (citing AOM 9-13-30)"
+    },
+    {
+     "id": "7.15-q04",
+     "q": "If the parking brake is not fully released in flight, what CAS message will be displayed?",
+     "a": "An amber PARK BRAKE NOT REL CAS message.",
+     "cite": "CTH Rev 2.5 p.37 (citing AOM 9-13-30)"
+    },
+    {
+     "id": "7.15-q05",
+     "q": "Where can the emergency/park brake accumulator pressure and the brake temperature indications be seen?",
+     "a": "On the STATUS synoptic page.",
+     "cite": "CTH Rev 2.5 p.37 (citing AOM 9-13-30)"
+    },
+    {
+     "id": "7.15-q06",
+     "q": "How long can the light on the STEERING button and the STEERING DISC CAS message take to go off after the first engagement of the nose wheel steering?",
+     "a": "Up to two seconds.",
+     "cite": "CTH Rev 2.5 p.37 (citing AOM 9-13-30)"
+    },
+    {
+     "id": "7.15-q07",
+     "q": "Which steering switch has priority for safe operation on the ground?",
+     "a": "The external STEERING DISENGAGE switch.",
+     "cite": "CTH Rev 2.5 p.37 (citing AOM 9-13-30)"
+    },
+    {
+     "id": "7.15-q08",
+     "q": "When will the green TOWING ALLOWED light in the external steering panel illuminate?",
+     "a": "When the external STEERING DISENGAGE switch is in the DISENGAGE position and the parking brake in not applied.",
+     "cite": "CTH Rev 2.5 p.37 (citing AOM 9-13-30)"
+    },
+    {
+     "id": "7.15-q09",
+     "q": "How far should the airplane be towed slowly in a straight line before turning?",
+     "a": "10 feet.",
+     "cite": "CTH Rev 2.5 p.37 (citing AOM 3-01-75)"
+    },
+    {
+     "id": "7.15-q10",
+     "q": "When should the DN LCK REL (down lock release) button be used?",
+     "a": "Only in the event of a landing gear control lever failure or when it is necessary to clear obstacles.",
+     "cite": "CTH Rev 2.5 p.37 (citing AOM 9-13-50)"
+    },
+    {
+     "id": "7.15-q11",
+     "q": "What type of brake system is on the aircraft?",
+     "a": "Brake-by-wire.",
+     "cite": "CTH Rev 2.5 p.37 (citing AOM 9-13-60)"
+    },
+    {
+     "id": "7.15-q12",
+     "q": "During normal operations, what does the Brake Control Unit (BCU) provide?",
+     "a": "Locked wheel protection, anti-skid protection, gear retract braking, touchdown protection, a gear extension test, brake temperature monitoring and auto brake (optional).",
+     "cite": "CTH Rev 2.5 p.37 (citing AOM 9-13-60)"
+    },
+    {
+     "id": "7.15-q13",
+     "q": "Where can the Brake Temperature Monitoring System (BTMS) information be found an what does it provide?",
+     "a": "On the STATUS synoptic page, brake temperature status on the synoptic page and brake overheat warning on the EICAS.",
+     "cite": "CTH Rev 2.5 p.37 (citing AOM 9-13-60)"
+    },
+    {
+     "id": "7.15-q14",
+     "q": "Where must the brake temperature indication be prior to takeoff?",
+     "a": "In the green range.",
+     "cite": "CTH Rev 2.5 p.37 (citing AOM 3-15)"
+    },
+    {
+     "id": "7.15-q15",
+     "q": "What are the two different modes of AUTOBRAKE control?",
+     "a": "Landing mode (LO, MED, HI) and rejected takeoff (RTO).",
+     "cite": "CTH Rev 2.5 p.37 (citing AOM 9-13-60)"
+    },
+    {
+     "id": "7.15-q16",
+     "q": "What kind of pressure will autobrake in the RTO mode apply?",
+     "a": "A brake pressure equivalent to the maximum manual braking.",
+     "cite": "CTH Rev 2.5 p.37 (citing AOM 9-13-60)"
+    },
+    {
+     "id": "7.15-q17",
+     "q": "When will autobrake applications begin on landing?",
+     "a": "Autobrake application will start one second after WOW indicates ground and thrust levers signal at idle.",
+     "cite": "CTH Rev 2.5 p.37 (citing AOM 9-13-60)"
+    },
+    {
+     "id": "7.15-q18",
+     "q": "Is antiskid protection available while braking with the emergency /parking brake?",
+     "a": "No.",
+     "cite": "CTH Rev 2.5 p.37 (citing AOM 9-13-60)"
+    },
+    {
+     "id": "7.15-q19",
+     "q": "What handle position is used when using the emergency/parking brake as a parking brake?",
+     "a": "The handle must be pulled until it locks at the full up position.",
+     "cite": "CTH Rev 2.5 p.38 (citing AOM 9-13-60)"
+    },
+    {
+     "id": "7.15-q20",
+     "q": "Where can the emergency/parking brake handle be set to as a reference for emergency braking?",
+     "a": "To the intermediate position (first detent).",
+     "cite": "CTH Rev 2.5 p.38 (citing AOM 9-13-60)"
+    },
+    {
+     "id": "7.15-q21",
+     "q": "How can the emergency /parking brake be modulated?",
+     "a": "By keeping the release button pressed.",
+     "cite": "CTH Rev 2.5 p.38 (citing AOM 9-13-60)"
+    },
+    {
+     "id": "7.15-q22",
+     "q": "How many full applications/how many hours of parking do the emergency/parking brake accumulators provide?",
+     "a": "6 full or 16 hours.",
+     "cite": "CTH Rev 2.5 p.38 (citing AOM 9-13-60)"
+    },
+    {
+     "id": "7.15-q23",
+     "q": "When the airplane is airborne, is the steering system engaged?",
+     "a": "No, it will automatically be disengaged.",
+     "cite": "CTH Rev 2.5 p.38 (citing AOM 9-13-70)"
+    },
+    {
+     "id": "7.15-q24",
+     "q": "What is the maximum range that the nose wheel can turn in free wheel steering mode?",
+     "a": "+/- 170*.",
+     "cite": "CTH Rev 2.5 p.38 (citing AOM 9-13-70)"
+    },
+    {
+     "id": "7.15-q25",
+     "q": "List the steering angles and associated speed with nose wheel steering engaged:",
+     "a": "Steering angle varies from +/- 62* up to 10 kts, decreasing laterally to +/- 8* at 25 kts and then to +/- 3* at 68 kts.",
+     "cite": "CTH Rev 2.5 p.38 (citing AOM 9-13-70)"
+    },
+    {
+     "id": "7.15-q26",
+     "q": "What airspeed is Vlo?",
+     "a": "250 kts.",
+     "cite": "CTH Rev 2.5 p.38 (citing AOM 2-10)"
+    },
+    {
+     "id": "7.15-q27",
+     "q": "What airspeed is Vle?",
+     "a": "250 kts.",
+     "cite": "CTH Rev 2.5 p.38 (citing AOM 2-10)"
+    },
+    {
+     "id": "7.15-q28",
+     "q": "When must AUTOBRAKE be set to OFF?",
+     "a": "For emergency and abnormal procedures.",
+     "cite": "CTH Rev 2.5 p.38 (citing AOM 2-49)"
+    }
+   ],
+   "mel_notes": [
+    {
+     "text": "Autobrake inop: autobrake knob OFF, normal pedal braking. CAS AUTOBRAKE FAIL: same.",
+     "cite": "MEL Rev 14 item 32-41-00 (p. 32-2); MEL Rev 14 Section Two CAS relief item 2-3 / 2-4 (printed footer CAS-C-6 / CAS-C-7)"
+    },
+    {
+     "text": "BTMS inop: 44-min brake cooling before dispatch (44 or 75 min as applicable), delay gear retraction 7 min after takeoff, performance penalties (OPERA drag index 456).",
+     "cite": "MEL Rev 14 item 32-47-00 (p. 32-3)"
+    },
+    {
+     "text": "External steering disengage switch inop: steering confirmed engaged and the steering disconnect button works if towing. Towing light inop: verify steering and parking brake status in the cockpit before towing.",
+     "cite": "MEL Rev 14 item 32-50-00 (p. 32-7)"
+    }
+   ],
+   "ob_notes": []
+  },
+  {
+   "id": "air-management",
+   "aom_chapter": "9-02",
+   "title": "Air Management (Bleed, ECS, Pressurization)",
+   "cth_section": "7.16 AIR MANAGEMENT",
+   "cth_pages": "38–39",
+   "aom_sections_cited": [
+    "9-02",
+    "9-20",
+    "3-01",
+    "2-48"
+   ],
+   "summary_points": [
+    {
+     "text": "Bleed air users: ECS, engine start, engine and wing/stab anti-ice, cargo heat (optional), main door seal.",
+     "cite": "CTH Rev 2.5 p.38 (citing AOM 9-02-40) [cards q01]"
+    },
+    {
+     "text": "PSC selects engines, APU or external air; APU and engine bleed are never used simultaneously.",
+     "cite": "CTH Rev 2.5 p.38 (citing AOM 9-20-40; AOM 9-02-40) [cards q05, q06]"
+    },
+    {
+     "text": "APU is the primary bleed source on the ground/taxi; engines in flight; auto transfer at takeoff (TLA > 50°).",
+     "cite": "CTH Rev 2.5 p.38 (citing AOM 9-02-40) [cards q07, q08, q09]"
+    },
+    {
+     "text": "XBSOV closes automatically for bleed leak, overpressure, engine fire or failure.",
+     "cite": "CTH Rev 2.5 p.38 (citing AOM 9-02-40) [cards q10]"
+    },
+    {
+     "text": "External ground air (non-adjustable) must be 32–60 psi.",
+     "cite": "CTH Rev 2.5 pp.38, 39 (citing AOM 9-02-40; AOM 3-01-35) [cards q11, q12]"
+    },
+    {
+     "text": "Pack failure: PSC engages pack backup mode. Loss of pack and backup: emergency ram air door opens (also via DUMP). Ram air ventilation is for unpressurized flight or smoke evacuation.",
+     "cite": "CTH Rev 2.5 p.39 (citing AOM 9-02-50) [cards q16, q17, q18, q19]"
+    },
+    {
+     "text": "DUMP auto: 2,000 fpm up to 12,000 ft cabin + ram door. Manual dump limited at 14,800 ± 200 ft.",
+     "cite": "CTH Rev 2.5 p.39 (citing AOM 9-02-70) [cards q26, q27]"
+    },
+    {
+     "text": "Manual mode: CABIN ALT knob in 50 fpm steps.",
+     "cite": "CTH Rev 2.5 p.39 (citing AOM 9-02-30) [cards q24, q25]"
+    },
+    {
+     "text": "Max Δp 9.64 psid (6,000 ft cabin) / 9.73 psid (5,800 ft cabin); overpressure 10.4; negative 0.5; takeoff/landing printed '.02 psid' (p.18 says 0.2).",
+     "cite": "CTH Rev 2.5 p.39 (citing AOM 2-48) [cards q28, q29, q30, q31]"
+    },
+    {
+     "text": "Main door seal inflates after takeoff; fast cooling (hot days) is enabled at a ≥ 6 °C difference between set point and zone temperature.",
+     "cite": "CTH Rev 2.5 p.39 (citing AOM 9-02-50; AOM 9-02-60) [cards q13, q21]"
+    },
+    {
+     "text": "CTH q05 cites 'AOM 9-20-40', likely a typo for 9-02-40; keep as printed.",
+     "cite": "CTH Rev 2.5 p.38 (citing AOM 9-20-40) [cards q05]"
+    }
+   ],
+   "cards": [
+    {
+     "id": "7.16-q01",
+     "q": "List the items that use bleed air.",
+     "a": "Environmental control system (ECS), engine start, engine wing and horizontal stabilizer anti-icing system, cargo heating system (optional) and main cabin door pressurization seal.",
+     "cite": "CTH Rev 2.5 p.38 (citing AOM 9-02-40)"
+    },
+    {
+     "id": "7.16-q02",
+     "q": "When is the cabin temperature control transferred to the VIP seat panel?",
+     "a": "When the detect C is selected to the PAX CABIN TEMPERATURE CONTROL KNOB.",
+     "cite": "CTH Rev 2.5 p.38 (citing AOM 9-02-30)"
+    },
+    {
+     "id": "7.16-q03",
+     "q": "In the event of a bleed leak detection, what light will illuminate in addition to an associated CAS message?",
+     "a": "The PACK, BLEED 1, BLEED 2 or APU BLEED the amber light.",
+     "cite": "CTH Rev 2.5 p.38 (citing AOM 9-02-30)"
+    },
+    {
+     "id": "7.16-q04",
+     "q": "When is the Outflow Valve (OFV) indication on the Environmental Control System (ECS) synoptic page displayed?",
+     "a": "It is only available on the ground.",
+     "cite": "CTH Rev 2.5 p.38 (citing AOM 9-02-30)"
+    },
+    {
+     "id": "7.16-q05",
+     "q": "What are the potential sources of bleed air that the Pneumatic System Controller (PSC) can automatically select from?",
+     "a": "Engines, the APU and external connections.",
+     "cite": "CTH Rev 2.5 p.38 (citing AOM 9-20-40)"
+    },
+    {
+     "id": "7.16-q06",
+     "q": "Is it possible to have bleed from the APU and the engines simultaneously?",
+     "a": "No.",
+     "cite": "CTH Rev 2.5 p.38 (citing AOM 9-02-40)"
+    },
+    {
+     "id": "7.16-q07",
+     "q": "During normal operation on the ground and for taxiing, what is the primary source of bleed air?",
+     "a": "The APU.",
+     "cite": "CTH Rev 2.5 p.38 (citing AOM 9-02-40)"
+    },
+    {
+     "id": "7.16-q08",
+     "q": "What is the primary source of bleed air in flight?",
+     "a": "The engines.",
+     "cite": "CTH Rev 2.5 p.38 (citing AOM 9-02-40)"
+    },
+    {
+     "id": "7.16-q09",
+     "q": "When will the bleed air source be automatically transitioned to the engines?",
+     "a": "When the airplane starts running for takeoff (engines TLA's higher than 50 degrees)",
+     "cite": "CTH Rev 2.5 p.38 (citing AOM 9-02-40)"
+    },
+    {
+     "id": "7.16-q10",
+     "q": "The XBSOV (cross bleed shut off valve) is automatically commanded to close for what conditions?",
+     "a": "In case of bleed leakage, over pressure, engine fire or if a failure condition is identified.",
+     "cite": "CTH Rev 2.5 p.38 (citing AOM 9-02-40)"
+    },
+    {
+     "id": "7.16-q11",
+     "q": "Can an external ground connection be used to supply pressurized air for an engine start?",
+     "a": "Yes.",
+     "cite": "CTH Rev 2.5 p.38 (citing AOM 9-02-40)"
+    },
+    {
+     "id": "7.16-q12",
+     "q": "If an external pneumatic power source is being used and is not adjustable, what range should the pressure supply be in?",
+     "a": "Between 32 psi and 60 psi.",
+     "cite": "CTH Rev 2.5 p.39 (citing AOM 3-01-35)"
+    },
+    {
+     "id": "7.16-q13",
+     "q": "When is fast cooling enabled on hot days?",
+     "a": "When the difference between the cockpit/cabin temperature set point and the cabin/cockpit zone temperature is equal to or higher than 6* C.",
+     "cite": "CTH Rev 2.5 p.39 (citing AOM 9-02-50)"
+    },
+    {
+     "id": "7.16-q14",
+     "q": "When is fast warming enabled on cold days?",
+     "a": "When the difference between the cockpit/cabin temperature set point and the cabin/cockpit zone temperature is equal to or higher than 6* C.",
+     "cite": "CTH Rev 2.5 p.39 (citing AOM 9-02-50)"
+    },
+    {
+     "id": "7.16-q15",
+     "q": "What happens to the recirculation fan during fast cooling and fast warming operations?",
+     "a": "It automatically sets a higher speed to optimize system performance.",
+     "cite": "CTH Rev 2.5 p.39 (citing AOM 9-02-50)"
+    },
+    {
+     "id": "7.16-q16",
+     "q": "If the air conditioning pack fails what does the PSC automatically do?",
+     "a": "It engages the pack backup operational mode and controls cabin and cockpit temperature.",
+     "cite": "CTH Rev 2.5 p.39 (citing AOM 9-02-50)"
+    },
+    {
+     "id": "7.16-q17",
+     "q": "What is ram air ventilation used for?",
+     "a": "Non-pressurized flight or for smoke evacuation.",
+     "cite": "CTH Rev 2.5 p.39 (citing AOM 9-02-50)"
+    },
+    {
+     "id": "7.16-q18",
+     "q": "When will the PSC command the emergency RAM air door to open?",
+     "a": "In case of loss of the air condition PACK and the PACK backup systems.",
+     "cite": "CTH Rev 2.5 p.39 (citing AOM 9-02-50)"
+    },
+    {
+     "id": "7.16-q19",
+     "q": "How can the emergency RAM air door be manually commanded to open?",
+     "a": "Through the DUMP button on the PRESSURIZATION control panel.",
+     "cite": "CTH Rev 2.5 p.39 (citing AOM 9-02-50)"
+    },
+    {
+     "id": "7.16-q20",
+     "q": "How is the Cargo Heating System operated?",
+     "a": "Automatically by the PSC.",
+     "cite": "CTH Rev 2.5 p.39 (citing AOM 9-02-55)"
+    },
+    {
+     "id": "7.16-q21",
+     "q": "When is the main cabin door pressurized seal inflated?",
+     "a": "After takeoff.",
+     "cite": "CTH Rev 2.5 p.39 (citing AOM 9-02-60)"
+    },
+    {
+     "id": "7.16-q22",
+     "q": "How can the outflow valve be modulated?",
+     "a": "Either automatically or manually.",
+     "cite": "CTH Rev 2.5 p.39 (citing AOM 9-02-70)"
+    },
+    {
+     "id": "7.16-q23",
+     "q": "What position are the Negative and Positive Pressure Relief Valves (NPRV and PRV) normally in?",
+     "a": "Closed.",
+     "cite": "CTH Rev 2.5 p.39 (citing AOM 9-02-70)"
+    },
+    {
+     "id": "7.16-q24",
+     "q": "What does pushing in the MODE selector button on the PRESSURIZATION panel allow for?",
+     "a": "Manual control of the pressurization system through the CABIN ALT knob.",
+     "cite": "CTH Rev 2.5 p.39 (citing AOM 9-02-30)"
+    },
+    {
+     "id": "7.16-q25",
+     "q": "What is the cabin altitude rate of change when moving the CABIN ALT knob UP or DN?",
+     "a": "50 FPM steps.",
+     "cite": "CTH Rev 2.5 p.39 (citing AOM 9-02-30)"
+    },
+    {
+     "id": "7.16-q26",
+     "q": "What happens when the DUMP button is pressed in the automatic mode of operation?",
+     "a": "The cabin is depressurized at a constant rate of change of 2,000 ft/min up to 12,000 ft and the emergency RAM air door is opened.",
+     "cite": "CTH Rev 2.5 p.39 (citing AOM 9-02-70)"
+    },
+    {
+     "id": "7.16-q27",
+     "q": "What happens when the DUMP button is pressed in the manual mode of operation?",
+     "a": "The cabin rate of change will increase with the duration of the dump command; until either the command is removed or the altitude limit function disables it when the cabin altitude reaches 14,800 ft +/- 200 ft. The emergency RAM door air is also opened.",
+     "cite": "CTH Rev 2.5 p.39 (citing AOM 9-02-70)"
+    },
+    {
+     "id": "7.16-q28",
+     "q": "What is the maximum differential pressure for a 6,000 ft cabin altitude? For a 5,800 ft cabin altitude?",
+     "a": "9.64 psid; 9.73 psid",
+     "cite": "CTH Rev 2.5 p.39 (citing AOM 2-48)"
+    },
+    {
+     "id": "7.16-q29",
+     "q": "What is the maximum differential overpressure?",
+     "a": "10.4 psid.",
+     "cite": "CTH Rev 2.5 p.39 (citing AOM 2-48)"
+    },
+    {
+     "id": "7.16-q30",
+     "q": "What is the maximum differential negative pressure?",
+     "a": "0.5 psid.",
+     "cite": "CTH Rev 2.5 p.39 (citing AOM 2-48)"
+    },
+    {
+     "id": "7.16-q31",
+     "q": "What is the maximum differential pressure for takeoff and landing?",
+     "a": ".02 psid.",
+     "cite": "CTH Rev 2.5 p.39 (citing AOM 2-48)"
+    }
+   ],
+   "mel_notes": [
+    {
+     "text": "Automatic pressurization control inop: manual control verified, at or below FL250. Manual control inop: at or below 15,000 ft (with auto operative).",
+     "cite": "MEL Rev 14 item 21-31-00 (p. 21-15)"
+    },
+    {
+     "text": "Air conditioning pack inop: unpressurized at or below 9,500 ft, ram air door secured open, ground ops with door closed ≤ 30 min (P600 Cat A, 10 flight-days/60 flight-hours).",
+     "cite": "MEL Rev 14 item 21-51-00 (p. 21-23)"
+    },
+    {
+     "text": "Pack backup inop: selected OFF, SOV secured closed, cooling pack operative, at or below FL250 (-01 also within 60 min of a suitable airport; -02 ram air door secured open). CAS PACK FAULT: dispatch if pack backup is operative.",
+     "cite": "MEL Rev 14 item 21-53-00 (p. 21-25); MEL Rev 14 Section Two CAS relief item 2-18 (printed footer CAS-C-13)"
+    },
+    {
+     "text": "One engine bleed inop: at or below FL200 (or FL250 with no known/forecast icing), within 60 min of a suitable airport, crossbleed operative if Bleed 1 affected.",
+     "cite": "MEL Rev 14 item 36-11-00 (p. 36-2)"
+    },
+    {
+     "text": "Cross-bleed valve inop: selected OFF and secured closed except for left engine start; at or below FL200 (-01, single bleed SOV confirmed open before flight in icing) or FL250 with no known/forecast icing (-02); within 60 min of a suitable airport. In-flight left engine start: AFM windmilling start procedure.",
+     "cite": "MEL Rev 14 item 36-11-06 (p. 36-6)"
+    }
+   ],
+   "ob_notes": []
+  },
+  {
+   "id": "ice-rain",
+   "aom_chapter": "9-12",
+   "title": "Ice and Rain Protection",
+   "cth_section": "7.17 ICE AND RAIN PROTECTION",
+   "cth_pages": "39–41",
+   "aom_sections_cited": [
+    "9-12",
+    "2-50"
+   ],
+   "summary_points": [
+    {
+     "text": "Icing: OAT (ground/takeoff) or TAT (flight) 10 °C or below with visible moisture.",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 2-50) [cards q02]"
+    },
+    {
+     "text": "ICE SPEED RESET only per checklist when certain there is no ice; it resets LSA to non-icing and removes STALL PROT ICE SPEED.",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 2-50; AOM 9-12-30) [cards q04, q05]"
+    },
+    {
+     "text": "APU bleed isn't used for ice protection (ground tests only). Engine anti-ice uses engine hot air; wing/stab uses pneumatic hot air.",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 9-12-50) [cards q07, q08, q09]"
+    },
+    {
+     "text": "Two ice detectors, left and right nose.",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 9-12-50) [cards q11]"
+    },
+    {
+     "text": "Windshield heat is electric; power-saving mode on a single DC source; inoperative on battery.",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 9-12-50) [cards q12, q13, q14]"
+    },
+    {
+     "text": "XBLEED closed + right bleed lost = single bleed operation (max 20,000 ft); XBLEED closed + left bleed lost = anti-ice inoperative.",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 9-12-50; AOM 2-50) [cards q17, q18, q19]"
+    },
+    {
+     "text": "Takeoff selector: ENG at 5–10 °C with moisture, ALL below 5 °C with moisture, otherwise AUTO.",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 9-12-50) [cards q20]"
+    },
+    {
+     "text": "In ALL for takeoff, A-I WINGSTAB ARMED goes to ON at TLA > 59° and wheel speed > 30 kt.",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 9-12-50) [cards q21]"
+    },
+    {
+     "text": "AUTO mode activates above 1,700 ft AGL or 2 min airborne, whichever first; wing/stab turns off 2 min after icing is no longer detected.",
+     "cite": "CTH Rev 2.5 pp.40, 41 (citing AOM 9-12-50) [cards q22, q23]"
+    }
+   ],
+   "cards": [
+    {
+     "id": "7.17-q01",
+     "q": "What sub-systems does ice and rain protection include?",
+     "a": "Wing and stabilizer anti-ice systems; engine anti-ice systems, ADSP/TAT heating system; windshield heating system and windshield and rain protection system.",
+     "cite": "CTH Rev 2.5 p.39 (citing AOM 9-12-01)"
+    },
+    {
+     "id": "7.17-q02",
+     "q": "When may icing conditions exist?",
+     "a": "Whenever the OAT on the ground or for takeoff or TAT in flight is 10*C or below and visible moisture in any form is present.",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 2-50)"
+    },
+    {
+     "id": "7.17-q03",
+     "q": "Where can performance data/limits for operations in icing conditions be found?",
+     "a": "In the performance section and/or OPERA.",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 2-50)"
+    },
+    {
+     "id": "7.17-q04",
+     "q": "When may the ICE SPEED RESET position on the ICE PROTECTION panel be selected?",
+     "a": "In accordance with the checklist, only if the crew is certain that there is no ice accretion on the airplane.",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 2-50)"
+    },
+    {
+     "id": "7.17-q05",
+     "q": "What does the ICE SPEED RESET position on the ICE PROTECTION MODE do?",
+     "a": "It resets the stall protection (LSA bands) to non-icing condition settings and removes the STALL PROT ICE SPEED CAS message.",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 9-12-30)"
+    },
+    {
+     "id": "7.17-q06",
+     "q": "When is the APU icon and associate flow line on the ICE PROTECTION synoptic page displayed?",
+     "a": "On the ground only.",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 9-12-30)"
+    },
+    {
+     "id": "7.17-q07",
+     "q": "Can the APU bleed be used as a bleed source for ice protection?",
+     "a": "No, except for ground tests.",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 9-12-50)"
+    },
+    {
+     "id": "7.17-q08",
+     "q": "How does the Engine Anti-Ice system protect the engine air inlets from ice formation?",
+     "a": "By extracting hot air from the engines.",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 9-12-50)"
+    },
+    {
+     "id": "7.17-q09",
+     "q": "How does the Wing and Stabilizer Anti-Ice System protect the wing and stabilizer leading edges from icing formation?",
+     "a": "It uses hot air from the pneumatic system.",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 9-12-50)"
+    },
+    {
+     "id": "7.17-q10",
+     "q": "How can the Wing and Horizontal Stabilizer Ice Protection Systems test be initiated?",
+     "a": "By pressing the ice protection TEST button on the ICE PROT panel.",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 9-12-50)"
+    },
+    {
+     "id": "7.17-q11",
+     "q": "How many ice detectors are on the airplane and where are they located?",
+     "a": "Two; left and right side of the nose section.",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 9-12-50)"
+    },
+    {
+     "id": "7.17-q12",
+     "q": "How does the Windshield Heating System (WHS) protect the windshield from ice and fog formation?",
+     "a": "It uses electrical power to heat the windshield.",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 9-12-50)"
+    },
+    {
+     "id": "7.17-q13",
+     "q": "When will the WHS operate in a power savings mode?",
+     "a": "If the airplane system is fed by a single DC source.",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 9-12-50)"
+    },
+    {
+     "id": "7.17-q14",
+     "q": "Does WHS operate if the system is fed by battery power?",
+     "a": "No.",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 9-12-50)"
+    },
+    {
+     "id": "7.17-q15",
+     "q": "How are the ADSP/TAT probes heated?",
+     "a": "Electrically.",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 9-12-50)"
+    },
+    {
+     "id": "7.17-q16",
+     "q": "Will the Anti-Ice system monitor icing condition and automatically activate in all flight phases?",
+     "a": "Yes.",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 9-12-50)"
+    },
+    {
+     "id": "7.17-q17",
+     "q": "Whenever the XBLEED is closed and the right bleed source is not available, the anti-ice system is in?",
+     "a": "Single bleed operation.",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 9-12-50)"
+    },
+    {
+     "id": "7.17-q18",
+     "q": "What is the maximum operating altitude for anti-ice single bleed operations?",
+     "a": "20,000 feet.",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 2-50)"
+    },
+    {
+     "id": "7.17-q19",
+     "q": "Whenever the XBLEED is closed and the left bleed source is not available, the anti-ice system is?",
+     "a": "Inoperative.",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 9-12-50)"
+    },
+    {
+     "id": "7.17-q20",
+     "q": "List the 3 ICE PROTECTION MODE knob settings/temperatures for takeoff.",
+     "a": "ENG if the visible moisture is between 5C and 10C with visible moisture; ALL if the temperature is lower than 5*C with visible moisture; and AUTO for all other conditions.",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 9-12-50)"
+    },
+    {
+     "id": "7.17-q21",
+     "q": "If the MODE knob is in ALL for takeoff, when will the white A-I WINGSTAB ARMED CAS message go to white A- I WINGSTAB ON?",
+     "a": "When the TLA is greater than 59 degrees and the wheel speed is greater than 30kts.",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 9-12-50)"
+    },
+    {
+     "id": "7.17-q22",
+     "q": "When the ICE PROT MODE knob is in the AUTO position and the ice detector recognizes the icing condition, at what point will the ice protection system be activated in flight?",
+     "a": "Whenever the airplane is above 1,700 ft AGL or 2 minutes in the air whichever occurs first.",
+     "cite": "CTH Rev 2.5 p.40 (citing AOM 9-12-50)"
+    },
+    {
+     "id": "7.17-q23",
+     "q": "When will the wing and stabilizer anti-ice system automatically be turned off after the airplane leaves icing conditions?",
+     "a": "Two minutes after icing is no longer detected.",
+     "cite": "CTH Rev 2.5 p.41 (citing AOM 9-12-50)"
+    }
+   ],
+   "mel_notes": [
+    {
+     "text": "Wing/stab anti-ice inop: WINGSTAB OFF, AISOV secured closed, no known/forecast icing.",
+     "cite": "MEL Rev 14 item 30-12-00 (p. 30-3)"
+    },
+    {
+     "text": "One engine anti-ice inop: no known/forecast icing, affected side OFF and valve confirmed closed.",
+     "cite": "MEL Rev 14 item 30-21-00 (p. 30-4)"
+    },
+    {
+     "text": "One ice detector inop: operate anti-ice manually (ENG 5–10 °C, ALL < 5 °C on ground; ALL if TAT < 10 °C with moisture in flight). Both inop: no known/forecast icing.",
+     "cite": "MEL Rev 14 item 30-81-00 (p. 30-9)"
+    }
+   ],
+   "ob_notes": []
+  },
+  {
+   "id": "avionics-comm",
+   "aom_chapter": "9-09",
+   "title": "Avionics: Communications",
+   "cth_section": "7.18 AVIONICS – COMMUNICATIONS",
+   "cth_pages": "41–42",
+   "aom_sections_cited": [
+    "9-09",
+    "9-9",
+    "2-64"
+   ],
+   "summary_points": [
+    {
+     "text": "Audio Control Panel controls audio for all comm/nav radios.",
+     "cite": "CTH Rev 2.5 p.41 (citing AOM 9-09-50) [cards q01]"
+    },
+    {
+     "text": "VHF 1 and 3 antennas on top, VHF 2 on bottom; optional VHF 3 gives voice and datalink (ACARS, CPDLC).",
+     "cite": "CTH Rev 2.5 p.41 (citing AOM 9-09-50; AOM 9-9-50) [cards q02, q03]"
+    },
+    {
+     "text": "HF for long-range communication; SELCAL removes the need to continuously monitor VHF/HF.",
+     "cite": "CTH Rev 2.5 p.41 (citing AOM 9-09-50) [cards q05, q06]"
+    },
+    {
+     "text": "Left MKP tunes #1 NAV/COM, right MKP tunes #2.",
+     "cite": "CTH Rev 2.5 p.41 (citing AOM 9-09-30) [cards q08, q09]"
+    },
+    {
+     "text": "RSP TUNE knob: COM 1(2), 121.5, NORM, L(R) MKP ONLY.",
+     "cite": "CTH Rev 2.5 p.42 (citing AOM 9-09-50) [cards q20]"
+    },
+    {
+     "text": "AURAL MUTE inhibits aural alerts on that side (cyan AVXN AURAL WARN 1(2) OFF); AUDIO BACKUP recovers the onside radio.",
+     "cite": "CTH Rev 2.5 p.41 (citing AOM 9-09-30) [cards q17, q18]"
+    },
+    {
+     "text": "BOOM/AUTO/MASK in AUTO selects the mask mic when the mask is donned.",
+     "cite": "CTH Rev 2.5 p.41 (citing AOM 9-09-30) [cards q14]"
+    },
+    {
+     "text": "New ACARS message: cyan ACARS MESSAGE CAS.",
+     "cite": "CTH Rev 2.5 p.42 (citing AOM 9-09-50) [cards q22]"
+    },
+    {
+     "text": "Don't rely on PFD ADF indications while transmitting on HF.",
+     "cite": "CTH Rev 2.5 p.42 (citing AOM 2-64) [cards q23]"
+    }
+   ],
+   "cards": [
+    {
+     "id": "7.18-q01",
+     "q": "What provides the flight crew with the interface to control the audio functions of all radio communication and navigation systems?",
+     "a": "The Audio Control Panel.",
+     "cite": "CTH Rev 2.5 p.41 (citing AOM 9-09-50)"
+    },
+    {
+     "id": "7.18-q02",
+     "q": "Where are the antennas for the VHF 1, VHF 2 and VHF 3 located respectively on the fuselage?",
+     "a": "VHF1 and VHF3 are on Top and VHF2 is on bottom.",
+     "cite": "CTH Rev 2.5 p.41 (citing AOM 9-09-50)"
+    },
+    {
+     "id": "7.18-q03",
+     "q": "What services can the optional VHF 3 provide?",
+     "a": "Voice and data link capability, like ACARS and CPDLC.",
+     "cite": "CTH Rev 2.5 p.41 (citing AOM 9-9-50)"
+    },
+    {
+     "id": "7.18-q04",
+     "q": "If the TUNE knob on the RSP is in the NORM position, list some of the ways frequencies can be tuned:",
+     "a": "Via the CCP, via the MKP or the MFW TUNING window.",
+     "cite": "CTH Rev 2.5 p.41 (citing AOM 9-09-50)"
+    },
+    {
+     "id": "7.18-q05",
+     "q": "What does the HF communication system provide?",
+     "a": "Long range air-to-air, air-to-ground and ground-to-air communication.",
+     "cite": "CTH Rev 2.5 p.41 (citing AOM 9-09-50)"
+    },
+    {
+     "id": "7.18-q06",
+     "q": "What is SELCAL used for?",
+     "a": "It is a ground to air calling system that relieves the flight crew from having to continuously monitor the VHF and HF communications radios.",
+     "cite": "CTH Rev 2.5 p.41 (citing AOM 9-09-50)"
+    },
+    {
+     "id": "7.18-q07",
+     "q": "Where is the ramp audio jack located?",
+     "a": "On the lower LH portion of the forward fuselage. It is part of the STEERING DISENGAGE/RAMP INTERPHONE panel.",
+     "cite": "CTH Rev 2.5 p.41 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.18-q08",
+     "q": "Where does left MKP tuning enter frequencies into?",
+     "a": "#1 (NAV and COM)",
+     "cite": "CTH Rev 2.5 p.41 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.18-q09",
+     "q": "Where does right MKP tuning enter frequencies into?",
+     "a": "#2 (NAV and COM).",
+     "cite": "CTH Rev 2.5 p.41 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.18-q10",
+     "q": "What does pushing the microphone select button on the Audio Control Panel (ACP) do?",
+     "a": "Selects the microphone audio and makes the selection to the active transmitter.",
+     "cite": "CTH Rev 2.5 p.41 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.18-q11",
+     "q": "What do the audio control knobs on the ACP do?",
+     "a": "Provides for selection and volume control of the associated received audio signal.",
+     "cite": "CTH Rev 2.5 p.41 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.18-q12",
+     "q": "What does the HDPH knob on the ACP do? The SPKR knob?",
+     "a": "Controls headphone volume. Controls the selection of the speaker on/off and the volume for the flight deck speakers.",
+     "cite": "CTH Rev 2.5 p.41 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.18-q13",
+     "q": "Can the volume of the aural voice and tone warnings to the speaker be adjusted by the SPKR knob on the ACP?",
+     "a": "No.",
+     "cite": "CTH Rev 2.5 p.41 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.18-q14",
+     "q": "What does the BOOM/AUTO/MASK knob on the ACP in the AUTO position allow for?",
+     "a": "The oxygen mask microphone to be automatically selected when the oxygen mask is donned and switches back to boom when the oxygen mask is properly stowed.",
+     "cite": "CTH Rev 2.5 p.41 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.18-q15",
+     "q": "What does the VOX knob on the ACP do?",
+     "a": "Provides on/off and sensitivity control for the voice-activated interphone.",
+     "cite": "CTH Rev 2.5 p.41 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.18-q16",
+     "q": "What does the ST knob on the ACP do?",
+     "a": "Controls the side tone volume in the selected radio.",
+     "cite": "CTH Rev 2.5 p.41 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.18-q17",
+     "q": "What does pushing the AUDIO BACKUP button on the AUDIO JACK PANEL do?",
+     "a": "It recovers the use of the onside radio when full ACP functionality is not available.",
+     "cite": "CTH Rev 2.5 p.41 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.18-q18",
+     "q": "What does pushing the AURAL MUTE button on the AUDIO JACK PANEL do?",
+     "a": "It inhibits the aural alerts on the respective side and displays the cyan AVXN AURAL WARN 1 (2) OFF CAS message.",
+     "cite": "CTH Rev 2.5 p.41 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.18-q19",
+     "q": "Where are the PTT buttons located at for each pilot?",
+     "a": "One momentary PTT button on the CCP, one momentary PTT button on the sidestick controller and one 3- way position slide switch on the glare shield.",
+     "cite": "CTH Rev 2.5 p.42 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.18-q20",
+     "q": "What are the switch positions for the TUNE knob on the RSP?",
+     "a": "COM 1(2), 121.5, NORM and L(R) MKP ONLY.",
+     "cite": "CTH Rev 2.5 p.42 (citing AOM 9-09-50)"
+    },
+    {
+     "id": "7.18-q21",
+     "q": "If MKP ONLY is selected without a display tuning (RTSA) failure, what message will be displayed over the tuning window?",
+     "a": "LEFT/RIGHT SIDE DISPLAY TUNING INHIBITED.",
+     "cite": "CTH Rev 2.5 p.42 (citing AOM 9-09-50)"
+    },
+    {
+     "id": "7.18-q22",
+     "q": "If the crew receives a new ACARS message, how will they be alerted?",
+     "a": "By a cyan ACARS MESSAGE CAS.",
+     "cite": "CTH Rev 2.5 p.42 (citing AOM 9-09-50)"
+    },
+    {
+     "id": "7.18-q23",
+     "q": "Can you rely on ADF indications on the PFD while transmitting in HF?",
+     "a": "No.",
+     "cite": "CTH Rev 2.5 p.42 (citing AOM 2-64)"
+    }
+   ],
+   "mel_notes": [
+    {
+     "text": "HF (-01): may be inop unless the route of flight requires HF. Other sub-items cover operations needing two LRCS, and Part 91 subpart F single-LRCS relief (14 CFR 91.511).",
+     "cite": "MEL Rev 14 item 23-11-00 (p. 23-2)"
+    }
+   ],
+   "ob_notes": []
+  },
+  {
+   "id": "avionics-cpdlc",
+   "aom_chapter": "9-09",
+   "title": "Avionics: CPDLC",
+   "cth_section": "7.19 AVIONICS – CPDLC",
+   "cth_pages": "42",
+   "aom_sections_cited": [
+    "9-09",
+    "2-64"
+   ],
+   "summary_points": [
+    {
+     "text": "Up to 75 CPDLC messages stored until end of flight.",
+     "cite": "CTH Rev 2.5 p.42 (citing AOM 9-09-50) [cards q01]"
+    },
+    {
+     "text": "DATA mode must be selected on the COM 3 control page before using CPDLC.",
+     "cite": "CTH Rev 2.5 p.42 (citing AOM 9-09-50) [cards q02]"
+    },
+    {
+     "text": "Uplink arrival: CPDLC MESSAGE CAS plus 'MESSAGE ATC' aural.",
+     "cite": "CTH Rev 2.5 p.42 (citing AOM 9-09-50) [cards q03]"
+    },
+    {
+     "text": "ATC messages have priority over ACARS messages.",
+     "cite": "CTH Rev 2.5 p.42 (citing AOM 9-09-50) [cards q04]"
+    },
+    {
+     "text": "ATN-CPDLC is supplementary, for non-time-critical messages, and only in cruise above FL200.",
+     "cite": "CTH Rev 2.5 p.42 (citing AOM 2-64) [cards q05, q06]"
+    }
+   ],
+   "cards": [
+    {
+     "id": "7.19-q01",
+     "q": "How many CPDLC messages may be stored?",
+     "a": "Up to 75 messages until the end of the flight.",
+     "cite": "CTH Rev 2.5 p.42 (citing AOM 9-09-50)"
+    },
+    {
+     "id": "7.19-q02",
+     "q": "What selection needs to be activated on the COM 3 control page prior to using CPDLC?",
+     "a": "The DATA mode selection.",
+     "cite": "CTH Rev 2.5 p.42 (citing AOM 9-09-50)"
+    },
+    {
+     "id": "7.19-q03",
+     "q": "How will a pilot be notified that an uplink (CPDLC) message has arrived?",
+     "a": "A CPDLC MESSAGE CAS message will be displayed and a MESSAGE ATC aural annunciation will sound.",
+     "cite": "CTH Rev 2.5 p.42 (citing AOM 9-09-50)"
+    },
+    {
+     "id": "7.19-q04",
+     "q": "Does an ATC message received have priority over an ACARS message received?",
+     "a": "Yes.",
+     "cite": "CTH Rev 2.5 p.42 (citing AOM 9-09-50)"
+    },
+    {
+     "id": "7.19-q05",
+     "q": "What is the usage of ATN-CPDLC restricted to?",
+     "a": "Supplementary means of communication is for non-time critical messages.",
+     "cite": "CTH Rev 2.5 p.42 (citing AOM 2-64)"
+    },
+    {
+     "id": "7.19-q06",
+     "q": "What phase of flight is the usage of ATN-CPDLC restricted to?",
+     "a": "Cruise flight (above FL200) and for non-critical messaging.",
+     "cite": "CTH Rev 2.5 p.42 (citing AOM 2-64)"
+    }
+   ],
+   "mel_notes": [
+    {
+     "text": "CPDLC (ATN or FANS) inop: use voice (VHF/HF/SATCOM); must be operative for CPDLC operations.",
+     "cite": "MEL Rev 14 item 23-23-00 (p. 23-8)"
+    }
+   ],
+   "ob_notes": []
+  },
+  {
+   "id": "avionics-instruments-nav-fms",
+   "aom_chapter": "9-09",
+   "title": "Avionics: Flight Instruments / Navigation / FMS",
+   "cth_section": "7.20 AVIONICS – FLIGHT INSTRUMENTS / NAVIGATION / FMS",
+   "cth_pages": "42–47",
+   "aom_sections_cited": [
+    "9-09",
+    "2-56"
+   ],
+   "summary_points": [
+    {
+     "text": "Speed bug cyan with SPD in MAN, magenta with FMS; SPD knob must be MAN before takeoff.",
+     "cite": "CTH Rev 2.5 pp.42, 46 (citing AOM 9-09-30; AOM 2-56) [cards q01, q88]"
+    },
+    {
+     "text": "Vmax = lesser of VMO, MMO, VLE, VFE.",
+     "cite": "CTH Rev 2.5 p.42 (citing AOM 9-09-30) [cards q02]"
+    },
+    {
+     "text": "Takeoff speeds V1, VR, V2, VFS (auto-removed above 1,500 ft AGL and highest V-speed + 40 kt); approach speeds VFS, VAC, VAPP, VREF.",
+     "cite": "CTH Rev 2.5 pp.42, 43 (citing AOM 9-09-30) [cards q06, q07, q08]"
+    },
+    {
+     "text": "4 ADSPs and 2 TAT probes; ADS 1 → PFD 1, ADS 2 → PFD 2, ADS 4 → SFIS. Electrical emergency: RAT, CTR DU and ADS 3.",
+     "cite": "CTH Rev 2.5 p.45 (citing AOM 9-09-40) [cards q54, q55, q56]"
+    },
+    {
+     "text": "3 AHRS: 1 left PFD, 2 right PFD, 3 flight controls only; alignment (ATT/HDG ALIGNING DO NOT TAXI) up to 10 minutes.",
+     "cite": "CTH Rev 2.5 p.45 (citing AOM 9-09-55) [cards q63, q64]"
+    },
+    {
+     "text": "FMS: lateral/vertical nav enroute, terminal, non-precision, LNAV/VNAV and LPV, with auto transition to ILS; lateral sensitivity from database RNP value.",
+     "cite": "CTH Rev 2.5 p.46 (citing AOM 9-09-60) [cards q72, q84]"
+    },
+    {
+     "text": "Operator is responsible for FMS database currency and waypoint accuracy; database dates green (current), white (second), yellow (expired).",
+     "cite": "CTH Rev 2.5 p.46 (citing AOM 9-09-60) [cards q73, q75]"
+    },
+    {
+     "text": "FMS provides no OEI speeds or drift-down altitude.",
+     "cite": "CTH Rev 2.5 p.46 (citing AOM 2-56) [cards q87]"
+    },
+    {
+     "text": "SVS is not a primary navigation source.",
+     "cite": "CTH Rev 2.5 p.46 (citing AOM 9-09-60) [cards q86]"
+    },
+    {
+     "text": "Weather radar to 320 NM (precipitation) / 40 NM (turbulence); lightning detection within 200 NM.",
+     "cite": "CTH Rev 2.5 p.45 (citing AOM 9-09-55) [cards q70, q71]"
+    },
+    {
+     "text": "SFIS gives an independent third source of attitude, heading, and vertical speed.",
+     "cite": "CTH Rev 2.5 p.45 (citing AOM 9-09-40) [cards q57]"
+    }
+   ],
+   "cards": [
+    {
+     "id": "7.20-q01",
+     "q": "What color is the active target speed bug and the active target speed indication when MAN is set on the SPD knob on the AFCS panel? When FMS is set on the SPD knob?",
+     "a": "Cyan / magenta.",
+     "cite": "CTH Rev 2.5 p.42 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q02",
+     "q": "The Vmax is computed as the lesser of what speeds?",
+     "a": "VMO, MMO, VLE or VFE.",
+     "cite": "CTH Rev 2.5 p.42 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q03",
+     "q": "What symbol/bug indicates the speed in which the flaps can be retracted with a safe margin?",
+     "a": "The magenta F bug.",
+     "cite": "CTH Rev 2.5 p.42 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q04",
+     "q": "The tip of the airspeed trend vector points to the projected airspeed/Mach in approximately what timeframe at the present rate of acceleration/deceleration?",
+     "a": "10 seconds.",
+     "cite": "CTH Rev 2.5 p.42 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q05",
+     "q": "What symbol/bug indicates the speed in which the airplane is trimmed for when in the landing phase?",
+     "a": "The TCS trim bug – a green triangle.",
+     "cite": "CTH Rev 2.5 p.42 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q06",
+     "q": "Which speeds are displayed for takeoff?",
+     "a": "V1, VR, V2 and Vfs.",
+     "cite": "CTH Rev 2.5 p.42 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q07",
+     "q": "When are the takeoff speeds automatically deselected?",
+     "a": "When the airplane is above 1500 feet AGL and the current airspeed is greater than the highest Vspeed + 40 kts.",
+     "cite": "CTH Rev 2.5 p.42 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q08",
+     "q": "Which speeds are displayed for approach and landing?",
+     "a": "Vfs, Vac, Vapp and Vref.",
+     "cite": "CTH Rev 2.5 p.43 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q09",
+     "q": "What does the flap selection speed bug (green dot) indicate?",
+     "a": "The speed in which the flaps can be extended.",
+     "cite": "CTH Rev 2.5 p.43 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q10",
+     "q": "In Normal Mode (NM) what colors are the LSA bands and what do they indicate?",
+     "a": "White – Vss – stability speed; Yellow – the airspeed at which the AOA limiter function activates; Red – the airspeed that corresponds with the maximum allowable AOA.",
+     "cite": "CTH Rev 2.5 p.43 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q11",
+     "q": "In Direct Mode (DM), what colors are the LSA bands and what do they indicate?",
+     "a": "Yellow and Red. The red is where the STALL aural alert is triggered.",
+     "cite": "CTH Rev 2.5 p.43 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q12",
+     "q": "The altitude trend vector is computed to predict the altitude the airplane will achieve in how many seconds (assuming a constant vertical speed)?",
+     "a": "10 seconds.",
+     "cite": "CTH Rev 2.5 p.43 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q13",
+     "q": "Where are ADS messages (i.e. BOTH ON ADS 1/2/3) presented to the pilot and in what color?",
+     "a": "In amber color on the upper right corner of the PFD.",
+     "cite": "CTH Rev 2.5 p.43 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q14",
+     "q": "What type of guidance will be provided to the pilots to aid in the recovery of an unusual attitude?",
+     "a": "Red unusual attitude chevrons are displayed and they always point towards the horizon line.",
+     "cite": "CTH Rev 2.5 p.43 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q15",
+     "q": "Where are AHRS messages (i.e. BOTH ON AHRS 1 / 2 presented to the pilot and in what color?",
+     "a": "In amber color on the upper right corner of the PFD.",
+     "cite": "CTH Rev 2.5 p.43 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q16",
+     "q": "What is the Display Control Panel (DCP) used for?",
+     "a": "To select PFD formats, overlays, navigation sources and range on the displays.",
+     "cite": "CTH Rev 2.5 p.43 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q17",
+     "q": "What does pushing the CVS button on the DCP do?",
+     "a": "Allows the synthetic vision to be put on or taken off the PFD instead of the traditional blue and brown background.",
+     "cite": "CTH Rev 2.5 p.43 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q18",
+     "q": "What does pushing the FPV CAGE button on the DCP do?",
+     "a": "It laterally centers the flightpath vector on the PFD when selected. It is only enabled when CVS is active.",
+     "cite": "CTH Rev 2.5 p.43 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q19",
+     "q": "What does pushing the ET button do?",
+     "a": "Starts (first push), stops (second push) and removes (third push) a timer that is visible on the upper right side of the HSI.",
+     "cite": "CTH Rev 2.5 p.43 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q20",
+     "q": "What does pushing the TCAS button on the DCP do?",
+     "a": "It places traffic overlay information on the HSI Map.",
+     "cite": "CTH Rev 2.5 p.43 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q21",
+     "q": "What does the WX button do?",
+     "a": "It places weather overlay information on the HSI Map.",
+     "cite": "CTH Rev 2.5 p.43 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q22",
+     "q": "What does the RANGE/TILT knob allow the crew to do?",
+     "a": "The outer control (large knob) adjusts the range and the inner control (smaller knob) adjusts the tilt of the weather radar.",
+     "cite": "CTH Rev 2.5 p.43 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q23",
+     "q": "What does pushing the FMS button do?",
+     "a": "Selects the FMS as the primary NAV source.",
+     "cite": "CTH Rev 2.5 p.43 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q24",
+     "q": "What does pushing the V/L button do?",
+     "a": "Changes the primary NAV source to VOR or LOC (based on the frequency tuned).",
+     "cite": "CTH Rev 2.5 p.43 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q25",
+     "q": "What is the Reversionary Switch Panel used for?",
+     "a": "A manual reversion of displays and sensors (ADS and AHRS) in the event of a malfunction and also an alternative means of tuning.",
+     "cite": "CTH Rev 2.5 p.43 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q26",
+     "q": "How can the display brightness of the DU's be adjusted?",
+     "a": "By the OFF/BRT control knobs on the RSP.",
+     "cite": "CTH Rev 2.5 p.43 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q27",
+     "q": "If the pilot turns off the CTR DU, what will happen to the EICAS?",
+     "a": "The EICAS will be reverted to both the LH and RH DU's.",
+     "cite": "CTH Rev 2.5 p.43 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q28",
+     "q": "What does pushing the EICAS button on the RSP do?",
+     "a": "It reverts the EICAS window to the LH and RH DU's.",
+     "cite": "CTH Rev 2.5 p.43 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q29",
+     "q": "What does the ATT HDG button on the RSP do?",
+     "a": "It manually changes the AHRS source on the PFD.",
+     "cite": "CTH Rev 2.5 p.44 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q30",
+     "q": "What does pushing the ADS button on the RSP do?",
+     "a": "It manually changes the ADS source on the PFD.",
+     "cite": "CTH Rev 2.5 p.44 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q31",
+     "q": "How can the pilots interface with the avionics systems?",
+     "a": "Via the Multifunction Keyboard Panel (MKP) and the Cursor Control Panel (CCP).",
+     "cite": "CTH Rev 2.5 p.44 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q32",
+     "q": "What is the CNCL button on the MKP used for?",
+     "a": "To cancel an in-process flight plan edit.",
+     "cite": "CTH Rev 2.5 p.44 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q33",
+     "q": "What does pushing the FMS button on the MKP do?",
+     "a": "Displays the FMS format on the on-side MFW of the LWR DU.",
+     "cite": "CTH Rev 2.5 p.44 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q34",
+     "q": "What does pushing the ROUTE button on the MKP do?",
+     "a": "Displays the route window on the on-side MFW of the LWR DU.",
+     "cite": "CTH Rev 2.5 p.44 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q35",
+     "q": "What does pushing the MSG button on the MKP do?",
+     "a": "It shows or removes the FMS message dialog box on the MFW.",
+     "cite": "CTH Rev 2.5 p.44 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q36",
+     "q": "What does pushing the DEP/ARR button do?",
+     "a": "On the ground it shows the departures dialog box and in flight it shows the arrival dialog box.",
+     "cite": "CTH Rev 2.5 p.44 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q37",
+     "q": "What does pushing the DIRECT TO button on the MKP do?",
+     "a": "It brings up a direct-to dialog box which is used to edit the flight plane.",
+     "cite": "CTH Rev 2.5 p.44 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q38",
+     "q": "What is the SCRATCHPAD?",
+     "a": "It is a 24-character display used to temporarily hold keystrokes before being entered into a display entry flightplan.",
+     "cite": "CTH Rev 2.5 p.44 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q39",
+     "q": "What does pushing the EXEC button on the MKP do?",
+     "a": "It executes a modified flight plan making it the active flight plan.",
+     "cite": "CTH Rev 2.5 p.44 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q40",
+     "q": "When does the green light bar above the EXEC button illuminate?",
+     "a": "When there is a modified flight plan.",
+     "cite": "CTH Rev 2.5 p.44 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q41",
+     "q": "What does the MEM button on the MKP provide?",
+     "a": "The ability to memorize formats and to recall memorized DU formats.",
+     "cite": "CTH Rev 2.5 p.44 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q42",
+     "q": "What function does the CLR/DEL button perform?",
+     "a": "When there is data in the scratchpad it back-spaces or clears the entire scratchpad and when there is no data in the scratchpad it enters the word \"DELETE\" into the scratchpad.",
+     "cite": "CTH Rev 2.5 p.44 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q43",
+     "q": "How can the scratchpad text be entered into the selected display entry field?",
+     "a": "By pressing the ENTER button.",
+     "cite": "CTH Rev 2.5 p.44 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q44",
+     "q": "What does pushing the NAV button on the MKP do?",
+     "a": "It takes the number entered into the scratchpad and places it into the NAV radio if it fits the range of frequencies.",
+     "cite": "CTH Rev 2.5 p.44 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q45",
+     "q": "What does pushing the COM button on the MKP do?",
+     "a": "It takes the number into the scratchpad and places it into the COM radio if it fits the range of frequencies.",
+     "cite": "CTH Rev 2.5 p.44 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q46",
+     "q": "What do the arrows on the CCP do?",
+     "a": "They provide an alternate to the CCP trackball for positioning the cursor on the DU's.",
+     "cite": "CTH Rev 2.5 p.44 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q47",
+     "q": "What does the CKLST button on the MKP display?",
+     "a": "A list of available checklists.",
+     "cite": "CTH Rev 2.5 p.44 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q48",
+     "q": "What does the SYS button on the MKP display?",
+     "a": "The synoptic page.",
+     "cite": "CTH Rev 2.5 p.44 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q49",
+     "q": "What synoptic pages are available to select?",
+     "a": "STATUS, FLIGHT CONTROLS, ECS, FUEL, ELECTRICAL, HYDRAUICS, ANTI-ICE and MISC.",
+     "cite": "CTH Rev 2.5 p.44 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q50",
+     "q": "What does the CHART button do?",
+     "a": "Displays the chart format on the on-side MFW of the lower DU during normal operation.",
+     "cite": "CTH Rev 2.5 p.44 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q51",
+     "q": "How can the cursor be maneuvered?",
+     "a": "Via the trackball and arrows on the CCP.",
+     "cite": "CTH Rev 2.5 p.44 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q52",
+     "q": "What can the PAGE/DATA/PUSH ENTER double stack knob on the CCP be used for?",
+     "a": "To position scroll list comments, position the data entry cursor or change the value of various display items or selection boxes.",
+     "cite": "CTH Rev 2.5 p.45 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q53",
+     "q": "What does pushing the MENU button on the CCP do?",
+     "a": "It brings the display menu into view on the display window where the cursor is currently located and positions it on the first menu item.",
+     "cite": "CTH Rev 2.5 p.45 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q54",
+     "q": "How many ADSP's and TAT's probes are mounted on the forward fuselage?",
+     "a": "4 and 2",
+     "cite": "CTH Rev 2.5 p.45 (citing AOM 9-09-40)"
+    },
+    {
+     "id": "7.20-q55",
+     "q": "For normal operations, which ADS provides information for the left seat pilot PFD? The right seat pilot PFD? The SFIS?",
+     "a": "ADS 1, ADS 2, and ADS 4.",
+     "cite": "CTH Rev 2.5 p.45 (citing AOM 9-09-40)"
+    },
+    {
+     "id": "7.20-q56",
+     "q": "In the event of an electrical emergency, what will provide electrical power? Which DU is available? And which ADS is available?",
+     "a": "The RAT, CTR DU and ADS 3.",
+     "cite": "CTH Rev 2.5 p.45 (citing AOM 9-09-40)"
+    },
+    {
+     "id": "7.20-q57",
+     "q": "What does the SFIS provide?",
+     "a": "A third independent source of attitude angles, attitude rates, accelerations, heading and vertical speed for flight guidance and navigation when the primary flight information isn't available.",
+     "cite": "CTH Rev 2.5 p.45 (citing AOM 9-09-40)"
+    },
+    {
+     "id": "7.20-q58",
+     "q": "How can the menu on the SFIS be accessed?",
+     "a": "By the M labeled men button on the SFIS bezel.",
+     "cite": "CTH Rev 2.5 p.45 (citing AOM 9-09-40)"
+    },
+    {
+     "id": "7.20-q59",
+     "q": "What are the buttons to the left and right of the M button on the SFIS bezel used for?",
+     "a": "To skip over options – they are labeled UP and DOWN in the entry menu context.",
+     "cite": "CTH Rev 2.5 p.45 (citing AOM 9-09-40)"
+    },
+    {
+     "id": "7.20-q60",
+     "q": "When is the SFIS full screen menu available?",
+     "a": "Only on the ground.",
+     "cite": "CTH Rev 2.5 p.45 (citing AOM 9-09-40)"
+    },
+    {
+     "id": "7.20-q61",
+     "q": "What is the ECL?",
+     "a": "It's an electronic checklist which permits automation of the checklist items and can be used by the crew at any phase of flight.",
+     "cite": "CTH Rev 2.5 p.45 (citing AOM 9-09-40)"
+    },
+    {
+     "id": "7.20-q62",
+     "q": "What selections are available in the dropdown menu of the CHECKLIST window (ECL)?",
+     "a": "INDEX, QUEUE and FCN.",
+     "cite": "CTH Rev 2.5 p.45 (citing AOM 9-09-40)"
+    },
+    {
+     "id": "7.20-q63",
+     "q": "How many AHRS units are there and what are they used for?",
+     "a": "Three; AHRS 1 is for the left seat pilot PFD, AHRS is for the right seat PFD and AHRS 3 is used exclusively by the flight controls system.",
+     "cite": "CTH Rev 2.5 p.45 (citing AOM 9-09-55)"
+    },
+    {
+     "id": "7.20-q64",
+     "q": "When will the ATT/HDG ALIGNING DO NOT TAXI flag be displayed? For how long?",
+     "a": "During AHRS attitude and heading alignment. Up to 10 minutes.",
+     "cite": "CTH Rev 2.5 p.45 (citing AOM 9-09-55)"
+    },
+    {
+     "id": "7.20-q65",
+     "q": "Which FMS pages may GPS control and indications be seen?",
+     "a": "FMS INIT and FMS SENSORS pages.",
+     "cite": "CTH Rev 2.5 p.45 (citing AOM 9-09-55)"
+    },
+    {
+     "id": "7.20-q66",
+     "q": "How can the expanded menus for NAV or ADF be selected on the TUNING page?",
+     "a": "By selecting the NAV 1, NAV 2, ADF 1 or ADF 2 Gray button.",
+     "cite": "CTH Rev 2.5 p.45 (citing AOM 9-09-55)"
+    },
+    {
+     "id": "7.20-q67",
+     "q": "Where can an advanced menu of ATC/TCAS selections be found?",
+     "a": "By selecting the gray XPNDR/TCAS button on the TUNNING page.",
+     "cite": "CTH Rev 2.5 p.45 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q68",
+     "q": "Where is the weather radar control window accessed?",
+     "a": "Via the WX button on the DCP.",
+     "cite": "CTH Rev 2.5 p.45 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q69",
+     "q": "When is the weather radar tilt and gain automatically adjusted to provide an optimum weather picture?",
+     "a": "When the multi scan or AUTO is selected.",
+     "cite": "CTH Rev 2.5 p.45 (citing AOM 9-09-55)"
+    },
+    {
+     "id": "7.20-q70",
+     "q": "What is the coverage range of the radar and what does it provide?",
+     "a": "Up to 320 NM for precipitation-related weather and up to 40 NM for precipitation-related turbulence. It provides ground mapping coverage enabling the detection of major geographical features such as cities, lakes and coastlines.",
+     "cite": "CTH Rev 2.5 p.45 (citing AOM 9-09-55)"
+    },
+    {
+     "id": "7.20-q71",
+     "q": "What does the Lightning Detection System provide up to what range?",
+     "a": "Alerts the flight crew to the presence of thunderstorm activity by mapping the lightning surrounding the airplane within 200 NM.",
+     "cite": "CTH Rev 2.5 p.45 (citing AOM 9-09-55)"
+    },
+    {
+     "id": "7.20-q72",
+     "q": "What type of navigation does the FMS provide?",
+     "a": "Lateral and vertical navigation enroute, terminal, non-precision approaches, LNAV/VNAV and LPV approaches and coupled lateral and vertical navigation capability with an automatic transition to ILS approaches.",
+     "cite": "CTH Rev 2.5 p.46 (citing AOM 9-09-60)"
+    },
+    {
+     "id": "7.20-q73",
+     "q": "Who is responsible for keeping the FMS database updated and for the accuracy of the waypoints used in the FMS?",
+     "a": "The operator.",
+     "cite": "CTH Rev 2.5 p.46 (citing AOM 9-09-60)"
+    },
+    {
+     "id": "7.20-q74",
+     "q": "Where can the navigation and airplane database validation check be accomplished in the FMS?",
+     "a": "On the FMS INIT or the FMS DB format page.",
+     "cite": "CTH Rev 2.5 p.46 (citing AOM 9-09-60)"
+    },
+    {
+     "id": "7.20-q75",
+     "q": "What do colors of the FMS navigation database symbolize?",
+     "a": "Current selected navigation database is displayed in green, the second navigation database effective date shows in white and if the database is expired, the effective date is shown in yellow.",
+     "cite": "CTH Rev 2.5 p.46 (citing AOM 9-09-60)"
+    },
+    {
+     "id": "7.20-q76",
+     "q": "Which DU's can the FMS be displayed on and under which screen format size?",
+     "a": "The FMS format page can be accessed on any of the four DU's under a half screen format.",
+     "cite": "CTH Rev 2.5 p.46 (citing AOM 9-09-60)"
+    },
+    {
+     "id": "7.20-q77",
+     "q": "What are the various FMS format pages that can be selected?",
+     "a": "INIT, FLPN, SETUP, WT&BAL, TAKEOFF (TOLD), LANDING (TOLD) FLT LOG, FUEL MGMT, SENSORS, FMS DB and DEFAULTS.",
+     "cite": "CTH Rev 2.5 p.46 (citing AOM 9-09-60)"
+    },
+    {
+     "id": "7.20-q78",
+     "q": "How can the various FMS format pages be accessed?",
+     "a": "Through the CCP MENU button on the M on the top left corner of the MFW and use the drop down menu to select the FMS under a half screen format.",
+     "cite": "CTH Rev 2.5 p.46 (citing AOM 9-09-60)"
+    },
+    {
+     "id": "7.20-q79",
+     "q": "On the TAKEOFF page, what needs to be set to enable the SEND button for the FMS takeoff speeds?",
+     "a": "The OAT, P ALT and the RWY LENGTH.",
+     "cite": "CTH Rev 2.5 p.46 (citing AOM 9-09-60)"
+    },
+    {
+     "id": "7.20-q80",
+     "q": "If the crew loads inoperative NAVAID identifiers to inhibit them from the FMS navigation, when will that list be reset?",
+     "a": "Upon an FMS cold start.",
+     "cite": "CTH Rev 2.5 p.46 (citing AOM 9-09-60)"
+    },
+    {
+     "id": "7.20-q81",
+     "q": "The FMS can hold multiple flight plans. What are they called?",
+     "a": "ACT FLPN – active flight plan; SEC FLPN – secondary flight plan; MOD FLPN – modified flight plan.",
+     "cite": "CTH Rev 2.5 p.46 (citing AOM 9-09-30)"
+    },
+    {
+     "id": "7.20-q82",
+     "q": "What is the difference between an ACT FLPN and a MOD FLPN?",
+     "a": "Active flight plans that are being edited are called modified flight plans and can be executed to become an active flight plan.",
+     "cite": "CTH Rev 2.5 p.46 (citing AOM 9-09-60)"
+    },
+    {
+     "id": "7.20-q83",
+     "q": "What does the ROUTE format allow for?",
+     "a": "It enables creation, control and viewing of the FMS legs according to the flight plan.",
+     "cite": "CTH Rev 2.5 p.46 (citing AOM 9-09-60)"
+    },
+    {
+     "id": "7.20-q84",
+     "q": "The FMS sets the lateral deviation sensitivity based on what?",
+     "a": "The RNP value from the navigation database.",
+     "cite": "CTH Rev 2.5 p.46 (citing AOM 9-09-60)"
+    },
+    {
+     "id": "7.20-q85",
+     "q": "What does synthetic vision provide?",
+     "a": "A perspective view of the outside world displayed on the PFD and it creates a computerized synthetic image of the external scene topography from the perspective of the flight deck.",
+     "cite": "CTH Rev 2.5 p.46 (citing AOM 9-09-60)"
+    },
+    {
+     "id": "7.20-q86",
+     "q": "May synthetic vision be used as a primary navigation source?",
+     "a": "No.",
+     "cite": "CTH Rev 2.5 p.46 (citing AOM 9-09-60)"
+    },
+    {
+     "id": "7.20-q87",
+     "q": "Does the FMS provide OEI speeds and drift down altitude?",
+     "a": "No.",
+     "cite": "CTH Rev 2.5 p.46 (citing AOM 2-56)"
+    },
+    {
+     "id": "7.20-q88",
+     "q": "The SPD knob must be set to what prior to takeoff?",
+     "a": "MAN.",
+     "cite": "CTH Rev 2.5 p.46 (citing AOM 2-56)"
+    },
+    {
+     "id": "7.20-q89",
+     "q": "How can the menu on the SFIS be accessed?",
+     "a": "By the M labeled men button on the SFIS bezel.",
+     "cite": "CTH Rev 2.5 p.46 (citing AOM 9-09-40)"
+    },
+    {
+     "id": "7.20-q90",
+     "q": "What are the buttons to the left and right of the M button on the SFIS bezel used for?",
+     "a": "To skip over options – they are labeled UP and DOWN in the entry menu context.",
+     "cite": "CTH Rev 2.5 p.46 (citing AOM 9-09-40)"
+    },
+    {
+     "id": "7.20-q91",
+     "q": "When is the SFIS full screen menu available?",
+     "a": "Only on the ground.",
+     "cite": "CTH Rev 2.5 p.47 (citing AOM 9-09-40)"
+    },
+    {
+     "id": "7.20-q92",
+     "q": "What is the ECL?",
+     "a": "It's an electronic checklist which permits automation of the checklist items and can be used by the crew at any phase of flight.",
+     "cite": "CTH Rev 2.5 p.47 (citing AOM 9-09-40)"
+    }
+   ],
+   "mel_notes": [
+    {
+     "text": "One GPS may be inop if operations don't require GPS (SVS then inop). Both inop: operations not requiring GPS, one VHF nav + one DME (or two DMEs) operative, AHRS aligned; TAWS FLTA/PDA, SVS and ADS-B OUT inop.",
+     "cite": "MEL Rev 14 item 34-56-00 (p. 34-16)"
+    },
+    {
+     "text": "One FMS or one TOLD function inop: cross-check TOLD with other approved data; no intermixing; TOLD inop if VSPEED database number doesn't match AFM.",
+     "cite": "MEL Rev 14 item 34-61-00 (p. 34-18)"
+    },
+    {
+     "text": "TCAS inop: deactivated, transponder 2 considered inop; transponder 2 inop makes TCAS inop.",
+     "cite": "MEL Rev 14 item 34-43-00 (p. 34-13); MEL Rev 14 item 34-52-00 (p. 34-15)"
+    },
+    {
+     "text": "ADS-B inop (both): only with ATC authorization, and per this MEL only to move the aircraft for maintenance; one may be inop.",
+     "cite": "MEL Rev 14 item 34-70-01 (p. 34-19)"
+    },
+    {
+     "text": "TAWS GPWS/modes 1–4 inop: repairs within 2 flight-days (Cat A).",
+     "cite": "MEL Rev 14 item 34-41-00 (p. 34-10)"
+    },
+    {
+     "text": "Radio altimeter inop: minimums to BARO, AT Retard and TAWS modes 1–6 considered inop, 2 flight-days.",
+     "cite": "MEL Rev 14 item 34-31-00 (p. 34-5)"
+    },
+    {
+     "text": "SVS inop: disable via CVS button. ECL inop: use paper checklists.",
+     "cite": "MEL Rev 14 item 31-62-00 (p. 31-10); MEL Rev 14 item 31-60-00 (p. 31-4)"
+    }
+   ],
+   "ob_notes": []
+  },
+  {
+   "id": "preflight-walkaround",
+   "aom_chapter": "3-07",
+   "title": "Preflight Walk Around",
+   "cth_section": "7.21 PREFLIGHT WALK AROUND",
+   "cth_pages": "47",
+   "aom_sections_cited": [
+    "3-07",
+    "3-7"
+   ],
+   "summary_points": [
+    {
+     "text": "Set the PARK BRAKE to check brake wear indicators.",
+     "cite": "CTH Rev 2.5 p.47 (citing AOM 3-07) [cards q01]"
+    },
+    {
+     "text": "Five remove-before-flight pins: nose gear, right main gear, left main gear, emergency door, RAT.",
+     "cite": "CTH Rev 2.5 p.47 (citing AOM 3-07) [cards q02]"
+    },
+    {
+     "text": "21 vortex generators per wing; 17 static wicks total.",
+     "cite": "CTH Rev 2.5 p.47 (citing AOM 3-7; AOM 3-07) [cards q03, q04]"
+    },
+    {
+     "text": "Missing static wicks: Configuration Deviation List (AFM supplement).",
+     "cite": "CTH Rev 2.5 p.47 (citing AOM 3-07) [cards q05]"
+    },
+    {
+     "text": "Green oxygen discharge indicator disc is on the right aft fuselage near the ground service panel.",
+     "cite": "CTH Rev 2.5 p.47 (citing AOM 3-07) [cards q06]"
+    }
+   ],
+   "cards": [
+    {
+     "id": "7.21-q01",
+     "q": "What needs to be set in order to check the brake wear indictors?",
+     "a": "The PARK BRAKE lever.",
+     "cite": "CTH Rev 2.5 p.47 (citing AOM 3-07)"
+    },
+    {
+     "id": "7.21-q02",
+     "q": "List the 5 pins with \"remove before flight flags.\"",
+     "a": "Nose Gear Ground Locking Pin, Right Main Gear Ground Locking Pin, Left Main Gear Ground Locking Pin, Emergency Door Locking Pin and RAT Safety Locking Pin.",
+     "cite": "CTH Rev 2.5 p.47 (citing AOM 3-07)"
+    },
+    {
+     "id": "7.21-q03",
+     "q": "How many vortex generators are located on each wing?",
+     "a": "21.",
+     "cite": "CTH Rev 2.5 p.47 (citing AOM 3-7)"
+    },
+    {
+     "id": "7.21-q04",
+     "q": "How many static wicks are on the aircraft?",
+     "a": "17 total.",
+     "cite": "CTH Rev 2.5 p.47 (citing AOM 3-07)"
+    },
+    {
+     "id": "7.21-q05",
+     "q": "What publication can be referred to for dispatch with missing static wicks?",
+     "a": "The Configuration Deviation List; AFM Supplement.",
+     "cite": "CTH Rev 2.5 p.47 (citing AOM 3-07)"
+    },
+    {
+     "id": "7.21-q06",
+     "q": "Where is the green Oxygen Discharge Indicator disc located?",
+     "a": "In the right aft fuselage near the ground service panel.",
+     "cite": "CTH Rev 2.5 p.47 (citing AOM 3-07)"
+    }
+   ],
+   "mel_notes": [
+    {
+     "text": "Nose-wheel steering overtravel sensor inop: inspect the sensor target before each flight.",
+     "cite": "MEL Rev 14 item 32-53-13 (p. 32-8)"
+    }
+   ],
+   "ob_notes": []
+  },
+  {
+   "id": "weight-balance",
+   "aom_chapter": "7-20",
+   "title": "Weight and Balance",
+   "cth_section": "7.22 WEIGHT AND BALANCE",
+   "cth_pages": "47–48",
+   "aom_sections_cited": [
+    "7-05",
+    "7-20"
+   ],
+   "summary_points": [
+    {
+     "text": "MRW P500 37,699 / P600 42,990 lb; MTOW 37,567 / 42,858; MLW 34,172 / 37,479; MZFW 25,959 / 28,660.",
+     "cite": "CTH Rev 2.5 p.47 [cards q01, q02, q03, q04]"
+    },
+    {
+     "text": "CG limits expressed in % MAC.",
+     "cite": "CTH Rev 2.5 p.47 (citing AOM 7-05) [cards q05]"
+    },
+    {
+     "text": "FMS WT & BAL page (Aircraft Loading + Operating Empty Weight) loads/dispatches within CG limits; out-of-limit fields show yellow.",
+     "cite": "CTH Rev 2.5 p.47 (citing AOM 7-20) [cards q06, q07, q08]"
+    },
+    {
+     "text": "AVG PAX WT only used when passenger counts are entered per zone.",
+     "cite": "CTH Rev 2.5 p.47 (citing AOM 7-20) [cards q10]"
+    },
+    {
+     "text": "CONFIRM becomes active when ZFW changes or fuel changes by more than 500 lb from the confirmed quantity.",
+     "cite": "CTH Rev 2.5 p.48 (citing AOM 7-20) [cards q13]"
+    },
+    {
+     "text": "Gross Weight (GWT) shows current weight; ENROUTE FUEL entry appears after the flight plan is entered.",
+     "cite": "CTH Rev 2.5 p.47 (citing AOM 7-20) [cards q11, q12]"
+    }
+   ],
+   "cards": [
+    {
+     "id": "7.22-q01",
+     "q": "What is the Maximum Ramp Weight (MRW) of the Praetor 500 and Praetor 600?",
+     "a": "Praetor 500 – 37,699 Praetor 600 – 42,990",
+     "cite": "CTH Rev 2.5 p.47"
+    },
+    {
+     "id": "7.22-q02",
+     "q": "What is the Maximum Takeoff Weight (MTOW) of the Praetor 500 and Praetor 600?",
+     "a": "Praetor 500 – 37,567 Praetor 600 – 42,858",
+     "cite": "CTH Rev 2.5 p.47"
+    },
+    {
+     "id": "7.22-q03",
+     "q": "What is the Maximum Landing Weight (MLW) of the Praetor 500 and Praetor 600?",
+     "a": "Praetor 500 – 34,172 Praetor 600 – 37,479",
+     "cite": "CTH Rev 2.5 p.47"
+    },
+    {
+     "id": "7.22-q04",
+     "q": "What is the Maximum Zero Fuel Weight (MZFW) of the Praetor 500 and the Praetor 600?",
+     "a": "Praetor 500 – 25,959 Praetor 600 – 28,660",
+     "cite": "CTH Rev 2.5 p.47"
+    },
+    {
+     "id": "7.22-q05",
+     "q": "How are the airplane forward and aft CG limits referred to?",
+     "a": "In terms of % MAC.",
+     "cite": "CTH Rev 2.5 p.47 (citing AOM 7-05)"
+    },
+    {
+     "id": "7.22-q06",
+     "q": "What FMS page provides a means to load and dispatch the airplane within CG limits?",
+     "a": "The WT & BAL page.",
+     "cite": "CTH Rev 2.5 p.47 (citing AOM 7-20)"
+    },
+    {
+     "id": "7.22-q07",
+     "q": "What two sections is the FMS WT & BAL page divided into?",
+     "a": "Aircraft Loading and Operating Empty Weight.",
+     "cite": "CTH Rev 2.5 p.47 (citing AOM 7-20)"
+    },
+    {
+     "id": "7.22-q08",
+     "q": "If any field on the FMS WT & BAL page is out of limits for the calculations, what color will it display?",
+     "a": "In yellow font.",
+     "cite": "CTH Rev 2.5 p.47 (citing AOM 7-20)"
+    },
+    {
+     "id": "7.22-q09",
+     "q": "What items do the entry data on the AIRCRAFT LOADING page include?",
+     "a": "The average passenger weight, number of passengers in the zones, baggage weight and taxi fuel.",
+     "cite": "CTH Rev 2.5 p.47 (citing AOM 7-20)"
+    },
+    {
+     "id": "7.22-q10",
+     "q": "When is the AVG PAX WT used?",
+     "a": "Only when the number of passengers is entered into each zone.",
+     "cite": "CTH Rev 2.5 p.47 (citing AOM 7-20)"
+    },
+    {
+     "id": "7.22-q11",
+     "q": "What shows the current weight of the aircraft?",
+     "a": "The Gross Weight (GWT).",
+     "cite": "CTH Rev 2.5 p.47 (citing AOM 7-20)"
+    },
+    {
+     "id": "7.22-q12",
+     "q": "When is the ENROUTE FUEL entry displayed?",
+     "a": "After the flight plan is entered.",
+     "cite": "CTH Rev 2.5 p.47 (citing AOM 7-20)"
+    },
+    {
+     "id": "7.22-q13",
+     "q": "When does the CONFIRM button on the AIRCRAFT LOADING page become active?",
+     "a": "Every time the ZFW is changed due to loading changes or fuel quantity changes of more than 500 lbs. from the quantity previously confirmed.",
+     "cite": "CTH Rev 2.5 p.48 (citing AOM 7-20)"
+    }
+   ],
+   "mel_notes": [],
+   "ob_notes": []
+  },
+  {
+   "id": "performance",
+   "aom_chapter": "5-35",
+   "title": "Performance",
+   "cth_section": "7.23 PERFORMANCE",
+   "cth_pages": "48",
+   "aom_sections_cited": [
+    "5-01",
+    "5-6",
+    "5-20",
+    "5-35"
+   ],
+   "summary_points": [
+    {
+     "text": "VFS = final segment climb speed.",
+     "cite": "CTH Rev 2.5 p.48 (citing AOM 5-01) [cards q01]"
+    },
+    {
+     "text": "Approved performance software: iPreflight, FMS and OPERA.",
+     "cite": "CTH Rev 2.5 p.48 (citing AOM 5-6) [cards q02]"
+    },
+    {
+     "text": "Max crosswind for takeoff 35 kt; crosswind landing technique is de-crab.",
+     "cite": "CTH Rev 2.5 p.48 (citing AOM 5-20; AOM 5-35) [cards q03, q04]"
+    },
+    {
+     "text": "Flaps 1 takeoff initial pitch 12°, then follow the FD.",
+     "cite": "CTH Rev 2.5 p.48 (citing AOM 5-20) [cards q05]"
+    },
+    {
+     "text": "Landing data assumes VREF at the threshold (50 ft).",
+     "cite": "CTH Rev 2.5 p.48 (citing AOM 5-35) [cards q06]"
+    },
+    {
+     "text": "Use ICE PROTECTION ALL landing tables if STALL PROT ICE SPEED is displayed.",
+     "cite": "CTH Rev 2.5 p.48 (citing AOM 5-35) [cards q07]"
+    }
+   ],
+   "cards": [
+    {
+     "id": "7.23-q01",
+     "q": "What is Vfs?",
+     "a": "Final Segment Climb Speed.",
+     "cite": "CTH Rev 2.5 p.48 (citing AOM 5-01)"
+    },
+    {
+     "id": "7.23-q02",
+     "q": "What is the Approved Performance Software that is certified to provide takeoff, landing and EnRoute approved performance data?",
+     "a": "iPreflight, FMS and OPERA.",
+     "cite": "CTH Rev 2.5 p.48 (citing AOM 5-6)"
+    },
+    {
+     "id": "7.23-q03",
+     "q": "What is the maximum crosswind component for takeoff?",
+     "a": "35 kts.",
+     "cite": "CTH Rev 2.5 p.48 (citing AOM 5-20; AOM 5-35)"
+    },
+    {
+     "id": "7.23-q04",
+     "q": "What technique should be used for crosswind landings?",
+     "a": "The de-crab technique.",
+     "cite": "CTH Rev 2.5 p.48 (citing AOM 5-35)"
+    },
+    {
+     "id": "7.23-q05",
+     "q": "What is the initial pitch angle for takeoff with the flap 1 position?",
+     "a": "12 degrees, (followed by pitching to flight director)",
+     "cite": "CTH Rev 2.5 p.48 (citing AOM 5-20)"
+    },
+    {
+     "id": "7.23-q06",
+     "q": "What airspeed condition is the landing data based off?",
+     "a": "Vref airspeed is maintained at the runway threshold (50 ft).",
+     "cite": "CTH Rev 2.5 p.48 (citing AOM 5-35)"
+    },
+    {
+     "id": "7.23-q07",
+     "q": "When must the ICE PROTECTION ALL tables be used for unfactored landing distances?",
+     "a": "If the STALL PROT ICE SPEED message is displayed.",
+     "cite": "CTH Rev 2.5 p.48 (citing AOM 5-35)"
+    }
+   ],
+   "mel_notes": [],
+   "ob_notes": []
+  },
+  {
+   "id": "flight-planning",
+   "aom_chapter": "6-10",
+   "title": "Flight Planning",
+   "cth_section": "7.24 FLIGHT PLANNING",
+   "cth_pages": "48–49",
+   "aom_sections_cited": [
+    "6-10",
+    "6-30",
+    "6-20",
+    "6-25"
+   ],
+   "summary_points": [
+    {
+     "text": "Climb Schedule 1: lower speed, reaches altitude faster with less fuel. Schedule 2: shallower pitch, lower climb rate.",
+     "cite": "CTH Rev 2.5 p.48 (citing AOM 6-10) [cards q01, q03]"
+    },
+    {
+     "text": "Climb Schedule 3 (both models): 250 KIAS to 10,000 ft, accelerate to 300 KIAS, then 300 KIAS / M0.78.",
+     "cite": "CTH Rev 2.5 p.49 (citing AOM 6-10) [cards q05]"
+    },
+    {
+     "text": "Planning tables for ice protection OFF and ALL.",
+     "cite": "CTH Rev 2.5 p.49 (citing AOM 6-10) [cards q06]"
+    },
+    {
+     "text": "Maneuver capability charts: 1.2 g to 1.5 g.",
+     "cite": "CTH Rev 2.5 p.49 (citing AOM 6-30) [cards q07]"
+    },
+    {
+     "text": "Descent Schedule 1: M0.74 / 250 KIAS to sea level. Schedule 2: M0.78 / 300 KIAS to 10,000 ft, slow to 250 KIAS at 10,000 ft.",
+     "cite": "CTH Rev 2.5 p.49 (citing AOM 6-20) [cards q08]"
+    },
+    {
+     "text": "Holding tables: minimum drag speed and 200 KIAS.",
+     "cite": "CTH Rev 2.5 p.49 (citing AOM 6-25) [cards q09]"
+    }
+   ],
+   "cards": [
+    {
+     "id": "7.24-q01",
+     "q": "Which climb schedule uses a lower climb speed allowing it to get to the target altitude faster and with a lower fuel, burn?",
+     "a": "Climb Schedule 1.",
+     "cite": "CTH Rev 2.5 p.48 (citing AOM 6-10)"
+    },
+    {
+     "id": "7.24-q02",
+     "q": "Describe Climb Schedule 1.",
+     "a": "Praetor 500: Climb at 250 KIAS and then Mach 0.72 up to selected altitude.\nPraetor 600: 250 KIAS up to 10,000 ft; Climb at 250 KIAS and then Mach 0.66 up to selected altitude.\n(Two-column table flattened; check the layout on the printed page.)",
+     "cite": "CTH Rev 2.5 p.48"
+    },
+    {
+     "id": "7.24-q03",
+     "q": "Which climb schedule uses a shallower pitch angle, which gives a lesser climb rate?",
+     "a": "Climb Schedule 2.",
+     "cite": "CTH Rev 2.5 p.48 (citing AOM 6-10)"
+    },
+    {
+     "id": "7.24-q04",
+     "q": "Describe Climb Schedule 2.",
+     "a": "Praetor 600: Climb 250 KIAS to 10,000 ft; Climb at 250 KIAS and then Mach 0.74 to selected altitude. (Only the Praetor 600 column is printed.)",
+     "cite": "CTH Rev 2.5 pp.48–49 (citing AOM 6-10)"
+    },
+    {
+     "id": "7.24-q05",
+     "q": "Describe Climb Schedule 3.",
+     "a": "Praetor 500 and Praetor 600 (same): 250 KIAS up to 10,000 ft; Acceleration from 250 KIAS up to 300 KIAS; Climb at 300 KIAS and then Mach 0.78 up to selected altitude.",
+     "cite": "CTH Rev 2.5 p.49 (citing AOM 6-10)"
+    },
+    {
+     "id": "7.24-q06",
+     "q": "List the two ice protection system statuses that planning tables are generated for:",
+     "a": "OFF (both engine and wing and horizontal stabilizer ice protection systems OFF) and ALL (both engine and wing and horizontal stabilizer ice protection systems ON).",
+     "cite": "CTH Rev 2.5 p.49 (citing AOM 6-10)"
+    },
+    {
+     "id": "7.24-q07",
+     "q": "What load factors are published in the Maneuver Capability Altitude charts?",
+     "a": "Various load factors from 1.2 g up to 1.5 g.",
+     "cite": "CTH Rev 2.5 p.49 (citing AOM 6-30)"
+    },
+    {
+     "id": "7.24-q08",
+     "q": "Describe the descent schedule that is used for planning:",
+     "a": "Praetor 500 and Praetor 600 (same):\nSchedule 1: Descent at Mach 0.74 then 250 KIAS down to sea level.\nSchedule 2: Descent at Mach 0.78 then 300 KIAS down to 10,000 ft; Deceleration from 300 KIAS to 250 KIAS at 10,000 ft; 250 KIAS down to sea level.",
+     "cite": "CTH Rev 2.5 p.49 (citing AOM 6-20)"
+    },
+    {
+     "id": "7.24-q09",
+     "q": "What speeds are holding tables presented for?",
+     "a": "Minimum drag speed and 200 KIAS.",
+     "cite": "CTH Rev 2.5 p.49 (citing AOM 6-25)"
+    }
+   ],
+   "mel_notes": [],
+   "ob_notes": []
+  }
+ ]
+}
