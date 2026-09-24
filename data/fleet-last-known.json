@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-24T15:13:24Z",
+  "updated_at": "2026-09-24T15:34:13Z",
   "source": "ADSB.lol public type queries (cumulative last-known)",
   "notes": [
     "Keyed by Mode-S hex when available, else registration.",
@@ -7,10 +7,12 @@
     "Seeded initially from fleet-map-snapshot.json; GitHub Action grows this file over time."
   ],
   "last_poll": {
-    "at": "2026-09-24T15:13:24Z",
-    "live_count": 28,
+    "at": "2026-09-24T15:34:13Z",
+    "live_count": 5,
     "stored_count": 80,
-    "errors": []
+    "errors": [
+      "E545: HTTP Error 429: Too Many Requests"
+    ]
   },
   "aircraft": {
     "a4eafd": {
@@ -100,7 +102,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-24T15:13:24Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a4e746": {
@@ -181,16 +183,16 @@
       "type": "E550",
       "model": "Praetor 600",
       "callsign": "LXJ606",
-      "lat": 39.66069,
-      "lon": -105.507799,
-      "alt_baro": 26000,
-      "alt_geom": 27375,
-      "gs": 395.6,
-      "track": 250.97,
+      "lat": 38.010321,
+      "lon": -105.810222,
+      "alt_baro": 44625,
+      "alt_geom": 46525,
+      "gs": 399.8,
+      "track": 128.7,
       "true_heading": null,
       "mag_heading": null,
-      "last_seen": "2026-09-23T23:23:30Z",
-      "status": "last_known",
+      "last_seen": "2026-09-24T15:34:13Z",
+      "status": "live",
       "source": "ADSB.lol type query"
     },
     "a4ffe9": {
@@ -208,7 +210,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-24T15:13:24Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a38c9b": {
@@ -226,7 +228,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-24T15:13:24Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a7e941": {
@@ -235,15 +237,15 @@
       "type": "E550",
       "model": "Praetor 600",
       "callsign": "LXJ609",
-      "lat": 37.046906,
-      "lon": -80.36651,
+      "lat": 34.347473,
+      "lon": -80.751418,
       "alt_baro": 43000,
-      "alt_geom": 44675,
-      "gs": 472.3,
-      "track": 185.71,
+      "alt_geom": 44800,
+      "gs": 434.4,
+      "track": 187.14,
       "true_heading": null,
       "mag_heading": null,
-      "last_seen": "2026-09-24T15:13:24Z",
+      "last_seen": "2026-09-24T15:34:13Z",
       "status": "live",
       "source": "ADSB.lol type query"
     },
@@ -262,7 +264,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-24T15:13:24Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a539fb": {
@@ -280,7 +282,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-24T15:13:24Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a7d2f7": {
@@ -334,7 +336,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-24T15:13:24Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a35dae": {
@@ -370,7 +372,7 @@
       "true_heading": 312.19,
       "mag_heading": null,
       "last_seen": "2026-09-24T15:13:24Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a54ee7": {
@@ -406,7 +408,7 @@
       "true_heading": 160.31,
       "mag_heading": null,
       "last_seen": "2026-09-24T15:13:24Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a51da1": {
@@ -550,7 +552,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-24T15:13:24Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a3d074": {
@@ -568,7 +570,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-24T15:13:24Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a4dfd8": {
@@ -676,7 +678,7 @@
       "true_heading": 120.94,
       "mag_heading": null,
       "last_seen": "2026-09-24T15:13:24Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a80d09": {
@@ -685,15 +687,15 @@
       "type": "E550",
       "model": "Praetor 600",
       "callsign": "LXJ618",
-      "lat": 40.855792,
-      "lon": -74.054094,
+      "lat": 40.855797,
+      "lon": -74.054092,
       "alt_baro": "ground",
       "alt_geom": null,
       "gs": 0.0,
       "track": null,
       "true_heading": 140.62,
       "mag_heading": null,
-      "last_seen": "2026-09-24T15:13:24Z",
+      "last_seen": "2026-09-24T15:34:13Z",
       "status": "live",
       "source": "ADSB.lol type query"
     },
@@ -712,7 +714,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-24T15:13:24Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a2b234": {
@@ -784,7 +786,7 @@
       "true_heading": 180.0,
       "mag_heading": null,
       "last_seen": "2026-09-24T15:13:24Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a7d6ae": {
@@ -793,15 +795,15 @@
       "type": "E550",
       "model": "Praetor 600",
       "callsign": "LXJ604",
-      "lat": 43.66095,
-      "lon": -93.518372,
-      "alt_baro": 29050,
-      "alt_geom": 30600,
-      "gs": 461.9,
-      "track": 3.6,
-      "true_heading": null,
+      "lat": 44.878063,
+      "lon": -93.217408,
+      "alt_baro": "ground",
+      "alt_geom": 750,
+      "gs": 11.2,
+      "track": null,
+      "true_heading": 253.12,
       "mag_heading": null,
-      "last_seen": "2026-09-24T15:13:24Z",
+      "last_seen": "2026-09-24T15:34:13Z",
       "status": "live",
       "source": "ADSB.lol type query"
     },
@@ -820,7 +822,7 @@
       "true_heading": 257.28,
       "mag_heading": 253.65,
       "last_seen": "2026-09-24T15:13:24Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a29223": {
@@ -874,7 +876,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-24T15:13:24Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a7fa76": {
@@ -901,15 +903,15 @@
       "type": "E550",
       "model": "Praetor 600",
       "callsign": "LXJ607",
-      "lat": 37.025695,
-      "lon": -85.282447,
-      "alt_baro": 45000,
-      "alt_geom": 46875,
-      "gs": 432.6,
-      "track": 47.9,
+      "lat": 38.680906,
+      "lon": -82.908691,
+      "alt_baro": 34050,
+      "alt_geom": 35375,
+      "gs": 416.3,
+      "track": 49.38,
       "true_heading": null,
       "mag_heading": null,
-      "last_seen": "2026-09-24T15:13:24Z",
+      "last_seen": "2026-09-24T15:34:13Z",
       "status": "live",
       "source": "ADSB.lol type query"
     },
@@ -928,7 +930,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-24T15:13:24Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a3acac": {
@@ -1090,7 +1092,7 @@
       "true_heading": 90.0,
       "mag_heading": null,
       "last_seen": "2026-09-24T15:13:24Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a4bfc7": {
@@ -1144,7 +1146,7 @@
       "true_heading": 90.0,
       "mag_heading": null,
       "last_seen": "2026-09-24T15:13:24Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a3c54f": {
@@ -1198,7 +1200,7 @@
       "true_heading": 286.96,
       "mag_heading": 297.95,
       "last_seen": "2026-09-24T15:13:24Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a56531": {
@@ -1342,7 +1344,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-24T15:13:24Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a39052": {
@@ -1360,7 +1362,7 @@
       "true_heading": 140.62,
       "mag_heading": null,
       "last_seen": "2026-09-24T15:13:24Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a503a0": {
@@ -1396,7 +1398,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-24T15:13:24Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a53644": {
@@ -1414,7 +1416,7 @@
       "true_heading": 225.0,
       "mag_heading": null,
       "last_seen": "2026-09-24T15:13:24Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     },
     "a4f26b": {
@@ -1450,7 +1452,7 @@
       "true_heading": null,
       "mag_heading": null,
       "last_seen": "2026-09-24T15:13:24Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query"
     }
   }
