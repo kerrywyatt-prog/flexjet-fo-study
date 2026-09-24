@@ -25,7 +25,7 @@ Tested from `https://kerrywyatt-prog.github.io` (headless Chrome, 390×844, iOS 
   - if ADSB.lol fails (e.g. 429): adsb.fi `/api/v2/hex/<roster hexes>` fallback
 - Publishes to branch **`fleet-live`** (not `main` → no Pages builds, no conflicts with site releases):
   - `m/<floor(unix/60)>.json` written for the current and next 1–2 minutes (up to 6 when idle) each cycle. The client at
-    minute B fetches `m/<B>.json` at ~B:25 — a URL that always exists and holds data ≤1–2 min old (usually ~25 s), so the
+    minute B fetches `m/<minute of (now − 25 s)>.json` (i.e. `m/<B>.json` from B:25) — a URL that always exists and holds data ≤1–2 min old (usually ~25 s), so the
     raw CDN can never serve anything staler. Buckets older than 10 min are deleted.
   - `live.json` (latest; fallback, may be ≤5 min stale on the CDN).
 - State (flight segmentation, trails) lives in `/workspace/flexjet-fleet-live-state/` on the box.

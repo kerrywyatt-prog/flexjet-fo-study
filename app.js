@@ -1178,7 +1178,9 @@ function esc(s) {
   }
 
   async function fetchFleetRelay(signal) {
-    const bucket = Math.floor(Date.now() / 60000);
+    // Minute of (now − 25 s): before :25 use the previous minute's (final) file so we never
+    // make the CDN cache the current minute's file before the relay has refreshed it.
+    const bucket = Math.floor((Date.now() - FLEET_REFRESH_OFFSET_MS) / 60000);
     const urls = [`${FLEET_LIVE_BASE}m/${bucket}.json`, `${FLEET_LIVE_BASE}m/${bucket - 1}.json`, FLEET_LIVE_URL];
     for (const url of urls) {
       try {
