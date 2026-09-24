@@ -830,7 +830,7 @@ function esc(s) {
     if (ac.vertRate === null) return 'Unavailable';
     const v = Math.round(ac.vertRate / 10) * 10;
     if (Math.abs(v) < 100) return `Level (${v >= 0 ? '+' : ''}${v} fpm)`;
-    return `${v > 0 ? '↑ +' : '↓ '}${v.toLocaleString()} fpm`;
+    return `${v > 0 ? '↑ +' : '↓ −'}${Math.abs(v).toLocaleString()} fpm`;
   }
 
   function fleetAirport(a) {
