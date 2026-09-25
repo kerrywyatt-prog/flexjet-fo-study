@@ -72,7 +72,7 @@ def ensure_live_daemon() -> None:
         start_new_session=True,
     )
     print(f"started live relay (pid {proc.pid})", flush=True)
-UA = "flexjet-fo-study-fleet-bot/1.0 (+https://github.com/kerrywyatt-prog/flexjet-fo-study)"
+UA = "flexjet-fo-study-fleet-bot/1.0"
 SLEEP_BETWEEN_TYPES_SEC = 12
 
 

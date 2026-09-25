@@ -1,6 +1,6 @@
 # Flexjet FO Study App
 
-Password-gated mobile-first study framework for Kerry Wyatt (Flexjet FO).
+Password-gated mobile-first study framework for Flexjet Praetor 500/600 first officers.
 
 ## Live URL
 **https://kerrywyatt-prog.github.io/flexjet-fo-study/**
@@ -15,7 +15,7 @@ Unlock persists in `localStorage` for this browser/device.
 - `app-v5.js` (= `app.js`) — core: gate, legacy views (Orientation, 135 bank/quiz, IAI flashcards, Fleet Map, Admin, Ritual, Notes); calls `FOStudyExt.route()` first
 - `study-v25.js` — training-path views: Home "Where am I", Indoc hub, Checkride Prep, Drill engine, Checklists, Bulletins, Search, Gaps
 - `styles-v5.css` — dark aviation UI (v25 block at the end)
-- `data/study.json` — checkride prep content (built by `kerry/flexjet/praetor/checkride-prep/site-build/build_study_json.py`)
+- `data/study.json` — checkride prep content (built by the checkride-prep site-build script `build_study_json.py`, kept outside this repo)
 - `data/limitations.json`, `data/systems.json` — limitations / systems sets (separate worker; pages show "loading content" until present)
 - `data/indoc-days.json` — Indoc Day 1–4 notes (security content excluded)
 - `data/memory-items.json` (IAI, word-for-word), `data/135-recurrent-qa.json` (bank, word-for-word), fleet files
@@ -38,6 +38,6 @@ python3 -m http.server 8080
 # then open http://localhost:8080
 ```
 
-Push to `main` on `kerrywyatt-prog/flexjet-fo-study` to update GitHub Pages.
+Push to `main` on `origin` to update GitHub Pages.
 
 Study notes are summaries with page cites (CTH/CFM/MEL/ACS); no raw manual PDFs or bulk manual text.

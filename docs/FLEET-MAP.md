@@ -6,7 +6,7 @@ Route: `#/fleet-map` (Home tile **Fleet Map**).
 The client fetched `https://api.adsb.lol/v2/type/E545|E550` directly from the browser. ADSB.lol returns
 **no `Access-Control-Allow-Origin` header**, so every browser (iPhone Safari included) blocks the response
 (`corsError: MissingAllowOriginHeader`) and the page always fell back to the hourly last-known store.
-Tested from `https://kerrywyatt-prog.github.io` (headless Chrome, 390×844, iOS Safari UA):
+Tested from the GitHub Pages origin (headless Chrome, 390×844, iOS Safari UA):
 
 | Provider / endpoint | Browser CORS |
 | --- | --- |

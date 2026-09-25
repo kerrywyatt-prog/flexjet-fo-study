@@ -96,7 +96,7 @@ function esc(s) {
       <div class="gate gate-hero">
         <div class="gate-mark" aria-hidden="true"><img src="icons/icon-192.png" alt="" width="72" height="72" /></div>
         <h1>FO Study</h1>
-        <p class="sub">Private study framework for Kerry Wyatt<br/>Flexjet · First Officer track</p>
+        <p class="sub">Praetor FO study framework<br/>Flexjet · First Officer track</p>
         <form id="gate-form" autocomplete="off">
           <label for="pw">Access password</label>
           <input id="pw" type="password" name="password" placeholder="Enter password" autofocus enterkeyhint="go" />
@@ -134,7 +134,7 @@ function esc(s) {
 
     app.innerHTML = `
       <div class="${shellClass()}">
-        ${topbar('FO Study', 'Kerry Wyatt')}
+        ${topbar('FO Study', 'Praetor FO Study')}
         <main class="content">
           <div class="hero">
             <div class="eyebrow">Flexjet · FO track</div>

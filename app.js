@@ -50,7 +50,7 @@
   let quizRun = { Q: [], idx: 0, ans: [], mode: 'mock', len: 0 };
 
   /** Bank Q#s matched COVERED to instructor test cues (spoken "on the test" + table-smack pass).
-   *  Source: kerry/flexjet/praetor/2026-09-24-INSTRUCTOR-TEST-FLAGS-vs-135-BANK.md. Questions are the locked bank, word-for-word. */
+   *  Source: instructor test flags vs 135 bank notes (2026-09-24). Questions are the locked bank, word-for-word. */
   const FLAGGED_QS = [19, 22, 32, 35, 40, 41, 47, 59, 60, 69, 70, 111, 112, 146, 147, 148, 149, 150, 154, 155, 156, 158, 162, 165, 166, 170, 193];
   const PRACTICE_LENS = [25, 50, 100, 201];
 
@@ -539,7 +539,7 @@
   };
 
   const DEFAULT_ADMIN = [
-    { id: 'dinner', text: 'Thu Welcome Dinner 5:15p — Hyde Park Beachwood (on calendar)', done: true },
+    { id: 'dinner', text: 'Thu Welcome Dinner 5:15p — Hyde Park Beachwood', done: true },
     { id: 'tolltag', text: 'DFW: TollTag/BlueDiamond + email CathyC@Flexjet.com before OE', done: false },
     { id: 'parking-spot', text: 'Parking Spot app + code BOMB1525', done: false },
     { id: 'ukg', text: 'Benefits enrollment — UKG Myself when company email arrives', done: false },
@@ -1285,7 +1285,7 @@ function esc(s) {
       <div class="gate gate-hero">
         <div class="gate-mark" aria-hidden="true"><img src="icons/icon-192.png" alt="" width="72" height="72" /></div>
         <h1>FO Study</h1>
-        <p class="sub">Private study framework for Kerry Wyatt<br/>Flexjet · First Officer track</p>
+        <p class="sub">Praetor FO study framework<br/>Flexjet · First Officer track</p>
         <form id="gate-form" autocomplete="off">
           <label for="pw">Access password</label>
           <input id="pw" type="password" name="password" placeholder="Enter password" autofocus enterkeyhint="go" />
@@ -1323,7 +1323,7 @@ function esc(s) {
 
     app.innerHTML = `
       <div class="${shellClass()}">
-        ${topbar('FO Study', 'Kerry Wyatt')}
+        ${topbar('FO Study', 'Praetor FO Study')}
         <main class="content">
           <div class="hero">
             <div class="eyebrow">Flexjet · FO track</div>
@@ -1432,7 +1432,7 @@ function esc(s) {
               <li><strong>Day 2 (Thu):</strong> Company / culture · D&amp;A · HR · salary enhancement · benefits · <strong>payroll</strong> · social · <strong>Welcome dinner 5:15p</strong></li>
               <li><strong>Day 3 (Fri):</strong> Flight admin · ops · Tailwind/expense · fleet · maintenance · logistics</li>
             </ul>
-            <div class="note">Classmate-safe process notes — no personal sizes/addresses. Day 2/3 video clips still empty. Full large-v3 compare 2026-09-19 folded (Phenom 8–9 mo · Josh Rock · deferred in-addition-to-6% match · seat locks · class pay figures).</div>
+            <div class="note">Classmate-safe process notes — no personal sizes/addresses. Day 2/3 video clips still empty. Full large-v3 compare 2026-09-19 folded (Phenom 8–9 mo · seat locks).</div>
           </div>
 
           <div class="card">
@@ -1452,21 +1452,10 @@ function esc(s) {
             <h3><span class="dot"></span>Must lock — payroll (Day 2)</h3>
             <ul>
               <li><strong>Cadence:</strong> 15th + last day (24/yr); weekend → prior Friday</li>
-              <li><strong>Training:</strong> salary — class ~$146,445/yr (confirm handout). <strong>Line:</strong> PBS ~$751/day × days (confirm handout); reconcile prior month on first check of next month</li>
+              <li><strong>Training vs line:</strong> rates per the HR handout. <strong>Line:</strong> daily rate × days; reconcile prior month on first check of next month</li>
               <li><strong>Per diem:</strong> tax-exempt $42/work day (confirm handout); often estimate then reconcile</li>
               <li><strong>OT:</strong> 12–14h OT past 12; past 14h = triple; early start if duty-on before 07:00; extended day (can’t domicile before midnight) = 1.5× daily. Ops reports it — you don’t track. Pays first check next month</li>
               <li><strong>Stub:</strong> UKG “hours” often = days; rate is daily. Prefer UKG web. Verify DD + tax elections. HR payroll email on handout</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3><span class="dot"></span>Must lock — 401(k) / enhanced retirement (Day 2)</h3>
-            <ul>
-              <li><strong>401(k) Voya:</strong> Traditional + Roth; company <strong>6% match</strong> on qualified/base earnings</li>
-              <li><strong>IRS 2026 (class):</strong> $24,500 employee deferral; ≈ limit÷24 per paycheck to max. Catch-up 50+ ≠ “maxed” for tax gross-up</li>
-              <li><strong>Deferred comp:</strong> <strong>$30k/yr ($7,500/qtr) in addition to</strong> the 401(k) <strong>6% match</strong> (not “greater of / or 6%”); ~3-year deferral from hire; after 6 years’ service pays quarter-after accrual. Sep start pro-rates Q1. ~45 days worked/quarter for full amount; PTO does not count</li>
-              <li><strong>Gross-up:</strong> if on pace to max 401(k) in the year you receive the payment → net the quarterly $. Else taxed. Set max elections by January of payout year</li>
-              <li><strong>Docs:</strong> portal Documents → Enhanced Retirement FAQ. Ask Dennis Florian clarifying Qs</li>
             </ul>
           </div>
 
@@ -1502,18 +1491,18 @@ function esc(s) {
             <h3><span class="dot"></span>People to know</h3>
             <ul>
               <li>Joe Salata — Sr. VP Flight Ops</li>
-              <li>Dennis Florian — VP Flight Admin · deferred-comp champion</li>
+              <li>Dennis Florian — VP Flight Admin</li>
               <li>Tim Montie — Director, Operations · Joe Scott — Chief Pilot</li>
               <li>John Christensen — VP Flight Ops, ILC</li>
               <li>Bri Izzo — Director, HR · Mike Cirino — HR BP</li>
-              <li>Josh Rock — Director, Flight Administration · Day 2 deferred-comp presenter</li>
+              <li>Josh Rock — Director, Flight Administration</li>
               <li>Cathy Cunningham — DFW parking / building</li>
               <li>Alex Howard — Crew Services (bids / PTO / schedule)</li>
               <li>Nick Riglin — Director Scheduling &amp; GCC · Christina (?) — Flight Admin / expense</li>
               <li>Andrew (?) — FOATM / Flight Ops supervisor · Praetor program · Tailwind/Concur</li>
               <li>Kevin Dillon/Dilling (?) — COO, Maintenance / Global Services</li>
 
-              <li>Alanna (?) — A Cut Above · Voya — 401(k)</li>
+              <li>Alanna (?) — A Cut Above (uniforms)</li>
             </ul>
           </div>
 

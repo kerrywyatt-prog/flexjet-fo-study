@@ -2,7 +2,7 @@
 """Box-side live relay for the Fleet Map.
 
 Why: every free ADS-B API tested (ADSB.lol, adsb.fi, airplanes.live) omits the
-Access-Control-Allow-Origin header, so a browser on kerrywyatt-prog.github.io can
+Access-Control-Allow-Origin header, so a browser on the GitHub Pages site can
 never read them directly. This daemon polls from the box and publishes
 to the `fleet-live` branch; the client reads it from raw.githubusercontent.com
 (which sends `Access-Control-Allow-Origin: *`).
@@ -51,7 +51,9 @@ STATE_DIR = Path(os.environ.get("FLEET_LIVE_STATE", "/workspace/flexjet-fleet-li
 PUB_DIR = Path(os.environ.get("FLEET_LIVE_WORKTREE", "/workspace/flexjet-fleet-live"))
 BRANCH = "fleet-live"
 PUSH_URL = os.environ.get("FLEET_LIVE_PUSH_URL", "https://github.com/kerrywyatt-prog/flexjet-fo-study.git")
-UA = "flexjet-fo-study-fleet-bot/1.1 (+https://github.com/kerrywyatt-prog/flexjet-fo-study)"
+GIT_NAME = os.environ.get("FLEET_LIVE_GIT_NAME", "FO Study Bot")
+GIT_EMAIL = os.environ.get("FLEET_LIVE_GIT_EMAIL", "fo-study-bot@noreply.invalid")
+UA = "flexjet-fo-study-fleet-bot/1.1"
 ACTIVE_INTERVAL = int(os.environ.get("FLEET_LIVE_INTERVAL", "60"))
 IDLE_INTERVAL = int(os.environ.get("FLEET_LIVE_IDLE_INTERVAL", "300"))
 HEX_BATCH = 40
@@ -416,11 +418,13 @@ def publish(payload, cycle_start):
     if not readme.exists():
         readme.write_text("# fleet-live\n\nMachine-written by `scripts/fleet-live-daemon.py` (box relay). `live.json` = latest public ADS-B positions for the Fleet Map. Do not edit by hand.\n", encoding="utf-8")
     git("add", "-A", "live.json", "README.md", "m")
-    ident = []
-    if not (os.environ.get("GIT_AUTHOR_EMAIL") or git("config", "user.email").stdout.strip()):
-        ident = ["-c", "user.name=Kerry Wyatt", "-c", "user.email=kerrywyatt@gmail.com"]
     c = payload["counts"]
-    r = git(*ident, "commit", "-q", "-m", f"live: {payload['generated_at']} live={c['live']} air={c['airborne']}")
+    # Neutral commit identity; overrides any GIT_AUTHOR_*/GIT_COMMITTER_* inherited from the shell.
+    ident_env = {**os.environ,
+                 "GIT_AUTHOR_NAME": GIT_NAME, "GIT_AUTHOR_EMAIL": GIT_EMAIL,
+                 "GIT_COMMITTER_NAME": GIT_NAME, "GIT_COMMITTER_EMAIL": GIT_EMAIL}
+    r = subprocess.run(["git", "commit", "-q", "-m", f"live: {payload['generated_at']} live={c['live']} air={c['airborne']}"],
+                       cwd=PUB_DIR, capture_output=True, text=True, timeout=90, env=ident_env)
     if r.returncode != 0 and "nothing to commit" not in (r.stdout + r.stderr):
         log(f"commit error: {r.stderr.strip()}")
         return False

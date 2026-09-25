@@ -127,7 +127,7 @@
         <span class="tl-body"><b>${esc(p.title)}</b><small>${esc(p.when)}</small></span>${st === 'now' ? '<span class="badge now">You are here</span>' : ''}</button>`;
     }).join('');
     const st = studyToday(sys);
-    page('FO Study', 'Kerry Wyatt · Flexjet Praetor', null, `
+    page('FO Study', 'Praetor FO Study · Flexjet', null, `
       <form class="home-search" data-search-form><input type="search" placeholder="Search everything (e.g. crosswind, XFEED, EAP6-3)" aria-label="Search" /><button class="btn btn-primary" type="submit">Search</button></form>
       <div class="card whereami"><h3><span class="dot"></span>Where am I</h3><div class="timeline">${tl}</div></div>
       ${label('Study today · ' + esc(cur.title))}
@@ -197,7 +197,7 @@
     const nL = lim ? lim.categories.reduce((a, c) => a + c.items.length, 0) : 0;
     const nS = sys ? sys.systems.reduce((a, c) => a + (c.cards || []).length, 0) : 0;
     page('Checkride Prep', 'Praetor 500/600', '/', `
-      <div class="card"><p>Your SIMCOM Initial / type-ride prep, built from the CTH Rev 2.5, CFM Rev 3.3, ACS, MEL Rev 14 and your Indoc notes. Every line is cited. ${VTAG}</p>
+      <div class="card"><p>Your SIMCOM Initial / type-ride prep, built from the CTH Rev 2.5, CFM Rev 3.3, ACS, MEL Rev 14 and the Indoc class notes. Every line is cited. ${VTAG}</p>
       <div class="btnrow"><button class="btn btn-primary" data-nav="/drill">Drill</button><button class="btn btn-ghost" data-nav="/search">Search</button></div></div>
       ${label('Know the check')}
       ${list([row('/checkride/structure', 'What the check consists of', s.structure.length + ' sections'), row('/checkride/oral-flags', 'Instructor-flagged oral topics', s.orFlagCards.length + ' topics')])}
