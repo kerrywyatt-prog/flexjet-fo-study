@@ -204,7 +204,7 @@
       ${label('Fly it')}
       ${list([row('/checkride/maneuvers', 'Maneuver cards', s.maneuvers.length + ' cards · ACS + callouts'), row('/checkride/flows', 'Flows & callouts', s.flows.length + ' flows · ' + s.callouts.length + ' callouts'), row('/checkride/memory', 'Memory items (IAI)', 'Word-for-word'), row('/checklists', 'Checklists', 'Normal · walkaround · HP cart')])}
       ${label('Know it')}
-      ${list([row('/checkride/limits', 'Limitations', lim ? nL + ' cards · ' + lim.categories.length + ' categories' : 'loading content'), row('/checkride/systems', 'Systems', sys ? nS + ' cards · ' + sys.systems.length + ' systems' : 'loading content'), row('/checkride/mel', 'MEL / NEF', s.mel.length + ' topics'), row('/checkride/fms', 'FMS (Collins Pro Line Fusion)', 'Brief notes'), row('/checkride/qa', 'Oral Q&A', s.qa.length + ' questions'), row('/bulletins', 'Operational Bulletins', 'HYD LO QTY')])}
+      ${list([row('/checkride/limits', 'Limitations', lim ? nL + ' cards · ' + lim.categories.length + ' categories' : 'loading content'), row('/checkride/systems', 'Systems', sys ? nS + ' cards · ' + sys.systems.length + ' systems' : 'loading content'), row('/checkride/cthquiz', 'Systems Review + Quiz (CTH §7)', '530 Qs · 24 systems · review, quiz, missed-question review'), row('/checkride/mel', 'MEL / NEF', s.mel.length + ' topics'), row('/checkride/fms', 'FMS (Collins Pro Line Fusion)', 'Brief notes'), row('/checkride/qa', 'Oral Q&A', s.qa.length + ' questions'), row('/bulletins', 'Operational Bulletins', 'HYD LO QTY')])}
       ${label('Sources')}
       ${list([row('/gaps', 'Gaps, PENDING & conflicts', s.pending.length + ' pending')])}`);
   }
@@ -285,7 +285,7 @@
     if (x) {
       const pts = (a) => (a || []).map(p => `<li>${esc(p.text)} <span class="cite">[${esc(p.cite)}]</span></li>`).join('');
       page(x.title, 'Systems · AOM ' + (x.aom_chapter || ''), '/checkride/systems', `
-        <div class="card"><p class="muted small">${x.cth_section ? 'CTH §' + esc(x.cth_section) : ''}${x.cth_pages ? ' · pp.' + esc(Array.isArray(x.cth_pages) ? x.cth_pages.join(', ') : x.cth_pages) : ''}${(x.aom_sections_cited || []).length ? ' · cites AOM ' + esc(x.aom_sections_cited.join(', ')) : ''}</p><p>${VTAG}</p><div class="btnrow"><button class="btn btn-primary" data-nav="/drill/systems/${esc(x.id)}">Drill ${(x.cards || []).length} cards</button></div></div>
+        <div class="card"><p class="muted small">${x.cth_section ? 'CTH §' + esc(x.cth_section) : ''}${x.cth_pages ? ' · pp.' + esc(Array.isArray(x.cth_pages) ? x.cth_pages.join(', ') : x.cth_pages) : ''}${(x.aom_sections_cited || []).length ? ' · cites AOM ' + esc(x.aom_sections_cited.join(', ')) : ''}</p><p>${VTAG}</p><div class="btnrow"><button class="btn btn-primary" data-nav="/drill/systems/${esc(x.id)}">Drill ${(x.cards || []).length} cards</button><button class="btn btn-ghost" data-nav="/checkride/cthquiz/${esc(x.id)}">Review + Quiz (CTH §7)</button></div></div>
         ${(x.summary_points || []).length ? `<div class="card"><h3><span class="dot"></span>Key points</h3><ul>${pts(x.summary_points)}</ul></div>` : ''}
         ${(x.mel_notes || []).length ? `<div class="card"><h3><span class="dot"></span>MEL notes</h3><ul>${pts(x.mel_notes)}</ul></div>` : ''}
         ${(x.ob_notes || []).length ? `<div class="card"><h3><span class="dot"></span>Operational Bulletin notes</h3><ul>${pts(x.ob_notes)}</ul><button class="btn btn-ghost" data-nav="/bulletins">Bulletins</button></div>` : ''}
@@ -296,7 +296,7 @@
     const n = sys.systems.reduce((a, c) => a + (c.cards || []).length, 0);
     page('Systems', 'Checkride Prep', '/checkride', `
       <div class="card"><p>${n} systems cards from the CTH §7 review questions, grouped by AOM chapter. Each cite gives the CTH page and the AOM paragraph the CTH cites, e.g. “CTH Rev 2.5 p.30 (citing AOM 9-11-01)”. ${VTAG}</p>
-      <div class="btnrow"><button class="btn btn-primary" data-nav="/drill/systems">Drill all ${n}</button></div></div>
+      <div class="btnrow"><button class="btn btn-primary" data-nav="/drill/systems">Drill all ${n}</button><button class="btn btn-primary" data-nav="/checkride/cthquiz">Review + Quiz by system (CTH §7)</button></div></div>
       ${list(sys.systems.map(x => row('/checkride/systems/' + x.id, esc(x.title), `AOM ${esc(x.aom_chapter || '—')} · ${(x.cards || []).length} cards`)))}
       ${sys.source_note ? `<details class="qa"><summary>About these sources</summary><div class="rich"><p>${esc(sys.source_note)}</p></div></details>` : ''}`);
   }
@@ -471,6 +471,7 @@
         row('/flashcards', 'Memory items (IAI)', 'Word-for-word flashcards'),
         row('/drill/limits', 'Limitations', lim ? nL + ' cards' + prog('limits', nL) : 'loading content'),
         row('/drill/systems', 'Systems (all)', sys ? nS + ' cards' + prog('systems', nS) : 'loading content'),
+        row('/checkride/cthquiz', 'Systems quiz (CTH §7)', 'Multiple choice by system · missed-question review'),
         row('/drill/callouts', 'Callouts', s.callouts.length + ' cards' + prog('callouts', s.callouts.length)),
         row('/drill/flows', 'Flows', s.flows.length + ' cards' + prog('flows', s.flows.length)),
         row('/drill/maneuvers', 'Maneuver cards', s.maneuvers.length + ' cards' + prog('maneuvers', s.maneuvers.length)),
@@ -558,7 +559,7 @@
   function viewPraetorHub() {
     page('Praetor 500/600', 'Aircraft', '/', list([
       row('/checkride', 'Checkride Prep', 'Everything for the type ride'), row('/praetor/memory', 'Memory items', '22 IAI cards'),
-      row('/checkride/limits', 'Limitations', 'CTH §5 / CFM / MEL'), row('/checkride/systems', 'Systems', 'CTH §7 by AOM chapter'),
+      row('/checkride/limits', 'Limitations', 'CTH §5 / CFM / MEL'), row('/checkride/systems', 'Systems', 'CTH §7 by AOM chapter'), row('/checkride/cthquiz', 'Systems Review + Quiz', 'CTH §7 · 24 systems'),
       row('/checkride/flows', 'Flows & callouts', 'CFM Rev 3.3'), row('/checklists', 'Checklists', 'Normal · walkaround · HP cart'), row('/praetor/notes', 'Personal notes', 'This device only')]));
   }
 
@@ -607,5 +608,5 @@
     }
     return false;
   }
-  window.FOStudyExt = { route, version: V };
+  window.FOStudyExt = { route, version: V, ui: { page, esc, nl, list, row, label } };
 })();

@@ -11,9 +11,10 @@ Password-gated mobile-first study framework for Flexjet Praetor 500/600 first of
 Unlock persists in `localStorage` for this browser/device.
 
 ## Structure (v25)
-- `index.html` — SPA shell (loads `study-v25.js` then `app-v5.js`)
+- `index.html` — SPA shell (loads `study-v25.js`, `cth-quiz.js`, then `app-v5.js`)
 - `app-v5.js` (= `app.js`) — core: gate, legacy views (Orientation, 135 bank/quiz, IAI flashcards, Fleet Map, Admin, Ritual, Notes); calls `FOStudyExt.route()` first
 - `study-v25.js` — training-path views: Home "Where am I", Indoc hub, Checkride Prep, Drill engine, Checklists, Bulletins, Search, Gaps
+- `cth-quiz.js` — CTH §7 Systems Review + Quiz (per-system review/flashcards, shuffled MC/TF quiz, missed-question review, all-systems mix); data in `data/cth-systems-quiz.json` (correct answers + refs verbatim from CTH Rev 2.5 §7)
 - `styles-v5.css` — dark aviation UI (v25 block at the end)
 - `data/study.json` — checkride prep content (built by the checkride-prep site-build script `build_study_json.py`, kept outside this repo)
 - `data/limitations.json`, `data/systems.json` — limitations / systems sets (separate worker; pages show "loading content" until present)
@@ -23,7 +24,7 @@ Unlock persists in `localStorage` for this browser/device.
 ## Site map (hash routes)
 - `#/` Home: where-am-I timeline, study today, search
 - `#/indoc` → `day/1..4`, `flags[/N]`, `135` (study `/135/study[/N]`, quiz `/135/quiz`), Ops Specs `a..e`
-- `#/checkride` → `structure`, `oral-flags`, `maneuvers[/N]`, `flows[/flow-N|/callouts]`, `memory[/id]`, `limits[/cat|/itemId]`, `systems[/id|/cardId]`, `mel[/iN]`, `fms`, `qa[/N]`
+- `#/checkride` → `structure`, `oral-flags`, `maneuvers[/N]`, `flows[/flow-N|/callouts]`, `memory[/id]`, `limits[/cat|/itemId]`, `systems[/id|/cardId]`, `cthquiz[/all|/id[/review|/cards|/quiz]]`, `mel[/iN]`, `fms`, `qa[/N]`
 - `#/checklists` → `normal/10069|10070[/section]`, `walkaround[/section]`, `hpcart`
 - `#/drill` → `qa[/TAG]`, `maneuvers`, `callouts`, `flows`, `limits[/cat|/conflicts]`, `systems[/id]`, `flags`, `ob`; IAI at `#/flashcards`
 - `#/bulletins`, `#/gaps`, `#/search/<q>`, `#/fleet-map` (Tail Tracker)
