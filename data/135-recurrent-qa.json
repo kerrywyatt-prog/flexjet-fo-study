@@ -906,10 +906,10 @@
         "c": "FOM Appendix 1.",
         "d": "FOM Appendix 3."
       },
-      "answer": "d",
-      "answer_text": "FOM Appendix 3.",
-      "explanation": "Weight-and-balance guidance (standard, actual, or combined weights) is in FOM Appendix 3. (Section 4.9.13's 'Appendix 1' reference is a typo \u2014 Appendix 1 has no W&B data.)",
-      "source": "FOM Appendix 3",
+      "answer": "c",
+      "answer_text": "FOM Appendix 1.",
+      "explanation": "Per the FOM 4.9.13 reference, weight and balance guidance (standard average, actual, or combined weights) is in FOM Appendix 1. Confirmed correct answer per Kerry (Indoc).",
+      "source": "FOM 4.9.13 / Appendix 1",
       "group": "u65"
     },
     {
