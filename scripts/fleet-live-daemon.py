@@ -430,8 +430,45 @@ def publish(payload, cycle_start):
         return False
     r = git("push", "-q", PUSH_URL, f"HEAD:refs/heads/{BRANCH}")
     if r.returncode != 0:
-        log(f"push error: {r.stderr.strip()[:300]}")
+        err = (r.stderr or "").strip()
+        if any(k in err for k in ("fetch first", "non-fast-forward", "rejected")):
+            # Remote has commits we lack (e.g. an overlapping relay instance pushed).
+            # fleet-live is pure machine output, so re-parent our current tree onto the
+            # remote tip and push again: no conflicts, no force push, history kept.
+            if recover_diverged(payload, ident_env):
+                return True
+        log(f"push error: {err[:300]}")
         return False
+    return True
+
+
+def recover_diverged(payload, ident_env):
+    if git("rev-parse", "-q", "--verify", "MERGE_HEAD").returncode == 0:
+        git("merge", "--abort")
+    f = git("fetch", "-q", PUSH_URL, BRANCH)
+    if f.returncode != 0:
+        log(f"recover fetch error: {f.stderr.strip()[:200]}")
+        return False
+    git("add", "-A", "live.json", "README.md", "m")
+    tree = git("write-tree").stdout.strip()
+    parent = git("rev-parse", "FETCH_HEAD").stdout.strip()
+    if not tree or not parent:
+        log("recover error: missing tree/parent")
+        return False
+    c = payload["counts"]
+    msg = f"live: {payload['generated_at']} live={c['live']} air={c['airborne']} (recovered divergence)"
+    ct = subprocess.run(["git", "commit-tree", tree, "-p", parent, "-m", msg],
+                        cwd=PUB_DIR, capture_output=True, text=True, timeout=90, env=ident_env)
+    new = ct.stdout.strip()
+    if ct.returncode != 0 or not new:
+        log(f"recover commit error: {ct.stderr.strip()[:200]}")
+        return False
+    git("update-ref", "HEAD", new)
+    r = git("push", "-q", PUSH_URL, f"HEAD:refs/heads/{BRANCH}")
+    if r.returncode != 0:
+        log(f"recover push error: {r.stderr.strip()[:200]}")
+        return False
+    log(f"recovered diverged fleet-live: re-parented onto {parent[:7]} and pushed")
     return True
 
 
