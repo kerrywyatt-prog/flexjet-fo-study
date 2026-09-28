@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-28T10:12:28Z",
+  "updated_at": "2026-09-28T10:39:59Z",
   "source": "ADSB.lol public type queries (cumulative last-known)",
   "notes": [
     "Keyed by Mode-S hex when available, else registration.",
@@ -7,12 +7,10 @@
     "Seeded initially from fleet-map-snapshot.json; GitHub Action grows this file over time."
   ],
   "last_poll": {
-    "at": "2026-09-28T10:12:28Z",
-    "live_count": 2,
+    "at": "2026-09-28T10:39:59Z",
+    "live_count": 3,
     "stored_count": 92,
-    "errors": [
-      "hex batch 1: HTTP Error 429: Too Many Requests"
-    ]
+    "errors": []
   },
   "aircraft": {
     "a4eafd": {
@@ -206,7 +204,7 @@
       "model": "Praetor 500",
       "callsign": "LXJ432",
       "lat": 42.464218,
-      "lon": -71.298226,
+      "lon": -71.29822,
       "alt_baro": "ground",
       "alt_geom": null,
       "gs": 0.1,
@@ -216,9 +214,9 @@
       "baro_rate": null,
       "geom_rate": null,
       "squawk": "7313",
-      "last_seen": "2026-09-28T10:12:28Z",
+      "last_seen": "2026-09-28T10:39:01Z",
       "status": "live",
-      "source": "ADSB.lol type query",
+      "source": "box live relay (ADSB.lol)",
       "serial_number": "55010071",
       "on_company_fleet_list": true
     },
@@ -320,7 +318,7 @@
       "type": "E545",
       "model": "Praetor 500",
       "callsign": "LXJ445",
-      "lat": 40.855717,
+      "lat": 40.855728,
       "lon": -74.054214,
       "alt_baro": "ground",
       "alt_geom": null,
@@ -331,9 +329,9 @@
       "baro_rate": null,
       "geom_rate": null,
       "squawk": "7110",
-      "last_seen": "2026-09-28T10:12:28Z",
+      "last_seen": "2026-09-28T10:39:01Z",
       "status": "live",
-      "source": "ADSB.lol type query",
+      "source": "box live relay (ADSB.lol)",
       "serial_number": "55010095",
       "on_company_fleet_list": true
     },
@@ -1262,20 +1260,20 @@
       "type": "E545",
       "model": "Praetor 500",
       "callsign": "LXJ443",
-      "lat": 40.639405,
-      "lon": -74.373821,
-      "alt_baro": 2200,
-      "alt_geom": 1900,
-      "gs": 148.1,
-      "track": 48.56,
-      "true_heading": null,
+      "lat": 40.855873,
+      "lon": -74.054,
+      "alt_baro": "ground",
+      "alt_geom": null,
+      "gs": 0.0,
+      "track": null,
+      "true_heading": 137.81,
       "mag_heading": null,
       "baro_rate": null,
-      "geom_rate": -64,
-      "squawk": "3162",
-      "last_seen": "2026-09-27T20:14:10Z",
-      "status": "last_known",
-      "source": "box live relay (adsb.fi)",
+      "geom_rate": null,
+      "squawk": "2650",
+      "last_seen": "2026-09-28T10:39:01Z",
+      "status": "live",
+      "source": "box live relay (ADSB.lol)",
       "serial_number": "55010093",
       "on_company_fleet_list": true
     },
