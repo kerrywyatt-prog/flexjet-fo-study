@@ -40,13 +40,9 @@
     {
      "id": "general-05",
      "label": "Length (P600)",
-     "value": "68'05\"",
-     "cite": "CTH Rev 2.5 p.16",
-     "conflict": {
-      "other_value": "68' 0.5\"",
-      "other_cite": "CTH Rev 2.5 p.22 (§7.1 answer) and CTH Rev 2.5 p.55 (differences summary)",
-      "note": "CTH p.16 prints 68'05\" but pp.22 and 55 print 68' 0.5\" for the Praetor 600. Sources disagree. Ask instructor."
-     },
+     "value": "68 ft 0.5 in",
+     "cite": "PTM 1-1; CTH Rev 2.5 pp.22 and 55. The p.16 print '68\\'05\\\"' is this same half-inch figure, not 68 feet 5 inches.",
+     "conflict": null,
      "verify_tag": true
     },
     {
@@ -57,7 +53,7 @@
      "conflict": {
       "other_value": "70' 6.4\"",
       "other_cite": "CTH Rev 2.5 p.22 (§7.1 answer) and CTH Rev 2.5 p.55",
-      "note": "CTH p.16 prints 70'06\" for the P500; pp.22 and 55 print 70' 6.4\" (same as the P600). Ask instructor."
+      "note": "You fly the 600. Its wingspan is 70 ft 6.4 in. This 500-column disagreement does not change that."
      },
      "verify_tag": true
     },
@@ -371,12 +367,8 @@
      "id": "envelope-03",
      "label": "Max takeoff and landing altitude",
      "value": "9,600 ft (13,800 ft only with HALTO SB-550-27-002, NOT installed on Flexjet aircraft)",
-     "cite": "CTH Rev 2.5 p.16; CTH Rev 2.5 p.19; CTH Rev 2.5 p.21",
-     "conflict": {
-      "other_value": "\"13,800 lbs. Takeoff / Landing altitude limit\" printed in the Praetor 500 column",
-      "other_cite": "CTH Rev 2.5 p.55",
-      "note": "The p.55 differences summary prints 13,800 (with 'lbs.') as a P500 takeoff/landing altitude limit, while pp.16, 19 and 21 say 13,800 ft requires HALTO, which is not installed. Likely a typo, but the sources disagree. Ask instructor."
-     },
+     "cite": "CTH Rev 2.5 p.16; CTH Rev 2.5 p.19; CTH Rev 2.5 p.21 The p.55 '13,800 lbs' in the 500 column is the HALTO altitude mislabeled. Flexjet airplanes do not have HALTO, so the limit is 9,600 ft.",
+     "conflict": null,
      "verify_tag": true
     },
     {
@@ -826,25 +818,17 @@
     {
      "id": "fuel-03",
      "label": "P600 total capacity",
-     "value": "2,428 gal / 16,258 lb (each wing 981 gal / 6,573 lb · FWD 214 gal / 1,439 lb · VTRL 252 gal / 1,682 lb)",
+     "value": "16,262 lb (CTH §7.7 answer and differences summary). The p.17 table prints 16,258 lb.",
      "cite": "CTH Rev 2.5 p.17",
-     "conflict": {
-      "other_value": "16,262 lb",
-      "other_cite": "CTH Rev 2.5 p.27 (§7.7 answer); CTH Rev 2.5 p.55",
-      "note": "p.17 says 16,258 lb; pp.27 and 55 say 16,262 lb. Ask instructor."
-     },
+     "conflict": null,
      "verify_tag": true
     },
     {
      "id": "fuel-04",
      "label": "P600 usable fuel (pressure refuel)",
-     "value": "2,409 gal / 16,140 lb (each wing 974 gal / 6,525 lb · FWD 213 gal / 1,433 lb · VTRL 248 gal / 1,653 lb)",
+     "value": "16,138 lb usable (CTH §7.7 and differences summary). The p.17 pressure-refuel table prints 2,409 gal / 16,140 lb (each wing 974 gal / 6,525 lb · FWD 213 gal / 1,433 lb · VTRL 248 gal / 1,653 lb).",
      "cite": "CTH Rev 2.5 p.17",
-     "conflict": {
-      "other_value": "16,138 lb total; wing tanks 974 gal / 6,526 lb each",
-      "other_cite": "CTH Rev 2.5 p.27 (§7.7 answer); CTH Rev 2.5 p.55",
-      "note": "p.17 says 16,140 lb usable and 6,525 lb per wing; pp.27/55 say 16,138 lb and p.55 says 6,526 lb per wing. Ask instructor."
-     },
+     "conflict": null,
      "verify_tag": true
     },
     {
@@ -945,12 +929,8 @@
      "id": "pressurization-04",
      "label": "Max differential pressure for takeoff and landing",
      "value": "0.2 psid",
-     "cite": "CTH Rev 2.5 p.18",
-     "conflict": {
-      "other_value": ".02 psid",
-      "other_cite": "CTH Rev 2.5 p.39 (citing AOM 2-48)",
-      "note": "p.18 prints 0.2 psid; the §7.16 answer on p.39 prints .02 psid. Ask instructor."
-     },
+     "cite": "CTH Rev 2.5 p.18 The §7.16 line that prints .02 psid is a dropped zero. Use 0.2 psid.",
+     "conflict": null,
      "verify_tag": true
     },
     {
@@ -1712,13 +1692,9 @@
     {
      "id": "prohibitions-14",
      "label": "Life rafts",
-     "value": "P500: 1 · P600: 2 (9 souls each), in aft storage compartment",
+     "value": "P600: 2 rafts, 9 souls each, forward storage closet (CFM Rev 3.3 cockpit-setup card). P500: 1 raft, aft closet.",
      "cite": "CFM Rev 3.3 p.82",
-     "conflict": {
-      "other_value": "P500: 1 raft in aft storage closet, 13-soul capacity · P600: 2 rafts in the forward storage closet, 9 souls each",
-      "other_cite": "CFM Rev 3.3 p.18",
-      "note": "The cockpit setup checklist (p.18) and passenger limitations (p.82) differ on P500 raft capacity and P600 raft location. Ask instructor."
-     },
+     "conflict": null,
      "verify_tag": true
     },
     {
@@ -1790,7 +1766,7 @@
     {
      "id": "differences-05",
      "label": "Length",
-     "value": "P500 64'7\" · P600 68'0.5\" (p.16: 68'05\")",
+     "value": "P500 64 ft 7 in · P600 68 ft 0.5 in",
      "cite": "CTH Rev 2.5 p.55; CTH Rev 2.5 p.16",
      "conflict": null,
      "verify_tag": true
