@@ -1312,7 +1312,7 @@ function esc(s) {
   function viewHome() {
     const tiles = [
       { path: '/orientation', icon: '🧭', title: 'New hire / Orientation', desc: 'CLE Days 1–3 · payroll · ops · logistics · expense · MX', cls: '' },
-      { path: '/indoc', icon: '📚', title: 'Indoc', desc: 'DFW Days 1–4 · Ops Specs · icing/duty/mins · hazmat/evac/physiology', cls: '' },
+      { path: '/indoc', icon: '📚', title: 'Indoc', desc: 'DFW Days 1–7 · Ops Specs · icing/duty/mins · hazmat/evac · international/oceanic · service', cls: '' },
       { path: '/praetor', icon: '🛫', title: 'Embraer Praetor 500/600', desc: 'Systems shelves · memory · flows', cls: 'gold', bg: 'praetor' },
       { path: '/fleet-map', icon: '🗺️', title: 'Fleet Map', desc: 'Public ADS-B · visible Flexjet Praetor 500/600 aircraft', cls: 'gold' },
       { path: '/ritual', icon: '⏱️', title: 'Study ritual', desc: '20–30 min daily framework', cls: '' },
@@ -1611,7 +1611,7 @@ function esc(s) {
   function viewIndoc() {
     app.innerHTML = `
       <div class="${shellClass()}">
-        ${topbar('Indoc · DFW Days 1–4', 'Home', '/')}
+        ${topbar('Indoc · DFW Days 1–7', 'Home', '/')}
         <main class="content">
           <div class="card">
             <h3><span class="dot"></span>Mon Sep 21, 2026 · CAE Dallas West</h3>

@@ -18,7 +18,7 @@ Unlock persists in `localStorage` for this browser/device.
 - `styles-v5.css` — dark aviation UI (v25 block at the end)
 - `data/study.json` — checkride prep content (built by the checkride-prep site-build script `build_study_json.py`, kept outside this repo)
 - `data/limitations.json`, `data/systems.json` — limitations / systems sets (separate worker; pages show "loading content" until present)
-- `data/indoc-days.json` — Indoc Day 1–4 notes (security content excluded)
+- `data/indoc-days.json` — Indoc Day 1–7 notes (security content excluded)
 - `data/memory-items.json` (IAI, word-for-word), `data/135-recurrent-qa.json` (bank, word-for-word), fleet files
 
 ## Site map (hash routes)

@@ -6,7 +6,7 @@
   const V = 25;
   const WHATS_NEW = 'v25 · Site rebuilt around the training path: Where-am-I dashboard, Checkride Prep (maneuvers, flows/callouts, memory items, limitations, systems, MEL, FMS, 68 Q&A), checklists, drills, and search across everything.';
   const TIMELINE = [
-    { id: 'indoc', title: 'Indoc', when: 'Sep 21–24, 2026', start: '2026-09-21', end: '2026-09-23', path: '/indoc' },
+    { id: 'indoc', title: 'Indoc', when: 'Sep 21–27, 2026', start: '2026-09-21', end: '2026-09-23', path: '/indoc' },
     { id: 'exam', title: '135 exam (50Q, open-book)', when: 'Sun Sep 27, 2026', start: '2026-09-24', end: '2026-09-27', path: '/indoc/135' },
     { id: 'simcom', title: 'SIMCOM Initial', when: 'Sep 29 – Nov 7, 2026', start: '2026-09-28', end: '2026-11-07', path: '/checkride' },
     { id: 'check', title: 'Checkride', when: 'End of SIMCOM (date TBD)', start: '2026-11-08', end: '2026-11-21', path: '/checkride/structure' },
@@ -134,7 +134,7 @@
       <div class="tiles today">${st.map(x => `<button type="button" class="tile" data-nav="${x.path}"><div class="tile-body"><h3>${x.t}</h3><p>${x.d}</p></div><span class="tile-chevron">${chev}</span></button>`).join('')}</div>
       ${label('Training path')}
       ${list([
-        row('/indoc', '📚 Indoc', 'Days 1–4 · 135 bank · instructor flags'),
+        row('/indoc', '📚 Indoc', 'Days 1–7 · 135 bank · instructor flags'),
         row('/checkride', '🛫 Checkride Prep', 'Structure · maneuvers · flows · limits · systems · Q&A'),
         row('/checklists', '✅ Checklists', 'Normal (both S/N) · walkaround · HP cart · flows'),
         row('/drill', '🃏 Drill', 'Flashcards & quizzes for every deck'),
@@ -158,7 +158,7 @@
     const days = await indocDays();
     const d = days ? days.days : {};
     page('Indoc · DFW', 'Home', '/', `
-      <div class="card"><h3><span class="dot"></span>Indoc complete · Sep 21–24</h3><p>Next: the Sunday 50-question open-book 135 exam, then SIMCOM Initial (Sep 29 – Nov 7).</p></div>
+      <div class="card"><h3><span class="dot"></span>Indoc complete · Sep 21–27</h3><p>Day notes 1–7 below. Next: SIMCOM Initial (Sep 29 – Nov 7).</p></div>
       ${label('Exam prep')}
       ${list([row('/indoc/135', '135 Recurrent bank', '201Q study · 50Q mock · pass 80%'), row('/indoc/flags', 'Instructor flags & table smacks', '25 items · 14 covered · 8 partial · 3 not in bank'), row('/drill/flags', 'Drill the instructor flags', 'Flashcards')])}
       ${label('Day notes')}
