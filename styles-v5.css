@@ -1717,7 +1717,7 @@ mark { background: rgba(212,168,75,0.35); color: inherit; border-radius: 3px; pa
 .cthq .sg-opt span:last-child { white-space: normal; }
 
 
-/* v26.9–26.10 · Custom systems mix (Drill hub + Checkride Systems) */
+/* v26.9–26.11 · Custom systems mix (Drill hub + Checkride Systems) */
 .sys-mix { margin-bottom: 14px; }
 .sys-mix-chips {
   display: flex;

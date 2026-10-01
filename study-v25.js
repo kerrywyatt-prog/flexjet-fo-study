@@ -3,8 +3,8 @@
    Content comes from data/*.json (study.json, limitations.json, systems.json, indoc-days.json, memory-items.json,
    135-recurrent-qa.json). Excluded-topic rules: see README. Memory items are rendered word-for-word from memory-items.json. */
 (() => {
-  const V = '26.10';
-  const WHATS_NEW = 'v26.10 · Custom systems mix on Checkride → Systems (same multi-select chips + shuffled drill as Drill hub); study-video copy updated for HTML5 release hosting.';
+  const V = '26.11';
+  const WHATS_NEW = 'v26.11 · Cache-bust + SW refresh so Checkride → Systems Custom systems mix shows on iPad (mix was already in v26.10; stale ?v=26.9 shell hid it).';
   const TIMELINE = [
     { id: 'indoc', title: 'Indoc', when: 'Sep 21–27, 2026', start: '2026-09-21', end: '2026-09-23', path: '/indoc' },
     { id: 'exam', title: '135 exam (50Q, open-book)', when: 'Sun Sep 27, 2026', start: '2026-09-24', end: '2026-09-27', path: '/indoc/135' },
@@ -544,7 +544,7 @@
     }).join('');
     return `${label('Custom systems mix')}
       <div class="card sys-mix" id="sys-mix">
-        <p class="muted small">Pick any systems, then start one shuffled bank of those cards only — same Qs and Source / explanation as the individual drills.</p>
+        <p class="muted small">Pick any systems, then start one shuffled bank of those cards only — same Qs and Source / explanation as the individual drills. <span class="cite">App v${V}</span></p>
         <div class="sys-mix-chips" role="group" aria-label="Select systems">${chips}</div>
         <div class="btnrow sys-mix-helpers">
           <button type="button" class="btn btn-ghost" id="sys-mix-all">Select all</button>

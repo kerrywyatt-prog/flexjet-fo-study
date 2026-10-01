@@ -2,7 +2,7 @@
   "name": "Praetor FO Study",
   "short_name": "FO Study",
   "description": "Flexjet FO study framework \u2014 orientation, indoc, Praetor 500/600 shelves",
-  "start_url": "./index.html?layout=wide",
+  "start_url": "./index.html?layout=wide&v=26.11",
   "scope": "./",
   "display": "standalone",
   "orientation": "any",
