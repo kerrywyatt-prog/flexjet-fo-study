@@ -1,4 +1,4 @@
-/* FO Study v25.3 — CTH §7 Systems Review + Quiz.
+/* FO Study v25.4 — CTH §7 Systems Review + Quiz (+ systems Drive video card).
    Source: data/cth-systems-quiz.json, built from the Crew Training Handbook (Praetor 500/600, Rev 2.5)
    Section 7 Systems Review Questions. The correct answer and reference always come from the CTH text,
    word for word. Wrong options are written to be plausible but wrong per the book.
@@ -58,7 +58,16 @@
     const q = quizable(s);
     const nTF = q.filter((i) => i.t === 'tf').length;
     const b = best(id);
+    let vidHtml = '';
+    try {
+      if (X.systemsVideos && X.systemsVideoCard) {
+        const vids = await X.systemsVideos();
+        const vid = vids && vids.by_system && vids.by_system[id];
+        if (vid) vidHtml = X.systemsVideoCard(vid, id);
+      }
+    } catch (e) { /* optional */ }
     page(title(s), 'CTH §' + s.sec + ' · Review + Quiz', '/checkride/cthquiz', `
+      ${vidHtml}
       <div class="card center sg-quiz-start">
         <div class="sg-big">Review</div>
         <p class="muted" style="max-width:480px;margin:6px auto 12px">All ${s.items.length} CTH questions with the book answer and reference. Use it as a list or as flashcards.</p>

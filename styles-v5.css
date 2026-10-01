@@ -1660,3 +1660,28 @@ mark { background: rgba(212,168,75,0.35); color: inherit; border-radius: 3px; pa
 .cthq #cthq-list.hide-ans .sg-qc:not(.shown) .cthq-ans { display: none; }
 .cthq #cthq-list.hide-ans .sg-qc:not(.shown) .cthq-reveal { display: inline-block; }
 .cthq .sg-opt span:last-child { white-space: normal; }
+
+/* v26.5 · Praetor systems study videos (Google Drive embed) */
+.sys-video { margin-top: 12px; }
+.sys-video-wrap {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--border);
+}
+.sys-video-el {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  background: #000;
+}
+.sys-video-actions { margin-top: 10px; flex-wrap: wrap; }
+.sys-video-actions .btn { text-decoration: none; }
+.sys-video-hint { margin-top: 8px; }

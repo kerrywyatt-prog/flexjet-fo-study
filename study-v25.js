@@ -4,7 +4,7 @@
    135-recurrent-qa.json). Excluded-topic rules: see README. Memory items are rendered word-for-word from memory-items.json. */
 (() => {
   const V = 25;
-  const WHATS_NEW = 'v25 · Site rebuilt around the training path: Where-am-I dashboard, Checkride Prep (maneuvers, flows/callouts, memory items, limitations, systems, MEL, FMS, 68 Q&A), checklists, drills, and search across everything.';
+  const WHATS_NEW = 'v26.5 · Praetor classmate systems study videos on each systems page (Google Drive). SIMCOM day packs / Embraer manuals stay off the site.';
   const TIMELINE = [
     { id: 'indoc', title: 'Indoc', when: 'Sep 21–27, 2026', start: '2026-09-21', end: '2026-09-23', path: '/indoc' },
     { id: 'exam', title: '135 exam (50Q, open-book)', when: 'Sun Sep 27, 2026', start: '2026-09-24', end: '2026-09-27', path: '/indoc/135' },
@@ -36,9 +36,37 @@
   const study = () => getJSON('study.json');
   const limits = () => getJSON('limitations.json', true);
   const systems = () => getJSON('systems.json', true);
+  const systemsVideos = () => getJSON('systems-videos.json', true);
   const indocDays = () => getJSON('indoc-days.json');
   const memDeck = () => F().loadMemoryDeck();
   const bank135 = () => F().loadRecurrentBank();
+
+
+  function fmtDur(min) {
+    if (min == null || !(min > 0)) return '';
+    const m = Math.floor(min);
+    const s = Math.round((min - m) * 60);
+    return m + ':' + String(s).padStart(2, '0');
+  }
+  function systemsVideoCard(vid, sid) {
+    if (!vid || !vid.drive_id) return '';
+    const dur = fmtDur(vid.dur_min);
+    const note = vid.note ? `<p class="muted small">${esc(vid.note)}</p>` : '';
+    const preview = vid.drive_preview || ('https://drive.google.com/file/d/' + vid.drive_id + '/preview');
+    const open = vid.drive_view || vid.drive_open || ('https://drive.google.com/file/d/' + vid.drive_id + '/view');
+    return `<div class="card sys-video">
+      <h3><span class="dot"></span>Systems study video${dur ? ' · ' + esc(dur) : ''}</h3>
+      <p class="muted small">Classmate Praetor systems brief · Google Drive (passworded FO app).</p>
+      ${note}
+      <div class="sys-video-wrap">
+        <iframe class="sys-video-el" src="${esc(preview)}" title="${esc(vid.title || 'Systems study video')}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="btnrow sys-video-actions">
+        <a class="btn btn-primary" href="${esc(open)}" target="_blank" rel="noopener noreferrer">Open in Drive</a>
+      </div>
+      <p class="muted small sys-video-hint">If the player is blank, use Open in Drive. Playback needs the Drive file shared as Viewer to anyone with the link (Kerry/staff).</p>
+    </div>`;
+  }
 
   // ---------- shell ----------
   const TABS = [
@@ -278,14 +306,18 @@
   }
   async function viewSystems(sub, target) {
     const sys = await systems();
+    const vids = await systemsVideos();
+    const bySys = (vids && vids.by_system) || {};
     if (!sys) return page('Systems', 'Checkride Prep', '/checkride', pendingNote('The systems set (CTH §7 review questions by AOM chapter, with MEL and OB notes)'));
     let sid = sub;
     if (sub && !sys.systems.find(x => x.id === sub)) { const x = sys.systems.find(x => (x.cards || []).some(c => c.id === sub)); if (x) { sid = x.id; target = 'sys-' + sub; } }
     const x = sid && sys.systems.find(y => y.id === sid);
     if (x) {
       const pts = (a) => (a || []).map(p => `<li>${esc(p.text)} <span class="cite">[${esc(p.cite)}]</span></li>`).join('');
+      const vid = bySys[x.id];
       page(x.title, 'Systems · AOM ' + (x.aom_chapter || ''), '/checkride/systems', `
         <div class="card"><p class="muted small">${x.cth_section ? 'CTH §' + esc(x.cth_section) : ''}${x.cth_pages ? ' · pp.' + esc(Array.isArray(x.cth_pages) ? x.cth_pages.join(', ') : x.cth_pages) : ''}${(x.aom_sections_cited || []).length ? ' · cites AOM ' + esc(x.aom_sections_cited.join(', ')) : ''}</p><p>${VTAG}</p><div class="btnrow"><button class="btn btn-primary" data-nav="/drill/systems/${esc(x.id)}">Drill ${(x.cards || []).length} cards</button><button class="btn btn-ghost" data-nav="/checkride/cthquiz/${esc(x.id)}">Review + Quiz (CTH §7)</button></div></div>
+        ${systemsVideoCard(vid, x.id)}
         ${(x.summary_points || []).length ? `<div class="card"><h3><span class="dot"></span>Key points</h3><ul>${pts(x.summary_points)}</ul></div>` : ''}
         ${(x.mel_notes || []).length ? `<div class="card"><h3><span class="dot"></span>MEL notes</h3><ul>${pts(x.mel_notes)}</ul></div>` : ''}
         ${(x.ob_notes || []).length ? `<div class="card"><h3><span class="dot"></span>Operational Bulletin notes</h3><ul>${pts(x.ob_notes)}</ul><button class="btn btn-ghost" data-nav="/bulletins">Bulletins</button></div>` : ''}
@@ -294,10 +326,17 @@
       return focusTarget(target);
     }
     const n = sys.systems.reduce((a, c) => a + (c.cards || []).length, 0);
+    const nVid = sys.systems.filter(s => bySys[s.id]).length;
+    const pending = (vids && vids.pending) || [];
     page('Systems', 'Checkride Prep', '/checkride', `
       <div class="card"><p>${n} systems cards from the CTH §7 review questions, grouped by AOM chapter. Each cite gives the CTH page and the AOM paragraph the CTH cites, e.g. “CTH Rev 2.5 p.30 (citing AOM 9-11-01)”. ${VTAG}</p>
+      <p class="muted small">${nVid} systems have a Drive study video${pending.length ? '; waiting on ' + pending.map(p => p.title).join(', ') : ''}.</p>
       <div class="btnrow"><button class="btn btn-primary" data-nav="/drill/systems">Drill all ${n}</button><button class="btn btn-primary" data-nav="/checkride/cthquiz">Review + Quiz by system (CTH §7)</button></div></div>
-      ${list(sys.systems.map(x => row('/checkride/systems/' + x.id, esc(x.title), `AOM ${esc(x.aom_chapter || '—')} · ${(x.cards || []).length} cards`)))}
+      ${list(sys.systems.map(x => {
+        const v = bySys[x.id];
+        const badge = v ? ` · ▶ video${v.dur_min ? ' ' + fmtDur(v.dur_min) : ''}` : '';
+        return row('/checkride/systems/' + x.id, esc(x.title), `AOM ${esc(x.aom_chapter || '—')} · ${(x.cards || []).length} cards${badge}`);
+      }))}
       ${sys.source_note ? `<details class="qa"><summary>About these sources</summary><div class="rich"><p>${esc(sys.source_note)}</p></div></details>` : ''}`);
   }
   async function viewMEL(target) {
@@ -608,5 +647,5 @@
     }
     return false;
   }
-  window.FOStudyExt = { route, version: V, ui: { page, esc, nl, list, row, label } };
+  window.FOStudyExt = { route, version: V, ui: { page, esc, nl, list, row, label }, systemsVideos, systemsVideoCard, fmtDur };
 })();
