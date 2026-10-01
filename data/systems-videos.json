@@ -5,8 +5,8 @@
   "drive_folder_id": "1e_v2bP-aOb4CI753O7aR-FuqkbyQUHTL",
   "drive_folder_url": "https://drive.google.com/drive/folders/1e_v2bP-aOb4CI753O7aR-FuqkbyQUHTL",
   "permission_blocker": "Folder and sampled files are owner-only (kerrywyatt@gmail.com). In-page Drive preview / anyone-with-link play will fail for classmates until Viewer sharing is set. Do not widen share without Kerry.",
-  "updated_from_delivery": "2026-10-01T07:25:28-04:00",
-  "in_progress_folder": "21-weight-balance",
+  "updated_from_delivery": "2026-10-01T07:28:20-04:00",
+  "in_progress_folder": "22-performance",
   "by_system": {
     "aircraft-general": {
       "title": "Aircraft General",
@@ -15,7 +15,7 @@
       "drive_preview": "https://drive.google.com/file/d/1B2R_pNsqDnlOLce7BSBjmRQewAlw2MMl/preview",
       "drive_open": "https://drive.google.com/open?id=1B2R_pNsqDnlOLce7BSBjmRQewAlw2MMl",
       "file": "PRAETOR-AIRCRAFT-GENERAL.mp4",
-      "dur_min": 5.78,
+      "dur_min": null,
       "folder": "01-aircraft-general",
       "covers": [
         "aircraft-general"
@@ -29,7 +29,7 @@
       "drive_preview": "https://drive.google.com/file/d/1b0pmXWC75gQNl-vw0GHsAGS49_b28uSR/preview",
       "drive_open": "https://drive.google.com/open?id=1b0pmXWC75gQNl-vw0GHsAGS49_b28uSR",
       "file": "PRAETOR-LIGHTING.mp4",
-      "dur_min": 3.14,
+      "dur_min": null,
       "folder": "02-lighting",
       "covers": [
         "lighting"
@@ -43,7 +43,7 @@
       "drive_preview": "https://drive.google.com/file/d/1QKLowgI-5h6yQgBmXOh2AI8pPDnhRs3Y/preview",
       "drive_open": "https://drive.google.com/open?id=1QKLowgI-5h6yQgBmXOh2AI8pPDnhRs3Y",
       "file": "PRAETOR-WARNINGS.mp4",
-      "dur_min": 6.49,
+      "dur_min": null,
       "folder": "03-warnings",
       "covers": [
         "indicating-recording",
@@ -58,7 +58,7 @@
       "drive_preview": "https://drive.google.com/file/d/1QKLowgI-5h6yQgBmXOh2AI8pPDnhRs3Y/preview",
       "drive_open": "https://drive.google.com/open?id=1QKLowgI-5h6yQgBmXOh2AI8pPDnhRs3Y",
       "file": "PRAETOR-WARNINGS.mp4",
-      "dur_min": 6.49,
+      "dur_min": null,
       "folder": "03-warnings",
       "covers": [
         "indicating-recording",
@@ -73,7 +73,7 @@
       "drive_preview": "https://drive.google.com/file/d/1qNEvZc_dkZ_RKXmCAMYxljKLSWjY9n40/preview",
       "drive_open": "https://drive.google.com/open?id=1qNEvZc_dkZ_RKXmCAMYxljKLSWjY9n40",
       "file": "PRAETOR-ELECTRICAL.mp4",
-      "dur_min": 6.2,
+      "dur_min": null,
       "folder": "04-electrical",
       "covers": [
         "electrical"
@@ -87,7 +87,7 @@
       "drive_preview": "https://drive.google.com/file/d/14_QwKOpGLLgsEJcpaVOpRIuO_u_AHzoj/preview",
       "drive_open": "https://drive.google.com/open?id=14_QwKOpGLLgsEJcpaVOpRIuO_u_AHzoj",
       "file": "PRAETOR-FIRE-PROTECTION.mp4",
-      "dur_min": 4.0,
+      "dur_min": null,
       "folder": "05-fire-protection",
       "covers": [
         "fire-protection"
@@ -101,7 +101,7 @@
       "drive_preview": "https://drive.google.com/file/d/1LviXq5aZ9H6mC_kWWnFc_-FNC3bcueAd/preview",
       "drive_open": "https://drive.google.com/open?id=1LviXq5aZ9H6mC_kWWnFc_-FNC3bcueAd",
       "file": "PRAETOR-FUEL.mp4",
-      "dur_min": 3.91,
+      "dur_min": null,
       "folder": "06-fuel",
       "covers": [
         "fuel"
@@ -115,7 +115,7 @@
       "drive_preview": "https://drive.google.com/file/d/1FqAfySa4L8wucTcBtZ1tEE9R1K6FwrXH/preview",
       "drive_open": "https://drive.google.com/open?id=1FqAfySa4L8wucTcBtZ1tEE9R1K6FwrXH",
       "file": "PRAETOR-POWERPLANT.mp4",
-      "dur_min": 4.61,
+      "dur_min": null,
       "folder": "07-powerplant",
       "covers": [
         "powerplant"
@@ -129,7 +129,7 @@
       "drive_preview": "https://drive.google.com/file/d/1dcjXKwGtLm-LxVvGp8wIOLuwPsxI9bkT/preview",
       "drive_open": "https://drive.google.com/open?id=1dcjXKwGtLm-LxVvGp8wIOLuwPsxI9bkT",
       "file": "PRAETOR-APU.mp4",
-      "dur_min": 3.06,
+      "dur_min": null,
       "folder": "08-apu",
       "covers": [
         "apu"
@@ -303,6 +303,20 @@
         "preflight-walkaround"
       ],
       "note": null
+    },
+    "weight-balance": {
+      "title": "Weight and Balance",
+      "drive_id": "1ya219Pspu87WjbwCF3y0q50XomeSgnwy",
+      "drive_view": "https://drive.google.com/file/d/1ya219Pspu87WjbwCF3y0q50XomeSgnwy/view",
+      "drive_preview": "https://drive.google.com/file/d/1ya219Pspu87WjbwCF3y0q50XomeSgnwy/preview",
+      "drive_open": "https://drive.google.com/open?id=1ya219Pspu87WjbwCF3y0q50XomeSgnwy",
+      "file": "PRAETOR-WEIGHT-BALANCE.mp4",
+      "dur_min": 3.93,
+      "folder": "21-weight-balance",
+      "covers": [
+        "weight-balance"
+      ],
+      "note": null
     }
   },
   "videos": [
@@ -314,7 +328,7 @@
       "drive_preview": "https://drive.google.com/file/d/1B2R_pNsqDnlOLce7BSBjmRQewAlw2MMl/preview",
       "drive_open": "https://drive.google.com/open?id=1B2R_pNsqDnlOLce7BSBjmRQewAlw2MMl",
       "bytes": null,
-      "dur_min": 5.78,
+      "dur_min": null,
       "system_ids": [
         "aircraft-general"
       ]
@@ -327,7 +341,7 @@
       "drive_preview": "https://drive.google.com/file/d/1b0pmXWC75gQNl-vw0GHsAGS49_b28uSR/preview",
       "drive_open": "https://drive.google.com/open?id=1b0pmXWC75gQNl-vw0GHsAGS49_b28uSR",
       "bytes": null,
-      "dur_min": 3.14,
+      "dur_min": null,
       "system_ids": [
         "lighting"
       ]
@@ -340,7 +354,7 @@
       "drive_preview": "https://drive.google.com/file/d/1QKLowgI-5h6yQgBmXOh2AI8pPDnhRs3Y/preview",
       "drive_open": "https://drive.google.com/open?id=1QKLowgI-5h6yQgBmXOh2AI8pPDnhRs3Y",
       "bytes": null,
-      "dur_min": 6.49,
+      "dur_min": null,
       "system_ids": [
         "indicating-recording",
         "master-warning"
@@ -354,7 +368,7 @@
       "drive_preview": "https://drive.google.com/file/d/1qNEvZc_dkZ_RKXmCAMYxljKLSWjY9n40/preview",
       "drive_open": "https://drive.google.com/open?id=1qNEvZc_dkZ_RKXmCAMYxljKLSWjY9n40",
       "bytes": null,
-      "dur_min": 6.2,
+      "dur_min": null,
       "system_ids": [
         "electrical"
       ]
@@ -367,7 +381,7 @@
       "drive_preview": "https://drive.google.com/file/d/14_QwKOpGLLgsEJcpaVOpRIuO_u_AHzoj/preview",
       "drive_open": "https://drive.google.com/open?id=14_QwKOpGLLgsEJcpaVOpRIuO_u_AHzoj",
       "bytes": null,
-      "dur_min": 4.0,
+      "dur_min": null,
       "system_ids": [
         "fire-protection"
       ]
@@ -380,7 +394,7 @@
       "drive_preview": "https://drive.google.com/file/d/1LviXq5aZ9H6mC_kWWnFc_-FNC3bcueAd/preview",
       "drive_open": "https://drive.google.com/open?id=1LviXq5aZ9H6mC_kWWnFc_-FNC3bcueAd",
       "bytes": null,
-      "dur_min": 3.91,
+      "dur_min": null,
       "system_ids": [
         "fuel"
       ]
@@ -393,7 +407,7 @@
       "drive_preview": "https://drive.google.com/file/d/1FqAfySa4L8wucTcBtZ1tEE9R1K6FwrXH/preview",
       "drive_open": "https://drive.google.com/open?id=1FqAfySa4L8wucTcBtZ1tEE9R1K6FwrXH",
       "bytes": null,
-      "dur_min": 4.61,
+      "dur_min": null,
       "system_ids": [
         "powerplant"
       ]
@@ -406,7 +420,7 @@
       "drive_preview": "https://drive.google.com/file/d/1dcjXKwGtLm-LxVvGp8wIOLuwPsxI9bkT/preview",
       "drive_open": "https://drive.google.com/open?id=1dcjXKwGtLm-LxVvGp8wIOLuwPsxI9bkT",
       "bytes": null,
-      "dur_min": 3.06,
+      "dur_min": null,
       "system_ids": [
         "apu"
       ]
@@ -566,14 +580,22 @@
       "system_ids": [
         "preflight-walkaround"
       ]
+    },
+    {
+      "folder": "21-weight-balance",
+      "file": "PRAETOR-WEIGHT-BALANCE.mp4",
+      "drive_id": "1ya219Pspu87WjbwCF3y0q50XomeSgnwy",
+      "drive_view": "https://drive.google.com/file/d/1ya219Pspu87WjbwCF3y0q50XomeSgnwy/view",
+      "drive_preview": "https://drive.google.com/file/d/1ya219Pspu87WjbwCF3y0q50XomeSgnwy/preview",
+      "drive_open": "https://drive.google.com/open?id=1ya219Pspu87WjbwCF3y0q50XomeSgnwy",
+      "bytes": 4818255,
+      "dur_min": 3.93,
+      "system_ids": [
+        "weight-balance"
+      ]
     }
   ],
   "pending": [
-    {
-      "system_id": "weight-balance",
-      "folder": "21-weight-balance",
-      "title": "Weight and Balance"
-    },
     {
       "system_id": "performance",
       "folder": "22-performance",
