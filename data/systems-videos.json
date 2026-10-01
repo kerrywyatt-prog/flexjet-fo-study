@@ -1,12 +1,13 @@
 {
-  "v": "26.5",
-  "note": "Classmate Praetor systems study videos for the passworded FO app. Playback via Google Drive preview embeds + open links (file ids from DELIVERY). No mp4s in the GitHub repo. Drive files/folder currently owner-only \u2014 Kerry/staff must set Viewer: anyone with the link on folder 1e_v2bP-aOb4CI753O7aR-FuqkbyQUHTL (or each file) for classmates to play without a Drive sign-in as owner.",
+  "v": "26.6",
+  "note": "Classmate Praetor systems study videos for the passworded FO app. Playback via Google Drive preview embeds + open links (file ids from DELIVERY). No mp4s in the GitHub repo. Drive files/folder currently owner-only — Kerry/staff must set Viewer: anyone with the link on folder 1e_v2bP-aOb4CI753O7aR-FuqkbyQUHTL (or each file) for classmates to play without a Drive sign-in as owner.",
   "hosting": "google-drive",
   "drive_folder_id": "1e_v2bP-aOb4CI753O7aR-FuqkbyQUHTL",
   "drive_folder_url": "https://drive.google.com/drive/folders/1e_v2bP-aOb4CI753O7aR-FuqkbyQUHTL",
   "permission_blocker": "Folder and sampled files are owner-only (kerrywyatt@gmail.com). In-page Drive preview / anyone-with-link play will fail for classmates until Viewer sharing is set. Do not widen share without Kerry.",
-  "updated_from_delivery": "2026-10-01T07:28:20-04:00",
-  "in_progress_folder": "22-performance",
+  "updated_from_delivery": "2026-10-01T07:34:26-04:00",
+  "in_progress_folder": null,
+  "set_complete": true,
   "by_system": {
     "aircraft-general": {
       "title": "Aircraft General",
@@ -37,7 +38,7 @@
       "note": null
     },
     "indicating-recording": {
-      "title": "Warnings (Aural/Visual \u00b7 Recorders)",
+      "title": "Warnings (Aural/Visual · Recorders)",
       "drive_id": "1QKLowgI-5h6yQgBmXOh2AI8pPDnhRs3Y",
       "drive_view": "https://drive.google.com/file/d/1QKLowgI-5h6yQgBmXOh2AI8pPDnhRs3Y/view",
       "drive_preview": "https://drive.google.com/file/d/1QKLowgI-5h6yQgBmXOh2AI8pPDnhRs3Y/preview",
@@ -207,7 +208,7 @@
       "note": null
     },
     "avionics-comm": {
-      "title": "Avionics \u00b7 Communications",
+      "title": "Avionics · Communications",
       "drive_id": "11AIIC_ORrrV1ylJDqNPuR_oQWDeU39_j",
       "drive_view": "https://drive.google.com/file/d/11AIIC_ORrrV1ylJDqNPuR_oQWDeU39_j/view",
       "drive_preview": "https://drive.google.com/file/d/11AIIC_ORrrV1ylJDqNPuR_oQWDeU39_j/preview",
@@ -221,7 +222,7 @@
       "note": null
     },
     "avionics-cpdlc": {
-      "title": "Avionics \u00b7 CPDLC",
+      "title": "Avionics · CPDLC",
       "drive_id": "11ZUqlgEjnTM0gQREhh6MQRRWxtXjlG7O",
       "drive_view": "https://drive.google.com/file/d/11ZUqlgEjnTM0gQREhh6MQRRWxtXjlG7O/view",
       "drive_preview": "https://drive.google.com/file/d/11ZUqlgEjnTM0gQREhh6MQRRWxtXjlG7O/preview",
@@ -235,7 +236,7 @@
       "note": null
     },
     "avionics-instruments-nav-fms": {
-      "title": "Avionics \u00b7 Nav / FMS",
+      "title": "Avionics · Nav / FMS",
       "drive_id": "1Xjcoc1mOofWfXFH6G4fW2tmg55uX__32",
       "drive_view": "https://drive.google.com/file/d/1Xjcoc1mOofWfXFH6G4fW2tmg55uX__32/view",
       "drive_preview": "https://drive.google.com/file/d/1Xjcoc1mOofWfXFH6G4fW2tmg55uX__32/preview",
@@ -315,6 +316,34 @@
       "folder": "21-weight-balance",
       "covers": [
         "weight-balance"
+      ],
+      "note": null
+    },
+    "performance": {
+      "title": "Performance",
+      "drive_id": "13wFHhLLBBefA_CRNEBxMGMLBerf_Fb7e",
+      "drive_view": "https://drive.google.com/file/d/13wFHhLLBBefA_CRNEBxMGMLBerf_Fb7e/view",
+      "drive_preview": "https://drive.google.com/file/d/13wFHhLLBBefA_CRNEBxMGMLBerf_Fb7e/preview",
+      "drive_open": "https://drive.google.com/open?id=13wFHhLLBBefA_CRNEBxMGMLBerf_Fb7e",
+      "file": "PRAETOR-PERFORMANCE.mp4",
+      "dur_min": null,
+      "folder": "22-performance",
+      "covers": [
+        "performance"
+      ],
+      "note": null
+    },
+    "flight-planning": {
+      "title": "Flight Planning",
+      "drive_id": "19-F4Z56wLLgMtEE8Dzm9vfmXIyUc5llD",
+      "drive_view": "https://drive.google.com/file/d/19-F4Z56wLLgMtEE8Dzm9vfmXIyUc5llD/view",
+      "drive_preview": "https://drive.google.com/file/d/19-F4Z56wLLgMtEE8Dzm9vfmXIyUc5llD/preview",
+      "drive_open": "https://drive.google.com/open?id=19-F4Z56wLLgMtEE8Dzm9vfmXIyUc5llD",
+      "file": "PRAETOR-FLIGHT-PLANNING.mp4",
+      "dur_min": null,
+      "folder": "23-flight-planning",
+      "covers": [
+        "flight-planning"
       ],
       "note": null
     }
@@ -593,18 +622,33 @@
       "system_ids": [
         "weight-balance"
       ]
-    }
-  ],
-  "pending": [
-    {
-      "system_id": "performance",
-      "folder": "22-performance",
-      "title": "Performance"
     },
     {
-      "system_id": "flight-planning",
+      "folder": "22-performance",
+      "file": "PRAETOR-PERFORMANCE.mp4",
+      "drive_id": "13wFHhLLBBefA_CRNEBxMGMLBerf_Fb7e",
+      "drive_view": "https://drive.google.com/file/d/13wFHhLLBBefA_CRNEBxMGMLBerf_Fb7e/view",
+      "drive_preview": "https://drive.google.com/file/d/13wFHhLLBBefA_CRNEBxMGMLBerf_Fb7e/preview",
+      "drive_open": "https://drive.google.com/open?id=13wFHhLLBBefA_CRNEBxMGMLBerf_Fb7e",
+      "bytes": null,
+      "dur_min": null,
+      "system_ids": [
+        "performance"
+      ]
+    },
+    {
       "folder": "23-flight-planning",
-      "title": "Flight Planning"
+      "file": "PRAETOR-FLIGHT-PLANNING.mp4",
+      "drive_id": "19-F4Z56wLLgMtEE8Dzm9vfmXIyUc5llD",
+      "drive_view": "https://drive.google.com/file/d/19-F4Z56wLLgMtEE8Dzm9vfmXIyUc5llD/view",
+      "drive_preview": "https://drive.google.com/file/d/19-F4Z56wLLgMtEE8Dzm9vfmXIyUc5llD/preview",
+      "drive_open": "https://drive.google.com/open?id=19-F4Z56wLLgMtEE8Dzm9vfmXIyUc5llD",
+      "bytes": null,
+      "dur_min": null,
+      "system_ids": [
+        "flight-planning"
+      ]
     }
-  ]
+  ],
+  "pending": []
 }
