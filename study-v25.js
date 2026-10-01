@@ -3,8 +3,8 @@
    Content comes from data/*.json (study.json, limitations.json, systems.json, indoc-days.json, memory-items.json,
    135-recurrent-qa.json). Excluded-topic rules: see README. Memory items are rendered word-for-word from memory-items.json. */
 (() => {
-  const V = '26.9';
-  const WHATS_NEW = 'v26.9 · Custom systems mix on Drill: multi-select chapters, then one shuffled bank from those systems only (same cards + Source/explanation).';
+  const V = '26.10';
+  const WHATS_NEW = 'v26.10 · Custom systems mix on Checkride → Systems (same multi-select chips + shuffled drill as Drill hub); study-video copy updated for HTML5 release hosting.';
   const TIMELINE = [
     { id: 'indoc', title: 'Indoc', when: 'Sep 21–27, 2026', start: '2026-09-21', end: '2026-09-23', path: '/indoc' },
     { id: 'exam', title: '135 exam (50Q, open-book)', when: 'Sun Sep 27, 2026', start: '2026-09-24', end: '2026-09-27', path: '/indoc/135' },
@@ -348,16 +348,22 @@
     const n = sys.systems.reduce((a, c) => a + (c.cards || []).length, 0);
     const nVid = sys.systems.filter(s => bySys[s.id]).length;
     const pending = (vids && vids.pending) || [];
+    const hosting = (vids && vids.hosting) || '';
+    const vidHostNote = hosting === 'github-release' || (vids && vids.by_system && Object.values(vids.by_system).some(v => v && v.mp4_url))
+      ? 'HTML5 study video (release mp4)'
+      : 'study video';
     page('Systems', 'Checkride Prep', '/checkride', `
       <div class="card"><p>${n} Praetor 600 systems cards from the CTH §7 review questions, grouped by AOM chapter. Each cite gives the CTH page and the AOM paragraph the CTH cites, e.g. “CTH Rev 2.5 p.30 (citing AOM 9-11-01)”. ${VTAG}</p>
-      <p class="muted small">${nVid} systems have a Drive study video${pending.length ? '; waiting on ' + pending.map(p => p.title).join(', ') : ''}.</p>
+      <p class="muted small">${nVid} systems have a ${vidHostNote}${pending.length ? '; waiting on ' + pending.map(p => p.title).join(', ') : ''}.</p>
       <div class="btnrow"><button class="btn btn-primary" data-nav="/drill/systems">Drill all ${n}</button><button class="btn btn-primary" data-nav="/checkride/cthquiz">Review + Quiz by system (CTH §7)</button></div></div>
+      ${systemsCustomMixHtml(sys)}
       ${list(sys.systems.map(x => {
         const v = bySys[x.id];
         const badge = v ? ` · ▶ video${v.dur_min ? ' ' + fmtDur(v.dur_min) : ''}` : '';
         return row('/checkride/systems/' + x.id, esc(x.title), `AOM ${esc(x.aom_chapter || '—')} · ${(x.cards || []).length} cards${badge}`);
       }))}
       ${sys.source_note ? `<details class="qa"><summary>About these sources</summary><div class="rich"><p>${esc(sys.source_note)}</p></div></details>` : ''}`);
+    bindSystemsCustomMix(sys);
   }
   async function viewMEL(target) {
     const s = await study();

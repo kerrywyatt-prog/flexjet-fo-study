@@ -1,4 +1,4 @@
-/* FO Study v26.9 — CTH §7 Systems Review + Quiz (+ systems video card + tap Source/explanation).
+/* FO Study v26.10 — CTH §7 Systems Review + Quiz (+ systems video card + tap Source/explanation).
    Source: data/cth-systems-quiz.json, CTH Rev 2.5 §7 (Praetor 600 primary). Correct answers from CTH text.
    Loaded after study-v25.js and before app-v5.js. Wraps FOStudyExt.route for #/checkride/cthquiz/... */
 (() => {
@@ -15,7 +15,7 @@
       : `<p class="src-explain-text">${nl(explain)}</p>`;
     return `<details class="src-explain"><summary>Source / explanation</summary><div class="src-explain-body">${body}${cite ? `<p class="cite">Source: ${esc(cite)}</p>` : ''}</div></details>`;
   };
-  const DATA_URL = 'data/cth-systems-quiz.json?v=26.9';
+  const DATA_URL = 'data/cth-systems-quiz.json?v=26.10';
   const PASS = 80;
   const ALL_LENS = [25, 50, 100];
   let DATA = null;
@@ -283,5 +283,5 @@
     }
     return orig(parts);
   };
-  X.cthQuiz = { load, version: '26.9' };
+  X.cthQuiz = { load, version: '26.10' };
 })();
