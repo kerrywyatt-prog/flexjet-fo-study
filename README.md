@@ -26,7 +26,7 @@ Unlock persists in `localStorage` for this browser/device.
 - `#/indoc` → `day/1..4`, `flags[/N]`, `135` (study `/135/study[/N]`, quiz `/135/quiz`), Ops Specs `a..e`
 - `#/checkride` → `structure`, `oral-flags`, `maneuvers[/N]`, `flows[/flow-N|/callouts]`, `memory[/id]`, `limits[/cat|/itemId]`, `systems[/id|/cardId]`, `cthquiz[/all|/id[/review|/cards|/quiz]]`, `mel[/iN]`, `fms`, `qa[/N]`
 - `#/checklists` → `normal/10069|10070[/section]`, `walkaround[/section]`, `hpcart`
-- `#/drill` → `qa[/TAG]`, `maneuvers`, `callouts`, `flows`, `limits[/cat|/conflicts]`, `systems[/id]`, `flags`, `ob`; IAI at `#/flashcards`
+- `#/drill` → `qa[/TAG]`, `maneuvers`, `callouts`, `flows`, `limits[/cat|/conflicts]`, `systems[/id|/mix:id,id…]`, `flags`, `ob`; IAI at `#/flashcards`
 - `#/bulletins`, `#/gaps`, `#/search/<q>`, `#/fleet-map` (Tail Tracker)
 
 Rules: no security-program content; no raw manual PDFs; memory items and the 135 bank are word-for-word; PENDING only where no source exists; source conflicts shown as "conflict — ask instructor"; no tail/serial ↔ checklist-effectivity mapping.

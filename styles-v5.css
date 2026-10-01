@@ -1716,6 +1716,67 @@ mark { background: rgba(212,168,75,0.35); color: inherit; border-radius: 3px; pa
 .cthq #cthq-list.hide-ans .sg-qc:not(.shown) .cthq-reveal { display: inline-block; }
 .cthq .sg-opt span:last-child { white-space: normal; }
 
+
+/* v26.9 · Custom systems mix (Drill hub multi-select) */
+.sys-mix { margin-bottom: 14px; }
+.sys-mix-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 4px;
+}
+.sys-mix-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 650;
+  line-height: 1.2;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  touch-action: manipulation;
+}
+.sys-mix-chip input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--accent);
+  flex-shrink: 0;
+}
+.sys-mix-chip .sys-mix-label {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.sys-mix-chip .sys-mix-n {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  opacity: 0.9;
+}
+.sys-mix-chip.on {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.sys-mix-chip.on .sys-mix-n { color: var(--accent); opacity: 0.85; }
+.sys-mix-helpers { margin-top: 8px; }
+.sys-mix-hint { margin-top: 8px; }
+#sys-mix-start:disabled {
+  opacity: 0.45;
+  pointer-events: none;
+  box-shadow: none;
+}
+
 /* v26.7 · Praetor systems study videos (HTML5 mp4) */
 .sys-video { margin-top: 12px; }
 .sys-video-wrap {

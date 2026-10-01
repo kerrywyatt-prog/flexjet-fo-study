@@ -3,8 +3,8 @@
    Content comes from data/*.json (study.json, limitations.json, systems.json, indoc-days.json, memory-items.json,
    135-recurrent-qa.json). Excluded-topic rules: see README. Memory items are rendered word-for-word from memory-items.json. */
 (() => {
-  const V = '26.8';
-  const WHATS_NEW = 'v26.8 · Tap Source / explanation on systems Qs (CTH §7, systems pages, drill). Bank is Praetor 600-primary — 500-only limits/Qs removed.';
+  const V = '26.9';
+  const WHATS_NEW = 'v26.9 · Custom systems mix on Drill: multi-select chapters, then one shuffled bank from those systems only (same cards + Source/explanation).';
   const TIMELINE = [
     { id: 'indoc', title: 'Indoc', when: 'Sep 21–27, 2026', start: '2026-09-21', end: '2026-09-23', path: '/indoc' },
     { id: 'exam', title: '135 exam (50Q, open-book)', when: 'Sun Sep 27, 2026', start: '2026-09-24', end: '2026-09-27', path: '/indoc/135' },
@@ -460,8 +460,17 @@
     }
     if (deck === 'systems') {
       const sys = await systems(); if (!sys) return { missing: 'The systems set', back: '/checkride/systems' };
-      const pick = sub ? sys.systems.filter(x => x.id === sub || x.aom_chapter === sub) : sys.systems;
-      return { title: 'Systems' + (sub && pick[0] ? ' · ' + pick[0].title : ''), back: '/checkride/systems' + (sub && pick.length === 1 ? '/' + pick[0].id : ''),
+      const mix = sub && String(sub).startsWith('mix:') ? String(sub).slice(4) : null;
+      const multiIds = mix != null ? mix.split(',').map(s => s.trim()).filter(Boolean) : null;
+      const pick = multiIds
+        ? sys.systems.filter(x => multiIds.includes(x.id))
+        : sub ? sys.systems.filter(x => x.id === sub || x.aom_chapter === sub) : sys.systems;
+      const custom = multiIds != null;
+      let title = 'Systems';
+      if (custom) title = 'Systems · custom mix (' + pick.length + ')';
+      else if (sub && pick[0]) title = 'Systems · ' + pick[0].title;
+      const back = custom ? '/drill' : ('/checkride/systems' + (sub && pick.length === 1 ? '/' + pick[0].id : ''));
+      return { title, back, custom,
         cards: pick.flatMap(x => (x.cards || []).map(c => ({ id: c.id, front: `<div class="fc-section">${esc(x.title)} · AOM ${esc(x.aom_chapter || '')}</div><h2 class="fc-q">${esc(c.q)}</h2>`, back: `<p class="fc-big">${nl(c.a)}</p>${srcExplainHtml(c.explain, c.cite, c.pending)}${VTAG}`, link: '/checkride/systems/' + c.id }))) };
     }
     return null;
@@ -475,7 +484,10 @@
     const id = deck + (sub ? '_' + sub : '');
     const ids = D.cards.map(c => c.id);
     let st = loadD(id);
-    if (!st || !Array.isArray(st.order) || st.order.some(x => !ids.includes(x)) || st.order.length === 0) st = { order: ids.slice(), i: 0, got: [], missed: [], mode: 'all' };
+    if (!st || !Array.isArray(st.order) || st.order.some(x => !ids.includes(x)) || st.order.length === 0) {
+      const order = D.custom ? F().shuffleInPlace(ids.slice()) : ids.slice();
+      st = { order, i: 0, got: [], missed: [], mode: 'all' };
+    }
     const byId = Object.fromEntries(D.cards.map(c => [c.id, c]));
     let flipped = false;
     const paint = () => {
@@ -518,6 +530,59 @@
     };
     paint();
   }
+
+  function systemsCustomMixHtml(sys) {
+    const chips = (sys.systems || []).map(x => {
+      const n = (x.cards || []).length;
+      return `<label class="sys-mix-chip"><input type="checkbox" data-sys-mix value="${esc(x.id)}" data-count="${n}" /><span class="sys-mix-label">${esc(x.title)}<span class="sys-mix-n">${n}</span></span></label>`;
+    }).join('');
+    return `${label('Custom systems mix')}
+      <div class="card sys-mix" id="sys-mix">
+        <p class="muted small">Pick any systems, then start one shuffled bank of those cards only — same Qs and Source / explanation as the individual drills.</p>
+        <div class="sys-mix-chips" role="group" aria-label="Select systems">${chips}</div>
+        <div class="btnrow sys-mix-helpers">
+          <button type="button" class="btn btn-ghost" id="sys-mix-all">Select all</button>
+          <button type="button" class="btn btn-ghost" id="sys-mix-clear">Clear</button>
+        </div>
+        <div class="btnrow">
+          <button type="button" class="btn btn-primary" id="sys-mix-start" disabled>Start shuffled drill</button>
+        </div>
+        <p class="muted small sys-mix-hint" id="sys-mix-hint">Select at least one system to start.</p>
+      </div>`;
+  }
+  function bindSystemsCustomMix(sys) {
+    const root = F().app.querySelector('#sys-mix');
+    if (!root) return;
+    const boxes = () => [...root.querySelectorAll('input[data-sys-mix]')];
+    const start = root.querySelector('#sys-mix-start');
+    const hint = root.querySelector('#sys-mix-hint');
+    const sync = () => {
+      const selected = boxes().filter(b => b.checked);
+      const nCards = selected.reduce((a, b) => a + (parseInt(b.getAttribute('data-count'), 10) || 0), 0);
+      boxes().forEach(b => b.closest('.sys-mix-chip')?.classList.toggle('on', b.checked));
+      if (!selected.length) {
+        start.disabled = true;
+        start.textContent = 'Start shuffled drill';
+        if (hint) hint.textContent = 'Select at least one system to start.';
+      } else {
+        start.disabled = false;
+        start.textContent = `Start shuffled drill (${selected.length} system${selected.length === 1 ? '' : 's'} · ${nCards} cards)`;
+        if (hint) hint.textContent = 'Starts a fresh shuffled round from the selected systems only.';
+      }
+    };
+    root.addEventListener('change', (e) => { if (e.target.matches('input[data-sys-mix]')) sync(); });
+    root.querySelector('#sys-mix-all')?.addEventListener('click', () => { boxes().forEach(b => { b.checked = true; }); sync(); });
+    root.querySelector('#sys-mix-clear')?.addEventListener('click', () => { boxes().forEach(b => { b.checked = false; }); sync(); });
+    start?.addEventListener('click', () => {
+      const ids = boxes().filter(b => b.checked).map(b => b.value);
+      if (!ids.length) { sync(); return; }
+      // mix: prefix = custom pool (even for 1 system). Clear saved state so Start always shuffles fresh.
+      const sub = 'mix:' + ids.join(',');
+      try { localStorage.removeItem(DKEY('systems_' + sub)); } catch {}
+      F().go('/drill/systems/' + sub);
+    });
+    sync();
+  }
   async function viewDrillHub() {
     const s = await study(); const lim = await limits(); const sys = await systems();
     const prog = (id, n) => { const st = loadD(id); return st ? ` · ${st.got.length}/${n} ✓` : ''; };
@@ -537,10 +602,11 @@
         row('/drill/qa', 'Oral Q&A', s.qa.length + ' questions' + prog('qa', s.qa.length)),
         row('/drill/ob', 'Bulletin (HYD LO QTY)', '3 cards'),
       ])}
-      ${sys ? label('Systems by AOM chapter') + list(sys.systems.map(x => row('/drill/systems/' + x.id, esc(x.title), `AOM ${esc(x.aom_chapter || '')} · ${(x.cards || []).length}` + prog('systems_' + x.id, (x.cards || []).length)))) : ''}
+      ${sys ? systemsCustomMixHtml(sys) + label('Systems by AOM chapter') + list(sys.systems.map(x => row('/drill/systems/' + x.id, esc(x.title), `AOM ${esc(x.aom_chapter || '')} · ${(x.cards || []).length}` + prog('systems_' + x.id, (x.cards || []).length)))) : ''}
       ${lim ? label('Limitations by category') + list(lim.categories.map(c => row('/drill/limits/' + c.id, esc(c.title), c.items.length + prog('limits_' + c.id, c.items.length)))) : ''}
       ${label('Indoc')}
       ${list([row('/indoc/135/quiz', '135 mock quiz', '50Q · pass 80%'), row('/drill/flags', 'Instructor flags', '25 cards')])}`);
+    if (sys) bindSystemsCustomMix(sys);
   }
 
   // ---------- search ----------
