@@ -1,0 +1,46 @@
+CTH quiz explains with source: 530; PENDING: 0
+systems.json cards with source: 530; PENDING: 0
+Removed/rewritten items (43):
+CTH 7.1-1: rewritten to Praetor 600-only Q/A (dropped 500 figures)
+CTH 7.1-2: rewritten to Praetor 600-only Q/A (dropped 500 figures)
+CTH 7.1-3: rewritten to Praetor 600-only Q/A (dropped 500 figures)
+CTH 7.1-4: rewritten to Praetor 600-only Q/A (dropped 500 figures)
+CTH 7.7-25: rewritten to Praetor 600-only Q/A (dropped 500 figures)
+CTH 7.7-26: rewritten to Praetor 600-only Q/A (dropped 500 figures)
+CTH 7.22-1: rewritten to Praetor 600-only Q/A (dropped 500 figures)
+CTH 7.22-2: rewritten to Praetor 600-only Q/A (dropped 500 figures)
+CTH 7.22-3: rewritten to Praetor 600-only Q/A (dropped 500 figures)
+CTH 7.22-4: rewritten to Praetor 600-only Q/A (dropped 500 figures)
+CTH 7.24-2: rewritten to Praetor 600-only Q/A (dropped 500 figures)
+CTH 7.24-5: rewritten to Praetor 600-only Q/A (dropped 500 figures)
+CTH 7.24-8: rewritten to Praetor 600-only Q/A (dropped 500 figures)
+limitations/general/general-04: Length (P500) = 64'07"
+limitations/general/general-06: Wingspan (P500) = 70'06"
+limitations/general/general-08: Height (P500) = 21'03"
+limitations/general/general-10: rewritten to 600-only (180° turn minimum pavement width (main gear) → 180° turn minimum pavement width (main gear))
+limitations/general/general-11: rewritten to 600-only (Wingtip wall-to-wall (180° turn) → Wingtip wall-to-wall (180° turn))
+limitations/weights/weights-01: Max ramp weight (P500) = 37,699 lb
+limitations/weights/weights-02: Max takeoff weight (P500) = 37,567 lb
+limitations/weights/weights-03: Max landing weight (P500) = 34,172 lb
+limitations/weights/weights-04: Max zero fuel weight (P500) = 25,959 lb
+limitations/weights/weights-10: CG limits (P500), %MAC = MTOW 21.5%–31.5% · MLW 21.5%–34% · MZFW 28%–47.5% · MOW 40%–
+limitations/engine/engine-18: rewritten to 600-only (Thrust rating TO-1 → Thrust rating TO-1)
+limitations/fuel/fuel-01: P500 total capacity = 1,962 gal / 13,140 lb (each tank 980 gal / 6,575 lb)
+limitations/fuel/fuel-02: P500 usable fuel = 1,948 gal / 13,050 lb (each tank 974 gal / 6,525 lb)
+limitations/fuel/fuel-05: rewritten to 600-only (Refuel quantity → Refuel quantity)
+limitations/navigation/navigation-17: rewritten to 600-only (Approach category → Approach category)
+limitations/prohibitions/prohibitions-11: rewritten to 600-only (Passenger oxygen masks → Passenger oxygen masks)
+limitations/prohibitions/prohibitions-12: scrubbed residual P500 text
+limitations/prohibitions/prohibitions-14: rewritten to 600-only (Life rafts → Life rafts)
+limitations/differences/differences-01: Weights (MTOW) (500-vs-600 differences deck)
+limitations/differences/differences-02: Fuel tanks (500-vs-600 differences deck)
+limitations/differences/differences-03: Approach category (straight-in) (500-vs-600 differences deck)
+limitations/differences/differences-04: Thrust TO-1 (500-vs-600 differences deck)
+limitations/differences/differences-05: Length (500-vs-600 differences deck)
+limitations/differences/differences-06: Normal climb speeds (Schedule 2) (500-vs-600 differences deck)
+limitations/differences/differences-07: Life rafts / O2 masks (500-vs-600 differences deck)
+limitations/differences/differences-08: P600-only datalink (500-vs-600 differences deck)
+limitations/differences/differences-09: Galley/cabin door (500-vs-600 differences deck)
+limitations/differences/differences-10: Lav door switch (500-vs-600 differences deck)
+limitations/differences/differences-11: CG envelopes (500-vs-600 differences deck)
+memory-items aircraft label: Embraer Praetor 500/600 (EMB-545/550) → Embraer Praetor 600 (EMB-550) (IAI content shared; no 500-only cards found)

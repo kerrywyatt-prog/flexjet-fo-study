@@ -1,6 +1,6 @@
 # Flexjet FO Study App
 
-Password-gated mobile-first study framework for Flexjet Praetor 500/600 first officers.
+Password-gated mobile-first study framework for Flexjet Praetor 600 first officers.
 
 ## Live URL
 **https://kerrywyatt-prog.github.io/flexjet-fo-study/**

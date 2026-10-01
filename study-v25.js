@@ -3,8 +3,8 @@
    Content comes from data/*.json (study.json, limitations.json, systems.json, indoc-days.json, memory-items.json,
    135-recurrent-qa.json). Excluded-topic rules: see README. Memory items are rendered word-for-word from memory-items.json. */
 (() => {
-  const V = 25;
-  const WHATS_NEW = 'v26.7 · Praetor systems study videos play as public HTML5 mp4 (no Google login). SIMCOM day packs / Embraer manuals stay off the site.';
+  const V = '26.8';
+  const WHATS_NEW = 'v26.8 · Tap Source / explanation on systems Qs (CTH §7, systems pages, drill). Bank is Praetor 600-primary — 500-only limits/Qs removed.';
   const TIMELINE = [
     { id: 'indoc', title: 'Indoc', when: 'Sep 21–27, 2026', start: '2026-09-21', end: '2026-09-23', path: '/indoc' },
     { id: 'exam', title: '135 exam (50Q, open-book)', when: 'Sun Sep 27, 2026', start: '2026-09-24', end: '2026-09-27', path: '/indoc/135' },
@@ -18,6 +18,15 @@
   const esc = (s) => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   const strip = (h) => String(h || '').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/\s+/g, ' ').trim();
   const nl = (s) => esc(s).replace(/\n/g, '<br>');
+  /** Collapsed tap/click reveal for systems Q source + Kerry-style explanation (iPad-friendly <details>). */
+  function srcExplainHtml(explain, cite, pending) {
+    if (!explain && !cite) return '';
+    const body = pending
+      ? `<p class="src-pending">${nl(explain || 'PENDING — looked in local CTH/systems banks; no verified cite yet.')}</p>`
+      : `<p class="src-explain-text">${nl(explain || '')}</p>`;
+    const src = cite ? `<p class="cite">Source: ${esc(cite)}</p>` : '';
+    return `<details class="src-explain"><summary>Source / explanation</summary><div class="src-explain-body">${body}${src}</div></details>`;
+  }
   const slug = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 48);
   const chev = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>';
 
@@ -235,7 +244,7 @@
     const s = await study(); const lim = await limits(); const sys = await systems();
     const nL = lim ? lim.categories.reduce((a, c) => a + c.items.length, 0) : 0;
     const nS = sys ? sys.systems.reduce((a, c) => a + (c.cards || []).length, 0) : 0;
-    page('Checkride Prep', 'Praetor 500/600', '/', `
+    page('Checkride Prep', 'Praetor 600', '/', `
       <div class="card"><p>Your SIMCOM Initial / type-ride prep, built from the CTH Rev 2.5, CFM Rev 3.3, ACS, MEL Rev 14 and the Indoc class notes. Every line is cited. ${VTAG}</p>
       <div class="btnrow"><button class="btn btn-primary" data-nav="/drill">Drill</button><button class="btn btn-ghost" data-nav="/search">Search</button></div></div>
       ${label('Know the check')}
@@ -333,14 +342,14 @@
         ${(x.mel_notes || []).length ? `<div class="card"><h3><span class="dot"></span>MEL notes</h3><ul>${pts(x.mel_notes)}</ul></div>` : ''}
         ${(x.ob_notes || []).length ? `<div class="card"><h3><span class="dot"></span>Operational Bulletin notes</h3><ul>${pts(x.ob_notes)}</ul><button class="btn btn-ghost" data-nav="/bulletins">Bulletins</button></div>` : ''}
         ${label('Review questions (tap to reveal)')}
-        ${(x.cards || []).map(c => `<details class="qa" id="sys-${esc(c.id)}"><summary>${esc(c.q)}</summary><div class="rich"><p>${nl(c.a)}</p><p class="cite">${esc(c.cite)}</p></div></details>`).join('')}`);
+        ${(x.cards || []).map(c => `<details class="qa" id="sys-${esc(c.id)}"><summary>${esc(c.q)}</summary><div class="rich"><p>${nl(c.a)}</p>${srcExplainHtml(c.explain, c.cite, c.pending)}</div></details>`).join('')}`);
       return focusTarget(target);
     }
     const n = sys.systems.reduce((a, c) => a + (c.cards || []).length, 0);
     const nVid = sys.systems.filter(s => bySys[s.id]).length;
     const pending = (vids && vids.pending) || [];
     page('Systems', 'Checkride Prep', '/checkride', `
-      <div class="card"><p>${n} systems cards from the CTH §7 review questions, grouped by AOM chapter. Each cite gives the CTH page and the AOM paragraph the CTH cites, e.g. “CTH Rev 2.5 p.30 (citing AOM 9-11-01)”. ${VTAG}</p>
+      <div class="card"><p>${n} Praetor 600 systems cards from the CTH §7 review questions, grouped by AOM chapter. Each cite gives the CTH page and the AOM paragraph the CTH cites, e.g. “CTH Rev 2.5 p.30 (citing AOM 9-11-01)”. ${VTAG}</p>
       <p class="muted small">${nVid} systems have a Drive study video${pending.length ? '; waiting on ' + pending.map(p => p.title).join(', ') : ''}.</p>
       <div class="btnrow"><button class="btn btn-primary" data-nav="/drill/systems">Drill all ${n}</button><button class="btn btn-primary" data-nav="/checkride/cthquiz">Review + Quiz by system (CTH §7)</button></div></div>
       ${list(sys.systems.map(x => {
@@ -453,7 +462,7 @@
       const sys = await systems(); if (!sys) return { missing: 'The systems set', back: '/checkride/systems' };
       const pick = sub ? sys.systems.filter(x => x.id === sub || x.aom_chapter === sub) : sys.systems;
       return { title: 'Systems' + (sub && pick[0] ? ' · ' + pick[0].title : ''), back: '/checkride/systems' + (sub && pick.length === 1 ? '/' + pick[0].id : ''),
-        cards: pick.flatMap(x => (x.cards || []).map(c => ({ id: c.id, front: `<div class="fc-section">${esc(x.title)} · AOM ${esc(x.aom_chapter || '')}</div><h2 class="fc-q">${esc(c.q)}</h2>`, back: `<p class="fc-big">${nl(c.a)}</p><p class="cite">${esc(c.cite)}</p>${VTAG}`, link: '/checkride/systems/' + c.id }))) };
+        cards: pick.flatMap(x => (x.cards || []).map(c => ({ id: c.id, front: `<div class="fc-section">${esc(x.title)} · AOM ${esc(x.aom_chapter || '')}</div><h2 class="fc-q">${esc(c.q)}</h2>`, back: `<p class="fc-big">${nl(c.a)}</p>${srcExplainHtml(c.explain, c.cite, c.pending)}${VTAG}`, link: '/checkride/systems/' + c.id }))) };
     }
     return null;
   }
@@ -496,7 +505,7 @@
         st.got = st.got.filter(x => x !== cid); st.missed = st.missed.filter(x => x !== cid);
         (ok ? st.got : st.missed).push(cid); st.i++; flipped = false; paint();
       };
-      $('#d-card')?.addEventListener('click', (e) => { if (e.target.closest('a')) return; if (!flipped) flip(); });
+      $('#d-card')?.addEventListener('click', (e) => { if (e.target.closest('a') || e.target.closest('details.src-explain')) return; if (!flipped) flip(); });
       $('#d-card')?.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (!flipped) flip(); } });
       $('#d-flip')?.addEventListener('click', flip);
       $('#d-got')?.addEventListener('click', () => mark(true));
@@ -607,7 +616,7 @@
 
   // ---------- Praetor hub (legacy routes) ----------
   function viewPraetorHub() {
-    page('Praetor 500/600', 'Aircraft', '/', list([
+    page('Praetor 600', 'Aircraft', '/', list([
       row('/checkride', 'Checkride Prep', 'Everything for the type ride'), row('/praetor/memory', 'Memory items', '22 IAI cards'),
       row('/checkride/limits', 'Limitations', 'CTH §5 / CFM / MEL'), row('/checkride/systems', 'Systems', 'CTH §7 by AOM chapter'), row('/checkride/cthquiz', 'Systems Review + Quiz', 'CTH §7 · 24 systems'),
       row('/checkride/flows', 'Flows & callouts', 'CFM Rev 3.3'), row('/checklists', 'Checklists', 'Normal · walkaround · HP cart'), row('/praetor/notes', 'Personal notes', 'This device only')]));
@@ -658,5 +667,5 @@
     }
     return false;
   }
-  window.FOStudyExt = { route, version: V, ui: { page, esc, nl, list, row, label }, systemsVideos, systemsVideoCard, fmtDur };
+  window.FOStudyExt = { route, version: V, ui: { page, esc, nl, list, row, label, srcExplainHtml }, systemsVideos, systemsVideoCard, fmtDur, srcExplainHtml };
 })();

@@ -1083,6 +1083,61 @@ button, input, textarea { font: inherit; color: inherit; }
 .center { text-align: center; }
 
 
+
+/* Tap-to-reveal Source / explanation (systems Qs, iPad/touch) */
+details.src-explain {
+  margin-top: 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-elev);
+  overflow: hidden;
+}
+details.src-explain > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+details.src-explain > summary::-webkit-details-marker { display: none; }
+details.src-explain > summary::before {
+  content: "▸";
+  display: inline-block;
+  transition: transform .15s ease;
+  color: var(--text-mute);
+}
+details.src-explain[open] > summary::before { transform: rotate(90deg); }
+details.src-explain .src-explain-body {
+  padding: 0 14px 12px;
+  border-top: 1px solid var(--border);
+}
+details.src-explain .src-explain-text {
+  margin: 10px 0 6px;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--text-dim);
+}
+details.src-explain .src-pending {
+  margin: 10px 0 6px;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--gold);
+}
+details.src-explain .cite {
+  margin: 0;
+  font-size: 12px;
+}
+.sg-rev details.src-explain { margin-top: 8px; }
+.qa .src-explain { margin-top: 8px; }
+.d-back .src-explain { margin-top: 10px; }
+
 /* ——— Fleet Map ——— */
 .shell-fleet-map .content.fleet-map-content {
   display: flex;

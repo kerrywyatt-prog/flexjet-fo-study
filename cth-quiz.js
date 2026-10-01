@@ -1,13 +1,21 @@
-/* FO Study v25.4 — CTH §7 Systems Review + Quiz (+ systems Drive video card).
-   Source: data/cth-systems-quiz.json, built from the Crew Training Handbook (Praetor 500/600, Rev 2.5)
-   Section 7 Systems Review Questions. The correct answer and reference always come from the CTH text,
-   word for word. Wrong options are written to be plausible but wrong per the book.
-   Loaded after study-v25.js and before app-v5.js. Wraps FOStudyExt.route and handles #/checkride/cthquiz/... */
+/* FO Study v26.8 — CTH §7 Systems Review + Quiz (+ systems video card + tap Source/explanation).
+   Source: data/cth-systems-quiz.json, CTH Rev 2.5 §7 (Praetor 600 primary). Correct answers from CTH text.
+   Loaded after study-v25.js and before app-v5.js. Wraps FOStudyExt.route for #/checkride/cthquiz/... */
 (() => {
   const X = window.FOStudyExt;
   if (!X || !X.ui) { console.warn('cth-quiz: FOStudyExt.ui missing'); return; }
-  const { page, esc, nl, list, row, label } = X.ui;
-  const DATA_URL = 'data/cth-systems-quiz.json?v=25.3';
+  const { page, esc, nl, list, row, label, srcExplainHtml: srcExplainFromUi } = X.ui;
+  const srcExplainHtml = (it) => {
+    if (typeof srcExplainFromUi === 'function') return srcExplainFromUi(it.explain || it.x, it.cite, it.pending);
+    const explain = it.explain || it.x || '';
+    const cite = it.cite || '';
+    if (!explain && !cite) return '';
+    const body = it.pending
+      ? `<p class="src-pending">${nl(explain || 'PENDING')}</p>`
+      : `<p class="src-explain-text">${nl(explain)}</p>`;
+    return `<details class="src-explain"><summary>Source / explanation</summary><div class="src-explain-body">${body}${cite ? `<p class="cite">Source: ${esc(cite)}</p>` : ''}</div></details>`;
+  };
+  const DATA_URL = 'data/cth-systems-quiz.json?v=26.8';
   const PASS = 80;
   const ALL_LENS = [25, 50, 100];
   let DATA = null;
@@ -43,7 +51,7 @@
     const d = await load();
     const nQuiz = d.systems.reduce((a, s) => a + quizable(s).length, 0);
     page('Systems Review + Quiz', 'Checkride Prep · CTH §7', '/checkride', `
-      <div class="card"><p>Every CTH §7 Systems Review Question (${d.total} across ${d.systems.length} systems), with the book answer and reference. Each system has a <b>Review</b> mode (question, book answer, reference) and a <b>Quiz</b> mode: every question for that system, shuffled, multiple choice or true/false, with a missed-question review at the end. Correct answers are the CTH text word for word; the wrong options are made up to sound plausible.</p>
+      <div class="card"><p>Every CTH §7 Systems Review Question (${d.total} across ${d.systems.length} systems) for the <b>Praetor 600</b>, with the book answer plus tap-to-reveal Source / explanation. Each system has a <b>Review</b> mode (question, book answer, reference) and a <b>Quiz</b> mode: every question for that system, shuffled, multiple choice or true/false, with a missed-question review at the end. Correct answers are the CTH text word for word; the wrong options are made up to sound plausible.</p>
       <div class="btnrow"><button class="btn btn-primary" data-nav="/checkride/cthquiz/all">All-systems mixed quiz</button><button class="btn btn-ghost" data-nav="/checkride/systems">Systems cards (by AOM chapter)</button></div></div>
       ${label('Systems · CTH §7')}
       ${list(d.systems.map((s) => { const b = best(s.id); return row('/checkride/cthquiz/' + s.id, `${esc(s.sec)} ${esc(title(s))}`, `${s.items.length} Qs · p.${s.page}${b != null ? ' · best ' + b + '%' : ''}`); }))}
@@ -83,9 +91,9 @@
 
   function viewReview(s) {
     const cards = s.items.map((it) => `<div class="sg-qc" id="cthq-${esc(it.id)}">
-        <div class="sg-qtop"><span class="sg-qn">${esc(s.sec)} · Q${it.n}${it.dup ? ' <span class="muted">(printed twice in CTH)</span>' : ''}</span><span class="sg-src">${esc(it.cite)}</span></div>
+        <div class="sg-qtop"><span class="sg-qn">${esc(s.sec)} · Q${it.n}${it.dup ? ' <span class="muted">(printed twice in CTH)</span>' : ''}</span></div>
         <div class="sg-stem">${esc(it.q)}</div>
-        <div class="cthq-ans"><div class="sg-opt correct"><span class="k">✓</span><span>${nl(it.a)}</span></div>${noteHtml(it)}${tblHtml(it)}</div>
+        <div class="cthq-ans"><div class="sg-opt correct"><span class="k">✓</span><span>${nl(it.a)}</span></div>${noteHtml(it)}${tblHtml(it)}${srcExplainHtml(it)}</div>
         <button type="button" class="sg-link cthq-reveal">Show answer</button>
       </div>`).join('');
     page(title(s) + ' · Review', 'CTH §' + s.sec, '/checkride/cthquiz/' + s.id, `
@@ -114,7 +122,7 @@
         <div class="sg-qmeta"><span class="sg-qn">${esc(s.sec)} · Q${it.n}</span><span class="muted">${i + 1} / ${order.length}</span></div>
         <div class="sg-qc" id="cthq-card" style="cursor:pointer">
           <div class="sg-stem">${esc(it.q)}</div>
-          ${open ? `<div class="sg-opt correct"><span class="k">✓</span><span>${nl(it.a)}</span></div>${noteHtml(it)}${tblHtml(it)}<div style="margin-top:10px"><span class="sg-src">${esc(it.cite)}</span></div>` : '<p class="muted small">Tap to show the book answer</p>'}
+          ${open ? `<div class="sg-opt correct"><span class="k">✓</span><span>${nl(it.a)}</span></div>${noteHtml(it)}${tblHtml(it)}${srcExplainHtml(it)}` : '<p class="muted small">Tap to show the book answer</p>'}
         </div>
         <div class="sg-nav">
           <button type="button" class="btn btn-ghost" id="cthq-prev" ${i === 0 ? 'disabled' : ''}>Prev</button>
@@ -122,7 +130,10 @@
           <button type="button" class="btn btn-primary" id="cthq-next">${i === order.length - 1 ? 'Done' : 'Next'}</button>
         </div>`, 'cthq');
       const app = window.FOStudy.app;
-      app.querySelector('#cthq-card').addEventListener('click', () => { open = !open; paint(); });
+      app.querySelector('#cthq-card').addEventListener('click', (e) => {
+        if (e.target.closest('details.src-explain')) return;
+        open = !open; paint();
+      });
       app.querySelector('#cthq-prev').addEventListener('click', () => { if (i > 0) { i--; open = false; paint(); } });
       app.querySelector('#cthq-next').addEventListener('click', () => { if (i < order.length - 1) { i++; open = false; paint(); } else location.hash = '#/checkride/cthquiz/' + s.id; });
       app.querySelector('#cthq-shuf').addEventListener('click', () => { order = shuffle(order); i = 0; open = false; paint(); });
@@ -152,6 +163,7 @@
       <div class="sg-stem" style="margin:12px 0 16px">${stem}</div>
       <div class="sg-opts">${opts}</div>
       ${it.note ? '<div class="cthq-note" style="margin-top:8px">Book text is kept as printed in the CTH.</div>' : ''}
+      ${run.ans[run.idx] !== null ? srcExplainHtml(it) : ''}
       <div class="sg-nav">
         <button type="button" class="btn btn-ghost" id="sg-quiz-quit">Quit</button>
         <button type="button" class="btn btn-primary" id="sg-quiz-next">${run.idx === run.Q.length - 1 ? 'Finish' : 'Next'}</button>
@@ -175,9 +187,8 @@
       <div style="font-size:14px;font-weight:500;margin-bottom:6px">${q.tf ? 'True or false? ' + esc(it.s) : esc(it.q)}</div>
       <div class="l ${ok ? 'cb' : 'yb'}">Your answer: ${you == null ? '(blank)' : nl(optText(q, you))} ${ok ? 'OK' : 'X'}</div>
       ${ok ? '' : `<div class="l cb">Correct: ${nl(optText(q, q.correct))}</div>`}
-      <div class="l" style="color:var(--text-mute);margin-top:5px"><b style="color:var(--accent)">Why:</b> ${nl(it.x)}</div>
       ${noteHtml(it)}${tblHtml(it)}
-      <div class="l" style="margin-top:5px"><span class="cite">Ref: ${esc(it.cite)}</span></div>
+      ${srcExplainHtml(it)}
     </div>`;
   }
 
@@ -272,5 +283,5 @@
     }
     return orig(parts);
   };
-  X.cthQuiz = { load, version: '25.3' };
+  X.cthQuiz = { load, version: '26.8' };
 })();
