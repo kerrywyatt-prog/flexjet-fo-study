@@ -1661,7 +1661,7 @@ mark { background: rgba(212,168,75,0.35); color: inherit; border-radius: 3px; pa
 .cthq #cthq-list.hide-ans .sg-qc:not(.shown) .cthq-reveal { display: inline-block; }
 .cthq .sg-opt span:last-child { white-space: normal; }
 
-/* v26.5 · Praetor systems study videos (Google Drive embed) */
+/* v26.7 · Praetor systems study videos (HTML5 mp4) */
 .sys-video { margin-top: 12px; }
 .sys-video-wrap {
   position: relative;
@@ -1681,6 +1681,10 @@ mark { background: rgba(212,168,75,0.35); color: inherit; border-radius: 3px; pa
   border: 0;
   display: block;
   background: #000;
+}
+video.sys-video-el {
+  object-fit: contain;
+  object-position: center;
 }
 .sys-video-actions { margin-top: 10px; flex-wrap: wrap; }
 .sys-video-actions .btn { text-decoration: none; }

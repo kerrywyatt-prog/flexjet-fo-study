@@ -1,11 +1,10 @@
 {
-  "v": "26.6",
-  "note": "Classmate Praetor systems study videos for the passworded FO app. Playback via Google Drive preview embeds + open links (file ids from DELIVERY). No mp4s in the GitHub repo. Drive files/folder currently owner-only — Kerry/staff must set Viewer: anyone with the link on folder 1e_v2bP-aOb4CI753O7aR-FuqkbyQUHTL (or each file) for classmates to play without a Drive sign-in as owner.",
-  "hosting": "google-drive",
+  "v": "26.7",
+  "note": "Classmate Praetor systems study videos for the passworded FO app. Playback via public GitHub Release mp4 URLs + native HTML5 <video> (no Google login). Site remains password-gated. No mp4 binaries in the git tree \u2014 assets live on release systems-videos-v1.",
+  "hosting": "github-release",
   "drive_folder_id": "1e_v2bP-aOb4CI753O7aR-FuqkbyQUHTL",
   "drive_folder_url": "https://drive.google.com/drive/folders/1e_v2bP-aOb4CI753O7aR-FuqkbyQUHTL",
-  "permission_blocker": "Folder and sampled files are owner-only (kerrywyatt@gmail.com). In-page Drive preview / anyone-with-link play will fail for classmates until Viewer sharing is set. Do not widen share without Kerry.",
-  "updated_from_delivery": "2026-10-01T07:34:26-04:00",
+  "updated_from_delivery": "2026-10-01T07:56:34-04:00",
   "in_progress_folder": null,
   "set_complete": true,
   "by_system": {
@@ -21,7 +20,8 @@
       "covers": [
         "aircraft-general"
       ],
-      "note": null
+      "note": null,
+      "mp4_url": "https://github.com/kerrywyatt-prog/flexjet-fo-study/releases/download/systems-videos-v1/PRAETOR-AIRCRAFT-GENERAL.mp4"
     },
     "lighting": {
       "title": "Lighting",
@@ -35,10 +35,11 @@
       "covers": [
         "lighting"
       ],
-      "note": null
+      "note": null,
+      "mp4_url": "https://github.com/kerrywyatt-prog/flexjet-fo-study/releases/download/systems-videos-v1/PRAETOR-LIGHTING.mp4"
     },
     "indicating-recording": {
-      "title": "Warnings (Aural/Visual · Recorders)",
+      "title": "Warnings (Aural/Visual \u00b7 Recorders)",
       "drive_id": "1QKLowgI-5h6yQgBmXOh2AI8pPDnhRs3Y",
       "drive_view": "https://drive.google.com/file/d/1QKLowgI-5h6yQgBmXOh2AI8pPDnhRs3Y/view",
       "drive_preview": "https://drive.google.com/file/d/1QKLowgI-5h6yQgBmXOh2AI8pPDnhRs3Y/preview",
@@ -50,7 +51,8 @@
         "indicating-recording",
         "master-warning"
       ],
-      "note": "CTH 7.2 + 7.5 combined brief"
+      "note": "CTH 7.2 + 7.5 combined brief",
+      "mp4_url": "https://github.com/kerrywyatt-prog/flexjet-fo-study/releases/download/systems-videos-v1/PRAETOR-WARNINGS.mp4"
     },
     "master-warning": {
       "title": "Warnings (Master Warning / CAS)",
@@ -65,7 +67,8 @@
         "indicating-recording",
         "master-warning"
       ],
-      "note": "CTH 7.2 + 7.5 combined brief"
+      "note": "CTH 7.2 + 7.5 combined brief",
+      "mp4_url": "https://github.com/kerrywyatt-prog/flexjet-fo-study/releases/download/systems-videos-v1/PRAETOR-WARNINGS.mp4"
     },
     "electrical": {
       "title": "Electrical",
@@ -79,7 +82,8 @@
       "covers": [
         "electrical"
       ],
-      "note": null
+      "note": null,
+      "mp4_url": "https://github.com/kerrywyatt-prog/flexjet-fo-study/releases/download/systems-videos-v1/PRAETOR-ELECTRICAL.mp4"
     },
     "fire-protection": {
       "title": "Fire Protection",
@@ -93,7 +97,8 @@
       "covers": [
         "fire-protection"
       ],
-      "note": null
+      "note": null,
+      "mp4_url": "https://github.com/kerrywyatt-prog/flexjet-fo-study/releases/download/systems-videos-v1/PRAETOR-FIRE-PROTECTION.mp4"
     },
     "fuel": {
       "title": "Fuel",
@@ -107,7 +112,8 @@
       "covers": [
         "fuel"
       ],
-      "note": null
+      "note": null,
+      "mp4_url": "https://github.com/kerrywyatt-prog/flexjet-fo-study/releases/download/systems-videos-v1/PRAETOR-FUEL.mp4"
     },
     "powerplant": {
       "title": "Power Plant",
@@ -121,7 +127,8 @@
       "covers": [
         "powerplant"
       ],
-      "note": null
+      "note": null,
+      "mp4_url": "https://github.com/kerrywyatt-prog/flexjet-fo-study/releases/download/systems-videos-v1/PRAETOR-POWERPLANT.mp4"
     },
     "apu": {
       "title": "APU",
@@ -135,7 +142,8 @@
       "covers": [
         "apu"
       ],
-      "note": null
+      "note": null,
+      "mp4_url": "https://github.com/kerrywyatt-prog/flexjet-fo-study/releases/download/systems-videos-v1/PRAETOR-APU.mp4"
     },
     "hydraulics": {
       "title": "Hydraulics",
@@ -149,7 +157,8 @@
       "covers": [
         "hydraulics"
       ],
-      "note": null
+      "note": null,
+      "mp4_url": "https://github.com/kerrywyatt-prog/flexjet-fo-study/releases/download/systems-videos-v1/PRAETOR-HYDRAULICS.mp4"
     },
     "landing-gear-brakes": {
       "title": "Landing Gear and Brakes",
@@ -163,7 +172,8 @@
       "covers": [
         "landing-gear-brakes"
       ],
-      "note": null
+      "note": null,
+      "mp4_url": "https://github.com/kerrywyatt-prog/flexjet-fo-study/releases/download/systems-videos-v1/PRAETOR-LANDING-GEAR-BRAKES.mp4"
     },
     "flight-controls": {
       "title": "Flight Controls",
@@ -177,7 +187,8 @@
       "covers": [
         "flight-controls"
       ],
-      "note": null
+      "note": null,
+      "mp4_url": "https://github.com/kerrywyatt-prog/flexjet-fo-study/releases/download/systems-videos-v1/PRAETOR-FLIGHT-CONTROLS.mp4"
     },
     "air-management": {
       "title": "Pneumatics / Air Management",
@@ -191,7 +202,8 @@
       "covers": [
         "air-management"
       ],
-      "note": null
+      "note": null,
+      "mp4_url": "https://github.com/kerrywyatt-prog/flexjet-fo-study/releases/download/systems-videos-v1/PRAETOR-PNEUMATICS.mp4"
     },
     "ice-rain": {
       "title": "Ice and Rain Protection",
@@ -205,10 +217,11 @@
       "covers": [
         "ice-rain"
       ],
-      "note": null
+      "note": null,
+      "mp4_url": "https://github.com/kerrywyatt-prog/flexjet-fo-study/releases/download/systems-videos-v1/PRAETOR-ICE-RAIN.mp4"
     },
     "avionics-comm": {
-      "title": "Avionics · Communications",
+      "title": "Avionics \u00b7 Communications",
       "drive_id": "11AIIC_ORrrV1ylJDqNPuR_oQWDeU39_j",
       "drive_view": "https://drive.google.com/file/d/11AIIC_ORrrV1ylJDqNPuR_oQWDeU39_j/view",
       "drive_preview": "https://drive.google.com/file/d/11AIIC_ORrrV1ylJDqNPuR_oQWDeU39_j/preview",
@@ -219,10 +232,11 @@
       "covers": [
         "avionics-comm"
       ],
-      "note": null
+      "note": null,
+      "mp4_url": "https://github.com/kerrywyatt-prog/flexjet-fo-study/releases/download/systems-videos-v1/PRAETOR-AVIONICS-COMMS.mp4"
     },
     "avionics-cpdlc": {
-      "title": "Avionics · CPDLC",
+      "title": "Avionics \u00b7 CPDLC",
       "drive_id": "11ZUqlgEjnTM0gQREhh6MQRRWxtXjlG7O",
       "drive_view": "https://drive.google.com/file/d/11ZUqlgEjnTM0gQREhh6MQRRWxtXjlG7O/view",
       "drive_preview": "https://drive.google.com/file/d/11ZUqlgEjnTM0gQREhh6MQRRWxtXjlG7O/preview",
@@ -233,10 +247,11 @@
       "covers": [
         "avionics-cpdlc"
       ],
-      "note": null
+      "note": null,
+      "mp4_url": "https://github.com/kerrywyatt-prog/flexjet-fo-study/releases/download/systems-videos-v1/PRAETOR-AVIONICS-CPDLC.mp4"
     },
     "avionics-instruments-nav-fms": {
-      "title": "Avionics · Nav / FMS",
+      "title": "Avionics \u00b7 Nav / FMS",
       "drive_id": "1Xjcoc1mOofWfXFH6G4fW2tmg55uX__32",
       "drive_view": "https://drive.google.com/file/d/1Xjcoc1mOofWfXFH6G4fW2tmg55uX__32/view",
       "drive_preview": "https://drive.google.com/file/d/1Xjcoc1mOofWfXFH6G4fW2tmg55uX__32/preview",
@@ -247,7 +262,8 @@
       "covers": [
         "avionics-instruments-nav-fms"
       ],
-      "note": null
+      "note": null,
+      "mp4_url": "https://github.com/kerrywyatt-prog/flexjet-fo-study/releases/download/systems-videos-v1/PRAETOR-AVIONICS-NAV-FMS.mp4"
     },
     "oxygen": {
       "title": "Oxygen",
@@ -261,7 +277,8 @@
       "covers": [
         "oxygen"
       ],
-      "note": null
+      "note": null,
+      "mp4_url": "https://github.com/kerrywyatt-prog/flexjet-fo-study/releases/download/systems-videos-v1/PRAETOR-OXYGEN.mp4"
     },
     "autoflight": {
       "title": "Autoflight",
@@ -275,7 +292,8 @@
       "covers": [
         "autoflight"
       ],
-      "note": null
+      "note": null,
+      "mp4_url": "https://github.com/kerrywyatt-prog/flexjet-fo-study/releases/download/systems-videos-v1/PRAETOR-AUTOFLIGHT.mp4"
     },
     "waste-water": {
       "title": "Waste and Water",
@@ -289,7 +307,8 @@
       "covers": [
         "waste-water"
       ],
-      "note": null
+      "note": null,
+      "mp4_url": "https://github.com/kerrywyatt-prog/flexjet-fo-study/releases/download/systems-videos-v1/PRAETOR-WASTE-WATER.mp4"
     },
     "preflight-walkaround": {
       "title": "Preflight Walkaround",
@@ -303,7 +322,8 @@
       "covers": [
         "preflight-walkaround"
       ],
-      "note": null
+      "note": null,
+      "mp4_url": "https://github.com/kerrywyatt-prog/flexjet-fo-study/releases/download/systems-videos-v1/PRAETOR-WALKAROUND.mp4"
     },
     "weight-balance": {
       "title": "Weight and Balance",
@@ -317,7 +337,8 @@
       "covers": [
         "weight-balance"
       ],
-      "note": null
+      "note": null,
+      "mp4_url": "https://github.com/kerrywyatt-prog/flexjet-fo-study/releases/download/systems-videos-v1/PRAETOR-WEIGHT-BALANCE.mp4"
     },
     "performance": {
       "title": "Performance",
@@ -331,7 +352,8 @@
       "covers": [
         "performance"
       ],
-      "note": null
+      "note": null,
+      "mp4_url": "https://github.com/kerrywyatt-prog/flexjet-fo-study/releases/download/systems-videos-v1/PRAETOR-PERFORMANCE.mp4"
     },
     "flight-planning": {
       "title": "Flight Planning",
@@ -345,7 +367,8 @@
       "covers": [
         "flight-planning"
       ],
-      "note": null
+      "note": null,
+      "mp4_url": "https://github.com/kerrywyatt-prog/flexjet-fo-study/releases/download/systems-videos-v1/PRAETOR-FLIGHT-PLANNING.mp4"
     }
   },
   "videos": [
@@ -650,5 +673,8 @@
       ]
     }
   ],
-  "pending": []
+  "pending": [],
+  "release_tag": "systems-videos-v1",
+  "release_url": "https://github.com/kerrywyatt-prog/flexjet-fo-study/releases/tag/systems-videos-v1",
+  "hosting_note": "mp4_url points at GitHub Release assets. drive_* fields retained for archive only; player prefers mp4_url."
 }

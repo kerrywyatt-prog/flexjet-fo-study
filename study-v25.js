@@ -4,7 +4,7 @@
    135-recurrent-qa.json). Excluded-topic rules: see README. Memory items are rendered word-for-word from memory-items.json. */
 (() => {
   const V = 25;
-  const WHATS_NEW = 'v26.5 · Praetor classmate systems study videos on each systems page (Google Drive). SIMCOM day packs / Embraer manuals stay off the site.';
+  const WHATS_NEW = 'v26.7 · Praetor systems study videos play as public HTML5 mp4 (no Google login). SIMCOM day packs / Embraer manuals stay off the site.';
   const TIMELINE = [
     { id: 'indoc', title: 'Indoc', when: 'Sep 21–27, 2026', start: '2026-09-21', end: '2026-09-23', path: '/indoc' },
     { id: 'exam', title: '135 exam (50Q, open-book)', when: 'Sun Sep 27, 2026', start: '2026-09-24', end: '2026-09-27', path: '/indoc/135' },
@@ -49,22 +49,33 @@
     return m + ':' + String(s).padStart(2, '0');
   }
   function systemsVideoCard(vid, sid) {
-    if (!vid || !vid.drive_id) return '';
+    if (!vid) return '';
+    const mp4 = vid.mp4_url || '';
+    if (!mp4 && !vid.drive_id) return '';
     const dur = fmtDur(vid.dur_min);
     const note = vid.note ? `<p class="muted small">${esc(vid.note)}</p>` : '';
-    const preview = vid.drive_preview || ('https://drive.google.com/file/d/' + vid.drive_id + '/preview');
-    const open = vid.drive_view || vid.drive_open || ('https://drive.google.com/file/d/' + vid.drive_id + '/view');
+    const open = mp4 || vid.drive_view || vid.drive_open || (vid.drive_id ? ('https://drive.google.com/file/d/' + vid.drive_id + '/view') : '');
+    const player = mp4
+      ? `<video class="sys-video-el" controls playsinline preload="metadata" src="${esc(mp4)}" title="${esc(vid.title || 'Systems study video')}"></video>`
+      : (() => {
+          const preview = vid.drive_preview || ('https://drive.google.com/file/d/' + vid.drive_id + '/preview');
+          return `<iframe class="sys-video-el" src="${esc(preview)}" title="${esc(vid.title || 'Systems study video')}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
+        })();
+    const btnLabel = mp4 ? 'Open video' : 'Open in Drive';
+    const hint = mp4
+      ? 'Native HTML5 playback from a public release URL — no Google account needed. Site stays password-gated.'
+      : 'If the player is blank, use Open in Drive. Playback needs the Drive file shared as Viewer to anyone with the link (Kerry/staff).';
     return `<div class="card sys-video">
       <h3><span class="dot"></span>Systems study video${dur ? ' · ' + esc(dur) : ''}</h3>
-      <p class="muted small">Classmate Praetor systems brief · Google Drive (passworded FO app).</p>
+      <p class="muted small">Classmate Praetor systems brief · HTML5 mp4 (passworded FO app).</p>
       ${note}
       <div class="sys-video-wrap">
-        <iframe class="sys-video-el" src="${esc(preview)}" title="${esc(vid.title || 'Systems study video')}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        ${player}
       </div>
       <div class="btnrow sys-video-actions">
-        <a class="btn btn-primary" href="${esc(open)}" target="_blank" rel="noopener noreferrer">Open in Drive</a>
+        <a class="btn btn-primary" href="${esc(open)}" target="_blank" rel="noopener noreferrer">${btnLabel}</a>
       </div>
-      <p class="muted small sys-video-hint">If the player is blank, use Open in Drive. Playback needs the Drive file shared as Viewer to anyone with the link (Kerry/staff).</p>
+      <p class="muted small sys-video-hint">${hint}</p>
     </div>`;
   }
 
