@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T02:52:51Z",
+  "updated_at": "2026-10-02T10:21:40Z",
   "source": "ADSB.lol public type queries (cumulative last-known)",
   "notes": [
     "Keyed by Mode-S hex when available, else registration.",
@@ -7,8 +7,8 @@
     "Seeded initially from fleet-map-snapshot.json; GitHub Action grows this file over time."
   ],
   "last_poll": {
-    "at": "2026-10-02T02:52:51Z",
-    "live_count": 5,
+    "at": "2026-10-02T10:21:40Z",
+    "live_count": 1,
     "stored_count": 94,
     "errors": []
   },
@@ -445,7 +445,7 @@
       "geom_rate": 1088,
       "squawk": "4550",
       "last_seen": "2026-10-02T02:52:17Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (ADSB.lol)",
       "serial_number": "55010154",
       "on_company_fleet_list": true
@@ -572,20 +572,20 @@
       "type": "E550",
       "model": "Praetor 600",
       "callsign": "LXJ610",
-      "lat": 40.855694,
-      "lon": -74.05423,
-      "alt_baro": "ground",
-      "alt_geom": null,
-      "gs": 0.0,
-      "track": null,
-      "true_heading": 140.62,
+      "lat": 40.409158,
+      "lon": -74.20809,
+      "alt_baro": 19000,
+      "alt_geom": 19975,
+      "gs": 366.8,
+      "track": 159.24,
+      "true_heading": null,
       "mag_heading": null,
       "baro_rate": null,
-      "geom_rate": null,
-      "squawk": "7375",
-      "last_seen": "2026-10-01T23:52:06Z",
-      "status": "last_known",
-      "source": "box live relay (ADSB.lol)",
+      "geom_rate": 3200,
+      "squawk": "1510",
+      "last_seen": "2026-10-02T10:21:40Z",
+      "status": "live",
+      "source": "ADSB.lol type query",
       "serial_number": "55020217",
       "on_company_fleet_list": true
     },
@@ -1091,7 +1091,7 @@
       "geom_rate": 0,
       "squawk": "2431",
       "last_seen": "2026-10-02T02:52:17Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (ADSB.lol)",
       "serial_number": "55010099",
       "on_company_fleet_list": true
@@ -1272,7 +1272,7 @@
       "geom_rate": 0,
       "squawk": "1200",
       "last_seen": "2026-10-02T02:52:14Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (ADSB.lol)",
       "serial_number": "55010093",
       "on_company_fleet_list": true
@@ -1295,7 +1295,7 @@
       "geom_rate": -2560,
       "squawk": "3170",
       "last_seen": "2026-10-02T02:52:17Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (ADSB.lol)",
       "serial_number": "55010147",
       "on_company_fleet_list": true
@@ -1893,7 +1893,7 @@
       "geom_rate": -1600,
       "squawk": "2346",
       "last_seen": "2026-10-02T02:52:17Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (ADSB.lol)",
       "serial_number": "55020235",
       "on_company_fleet_list": true
