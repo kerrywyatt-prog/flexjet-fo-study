@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-06T03:01:52Z",
+  "updated_at": "2026-10-06T10:12:20Z",
   "source": "ADSB.lol public type queries (cumulative last-known)",
   "notes": [
     "Keyed by Mode-S hex when available, else registration.",
@@ -7,10 +7,12 @@
     "Seeded initially from fleet-map-snapshot.json; GitHub Action grows this file over time."
   ],
   "last_poll": {
-    "at": "2026-10-06T03:01:52Z",
-    "live_count": 3,
+    "at": "2026-10-06T10:12:20Z",
+    "live_count": 1,
     "stored_count": 95,
-    "errors": []
+    "errors": [
+      "hex batch 3: HTTP Error 429: Too Many Requests"
+    ]
   },
   "aircraft": {
     "a4eafd": {
@@ -538,7 +540,7 @@
       "geom_rate": -1600,
       "squawk": "7325",
       "last_seen": "2026-10-06T03:01:05Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (ADSB.lol)",
       "serial_number": "55010066",
       "on_company_fleet_list": true
@@ -768,7 +770,7 @@
       "geom_rate": 0,
       "squawk": "2706",
       "last_seen": "2026-10-06T03:01:05Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (ADSB.lol)",
       "serial_number": "55010120",
       "on_company_fleet_list": true
@@ -860,7 +862,7 @@
       "geom_rate": 1280,
       "squawk": "4613",
       "last_seen": "2026-10-06T03:01:05Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (ADSB.lol)",
       "serial_number": "55010096",
       "on_company_fleet_list": true
@@ -941,20 +943,20 @@
       "type": "E545",
       "model": "Praetor 500",
       "callsign": "LXJ409",
-      "lat": 36.482243,
-      "lon": -82.405815,
-      "alt_baro": "ground",
-      "alt_geom": null,
-      "gs": 0.0,
-      "track": null,
-      "true_heading": 222.19,
+      "lat": 39.52434,
+      "lon": -85.596069,
+      "alt_baro": 42975,
+      "alt_geom": 44300,
+      "gs": 395.2,
+      "track": 322.61,
+      "true_heading": null,
       "mag_heading": null,
-      "baro_rate": null,
-      "geom_rate": null,
-      "squawk": "1462",
-      "last_seen": "2026-10-05T21:57:02Z",
-      "status": "last_known",
-      "source": "box live relay (ADSB.lol)",
+      "baro_rate": 68,
+      "geom_rate": -64,
+      "squawk": "7161",
+      "last_seen": "2026-10-06T10:12:20Z",
+      "status": "live",
+      "source": "ADSB.lol type query",
       "serial_number": "55010021",
       "on_company_fleet_list": true
     },
