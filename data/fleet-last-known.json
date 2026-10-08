@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-08T02:57:43Z",
+  "updated_at": "2026-10-08T10:37:45Z",
   "source": "ADSB.lol public type queries (cumulative last-known)",
   "notes": [
     "Keyed by Mode-S hex when available, else registration.",
@@ -7,8 +7,8 @@
     "Seeded initially from fleet-map-snapshot.json; GitHub Action grows this file over time."
   ],
   "last_poll": {
-    "at": "2026-10-08T02:57:43Z",
-    "live_count": 6,
+    "at": "2026-10-08T10:37:45Z",
+    "live_count": 1,
     "stored_count": 95,
     "errors": []
   },
@@ -123,7 +123,7 @@
       "geom_rate": null,
       "squawk": "4515",
       "last_seen": "2026-10-08T02:57:06Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55010189",
       "on_company_fleet_list": true
@@ -883,7 +883,7 @@
       "geom_rate": 1088,
       "squawk": "3326",
       "last_seen": "2026-10-08T02:57:11Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55020247",
       "on_company_fleet_list": true
@@ -1068,7 +1068,7 @@
       "geom_rate": -1088,
       "squawk": "0545",
       "last_seen": "2026-10-08T02:57:10Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55010178",
       "on_company_fleet_list": true
@@ -1183,7 +1183,7 @@
       "geom_rate": 2880,
       "squawk": "2574",
       "last_seen": "2026-10-08T02:57:10Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55020209",
       "on_company_fleet_list": true
@@ -1344,7 +1344,7 @@
       "geom_rate": null,
       "squawk": "2457",
       "last_seen": "2026-10-08T02:57:06Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55010083",
       "on_company_fleet_list": true
@@ -2037,7 +2037,7 @@
       "geom_rate": -960,
       "squawk": "3315",
       "last_seen": "2026-10-08T02:57:10Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55010208",
       "on_company_fleet_list": false,
@@ -2187,19 +2187,19 @@
       "type": "E550",
       "model": "Praetor 600",
       "callsign": "LXJ601",
-      "lat": 41.450345,
-      "lon": -73.853291,
-      "alt_baro": 6400,
-      "alt_geom": 6375,
-      "gs": 251.3,
-      "track": 218.37,
+      "lat": 40.079149,
+      "lon": -74.239551,
+      "alt_baro": 24000,
+      "alt_geom": 24700,
+      "gs": 388.0,
+      "track": 187.11,
       "true_heading": null,
       "mag_heading": null,
-      "baro_rate": null,
-      "geom_rate": -1152,
-      "squawk": "3527",
-      "last_seen": "2026-10-07T21:39:06Z",
-      "status": "last_known",
+      "baro_rate": 0,
+      "geom_rate": 0,
+      "squawk": "1507",
+      "last_seen": "2026-10-08T10:37:05Z",
+      "status": "live",
       "source": "box live relay (ADSB.lol)",
       "serial_number": "55020164",
       "on_company_fleet_list": true
