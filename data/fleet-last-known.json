@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-10T10:56:51Z",
+  "updated_at": "2026-10-10T11:21:54Z",
   "source": "ADSB.lol public type queries (cumulative last-known)",
   "notes": [
     "Keyed by Mode-S hex when available, else registration.",
@@ -7,12 +7,10 @@
     "Seeded initially from fleet-map-snapshot.json; GitHub Action grows this file over time."
   ],
   "last_poll": {
-    "at": "2026-10-10T10:56:51Z",
+    "at": "2026-10-10T11:21:54Z",
     "live_count": 1,
     "stored_count": 95,
-    "errors": [
-      "hex batch 1: The read operation timed out"
-    ]
+    "errors": []
   },
   "aircraft": {
     "a4eafd": {
@@ -67,18 +65,18 @@
       "type": "E545",
       "model": "Praetor 500",
       "callsign": "LXJ335",
-      "lat": 32.157944,
-      "lon": -102.321167,
-      "alt_baro": 16025,
-      "alt_geom": 16725,
-      "gs": 316.6,
-      "track": 323.35,
+      "lat": 34.257047,
+      "lon": -104.227753,
+      "alt_baro": 43000,
+      "alt_geom": 44800,
+      "gs": 393.3,
+      "track": 322.02,
       "true_heading": null,
       "mag_heading": null,
       "baro_rate": null,
-      "geom_rate": 3648,
+      "geom_rate": 0,
       "squawk": "0565",
-      "last_seen": "2026-10-10T10:56:51Z",
+      "last_seen": "2026-10-10T11:21:54Z",
       "status": "live",
       "source": "ADSB.lol type query",
       "serial_number": "55010119",
