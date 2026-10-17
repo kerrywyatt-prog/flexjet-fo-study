@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T19:55:47Z",
+  "updated_at": "2026-10-17T20:20:10Z",
   "source": "ADSB.lol public type queries (cumulative last-known)",
   "notes": [
     "Keyed by Mode-S hex when available, else registration.",
@@ -7,10 +7,16 @@
     "Seeded initially from fleet-map-snapshot.json; GitHub Action grows this file over time."
   ],
   "last_poll": {
-    "at": "2026-10-17T19:55:47Z",
-    "live_count": 28,
+    "at": "2026-10-17T20:20:10Z",
+    "live_count": 0,
     "stored_count": 95,
-    "errors": []
+    "errors": [
+      "E545: The read operation timed out",
+      "E550: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>",
+      "hex batch 1: <urlopen error _ssl.c:1012: The handshake operation timed out>",
+      "hex batch 2: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>",
+      "hex batch 3: The read operation timed out"
+    ]
   },
   "aircraft": {
     "a4eafd": {
@@ -54,7 +60,7 @@
       "geom_rate": 1088,
       "squawk": "1062",
       "last_seen": "2026-10-17T19:54:29Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55010098",
       "on_company_fleet_list": true
@@ -169,7 +175,7 @@
       "geom_rate": null,
       "squawk": "7441",
       "last_seen": "2026-10-17T19:54:28Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55020244",
       "on_company_fleet_list": true
@@ -238,7 +244,7 @@
       "geom_rate": -64,
       "squawk": "3715",
       "last_seen": "2026-10-17T19:54:29Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55020205",
       "on_company_fleet_list": true
@@ -307,7 +313,7 @@
       "geom_rate": null,
       "squawk": "7207",
       "last_seen": "2026-10-17T19:54:29Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55020210",
       "on_company_fleet_list": true
@@ -445,7 +451,7 @@
       "geom_rate": -64,
       "squawk": "1557",
       "last_seen": "2026-10-17T19:54:28Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55010154",
       "on_company_fleet_list": true
@@ -538,7 +544,7 @@
       "geom_rate": 0,
       "squawk": "3552",
       "last_seen": "2026-10-17T19:54:29Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55010066",
       "on_company_fleet_list": true
@@ -630,7 +636,7 @@
       "geom_rate": -64,
       "squawk": "6613",
       "last_seen": "2026-10-17T19:54:28Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55010150",
       "on_company_fleet_list": true
@@ -676,7 +682,7 @@
       "geom_rate": null,
       "squawk": "6021",
       "last_seen": "2026-10-17T19:54:10Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55010148",
       "on_company_fleet_list": true
@@ -768,7 +774,7 @@
       "geom_rate": -64,
       "squawk": "7144",
       "last_seen": "2026-10-17T19:54:29Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55010120",
       "on_company_fleet_list": true
@@ -860,7 +866,7 @@
       "geom_rate": 0,
       "squawk": "2667",
       "last_seen": "2026-10-17T19:54:28Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55010096",
       "on_company_fleet_list": true
@@ -929,7 +935,7 @@
       "geom_rate": -704,
       "squawk": "2004",
       "last_seen": "2026-10-17T19:54:29Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55010197",
       "on_company_fleet_list": false,
@@ -953,7 +959,7 @@
       "geom_rate": 0,
       "squawk": "2453",
       "last_seen": "2026-10-17T19:54:29Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55010021",
       "on_company_fleet_list": true
@@ -1068,7 +1074,7 @@
       "geom_rate": null,
       "squawk": "4541",
       "last_seen": "2026-10-17T19:54:25Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55010178",
       "on_company_fleet_list": true
@@ -1114,7 +1120,7 @@
       "geom_rate": 1024,
       "squawk": "2622",
       "last_seen": "2026-10-17T19:54:28Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55010067",
       "on_company_fleet_list": true
@@ -1137,7 +1143,7 @@
       "geom_rate": -1536,
       "squawk": "3665",
       "last_seen": "2026-10-17T19:54:28Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55020233",
       "on_company_fleet_list": true
@@ -1436,7 +1442,7 @@
       "geom_rate": 64,
       "squawk": "2346",
       "last_seen": "2026-10-17T19:54:28Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55010157",
       "on_company_fleet_list": true
@@ -1459,7 +1465,7 @@
       "geom_rate": -1024,
       "squawk": "2611",
       "last_seen": "2026-10-17T19:54:29Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55010081",
       "on_company_fleet_list": true
@@ -1643,7 +1649,7 @@
       "geom_rate": 0,
       "squawk": "3635",
       "last_seen": "2026-10-17T19:54:28Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55010171",
       "on_company_fleet_list": true
@@ -1781,7 +1787,7 @@
       "geom_rate": null,
       "squawk": "4667",
       "last_seen": "2026-10-17T19:54:28Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55010018",
       "on_company_fleet_list": true
@@ -1804,7 +1810,7 @@
       "geom_rate": 0,
       "squawk": "3263",
       "last_seen": "2026-10-17T19:54:29Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55010074",
       "on_company_fleet_list": true
@@ -1827,7 +1833,7 @@
       "geom_rate": -256,
       "squawk": "3256",
       "last_seen": "2026-10-17T19:54:29Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55010037",
       "on_company_fleet_list": true
@@ -1896,7 +1902,7 @@
       "geom_rate": null,
       "squawk": "1520",
       "last_seen": "2026-10-17T19:54:28Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55020235",
       "on_company_fleet_list": true
@@ -1943,7 +1949,7 @@
       "geom_rate": 0,
       "squawk": "6215",
       "last_seen": "2026-10-17T19:54:28Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55010214",
       "on_company_fleet_list": false,
@@ -2037,7 +2043,7 @@
       "geom_rate": null,
       "squawk": "7112",
       "last_seen": "2026-10-17T19:54:28Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55010208",
       "on_company_fleet_list": false,
@@ -2061,7 +2067,7 @@
       "geom_rate": 0,
       "squawk": "7221",
       "last_seen": "2026-10-17T19:54:28Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55010094",
       "on_company_fleet_list": true
@@ -2084,7 +2090,7 @@
       "geom_rate": null,
       "squawk": "4610",
       "last_seen": "2026-10-17T19:53:59Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55010061",
       "on_company_fleet_list": true
@@ -2130,7 +2136,7 @@
       "geom_rate": null,
       "squawk": "3570",
       "last_seen": "2026-10-17T19:54:22Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55010017",
       "on_company_fleet_list": true
@@ -2153,7 +2159,7 @@
       "geom_rate": null,
       "squawk": "0502",
       "last_seen": "2026-10-17T19:54:27Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (adsb.fi)",
       "serial_number": "55010112",
       "on_company_fleet_list": true
