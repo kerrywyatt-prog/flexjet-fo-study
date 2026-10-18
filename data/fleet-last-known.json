@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18T10:34:01Z",
+  "updated_at": "2026-10-18T11:02:11Z",
   "source": "ADSB.lol public type queries (cumulative last-known)",
   "notes": [
     "Keyed by Mode-S hex when available, else registration.",
@@ -7,10 +7,15 @@
     "Seeded initially from fleet-map-snapshot.json; GitHub Action grows this file over time."
   ],
   "last_poll": {
-    "at": "2026-10-18T10:34:01Z",
-    "live_count": 2,
+    "at": "2026-10-18T11:02:11Z",
+    "live_count": 1,
     "stored_count": 95,
-    "errors": []
+    "errors": [
+      "E545: <urlopen error _ssl.c:1012: The handshake operation timed out>",
+      "hex batch 1: The read operation timed out",
+      "hex batch 2: The read operation timed out",
+      "hex batch 3: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+    ]
   },
   "aircraft": {
     "a4eafd": {
@@ -1528,7 +1533,7 @@
       "geom_rate": 1472,
       "squawk": "3073",
       "last_seen": "2026-10-18T10:34:01Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query",
       "serial_number": "55010028",
       "on_company_fleet_list": true
@@ -1562,19 +1567,19 @@
       "type": "E550",
       "model": "Praetor 600",
       "callsign": "LXJ605",
-      "lat": 48.910492,
-      "lon": 2.355793,
-      "alt_baro": 8150,
-      "alt_geom": 8600,
-      "gs": 259.9,
-      "track": 265.14,
-      "true_heading": 270.32,
-      "mag_heading": 268.24,
-      "baro_rate": -1088,
-      "geom_rate": -1024,
+      "lat": 41.20491,
+      "lon": 10.841064,
+      "alt_baro": 41075,
+      "alt_geom": 42075,
+      "gs": 434.3,
+      "track": 261.93,
+      "true_heading": 262.13,
+      "mag_heading": 258.4,
+      "baro_rate": 480,
+      "geom_rate": 512,
       "squawk": "1000",
-      "last_seen": "2026-10-17T14:37:31Z",
-      "status": "last_known",
+      "last_seen": "2026-10-18T11:02:11Z",
+      "status": "live",
       "source": "ADSB.lol type query",
       "serial_number": "55020192",
       "on_company_fleet_list": true
@@ -1967,7 +1972,7 @@
       "geom_rate": null,
       "squawk": "1257",
       "last_seen": "2026-10-18T10:34:01Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol hex query (roster)",
       "serial_number": "55020248",
       "on_company_fleet_list": true
