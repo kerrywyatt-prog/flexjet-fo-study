@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T02:58:47Z",
+  "updated_at": "2026-10-24T10:15:58Z",
   "source": "ADSB.lol public type queries (cumulative last-known)",
   "notes": [
     "Keyed by Mode-S hex when available, else registration.",
@@ -7,8 +7,8 @@
     "Seeded initially from fleet-map-snapshot.json; GitHub Action grows this file over time."
   ],
   "last_poll": {
-    "at": "2026-10-24T02:58:47Z",
-    "live_count": 6,
+    "at": "2026-10-24T10:15:58Z",
+    "live_count": 1,
     "stored_count": 97,
     "errors": []
   },
@@ -238,7 +238,7 @@
       "geom_rate": 1216,
       "squawk": "6062",
       "last_seen": "2026-10-24T02:58:47Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query",
       "serial_number": "55020205",
       "on_company_fleet_list": true
@@ -607,7 +607,7 @@
       "geom_rate": null,
       "squawk": "7136",
       "last_seen": "2026-10-24T02:58:47Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query",
       "serial_number": "55020171",
       "on_company_fleet_list": true
@@ -953,7 +953,7 @@
       "geom_rate": -64,
       "squawk": "5330",
       "last_seen": "2026-10-24T02:58:47Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query",
       "serial_number": "55010021",
       "on_company_fleet_list": true
@@ -999,7 +999,7 @@
       "geom_rate": 0,
       "squawk": "2506",
       "last_seen": "2026-10-24T02:58:47Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query",
       "serial_number": "55010040",
       "on_company_fleet_list": true
@@ -1424,19 +1424,19 @@
       "type": "E545",
       "model": "Praetor 500",
       "callsign": "LXJ330",
-      "lat": 34.742615,
-      "lon": -81.410037,
-      "alt_baro": 18850,
-      "alt_geom": 19575,
-      "gs": 398.0,
-      "track": 111.21,
+      "lat": 37.901779,
+      "lon": -75.940948,
+      "alt_baro": 41000,
+      "alt_geom": 42050,
+      "gs": 449.5,
+      "track": 31.07,
       "true_heading": null,
       "mag_heading": null,
       "baro_rate": null,
-      "geom_rate": -2048,
-      "squawk": "7735",
-      "last_seen": "2026-10-23T18:15:04Z",
-      "status": "last_known",
+      "geom_rate": 0,
+      "squawk": "2631",
+      "last_seen": "2026-10-24T10:15:17Z",
+      "status": "live",
       "source": "box live relay (ADSB.lol)",
       "serial_number": "55010157",
       "on_company_fleet_list": true
@@ -1505,7 +1505,7 @@
       "geom_rate": -128,
       "squawk": "2722",
       "last_seen": "2026-10-24T02:58:47Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query",
       "serial_number": "55010185",
       "on_company_fleet_list": true
@@ -1850,7 +1850,7 @@
       "geom_rate": 0,
       "squawk": "4057",
       "last_seen": "2026-10-24T02:58:47Z",
-      "status": "live",
+      "status": "last_known",
       "source": "ADSB.lol type query",
       "serial_number": "55010116",
       "on_company_fleet_list": true
