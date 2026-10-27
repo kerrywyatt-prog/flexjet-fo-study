@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T02:53:04Z",
+  "updated_at": "2026-10-27T10:17:14Z",
   "source": "ADSB.lol public type queries (cumulative last-known)",
   "notes": [
     "Keyed by Mode-S hex when available, else registration.",
@@ -7,8 +7,8 @@
     "Seeded initially from fleet-map-snapshot.json; GitHub Action grows this file over time."
   ],
   "last_poll": {
-    "at": "2026-10-27T02:53:04Z",
-    "live_count": 3,
+    "at": "2026-10-27T10:17:14Z",
+    "live_count": 1,
     "stored_count": 97,
     "errors": []
   },
@@ -653,7 +653,7 @@
       "geom_rate": 1088,
       "squawk": "3042",
       "last_seen": "2026-10-27T02:53:01Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (ADSB.lol)",
       "serial_number": "55010070",
       "on_company_fleet_list": true
@@ -1459,7 +1459,7 @@
       "geom_rate": -1728,
       "squawk": "7326",
       "last_seen": "2026-10-27T02:53:01Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (ADSB.lol)",
       "serial_number": "55010081",
       "on_company_fleet_list": true
@@ -1735,7 +1735,7 @@
       "geom_rate": null,
       "squawk": "2672",
       "last_seen": "2026-10-27T02:52:35Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (ADSB.lol)",
       "serial_number": "55010124",
       "on_company_fleet_list": true
@@ -2059,10 +2059,10 @@
       "mag_heading": null,
       "baro_rate": null,
       "geom_rate": null,
-      "squawk": "7630",
-      "last_seen": "2026-10-26T21:58:01Z",
-      "status": "last_known",
-      "source": "box live relay (ADSB.lol)",
+      "squawk": "3470",
+      "last_seen": "2026-10-27T10:17:14Z",
+      "status": "live",
+      "source": "ADSB.lol hex query (roster)",
       "serial_number": "55010094",
       "on_company_fleet_list": true
     },
