@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T11:12:10Z",
+  "updated_at": "2026-11-02T11:34:29Z",
   "source": "ADSB.lol public type queries (cumulative last-known)",
   "notes": [
     "Keyed by Mode-S hex when available, else registration.",
@@ -7,8 +7,8 @@
     "Seeded initially from fleet-map-snapshot.json; GitHub Action grows this file over time."
   ],
   "last_poll": {
-    "at": "2026-11-02T11:12:10Z",
-    "live_count": 2,
+    "at": "2026-11-02T11:34:29Z",
+    "live_count": 1,
     "stored_count": 98,
     "errors": []
   },
@@ -180,20 +180,20 @@
       "type": "E550",
       "model": "Praetor 600",
       "callsign": "LXJ616",
-      "lat": 33.731286,
-      "lon": -79.279232,
+      "lat": 36.032181,
+      "lon": -76.982918,
       "alt_baro": 45000,
-      "alt_geom": 46200,
-      "gs": 473.2,
-      "track": 43.54,
+      "alt_geom": 46025,
+      "gs": 475.7,
+      "track": 30.72,
       "true_heading": null,
       "mag_heading": null,
-      "baro_rate": -7,
+      "baro_rate": 0,
       "geom_rate": 0,
       "squawk": "7451",
-      "last_seen": "2026-11-02T11:12:05Z",
+      "last_seen": "2026-11-02T11:34:29Z",
       "status": "live",
-      "source": "box live relay (ADSB.lol)",
+      "source": "ADSB.lol type query",
       "serial_number": "55020251",
       "on_company_fleet_list": true
     },
@@ -1091,7 +1091,7 @@
       "geom_rate": null,
       "squawk": null,
       "last_seen": "2026-11-02T11:11:32Z",
-      "status": "live",
+      "status": "last_known",
       "source": "box live relay (ADSB.lol)",
       "serial_number": "55010099",
       "on_company_fleet_list": true
